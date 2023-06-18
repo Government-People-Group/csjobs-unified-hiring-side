@@ -1,0 +1,191 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sifting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+{% include 'includes/user-header.html' %}
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-l">1001334</span>
+<h1 class="govuk-heading-xl">Lead delivery manager</h1>
+<h2 class="govuk-heading-m">Review and submit sifting scores</h2>
+<p>Review and submit your scores for the Lead Delivery Manager application.</p>
+{% set scoredHTML %}
+{{govukTag({
+  text: "Completed",
+  classes: "govuk-tag"
+})}}
+{% endset %}
+{% set progressHTML %}
+{{govukTag({
+  text: "In progress",
+  classes: "govuk-tag--blue"
+})}}
+{% endset %}
+{% set notscoredHTML %}
+{{govukTag({
+  text: "Not scored yet",
+  classes: "govuk-tag--grey"
+})}}
+{% endset %}
+
+{{ govukTable({
+  caption: "Applications",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Behaviour 1",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Behaviour 2",
+      classes: 'app-custom-class',
+      style: hidden
+    },
+    {
+      text: "Behaviour 3",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Skills",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Status",
+      classes: 'app-custom-class'
+    }
+  ],
+  rows: [
+    [
+      {
+        html: "<a href'1001334-applicant-1'>Applicant 1</a>"
+      },
+      {
+        text: "4"
+      },
+      {
+        text: "4"
+      },
+      {
+        text: "4"
+      },
+      {
+        text: "4"
+      },
+      {
+        html: scoredHTML
+      }
+    ],
+    [
+    {
+      html: "<a href''>Applicant 2</a>"
+    },
+    {
+      text: "3"
+    },
+    {
+      text: "3"
+    },
+    {
+      text: "3"
+    },
+    {
+      text: "0"
+    },
+    {
+      html: progressHTML
+    }
+    ],
+    [
+    {
+      html: "<a href''>Applicant 3</a>"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "4"
+    },
+    {
+      text: "0"
+    },
+    {
+      html: progressHTML
+    }
+    ],
+    [
+    {
+      html: "<a href''>Applicant 4</a>"
+    },
+    {
+      text: "0"
+    },
+    {
+      text: "0"
+    },
+    {
+      text: "0"
+    },
+    {
+      text: "0"
+    },
+    {
+      html: notscoredHTML
+    }
+    ],
+    [
+    {
+      html: "<a href''>Applicant 5</a>"
+    },
+    {
+      text: "0"
+    },
+    {
+      text: "0"
+    },
+    {
+      text: "0"
+    },
+    {
+      text: "0"
+    },
+    {
+      html: notscoredHTML
+    }
+    ]
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Submit my scores to panel",
+  href: "1001334-panel-results",
+  disabled: true
+}) }}
+<p><a href="task-list">Save and return to tasklist</a></p>
+            </div>
+            </div>
+{% endblock %}

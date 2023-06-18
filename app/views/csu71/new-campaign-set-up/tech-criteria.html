@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Advert set up</span>
+          <form class="form" action="/csu71/tech-criteria-handler" method="post">
+
+{% call govukFieldset({
+  legend: {
+    text: "What are the technical skills and qualifications needed for this role?",
+    classes: "govuk-fieldset__legend--l",
+    isPageHeading: true
+  }
+}) %}
+
+<p>For example, Prince2 Project Management Practitioner. This will be visible on the advert.</p>
+{{ govukTextarea({
+  label: {
+    text: "Technical skill 1"
+  },
+  id: "technical1",
+  name: "technical1",
+  value: data['technical1'] | truncate(150)
+}) }}
+
+{{ govukTextarea({
+  label: {
+    text: "Technical skill 2"
+  },
+  id: "technical2",
+  name: "technical2",
+    value: data['technical2'] | truncate(150)
+}) }}
+
+{{ govukTextarea({
+  label: {
+    text: "Technical skill 3"
+  },
+  id: "technical3",
+  name: "technical3",
+    value: data['technical3'] | truncate(150)
+}) }}
+
+
+{% endcall %}
+
+<p><a href="#">Add another technical skill or qualification</a></p>
+
+<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "preview-advert"
+}) }}
+
+</form>
+</div>
+</div>
+{% endblock %}

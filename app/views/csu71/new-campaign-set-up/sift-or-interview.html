@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Sifting and selection methods</span>
+  <h1 class="govuk-heading-l">What behaviours will you assess?</h1>
+  <p class="govuk-body govuk-!-margin-bottom-2">Candidates will provide up to 250 words per behaviour. Select all that apply.</p>
+  <form class="form" action="/csu71/sift-or-interview-handler" method="post">
+
+
+      <div class="govuk-form-group">
+        <h2 class="govuk-heading-m">At sift?</h2>
+
+          {% if data['behave1'].length >= 1 %}
+           {% set array = data['behave1'] %}
+          {%- for items in array| slice(1) %}
+          <div class="govuk-checkboxes-{{ loop.index }}" data-module="govuk-checkboxes" name="siftbehaviours">
+            {%- for item in items %}
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="siftbehaviours" name="siftbehaviours" type="checkbox" value="{{ item }}">
+              <label class="govuk-label govuk-checkboxes__label" for="siftbehaviours"> {{ item }}</label></div>
+              {%- endfor %}
+            </div>
+            {%- endfor %}
+            {% else %}
+            {% endif %}
+          </div>
+
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-m">At interview?</h2>
+              {% if data['behave1'].length >= 1 %}
+               {% set array = data['behave1'] %}
+              {%- for items in array| slice(1) %}
+              <div class="govuk-checkboxes-{{ loop.index }}" data-module="govuk-checkboxes" name="interviewbehaviours">
+                {%- for item in items %}
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="interviewbehaviours" name="interviewbehaviours" type="checkbox" value="{{ item }}">
+                  <label class="govuk-label govuk-checkboxes__label" for="interviewbehaviours"> {{ item }}</label></div>
+                  {%- endfor %}
+                </div>
+                {%- endfor %}
+                {% else %}
+                {% endif %}
+              </div>
+
+
+<button class="govuk-button" data-module="govuk-button">Continue</button>
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "preview-advert"
+}) }}
+
+</div>
+</div>
+{% endblock %}

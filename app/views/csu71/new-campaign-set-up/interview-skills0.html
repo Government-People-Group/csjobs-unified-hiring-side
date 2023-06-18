@@ -1,0 +1,49 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+{% include 'includes/user-header.html' %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Sifting and selection methods</span>
+<h1 class="govuk-heading-l">What skills and qualifications will you assess at interview?</h1>
+    <form class="form" action="interview-evidence" method="post">
+
+
+    {{ govukCheckboxes({
+    id: "interviewskills",
+    name: "interviewskills",
+        items: [
+      {
+
+        value: data['technical1'],
+        text: data['technical1'],
+        checked: checked("interviewskills", data['technical1'])
+      }
+    ]
+    }) }}
+
+    <button class="govuk-button" data-module="govuk-button">Continue</button>
+    {{ govukButton({
+      text: "Preview advert",
+      classes: "govuk-button--secondary",
+      href: "preview-advert"
+    }) }}
+{% include 'includes/return-task-list.html' %}
+</form>
+</div>
+</div>
+{% endblock %}

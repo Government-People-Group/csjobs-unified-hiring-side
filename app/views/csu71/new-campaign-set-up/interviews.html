@@ -1,0 +1,129 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Finalise and submit</span>
+    <h1 class="govuk-heading-l">Panel</h1>
+    <form class="form" action="/csu71/interviews-handler", method="post">
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% set panelHTML %}
+<p>The panel needs to meet the <a href="">inclusion and diversity requirements</a>.</p>
+{% endset %}
+
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      idPrefix: "panel-selected",
+      name: "panel-selected",
+      fieldset: {
+        legend: {
+          text: "Have you selected a panel for the sift and interview?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        html: panelHTML
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: checked("panel-selected","Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: checked("panel-selected","No")
+        }
+      ]
+    }) }}
+
+
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      idPrefix: "panel-sift-int",
+      name: "panel-sift-int",
+      fieldset: {
+        legend: {
+          text: "Is the panel the same for sift and interview?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: checked("panel-sift-int","Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: checked("panel-sift-int","No")
+        }
+      ]
+    }) }}
+
+<div id="conditional-panel-members">
+{% call govukFieldset({
+  legend: {
+    text: "What are the email addresses of the other panel members?",
+    classes: "govuk-fieldset__legend--m",
+    isPageHeading: false
+  }
+}) %}
+
+  {{ govukInput({
+    label: {
+      text: 'Panel member 1 email'
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "panelist1",
+    value: data['panelist1'],
+    name: "panelist1"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: 'Panel member 2 email'
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "panelist2",
+    name: "panelist2",
+    value: data['panelist2']
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Panel member 3 email"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "panelist3",
+    value: data['panelist3'],
+    name: "panelist3"
+  }) }}
+{% endcall %}
+
+</div>
+
+<button class="govuk-button" data-module="govuk-button">Continue</button>
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "preview-advert"
+}) }}
+</form>
+</div>
+</div>
+{% endblock %}

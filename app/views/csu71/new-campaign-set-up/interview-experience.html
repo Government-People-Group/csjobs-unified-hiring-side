@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+        <form class="form" action="interview-skills" method="post">
+    <span class="govuk-caption-l">Sifting and selection methods</span>
+    {{ govukCheckboxes({
+    id: "essinterview",
+    name: "essinterview",
+    fieldset: {
+      legend: {
+        text: "What essential criteria will you assess at interview?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    hint: {
+      text: "Select all that apply."
+    },
+    items: [
+      {
+        value: data['experience1'],
+        text: data['experience1'],
+        checked: checked("essinterview",data['experience1'])
+      },
+      {
+        value: data['experience2'],
+        text: data['experience2'],
+        checked: checked("essinterview",data['experience2'])
+      },
+      {
+        value: data['experience4'],
+        text: data['experience3'],
+        checked: checked("essinterview",data['experience3'])
+      },
+      {
+        value: data['experience4'],
+        text: data['experience4'],
+        checked: checked("essinterview",data['experience4'])
+      }
+    ]
+    }) }}
+
+    <button class="govuk-button" data-module="govuk-button">Continue</button>
+    {{ govukButton({
+      text: "Preview advert",
+      classes: "govuk-button--secondary",
+      href: "preview-advert"
+    }) }}
+</form>
+
+
+</div>
+</div>
+{% endblock %}

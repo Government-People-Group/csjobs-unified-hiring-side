@@ -1,0 +1,113 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Finalise and submit</span>
+    <h1 class="govuk-heading-l">Campaign dates</h1>
+    <form class="form" action="/csu71/campaign-dates-handler" method="post">
+
+<h2 class="govuk-heading-m">Do you have a preferred launch date?</h2>
+
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+      {{ govukDateInput({
+      id: "launch",
+      namePrefix: "",
+      items: [
+      {
+        classes: "govuk-input--width-2",
+        name: "day",
+        value: data['day']
+      },
+      {
+        classes: "govuk-input--width-2",
+        name: "month",
+        value: data['month']
+      },
+      {
+        classes: "govuk-input--width-4",
+        name: "year",
+        value: data['year']
+      }
+    ]
+  }) }}
+
+
+
+
+
+
+
+
+
+      <h2 class="govuk-heading-m">How long should the campaign be live for?</h2>
+      {{ govukRadios({
+        idPrefix: "advert-time",
+        name: "advert-time",
+        value: data['advert-time'],
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "Most vacancies are live for 2 weeks"
+        },
+        items: [
+        {
+          value: "2 weeks",
+          text: "2 weeks",
+          checked: true,
+          checked: checked ("advert-time","2 weeks")
+        },
+        {
+          value: "3 weeks",
+          checked: checked ("advert-time","3 weeks"),
+          text: "3 weeks"
+        },
+        {
+          value: "4 weeks",
+          checked: checked ("advert-time","4 weeks"),
+          text: "4 weeks"
+        },
+        {
+          hint: {
+            text: "This advert will stay live until the posts have been filled."
+          },
+          value: "Rolling recruitment",
+          checked: checked ("advert-time","Rolling recruitment"),
+          text: "Rolling recruitment"
+        }
+        ]
+      }) }}
+
+
+
+
+
+
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      {{ govukButton({
+        text: "Preview advert",
+        classes: "govuk-button--secondary",
+        href: "preview-advert"
+      }) }}
+
+    </form>
+
+
+  </div>
+</div>
+{% endblock %}

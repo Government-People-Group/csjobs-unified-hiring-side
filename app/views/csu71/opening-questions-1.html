@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+  {% block beforeContent %}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+
+    {% endblock %}
+
+
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+
+  select {
+width:400px;
+
+
+
+  }
+</style>
+
+<form class="form" action="opening-questions-2" method="post" novalidate>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-xl">Create a new vacancy</h1>
+      <div class="govuk-!-margin-bottom-6">
+      <div style="width:400px" class="govuk-form-group govuk-input--width-30 ">
+        <label for="autocomplete-default" class="govuk-label--m">What is the job title?</label>
+        <div id="jobtitle" class="autocomplete-wrapper"></div>
+      </div>
+</div>
+
+
+
+
+<div>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </div>
+      <script src="/public/javascripts/temp-copy.js"></script>
+      <script src="/public/javascripts/profession.js"></script>
+      <script src="/public/javascripts/jobtitle.js"></script>
+
+
+
+
+    </FORM>
+    {% endblock %}

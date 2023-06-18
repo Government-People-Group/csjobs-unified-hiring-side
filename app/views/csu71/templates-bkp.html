@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+{% include 'includes/user-header.html' %}
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<form action="/templates-altergo" method="post">
+
+{% set counter = [] %}
+
+
+
+{{ govukRadios({
+  idPrefix: "template",
+  name: "template",
+  fieldset: {
+    legend: {
+      text: "Would you like to use an existing template for this job vacancy?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Templates have been debiased and pre-approved."
+  },
+  items: [
+    {
+      value: "cswide",
+      text: "Yes, a civil service template"
+    },
+
+    {
+      value: "cswide",
+      text: "Yes, I want to copy a previous advert"
+    },
+    {
+      value: "basic-details-progress",
+      text: "No, I don't want to use a template"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+</form>
+</div>
+</div>
+
+
+{% endblock %}

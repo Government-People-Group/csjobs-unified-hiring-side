@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Profile – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-l">Department profile</h1>
+<p>This information will be visible to candidates.</p>
+
+
+{{ govukTextarea({
+name: "more-detail",
+id: "more-detail",
+label: {
+text: "What does your team do?"
+},
+value: "This information is pulled from your profile. It tells the candidate about the team they will be working in. You can format the text with bullet points etc."
+
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Website URL"
+  },
+  hint: {
+    text: "If you have a job application featured on a department page, you can include this."
+  },
+  classes: "govuk-input--width-20",
+  id: "links",
+  name: "links",
+  value: "www.linkedin.com/cabinetoffice"
+}) }}
+
+
+
+{{ govukButton({
+  text: "Save changes",
+  href: "home"
+}) }}
+{{ govukButton({
+  text: "Preview",
+  classes: "govuk-button--secondary",
+  href: ""
+}) }}
+
+</div>
+</div>
+
+
+{% endblock %}

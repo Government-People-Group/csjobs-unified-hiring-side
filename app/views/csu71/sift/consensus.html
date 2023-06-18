@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sifting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+{% include 'includes/user-header.html' %}
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">1001334</span>
+<h1 class="govuk-heading-xl">Lead delivery manager</h1>
+<h2 class="govuk-heading-m">Arrange a consensus meeting</h2>
+
+  <p>A consensus meeting can be used to review applicants that either:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>the panel scored them differently</li>
+    <p>Or</p>
+    <li>the score is very close to a cut-off mark</li>
+
+    <ol class="govuk-list govuk-list--number">
+      <li>Email to arrange a meeting with the panelists, including:</li>
+      <ul class="govuk-list govuk-list--bullet">
+    <li><a href="mailto:user@cabinetoffice.gov.uk">Jane Smith (Lead)</a></li>
+    <li><a href="mailto:fictionalperson@cabinetoffice.gov.uk">Smith Clark</a></li>
+    <li><a href="mailto:fictionalperson@cabinetoffice.gov.uk">Annie Pear</a></li>
+  </ul>
+  <li>At the meeting, you should:
+    <ul class="govuk-list govuk-list--bullet"><li>review selected applicants</li>
+      <li>decide if you will interview, reject, or place the applicant on hold (to interview at a later date)</li>
+      </ul>
+      <li><a href="1001334-interview">Set up interview</li>
+</ol>
+
+{{ govukButton({
+  text: "Review selected applicants",
+  href: "1001334-consensus-meeting"
+}) }}
+<p><a href="task-list">Save and return to tasklist</a></p>
+
+{% endblock %}

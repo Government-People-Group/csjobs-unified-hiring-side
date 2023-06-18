@@ -1,0 +1,160 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+  {% block pageTitle %}
+  Home – {{ serviceName }} – GOV.UK Prototype Kit
+  {% endblock %}
+
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+
+
+
+
+    {% set vhHTML %}
+    {{govukTag({
+      text: "in progress",
+      classes: "govuk-tag--blue"
+    })}}
+    {% endset %}
+
+
+    {% set leadHTML %}
+    {{govukTag({
+      text: "Lead to complete",
+      classes: "govuk-tag--blue"
+    })}}
+    {% endset %}
+    {% set panelHTML %}
+    {{govukTag({
+      text: "Panel to complete",
+      classes: "govuk-tag--grey"
+    })}}
+    {% endset %}
+    {% set recruiterHTML %}
+    {{govukTag({
+      text: "Recruiter to complete",
+      classes: "govuk-tag--yellow"
+    })}}
+
+
+
+
+    {% endset %}
+
+    {% set newdraftHTML %}
+
+    {{ govukTable({
+      caption: "",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: false,
+      head: [
+      {
+        text: "Reference",
+        classes: 'app-custom-class'
+      },
+      {
+        text: "Job title",
+        classes: 'app-custom-class'
+      },
+      {
+        text: "Last modified",
+        classes: 'app-custom-class'
+      },
+      {
+        text: "Action needed",
+        classes: 'app-custom-class'
+      }
+      ],
+      rows: [
+      [
+      {
+        html: '<a href="task-list-new-campaign">226174</a>'
+      },
+      {
+
+      text: data['temp-copy-input-autocomplete']
+      },
+      {
+        text: "19 Sept 2022"
+      },
+      {
+        html: vhHTML
+      }
+      ]
+      ]
+    }) }}
+    {% endset %}
+
+
+    <h1 class=govuk-heading-xl>All vacancies (1)</h1>
+
+    <br></br>
+
+
+
+    {{ govukAccordion({
+      classes: "govuk-accordion__section-toggle",
+      id: "accordion-default",
+      items: [
+      {
+        classes: "govuk-accordion__section-toggle",
+        heading: {
+          text: "Draft vacancies (1)"
+        },
+        content: {
+          html: newdraftHTML
+        }
+      },
+      {
+        heading: {
+          text: "Pending vacancies (0)"
+        },
+        content: {
+          html: pendingHTML
+        }
+      },
+      {
+        heading: {
+          text: "Live vacancies (0)"
+        },
+        content: {
+          html: liveHTML
+        }
+      },
+      {
+        heading: {
+          text: "Pre-employment checking (0)"
+        },
+        content: {
+          html: pecHTML
+        }
+      },
+      {
+        heading: {
+          text: "Onboarding (0)"
+        },
+        content: {
+          html: onboardingHTML
+        }
+      }
+      ]
+    }) }}
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}

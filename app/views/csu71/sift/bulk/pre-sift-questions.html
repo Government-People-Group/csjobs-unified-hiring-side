@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sifting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+{% include 'includes/user-header.html' %}
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">1001334</span>
+<h1 class="govuk-heading-xl">Customer service advisor</h1>
+<h2 class="govuk-heading-m">Pre-sift answers</h2>
+<h3 class="govuk-heading-s">Do you have experience answering phones?</h3>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Yes"
+      },
+      value: {
+        text: "70 applicants"
+      }
+    },
+    {
+      key: {
+        text: "No"
+      },
+      value: {
+        text: "2 applicants"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "View",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+<h3 class="govuk-heading-s">Can you work occassional evenings and weekends?</h3>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Yes"
+      },
+      value: {
+        text: "66 applicants"
+      }
+    },
+    {
+      key: {
+        text: "No"
+      },
+      value: {
+        text: "6 applicants"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "View",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+</div>
+</div>
+{{ govukButton({
+  text: "Return to vacancy",
+  href: "1001334"
+}) }}
+          <p><a href="task-list">Save and return to tasklist</a></p>
+{% endblock %}

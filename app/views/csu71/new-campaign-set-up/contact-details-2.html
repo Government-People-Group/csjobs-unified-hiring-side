@@ -1,0 +1,105 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Contract information</span>
+    <h1 class="govuk-heading-l">Would you like anyone else to receive updates on the vacancy?</h1>
+      <form class="form" action="/csu71/contact-details-2-handler" method="post">
+    {{ govukRadios({
+      idPrefix: "updates",
+      name: "updates",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "This is in addition to the post creator, main contact, and panel members"
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes",
+          checked: checked("updates", "yes")
+        },
+        {
+          value: "no",
+          text: "No",
+          checked: checked("updates", "no")
+        }
+      ]
+    }) }}
+
+    <div id="conditional">
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {{ govukInput({
+        label: {
+          text: "What is their email address?",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        classes: "govuk-input--width-20",
+        id: "their-email",
+        name: "their-email",
+        value: data['their-email']
+      }) }}
+
+
+        {{ govukRadios({
+          idPrefix: "update-detail",
+          name: "update-detail",
+          fieldset: {
+            legend: {
+              text: "What updates would you like them to receive?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "all updates",
+              text: "all updates",
+              checked: checked("update-detail","all updates")
+            },
+            {
+              value: "updates after advert end",
+              text: "updates after advert end",
+              checked: checked("update-detail","updates after advert end")
+            }
+          ]
+        }) }}
+        </div>
+
+
+
+
+
+
+
+<button class="govuk-button" data-module="govuk-button">Continue</button>
+{{ govukButton({
+text: "Preview advert",
+classes: "govuk-button--secondary",
+href: "preview-advert"
+}) }}
+</form>
+
+
+
+
+</div>
+</div>
+{% endblock %}

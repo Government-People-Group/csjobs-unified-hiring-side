@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sifting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+{% include 'includes/user-header.html' %}
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+<span class="govuk-caption-l">1001234</span>
+<h1 class="govuk-heading-xl">Review application</h1>
+{{ govukTable({
+  caption: "",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "applicant number",
+      classes: 'app-custom-class'
+    }
+  ],
+  rows: [
+    [
+      {
+        html: '<a href="">1001234</a>'
+      }
+    ],
+    [
+      {
+        html: '<a href="">1001254</a>'
+      }
+    ],
+    [
+      {
+        html: '<a href="">1001334</a>'
+      }
+    ]
+  ]
+}) }}
+
+<p><a href="task-list.html">Save and return to task-list</a></p>
+
+</div>
+</div>
+
+{% endblock %}

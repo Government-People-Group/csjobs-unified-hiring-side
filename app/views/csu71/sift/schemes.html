@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sifting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+{% include 'includes/user-header.html' %}
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">1001334</span>
+<h1 class="govuk-heading-xl">Lead delivery manager</h1>
+<h2 class="govuk-heading-m">Schemes</h2>
+<h3 class="govuk-heading-s">Veteran's scheme</h3>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        html: '<a href="">Applicant 1</a>'
+      },
+      value: {
+        text: "Must be interviewed if scoring 4 or above"
+      }
+    }
+  ]
+}) }}
+
+<h3 class="govuk-heading-s">Disability Confident Scheme</h3>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        html: '<a href="">Applicant 4</a>'
+      },
+      value: {
+        text: "Requires written questions at interview"
+      }
+    }
+  ]
+}) }}
+
+</div>
+</div>
+{{ govukButton({
+  text: "Return to vacancy",
+  href: "1001334"
+}) }}
+<p><a href="task-list">Save and return to tasklist</a></p>
+{% endblock %}

@@ -1,0 +1,129 @@
+AA{% extends "layout.html" %}
+
+{% block pageTitle %}
+Basic details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "alpha"
+},
+html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+{% include 'includes/user-header.html' %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">About the vacancy</span>
+<h1 class="govuk-heading-l">Enter the basic details</h1>
+<p>The job title should explain the seniority and role.
+
+
+
+<form class="form" action="/basic-details-handler" method="post">
+
+
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{{ govukInput({
+label: {
+text: "Job title",
+classes: "govuk-label--m",
+isPageHeading: false
+},
+classes: "govuk-input--width-20",
+id: "title",
+name: "title",
+value: data['temp-copy-input-autocomplete']
+}) }}
+
+
+
+
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+        {{ govukSelect({
+          id: "reshow",
+          name: "reshow",
+          label: {
+            text: ""
+          },
+          items: [
+            {
+              value: "Administrative Assistant (AA)",
+              text: "Administrative Assistant",
+              selected: checked("grade","Administrative Assistant (AA)")
+            },
+            {
+              value: "Administrative Officer (AO)",
+              text: "Administrative Officer",
+              selected: checked("grade","Administrative Officer (AO)")
+            },
+            {
+              value: "Executive Officer (EO)",
+              text: "Executive Officer",
+              selected: checked("grade","Executive Officer (EO)")
+            },
+            {
+              value: "Higher Executive Officer (HEO)",
+              text: "Higher Executive Officer",
+              selected: checked("grade","Higher Executive Officer (HEO)")
+            },
+            {
+              value: "Senior Executive Officer (SEO)",
+              text: "Senior Executive Officer",
+              selected: checked("grade","Senior Executive Officer (SEO)")
+            },
+            {
+              value: "Grade 7",
+              text: "Grade 7",
+              selected: checked("grade","Grade 7")
+            },
+            {
+              value: "Grade 6",
+              text: "Grade 6",
+              selected: checked("grade","Grade 6")
+            }
+          ]
+        }) }}
+
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+        label: {
+        text: "Department",
+        classes: "govuk-label--m",
+        isPageHeading: false
+        },
+        classes: "govuk-input--width-20",
+        id: "dept",
+        name: "dept",
+        value: "Cabinet Office"
+
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+        label: {
+        text: "How many posts are available?",
+        classes: "govuk-label--m",
+        isPageHeading: false
+        },
+        classes: "govuk-input--width-3",
+        id: "num-posts",
+        name: "num-posts",
+        value: data['num-posts']
+        }) }}
+
+       <button class="govuk-button" data-module="govuk-button">Continue</button>
+      {% include 'includes/return-task-list.html' %}
+     </FORM>
+</div>
+</div>
+
+{% endblock %}

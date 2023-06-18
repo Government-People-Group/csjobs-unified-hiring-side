@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Recruitment channels</span>
+<form class="form" action="/csu71/approval-handler" method="post">
+
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "approval-status",
+  name: "approval-status",
+  fieldset: {
+    legend: {
+      text: "Has there been financial approval for this vacancy?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "The advert can only go live once approval has been confirmed"
+  },
+  items: [
+    {
+      value: "Yes - approved",
+      text: "Yes - approved",
+      checked: checked("approval-status","Yes - approved")
+    },
+    {
+      value: "No",
+      text: "No",
+            checked: checked("approval-status","No")
+    }
+  ]
+}) }}
+
+
+<button class="govuk-button" data-module="govuk-button">Continue</button>
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "preview-advert"
+}) }}
+      </form>
+</div>
+</div>
+{% endblock %}

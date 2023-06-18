@@ -1,0 +1,121 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Sifting and selection methods</span>
+    <form class="form" action="/csu71/behaviours-handler" method="post">
+
+      {{ govukCheckboxes({
+      id: "behave1",
+      name: "behave1",
+      fieldset: {
+        legend: {
+          text: "What behaviours will you assess?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "Select up to 4. Recommended behaviours are selected. This will be visible on the advert."
+      },
+      items: [
+        {
+          value: "Big picture",
+          text: "Seeing the big picture",
+          checked: checked("behave1", "Big picture"),
+          checked: true,
+          hint: {
+            text: "Understand how your role fits with and supports organisational objectives.
+            Recognise the wider Civil Service priorities and ensure work is in the
+            national interest."
+          }
+        },
+        {
+          value: "Changing improving",
+          text: "Changing and Improving",
+          checked: checked("behave1", "Changing improving"),
+          checked: true,
+          hint: {
+            text: "Seek out opportunities to create effective change and suggest innovative ideas for
+            improvement. Review ways of working, including seeking and providing feedback."
+          }
+        },
+        {
+          value: "Effective decisions",
+          text: "Making Effective Decisions",
+          checked: checked("behave1", "Effective decisions"),
+          checked: true,
+          hint: {
+            text: "Use evidence and knowledge to support accurate, expert decisions and advice.
+            Carefully consider alternative options, implications and risks of decisions."
+          }
+        },
+        {
+          value: "Managing a quality service",
+          text: "Managing a quality service",
+          checked: checked("behave1", "Managing a quality service"),
+          hint: {
+            text: "Understand how your role fits with and supports organisational objectives.
+            Recognise the wider Civil Service priorities and ensure work is in the
+            national interest."
+          }
+        },
+        {
+          value: "Leadership",
+          text: "Leadership",
+          checked: checked("behave1", "Leadership"),
+          hint: {
+            text: "Show pride and passion for public service. Create and engage others in delivering
+            a shared vision. Value difference, diversity and inclusion, ensuring fairness and
+            opportunity for all."
+          }
+        },
+        {
+          value: "Working together",
+          text: "Working together",
+          checked: checked("behave1", "Working together"),
+          hint: {
+            text: "Form effective partnerships and relationships with people both internally and
+            externally, from a range of diverse backgrounds, sharing information, resources
+            and support."
+          }
+        },
+        {
+          value: "Delivering at pace",
+          text: "Delivering at pace",
+          checked: checked("behave1", "Delivering at pace"),
+          hint: {
+            text: "Take responsibility for delivering timely and quality results with focus and drive."
+          }
+        }
+      ]
+      }) }}
+
+
+
+
+
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      {{ govukButton({
+        text: "Preview advert",
+        classes: "govuk-button--secondary",
+        href: "preview-advert"
+      }) }}
+    </form>
+
+  </div>
+</div>
+{% endblock %}
