@@ -90,9 +90,47 @@
 
      <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-2">Grade <strong>{{ data['grade']}}</strong></p>
 
-     <h2 style="border-bottom:1px solid #1d70b8;;padding-bottom:10px;" class="govuk-heading-xl">{{ data['temp-copy-input-autocomplete']}}</h2>
+     <h2 style="border-bottom:1px solid #1d70b8;;padding-bottom:10px;" class="govuk-heading-l">{{ data['temp-copy-input-autocomplete']}}</h2>
 
-{{ data['dept-copy-input-autocomplete']}}
+<h1 class="govuk-heading-xl">Select a job advert to copy</h1>
+
+     <table class="govuk-table">
+
+       <thead class="govuk-table__head">
+         <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8">
+           <th scope="col" class="govuk-table__header" style="width:20%;;color:#1d70b8;">Closed on</th>
+           <th style="padding-left:10px;;color:#1d70b8;width:20%;" scope="col" class="govuk-table__header">Job title</th>
+           <th scope="col" class="govuk-table__header" style="width:20%;;color:#1d70b8;">Grade</th>
+           <th style="padding-left:10px;;color:#1d70b8;width:20%;" scope="col" class="govuk-table__header">Ref.</th>
+
+
+           <th scope="col" class="govuk-table__header" style="width:20%;;color:#1d70b8;">Selection</th>
+         </tr>
+       </thead>
+
+
+
+       <tbody class="govuk-table__body">
+
+
+     <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8;">
+       <td class="govuk-table__cell" style="background: white;;">14 Sep 2022</td>
+       <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="home?cta=none">Product manager</a></td>
+       <td class="govuk-table__cell" style="width:20%;background: white;;">G7</td>
+
+       <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="home?cta=none">210220</a></td>
+
+       <td class="govuk-table__cell" style="background: white;">
+         {{ govukButton({
+           text: "Copy advert",
+           classes: "govuk-button--secondary",
+           href: "task-list-exp-copy"
+         }) }}
+       </td>
+     </tr>
+</tbody>
+</table>
+
 
 <p style="font-size:24px">Duplicate</p>
 
@@ -130,223 +168,6 @@
   ]
   ]
 }) }}
-<table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption>
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Date ended</th>
-      <th scope="col" class="govuk-table__header">Reference</th>
-      <th scope="col" class="govuk-table__header">Job title</th>
-      <th scope="col" class="govuk-table__header">last used</th>
-      <th scope="col" class="govuk-table__header">Use as template</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">19 Sep 2023</th>
-      <td class="govuk-table__cell">£109.80 per week</td>
-      <td class="govuk-table__cell">£109.80 per week</td>
-      <td class="govuk-table__cell">£109.80 per week</td>
-      <td class="govuk-table__cell">£109.80 per week</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">19 Sep 2023</th>
-      <td class="govuk-table__cell">£109.80 per week</td>
-      <td class="govuk-table__cell">£109.80 per week</td>
-      <td class="govuk-table__cell">£109.80 per week</td>
-      <td class="govuk-table__cell">£109.80 per week</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">19 Sep 2023</th>
-      <td class="govuk-table__cell">£109.80 per week</td>
-      <td class="govuk-table__cell">£109.80 per week</td>
-      <td class="govuk-table__cell">£109.80 per week</td>
-      <td class="govuk-table__cell">£109.80 per week</td>
-    </tr>
-  </tbody>
-</table>
-
-
-<div class="govuk-summary-card" style="border-radius:15px;border:5px solid #1d70b8;width:40%;float:right">
-  <div class="govuk-summary-card__title-wrapper" style="background:#1d70b8;border-top-left-radius: 10px 10px;border-top-right-radius: 10px 10px;">
-    <h2 class="govuk-summary-card__title" style="color:white;font-size:24px;">Product manager</h2>
-    <ul class="govuk-summary-card__actions">
-      <li class="govuk-summary-card__action"> <a class="govuk-link" href="task-list-duplicate" style="color:white;font-size:20px;">
-          Select<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
-        </a>
-      </li>
-
-    </ul>
-  </div>
-  <div class="govuk-summary-card__content">
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Date closed
-        </dt>
-        <dd class="govuk-summary-list__value">
-          19 Sep 2023
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Reference
-        </dt>
-        <dd class="govuk-summary-list__value">
-          2032332
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Grade
-        </dt>
-        <dd class="govuk-summary-list__value">
-          SEO
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Applicants
-        </dt>
-        <dd class="govuk-summary-list__value">
-          73
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Sift
-        </dt>
-        <dd class="govuk-summary-list__value">
-          8
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Outcome
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Appointed
-        </dd>
-      </div>
-    </dl>
-  </div>
-</div>
-
-<div class="govuk-summary-card" style="border-radius:15px;border:5px solid #1d70b8;width:40%">
-  <div class="govuk-summary-card__title-wrapper" style="background:#1d70b8;border-top-left-radius: 10px 10px;border-top-right-radius: 10px 10px;">
-    <h2 class="govuk-summary-card__title" style="color:white;font-size:24px;">Product manager</h2>
-    <ul class="govuk-summary-card__actions">
-      <li class="govuk-summary-card__action"> <a class="govuk-link" href="#" style="color:white;font-size:20px;">
-          Select<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
-        </a>
-      </li>
-
-    </ul>
-  </div>
-  <div class="govuk-summary-card__content">
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Date closed
-        </dt>
-        <dd class="govuk-summary-list__value">
-          19 Sep 2023
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Reference
-        </dt>
-        <dd class="govuk-summary-list__value">
-          2032332
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Grade
-        </dt>
-        <dd class="govuk-summary-list__value">
-          SEO
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Applicants
-        </dt>
-        <dd class="govuk-summary-list__value">
-          73
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Sift
-        </dt>
-        <dd class="govuk-summary-list__value">
-          8
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Outcome
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Appointed
-        </dd>
-      </div>
-    </dl>
-  </div>
-</div>
-
-<!-- <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h1 class="govuk-fieldset__heading">
-        Filter
-      </h1>
-    </legend>
-    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
-        <label class="govuk-label govuk-radios__label" for="changed-name">
-          Monthly
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
-        <label class="govuk-label govuk-radios__label" for="changed-name-2">
-          Yearly
-        </label>
-      </div>
-    </div>
-  </fieldset>
-</div> -->
-
-
-
-<!-- {{ govukRadios({
-  name: "template",
-  classes:"govuk-radios--small",
-  fieldset: {
-    legend: {
-      text: "How would you like to set-up your vacancy?",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      html: tabHTML
-    },
-    {
-      html: tabHTML
-    },
-    {
-      html: tabHTML
-    }
-  ]
-}) }} -->
-
-
 
 
 </div>

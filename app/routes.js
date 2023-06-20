@@ -9,4 +9,3 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Add your routes here
 
 router.use('/csu71', require('./views/csu71/_routes'));
-router.use('/v05', require('./views/v05/_routes'));

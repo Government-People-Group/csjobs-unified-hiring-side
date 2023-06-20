@@ -20,7 +20,15 @@ router.post("/check-next-stepV5", function (req, res) {
 	}
 })
 
+router.get("/selection-handlerV5", function (req, res) {
+  var list = req.session.data['selected'];
 
+
+  for (var i=0;i<1;i++){
+    res.redirect("/v05/select-"+list[i]);
+  }
+
+  })
 
 
 module.exports = router

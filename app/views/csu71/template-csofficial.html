@@ -18,49 +18,46 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 {% block content %}
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
   <div class="govuk-grid-column-full">
 
     <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-2">Vacancy <strong>102201</strong></p>
 
     <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-2">Grade <strong>{{ data['grade']}}</strong></p>
 
-    <h2 style="border-bottom:1px solid #1d70b8;;padding-bottom:10px;" class="govuk-heading-xl">{{ data['temp-copy-input-autocomplete']}}</h2>
+    <h2 style="border-bottom:1px solid #1d70b8;;padding-bottom:10px;" class="govuk-heading-xl">{{ data['temp-copy-input-autocomplete']}} templates</h2>
+
+
+    <p style="font-size:24px">Click to view the lorem ipsum dolor amet sit.</p>
+
+
+<div style="position:relative;">
+
+<a href="template-csofficial-co">
+  <div style="position:relative;border:2px solid #1d70b8 ;border-radius:8px;float:left;background:#1d70b8;height:250px;width:30%;margin-left:0px;margin-right:20px">
+    <img src="/public/images/cab.png" style="position:absolute;left:20px;top:20px;width:160px">
+    <h2 class="govuk-heading-l" style="position:absolute;left:0px;bottom:-20px;;;padding:20px;color:white;font-size:32px;line-height:1.2;;border-top-left-radius: 10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}} <br> {{ data['grade']}}</h2>
+
+  </div>
+</a>
+<a href="#">
+  <div style="position:relative;border:2px solid #1d70b8 ;border-radius:8px;float:left;background:black;height:250px;width:30%;margin-left:20px;margin-right:20px">
+    <img src="/public/images/ddd.png" style="position:absolute;left:20px;top:20px;width:200px">
+    <h2 class="govuk-heading-l" style="position:absolute;left:0px;bottom:-20px;;;padding:20px;color:white;font-size:32px;line-height:1.2;;border-top-left-radius: 10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}} <br> {{ data['grade']}}</h2>
+
+  </div>
+</a>
+<a href="#">
+  <div style="position:relative;border:2px solid #7F3F98 ;border-radius:8px;float:left;background:white;height:250px;width:30%;margin-left:20px;margin-right:0px">
+    <img src="/public/images/ho-logo.png" style="position:absolute;left:20px;top:20px;width:130px">
+    <h2 class="govuk-heading-l" style="position:absolute;left:0px;bottom:-20px;;;padding:20px;color:#7F3F98 ;font-size:32px;line-height:1.2;;border-top-left-radius: 10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}} <br> {{ data['grade']}}</h2>
+
+  </div>
+</a>
 
 
 
-    <p style="font-size:24px">Select an official cs template</p>
-
-
-
-    <div  class="govuk-!-margin-bottom-3" style="width:80%;border-radius:5px;border:1px solid #1d70b8;padding:30px;;height:120px;position:relative ">
-    <!-- <h3 style="position:absolute;top:30px;right:30px" class="govuk-heading-m">Job title lorem ipsum</h3> -->
-
-      <!-- <p style="text-align:left" class="govuk-body-m"><strong>Grade SEO</strong></p> -->
-
-      <h3 style="position:absolute;top:30px;right:40px" class="govuk-heading-l">Job title lorem ipsum</h3>
-
-      <a href="task-list-template"><div style="position:relative;float:left;width:20%;height:60px; ;border-radius:5px;border:1px solid #1d70b8;padding:30px;">
-        <img class="govuk-!-margin-left-0 govuk-!-margin-top-0" src="/public/images/co-logo.png" style="position:absolute;bottom:30px;left:30px;width:140px;;padding-left:0px;padding-right:0px;margin-right:5px;">
-
-
-      </div></a>
-
-    </div>
-    <div  class="govuk-!-margin-bottom-3" style="width:80%;border-radius:5px;border:1px solid #1d70b8;padding:30px;;height:120px;position:relative ">
-    <!-- <h3 style="position:absolute;top:30px;right:30px" class="govuk-heading-m">Job title lorem ipsum</h3> -->
-
-      <!-- <p style="text-align:left" class="govuk-body-m"><strong>Grade SEO</strong></p> -->
-
-      <h3 style="position:absolute;top:30px;right:40px" class="govuk-heading-l">Job title lorem ipsum</h3>
-
-      <a href="#"><div style="position:relative;float:left;width:20%;height:60px; ;border-radius:5px;border:1px solid #1d70b8;padding:30px;">
-        <img class="govuk-!-margin-left-0 govuk-!-margin-top-0" src="/public/images/ddat1.png" style="position:absolute;bottom:10px;left:10px;width:130px;;padding-left:0px;padding-right:0px;margin-right:5px;">
-
-
-      </div></a>
-
-    </div>
+</div >
 
 
 
@@ -71,13 +68,6 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 </div>
 
-
-<!-- {{ govukButton({
-text: "Continue"
-}) }} -->
-
-</div>
-</div>
 
 
 {% endblock %}

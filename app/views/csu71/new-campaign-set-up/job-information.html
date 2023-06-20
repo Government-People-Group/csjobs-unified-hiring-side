@@ -8,6 +8,12 @@
 Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
 
 {% block content %}
 
@@ -31,7 +37,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
   value: data['business-area']
 }) }}
 
-{{ govukSelect({
+<!-- {{ govukSelect({
   id: "proff",
   name: "proff",
   label: {
@@ -181,10 +187,27 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
     selected: checked("proff","Other")
   }
   ]
-}) }}
+}) }} -->
 
 
-      {{ govukTextarea({
+
+<div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--m" for="team-detail">
+      What does the team do?
+    </label>
+  </h1>
+  <div id="more-detail-hint" class="govuk-hint">
+    Explain how the role would fit in.
+  </div>
+  <textarea onkeyup="handleInput(event)" class="govuk-textarea" id="team-detail" name="team-detail" value="{{ data['team-detail']}}" rows="5" aria-describedby="team-detail-hint"></textarea>
+</div>
+
+
+
+
+
+      <!-- {{ govukTextarea({
       name: "team-detail",
       id: "team-detail",
       label: {
@@ -196,7 +219,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
       text: "Explain how the role would fit in."
       },
         value: data['team-detail']
-      }) }}
+      }) }} -->
 
 <input type="hidden" name="seenFlag" value="{{ data['business-area']}}">
       <button class="govuk-button" data-module="govuk-button">Continue</button>
@@ -210,4 +233,37 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
   </div>
   </div>
+
+  <script>
+
+
+
+    const bullet = "\u2022";
+    const bulletWithSpace = `${bullet} `;
+    const enter = 13;
+
+
+    const handleInput = (event) => {
+      const { keyCode, target } = event;
+      const { selectionStart, value } = target;
+
+      if (keyCode === enter) {
+        console.log('a');
+        target.value = [...value]
+          .map((c, i) => i === selectionStart - 1
+            ? `\n${bulletWithSpace}`
+            : c
+          )
+          .join('');
+          console.log(target.value);
+
+        target.selectionStart = selectionStart+bulletWithSpace.length;
+        target.selectionEnd = selectionStart+bulletWithSpace.length;
+      }
+
+      if (value[0] !== bullet) {
+        target.value = `${bulletWithSpace}${value}`;
+      }
+    }
+  </script>
   {% endblock %}

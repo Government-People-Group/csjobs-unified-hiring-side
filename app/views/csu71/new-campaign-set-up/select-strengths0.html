@@ -1,12 +1,15 @@
 {% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
 {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-{% block header %}
-{% include 'includes/header.html' %}
-  {% endblock %}
+
 
   {% block beforeContent %}
   {{ govukBackLink({
@@ -93,7 +96,7 @@
   </style>
 
 
-  <form class="form" action="/csu71/check-next-stepV5" method="post">
+  <form class="form" action="/v05/check-next-stepV5" method="post">
 
     <H2 class="govuk-heading-l govuk-!-margin-top-3 govuk-!-margin-bottom-3">What will you assess within each element at sift and interview?</h2>
       <p class="govuk-body-l govuk-!-margin-bottom-6 govuk-!-margin-top-3">You have selected which elements are important to assess for this job role. You should now select what you will assess within each element at sift and interview.</p>

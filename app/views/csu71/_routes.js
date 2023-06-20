@@ -4,7 +4,31 @@ const router = express.Router()
 // Add your routes here - above the module.exports line
 
 
+router.post("/check-next-stepV5", function (req, res) {
+	var src = req.session.data['source'];
+	var list = req.session.data['selected'];
+	var num = list.length;
 
+	for (var a=0;a<num;a++){
+		if (src == list[num]) {
+			res.redirect("new-campaign-set-up/select-criteria-stage");
+		} else if (src == list[a]){
+			a=a+1;
+			res.redirect("new-campaign-set-up/select-"+list[a]);
+			break;
+		}
+	}
+})
+
+router.get("/selection-handlerV5", function (req, res) {
+  var list = req.session.data['selected'];
+
+
+  for (var i=0;i<1;i++){
+    res.redirect("/csu71/new-campaign-set-up/select-"+list[i]);
+  }
+
+  })
 
 router.post("/basic-details-handler", function (req, res) {
 	if (req.session.data['edit1'] == "true") {
@@ -37,7 +61,7 @@ router.post("/contract-details-handler", function (req, res) {
 	if (req.session.data['edit4'] == "true") {
 		res.redirect('new-campaign-set-up/summary-section-2')
 	} else {
-		res.redirect('new-campaign-set-up/grades')
+		res.redirect('new-campaign-set-up/salary-and-benefits')
 	}
 })
 

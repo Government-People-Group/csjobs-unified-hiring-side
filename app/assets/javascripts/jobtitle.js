@@ -4,6 +4,7 @@ var jobtitle = [
   "Administrative officer",
   "Application operations engineer",
   "Business analyst",
+  "Senior business analyst",
   "Business relationship manager",
   "Business Support Officer",
   "Change and release manager",

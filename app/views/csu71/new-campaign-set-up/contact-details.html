@@ -8,12 +8,31 @@
 Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+    </div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Contract information</span>
+
+    <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+<span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp"><strong>Save and return to task list</strong></a></span>
+
+    </div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-<span class="govuk-caption-l">Contract information</span>
+<div class="govuk-grid-row  govuk-!-margin-top-6">
+  <div class="govuk-grid-column-three-quarters">
     <h1 class="govuk-heading-l">Who can the candidate contact if they have questions?</h1>
       <form class="form" action="/csu71/contact-details-handler" method="post">
 
@@ -41,49 +60,55 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
         {
           value: "Someone else",
           text: "Someone else",
-          checked: checked("contact", "Someone else")
+          checked: checked("contact", "Someone else"),
+          conditional: {
+            html: contactHTML
+          }
         }
       ]
     }) }}
 
-<div id="conditional">
-    {{ govukInput({
-      label: {
-        text: "What is the contact's name?",
-        classes: "govuk-label--s",
-        isPageHeading: false
-      },
-      classes: "govuk-input--width-20",
-      id: "contact-name",
-      name: "contact-name",
-      value: data['contact-name']
-    }) }}
 
-    {{ govukInput({
-      label: {
-        text: "What is the contact's email address?",
-        classes: "govuk-label--s",
-        isPageHeading: false
-      },
-      classes: "govuk-input--width-20",
-      id: "contact-email",
-      name: "contact-email",
-      value: data['contact-email']
-    }) }}
 
-    {{ govukInput({
-      label: {
-        text: "What is the contact's phone number? (optional)",
-        classes: "govuk-label--s",
-        isPageHeading: false
-      },
-      classes: "govuk-input--width-20",
-      id: "contact-num",
-      name: "contact-num",
-      value: data['contact-num']
-    }) }}
-</div>
+    <div id="conditional">
 
+        {{ govukInput({
+          label: {
+            text: "What is the contact's name?",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-20",
+          id: "contact-name",
+          name: "contact-name",
+          value: data['contact-name']
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is the contact's email address?",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-20",
+          id: "contact-email",
+          name: "contact-email",
+          value: data['contact-email']
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is the contact's phone number? (optional)",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-20",
+          id: "contact-num",
+          name: "contact-num",
+          value: data['contact-num']
+        }) }}
+
+    </div>
 
 
 

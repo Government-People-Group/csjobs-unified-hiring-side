@@ -8,6 +8,10 @@
   Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
 {% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
 {% endblock %}
 {% block content %}
 

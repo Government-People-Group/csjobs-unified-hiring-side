@@ -1,72 +1,74 @@
 {% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
 {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-{% block header %}
 
-{% include '/csu71/includes/header.html' %}
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
 
-
-  {% endblock %}
-
-  {% block beforeContent %}
-
-
-
-
-  <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
-
-
-
-
-      <div class="govuk-!-margin-top-1 " style="position:relative;float:right;width:40%;margin-right:40px;">
-
-
-      </div>
-
-  </div>
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
-  {% endblock %}
+{% endblock %}
 
 {% block content %}
 
 
 
 
-<form class="form" action="/check-next-stepV5" method="post">
+<form class="form" action="/v05/check-next-stepV5" method="post">
+  <H2 class="govuk-heading-l govuk-!-margin-top-3 govuk-!-margin-bottom-3">What will you assess within each element at sift and interview?</h2>
+    <p class="govuk-body-l govuk-!-margin-bottom-6 govuk-!-margin-top-3">You have selected which elements are important to assess for this job role. You should now select what you will assess within each element at sift and interview.</p>
 
-<div style="">
-  <H2 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-3">h2 heading</h2>
-    <p class="govuk-body-l govuk-!-margin-bottom-6 govuk-!-margin-top-3">Descriptive line of content, guidance, context etc.</p>
+    <H1 style="padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-3 govuk-!-margin-bottom-6">Experience</H1>
 
-    <H1 style="padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-3 govuk-!-margin-bottom-6">h1 heading</H1>
-</div>
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-quarter" style="width:25%">
+      <div class="govuk-grid-column-one-quarter" style="width:20%">
 
-
-        {% set list = ['navigation 1','navigation 2','navigation 3','navigation 4','navigation 5','navigation 6','navigation 7'] %}
-
-        {% for items in list %}
+        {% for items in data['selected'] %}
         <ul class="govuk-!-margin-top-6 govuk-list govuk-list--bullet- ">
-          {% if items == "navigation 3" %}
-            <li><span style ="border-bottom:5px solid #1d70b8;; line-height:1.8;background:white;;padding-left:0px" class="govuk-body-m"><a style="color:#1d70b8" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="select-{{items | lower}}"><strong>{{ items | capitalize }}</strong></a></span></li>
+          {% if items == "experience" %}
+          <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="select-{{items | lower}}"><strong>{{ items | capitalize }}</a></p></strong></li>
           {% else %}
-          <li><strong><p style ="border-left:2px solid white;padding-left:5px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="select-{{items | lower}}"><strong>{{ items | capitalize }}</strong></a></p></li>
+          <li><strong><p style ="border-left:2px solid white;padding-left:20px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="select-{{items | lower}}"><strong>{{ items | capitalize }}</a></p></strong></li>
         </ul>
         {% endif %}
         {% endfor %}
 
       </div>
-      <div class="govuk-grid-column-three-quarters" style="width:75%;">
+      <div class="govuk-grid-column-three-quarters" style="width:80%;">
         <div id="Experience" style="padding:10px;">
-          <p class="govuk-body-m govuk-!-margin-top-4 govuk-!-margin-bottom-6"><strong>Introductory message. Etiam habebis sem dicantur magna mollis euismod. Pellentesque habitant morbi tristique senectus et netus.</strong></p>
-          <div style="border-bottom:1px solid #1d70b8;margin-bottom:40px">
+          <p class="govuk-body-m govuk-!-margin-top-4 govuk-!-margin-bottom-2"><strong>You should define what type and level of experience is needed to perform well in this job role. Include as many experiences as you want to assess at sift and interview.</strong></p>
+          <!-- <p class="govuk-body-m govuk-!-margin-bottom-6" style="background: #f3f2f1;padding:5px;">The experiences you write here will appear on your job advert as bullet points for candidates to see. It can help to write your bullet points:</p> -->
+          <div >
+
+            <p class="govuk-body-m govuk-!-margin-top-1 govuk-!-margin-bottom-2"><strong>The experiences you write here will appear on your job advert as bullet points for candidates to see.</strong></p>
+
+            <p class="govuk-body-m">It can help to write your bullet points:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>as a mini headline</li>
+              <li>in short sentences, you should aim to be brief and straight to the point</li>
+              <li>using simple language</li>
+            </ul>
+
+
+
+
+
+
+
+
+
+
+
+
 
             {% if data['Experience 4'].length > 0 %}
             {% set see = "block" %}
@@ -75,15 +77,21 @@
             {% set see = "none" %}
             {% endif %}
 
-            {% set expArray = ['Label 1','Label 2','Label 3'] %}
-            {% set expArray4 = ['Label 4'] %}
-            {% set expArray5 = ['Label 5'] %}
-            {% set expArray6 = ['Label 6'] %}
 
 
 
-            <div class="govuk-!-margin-bottom-2 govuk-!-margin-top-2" style="">
 
+            {% set expArray = ['Experience 1','Experience 2','Experience 3'] %}
+            {% set expArray4 = ['Experience 4'] %}
+            {% set expArray5 = ['Experience 5'] %}
+            {% set expArray6 = ['Experience 6'] %}
+
+
+
+            <div class="govuk-!-margin-bottom-2 govuk-!-margin-top-2" style="background:#F4FAFF;border-left:5px solid #1d70b8;padding:10px">
+
+              <p class="govuk-body-m" style="font-size:20px;line-height:1.6"><strong>77% of users typically look at a job ad for the first time on a mobile phone, and only spend 11 seconds on the page.</strong></p>
+              <p class="govuk-body-s ">Source: Civil Service Jobs (2023), Cabinet Office.</p>
 
               {% for items in expArray | slice(1) %}
               {% for item in items  %}
@@ -100,15 +108,44 @@
               </div>
 
 
+              <!-- {{ govukTextarea({
+                label: {
+                  text: item,
+                  classes: "govuk-label--s"
+                },
+                rows: "2",
+                name: item,
+                value: data[item]
+              }) }} -->
+            </div>
+
+
+
+
+
+
+
+            <!-- <div class="govuk-form-group">
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--s" for="{{item}}">
+                  {{item}}
+                </label>
+              </h1>
+
+              <textarea style="width:69%" class="govuk-textarea" id="{{item}}" value="{{ data['item']}}" name="{{item}}" rows="2" aria-describedby="more-detail-hint"></textarea>
+            </div> -->
+
+
+
 
 
 
 {% endfor %}{% endfor %}
 
-  </div>
+
 <div id="expcta1" style="display:{{ nosee }}" class="govuk-body-m ">
 
-  <p class="govuk-body-m"><a style="color:#1d70b8" onclick="showHideDiv('experience4','expcta1')"><strong>Add another textarea</strong></a></p>
+  <p class="govuk-body-m"><a style="color:#1d70b8" onclick="showHideDiv('experience4','expcta1')"><strong>Add another experience</strong></a></p>
 </div>
 
 
@@ -131,9 +168,9 @@
 
   {% endfor %}{% endfor %}
   <div id="expcta4" style="display:{{ nosee }}" class="govuk-body-m ">
-    <p class="govuk-body-m"><a style="color:#1d70b8;float:right" onclick="deleteDiv('experience4','expcta1')"><strong>Delete this textarea</strong></a></p>
+    <p class="govuk-body-m"><a style="color:#1d70b8;float:right" onclick="deleteDiv('experience4','expcta1')"><strong>Delete this experience</strong></a></p>
 
-    <p class="govuk-body-m"><a style="color:#1d70b8" onclick="showHideDiv('experience5','expcta4')"><strong>Add another textarea</strong></a></p>
+    <p class="govuk-body-m"><a style="color:#1d70b8" onclick="showHideDiv('experience5','expcta4')"><strong>Add another experience</strong></a></p>
   </div>
 </div>
 
@@ -156,9 +193,9 @@
 
   {% endfor %}{% endfor %}
   <div id="expcta5" style="display:{{ nosee }}" class="govuk-body-m ">
-    <p class="govuk-body-m"><a style="color:#1d70b8;float:right" onclick="deleteDiv('experience5','expcta4')"><strong>Delete this textarea</strong></a></p>
+    <p class="govuk-body-m"><a style="color:#1d70b8;float:right" onclick="deleteDiv('experience5','expcta4')"><strong>Delete this experience</strong></a></p>
 
-    <p class="govuk-body-m"><a style="color:#1d70b8" onclick="showHideDiv('experience6','expcta5')"><strong>Add another textarea</strong></a></p>
+    <p class="govuk-body-m"><a style="color:#1d70b8" onclick="showHideDiv('experience6','expcta5')"><strong>Add another experience</strong></a></p>
 
   </div>
 
@@ -183,7 +220,7 @@
   {% endfor %}{% endfor %}
 
   <div id="expcta6" style="display:{{ nosee }}" class="govuk-body-m ">
-    <p class="govuk-body-m"><a style="color:#1d70b8" onclick="deleteDiv('experience6','expcta5')"><strong>Delete this textarea</strong></a></p>
+    <p class="govuk-body-m"><a style="color:#1d70b8" onclick="deleteDiv('experience6','expcta5')"><strong>Delete this experience</strong></a></p>
   </div>
 
 </div>
