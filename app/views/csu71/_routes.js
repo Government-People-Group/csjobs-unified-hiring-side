@@ -34,7 +34,7 @@ router.post("/basic-details-handler", function (req, res) {
 	if (req.session.data['edit1'] == "true") {
 		res.redirect('new-campaign-set-up/summary-section-1')
 	} else {
-		res.redirect('new-campaign-set-up/job-information')
+		res.redirect('new-campaign-set-up/reserved-status-role')
 	}
 })
 

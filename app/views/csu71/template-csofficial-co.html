@@ -17,28 +17,116 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
+<form class="form" action="task-list-exp-co?template={{data['org']}}&banner=show" method="post">
 
 <div class="govuk-grid-row govuk-!-margin-bottom-9">
   <div class="govuk-grid-column-full">
 
-    <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-2">Vacancy <strong>102201</strong></p>
+    <!-- <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-2">Vacancy <strong>102201</strong></p>
 
-    <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-2">Grade <strong>{{ data['grade']}}</strong></p>
+    <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-2">Grade <strong>{{ data['grade']}}</strong></p> -->
+    <h2 class="govuk-heading-l">Civil Service templates</h2>
 
-    <h2 style="border-bottom:1px solid #1d70b8;;padding-bottom:10px;" class="govuk-heading-xl">{{ data['temp-copy-input-autocomplete']}} templates</h2>
-
-
-    <p style="font-size:24px">Content to entice and call-to-action to select the template.</p>
-<a href="task-list-exp-co">select</a>
+<div class="govuk-!-margin-top-9" >
 
 
 
+    {% if data['org'] == "ddat" %}
+        <img src="/public/images/ddat.png" style="height:70px;;;padding:0px">
+
+    {% elif data['org'] == 'co' %}
+    <img src="/public/images/co-logo.png" style="height:70px;;;padding:0px">
+
+    {% elif data['org'] == 'ho' %}
+    <img src="/public/images/ho-logo.png" style="height:70px;;;padding:0px">
+
+    {% endif %}
+  <h1  style="border-bottom:1px solid #1d70b8;padding-bottom:20px" class="govuk-heading-xl govuk-!-margin-top-3">{{ data['temp-copy-input-autocomplete']}}, {{ data['grade']}} </h1>
+</div>
 
 
 
 
+
+<div class="govuk-grid-row govuk-!-margin-top-9">
+<div class="govuk-grid-column-two-thirds">
+
+<div style="height:750px;border-right:1px solid #1d70b8;padding-right:30px;">
+
+
+  <h3 class="govuk-heading-m">Why should I use this template?</h3>
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li style=";" ><strong><p style=";" class="govuk-body-m">Pellentesque habitant morbi tristique senectus et netus. Quisque ut dolor gravida, placerat libero vel, euismod.  </p></li>
+    <li style=";"><strong><p style ="" class="govuk-body-m">Plura mihi bona sunt, inclinet, amari petere vellent. Cras mattis iudicium purus sit amet fermentum.</p></li>
+    <li style=";"><strong><p style ="" class="govuk-body-m">Qui ipsorum lingua Celtae, nostra Galli appellantur.</p></li>
+  </ul>
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">What do I get with the template?</h3>
+
+    <ul class="govuk-list govuk-list--number">
+      <li style=";" ><strong><p style=";" class="govuk-body-m">We recommend the ideal selection criteria to use when lorem ipsum dolor sit amet.</p></li>
+      <li style=";"><strong><p style ="" class="govuk-body-m">We recommend a proven way of assessing candidates.</p></li>
+      <li style=";"><strong><p style ="" class="govuk-body-m">We provide all the assets you need to get your vacancy up and running, including a pack of interview questions lorem.</p></li>
+      <li style=";"><strong><p style ="" class="govuk-body-m">You'll have access to our 24 hour helpline, where our specialist advisors can levitate and do magic tricks.</p></li>
+
+
+    </ul>
+
+
+<h3 class="govuk-heading-m govuk-!-margin-top-9">What's the difference between a template and a copy of a previous job ad?</h3>
+<p style=";" class="govuk-body-m">Pellentesque habitant morbi tristique senectus et netus. Quisque ut dolor gravida, placerat libero vel, euismod.  </p>
+
+
+
+</div>
+</div>
+
+<div class="govuk-grid-column-one-third">
+  <div style="height:750px;;padding:10px;">
+    {% if data['org'] == "ddat" %}
+        <p class="govuk-!-margin-top-0" style="background:#1d70b8;border:1px solid #1d70b8;;color:white;font-size:24px;padding:10px">What does #311 mean?</p>
+
+    {% elif data['org'] == 'co' %}
+    <p class="govuk-!-margin-top-0" style="background:#1d70b8;border:1px solid #1d70b8;;color:white;font-size:24px;padding:10px">What does #112 mean?</p>
+
+    {% elif data['org'] == 'ho' %}
+    <p class="govuk-!-margin-top-0" style="background:#1d70b8;border:1px solid #1d70b8;;color:white;font-size:24px;padding:10px">What does #56 mean?</p>
+
+    {% endif %}
+    <!-- <h3 class="govuk-heading-m">Track record</h3> -->
+    <p style=";" class="govuk-body-m">Pellentesque habitant morbi tristique senectus et netus. Quisque ut dolor gravida, placerat libero vel, euismod.  </p>
+
+
+    <p class="govuk-!-margin-top-9" style="background:#1d70b8;border:1px solid #1d70b8;;color:white;font-size:24px;padding:10px">Can I edit the template?</p>
+    <p style=";" class="govuk-body-m">Yes of course. However, here's some evidence to consider:</p>
+
+    <img class="govuk-!-margin-top-3 govuk-!-margin-left-3" src="/public/images/stats.png" style="height:290px;;;">
+
+
+
+
+    <!-- <ul class="govuk-list govuk-list--bullet">
+      <li style=";" ><strong><p style=";" class="govuk-body-m">Pellentesque habitant morbi tristique senectus et netus.</p></li>
+      <li style=";"><strong><p style ="" class="govuk-body-m">Plura mihi bona sunt, inclinet, amari petere vellent.</p></li>
+      <li style=";"><strong><p style ="" class="govuk-body-m">Qui ipsorum lingua Celtae, nostra Galli appellantur.</p></li>
+    </ul> -->
+
+</div>
+</div>
   </div>
 
+  <p style="font-weight:bold;font-size:24px;" class="govuk-body-m govuk-!-margin-top-9">If you try out the template and you aren't 100% satisfied, you pick a different template, copy a previous advert or start from scratch. It's up to you!</p>
+
+
+  <button  class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Use this template</button>
+  {{ govukButton({
+    text: "Preview job advert",
+    classes: "govuk-button--secondary govuk-!-margin-top-6",
+    href: "/csu71/new-campaign-set-up/preview-advert"
+  }) }}
+
+</form>
 
 </div>
 

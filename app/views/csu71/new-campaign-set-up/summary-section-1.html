@@ -56,27 +56,25 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
       </dl>
 
-      <h2 class="govuk-heading-m">Job information</h2>
+      <h2 class="govuk-heading-m">Reserved status and Approval</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Business area</dt>
-          <dd class="govuk-summary-list__value">{{ data['business-area']}}</dd>
-          <dd class="govuk-summary-list__actions"><a href="job-information">Change<span class="govuk-visually-hidden"> Business area</span></a></dd>
+          <dt class="govuk-summary-list__key">Reserved status</dt>
+          <dd class="govuk-summary-list__value">{{ data['reserved-status']}}</dd>
+          <dd class="govuk-summary-list__actions"><a href="reserved-status-role?edit1=true">Change<span class="govuk-visually-hidden"> Business area</span></a></dd>
         </div>
+
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Profession</dt>
-          <dd class="govuk-summary-list__value">{{ data['prof']}}</dd>
-          <dd class="govuk-summary-list__actions"><a href="job-information">Change<span class="govuk-visually-hidden"> profession</span></a></dd>
+          <dt class="govuk-summary-list__key">Approval</dt>
+          <dd class="govuk-summary-list__value">{{ data['approval-status']}} <br>  {{ data['file-upload-1']}}</dd>
+          <dd class="govuk-summary-list__actions"><a href="Approval">Change<span class="govuk-visually-hidden"> Business area</span></a></dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">About the team</dt>
-          <dd class="govuk-summary-list__value">{{ data['team-detail']| escape | nl2br }}</dd>
-          <dd class="govuk-summary-list__actions"><a href="job-information">Change<span class="govuk-visually-hidden"> about the team</span></a></dd>
-        </div>
+
       </dl>
 
 
-      {{ data['team-detail'] | escape | nl2br }}
+
+      <!-- {{ data['team-detail'] | escape | nl2br }} -->
 
 
 

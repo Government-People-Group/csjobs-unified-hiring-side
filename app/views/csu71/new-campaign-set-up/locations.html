@@ -2,7 +2,7 @@
 
 {% block header %}
 {% include '/csu71/includes/header.html' %}
-  {% endblock %}
+{% endblock %}
 
 {% block pageTitle %}
 Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
@@ -12,15 +12,15 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
 
   <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
-    </div> -->
+</div> -->
 <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Contract information</span>
 
-    <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-      <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp"><strong>Return to task list</strong></a></span>
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-co"><strong>Return to task list</strong></a></span>
 
-    </div>
+</div>
 
 </div>
 {{ govukBackLink({
@@ -33,13 +33,30 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
+{% if data['ussk'] === "Yes" %}
+{% set see = "block" %}
+{% set nosee = "none" %}
+{% else %}
+{% set see = "none" %}
+{% endif %}
 
+{% if data['uk'] === "Onsite at a government-managed location" %}
+<!-- {% set see = "block" %} -->
+{% set nosee = "block" %}
+{% else %}
+<!-- {% set see = "none" %} -->
+{% set nosee = "none" %}
+{% endif %}
+
+
+{{ data['ussk']}}
+{{ data['uk']}}
 
 
 <div class="govuk-grid-row govuk-!-margin-top-3">
   <div class="govuk-grid-column-three-quarters">
     <h1 class="govuk-heading-xl">Location information</h1>
-    <form class="form" action="/csu71/locations-handler" method="post">
+    <form class="form" action="/csu71/new-campaign-set-up/contract-details" method="post">
 
 
       {{ govukRadios({
@@ -72,93 +89,59 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
-      <!-- {% set howLocHTML %} -->
 
-
-
-            <!-- {% endset %} -->
-
-
-      <!-- {% set numberHTML %}
-      {{ govukInput({
-        label: {
-          text: "How many locations?",
-          isPageHeading: false,
-          classes: "govuk-label--m"
-        },
-        classes: "govuk-input--width-3",
-        id: "number-loc",
-        name: "number-loc",
-        value: data['number-loc']
-      }) }}
-      {% endset %} -->
-
-<!-- <div id="conditional">
-
-  {{ govukInput({
-    label: {
-      text: "How many locations?",
-      isPageHeading: false,
-      classes: "govuk-label--m"
-    },
-    classes: "govuk-input--width-3",
-    id: "number-loc",
-    name: "number-loc",
-    value: data['number-loc']
-  }) }}
-
-
-</div> -->
-
-
-<div id="mroe" style="display:none">
-      {{ govukRadios({
-        id: "uk",
-        name: "uk",
-        fieldset: {
-          legend: {
-            text: "How will the role be located?",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--s"
+      <div id="mroe" style="display: none">
+        {{ govukRadios({
+          id: "uk",
+          name: "uk",
+          fieldset: {
+            legend: {
+              text: "Where will the role be located?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+          {
+            id: "rem",
+            value: "Remote",
+            text: "Remote",
+            checked: checked("uk","Remote")
+          },
+          {
+            id: "off",
+            value: "Onsite",
+            text: "Onsite at a government-managed location",
+            checked: checked("uk","Onsite")
+          },
+          {
+            id: "hyb",
+            value: "Hybrid",
+            text: "A hybrid of both remote and onsite",
+            checked: checked("uk","Hybrid")
           }
-        },
-        items: [
-        {
-          id: "off",
-          value: "Office-based",
-          text: "Office-based",
-          checked: checked("uk","Office-based")
-        },
-        {
-          id: "hyb",
-          value: "Hybrid",
-          text: "Hybrid",
-          checked: checked("uk","Hybrid")
-        },
-        {
-          id: "rem",
-          value: "Remote",
-          text: "Remote",
-          checked: checked("uk","Remote")
-        }
-        ]
-      }) }}
-</div>
 
 
-<div class=" govuk-!-margin-top-9" id="loc" style="display:none">
-<h1 class="govuk-heading-l">Location search</h1>
-<p class="govuk-body">Quam temere in vitiis, legem sancimus haerentia. Curabitur blandit tempus ardua ridiculus sed magna. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.</p>
-<a style=";position:absolute;left:670px" class="govuk-button govuk-button--secondary govuk-!-margin-top-6"  href="#">Add to list</a>
+          ]
+        }) }}
+      </div>
 
-<div id="fir" style="width:500px" class="govuk-form-group govuk-input--width-30">
-      <label for="autocomplete-default" class="govuk-label--s">Search for a town, city or region</label>
-      <div id="locations" class="autocomplete-wrapper"></div>
 
-    </div>
+      <div class=" govuk-!-margin-top-9" id="loc" style="display: none">
+        <h1 class="govuk-heading-l">Location search</h1>
+        <p class="govuk-body">Quam temere in vitiis, legem sancimus haerentia. Curabitur blandit tempus ardua ridiculus sed magna. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.</p>
+        <a style="float:right;margin-right:100px" class="govuk-button govuk-button--secondary govuk-!-margin-top-5"  href="#">Add to list</a>
 
-</div>
-<ol class="govuk-list govuk-list--number" id="list"></ol>
+        <div id="fir" style="width:500px" class="govuk-form-group govuk-input--width-30">
+          <label for="autocomplete-default" class="govuk-label--s">Search for a town, city or region</label>
+          <div id="locations" class="autocomplete-wrapper"></div>
+
+        </div>
+
+      </div>
+      <ol class="govuk-list govuk-list--number" id="list"></ol>
+
+      <p id="reload"></p>
 
 
       <button class="govuk-button govuk-!-margin-top-9" data-module="govuk-button">Continue</button>
@@ -170,16 +153,46 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
         href: "preview-advert"
       }) }}
     </form>
+
   </div>
 </div>
+</body>
 <script src="/public/javascripts/temp-copyloc.js"></script>
 <script src="/public/javascripts/locations.js"></script>
 
 <script>
 
 
+
+
+
+
+
   const ukbased = document.getElementById('ukbased');
-const ukbasedno = document.getElementById('ukbasedno');
+  const ukbasedno = document.getElementById('ukbasedno');
+
+  const off = document.getElementById('off');
+  const hyb = document.getElementById('hyb');
+  const rem = document.getElementById('rem');
+
+  if (ukbased.checked && ukbased.value == "Yes") {
+    showDiv("mroe");
+  }
+
+
+  if (off.checked && off.value == "Onsite") {
+    showDiv("loc");
+  }
+
+  if (hyb.checked && hyb.value != "") {
+    showDiv("loc");
+  }
+
+  if (rem.checked && rem.value != "") {
+    hideDiv("loc");
+  }
+
+
   var divv = document.getElementById('mroe').style.display;
   ukbased.addEventListener('change', (event) => {
     if (ukbased.checked && ukbased.value == "Yes") {
@@ -196,32 +209,30 @@ const ukbasedno = document.getElementById('ukbasedno');
   });
 
 
-  const off = document.getElementById('off');
-  const hyb = document.getElementById('hyb');
-  const rem = document.getElementById('rem');
+
 
   var divv = document.getElementById('loc').style.display;
   off.addEventListener('change', (event) => {
 
-  if (off.checked) {
-    showDiv("loc");
-  }
+    if (off.checked) {
+      showDiv("loc");
+    }
 
   });
 
   hyb.addEventListener('change', (event) => {
 
-  if (hyb.checked) {
-    showDiv("loc");
-  }
+    if (hyb.checked) {
+      showDiv("loc");
+    }
 
   });
 
   rem.addEventListener('change', (event) => {
 
-  if (rem.checked) {
-    hideDiv("loc");
-  }
+    if (rem.checked) {
+      hideDiv("loc");
+    }
 
   });
 
@@ -230,30 +241,31 @@ const ukbasedno = document.getElementById('ukbasedno');
 
   }
 
-function showDiv(div1) {
-  document.getElementById(div1).style.display = 'block';
+  function showDiv(div1) {
+    document.getElementById(div1).style.display = 'block';
 
-}
-
-
+  }
 
 
-          const locArray = [];
-
-          const entry = document.getElementById("autocomplete-default");
-          var item = document.getElementById('list');
-          entry.addEventListener('change', (event) => {
-
-            var location = event.target.value;
-            var content = document.createElement("li");
-            content.innerHTML = "<span style='font-weight:regular;font-size:18px;line-height:1.5;'>"+location+"</span>"+""+"<a id='del"+item+"' onclick='' href='#'> delete</a>";
-              item.appendChild(content);
-
-              locArray.push(location)
-
-console.log(locArray)
-            });
 
 
+  const locArray = [];
+
+  const entry = document.getElementById("autocomplete-default");
+  var item = document.getElementById('list');
+  entry.addEventListener('change', (event) => {
+
+    var location = event.target.value;
+    var content = document.createElement("li");
+    content.innerHTML = "<span style='font-weight:regular;font-size:18px;line-height:1.5;'>"+location+"</span>"+""+"<a id='del"+item+"' onclick='' href='#'> delete</a>";
+    item.appendChild(content);
+
+    locArray.push(location)
+
+    console.log(locArray)
+    window.sessionStorage.setItem("locations", JSON.stringify(locArray));
+  });
+
+  console.log(locArray)
 </script>
 {% endblock %}

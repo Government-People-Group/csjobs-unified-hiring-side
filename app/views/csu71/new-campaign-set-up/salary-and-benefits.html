@@ -19,7 +19,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-<span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp"><strong>Return to task list</strong></a></span>
+<span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-co"><strong>Return to task list</strong></a></span>
 
     </div>
 
@@ -32,7 +32,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block content %}
 
-<div class="govuk-grid-row govuk-!-margin-top-9">
+<div class="govuk-grid-row govuk-!-margin-top-6">
   <div class="govuk-grid-column-three-quarters">
 
     <h1 class="govuk-heading-xl">Salary and benefits</h1>
@@ -52,6 +52,35 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
         spellcheck: false,
         value: data['cost']
       }) }}
+
+
+      {{ govukInput({
+        id: "costmax",
+        name: "costmax",
+        label: {
+          text: "Is there a maximum salary?",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        prefix: {
+          text: "£"
+        },
+        classes: "govuk-input--width-5",
+        spellcheck: false,
+        value: data['costmax']
+      }) }}
+
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Why should I provide a maximum salary?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          If you have both a minimum and maximum salary approved for the role, it's a good idea to show both because some (good) candidates might sift themselves out if there's only a minimum salary provided.
+        </div>
+      </details>
 
 
       {% set otherHTML %}

@@ -18,7 +18,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-<span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp"><strong>Return to task list</strong></a></span>
+<span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-co"><strong>Return to task list</strong></a></span>
 
     </div>
 
@@ -34,57 +34,63 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
     <h1 class="govuk-heading-xl">About the team</h1>
-          <form class="form" action="/csu71/about-the-role-handler" method="post">
-<p>This information will be shown on the advert.</p>
+
+  <p class="govuk-body-m">This information will be visible on the advert for candidates to see.</p>
 
 
 
-<div class="govuk-character-count" data-module="govuk-character-count" data-maxwords="150">
   <div class="govuk-form-group">
     <h1 class="govuk-label-wrapper">
-      <label class="govuk-label govuk-label--l" for="team-detail">
-        Enter a job description
+      <label class="govuk-label govuk-label--m" for="team-detail">
+        What does the team do?
       </label>
     </h1>
-    <textarea class="govuk-textarea govuk-js-character-count" onkeyup="handleInput(event)"  id="team-detail" name="team-detail" value="{{ data['team-detail']}}" rows="5" aria-describedby="word-count-info"></textarea>
+    <div id="more-detail-hint" class="govuk-hint">
+      Explain how the role would fit in.
+    </div>
+    <textarea onkeyup="handleInput(event)" class="govuk-textarea" id="team-detail" name="team-detail" value="{{ data['team-detail']}}" rows="5" aria-describedby="team-detail-hint"></textarea>
   </div>
-  <div id="word-count-info" class="govuk-hint govuk-character-count__message">
-    You can enter up to 150 words
+
+
+
+      <h2 class="govuk-heading-l govuk-!-margin-top-9">Add any supporting links to your advert</h2>
+
+      <p class="govuk-body-m">For example, you may want to share the link to a campaign portal or social media profile page, such as https://twitter.com/cabinetofficejobs</p>
+
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--s" for="sinfo1">
+            Supporting information 1
+          </label>
+        </h1>
+        <input class="govuk-input" id="sinfo1" name="sinfo1" type="text">
+      </div>
+
+
+
+      <div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--s" for="sinfo2">
+        Supporting information 2
+      </label>
+    </h1>
+    <input class="govuk-input" id="sinfo2" name="sinfo2" type="text">
   </div>
-</div>
 
 
-<div class="govuk-form-group">
-  <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--m" for="team-detail">
-      What does the team do?
-    </label>
-  </h1>
-  <div id="more-detail-hint" class="govuk-hint">
-    Explain how the role would fit in.
+
+
+  <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Continue</button>
+
+
+
   </div>
-  <textarea onkeyup="handleInput(event)" class="govuk-textarea" id="team-detail" name="team-detail" value="{{ data['team-detail']}}" rows="5" aria-describedby="team-detail-hint"></textarea>
-</div>
-
-
-{
-
-<button class="govuk-button" data-module="govuk-button">Continue</button>
-
-{{ govukButton({
-  text: "Preview advert",
-  classes: "govuk-button--secondary",
-  href: "preview-advert"
-}) }}
-
-</form>
-</div>
-</div>
+  </div>
 <script>
 
 
-
-  const bullet = "\u2022";
+  const bullet = "\u29BF";
   const bulletWithSpace = `${bullet} `;
   const enter = 13;
 
