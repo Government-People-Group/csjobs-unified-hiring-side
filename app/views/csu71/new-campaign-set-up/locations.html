@@ -49,14 +49,34 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 {% endif %}
 
 
-{{ data['ussk']}}
-{{ data['uk']}}
 
 
 <div class="govuk-grid-row govuk-!-margin-top-3">
   <div class="govuk-grid-column-three-quarters">
     <h1 class="govuk-heading-xl">Location information</h1>
     <form class="form" action="/csu71/new-campaign-set-up/contract-details" method="post">
+
+
+      {% macro taskListItem(title="'title'", link='#', completed='', cantStart='' ) %}
+      <li class="app-task-list__item"><span class="app-task-list__task-name">
+      {% if not (cantStart or completed)  %}
+      <a href="{{link}}" aria-describedby="eligibility-completed"> {% endif %}      {{title}}
+      {% if not (cantStart or completed)  %}
+      </a>{% endif %}  </span>{% if completed %}<strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+      {% else %}
+      {% endif %}
+      </li>
+      {% endmacro %}
+
+      <ol class="app-task-list"><li>
+<h2 class="app-task-list__section">Check and approve</h2>
+<ul class="app-task-list__items" style="padding-left: 0">
+{{taskListItem(title="Find applicant on Searchlight", link="1-check/1", completed=(data['searchlight'] == "yes" or data['ni-number'] ), cantStart="")}}
+{{taskListItem(title="Add National Insurance number", link="1-check/1-ni-number", completed=(data['ni-number'] ), cantStart=(not (data['searchlight'] == "yes") ))}}
+{{taskListItem(title="Check for appointee", link="1-check/2", completed=(data['appointee'] ), cantStart=(not data['ni-number'] ) )}}
+{{taskListItem(title="Check application", link="1-check/3", completed=((data['interview'] == 'yes' and data['company'] == 'yes' and data['personal'] == 'yes' ) ), cantStart=(not data['appointee'] ) )}}
+</ul></li></ol>
+
 
 
       {{ govukRadios({
@@ -127,7 +147,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
       </div>
 
 
-      <div class=" govuk-!-margin-top-9" id="loc" style="display: none">
+      <div class=" govuk-!-margin-top-9" id="loc" style="display: none;">
         <h1 class="govuk-heading-l">Location search</h1>
         <p class="govuk-body">Quam temere in vitiis, legem sancimus haerentia. Curabitur blandit tempus ardua ridiculus sed magna. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.</p>
         <a style="float:right;margin-right:100px" class="govuk-button govuk-button--secondary govuk-!-margin-top-5"  href="#">Add to list</a>
@@ -138,10 +158,16 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
         </div>
 
-      </div>
-      <ol class="govuk-list govuk-list--number" id="list"></ol>
+        <div>
+        <ol class="govuk-list govuk-list--number" id="list"></ol>
 
-      <p id="reload"></p>
+        <p id="reload"></p>
+
+        </div>
+
+      </div>
+
+
 
 
       <button class="govuk-button govuk-!-margin-top-9" data-module="govuk-button">Continue</button>
@@ -249,8 +275,9 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
-  const locArray = [];
-
+  var locArray = [];
+  locArray = JSON.parse(window.sessionStorage.getItem("locations"));
+  console.log(locArray)
   const entry = document.getElementById("autocomplete-default");
   var item = document.getElementById('list');
   entry.addEventListener('change', (event) => {
