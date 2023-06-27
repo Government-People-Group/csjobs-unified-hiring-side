@@ -30,41 +30,99 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
-<form class="form" action="/csu71/new-campaign-set-up/supporting-links" method="post">
+<form class="form" action="/csu71/task-list-exp-co" method="post">
 
 <div class="govuk-grid-row   govuk-!-margin-top-3">
   <div class="govuk-grid-column-three-quarters">
-    <h1 class="govuk-heading-xl">About the team</h1>
+    <h1 class="govuk-heading-xl">Add any supporting links</h1>
 
   <p class="govuk-body-m">This information will be visible on the advert for candidates to see.</p>
 
 
 
-  <div class="govuk-form-group">
+      <p class="govuk-body-m">For example, you may want to share the link to a campaign portal or social media profile page, such as https://twitter.com/cabinetofficejobs</p>
+
+
+      <div class="govuk-form-group">
+        <h2 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--s" for="sinfo1">
+            Supporting link 1
+          </label>
+        </h2>
+        <input class="govuk-input" id="sinfo1" name="sinfo1" type="text">
+      </div>
+
+
+
+      <div class="govuk-form-group">
     <h2 class="govuk-label-wrapper">
-      <label class="govuk-label govuk-label--m" for="team-detail">
-        What does the team do?
+      <label class="govuk-label govuk-label--s" for="sinfo2">
+        Supporting link 2
       </label>
     </h2>
-    <div id="more-detail-hint" class="govuk-hint">
-      Explain how the role would fit in.
-    </div>
-    <textarea onkeyup="handleInput(event)" class="govuk-textarea" id="team-detail" name="team-detail" value="{{ data['team-detail']}}" rows="5" aria-describedby="team-detail-hint"></textarea>
+    <input class="govuk-input" id="sinfo2" name="sinfo2" type="text">
+    <p id="cta3" class="govuk-body-m govuk-!-margin-top-6"><a style="color:#1d70b8" onclick="doit('link3','cta3')"><strong>Add another link</strong></a></p>
+
   </div>
 
 
+  <div id="link3" style="display:none" class="govuk-form-group">
+  <h2 class="govuk-label-wrapper">
+  <label class="govuk-label govuk-label--s" for="sinfo3">
+    Supporting link 3
+  </label>
+  </h2>
+  <input class="govuk-input" id="sinfo3" name="sinfo3" type="text">
+  <p id="cta4" class="govuk-body-m govuk-!-margin-top-6"><a style="color:#1d70b8" onclick="doit('link4','cta4')"><strong>Add another link</strong></a></p>
 
+  </div>
 
+  <div id="link4" style="display:none" class="govuk-form-group">
+  <h2 class="govuk-label-wrapper">
+  <label class="govuk-label govuk-label--s" for="sinfo4">
+    Supporting link 4
+  </label>
+  </h2>
+  <input class="govuk-input" id="sinfo4" name="sinfo4" type="text">
+
+  </div>
+
+  <div id="link5" style="display:none" class="govuk-form-group">
+  <h2 class="govuk-label-wrapper">
+  <label class="govuk-label govuk-label--s" for="sinfo5">
+    Supporting link 5
+  </label>
+  </h2>
+  <input class="govuk-input" id="sinfo5" name="sinfo5" type="text">
+
+  </div>
 
 
 
   <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Continue</button>
 
 
-
+</form>
   </div>
   </div>
 <script>
+
+function doit(item1,item2){
+
+showDiv(item1)
+hideDiv(item2)
+
+}
+
+  function hideDiv(div1) {
+    document.getElementById(div1).style.display = 'none';
+
+  }
+
+  function showDiv(div1) {
+    document.getElementById(div1).style.display = 'block';
+
+  }
 
 
   const bullet = "\u29BF";

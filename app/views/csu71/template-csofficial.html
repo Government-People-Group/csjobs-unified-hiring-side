@@ -18,89 +18,53 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 {% block content %}
 
-<div class="govuk-grid-row govuk-!-margin-bottom-9">
+
+<div class="govuk-grid-row govuk-!-margin-bottom-3">
   <div class="govuk-grid-column-full">
 
     <!-- <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-2">Vacancy <strong>102201</strong></p>
 
     <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-2">Grade <strong>{{ data['grade']}}</strong></p> -->
-
-    <h2 style="border-bottom:1px solid #1d70b8;;padding-bottom:10px;" class="govuk-heading-xl">Civil Service templates</h2>
-
-
+    <h2 class="govuk-heading-l">Civil Service templates</h2>
     <p class="govuk-!-margin-bottom-9" style="font-size:24px">Click to view the lorem ipsum dolor amet sit.</p>
 
+<div class="govuk-!-margin-top-9" >
 
-<div  style="position:relative;">
 
 
+  <h1  style="border-bottom:1px solid #1d70b8;padding-bottom:20px" class="govuk-heading-xl govuk-!-margin-top-3">Lorem ipsum </h1>
+
+</div>
+
+
+
+
+
+<div  style="display:none;position:relative;">
   <a href="template-csofficial-co?org=ddat">
     <div style="position:relative;border:1px solid black ;border-radius:8px;float:left;background:white;height:320px;width:30%;;margin-right:30px">
  <p style="position:absolute;left:0px;bottom:30px;padding:20px;;">{{ data['grade']}}</p>
  <h2 class="govuk-heading-l" style="position:absolute;left:0px;top:100px;;;padding:20px;color:black;font-size:27px;line-height:1.1;border-top-left-radius:10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}}</h2>
-
-      <!-- <p style="position:absolute;left:20px;bottom:0px;font-weight:bold;;font-size:18px;color:white">★★★★★ (223)</p> -->
       <img src="/public/images/ddat3.png" style=";position:absolute;left:20px;top:20px;width:220px">
       <p style=";position:absolute;right:20px;bottom:0px;font-weight:bold;;font-size:24px;color:black">#311</p>
-
     </div>
   </a>
-
-
   <a href="template-csofficial-co?org=co">
     <div style="position:relative;border:1px solid black ;border-radius:8px;float:left;background:white;height:320px;width:30%;;margin-right:30px">
       <p style="position:absolute;left:0px;bottom:30px;padding:20px;;">{{ data['grade']}}</p>
   <h2 class="govuk-heading-l" style="position:absolute;left:0px;top:100px;;;padding:20px;color:black;font-size:27px;line-height:1.1;border-top-left-radius:10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}}</h2>
-
-      <!-- <p style="position:absolute;left:20px;bottom:0px;font-weight:bold;;font-size:18px;color:white">★★★★★ (223)</p> -->
       <img src="/public/images/co-logo.png" style=";position:absolute;left:20px;top:20px;width:140px">
       <p style=";position:absolute;right:20px;bottom:0px;font-weight:bold;;font-size:24px;color:black">#122</p>
-
     </div>
   </a>
-
-
   <a href="template-csofficial-co?org=ho">
     <div style="position:relative;border:1px solid black ;border-radius:8px;float:left;background:white;height:320px;width:30%;;margin-right:30px">
       <p style="position:absolute;left:0px;bottom:30px;padding:20px;;">{{ data['grade']}}</p>
   <h2 class="govuk-heading-l" style="position:absolute;left:0px;top:100px;;;padding:20px;color:black;font-size:27px;line-height:1.1;border-top-left-radius:10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}}</h2>
-
-      <!-- <p style="position:absolute;left:20px;bottom:0px;font-weight:bold;;font-size:18px;color:white">★★★★★ (223)</p> -->
       <img src="/public/images/ho-logo.png" style=";position:absolute;left:20px;top:20px;width:135px">
       <p style=";position:absolute;right:20px;bottom:0px;font-weight:bold;;font-size:24px;color:black">#56</p>
-
     </div>
   </a>
-
-
-
-
-
-
-
-
-
-
-<!-- <a href="#">
-  <div style="position:relative;border:2px solid #1d70b8 ;border-radius:8px;float:left;background:#1d70b8;height:320px;width:30%;margin-left:0px;margin-left:20px;margin-right:20px">
-    <img src="/public/images/cab.png" style="position:absolute;left:20px;top:20px;width:160px">
-    <h2 class="govuk-heading-l" style="position:absolute;left:0px;bottom:10px;;;padding:20px;color:white;font-size:26px;line-height:1.1;border-top-left-radius: 10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}} <br> {{ data['grade']}}</h2>
-    <p style="position:absolute;left:20px;bottom:0px;font-weight:bold;;font-size:18px;color:white">★23</p>
-
-  </div>
-</a>
-
-<a href="#">
-  <div style="position:relative;border:2px solid #7F3F98 ;border-radius:8px;float:left;background:#7F3F98;height:320px;width:30%;margin-left:20px;margin-right:0px">
-    <img src="/public/images/ho.png" style="position:absolute;left:20px;top:20px;width:130px">
-    <h2 class="govuk-heading-l" style="position:absolute;left:0px;bottom:10px;;;padding:20px;color:white;font-size:26px;line-height:1.1;border-top-left-radius: 10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}} <br> {{ data['grade']}}</h2>
-    <p style="position:absolute;left:20px;bottom:0px;font-weight:bold;font-size:24px;color:white">★★★☆☆ (143)</p>
-
-  </div>
-</a> -->
-
-
-
 </div >
 
 
@@ -112,6 +76,324 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 </div>
 
+<div class="govuk-grid-row govuk-!-margin-top-1">
 
+  <div class="govuk-grid-column-one-third">
+    <div style="background:#F4FAFF;;height:750px;;padding:10px;border-right:1px solid #1d70b8;padding:20px;">
+
+
+      <h2 style="padding-bottom:0px" class="govuk-heading-m govuk-!-margin-top-0">Lorem ipsum</h2>
+
+
+      {{ govukSelect({
+        id: "proff",
+        name: "proff",
+        label: {
+          text: "Profession",
+          classes: "govuk-label--s"
+        },
+        items: [
+        {
+          value: "none",
+          selected: "true",
+          disabled: "true",
+          text: "Select profession"
+        },
+        {
+          value: "Analysis",
+          text: "Analysis",
+          selected: checked("proff","Analysis")
+        },
+        {
+          value: "Commercial and Procurement",
+          text: "Commercial and Procurement",
+          selected: checked("proff","Commercial and Procurement")
+        },
+        {
+          value: "Corporate Finance",
+          text: "Corporate Finance",
+          selected: checked("proff","Corporate Finance")
+        },
+        {
+          value: "Communications",
+          text: "Communications",
+          selected: checked("proff","Communications")
+        },
+        {
+          value: "Counter Fraud",
+          text: "Counter Fraud",
+          selected: checked("proff","Counter Fraud")
+        },
+        {
+          value: "Digital, Data and Technology",
+          text: "Digital, Data and Technology",
+          selected: checked("proff","Digital, Data and Technology")
+        },
+        {
+          value: "Government Economic Service",
+          text: "Government Economic Service",
+          selected: checked("proff","Government Economic Service")
+        },
+        {
+          value: "Government Social Research",
+          text: "Government Social Research",
+          selected: checked("proff","Government Social Research")
+        },
+        {
+          value: "Finance",
+          text: "Finance",
+          selected: checked("proff","Finance")
+        },
+        {
+          value: "Human Resources",
+          text: "Human Resources",
+          selected: checked("proff","Human Resources")
+        },
+        {
+          value: "Intelligence Analysis",
+          text: "Intelligence Analysis",
+          selected: checked("proff","Intelligence Analysis")
+        },
+        {
+          value: "Internal Audit",
+          text: "Internal Audit",
+          selected: checked("proff","Internal Audit")
+        },
+        {
+          value: "International Trade and Negotiation",
+          text: "International Trade and Negotiation",
+          selected: checked("proff","International Trade and Negotiation")
+        },
+        {
+          value: "Knowledge &amp; Information Management",
+          text: "Knowledge &amp; Information Management",
+          selected: checked("proff","Knowledge &amp; Information Management")
+        },
+        {
+          value: "Legal",
+          text: "Legal",
+          selected: checked("proff","Legal")
+        },
+        {
+          value: "Medical",
+          text: "Medical",
+          selected: checked("proff","Medical")
+        },
+        {
+          value: "Occupational Psychology",
+          text: "Occupational Psychology",
+          selected: checked("proff","Occupational Psychology")
+        },
+        {
+          value: "Operational Delivery",
+          text: "Operational Delivery",
+          selected: checked("proff","Operational Delivery")
+        },
+        {
+          value: "Operational Research",
+          text: "Operational Research",
+          selected: checked("proff","Operational Research")
+        },
+        {
+          value: "Policy",
+          text: "Policy",
+          selected: checked("proff","Policy")
+        },
+        {
+          value: "Project Management and Delivery",
+          text: "Project Management and Delivery",
+          selected: checked("proff","Project Management and Delivery")
+        },
+        {
+          value: "Property",
+          text: "Property",
+          selected: checked("proff","Property")
+        },
+        {
+          value: "Science and Engineering",
+          text: "Science and Engineering",
+          selected: checked("proff","Science and Engineering")
+        },
+        {
+          value: "Security",
+          text: "Security",
+          selected: checked("proff","Security")
+        },
+        {
+          value: "Tax",
+          text: "Tax",
+          selected: checked("proff","Tax")
+        },
+        {
+          value: "Veterinary",
+          text: "Veterinary",
+          selected: checked("proff","Veterinary")
+        },
+        {
+          value: "Other",
+          text: "Other",
+          selected: checked("proff","Other")
+        }
+        ]
+      }) }}
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      <h2 style="padding-bottom:0px" class="govuk-heading-m govuk-!-margin-top-0">Lorem ipsum</h2>
+
+      {{ govukCheckboxes({
+        name: "organisation",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+        {
+          id: "first",
+          value: "dept",
+          text: "Home department"
+        },
+        {
+          id: "second",
+          value: "prof",
+          text: "Professions"
+        },
+        {
+          id: "third",
+          value: "ogds",
+          text: "Criteria 3#"
+        },
+        {
+          id: "force",
+          value: "ogds",
+          text: "Criteria 3#"
+        },
+        {
+          id: "fist",
+          value: "ogds",
+          text: "Criteria 3#"
+        },
+        {
+          id: "sixth",
+          value: "ogds",
+          text: "Criteria 3#"
+        }
+
+        ]
+      }) }}
+
+
+
+      <h2 style="padding-bottom:0px" class="govuk-heading-m govuk-!-margin-top-0">Lorem ipsum</h2>
+    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+    {{ govukCheckboxes({
+      name: "organisation",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+      {
+        id: "first",
+        value: "dept",
+        text: "Home department"
+      },
+      {
+        id: "second",
+        value: "prof",
+        text: "Professions"
+      },
+      {
+        id: "third",
+        value: "ogds",
+        text: "Criteria 3#"
+      },
+      {
+        id: "force",
+        value: "ogds",
+        text: "Criteria 3#"
+      },
+      {
+        id: "fist",
+        value: "ogds",
+        text: "Criteria 3#"
+      }
+
+      ]
+    }) }}
+
+
+</div>
+  </div>
+
+
+
+<div class="govuk-grid-column-two-thirds">
+  <p class="govuk-!-margin-bottom-9" style="font-size:24px">Click to view the lorem ipsum dolor amet sit.</p>
+
+<div style="height:750px;">
+
+
+
+  <a href="template-csofficial-co?org=co">
+    <div style=";position:relative;border:1px solid #1d70b8 ;border-radius:8px;float:left;background:#1d70b8;height:280px;width:40%;;margin-right:20px;margin-left:30px">
+      <p style="color:white;position:absolute;left:0px;bottom:40px;padding:20px;;">{{ data['grade']}}</p>
+  <h2 class="govuk-heading-l" style="position:absolute;left:0px;top:90px;;;padding:20px;color:white;font-size:27px;line-height:1.1;border-top-left-radius:10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}}</h2>
+
+      <!-- <p style="position:absolute;left:20px;bottom:0px;font-weight:bold;;font-size:18px;color:white">★★★★★ (223)</p> -->
+      <img src="/public/images/cab.png" style="position:absolute;left:20px;top:20px;height:60px">
+      <p style=";position:absolute;right:20px;bottom:0px;font-weight:bold;;font-size:24px;color:white">#122</p>
+
+    </div>
+  </a>
+  <a href="template-csofficial-co?org=ddat">
+    <div style=";position:relative;border:1px solid black ;border-radius:8px;float:left;background:black;height:280px;width:40%;;margin-right:20px;margin-left:30px">
+      <p style="color:white;position:absolute;left:0px;bottom:40px;padding:20px;;">{{ data['grade']}}</p>
+  <h2 class="govuk-heading-l" style="position:absolute;left:0px;top:90px;;;padding:20px;color:white;font-size:27px;line-height:1.1;border-top-left-radius:10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}}</h2>
+
+      <!-- <p style="position:absolute;left:20px;bottom:0px;font-weight:bold;;font-size:18px;color:white">★★★★★ (223)</p> -->
+      <img src="/public/images/ddd.png" style="position:absolute;left:20px;top:20px;height:70px">
+      <p style=";position:absolute;right:20px;bottom:0px;font-weight:bold;;font-size:24px;color:white">#311</p>
+
+    </div>
+  </a>
+
+  <a href="template-csofficial-co?org=ho">
+    <div style=";position:relative;border:1px solid #7F3F98 ;border-radius:8px;float:left;background:white;height:280px;width:40%;margin-top:50px;;margin-right:20px;margin-left:30px">
+      <p style="color:#7F3F98;position:absolute;left:0px;bottom:40px;padding:20px;;">{{ data['grade']}}</p>
+  <h2 class="govuk-heading-l" style="position:absolute;left:0px;top:90px;;;padding:20px;color:#7F3F98;font-size:27px;line-height:1.1;border-top-left-radius:10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}}</h2>
+
+      <!-- <p style="position:absolute;left:20px;bottom:0px;font-weight:bold;;font-size:18px;color:white">★★★★★ (223)</p> -->
+      <img src="/public/images/ho-logo.png" style="position:absolute;left:20px;top:20px;height:60px">
+      <p style="border:1px solid white;;position:absolute;right:20px;bottom:0px;font-weight:bold;;font-size:24px;color:#7F3F98">#56</p>
+
+    </div>
+  </a>
+  <a href="template-csofficial-co?org=dfe">
+    <div style=";position:relative;border:1px solid black ;border-radius:8px;float:left;background:#003a69;height:280px;width:40%;margin-top:50px;;margin-right:20px;margin-left:30px">
+      <p style="color:white;position:absolute;left:0px;bottom:40px;padding:20px;;">{{ data['grade']}}</p>
+  <h2 class="govuk-heading-l" style="position:absolute;left:0px;top:90px;;;padding:20px;color:white;font-size:27px;line-height:1.1;border-top-left-radius:10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}}</h2>
+
+      <!-- <p style="position:absolute;left:20px;bottom:0px;font-weight:bold;;font-size:18px;color:white">★★★★★ (223)</p> -->
+      <img src="/public/images/dfe.png" style="position:absolute;left:20px;top:20px;height:75px">
+      <p style=";;position:absolute;right:20px;bottom:0px;font-weight:bold;;font-size:24px;color:white">#46</p>
+
+    </div>
+  </a>
+
+
+</div>
+</div>
+
+
+  </div>
 
 {% endblock %}

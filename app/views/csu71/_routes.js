@@ -3,11 +3,33 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
+router.post("/location-handler", function (req, res) {
+	var locType = req.session.data['uk'];
+
+		if (locType == "Remote") {
+			res.redirect("new-campaign-set-up/contract-details");
+		} else {
+			res.redirect("new-campaign-set-up/locations-test");
+		}
+})
+
+// router.post("/locations-handler", function (req, res) {
+// 	var remote = req.session.data['uk']
+// 	// if (req.session.data['edit2'] == "true") {
+// 		res.redirect('new-campaign-set-up/summary-section-2')
+// 	} else if (remote == "Remote") {
+// 		res.redirect('new-campaign-set-up/contract-details')
+// 	} else {
+// 		res.redirect('new-campaign-set-up/locations-2')
+// 	}
+// })
 
 router.post("/check-next-stepV5", function (req, res) {
 	var src = req.session.data['source'];
 	var list = req.session.data['selected'];
 	var num = list.length;
+console.log(src)
+console.log(list)
 
 	for (var a=0;a<num;a++){
 		if (src == list[num]) {
@@ -22,7 +44,7 @@ router.post("/check-next-stepV5", function (req, res) {
 
 router.get("/selection-handlerV5", function (req, res) {
   var list = req.session.data['selected'];
-
+console.log(list)
 
   for (var i=0;i<1;i++){
     res.redirect("/csu71/new-campaign-set-up/select-"+list[i]);
@@ -38,16 +60,7 @@ router.post("/basic-details-handler", function (req, res) {
 	}
 })
 
-router.post("/locations-handler", function (req, res) {
-	var remote = req.session.data['uk']
-	if (req.session.data['edit2'] == "true") {
-		res.redirect('new-campaign-set-up/summary-section-2')
-	} else if (remote == "Remote") {
-		res.redirect('new-campaign-set-up/contract-details')
-	} else {
-		res.redirect('new-campaign-set-up/locations-2')
-	}
-})
+
 
 router.post("/locations-2-handler", function (req, res) {
 	if (req.session.data['edit3'] == "true") {

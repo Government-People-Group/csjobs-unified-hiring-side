@@ -31,11 +31,29 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block content %}
 
-<form class="form" action="/csu71/location-handler" method="post">
+
+
+{% if data['ussk'] === "Yes" %}
+{% set see = "block" %}
+{% set nosee = "none" %}
+{% else %}
+{% set see = "none" %}
+{% endif %}
+
+{% if data['uk'] === "Onsite at a government-managed location" %}
+<!-- {% set see = "block" %} -->
+{% set nosee = "block" %}
+{% else %}
+<!-- {% set see = "none" %} -->
+{% set nosee = "none" %}
+{% endif %}
+
+
+<form class="form" action="#" method="post">
 
 <div class="govuk-grid-row govuk-!-margin-top-3">
   <div class="govuk-grid-column-three-quarters">
-    <h1 class="govuk-heading-xl">Location</h1>
+    <h1 class="govuk-heading-xl">Pre-employment checks and vetting</h1>
 
 
 
@@ -73,73 +91,11 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-!-margin-bottom-9">
 
-{{ govukRadios({
-  id: "ussk",
-  name: "ussk",
-  classes: "govuk-radios--inline",
-  fieldset: {
-    legend: {
-      text: "Is the role based in the UK?",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-  {
-    id:"ukbased",
-    value: "Yes",
-    text: "Yes",
-    checked: checked("ussk","Yes")
-
-  },
-  {
-    id:"ukbasedno",
-    value: "No",
-    text: "No",
-    checked: checked("ussk","No")
-  }
-  ]
-}) }}
 
 </div>
 
 
-<div id="mroe" style="display: none">
-  {{ govukRadios({
-    id: "uk",
-    name: "uk",
-    classes: "",
-    fieldset: {
-      legend: {
-        text: "Where will the role be located?",
-        isPageHeading: false,
-        classes: "govuk-fieldset__legend--m"
-      }
-    },
-    items: [
-    {
-      id: "rem",
-      value: "Remote",
-      text: "Remote",
-      checked: checked("uk","Remote")
-    },
-    {
-      id: "off",
-      value: "Onsite",
-      text: "Onsite at a government-managed location",
-      checked: checked("uk","Onsite")
-    },
-    {
-      id: "hyb",
-      value: "Hybrid",
-      text: "A hybrid of both remote and onsite",
-      checked: checked("uk","Hybrid")
-    }
 
-
-    ]
-  }) }}
-</div>
 
 
 
@@ -163,8 +119,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
   href: "preview-advert"
 }) }}
 </form>
-<script src="/public/javascripts/temp-copyloc.js"></script>
-<script src="/public/javascripts/locations.js"></script>
+
 
 <script>
 
@@ -172,57 +127,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
-  const ukbased = document.getElementById('ukbased');
-  const ukbasedno = document.getElementById('ukbasedno');
-
-  const off = document.getElementById('off');
-  const hyb = document.getElementById('hyb');
-  const rem = document.getElementById('rem');
-
-  if (ukbased.checked && ukbased.value == "Yes") {
-    showDiv("mroe");
-  }
-
-
-
-
-  var divv = document.getElementById('mroe').style.display;
-  ukbased.addEventListener('change', (event) => {
-    if (ukbased.checked && ukbased.value == "Yes") {
-      showDiv("mroe");
-    }
-
-  });
-
-  ukbasedno.addEventListener('change', (event) => {
-    if (ukbasedno.checked) {
-      hideDiv("mroe");
-    }
-
-  });
-
-
-
-
-
-
-  function hideDiv(div1) {
-    document.getElementById(div1).style.display = 'none';
-
-  }
-
-  function showDiv(div1) {
-    document.getElementById(div1).style.display = 'block';
-
-  }
-
-
-
-
-
-
-
-
+  
 
 
 

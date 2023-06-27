@@ -1,7 +1,7 @@
 <header class="govuk-header " role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
     <div class="govuk-header__logo">
-      <a href="#" class="govuk-header__link govuk-header__link--homepage">
+      <a href="/csu71/home" class="govuk-header__link govuk-header__link--homepage">
         <span class="govuk-header__logotype">
           <!--[if gt IE 8]><!-->
           <svg
@@ -30,12 +30,31 @@
       <a href="/csu71/home" class="govuk-header__link govuk-header__service-name">
         Civil Service Jobs
       </a>
-      <div style="position:absolute;top:4px; right:62px">
-        <!-- <img src="/public/images/search.png" style="border:1px solid black;padding:10px;border-radius:5px;height:25px"></a> -->
-
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="40" height="40"><path d="M25.7 24.8L21.9 21c.7-1 1.1-2.2 1.1-3.5 0-3.6-2.9-6.5-6.5-6.5S10 13.9 10 17.5s2.9 6.5 6.5 6.5c1.6 0 3-.6 4.1-1.5l3.7 3.7 1.4-1.4zM12 17.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5-4.5-2-4.5-4.5z" fill="#ffffff"/></svg> -->
-      </div>
-      <a style="float:right;padding-right:10px;color:white;" class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state"  href="my-profile"><img class="govuk-!-margin-bottom-3" src="/public/images/profblue.png" style="height:30px;"></a>
+      <nav aria-label="Menu" class="govuk-header__navigation ">
+        <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide menu" hidden>Menu</button>
+        <ul id="navigation" class="govuk-header__navigation-list">
+          <!-- <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
+            <a class="govuk-header__link" href="#">
+              Navigation item 1
+            </a>
+          </li>
+          <li class="govuk-header__navigation-item">
+            <a class="govuk-header__link" href="#">
+              Navigation item 2
+            </a>
+          </li>
+          <li class="govuk-header__navigation-item">
+            <a class="govuk-header__link" href="#">
+              Navigation item 3
+            </a>
+          </li> -->
+          <li class="govuk-header__navigation-item">
+            <a class="govuk-header__link" href="/csu71/my-profile.html">
+              <a style="color:white;position:absolute;right:20px;top:8px" class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state"  href="my-profile"><img class="govuk-!-margin-top-0" src="/public/images/profblue.png" style="height:34px;"></a>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </header>

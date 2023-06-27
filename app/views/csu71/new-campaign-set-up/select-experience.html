@@ -8,7 +8,22 @@
 {% include '/csu71/includes/header.html' %}
   {% endblock %}
 
-{% block beforeContent %}
+  {% block beforeContent %}
+  <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+    <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+      </div> -->
+  <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Selection criteria and assessment methods</span>
+
+      <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-co"><strong>Return to task list</strong></a></span>
+
+      </div>
+
+  </div>
+
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -21,8 +36,8 @@
 
 
 <form class="form" action="/csu71/check-next-stepV5" method="post">
-  <H2 class="govuk-heading-l govuk-!-margin-top-3 govuk-!-margin-bottom-3">What will you assess within each element at sift and interview?</h2>
-    <p class="govuk-body-l govuk-!-margin-bottom-6 govuk-!-margin-top-3">You have selected which elements are important to assess for this job role. You should now select what you will assess within each element at sift and interview.</p>
+  <!-- <H2 class="govuk-heading-l govuk-!-margin-top-3 govuk-!-margin-bottom-3">What will you assess within each element at sift and interview?</h2>
+    <p class="govuk-body-l govuk-!-margin-bottom-6 govuk-!-margin-top-3">You have selected which elements are important to assess for this job role. You should now select what you will assess within each element at sift and interview.</p> -->
 
     <H1 style="padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-3 govuk-!-margin-bottom-6">Experience</H1>
 

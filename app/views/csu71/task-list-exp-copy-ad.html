@@ -57,28 +57,17 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
 
 
+<form class="form" action="task-list-exp-copy-ad?banner=show" method="post">
 
 <div class="govuk-grid-row">
    <div class="govuk-grid-column-full" style="position:relative">
 
 
 
-     {% if data['template'] == "ddat" %}
-       <div style="position:absolute;right:20px;top:0px;;">
-       <a href="/csu71/template-csofficial"><img src="/public/images/ddat1.png" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
-       <p class="govuk-body-xs">Template <a href="/csu71/template-csofficial">Change</a></p>
+       <div style="position:absolute;right:20px;top:0px;width:80px;">
+       <p class="govuk-body-xs">Copy from 210220 <a href="/csu71/templates-alt">Change</a></p>
        </div>
-     {% elif data['template'] == "co" %}
-       <div style="position:absolute;right:20px;top:0px;">
-      <a href="/csu71/template-csofficial"> <img src="/public/images/co-logo.png" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
-       <p class="govuk-body-xs">Template <a href="/csu71/template-csofficial">Change</a></p>
-       </div>
-     {% elif data['template'] == "ho" %}
-       <div style="position:absolute;right:20px;top:0px;">
-       <a href="/csu71/template-csofficial"><img src="/public/images/ho-logo.png" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
-       <p class="govuk-body-xs">Template <a href="/csu71/template-csofficial">Change</a></p>
-       </div>
-       {% endif %}
+
 
 
 
@@ -95,7 +84,6 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
           <div class="govuk-grid-row">
              <div class="govuk-grid-column-three-quarters">
 
-          {% if data['banner'] == 'show' %}
 
     <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
       aria-labelledby="govuk-notification-banner-title"
@@ -107,22 +95,16 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
       </div>
       <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
-          {% if data['template'] == "ddat" %}
-            Your DDaT job template has been activated lorem ipsum.
-          {% elif data['template'] == "co" %}
-            Your Cabinet Office job template has been activated lorem ipsum.
-          {% elif data['template'] == "ho" %}
-            Your Home Office job template has been activated lorem ipsum.
-          {% endif %}
+          Your new vacancy has been set-up based on <BR>Product manager	G7 (210220).
         </h3>
-        <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+        <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
 
-        <p class="govuk-body">The sections pre-filled by the template are highlighted </p>
+        <p class="govuk-body">The sections pre-filled using the job advert are highlighted </p>
 
 
       </div>
     </div>
-    {% endif %}
+
     <p class="govuk-body govuk-!-margin-top-3"><strong>{{ comp }}</strong> you have completed {{ num }} of 27 sections.</p>
     <p class="govuk-body-m govuk-!-margin-bottom-9">Last modified on <strong  id="lastEdit"></strong></p>
 
@@ -151,7 +133,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
             {% if data['num-posts']|length >= 1 %}
             <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
             {% elif data['grade']|length >= 1 %}
-            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+            <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
             {% else %}
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
             {% endif %}
@@ -223,7 +205,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
               {% elif data['uk']|length >= 1 %}
               <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
               {% else %}
-              <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+              <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
               {% endif %}
             </li>
             <li class="app-task-list__item">
@@ -241,7 +223,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                 {% elif data['fta']|length >= 1 %}
                 <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
                 {% else %}
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+                <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
                 {% endif %}
 
 
@@ -255,7 +237,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                   {% if data['benefits-viewed']|length >= 1 %}
                   <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
                   {% else %}
-                  <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+                  <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
                   {% endif %}
 
 
@@ -296,7 +278,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                     {% elif data['person-spec']|length >= 1 %}
                     <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
                     {% else %}
-                    <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+                    <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
                     {% endif %}
 
 
@@ -314,7 +296,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                     {% elif data['person-spec']|length >= 1 %}
                     <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
                     {% else %}
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+                    <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
                     {% endif %}
 
 
@@ -392,7 +374,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                       <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
                       {% else %}
 
-                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
                       {%endif%}
 
                     </li>
@@ -420,7 +402,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                       {% if data['done'] == "dusted" %}
                       <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
                       {% else %}
-                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
                       {%endif%}
 
                     </li>
@@ -435,7 +417,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                       {% if data['done'] == "dusted" %}
                       <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
                       {% else %}
-                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
                       {%endif%}
 
                     </li>
@@ -453,7 +435,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                       {% if data['done'] == "dusted" %}
                       <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
                       {% else %}
-                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
                       {%endif%}
 
 
@@ -490,7 +472,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                       <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
                       {% else %}
 
-                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
                       {%endif%}
                     </li>
                     <li class="app-task-list__item">
@@ -530,7 +512,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                       <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
                       {% else %}
 
-                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
                       {%endif%}
 
                     </li>
@@ -550,7 +532,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                       {% if data['done'] == "dusted" %}
                       <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
                       {% else %}
-                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
                       {%endif%}
 
 
@@ -571,7 +553,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                       <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
                       {% else %}
 
-                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
                       {%endif%}
                     </li>
                     <li class="app-task-list__item">
@@ -587,7 +569,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                       <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
                       {% else %}
 
-                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
                       {%endif%}
                     </li>
                     <li class="app-task-list__item">
@@ -752,7 +734,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                       <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
                       {% else %}
-                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
                       {% endif %}
                     </li>
                     <li class="app-task-list__item">
@@ -765,7 +747,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                       <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
                       {% else %}
-                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
                       {% endif %}
                     </li>
 
@@ -779,7 +761,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                       <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
                       {% else %}
-                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
                       {% endif %}
                     </li>
 

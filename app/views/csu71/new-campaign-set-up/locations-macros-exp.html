@@ -31,13 +31,30 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block content %}
 
-<form class="form" action="/csu71/location-handler" method="post">
+
+
+{% if data['ussk'] === "Yes" %}
+{% set see = "block" %}
+{% set nosee = "none" %}
+{% else %}
+{% set see = "none" %}
+{% endif %}
+
+{% if data['uk'] === "Onsite at a government-managed location" %}
+<!-- {% set see = "block" %} -->
+{% set nosee = "block" %}
+{% else %}
+<!-- {% set see = "none" %} -->
+{% set nosee = "none" %}
+{% endif %}
+
+
+
 
 <div class="govuk-grid-row govuk-!-margin-top-3">
   <div class="govuk-grid-column-three-quarters">
-    <h1 class="govuk-heading-xl">Location</h1>
-
-
+    <h1 class="govuk-heading-xl">Location information</h1>
+    <form class="form" action="/csu71/new-campaign-set-up/contract-details" method="post">
 
 
       <!-- {% macro taskListItem(title="'title'", link='#', completed='', cantStart='' ) %}
@@ -71,7 +88,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
-<div class="govuk-!-margin-bottom-9">
+
 
 {{ govukRadios({
   id: "ussk",
@@ -81,7 +98,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
     legend: {
       text: "Is the role based in the UK?",
       isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
+      classes: "govuk-fieldset__legend--s"
     }
   },
   items: [
@@ -101,7 +118,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
   ]
 }) }}
 
-</div>
+
 
 
 <div id="mroe" style="display: none">
@@ -113,7 +130,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
       legend: {
         text: "Where will the role be located?",
         isPageHeading: false,
-        classes: "govuk-fieldset__legend--m"
+        classes: "govuk-fieldset__legend--s"
       }
     },
     items: [
@@ -142,20 +159,50 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 </div>
 
 
+<div class=" govuk-!-margin-top-9" id="loc" style="display: none;">
+  <h1 class="govuk-heading-l">Location search</h1>
+  <p class="govuk-body">Quam temere in vitiis, legem sancimus haerentia. Curabitur blandit tempus ardua ridiculus sed magna. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.</p>
+  <a style="float:right;margin-right:100px" class="govuk-button govuk-button--secondary govuk-!-margin-top-5"  href="#">Add to list</a>
 
+  <div id="fir" style="width:500px" class="govuk-form-group govuk-input--width-30">
+    <label for="autocomplete-default" class="govuk-label--s">Search for a town, city or region</label>
+    <div id="locations" class="autocomplete-wrapper"></div>
+
+  </div>
+
+  <div>
+    <ol class="govuk-list govuk-list--number-" id="list"></ol>
+
+    <p id="reload"></p>
+
+
+    <dl class="govuk-summary-list" style="width:85%">
+      <div class="govuk-summary-list__row" >
+        <dt class="govuk-summary-list__key" style="width:15%">
+          Location
+        </dt>
+        <dd class="govuk-summary-list__value" style="width:65%;font-weight:bold;">
+      <ol id="list1"></ol>
+        </dd>
+        <dd class="govuk-summary-list__actions" style="width:20%;">
+          <a class="govuk-link" href="#">
+              <ol id="list2" class="govuk-list govuk-list--number-"></ol>
+              <span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+      </dl>
 
 
   </div>
+
 </div>
 
 
 
 
+<button class="govuk-button govuk-!-margin-top-9" data-module="govuk-button">Continue</button>
 
-{{ govukButton({
-  text: "Continue",
-  classes: "govuk-button govuk-!-margin-top-9"
-}) }}
 
 {{ govukButton({
   text: "Preview advert",
@@ -163,10 +210,16 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
   href: "preview-advert"
 }) }}
 </form>
+
+</div>
+</div>
+</body>
 <script src="/public/javascripts/temp-copyloc.js"></script>
 <script src="/public/javascripts/locations.js"></script>
 
 <script>
+
+
 
 
 
@@ -184,6 +237,17 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
   }
 
 
+  if (off.checked && off.value == "Onsite") {
+    showDiv("loc");
+  }
+
+  if (hyb.checked && hyb.value != "") {
+    showDiv("loc");
+  }
+
+  if (rem.checked && rem.value != "") {
+    hideDiv("loc");
+  }
 
 
   var divv = document.getElementById('mroe').style.display;
@@ -204,7 +268,30 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
+  var divv = document.getElementById('loc').style.display;
+  off.addEventListener('change', (event) => {
 
+    if (off.checked) {
+      showDiv("loc");
+    }
+
+  });
+
+  hyb.addEventListener('change', (event) => {
+
+    if (hyb.checked) {
+      showDiv("loc");
+    }
+
+  });
+
+  rem.addEventListener('change', (event) => {
+
+    if (rem.checked) {
+      hideDiv("loc");
+    }
+
+  });
 
   function hideDiv(div1) {
     document.getElementById(div1).style.display = 'none';
@@ -219,9 +306,40 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
+  var locArray = [];
+  locArray = JSON.parse(window.sessionStorage.getItem("locations"));
+  console.log(locArray)
+  const entry = document.getElementById("autocomplete-default");
 
+  var loc = document.getElementById('list1');
+  var link = document.getElementById('list2');
 
+  var item = document.getElementById('list');
+  entry.addEventListener('change', (event) => {
 
+    var location = event.target.value;
+
+    var loccontent = document.createElement("li");
+    var linkcontent = document.createElement("li");
+
+    // numcontent.innerHTML = location;
+    loccontent.style.cssText = "";
+    loccontent.innerHTML = location;
+    linkcontent.innerHTML = "<a id='del"+link+"' onclick='' href='#'> delete</a>";
+
+    loc.appendChild(loccontent);
+    link.appendChild(linkcontent);
+
+    // content.innerHTML = "<span style='font-weight:regular;font-size:18px;line-height:1.5;'>"+location+"</span>"+""+"<a id='del"+item+"' onclick='' href='#'> delete</a>";
+    // item.appendChild(content);
+
+    locArray.push(location)
+
+    console.log(locArray)
+    window.sessionStorage.setItem("locations", JSON.stringify(locArray));
+  });
+
+  console.log(locArray)
 
 
 
