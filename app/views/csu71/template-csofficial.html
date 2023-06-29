@@ -32,7 +32,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
 
-  <h1  style="border-bottom:1px solid #1d70b8;padding-bottom:20px" class="govuk-heading-xl govuk-!-margin-top-3">Lorem ipsum </h1>
+  <h1  style="border-bottom:1px solid #1d70b8;padding-bottom:20px" class="govuk-heading-xl govuk-!-margin-top-3">4 matching templates found</h1>
 
 </div>
 
@@ -76,16 +76,16 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 </div>
 
-<div class="govuk-grid-row govuk-!-margin-top-1">
+<div class="govuk-grid-row govuk-!-margin-top-0">
 
   <div class="govuk-grid-column-one-third">
     <div style="background:#F4FAFF;;height:750px;;padding:10px;border-right:1px solid #1d70b8;padding:20px;">
 
 
-      <h2 style="padding-bottom:0px" class="govuk-heading-m govuk-!-margin-top-0">Lorem ipsum</h2>
+      <h2 style="padding-bottom:0px" class="govuk-heading-m govuk-!-margin-top-0">Match basis</h2>
 
 
-      {{ govukSelect({
+      <!-- {{ govukSelect({
         id: "proff",
         name: "proff",
         label: {
@@ -235,10 +235,9 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           selected: checked("proff","Other")
         }
         ]
-      }) }}
+      }) }} -->
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-      <h2 style="padding-bottom:0px" class="govuk-heading-m govuk-!-margin-top-0">Lorem ipsum</h2>
 
       {{ govukCheckboxes({
         name: "organisation",
@@ -254,7 +253,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
         {
           id: "first",
           value: "dept",
-          text: "Home department"
+          text: "My department"
         },
         {
           id: "second",
@@ -264,71 +263,13 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
         {
           id: "third",
           value: "ogds",
-          text: "Criteria 3#"
-        },
-        {
-          id: "force",
-          value: "ogds",
-          text: "Criteria 3#"
-        },
-        {
-          id: "fist",
-          value: "ogds",
-          text: "Criteria 3#"
-        },
-        {
-          id: "sixth",
-          value: "ogds",
-          text: "Criteria 3#"
+          text: "Other Government Departments"
         }
-
         ]
       }) }}
 
 
 
-      <h2 style="padding-bottom:0px" class="govuk-heading-m govuk-!-margin-top-0">Lorem ipsum</h2>
-    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-
-    {{ govukCheckboxes({
-      name: "organisation",
-      classes: "govuk-checkboxes--small",
-      fieldset: {
-        legend: {
-          text: "",
-          isPageHeading: false,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      items: [
-      {
-        id: "first",
-        value: "dept",
-        text: "Home department"
-      },
-      {
-        id: "second",
-        value: "prof",
-        text: "Professions"
-      },
-      {
-        id: "third",
-        value: "ogds",
-        text: "Criteria 3#"
-      },
-      {
-        id: "force",
-        value: "ogds",
-        text: "Criteria 3#"
-      },
-      {
-        id: "fist",
-        value: "ogds",
-        text: "Criteria 3#"
-      }
-
-      ]
-    }) }}
 
 
 </div>
@@ -345,22 +286,22 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
   <a href="template-csofficial-co?org=co">
     <div style=";position:relative;border:1px solid #1d70b8 ;border-radius:8px;float:left;background:#1d70b8;height:280px;width:40%;;margin-right:20px;margin-left:30px">
-      <p style="color:white;position:absolute;left:0px;bottom:40px;padding:20px;;">{{ data['grade']}}</p>
-  <h2 class="govuk-heading-l" style="position:absolute;left:0px;top:90px;;;padding:20px;color:white;font-size:27px;line-height:1.1;border-top-left-radius:10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}}</h2>
+      <p style="color:white;position:absolute;left:0px;bottom:30px;padding:20px;;">{{ data['grade']}}</p>
+  <h2 class="govuk-heading-l" style="position:absolute;left:0px;top:70px;;;padding:20px;color:white;font-size:24px;line-height:1.1;border-top-left-radius:10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}}</h2>
 
       <!-- <p style="position:absolute;left:20px;bottom:0px;font-weight:bold;;font-size:18px;color:white">★★★★★ (223)</p> -->
-      <img src="/public/images/cab.png" style="position:absolute;left:20px;top:20px;height:60px">
+      <img src="/public/images/cab.png" style="position:absolute;left:20px;top:20px;height:50px">
       <p style=";position:absolute;right:20px;bottom:0px;font-weight:bold;;font-size:24px;color:white">#122</p>
 
     </div>
   </a>
   <a href="template-csofficial-co?org=ddat">
     <div style=";position:relative;border:1px solid black ;border-radius:8px;float:left;background:black;height:280px;width:40%;;margin-right:20px;margin-left:30px">
-      <p style="color:white;position:absolute;left:0px;bottom:40px;padding:20px;;">{{ data['grade']}}</p>
-  <h2 class="govuk-heading-l" style="position:absolute;left:0px;top:90px;;;padding:20px;color:white;font-size:27px;line-height:1.1;border-top-left-radius:10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}}</h2>
+      <p style="color:white;position:absolute;left:0px;bottom:30px;padding:20px;;">{{ data['grade']}}</p>
+  <h2 class="govuk-heading-l" style="position:absolute;left:0px;top:70px;;;padding:20px;color:white;font-size:24px;line-height:1.1;border-top-left-radius:10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}}</h2>
 
       <!-- <p style="position:absolute;left:20px;bottom:0px;font-weight:bold;;font-size:18px;color:white">★★★★★ (223)</p> -->
-      <img src="/public/images/ddd.png" style="position:absolute;left:20px;top:20px;height:70px">
+      <img src="/public/images/ddd.png" style="position:absolute;left:20px;top:20px;height:60px">
       <p style=";position:absolute;right:20px;bottom:0px;font-weight:bold;;font-size:24px;color:white">#311</p>
 
     </div>
@@ -368,22 +309,22 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
   <a href="template-csofficial-co?org=ho">
     <div style=";position:relative;border:1px solid #7F3F98 ;border-radius:8px;float:left;background:white;height:280px;width:40%;margin-top:50px;;margin-right:20px;margin-left:30px">
-      <p style="color:#7F3F98;position:absolute;left:0px;bottom:40px;padding:20px;;">{{ data['grade']}}</p>
-  <h2 class="govuk-heading-l" style="position:absolute;left:0px;top:90px;;;padding:20px;color:#7F3F98;font-size:27px;line-height:1.1;border-top-left-radius:10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}}</h2>
+      <p style="color:#7F3F98;position:absolute;left:0px;bottom:30px;padding:20px;;">{{ data['grade']}}</p>
+  <h2 class="govuk-heading-l" style="position:absolute;left:0px;top:70px;;;padding:20px;color:#7F3F98;font-size:24px;line-height:1.1;border-top-left-radius:10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}}</h2>
 
       <!-- <p style="position:absolute;left:20px;bottom:0px;font-weight:bold;;font-size:18px;color:white">★★★★★ (223)</p> -->
-      <img src="/public/images/ho-logo.png" style="position:absolute;left:20px;top:20px;height:60px">
+      <img src="/public/images/ho-logo.png" style="position:absolute;left:20px;top:20px;height:49px">
       <p style="border:1px solid white;;position:absolute;right:20px;bottom:0px;font-weight:bold;;font-size:24px;color:#7F3F98">#56</p>
 
     </div>
   </a>
   <a href="template-csofficial-co?org=dfe">
     <div style=";position:relative;border:1px solid black ;border-radius:8px;float:left;background:#003a69;height:280px;width:40%;margin-top:50px;;margin-right:20px;margin-left:30px">
-      <p style="color:white;position:absolute;left:0px;bottom:40px;padding:20px;;">{{ data['grade']}}</p>
-  <h2 class="govuk-heading-l" style="position:absolute;left:0px;top:90px;;;padding:20px;color:white;font-size:27px;line-height:1.1;border-top-left-radius:10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}}</h2>
+      <p style="color:white;position:absolute;left:0px;bottom:30px;padding:20px;;">{{ data['grade']}}</p>
+  <h2 class="govuk-heading-l" style="position:absolute;left:0px;top:70px;;;padding:20px;color:white;font-size:24px;line-height:1.1;border-top-left-radius:10px 10px;border-bottom-left-radius: 10px 10px;">{{ data['temp-copy-input-autocomplete']}}</h2>
 
       <!-- <p style="position:absolute;left:20px;bottom:0px;font-weight:bold;;font-size:18px;color:white">★★★★★ (223)</p> -->
-      <img src="/public/images/dfe.png" style="position:absolute;left:20px;top:20px;height:75px">
+      <img src="/public/images/dfe.png" style="position:absolute;left:20px;top:20px;height:60px">
       <p style=";;position:absolute;right:20px;bottom:0px;font-weight:bold;;font-size:24px;color:white">#46</p>
 
     </div>

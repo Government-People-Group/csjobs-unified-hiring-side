@@ -1,0 +1,211 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+<form class="form" action="select-methods-sift-mirror-2" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-xl">Select methods to use at sift</h1>
+
+
+      {% set methodOptions = [
+        {
+          id: 1,
+          title: "CV",
+          description: "Applicants will have to upload a CV."
+        },
+        {
+          id: 2,
+          title: "Personal statement",
+          description: "Applicants will have to complete a personal statement with a 1250 maximum word limit."
+        },
+        {
+          id: 3,
+          title: "Written exercise",
+          description: "Written examples are used for behaviour questions and technical skills. You can ask a question on this individual criteria for candidates to answer or tell you how they meet this. You can select how many written examples you would like applicants to complete."
+        },
+        {
+          id: 4,
+          title: "Online tests",
+          description: "You can select online tests for applicants to complete depending on the criteria you have selected."
+        }
+        ] %}
+
+
+
+
+
+                {% for items in methodOptions %}
+                  {{ govukCheckboxes({
+                    idPrefix: "selected-types",
+                    id: "sift-method-choices",
+                    name: "sift-method[choices]",
+                    classes: "govuk-checkboxes",
+                    fieldset: {
+                      legend: {
+                        text: "",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--l"
+                      }
+                    },
+                    items: [
+                    {
+                      classes: "govuk-!-font-size-27",
+                      value: items.title,
+                      html: '<p style=";;font-size:27px;">'+items.title+'</p>',
+                      checked: checked("sift-method[choices]", items.title),
+                      hint: {
+                        text: items.description,
+                        classes: "govuk-!-font-size-24"
+
+                      }
+                    }
+                    ]
+                  }) }}
+                {% endfor %}
+
+
+
+
+
+<!--
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        idPrefix: "siftMethodChoices",
+
+        name: "methods[siftMethodChoices]",
+        fieldset: {
+          legend: {
+            text: "Select how you will assess the criteria at sift. You will then select which criteria you will assess in each method.",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
+          }
+        },
+        items: [
+        {
+
+          classes: "govuk-body govuk-!-font-weight-bold",
+          value: "cv",
+          html: '<p style=";;font-size:27px;">CV</p>',
+          checked: checked("methods[siftMethodChoices]","CV"),
+          hint: {
+            text: "Applicants will have to upload a CV.",
+            classes: "govuk-!-font-size-24 govuk-!-margin-bottom-6"
+          }
+        },
+        {
+          value: "personal-statement",
+          html: '<p style=";;font-size:27px;">Personal statement</p>',
+          checked: checked("methods[siftMethodChoices]","Personal statement"),
+          hint: {
+            text: "Applicants will have to complete a personal statement with a 1250 maximum word limit.",
+            classes: "govuk-!-font-size-24 govuk-!-margin-bottom-6"
+          }
+        },
+        {
+          value: "written-example",
+          html: '<p style=";;font-size:27px;">Written example</p>',
+          checked: checked("methods[siftMethodChoices]","Written example"),
+          hint: {
+            text: "Written examples are used for behaviour questions and technical skills. You can ask a question on this individual criteria for candidates to answer or tell you how they meet this. You can select how many written examples you would like applicants to complete.",
+            classes: "govuk-!-font-size-24 govuk-!-margin-bottom-6"
+          }
+        },
+        {
+          value: "online-tests",
+          html: '<p style=";;font-size:27px;">Online tests</p>',
+
+          checked: checked("methods[siftMethodChoices]","Online tests"),
+          hint: {
+            text: "You can select online tests for applicants to complete depending on the criteria you have selected.",
+            classes: "govuk-!-font-size-24"
+          }
+        }
+        ]
+      }) }} -->
+
+
+
+
+
+
+      <button class="govuk-button govuk-!-margin-top-9"  onClick="checkCheckBoxes()" data-module="govuk-button">Continue</button>
+
+
+    </div>
+  </div>
+
+
+
+</form>
+<script>
+function checkCheckBoxes() {
+  var stageChecksSift = [];
+  var stageChecksInt = [];
+  var arr1 = [];
+  var arr2 = [];
+    var arr3 = [];
+
+    var arr4 = [];
+
+    const siftMethodChoices = { };
+
+    var checks = document.getElementsByTagName('input');
+
+    for (i = 0; i < checks.length; i++) {
+      if (checks[i].type == 'checkbox' && checks[i].checked ) {
+
+
+          arr1.push(checks[i].value);
+
+
+
+        // } else if (checks[i].value == "Interview") {
+        //   stageChecksInt.push(checks[i].value, checks[i].name, checks[i].id);
+        //
+        // }
+
+        // window.sessionStorage.setItem("stageChecksInt", JSON.stringify(stageChecksInt));
+      }
+window.sessionStorage.setItem("siftaMeth", JSON.stringify(arr1));
+    }
+    }
+
+
+
+    // for (var i = 0; i < arr1.length; i++) {
+    //   siftStage[arr1[i]] = arr2[i];
+    // }
+    //  window.sessionStorage.setItem("siftStage", JSON.stringify(siftStage));
+    //
+    //
+    //  for (var j = 0; j < arr3.length; j++) {
+    //    intStage[arr3[j]] = arr4[j];
+    //  }
+    //   window.sessionStorage.setItem("intStage", JSON.stringify(intStage));
+    //
+    //
+
+</script>
+
+{% endblock %}
