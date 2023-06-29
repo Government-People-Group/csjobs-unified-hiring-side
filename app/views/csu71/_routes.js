@@ -220,7 +220,7 @@ router.post("/approach-handler", function (req, res) {
 	if (req.session.data['edit21'] == "true") {
 		res.redirect('new-campaign-set-up/summary-section-5')
 	} else {
-		res.redirect('new-campaign-set-up/approval')
+		res.redirect('new-campaign-set-up/attraction-methods')
 	}
 })
 
