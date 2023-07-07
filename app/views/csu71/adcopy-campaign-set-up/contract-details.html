@@ -1,0 +1,177 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+    </div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Contract information</span>
+
+    <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+      <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-copy-ad"><strong>Return to task list</strong></a></span>
+
+    </div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+  {% block content %}
+
+  {% set ftaHTML %}
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+  {{ govukInput({
+    label: {
+      text: "How long is the contract for, in months?"
+    },
+    classes: "govuk-input--width-5",
+    value: data['contract-length'],
+    id: "contract-length",
+    name: "contract-length",
+    suffix: {
+      text: "months"
+    },
+    spellcheck: false
+  }) }}
+  {% endset %}
+
+
+<div class="govuk-grid-row govuk-!-margin-top-3">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl">Contract details</h1>
+
+<form class="form" action="/csu71/contract-details-handler" method="post">
+    {{ govukRadios({
+    id: "contract",
+    name: "contract",
+    fieldset: {
+      legend: {
+        text: "What is the contract for the role?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "Apprenticeship",
+        text: "Apprenticeship",
+        checked: checked("contract", "Apprenticeship")
+      },
+      {
+        value: "Assisted transfer",
+        text: "Assisted transfer",
+        checked: checked("contract", "Assisted")
+      },
+      {
+        value: "Fixed term",
+        text: "Fixed term",
+        checked: checked("contract", "fixed"),
+        conditional: {
+          html: ftaHTML
+        }
+      },
+      {
+        value: "Internship",
+        text: "Internship",
+        checked: checked("contract", "Internship")
+      },
+      {
+        value: "Loan",
+        text: "Loan",
+        checked: checked("contract", "Loan")
+      },
+      {
+        value: "Overseas",
+        text: "Overseas",
+        checked: checked("contract", "Overseas")
+      },
+      {
+        value: "Permanent",
+        text: "Permanent",
+        checked: checked("contract", "Permanent")
+      },
+      {
+        value: "Temporary",
+        text: "Temporary",
+        checked: checked("contract", "Temporary")
+      }
+    ]
+  }) }}
+  {{ govukCheckboxes({
+  id: "working-pattern",
+  name: "working-pattern",
+  fieldset: {
+    legend: {
+      text: "What is the working pattern for the role?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      value: "Annualised",
+      text: "Annualised hours",
+      checked: checked("working-pattern", "Annualised")
+    },
+    {
+      value: "Compressed",
+      text: "Compressed hours",
+      checked: checked("working-pattern", "Compressed")
+    },
+    {
+      value: "Flexible-working",
+      text: "Flexible working",
+      checked: checked("working-pattern", "Flexible-working")
+    },
+    {
+      value: "Fulltime",
+      text: "Full-time",
+      checked: checked("working-pattern", "Fulltime")
+    },
+    {
+      value: "Homeworking",
+      text: "Homeworking",
+      checked: checked("working-pattern", "Homeworking")
+    },
+    {
+      value: "Jobshare",
+      text: "Job share",
+      checked: checked("working-pattern", "Jobshare")
+    },
+    {
+      value: "Part-time",
+      text: "Part-time",
+      checked: checked("working-pattern", "Part-time")
+    }
+  ]
+  }) }}
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+        {{ govukButton({
+          text: "Preview advert",
+          classes: "govuk-button--secondary",
+          href: "preview-advert"
+        }) }}
+
+</form>
+</div>
+</div>
+{% endblock %}

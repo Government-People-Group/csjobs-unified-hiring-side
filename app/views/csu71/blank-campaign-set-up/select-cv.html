@@ -1,0 +1,404 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;margin-top:10px;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-m">Selection criteria and assessment methods</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-co"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{{ data['sift-method'].choices}}
+
+
+<form class="form" action="/csu71/methods-handler" method="post">
+  <H2 class="govuk-heading-l govuk-!-margin-top-3 govuk-!-margin-bottom-3">What will you assess within each element at sift and interview?</h2>
+    <p class="govuk-body-l govuk-!-margin-bottom-6 govuk-!-margin-top-3">You have selected which elements are important to assess for this job role. You should now select what you will assess within each element at sift and interview.</p>
+
+    <H1 style="padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-3 govuk-!-margin-bottom-6">Technical skills</H1>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter" style="width:20%">
+        {% for items in data['sift-method'].choices %}
+        <ul class="govuk-!-margin-top-6 govuk-list govuk-list--bullet- ">
+          {% if items == "cv" %}
+
+          <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="select-{{items}}"><strong>{{ items }}</a></p></strong></li>
+          {% else %}
+          <li><strong><p style ="border-left:2px solid white;padding-left:20px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="select-{{items}}"><strong>{{ items | capitalize }}</a></p></strong></li>
+        </ul>
+        {% endif %}
+        {% endfor %}
+
+      </div>
+      <div class="govuk-grid-column-three-quarters" style="width:80%;">
+        <div id="skills" style="padding:10px;">
+          <p class="govuk-body-m govuk-!-margin-top-4 govuk-!-margin-bottom-6"><strong>You can choose how many skills you want to assess at sift and interview. You can assess a wide range of relevant specialist skills like coaching, negotiation and computer coding. <br><br>Include as many skills as you want to assess at sift and interview.</strong></p>
+          <div id="skills" style="border-bottom:1px solid #1d70b8">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<button class="govuk-button govuk-!-margin-top-9"  data-module="govuk-button">Continue</button>
+
+
+</div></div>
+
+
+</div>
+
+
+<input type="hidden" name="source" value="cv">
+</FORM>
+<script>
+  function showHideDiv(div1,div2) {
+    document.getElementById(div1).style.display = 'block';
+    document.getElementById(div2).style.display = 'none';
+
+  }
+
+
+  function deleteDiv(data1, data2){
+    document.getElementById(data1).style.display = "none";
+    document.getElementById(data2).style.display = "block";
+  }
+
+  function getSkillsValues() {
+
+    var textA1 = document.getElementById('Technical skills 1');
+    var levelA1 = document.getElementById('Technical skills 1level');
+
+    var textA2 = document.getElementById('Technical skills 2');
+    var levelA2 = document.getElementById('Technical skills 2level');
+
+    var textA3 = document.getElementById('Technical skills 3');
+    var levelA3 = document.getElementById('Technical skills 3level');
+
+
+    var textA4 = document.getElementById('Technical skills 4');
+    var levelA4 = document.getElementById('Technical skills 4level');
+
+    var textA5 = document.getElementById('Technical skills 5');
+    var levelA5 = document.getElementById('Technical skills 5level');
+
+    var textA6 = document.getElementById('Technical skills 6');
+    var levelA6 = document.getElementById('Technical skills 6level');
+
+
+    // const object = JSON.parse(window.sessionStorage.getItem("behaviours"));
+    // var obj0 = Object.values(object.level0);
+    // var level = obj0;
+
+
+
+
+    // const skills = {}
+
+
+
+    // "skill6": {
+    //   "title": "",
+    //   "level": ""
+
+
+    function skill(title, level) {
+      this.title = title;
+      this.level = level;
+    }
+
+
+    const skill1 = new skill(textA1.value, levelA1.value);
+
+
+
+    const skill2 = new skill(textA2.value, levelA2.value);
+
+
+
+    const skill3 = new skill(textA3.value, levelA3.value);
+
+
+    const skill4 = new skill(textA4.value, levelA4.value);
+    const skill5 = new skill(textA5.value, levelA5.value);
+    const skill6 = new skill(textA6.value, levelA6.value);
+
+
+
+    // if (textA4 !="" && levelA4 !=""){
+    //   const skill4 = new skill(textA4.value, levelA4.value);
+    // }
+    //
+    // if (textA5 !="" && levelA5 !=""){
+    //   const skill5 = new skill(textA5.value, levelA5.value);
+    // }
+    //
+    // if (textA6 !="" && levelA6 !=""){
+    //   const skill6 = new skill(textA6.value, levelA6.value);
+    // }
+
+
+    // const skill2 = new skill(textA2.value, levelA2.value);
+    // const skill3 = new skill(textA3.value, levelA3.value);
+    // const skill4 = new skill(textA4.value, levelA4.value);
+    // const skill5 = new skill(textA5.value, levelA5.value);
+    // const skill6 = new skill(textA6.value, levelA6.value);
+
+
+    const skills = {
+
+      skill1, skill2, skill3, skill4, skill5, skill6
+    }
+
+    // window.sessionStorage.setItem("skill1", JSON.stringify(skill1));
+    // window.sessionStorage.setItem("skill2", JSON.stringify(skill2));
+    // window.sessionStorage.setItem("skill3", JSON.stringify(skill3));
+
+    window.sessionStorage.setItem("skills", JSON.stringify(skills));
+
+    // skill1.level = levelA1.value;
+    //
+    // window.sessionStorage.setItem("skill1", JSON.stringify(skill1));
+
+    console.log(skills);
+    // for (i = 1; i < 4; i++) {
+    // if (checks[i].type == 'textarea' && checks[i].innerText !="" ) {
+
+    // if (checks[i].value == "Sift") {
+    //   arr1.push(checks[i].name);
+    //   arr2.push(checks[i].id);
+
+    // } else if (checks[i].value == "Interview") {
+    //   stageChecksInt.push(checks[i].value, checks[i].name, checks[i].id);
+    //
+    // }
+
+    // window.sessionStorage.setItem("stageChecksInt", JSON.stringify(stageChecksInt));
+    // }
+
+    // if (checks[i].value == "Interview") {
+    //   arr3.push(checks[i].name);
+    //   arr4.push(checks[i].id);
+
+    // } else if (checks[i].value == "Interview") {
+    //   stageChecksInt.push(checks[i].value, checks[i].name, checks[i].id);
+    //
+    // }
+
+    // window.sessionStorage.setItem("stageChecksInt", JSON.stringify(stageChecksInt));
+    // }
+
+    // }
+  }
+
+
+  // for (var i = 0; i < arr1.length; i++) {
+  //   siftStage[arr1[i]] = arr2[i];
+  // }
+  //  window.sessionStorage.setItem("siftStage", JSON.stringify(siftStage));
+  //
+  //
+  //  for (var j = 0; j < arr3.length; j++) {
+  //    intStage[arr3[j]] = arr4[j];
+  //  }
+  //   window.sessionStorage.setItem("intStage", JSON.stringify(intStage));
+
+
+
+
+  //   var checks = document.getElementsByTagName('input');
+  //
+  //   for (i = 0; i < checks.length; i++) {
+  //     if (checks[i].type == 'checkbox' && checks[i].checked ) {
+  //
+  //       if (checks[i].value == "Sift") {
+  //         stageChecksSift.push(checks[i].value, checks[i].name, checks[i].id);
+  //
+  //       } else if (checks[i].value == "Interview") {
+  //         stageChecksInt.push(checks[i].value, checks[i].name, checks[i].id);
+  //
+  //       }
+  //
+  //       window.sessionStorage.setItem("stageChecksSift", JSON.stringify(stageChecksSift));
+  //       window.sessionStorage.setItem("stageChecksInt", JSON.stringify(stageChecksInt));
+  //     }
+  //   }
+  // }
+
+
+
+
+
+
+  //       var label2 = document.createElement("label");
+  //       var checkBox2 = document.createElement("input");
+  //
+  //       checkBox2.type = "checkbox";
+  //
+  //       checkBox2.value = "Interview";
+  //       label2.innerText = "Interview";
+  //       label2.appendChild(document.createTextNode("Interview"));
+  //       outputBS.appendChild(label2);
+  //       outputBS.appendChild(checkBox2);
+  // }
+
+
+
+
+  // for (var i = 0; i < behavioursSelected.length; i++) {
+  //   bsList.innerText = behavioursSelected[i];
+  //   console.log(bsList.innerText)
+  //   outputBS.appendChild(bsList);
+  //   var label = document.createElement("label");
+  //   var checkBox = document.createElement("input");
+  //   var label2 = document.createElement("label");
+  //   var checkBox2 = document.createElement("input");
+  //   checkBox.type = "checkbox";
+  //   checkBox2.type = "checkbox";
+  //   checkBox.style.cssText = "width: 30px;height: 30px;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
+  //   label.style.cssText = "display: block;font-size:18px;padding-left: 15px;text-indent: 40px;";
+  //   checkBox.innerText = "Sift";
+  //   checkBox.value = "Sift";
+  //   checkBox.setAttribute("id","behaviours-stage"+bsList+i);
+  //   checkBox.setAttribute("name","behaviours");
+  //   checkBox2.style.cssText = "width: 30px;height: 30px;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
+  //   label.style.cssText = "display: block;font-size:18px;padding-left: 15px;text-indent: 40px;";
+  //   checkBox2.innerText = "Interview";
+  //   checkBox2.value = "Interview";
+  //   checkBox2.setAttribute("id","behaviours-stage"+bsList+i);
+  //   checkBox2.setAttribute("name","behaviours");
+  //
+  //   label.appendChild(document.createTextNode(bsList[i]));
+  //   outputBS.appendChild(label);
+  //   outputBS.appendChild(checkBox);
+  //     outputBS.appendChild(checkBox2);
+  // hint.appendChild(document.createTextNode(hinter[i]));
+  // outputB.appendChild(hint);
+
+
+
+  const businessAnalystDDaT = {
+    "senior": {
+      "1": {
+        "title": "Agile working",
+        "description": "You can identify and compare the best processes or delivery methods to use, including measuring and evaluating outcomes. You can help the team to decide the best approach. You can help teams to manage and visualise outcomes, prioritise work and adhere to agreed minimum viable product (MVP), priorities and scope.",
+        "skill level": "practitioner"
+      },
+      "2": {
+        "title": "Business analysis",
+        "description": "You can advise on the approach to identify, investigate, analyse and communicate complex business problems and opportunities within a project or programme of work. You can inform tactical decision making and help to define longer-term strategic plans. You can recommend the approach to options analysis, feasibility assessment and operations, and can quantify potential business benefits. You can ensure the proposed solution aligns with business goals and objectives, and business and user needs, and achieves the required outcomes and expected benefits.",
+        "skill level": "practitioner"
+      },
+      "3": {
+        "title": "Business modelling",
+        "description": "You can lead on the modelling of processes, systems and data at varying levels of detail or complexity across a project or programme. You can manage the effects of proposed changes.",
+        "skill level": "practitioner"
+      },
+      "4": {
+        "title": "Business process improvement",
+        "description": "You can identify opportunities to improve business performance, within a project or programme. You can lead the analysis, identification, design, prioritisation and implementation of process and business changes to improve business operations and services. You can assess the feasibility of changes and recommend new approaches. You can support the implementation of proposed business improvements.",
+        "skill level": "practitioner"
+      },
+      "5": {
+        "title": "Business process testing",
+        "description": "You can lead on the application of business analysis and evaluation skills to support the design, execution and assessment of business process tests and usability evaluations within a project or programme of work.",
+        "skill level": "practitioner"
+      },
+      "6": {
+        "title": "Methods and tools",
+        "description": "You can build capability in methods and tools, ensuring they are adopted consistently and used effectively.",
+        "skill level": "practitioner"
+      },
+      "7": {
+        "title": "Requirements definition and management",
+        "description": "You can advise on the approach to requirements management within a project or programme. You can define the most appropriate requirements management life cycle methods and ensure the requirement can be traced in the design, build, test, tender and evaluation phases. You can co-ordinate and review the prioritisation of requirements and engage in the negotiation of solutions to help meet programme objectives.",
+        "skill level": "practitioner"
+      },
+      "8": {
+        "title": "Stakeholder relationship management (business analysis)",
+        "description": "You can lead on communicating with stakeholders, clarifying needs and commitments through consultation and consideration of consequences while focusing on user and business needs. You can develop or apply communication strategies to build relationships, using informal and formal channels to engage with stakeholders at all levels and resolving conflict where required.",
+        "skill level": "practitioner"
+      },
+      "9": {
+        "title": "Systems analysis",
+        "description": "You can lead the identification and analysis of IT system capabilities, developing models and system requirements. You can use systems analysis to support a deeper understanding of how processes and systems work, and to identify gaps. You can work with other digital professionals to design and develop system and user interfaces, identify gaps in functionality and assess the effect of proposed software changes on users or the organisation.",
+        "skill level": "practitioner"
+      },
+      "10": {
+        "title": "Testing (business analysis)",
+        "description": "You can advise on the approach to identify, investigate, analyse and communicate complex business problems and opportunities within a project or programme of work. You can inform tactical decision making and help to define longer-term strategic plans. You can recommend the approach to options analysis, feasibility assessment and operations, and can quantify potential business benefits. You can ensure the proposed solution aligns with business goals and objectives, and business and user needs, and achieves the required outcomes and expected benefits.",
+        "skill level": "practitioner"
+      },
+      "11": {
+        "title": "User experience analysis",
+        "description": "You can recommend the value of testing and apply the relevant tools and techniques to ensure test validity. You can advise on business scenarios and develop acceptance criteria to ensure requirements can be traced to develop functionality. You can review prototypes, test plans and test outcome reporting.",
+        "skill level": "practitioner"
+      },
+    }
+  }
+
+
+
+
+
+
+</script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+A senior business analyst has a good understanding of strategic arenas and leads large or complex projects.
+
+At this role level, you will:
+
+have functional or people management responsibilities, or a combination of both
+mentor others
+develop best practice
+own stakeholder relationships
+manage community of practice activities within a business area
+
+Skills needed for this role level

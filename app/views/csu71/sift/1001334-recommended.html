@@ -1,22 +1,16 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Sifting – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+  {% block beforeContent %}
 
-{% block beforeContent %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "alpha"
-  },
-  html: 'Your <a href"">feedback</a> will help us to improve.'
-})}}
-{% include 'includes/user-header.html' %}
-        {{ govukBackLink({
-          text: "Back",
-          href: "javascript:history.go(-1)"
-        }) }}
-        {% endblock %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+
+    {% endblock %}
 
 {% block content %}
 

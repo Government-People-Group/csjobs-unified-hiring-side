@@ -2,26 +2,24 @@
 
 {% block header %}
 {% include '/csu71/includes/header.html' %}
-  {% endblock %}
-
-{% block pageTitle %}
-Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
-
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
 
 {% block beforeContent %}
 <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
 
   <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
-    </div> -->
+</div> -->
 <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Contract information</span>
 
-    <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-<span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-co"><strong>Return to task list</strong></a></span>
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
 
-    </div>
+</div>
 
 </div>
 {{ govukBackLink({
@@ -37,6 +35,8 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
     <h1 class="govuk-heading-xl">Salary and benefits</h1>
     <form class="form" action="/csu71/task-list-exp-co" method="post">
+
+
       {{ govukInput({
         id: "cost",
         name: "cost",
@@ -172,15 +172,18 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      <button class="govuk-button govuk-!-margin-bottom-9" data-module="govuk-button">Continue</button>
 
       {{ govukButton({
         text: "Preview advert",
-        classes: "govuk-button--secondary",
+        classes: "govuk-button--secondary govuk-!-margin-bottom-9",
         href: "preview-advert"
       }) }}
     </form>
 
   </div>
 </div>
+{% include '/csu71/includes/footerarea.html' %}
+
+
 {% endblock %}

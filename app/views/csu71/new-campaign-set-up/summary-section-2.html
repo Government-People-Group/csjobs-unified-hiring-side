@@ -2,13 +2,26 @@
 
 {% block header %}
 {% include '/csu71/includes/header.html' %}
-  {% endblock %}
-
+{% endblock %}
 {% block pageTitle %}
-Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Summary</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
 {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -19,34 +32,32 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-xl">Summary</span>
     <h1 class="govuk-heading-xl">Contract information</h1>
     <h2 class="govuk-heading-m">Locations</h2>
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Based in the UK</dt>
-        <dd class="govuk-summary-list__value">{{ data['ussk']}}</dd>
+        <dt class="govuk-summary-list__key">Role location</dt>
+        <dd class="govuk-summary-list__value">{{ data['uk']}}</dd>
         <dd class="govuk-summary-list__actions"><a href="locations?edit2=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Office-based or remote?</dt>
-        <dd class="govuk-summary-list__value">{{ data['uk']}}</dd>
+        <dt class="govuk-summary-list__key">Onsite locations</dt>
+        <dd id="locas" class="govuk-summary-list__value"></dd>
         <dd class="govuk-summary-list__actions"><a href="locations?edit2=true">Change<span class="govuk-visually-hidden"> grade</span></a></dd>
       </div>
       {% if  data['uk'] !== "Remote" %}
-      {% include 'includes/location-reveal.html' %}
       {% else %}
       {% endif %}
     </dl>
 
     <h2 class="govuk-heading-m">Contract</h2>
     <dl class="govuk-summary-list">
-      {% if data['contract'] == "Fixed term" %}
-      {% include 'includes/fixed.html' %}
-      {% else %}
-      {% include 'includes/notfixed.html' %}
-      {% endif %}
 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Contractual arrangement</dt>
+        <dd id="locas" class="govuk-summary-list__value">{{data['contract']}} </dd>
+        <dd class="govuk-summary-list__actions"><a href="locations?edit2=true">Change<span class="govuk-visually-hidden"> grade</span></a></dd>
+      </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Working pattern</dt>
         <dd class="govuk-summary-list__value">
@@ -71,13 +82,30 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Salary</dt>
+
+        {% if data['costmax'].length > 0 %}
+
+        <dd class="govuk-summary-list__value">£{{ data['cost']}} - {{ data['costmax']}} per annum</dd>
+        {% else %}
         <dd class="govuk-summary-list__value">£{{ data['cost']}} per annum</dd>
+        {% endif %}
+
+
         <dd class="govuk-summary-list__actions"><a href="grades?edit5=true">Change<span class="govuk-visually-hidden"> department</span></a></dd>
       </div>
-      {% if  data['allowances'] == "yes" %}
-      {% include 'includes/noextras.html' %}
-      {% elseif data['allowances'] == "no" %}
-      {% endif %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Allowances</dt>
+
+        {% if data['allowances'] == "yes" %}
+
+        <dd class="govuk-summary-list__value">{{ data['otherAllow']}}</dd>
+        {% endif %}
+
+
+        <dd class="govuk-summary-list__actions"><a href="grades?edit5=true">Change<span class="govuk-visually-hidden"> department</span></a></dd>
+      </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Standard Civil Service benefits</dt>
         <dd class="govuk-summary-list__value">
@@ -96,28 +124,16 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
             </li>
           </ul>
         </dd>
-        <dd class="govuk-summary-list__actions"><a href="benefits?edit6=true">Change<span class="govuk-visually-hidden"> number</span></a></dd>
+        <dd class="govuk-summary-list__actions"><a href="salary-and-benefits?edit6=true">Change<span class="govuk-visually-hidden"> number</span></a></dd>
       </div>
     </dl>
 
-    <h2 class="govuk-heading-m">Contact details</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-4">
-      {% if  data['contact'] == "Me" %}
-      {% include 'includes/me-contact.html' %}
-      {% else %}
-      {% include 'includes/someone-else-contact.html' %}
-      {% endif %}
 
-      {% if  data['updates'] == "yes" %}
-      {% include 'includes/updates.html' %}
-      {% elseif data['updates'] == "no" %}
-      {% endif %}
-    </dl>
 
-    <h2 class="govuk-heading-m">Reserved status, checking and vetting</h2>
+    <h2 class="govuk-heading-m">Pre-employment checks and vetting</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Clearance required </dt>
+        <dt class="govuk-summary-list__key">Department default </dt>
         <dd class="govuk-summary-list__value">{{ data['bpss-correct']}}</dd>
         <dd class="govuk-summary-list__actions"><a href="reserved-status">Change<span class="govuk-visually-hidden"> profession</span></a></dd>
       </div>
@@ -132,4 +148,13 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
     </div
 
   </div>
+  {% include '/csu71/includes/footerarea.html' %}
+
+  <script>
+    var insertloc = document.getElementById("locas");
+    const locArray = JSON.parse(window.sessionStorage.getItem("locations"));
+
+    insertloc.innerHTML = locArray;
+  </script>
+
   {% endblock %}

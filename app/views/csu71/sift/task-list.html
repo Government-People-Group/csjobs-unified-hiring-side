@@ -1,27 +1,32 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Sift applications – Civil service jobs – GOV.UK Prototype Kit
-{% endblock %}
-{% block beforeContent %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "alpha"
-  },
-  html: 'Your <a href"">feedback</a> will help us to improve.'
-})}}
-{% include 'includes/user-header.html' %}
-        {{ govukBackLink({
-          text: "Back",
-          href: "javascript:history.go(-1)"
-        }) }}
-        {% endblock %}
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+  {% block beforeContent %}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+
+    {% endblock %}
 {% block content %}
 
+
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">1001334</span>
-    <h1 class="govuk-heading-xl">Lead delivery manager</h1>
+   <div class="govuk-grid-column-full" style="position:relative">
+<p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">Vacancy <strong>1001334</strong></p>
+
+<p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">Grade <strong>{{ data['grade'] | default("Grade 7") }}</strong></p>
+
+
+     <h1 style="border-bottom:1px solid #1d70b8;;padding-bottom:10px;" class="govuk-heading-xl">{{ data['title'] | default("Lead delivery manager") }}</h1>
+     <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+
+
+
 
 <p>You can save and return at any point to complete an action.</p>
 
@@ -149,7 +154,6 @@
                 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Optional</strong>
               </li>
               </ul>
-              </li>
 
   <li>
     <h2 class="app-task-list__section">
@@ -158,7 +162,7 @@
     <ul class="app-task-list__items">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="1001334-interview" aria-describedby="company-information-status">
+              <a href="setup-interview/setup-interview" aria-describedby="company-information-status">
                 Set up interview
               </a>
             </span>
@@ -196,7 +200,7 @@
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
             </li>
         </ul>
-        </li>
+
 </ol>
   </div>
 </div>

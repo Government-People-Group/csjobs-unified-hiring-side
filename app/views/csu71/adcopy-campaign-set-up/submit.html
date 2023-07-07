@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Before you submit</span>
+    <h1 class="govuk-heading-l">Reserve candidates found</h1>
+    <form class="form" action="/csu71/submit" method="post">
+
+      <p><strong>13</strong> candidates matching the job title <strong>{{ data['temp-copy-input-autocomplete']}}</strong> are available on our reserve list.
+
+      {{ govukRadios({
+        idPrefix: "reserve",
+        name: "reserve",
+        fieldset: {
+          legend: {
+            text: "Would you like to review the pre-qualified candidates?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No, I want to advertise this role"
+          }
+        ]
+      }) }}
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      {{ govukButton({
+        text: "Preview advert",
+        classes: "govuk-button--secondary",
+        href: "preview-advert"
+      }) }}
+
+    </form>
+
+
+  </div>
+</div>
+{% endblock %}

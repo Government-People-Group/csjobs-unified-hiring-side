@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Advert set up</span>
+    <h1 class="govuk-heading-l">Pre-qualifying questions</h1>
+          <form class="form" action="/csu71/pre-sift-questions-handler" method="post">
+  <p>These closed questions allow candidates to quickly find out if they are suitable for the role before they start their application.</p>
+
+  {% set changeHtml %}
+    <a href="">Change  </a>|<a href="">  Remove</a>
+  {% endset %}
+
+  {{ govukTable({
+    caption: "We recommend these questions based on the role",
+    captionClasses: "govuk-table__caption--m",
+    firstCellIsHeader: false,
+    rows: [
+
+      [
+        {
+         text: "Are you able to speak French fluently?"
+        },
+        {
+          html: changeHtml
+        }
+      ],
+      [
+        {
+          text: "Are you able to work from the office 3 days a week?"
+        },
+        {
+          html: changeHtml
+        }
+      ]
+    ]
+  }) }}
+
+<p><a href="#">Add another question</a></p>
+<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "preview-advert"
+}) }}
+<input type="hidden" name="pre-sift-viewed" value="true">
+</form>
+</div>
+</div>
+{% endblock %}

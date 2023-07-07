@@ -20,6 +20,496 @@
     <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Vacancy incomplete</h2>
     <p class="govuk-body govuk-!-margin-bottom-2">You have completed 0 of 19 sections.</p>
 
+
+
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1. </span>About the vacancy
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="/csu71/blank-campaign-set-up/basic-details" aria-describedby="eligibility-status">
+                Basic details
+              </a>
+            </span>
+
+
+            {% if data['num-posts']|length >= 1 %}
+            <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+            {% elif data['grade']|length >= 1 %}
+            <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+            {% endif %}
+
+
+          </li>
+
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="/csu71/blank-campaign-set-up/approval" aria-describedby="read-declaration-status">
+                Approval
+              </a>
+            </span>
+
+
+
+            {% if data['team-detail']|length >= 1 %}
+            <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+            {% elif data['business-area']|length >= 1 %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+            {% elif data['prof']|length >= 1 %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="/csu71/blank-campaign-set-up/reserved-status-role" aria-describedby="read-declaration-status">
+                Reserved status
+              </a>
+            </span>
+
+
+
+            {% if data['team-detail']|length >= 1 %}
+            <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+            {% elif data['business-area']|length >= 1 %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+            {% elif data['prof']|length >= 1 %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+
+
+
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">2. </span>Contract information
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="/csu71/blank-campaign-set-up/locations" aria-describedby="list-convictions-status">
+                Location</a>
+              </span>
+
+              {% if data['uk'] == "Remote" %}
+              <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+              {% elif data['loc2-viewed']|length >= 1 %}
+              <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+              {% elif data['ussk']|length >= 1 %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+              {% elif data['uk']|length >= 1 %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/csu71/blank-campaign-set-up/contract-details" aria-describedby="list-convictions-status">
+                  Contract details</a>
+                </span>
+
+                {% if data['working-pattern']|length >= 1 %}
+                <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                {% elif data['contract']|length >= 1 %}
+                <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+                {% elif data['fta']|length >= 1 %}
+                <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+                {% elif data['fta']|length >= 1 %}
+                <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+                {% else %}
+                <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
+                {% endif %}
+
+
+              </li>
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="/csu71/blank-campaign-set-up/salary-and-benefits" aria-describedby="list-convictions-status">
+                    Salary and benefits</a>
+                  </span>
+
+                  {% if data['benefits-viewed']|length >= 1 %}
+                  <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                  {% else %}
+                  <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
+                  {% endif %}
+
+
+
+                </li>
+
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      <a href="/csu71/blank-campaign-set-up/pecvet" aria-describedby="list-convictions-status">
+                        Pre-employment checks and vetting</a>
+                      </span>
+
+
+                      {% if data['bpss-correct']|length >= 1 %}
+                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                      {% else %}
+                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+                      {% endif %}
+
+
+                    </li>
+                  </ul>
+
+                </li>
+                <h2 class="app-task-list__section">
+                  <span class="app-task-list__section-number">3. </span>Advert set up
+                </h2>
+                <ul class="app-task-list__items">
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      <a href="/csu71/blank-campaign-set-up/about-the-role" aria-describedby="read-declaration-status">
+                        About the role
+                      </a>
+                    </span>
+
+                    {% if data['respon']|length >= 1 %}
+                    <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                    {% elif data['person-spec']|length >= 1 %}
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+                    {% else %}
+                    <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
+                    {% endif %}
+
+
+                  </li>
+
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      <a href="/csu71/blank-campaign-set-up/about-the-team" aria-describedby="read-declaration-status">
+                        About the team
+                      </a>
+                    </span>
+
+                    {% if data['respon']|length >= 1 %}
+                    <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                    {% elif data['person-spec']|length >= 1 %}
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+                    {% else %}
+                    <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
+                    {% endif %}
+
+
+                  </li>
+
+
+
+
+
+
+                    <li class="app-task-list__item">
+                      <span class="app-task-list__task-name">
+                        <a href="/csu71/blank-campaign-set-up/supporting-links" aria-describedby="read-declaration-status">
+                          Add any supporting links
+                        </a>
+                      </span>
+
+  {% if data['sinfo1']|length >= 1 %}
+  <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+  {% else %}
+                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Optional</strong>
+  {% endif %}
+                    </li>
+                  </ul>
+
+
+
+
+
+
+                                    <h2 class="app-task-list__section">
+                                      <span class="app-task-list__section-number">4. </span>Selection criteria and assessment methods
+                                    </h2>
+                                    <ul class="app-task-list__items">
+
+
+                                      <li class="app-task-list__item">
+                                        <span class="app-task-list__task-name">
+                                          <a class="govuk-link govuk-link--no-visited-state" href="/csu71/blank-campaign-set-up/pick-criteria-type" aria-describedby="eligibility-status">
+                                            Pick selection criteria
+                                          </a>
+                                        </span>
+
+
+                                        {% if data['done'] == "dusted" %}
+                                        <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                                        {% else %}
+
+                                        <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
+                                        {%endif%}
+
+                                      </li>
+
+
+                                      <li class="app-task-list__item">
+                                        <span class="app-task-list__task-name">
+                                          <a class="govuk-link govuk-link--no-visited-state" href="#" aria-describedby="read-declaration-status">
+                                            Assign selection criteria to sift, interview or both stages
+                                          </a>
+                                        </span>
+
+                                        {% if data['done'] == "dusted" %}
+                                        <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                                        {% else %}
+                                        <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
+                                        {%endif%}
+
+                                      </li>
+
+                                      <li class="app-task-list__item">
+                                        <span class="app-task-list__task-name">
+                                          <a class="govuk-link govuk-link--no-visited-state" href="#" aria-describedby="read-declaration-status">
+                                            Select assessment methods for sift
+                                          </a>
+                                        </span>
+
+                                        {% if data['done'] == "dusted" %}
+                                        <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                                        {% else %}
+                                        <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
+                                        {%endif%}
+
+                                      </li>
+
+
+
+
+                                      <li class="app-task-list__item">
+                                        <span class="app-task-list__task-name">
+                                          <a class="govuk-link govuk-link--no-visited-state" href="#" aria-describedby="read-declaration-status">
+                                            Select assessment methods for interview
+                                          </a>
+                                        </span>
+
+                                        {% if data['done'] == "dusted" %}
+                                        <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                                        {% else %}
+                                        <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
+                                        {%endif%}
+
+
+
+
+                                      </li>
+
+                                      <li class="app-task-list__item">
+
+
+
+                                        <span class="app-task-list__task-name">
+                                          <a class="govuk-link govuk-link--no-visited-state" href="#" aria-describedby="read-declaration-status">
+                                            Review your criteria and methods
+                                          </a>
+                                        </span>
+                                        {% if data['done'] == "dusted" %}
+                                        <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                                        {% else %}
+
+                                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+                                        {%endif%}
+                                      </li>
+                                      <li class="app-task-list__item">
+
+
+
+                                        <span class="app-task-list__task-name">
+                                          <a class="govuk-link govuk-link--no-visited-state" href="#" aria-describedby="read-declaration-status">
+                                            Essential criteria
+                                          </a>
+                                        </span>
+                                        {% if data['done'] == "dusted" %}
+                                        <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                                        {% else %}
+
+                                        <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
+                                        {%endif%}
+                                      </li>
+                                      <li class="app-task-list__item">
+
+
+
+                                        <span class="app-task-list__task-name">
+                                          <a class="govuk-link govuk-link--no-visited-state" href="#" aria-describedby="read-declaration-status">
+                                            Pre-sift eligibility questions
+                                          </a>
+                                        </span>
+                                        {% if data['done'] == "dusted" %}
+                                        <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                                        {% else %}
+
+                                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">optional</strong>
+                                        {%endif%}
+                                      </li>
+
+                                    </ul>
+
+
+
+                  <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">5. </span>Recruitment channels
+                  </h2>
+                  <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                      <span class="app-task-list__task-name">
+                        <a href="/csu71/blank-campaign-set-up/approach" aria-describedby="company-information-status">
+                          Approach
+                        </a>
+                      </span>
+                      {% if data['who-can-apply']|length >= 1 %}
+
+                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                      {% else %}
+                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
+                      {% endif %}
+                    </li>
+                    <li class="app-task-list__item">
+                      <span class="app-task-list__task-name">
+                        <a href="/csu71/blank-campaign-set-up/attraction-methods" aria-describedby="list-convictions-status">
+                          Attraction methods
+                        </a>
+                      </span>
+                      {% if data['attraction']|length >= 1 %}
+
+                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                      {% else %}
+                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
+                      {% endif %}
+                    </li>
+
+                    <li class="app-task-list__item">
+                      <span class="app-task-list__task-name">
+                        <a href="/csu71/blank-campaign-set-up/reserve-list" aria-describedby="list-convictions-status">
+                          Reserve list
+                        </a>
+                      </span>
+                      {% if data['reserve-list-required']|length >= 1 %}
+
+                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                      {% else %}
+                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">JOB AD content</strong>
+                      {% endif %}
+                    </li>
+
+                  </ul>
+
+                  <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">6. </span>Finalise and submit
+                  </h2>
+                  <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                      <span class="app-task-list__task-name">
+                        <a href="#" aria-describedby="list-convictions-status">
+                          Add people to the campaign</a>
+                        </span>
+                        {% if data['contact']|length >= 1 %}
+                        <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                        {% elif data['updates']|length >= 1 %}
+                        <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                        {% elif data['their-email']|length >= 1 %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+                        {% elif data['update-detail']|length >= 1 %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+                        {% endif %}
+                      </li>
+
+
+
+                      <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                          <a href="/csu71/blank-campaign-set-up/campaign-dates" aria-hidden="list-convictions-status">
+                            Campaign dates
+                          </span>
+                          {% if data['advert-time']|length >= 1 %}
+
+                          <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                          {% elif data['day']|length >= 1 %}
+                          <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+                          {% elif data['month']|length >= 1 %}
+                          <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+                          {% elif data['year']|length >= 1 %}
+                          <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+                          {% else %}
+                          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+                          {% endif %}
+
+                        </li>
+
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <a href="/csu71/blank-campaign-set-up/submit" aria-hidden="list-convictions-status">
+                                Submit
+                              </span>
+                              {% if data['submitted'] == "true" %}
+
+                              <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                                {% elif data['reviewer']|length >= 1 %}
+                              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+                              {% else %}
+                              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+                              {% endif %}
+                            </li>
+                          </ul>
+
+                        </ol>
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <ol class="app-task-list">
       <li>
         <h2 class="app-task-list__section">
@@ -27,7 +517,7 @@
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="blank/basic-details" aria-describedby="basic-details">
+              <a href="blank-campaign-set-up/basic-details" aria-describedby="basic-details">
                 Basic details
               </a>
             </span>

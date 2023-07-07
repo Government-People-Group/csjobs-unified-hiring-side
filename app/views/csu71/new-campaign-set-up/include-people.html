@@ -17,7 +17,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-co"><strong>Return to task list</strong></a></span>
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
 
 </div>
 
@@ -38,7 +38,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
     <div class="govuk-grid-row govuk-!-margin-top-3">
 
 <div class="govuk-grid-column-three-quarters">
-<form class="form" action="/csu71/new-campaign-set-up/campaign-dates" method="post">
+<form class="form" action="/csu71/new-campaign-set-up/include-people-2" method="post">
 
     <H1 style="; " class="govuk-heading-xl govuk-!-margin-bottom-6">Add people to the campaign</H1>
 
@@ -456,14 +456,61 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 </div>
 
-<button class="govuk-button govuk-!-margin-top-9" onclick="getSkillsValues()" data-module="govuk-button">Continue</button>
+<button class="govuk-button govuk-!-margin-top-9"  data-module="govuk-button">Continue</button>
 
 
 
 
 <input type="hidden" name="source" value="skills">
 
+{% include '/csu71/includes/footerarea.html' %}
+
 <script>
+
+
+
+  const peopleIncluded = {};
+
+
+    const p1 = document.getElementById("person1").value;
+    const p1Role = document.getElementById("person1-involvement");
+    const p2 = document.getElementById("person2").value;
+    const p2Role = document.getElementById("person2-involvement");
+    const p3 = document.getElementById("person3").value;
+    const p3Role = document.getElementById("person3-involvement");
+    const p4 = document.getElementById("person4").value;
+    const p4Role = document.getElementById("person4-involvement");
+    const p5 = document.getElementById("person5").value;
+    const p5Role = document.getElementById("person5-involvement");
+    const p6 = document.getElementById("person6").value;
+    const p6Role = document.getElementById("person6-involvement");
+
+
+
+  var p1Name = p1.split('@')[0];
+
+  // p1Name = p1Name.split(".")[0]+" "+[1];
+console.log(p1)
+
+  // const keyDetails = {};
+  // const title = document.getElementById("title").value;
+  // const grade = document.getElementById("newgrade").value
+  // const profession = document.getElementById("grabProf").value;
+  // const department = document.getElementById("dept").value;
+  //
+  // console.log(title, grade, profession, department)
+  //
+  // keyDetails.jobTitle = title;
+  // keyDetails.grade = grade;
+  // keyDetails.profession = profession;
+  // keyDetails.department = department;
+  //
+  // window.sessionStorage.setItem("keyDetails", JSON.stringify(keyDetails));
+  //
+  //
+  // console.log(keyDetails);
+
+
   function showHideDiv(div1,div2) {
     document.getElementById(div1).style.display = 'block';
     document.getElementById(div2).style.display = 'none';
@@ -504,5 +551,45 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
       target.value = `${bulletWithSpace}${value}`;
     }
   }
+
+
+
+
+  function focusSearch(place){
+    showDiv('head');
+    showDiv('buttons');
+    var searchBox = document.getElementById("autocomplete-default");
+    searchBox.value = place;
+    const pointer = document.getElementById("autocomplete-default");
+    pointer.addEventListener('blur', (event) => {
+      var thing = event.target.value;
+      var ploccontent = document.createElement("p");
+      var plinkconten = document.createElement("p");
+      ploccontent.innerHTML = thing;
+
+
+      if (ploccontent.innerHTML.length > 45){
+        ploccontent.style.cssText = "margin-top:10px;height:60px;font-size:20px;width:100%";
+        plinkconten.style.cssText = "margin-top:10px;;height:60px;;font-size:20px;font-weight:bold";
+
+      } else {
+        ploccontent.style.cssText = "margin-top:10px;height:20px;font-size:20px;width:100%";
+        plinkconten.style.cssText = "margin-top:10px;;height:20px;;font-size:20px;font-weight:bold";
+      }
+
+      plinkconten.innerHTML = "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' id='1' onclick='kill(this.id)' href='#'> Delete</a>";
+      loc.appendChild(ploccontent);
+      link.appendChild(plinkconten);
+      // locArray.push(thing)
+      // console.log(thing)
+      // window.sessionStorage.setItem("locations", JSON.stringify(locArray));
+    }, { once: true });
+
+  }
+
+
+
+
+
 </script>
 {% endblock %}

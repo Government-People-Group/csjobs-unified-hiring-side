@@ -18,7 +18,23 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-<span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-co"><strong>Return to task list</strong></a></span>
+      <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+
+      <!-- {% if data['org'] == "ddat" %}
+      <div id ="ddattag"  style="position:absolute;right:10px;top:60px;;">
+        <a href="/csu71/template-csofficial?return=select-behaviours"><img src="/public/images/ddat1.png" alt="Template by Digital, Data and Technology Profession" style="background:#F4FAFF;border:2px solid #1d70b8;padding:10px;border-radius:5px;width:80px"></a>
+
+      </div>
+      {% elif data['org'] == "co" %}
+      <div id ="cotag"  style="position:absolute;right:10px;top:60px;;">
+        <a  href="/csu71/template-csofficial?return=select-behaviours"> <img src="/public/images/co-logo.png" alt="Template by Cabinet Office" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
+      </div>
+      {% elif data['org'] == "ho" %}
+      <div id ="hotag"  style="position:absolute;right:10px;top:60px;;">
+        <a href="/csu71/template-csofficial?return=select-behaviours"><img src="/public/images/ho-logo.png" alt="Template by Home Office" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
+      </div>
+      {% endif %} -->
+
 
     </div>
 
@@ -32,7 +48,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 {% block content %}
 <form class="form" action="/csu71/new-campaign-set-up/supporting-links" method="post">
 
-<div class="govuk-grid-row   govuk-!-margin-top-3">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
     <h1 class="govuk-heading-xl">About the team</h1>
 
@@ -64,6 +80,9 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
   </div>
   </div>
+
+  {% include '/csu71/includes/footerarea.html' %}
+
 <script>
 
 

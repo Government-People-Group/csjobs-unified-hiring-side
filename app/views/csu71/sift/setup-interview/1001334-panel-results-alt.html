@@ -1,0 +1,205 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">View and submit my scores</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+<span class="govuk-caption-l">Lead delivery manager (1001334)</span>
+<h1 class="govuk-heading-xl">Panel results require a consensus meeting</h1>
+
+<p class="govuk-body-m"><strong>The panel couldn't agree on the outcome for Applicant 3 and Applicant 4.</strong></p>
+
+  {% set interviewHTML %}
+  {{govukTag({
+    text: "Interview",
+    classes: "govuk-tag--green"
+  })}}
+  {% endset %}
+  {% set holdHTML %}
+  {{govukTag({
+    text: "On hold",
+    classes: "govuk-tag--blue"
+  })}}
+  {% endset %}
+  {% set indefiniteHTML %}
+  {{govukTag({
+    text: "no consensus",
+    classes: "govuk-tag--grey"
+  })}}
+  {% endset %}
+  {% set rejectHTML %}
+  {{govukTag({
+    text: "Reject",
+    classes: "govuk-tag--red"
+  })}}
+  {% endset %}
+
+
+
+
+
+  {{ govukTable({
+    caption: "",
+    captionClasses: "govuk-table__caption--m",
+    firstCellIsHeader: false,
+    head: [
+      {
+        text: "",
+        classes: 'app-custom-class'
+
+      },
+      {
+        text: "Average score",
+        classes: 'app-custom-class'
+      },
+      {
+        text: "Panel consensus",
+        classes: 'app-custom-class',
+        style: hidden
+      },
+      {
+        html: confirmHTML,
+        classes: 'app-custom-class'
+      }
+    ],
+    rows: [
+      [
+        {
+          html: "<a href='#'>Applicant 5</a>"
+        },
+        {
+          text: "35"
+        },
+        {
+          html: interviewHTML
+        },
+        {
+          html: checkboxHTML
+        }
+      ],
+    [
+        {
+          html: "<a href='1001334-applicant-1'>Applicant 1</a>"
+        },
+        {
+          text: "32"
+        },
+        {
+          html: interviewHTML
+        },
+        {
+          html: consensusHTML
+        }
+      ],
+
+      [
+        {
+          html: "<a href=''>Applicant 2</a>"
+        },
+        {
+          text: "20"
+        },
+        {
+          html: rejectHTML
+        },
+        {
+          html: checkboxHTML
+        }
+      ]
+
+    ]
+  }) }}
+
+  {{ govukTable({
+    caption: "",
+    captionClasses: "govuk-table__caption--m",
+    firstCellIsHeader: false,
+    head: [
+      {
+        text: "",
+        classes: 'app-custom-class'
+
+      },
+      {
+        text: "Average score",
+        classes: 'app-custom-class'
+      },
+      {
+        text: "Panel consensus",
+        classes: 'app-custom-class',
+        style: hidden
+      },
+      {
+        html: confirmHTML,
+        classes: 'app-custom-class'
+      }
+    ],
+    rows: [
+      [
+        {
+          html: "<a href='#'>Applicant 4</a>"
+        },
+        {
+          text: "33"
+        },
+        {
+          html: indefiniteHTML
+        },
+        {
+          html: consensusHTML
+        }
+      ],
+      [
+        {
+          html: "<a href=''>Applicant 3</a>"
+        },
+        {
+          text: "31"
+        },
+        {
+          html: indefiniteHTML
+        },
+        {
+          html: checkboxHTML
+        }
+      ]
+
+    ]
+  }) }}
+
+  {{ govukButton({
+    text: "Arrange a consensus meeting",
+    href: "consensus"
+  }) }}
+
+              </div>
+              </div>
+  {% endblock %}

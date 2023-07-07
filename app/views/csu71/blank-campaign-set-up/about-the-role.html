@@ -1,0 +1,112 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+    </div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Advert set up</span>
+
+    <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+<span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-blank"><strong>Return to task list</strong></a></span>
+
+    </div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<form class="form" action="/csu71/new-campaign-set-up/about-the-team" method="post">
+
+<div class="govuk-grid-row  govuk-!-margin-top-3">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl">About the role</h1>
+          <form class="form" action="/csu71/about-the-role-handler" method="post">
+<p>This information will be shown on the advert.</p>
+    {{ govukCharacterCount({
+  name: "person-spec",
+  id: "person-spec",
+  maxwords: 150,
+  label: {
+    text: "What are you looking for in a candidate?",
+    classes: "govuk-label--m",
+    isPageHeading: false
+  },
+  value: data['person-spec']
+}) }}
+
+
+
+<div class="govuk-form-group">
+  <h2 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--m" for="team-detail">
+      What are the responsibilities of the role?
+    </label>
+  </h2>
+  <div id="more-detail-hint" class="govuk-hint">
+    Include common tasks and expectations.
+  </div>
+  <textarea onkeyup="handleInput(event)" class="govuk-textarea" id="respon" name="respon" value="{{ data['respon']}}" rows="5" aria-describedby="respon-hint"></textarea>
+</div>
+
+
+
+
+
+
+
+<button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Continue</button>
+
+
+</form>
+</div>
+</div>
+<script>
+
+
+const bullet = "\u29BF";
+const bulletWithSpace = `${bullet} `;
+const enter = 13;
+
+
+const handleInput = (event) => {
+  const { keyCode, target } = event;
+  const { selectionStart, value } = target;
+
+  if (keyCode === enter) {
+    console.log('a');
+    target.value = [...value]
+      .map((c, i) => i === selectionStart - 1
+        ? `\n${bulletWithSpace}`
+        : c
+      )
+      .join('');
+      console.log(target.value);
+
+    target.selectionStart = selectionStart+bulletWithSpace.length;
+    target.selectionEnd = selectionStart+bulletWithSpace.length;
+  }
+
+  if (value[0] !== bullet) {
+    target.value = `${bulletWithSpace}${value}`;
+  }
+}
+</script>
+
+
+
+{% endblock %}

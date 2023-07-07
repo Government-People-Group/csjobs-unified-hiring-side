@@ -1,0 +1,135 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">Summary</span>
+    <h1 class="govuk-heading-xl">Contract information</h1>
+    <h2 class="govuk-heading-m">Locations</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Based in the UK</dt>
+        <dd class="govuk-summary-list__value">{{ data['ussk']}}</dd>
+        <dd class="govuk-summary-list__actions"><a href="locations?edit2=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Office-based or remote?</dt>
+        <dd class="govuk-summary-list__value">{{ data['uk']}}</dd>
+        <dd class="govuk-summary-list__actions"><a href="locations?edit2=true">Change<span class="govuk-visually-hidden"> grade</span></a></dd>
+      </div>
+      {% if  data['uk'] !== "Remote" %}
+      {% include 'includes/location-reveal.html' %}
+      {% else %}
+      {% endif %}
+    </dl>
+
+    <h2 class="govuk-heading-m">Contract</h2>
+    <dl class="govuk-summary-list">
+      {% if data['contract'] == "Fixed term" %}
+      {% include 'includes/fixed.html' %}
+      {% else %}
+      {% include 'includes/notfixed.html' %}
+      {% endif %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Working pattern</dt>
+        <dd class="govuk-summary-list__value">
+
+          {% if data['working-pattern'].length > 0 %}
+          {% for items in data['working-pattern'] | slice(1) %}
+          <ul class="govuk-list govuk-list--bullet {{ loop.index }}">
+            {% for item in items %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+          {% endfor %}
+          {% else %}
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions"><a href="contract-details?edit4=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+      </div>
+
+    </dl>
+
+    <h2 class="govuk-heading-m">Salary and benefits</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Salary</dt>
+        <dd class="govuk-summary-list__value">£{{ data['cost']}} per annum</dd>
+        <dd class="govuk-summary-list__actions"><a href="grades?edit5=true">Change<span class="govuk-visually-hidden"> department</span></a></dd>
+      </div>
+      {% if  data['allowances'] == "yes" %}
+      {% include 'includes/noextras.html' %}
+      {% elseif data['allowances'] == "no" %}
+      {% endif %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Standard Civil Service benefits</dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              Learning and development tailored to your role
+            </li>
+            <li>
+              An environment with flexible working options
+            </li>
+            <li>
+              A culture encouraging inclusion and diversity
+            </li>
+            <li>
+              A Civil Service pension
+            </li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions"><a href="benefits?edit6=true">Change<span class="govuk-visually-hidden"> number</span></a></dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Contact details</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+      {% if  data['contact'] == "Me" %}
+      {% include 'includes/me-contact.html' %}
+      {% else %}
+      {% include 'includes/someone-else-contact.html' %}
+      {% endif %}
+
+      {% if  data['updates'] == "yes" %}
+      {% include 'includes/updates.html' %}
+      {% elseif data['updates'] == "no" %}
+      {% endif %}
+    </dl>
+
+    <h2 class="govuk-heading-m">Reserved status, checking and vetting</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Clearance required </dt>
+        <dd class="govuk-summary-list__value">{{ data['bpss-correct']}}</dd>
+        <dd class="govuk-summary-list__actions"><a href="reserved-status">Change<span class="govuk-visually-hidden"> profession</span></a></dd>
+      </div>
+    </dl>
+
+    <span class="govuk-caption-l">Next section</span>
+    <h2 class="govuk-heading-l">Advert setup</h2>
+    <form action="about-the-role" method="post" novalidate>
+      <input type="hidden" name="summary2" value="true">
+      <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+    </div
+
+  </div>
+  {% endblock %}

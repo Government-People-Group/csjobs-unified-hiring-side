@@ -1,39 +1,53 @@
 {% extends "layouts/main.html" %}
-{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
-{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% block header %}
 {% include '/csu71/includes/header.html' %}
-  {% endblock %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
 
-  {% block beforeContent %}
-  <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
 
-    <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
-      </div> -->
-  <span style="float:left;margin-top:10px;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-m">Selection criteria and assessment methods</span>
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Selection criteria and assessment methods</span>
 
-      <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-co"><strong>Return to task list</strong></a></span>
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
 
-      </div>
+</div>
 
-  </div>
-
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
-  {% endblock %}
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
 
   {% block content %}
 
 
   <style>
+
+
+
+      .experiment {
+        background:#F4FAFF;
+        border-bottom:1px solid #1d70b8;
+        margin-top:5px;
+        margin-bottom:-20px;
+        padding-top:20px;
+        padding-left:20px;
+        padding-bottom:15px;
+        font-weight:bold;
+
+      }
+
+
     p, div {
       font-family: "GDS Transport", arial, sans-serif;
       line-height: 1.2;
@@ -109,10 +123,8 @@
 
   <form class="form" action="/csu71/check-next-stepV5" method="post">
 
-    <H2 class="govuk-heading-l govuk-!-margin-top-3 govuk-!-margin-bottom-3">What will you assess within each element at sift and interview?</h2>
-      <p class="govuk-body-l govuk-!-margin-bottom-6 govuk-!-margin-top-3">You have selected which elements are important to assess for this job role. You should now select what you will assess within each element at sift and interview.</p>
 
-      <H1 style="padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-3 govuk-!-margin-bottom-6">Strengths</H1>
+  <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-1 govuk-!-margin-bottom-3">Strengths</H1>
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-quarter" style="width:20%">
@@ -129,29 +141,16 @@
 
           {% endif %}
           {% endfor %}
-<a style="float:left;font-size:18px" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/717274/CS_Strengths_2018.pdf">Strengths<BR> Dictionary</a>
         </div>
         <div class="govuk-grid-column-three-quarters">
 
 
-          <div style="position:relative;width:45%;" class="govuk-form-group govuk-input--width-30 govuk-!-margin-top-6 govuk-!-margin-left-3">
-            <label for="autocomplete-default" class="govuk-label--s">Search the strengths dictionary</label>
-            <div id="strengthsList" class="autocomplete-wrapper"></div>
-
-
-
-            <a style="float:right;position:absolute;right:-120px;top:25px" class="govuk-button govuk-button--secondary govuk-!-margin-top-0"  href="#">Add to list</a>
-
-          </div>
-
-          <div id="bar" class="govuk-!-margin-top-6"  style="border-top:1px solid #1d70b8"></div>
-
-          <p class="govuk-!-margin-left-3 govuk-!-margin-top-3" id="item"></p>
 
 
 
 
-          <div class="govuk-!-margin-left-3 govuk-!-margin-top-9" id="recom" style="background:#F4FAFF;border-left:5px solid #1d70b8;padding:10px">
+
+          <div class="govuk-!-margin-left-3 govuk-!-margin-top-9" id="recom" style="display:none;background:#F4FAFF;border-left:5px solid #1d70b8;padding:10px">
             <!-- <p class="govuk-body-m "><strong>Would you like to the most relevant strengths mapped to your selected behaviours? </strong></p> -->
 
             <div >
@@ -188,18 +187,33 @@
           </div>
 
 
-          <div id="recom2" style="display:none;background:#F4FAFF;;border-left:5px solid #1d70b8;padding:10px">
+          <!-- <div id="recom2" style=";background:#F4FAFF;;border-left:5px solid #1d70b8;padding:10px">
             <p class="govuk-body-m" style="font-size:20px;line-height:1.6"><strong>We recommend selecting 4-6 strengths in total.</strong><BR>They can be assessed at sift with the Work Strengths online test,<BR>and at interview with quick-response interview questions.</p>
+          </div> -->
+
+          <div id="conditional" style="none;padding-top:10px;padding-bottom:10px" class="govuk-!-margin-top-3 govuk-!-margin-bottom-1">
+
+            <div style="border-bottom:1px solid #1d70b8" class="govuk-!-margin-top-1" id="behave"></div>
 
 
           </div>
 
-          <div id="conditional" style="display:none;padding-top:10px;padding-bottom:10px" class="govuk-!-margin-top-1 govuk-!-margin-bottom-1">
 
-            <div class="govuk-!-margin-top-6" id="behave"></div>
 
+          <div style="position:relative;width:45%;"" class="govuk-form-group govuk-input--width-30 govuk-!-margin-top-3 govuk-!-margin-left-3">
+            <label for="autocomplete-default" class="govuk-label--s">Search the strengths dictionary</label>
+            <div id="strengthsList" class="autocomplete-wrapper"></div>
+
+
+
+            <a style="float:right;position:absolute;right:-120px;top:25px" class="govuk-button govuk-button--secondary govuk-!-margin-top-0"  href="#">Add to list</a>
 
           </div>
+
+          <div id="bar" class="govuk-!-margin-top-6"  style="border-top:1px solid #1d70b8"></div>
+
+          <p class="govuk-!-margin-left-3 govuk-!-margin-top-3" id="item"></p>
+          <a style="float:right;font-size:18px" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state govuk-!-margin-top-0" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/717274/CS_Strengths_2018.pdf"><strong>Strengths Dictionary PDF</strong></a>
 
           <script src="/public/javascripts/temp-copy.js"></script>
           <script src="/public/javascripts/temp.js"></script>
@@ -216,6 +230,8 @@
           <button class="govuk-button govuk-!-margin-top-6" onclick="checkCheckBoxes()" data-module="govuk-button">Continue</button>
 
         </form>
+        {% include '/csu71/includes/footerarea.html' %}
+
         <script>
 
           if (document.getElementById('reveal').checked) {
@@ -301,7 +317,7 @@
             for (var log=0; log < beLong; log++) {
               var outputB = document.getElementById('behave');
               var contentB = document.createElement("p");
-              contentB.style.cssText = "font-size:22px;background:#F4FAFF;border-bottom:1px solid #1d70b8;padding-bottom:10px";
+              contentB.style.cssText = "font-size:22px;border-bottom:1px solid #1d70b8;padding-bottom:10px";
               contentB.innerHTML = "For the behaviour <strong>"+behaviours[log]+"</strong>";
               outputB.appendChild(contentB)
 
@@ -348,6 +364,14 @@
                     checkBox.style.cssText = "width: 30px;height: 30px;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
                     label.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
                     checkBox.value = strewn[i];
+
+                    if (strewn[i] == "Strategic" || strewn[i] == "Disciplined" || strewn[i] == "Explainer" || strewn[i] == "Improver" || strewn[i] == "Focussed"){
+                      label.setAttribute("class","experiment");
+
+                      checkBox.checked = "true";
+                    }
+
+
                     hint.style.cssText = "display: block;padding-bottom: 35px;";
                     hint.value = hinter[i];
                     checkBox.setAttribute("id","strengths"+behaviours[log]+i);
@@ -358,6 +382,11 @@
                     outputB.appendChild(checkBox);
                     hint.appendChild(document.createTextNode(hinter[i]));
                     outputB.appendChild(hint);
+
+
+
+
+
 
                   }
 

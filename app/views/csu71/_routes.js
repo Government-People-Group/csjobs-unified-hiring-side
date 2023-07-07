@@ -13,6 +13,29 @@ router.post("/location-handler", function (req, res) {
 		}
 })
 
+
+router.post("/location-handlerBlank", function (req, res) {
+	var locType = req.session.data['uk'];
+
+		if (locType == "Remote") {
+			res.redirect("blank-campaign-set-up/contract-details");
+		} else {
+			res.redirect("blank-campaign-set-up/locations-test");
+		}
+})
+
+
+router.post("/location-handlerAdCopy", function (req, res) {
+	var locType = req.session.data['uk'];
+
+		if (locType == "Remote") {
+			res.redirect("adcopy-campaign-set-up/contract-details");
+		} else {
+			res.redirect("adcopy-campaign-set-up/locations-test");
+		}
+})
+
+
 // router.post("/locations-handler", function (req, res) {
 // 	var remote = req.session.data['uk']
 // 	// if (req.session.data['edit2'] == "true") {
@@ -23,6 +46,30 @@ router.post("/location-handler", function (req, res) {
 // 		res.redirect('new-campaign-set-up/locations-2')
 // 	}
 // })
+
+
+
+
+
+
+router.post("/templateSelected", function (req, res) {
+
+var ret = req.session.data['path'];
+var template = req.session.data['org'];
+var tmp = req.session.data['templateSelected']
+
+console.log(tmp)
+
+if (ret != ""){
+	res.redirect("new-campaign-set-up/"+ret);
+
+} else {
+	res.redirect("/csu71/task-list-exp-co?template={{data['org']}}&banner=show");
+}
+})
+
+
+
 
 router.post("/check-next-stepV5", function (req, res) {
 	var src = req.session.data['source'];
@@ -36,11 +83,71 @@ console.log(list)
 			res.redirect("new-campaign-set-up/select-criteria-stage");
 		} else if (src == list[a]){
 			a=a+1;
-			res.redirect("new-campaign-set-up/select-"+list[a]);
+			res.redirect("new-campaign-set-up/select-"+list[a]+"?template={{data['template']}}");
 			break;
 		}
 	}
 })
+
+
+router.post("/check-next-stepAdCopy", function (req, res) {
+	var src = req.session.data['source'];
+	var list = req.session.data['selected'];
+	var num = list.length;
+console.log(src)
+console.log(list)
+
+	for (var a=0;a<num;a++){
+		if (src == list[num]) {
+			res.redirect("adcopy-campaign-set-up/select-criteria-stage");
+		} else if (src == list[a]){
+			a=a+1;
+			res.redirect("adcopy-campaign-set-up/select-"+list[a]);
+			break;
+		}
+	}
+})
+
+router.post("/check-next-stepBlank", function (req, res) {
+	var src = req.session.data['source'];
+	var list = req.session.data['selected'];
+	var num = list.length;
+console.log(src)
+console.log(list)
+
+	for (var a=0;a<num;a++){
+		if (src == list[num]) {
+			res.redirect("blank-campaign-set-up/select-criteria-stage");
+		} else if (src == list[a]){
+			a=a+1;
+			res.redirect("blank-campaign-set-up/select-"+list[a]);
+			break;
+		}
+	}
+})
+
+
+
+
+router.get("/methods-handler", function (req, res) {
+  var choices = req.session.data['sift-method'].choices;
+	var src = req.session.data['source'];
+	var num = choices.length;
+
+
+	for (var a=0;a<num;a++){
+		if (src == choices[num]) {
+			res.redirect("/csu71/home");
+		} else if (src == choices[a]){
+			a=a+1;
+			res.redirect("new-campaign-set-up/select-"+choices[a]);
+			break;
+		}
+	}
+})
+
+
+
 
 router.get("/selection-handlerV5", function (req, res) {
   var list = req.session.data['selected'];
@@ -52,6 +159,28 @@ console.log(list)
 
   })
 
+	router.get("/selection-handlerAdcopy", function (req, res) {
+	  var list = req.session.data['selected'];
+	console.log(list)
+
+	  for (var i=0;i<1;i++){
+	    res.redirect("/csu71/adcopy-campaign-set-up/select-"+list[i]);
+	  }
+
+	  })
+
+
+		router.get("/selection-handlerBlank", function (req, res) {
+		  var list = req.session.data['selected'];
+		console.log(list)
+
+		  for (var i=0;i<1;i++){
+		    res.redirect("/csu71/blank-campaign-set-up/select-"+list[i]);
+		  }
+
+		  })
+
+
 router.post("/basic-details-handler", function (req, res) {
 	if (req.session.data['edit1'] == "true") {
 		res.redirect('new-campaign-set-up/summary-section-1')
@@ -60,7 +189,21 @@ router.post("/basic-details-handler", function (req, res) {
 	}
 })
 
+router.post("/basic-details-handlerAdcopy", function (req, res) {
+	if (req.session.data['edit1'] == "true") {
+		res.redirect('adcopy-campaign-set-up/summary-section-1')
+	} else {
+		res.redirect('adcopy-campaign-set-up/reserved-status-role')
+	}
+})
 
+router.post("/basic-details-handlerBlank", function (req, res) {
+	if (req.session.data['edit1'] == "true") {
+		res.redirect('blank-campaign-set-up/summary-section-1')
+	} else {
+		res.redirect('blank-campaign-set-up/reserved-status-role')
+	}
+})
 
 router.post("/locations-2-handler", function (req, res) {
 	if (req.session.data['edit3'] == "true") {

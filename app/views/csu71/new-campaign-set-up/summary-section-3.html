@@ -2,13 +2,26 @@
 
 {% block header %}
 {% include '/csu71/includes/header.html' %}
-  {% endblock %}
-
+{% endblock %}
 {% block pageTitle %}
-Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Summary</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
 {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -34,139 +47,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
         <dd class="govuk-summary-list__actions"><a href="about-the-role?edit9=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
       </div>
     </dl>
-    {% set technicalArray = [] %}
-    {% set essentialArray = [] %}
-    {% set c1 = data['experience1'].length %}
-    {% set c2 = data['experience2'].length %}
-    {% set c3 = data['experience3'].length %}
-    {% set c4 = data['experience4'].length %}
-    {% set t1 = data['technical1'].length %}
-    {% set t2 = data['technical2'].length %}
-    {% set t3 = data['technical3'].length %}
 
-    {% if c1 >= 1 %}
-    {% set essentialArray = (essentialArray.push(data['experience1']), essentialArray)  %}
-    {% endif %}
-
-    {% if c2 >= 1 %}
-    {% set essentialArray = (essentialArray.push(data['experience2']), essentialArray)  %}
-    {% endif %}
-
-    {% if c3 >= 1 %}
-    {% set essentialArray = (essentialArray.push(data['experience3']), essentialArray)  %}
-    {% endif %}
-
-    {% if c4 >= 1 %}
-    {% set essentialArray = (essentialArray.push(data['experience4']), essentialArray)  %}
-    {% endif %}
-
-    {% if t1 >= 1 %}
-    {% set technicalArray = (technicalArray.push(data['technical1']), technicalArray)  %}
-    {% endif %}
-
-    {% if t2 >= 1 %}
-    {% set technicalArray = (technicalArray.push(data['technical2']), technicalArray)  %}
-    {% endif %}
-
-    {% if t3 >= 1 %}
-    {% set technicalArray = (technicalArray.push(data['technical3']), technicalArray)  %}
-    {% endif %}
-
-{% set nappy = [] %}
-
-
-{% set firstThing = data['experience1'] %}
-{% set secondThing = data['experience2'] %}
-{% set thirdThing = data['experience3'] %}
-{% set fourthThing = data['experience4'] %}
-
-
-  {% set nappy = (nappy.push(thirdThing), nappy)  %}
-  {% set nappy = (nappy.push(secondThing), nappy)  %}
-{% set nappy = (nappy.push(firstThing), nappy)  %}
-
-{% set array = [ data['experience1'], data['experience2'], data['experience3'], data['experience4'] ]  %}
-
-  <!-- {% set nappy = (nappy.push(secondThing), nappy)  %}
-{% set nappy = (nappy.push(firstThing), nappy)  %} -->
-
-
-<dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">Essential criteria</dt>
-    <dd class="govuk-summary-list__value">
-      {% if essentialArray.length > 0 %}
-        {% for items in essentialArray | slice(1) %}
-        <ul class="govuk-list govuk-list--bullet {{ loop.index }}">
-          {% for item in items %}
-          <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-        {% endfor %}
-        {% else %}
-        {% endif %}
-    </dd>
-      <dd class="govuk-summary-list__actions"><a href="essential-criteria?edit10=true">Change<span class="govuk-visually-hidden"> department</span></a></dd>
-    </div>
-  </dl>
-
-
-
-  <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">Technical skills and qualifications </dt>
-      <dd class="govuk-summary-list__value">
-
-          {% for items in technicalArray| slice(1) %}
-          <ul class="govuk-list govuk-list--bullet {{ loop.index }}">
-            {% for item in items %}
-            <li>{{ item }}</li>
-            {% endfor %}
-          </ul>
-          {% endfor %}
-      </dd>
-        <dd class="govuk-summary-list__actions"><a href="tech-criteria?edit11=true">Change<span class="govuk-visually-hidden"> department</span></a></dd>
-      </div>
-    </dl>
-
-
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Eliminating criteria</dt>
-        <dd class="govuk-summary-list__value">
-          <ul class="govuk-list govuk-list--bullet">
-            <li>
-              Fluent French
-            </li>
-            <li>
-              Office-based for 3-days a week
-            </li>
-          </ul>
-          </dd>
-        <dd class="govuk-summary-list__actions"><a href="pre-sift-questions?edit12=true">Change<span class="govuk-visually-hidden"> department</span></a></dd>
-      </div>
-    </dl>
-
-
-
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Supporting information</dt>
-        <dd class="govuk-summary-list__value">
-          <ul class="govuk-list govuk-list--bullet">
-            <li>
-              {{ data['careers-site']}}
-            </li>
-            <li>
-              {{ data['twitter-contact-us']}}
-            </li>
-          </ul>
-
-
-        </dd>
-        <dd class="govuk-summary-list__actions"><a href="additional-info?edit=true">Change<span class="govuk-visually-hidden"> department</span></a></dd>
-      </div>
-    </dl>
 
 
 
@@ -178,4 +59,6 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 </form>
 
 </div>
+{% include '/csu71/includes/footerarea.html' %}
+
 {% endblock %}

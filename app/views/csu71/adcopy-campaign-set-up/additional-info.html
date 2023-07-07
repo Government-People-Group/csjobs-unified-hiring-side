@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Advert set up</span>
+    <h1 class="govuk-heading-l">Add supporting information to the advert</h1>
+          <form class="form" action="summary-section-3" method="post">
+
+
+            {{ govukInput({
+              label: {
+                text: "",
+                classes: "govuk-label--l",
+                isPageHeading: false
+              },
+              classes: "govuk-input--width-30",
+              id: "twitter-contact-us",
+              name: "twitter-contact-us",
+              value: "https://twitter.com/cabinetofficejobs"
+            }) }}
+
+    {{ govukInput({
+      label: {
+        text: "",
+        classes: "govuk-label--l",
+        isPageHeading: false
+      },
+      classes: "govuk-input--width-30",
+      id: "careers-site",
+      name: "careers-site",
+      value: "https://www.linkedin.com/cabinetoffice"
+    }) }}
+
+
+
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link govuk-link--no-visited-state">Add more information</a>
+    </p>
+
+
+    <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    {{ govukButton({
+      text: "Preview advert",
+      classes: "govuk-button--secondary",
+      href: "preview-advert"
+    }) }}
+</form>
+
+</div>
+</div>
+{% endblock %}

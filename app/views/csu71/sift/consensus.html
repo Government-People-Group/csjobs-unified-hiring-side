@@ -1,28 +1,22 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Sifting – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-{% block beforeContent %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "alpha"
-  },
-  html: 'Your <a href"">feedback</a> will help us to improve.'
-})}}
-{% include 'includes/user-header.html' %}
-        {{ govukBackLink({
-          text: "Back",
-          href: "javascript:history.go(-1)"
-        }) }}
-        {% endblock %}
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+  {% block beforeContent %}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+
+    {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">1001334</span>
-<h1 class="govuk-heading-xl">Lead delivery manager</h1>
-<h2 class="govuk-heading-m">Arrange a consensus meeting</h2>
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-l">Lead delivery manager (1001334)</span>
+<h1 class="govuk-heading-xl">Arrange a consensus meeting</h1>
 
   <p>A consensus meeting can be used to review applicants that either:</p>
   <ul class="govuk-list govuk-list--bullet">
@@ -48,6 +42,5 @@
   text: "Review selected applicants",
   href: "1001334-consensus-meeting"
 }) }}
-<p><a href="task-list">Save and return to tasklist</a></p>
 
 {% endblock %}

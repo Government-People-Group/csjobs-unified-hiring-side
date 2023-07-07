@@ -3,9 +3,8 @@
 {% block header %}
 {% include '/csu71/includes/header.html' %}
 {% endblock %}
-
 {% block pageTitle %}
-Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,7 +17,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-co"><strong>Return to task list</strong></a></span>
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
 
 </div>
 
@@ -33,28 +32,47 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
-{% if data['ussk'] === "Yes" %}
-{% set see = "block" %}
-{% set nosee = "none" %}
-{% else %}
-{% set see = "none" %}
-{% endif %}
-
-{% if data['uk'] === "Onsite at a government-managed location" %}
-<!-- {% set see = "block" %} -->
-{% set nosee = "block" %}
-{% else %}
-<!-- {% set see = "none" %} -->
-{% set nosee = "none" %}
-{% endif %}
-
-
-<form class="form" action="#" method="post">
+<form class="form" action="summary-section-2" method="post">
 
 <div class="govuk-grid-row govuk-!-margin-top-3">
   <div class="govuk-grid-column-three-quarters">
     <h1 class="govuk-heading-xl">Pre-employment checks and vetting</h1>
 
+
+
+          {% from "govuk/components/panel/macro.njk" import govukPanel %}
+          {{ govukPanel({
+            titleText: "Baseline Personnel Security Standard",
+            classes: "govuk-panel security-panel",
+            html: "Departmental default"
+          }) }}
+
+        {{ govukRadios({
+          idPrefix: "bpss-correct",
+          name: "bpss-correct",
+          fieldset: {
+            legend: {
+              text: "Is the recommended security clearance correct?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "A higher security clearance will take longer to hire"
+          },
+          items: [
+            {
+              value: "BPSS",
+              text: "Yes",
+              checked: checked("bpss-correct","BPSS")
+            },
+            {
+              value: "Security Check (SC)",
+              text: "No",
+              checked: checked("bpss-correct","Security Check (SC)")
+            }
+          ]
+        }) }}
 
 
 
@@ -120,6 +138,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 }) }}
 </form>
 
+{% include '/csu71/includes/footerarea.html' %}
 
 <script>
 
@@ -127,7 +146,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
-  
+
 
 
 

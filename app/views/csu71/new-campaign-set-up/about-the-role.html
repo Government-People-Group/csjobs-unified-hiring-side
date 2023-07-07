@@ -18,7 +18,23 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-<span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp"><strong>Return to task list</strong></a></span>
+      <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+<!--
+      {% if data['org'] == "ddat" %}
+      <div id ="ddattag"  style="position:absolute;right:10px;top:60px;;">
+        <a href="/csu71/template-csofficial?return=select-behaviours"><img src="/public/images/ddat1.png" alt="Template by Digital, Data and Technology Profession" style="background:#F4FAFF;border:2px solid #1d70b8;padding:10px;border-radius:5px;width:80px"></a>
+
+      </div>
+      {% elif data['org'] == "co" %}
+      <div id ="cotag"  style="position:absolute;right:10px;top:60px;;">
+        <a  href="/csu71/template-csofficial?return=select-behaviours"> <img src="/public/images/co-logo.png" alt="Template by Cabinet Office" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
+      </div>
+      {% elif data['org'] == "ho" %}
+      <div id ="hotag"  style="position:absolute;right:10px;top:60px;;">
+        <a href="/csu71/template-csofficial?return=select-behaviours"><img src="/public/images/ho-logo.png" alt="Template by Home Office" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
+      </div>
+      {% endif %} -->
+
 
     </div>
 
@@ -36,7 +52,11 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-three-quarters">
     <h1 class="govuk-heading-xl">About the role</h1>
           <form class="form" action="/csu71/about-the-role-handler" method="post">
-<p>This information will be shown on the advert.</p>
+            <p class='govuk-body-m'>This information will be shown on the advert.</p>
+
+<div class="govuk-!-margin-bottom-9" style="background:#F4FAFF;padding:20px;border-bottom:2px solid #1d70b8;">
+
+
     {{ govukCharacterCount({
   name: "person-spec",
   id: "person-spec",
@@ -50,15 +70,31 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 }) }}
 
 
+</div>
+  <!-- <p class="govuk-body-m">A senior business analyst has a good understanding of strategic arenas and leads large or complex projects.</p>
+
+  <p class="govuk-body-m">At this role level, you will:</p>
+  <ul class="govuk-!-margin-top-3 govuk-list govuk-list--number">
+  <li>have functional or people management responsibilities, or a combination of both</li>
+  <li>mentor others</li>
+  <li>develop best practice</li>
+  <li>own stakeholder relationships</li>
+  <li>manage community of practice activities within a business area</li>
+</ul> -->
+
+
+
+
+
 
 <div class="govuk-form-group">
   <h2 class="govuk-label-wrapper">
     <label class="govuk-label govuk-label--m" for="team-detail">
-      What are the responsibilities of the role?
+      Make a list of the day-to-day responsibilities of the role
     </label>
   </h2>
   <div id="more-detail-hint" class="govuk-hint">
-    Include common tasks and expectations.
+    Include common tasks to be carried out by the successful candidate, for example:<br><strong>investigating operational and business needs and issues and recommending improvements to the service</strong>.
   </div>
   <textarea onkeyup="handleInput(event)" class="govuk-textarea" id="respon" name="respon" value="{{ data['respon']}}" rows="5" aria-describedby="respon-hint"></textarea>
 </div>
@@ -68,17 +104,41 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
+        <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Continue</button>
 
-<button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Continue</button>
+        {{ govukButton({
+          text: "Preview advert",
+          classes: "govuk-button--secondary govuk-!-margin-top-6",
+          href: "preview-advert"
+        }) }}
+
 
 
 </form>
 </div>
 </div>
+
+{% include '/csu71/includes/footerarea.html' %}
+
 <script>
 
 
-const bullet = "\u29BF";
+
+
+
+
+
+var fill = document.getElementById("person-spec");
+const candidate = "A senior business analyst has a good understanding of strategic arenas and leads large or complex projects. At this role level, you will:\n\n– have functional or people management responsibilities, or a combination of both\n– mentor others\n– develop best practice\n– own stakeholder relationships\n– manage community of practice activities within a business area"
+
+const candidate2 = "<p class='govuk-body-m'>A senior business analyst has a good understanding of strategic arenas and leads large or complex projects.</p><p class='govuk-body-m'>At this role level, you will:</p><ul class='govuk-!-margin-top-3 govuk-list govuk-list--number'><li>have functional or people management responsibilities, or a combination of both</li><li>mentor others</li><li>develop best practice</li><li>own stakeholder relationships</li><li>manage community of practice activities within a business area</li></ul>"
+
+
+fill.innerHTML = candidate;
+console.log(candidate)
+
+
+const bullet = "–";
 const bulletWithSpace = `${bullet} `;
 const enter = 13;
 

@@ -3,9 +3,8 @@
 {% block header %}
 {% include '/csu71/includes/header.html' %}
 {% endblock %}
-
 {% block pageTitle %}
-Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,7 +17,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-co"><strong>Return to task list</strong></a></span>
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
 
 </div>
 
@@ -71,40 +70,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
-<div class="govuk-!-margin-bottom-9">
-
-{{ govukRadios({
-  id: "ussk",
-  name: "ussk",
-  classes: "govuk-radios--inline",
-  fieldset: {
-    legend: {
-      text: "Is the role based in the UK?",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-  {
-    id:"ukbased",
-    value: "Yes",
-    text: "Yes",
-    checked: checked("ussk","Yes")
-
-  },
-  {
-    id:"ukbasedno",
-    value: "No",
-    text: "No",
-    checked: checked("ussk","No")
-  }
-  ]
-}) }}
-
-</div>
-
-
-<div id="mroe" style="display: none">
+<div id="mroe" style="">
   {{ govukRadios({
     id: "uk",
     name: "uk",
@@ -125,15 +91,15 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
     },
     {
       id: "off",
-      value: "Onsite",
+      value: "Onsite at a government-managed location",
       text: "Onsite at a government-managed location",
-      checked: checked("uk","Onsite")
+      checked: checked("uk","Onsite at a government-managed location")
     },
     {
       id: "hyb",
-      value: "Hybrid",
+      value: "A hybrid of both remote and onsite",
       text: "A hybrid of both remote and onsite",
-      checked: checked("uk","Hybrid")
+      checked: checked("uk","A hybrid of both remote and onsite")
     }
 
 
@@ -141,16 +107,8 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
   }) }}
 </div>
 
-
-
-
-
   </div>
 </div>
-
-
-
-
 
 {{ govukButton({
   text: "Continue",
@@ -163,69 +121,6 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
   href: "preview-advert"
 }) }}
 </form>
-<script src="/public/javascripts/temp-copyloc.js"></script>
-<script src="/public/javascripts/locations.js"></script>
+{% include '/csu71/includes/footerarea.html' %}
 
-<script>
-
-
-
-
-
-  const ukbased = document.getElementById('ukbased');
-  const ukbasedno = document.getElementById('ukbasedno');
-
-  const off = document.getElementById('off');
-  const hyb = document.getElementById('hyb');
-  const rem = document.getElementById('rem');
-
-  if (ukbased.checked && ukbased.value == "Yes") {
-    showDiv("mroe");
-  }
-
-
-
-
-  var divv = document.getElementById('mroe').style.display;
-  ukbased.addEventListener('change', (event) => {
-    if (ukbased.checked && ukbased.value == "Yes") {
-      showDiv("mroe");
-    }
-
-  });
-
-  ukbasedno.addEventListener('change', (event) => {
-    if (ukbasedno.checked) {
-      hideDiv("mroe");
-    }
-
-  });
-
-
-
-
-
-
-  function hideDiv(div1) {
-    document.getElementById(div1).style.display = 'none';
-
-  }
-
-  function showDiv(div1) {
-    document.getElementById(div1).style.display = 'block';
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-</script>
 {% endblock %}

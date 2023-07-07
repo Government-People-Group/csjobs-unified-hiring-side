@@ -2,19 +2,31 @@
 
 {% block header %}
 {% include '/csu71/includes/header.html' %}
-  {% endblock %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
 
-  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Selection criteria and assessment methods</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
 
-  {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+</div>
 
-  {% endblock %}
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
 
 {% block content %}
 
@@ -106,7 +118,7 @@
 
 <form class="form" action="selection-criteria-summary" method="post">
 
-<div class="govuk-grid-row">
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
       <h1 class="govuk-heading-xl">
         When will you assess each element?
@@ -115,12 +127,12 @@
 
       <h2 id="bheader" class="govuk-heading-l govuk-!-margin-top-3" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Behaviours</h2>
 
-<p id="lShip" class="govuk-body-m govuk-!-margin-bottom-3"></p>
+      <p id="lShip" class="govuk-body-m govuk-!-margin-bottom-3"></p>
 
       <div id="behDiv"></div>
 
 
-  <h2 id="stheader" class="govuk-heading-l govuk-!-margin-top-9" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Strengths</h2>
+      <h2 id="stheader" class="govuk-heading-l govuk-!-margin-top-9" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Strengths</h2>
 
       <div id="strDiv"></div>
 
@@ -199,235 +211,302 @@
 
       <div>
         <h2 id="skheader" class="govuk-heading-l govuk-!-margin-top-9" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Skills</h2>
+        <div id="skillsDDAT"></DIV>
 
 
-        {% set criteriaSkillsArr = [] %}
-
-
-
-
-
-        {% if data['Technical skills 1'].length > 0 %}
-        {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 1']|truncate(50)), criteriaSkillsArr) %}
-        {% else %}{% endif %}
-
-        {% if data['Technical skills 2'].length > 0 %}
-        {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 2']|truncate(50)), criteriaSkillsArr) %}
-        {% else %}{% endif %}
-
-        {% if data['Technical skills 3'].length > 0 %}
-        {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 3']|truncate(50)), criteriaSkillsArr) %}
-        {% else %}{% endif %}
-
-        {% if data['Technical skills 4'].length > 0 %}
-        {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 4']|truncate(50)), criteriaSkillsArr) %}
-        {% else %}{% endif %}
-
-        {% if data['Technical skills 5'].length > 0 %}
-        {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 5']|truncate(50)), criteriaSkillsArr) %}
-        {% else %}{% endif %}
-
-        {% if data['Technical skills 6'].length > 0 %}
-        {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 6']|truncate(50)), criteriaSkillsArr) %}
-        {% else %}{% endif %}
+          {% set criteriaSkillsArr = [] %}
 
 
 
 
 
+          {% if data['Technical skills 1'].length > 0 %}
+          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 1']|truncate(50)), criteriaSkillsArr) %}
+          {% else %}{% endif %}
 
-        {% for es in criteriaSkillsArr | slice(1) %}
-        {% for e in es %}
+          {% if data['Technical skills 2'].length > 0 %}
+          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 2']|truncate(50)), criteriaSkillsArr) %}
+          {% else %}{% endif %}
+
+          {% if data['Technical skills 3'].length > 0 %}
+          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 3']|truncate(50)), criteriaSkillsArr) %}
+          {% else %}{% endif %}
+
+          {% if data['Technical skills 4'].length > 0 %}
+          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 4']|truncate(50)), criteriaSkillsArr) %}
+          {% else %}{% endif %}
+
+          {% if data['Technical skills 5'].length > 0 %}
+          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 5']|truncate(50)), criteriaSkillsArr) %}
+          {% else %}{% endif %}
+
+          {% if data['Technical skills 6'].length > 0 %}
+          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 6']|truncate(50)), criteriaSkillsArr) %}
+          {% else %}{% endif %}
 
 
-        {{ govukCheckboxes({
-          name: "skills-stage",
-          fieldset: {
-            legend: {
-              text: e,
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
+
+
+
+
+          {% for es in criteriaSkillsArr | slice(1) %}
+          {% for e in es %}
+
+
+          {{ govukCheckboxes({
+            name: "skills-stage",
+            fieldset: {
+              legend: {
+                text: e,
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+            {
+              name: e,
+              id: "Technical skills",
+              checked: checked('skills-stage',"Sift"),
+              value: "Sift",
+              classes: "govuk-label-l",
+              text: "Sift"
+            },
+            {
+              name: e,
+              id: "Technical skills",
+              checked: checked('skills-stage',"Interview"),
+              value: "Interview",
+              classes: "govuk-label-l",
+              text: "Interview"
             }
-          },
-          items: [
-          {
-            name: e,
-            id: "Technical skills",
-            checked: checked('skills-stage',"Sift"),
-            value: "Sift",
-            classes: "govuk-label-l",
-            text: "Sift"
-          },
-          {
-            name: e,
-            id: "Technical skills",
-            checked: checked('skills-stage',"Interview"),
-            value: "Interview",
-            classes: "govuk-label-l",
-            text: "Interview"
+            ]
+          }) }}
+
+
+          {%endfor%}
+          {% endfor %}
+        </div>
+
+
+
+
+
+
+
+        <button class="govuk-button" onclick="checkCheckBoxes()" data-module="govuk-button">Continue</button>
+
+
+      </div></div>
+    </form>
+    {% include '/csu71/includes/footerarea.html' %}
+
+    <script>
+
+
+
+      const behavioursSelected = JSON.parse(window.sessionStorage.getItem("BehavioursSelected"));
+
+      var outputBS = document.getElementById("behDiv");
+      var lShip = document.getElementById("lShip");
+      var bsList = document.createElement("p");
+      var lShipContent = document.createElement("p");
+      var lShipMessage = "<strong>We recommend assessing Leadership at sift and interview for Grade 6 and 7 roles because they usually involve line management responsibilities.</strong>";
+      for (var log=0; log < behavioursSelected.length; log++) {
+        var outputBS = document.getElementById('behDiv');
+        var contentBS = document.createElement("p");
+        contentBS.style.cssText = "font-size:24px;font-weight:bold";
+        contentBS.innerHTML = behavioursSelected[log];
+        outputBS.appendChild(contentBS);
+        var label = document.createElement("label");
+        var checkBox = document.createElement("input");
+
+        if (behavioursSelected[log] == "Leadership") {
+
+          lShipContent.style.cssText = "line-height:1.6;font-size:20px;background:#F4FAFF;;border-left:5px solid #1d70b8;padding:20px";
+          lShipContent.innerHTML = lShipMessage;
+          lShip.appendChild(lShipContent);
+        }
+
+
+        checkBox.type = "checkbox";
+        checkBox.value = "Sift";
+        checkBox.setAttribute("name",behavioursSelected[log]);
+        checkBox.setAttribute("id","Behaviours");
+
+        checkBox.style.cssText = "width: 40px;height: 40px;;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
+        label.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
+        label.appendChild(document.createTextNode("Sift"));
+        outputBS.appendChild(label);
+        outputBS.appendChild(checkBox);
+
+        var label2 = document.createElement("label");
+        var checkBox2 = document.createElement("input");
+        checkBox2.type = "checkbox";
+        checkBox2.value = "Interview";
+        checkBox2.setAttribute("name",behavioursSelected[log]);
+        checkBox2.setAttribute("id","Behaviours");
+        checkBox2.style.cssText = "width: 40px;height: 40px;;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
+        label2.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
+        label2.appendChild(document.createTextNode("Interview"));
+        outputBS.appendChild(label2);
+        outputBS.appendChild(checkBox2);
+      }
+
+
+
+      const strengthsSelected = JSON.parse(window.sessionStorage.getItem("StrengthsSelected"));
+
+
+      const withoutDuplicates = [...new Set(strengthsSelected)];
+      console.log(withoutDuplicates);
+
+
+      var outputSS = document.getElementById("strDiv");
+      var stsList = document.createElement("p");
+
+
+      var outputSS = document.getElementById('strDiv');
+      var contentSS = document.createElement("p");
+      contentSS.style.cssText = "font-size:24px;font-weight:bold";
+      contentSS.innerHTML = withoutDuplicates;
+      outputSS.appendChild(contentSS)
+      var labelS = document.createElement("label");
+      var checkBoxS = document.createElement("input");
+      checkBoxS.setAttribute("name",withoutDuplicates);
+      checkBoxS.setAttribute("id","Strengths");
+      checkBoxS.type = "checkbox";
+      checkBoxS.value = "Interview";
+      checkBoxS.style.cssText = "width: 40px;height: 40px;;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
+      labelS.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
+      labelS.appendChild(document.createTextNode("Interview"));
+      outputSS.appendChild(labelS);
+      outputSS.appendChild(checkBoxS);
+
+
+      const SkillsSelected = JSON.parse(window.sessionStorage.getItem("SkillsSelected"));
+
+      var sklsDDAT = document.getElementById('skillsDDAT')
+      var strList = document.createElement("p");
+
+      for (var g=0; g < SkillsSelected.length; g++) {
+        var outputBS = document.getElementById('skillsDDAT');
+        var strList = document.createElement("p");
+        strList.style.cssText = "font-size:24px;font-weight:bold";
+        strList.innerHTML = SkillsSelected[g];
+        outputBS.appendChild(strList);
+        var label = document.createElement("label");
+        var checkBox = document.createElement("input");
+
+        checkBox.type = "checkbox";
+        checkBox.value = "Sift";
+        checkBox.setAttribute("name",SkillsSelected[g]);
+        checkBox.setAttribute("id","Skills");
+
+        checkBox.style.cssText = "width: 40px;height: 40px;;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
+        label.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
+        label.appendChild(document.createTextNode("Sift"));
+        outputBS.appendChild(label);
+        outputBS.appendChild(checkBox);
+
+        var label2 = document.createElement("label");
+        var checkBox2 = document.createElement("input");
+        checkBox2.type = "checkbox";
+        checkBox2.value = "Interview";
+        checkBox2.setAttribute("name",SkillsSelected[g]);
+        checkBox2.setAttribute("id","Skills");
+        checkBox2.style.cssText = "width: 40px;height: 40px;;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
+        label2.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
+        label2.appendChild(document.createTextNode("Interview"));
+        outputBS.appendChild(label2);
+        outputBS.appendChild(checkBox2);
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      function checkCheckBoxes() {
+        var stageChecksSift = [];
+        var stageChecksInt = [];
+        var arr1 = [];
+        var arr2 = [];
+        var arr3 = [];
+
+        var arr4 = [];
+
+        const siftStage = { };
+        const intStage = { };
+
+        var checks = document.getElementsByTagName('input');
+
+        for (i = 0; i < checks.length; i++) {
+          if (checks[i].type == 'checkbox' && checks[i].checked ) {
+
+            if (checks[i].value == "Sift") {
+              arr1.push(checks[i].name);
+              arr2.push(checks[i].id);
+
+              // } else if (checks[i].value == "Interview") {
+              //   stageChecksInt.push(checks[i].value, checks[i].name, checks[i].id);
+              //
+              // }
+
+              // window.sessionStorage.setItem("stageChecksInt", JSON.stringify(stageChecksInt));
+            }
+
+            if (checks[i].value == "Interview") {
+              arr3.push(checks[i].name);
+              arr4.push(checks[i].id);
+
+              // } else if (checks[i].value == "Interview") {
+              //   stageChecksInt.push(checks[i].value, checks[i].name, checks[i].id);
+              //
+              // }
+
+              // window.sessionStorage.setItem("stageChecksInt", JSON.stringify(stageChecksInt));
+            }
+
           }
-          ]
-        }) }}
+        }
 
 
-{%endfor%}
-{% endfor %}
-      </div>
+        for (var i = 0; i < arr1.length; i++) {
+          siftStage[arr1[i]] = arr2[i];
+        }
+        window.sessionStorage.setItem("siftStage", JSON.stringify(siftStage));
+
+
+        for (var j = 0; j < arr3.length; j++) {
+          intStage[arr3[j]] = arr4[j];
+        }
+        window.sessionStorage.setItem("intStage", JSON.stringify(intStage));
 
 
 
-
-
-
-
-      <button class="govuk-button" onclick="checkCheckBoxes()" data-module="govuk-button">Continue</button>
-
-
-</div></div>
-</form>
-<script>
-  const behavioursSelected = JSON.parse(window.sessionStorage.getItem("BehavioursSelected"));
-
-    var outputBS = document.getElementById("behDiv");
-    var lShip = document.getElementById("lShip");
-    var bsList = document.createElement("p");
-    var lShipContent = document.createElement("p");
-    var lShipMessage = "<strong>We recommend assessing Leadership at sift and interview for Grade 6 and 7 roles because they usually involve line management responsibilities.</strong>";
-    for (var log=0; log < behavioursSelected.length; log++) {
-      var outputBS = document.getElementById('behDiv');
-      var contentBS = document.createElement("p");
-      contentBS.style.cssText = "font-size:24px;font-weight:bold";
-      contentBS.innerHTML = behavioursSelected[log];
-      outputBS.appendChild(contentBS);
-      var label = document.createElement("label");
-      var checkBox = document.createElement("input");
-
-      if (behavioursSelected[log] == "Leadership") {
-
-        lShipContent.style.cssText = "line-height:1.6;font-size:20px;background:#F4FAFF;;border-left:5px solid #1d70b8;padding:20px";
-        lShipContent.innerHTML = lShipMessage;
-        lShip.appendChild(lShipContent);
       }
 
 
-      checkBox.type = "checkbox";
-      checkBox.value = "Sift";
-      checkBox.setAttribute("name",behavioursSelected[log]);
-      checkBox.setAttribute("id","Behaviours");
-
-      checkBox.style.cssText = "width: 40px;height: 40px;;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
-      label.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
-      label.appendChild(document.createTextNode("Sift"));
-      outputBS.appendChild(label);
-      outputBS.appendChild(checkBox);
-
-      var label2 = document.createElement("label");
-      var checkBox2 = document.createElement("input");
-      checkBox2.type = "checkbox";
-      checkBox2.value = "Interview";
-      checkBox2.setAttribute("name",behavioursSelected[log]);
-      checkBox2.setAttribute("id","Behaviours");
-      checkBox2.style.cssText = "width: 40px;height: 40px;;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
-      label2.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
-      label2.appendChild(document.createTextNode("Interview"));
-      outputBS.appendChild(label2);
-      outputBS.appendChild(checkBox2);
-}
 
 
-
-const strengthsSelected = JSON.parse(window.sessionStorage.getItem("StrengthsSelected"));
-
-
-const withoutDuplicates = [...new Set(strengthsSelected)];
-console.log(withoutDuplicates);
-
-
-  var outputSS = document.getElementById("strDiv");
-  var stsList = document.createElement("p");
-
-
-    var outputSS = document.getElementById('strDiv');
-    var contentSS = document.createElement("p");
-    contentSS.style.cssText = "font-size:24px;font-weight:bold";
-    contentSS.innerHTML = withoutDuplicates;
-    outputSS.appendChild(contentSS)
-    var labelS = document.createElement("label");
-    var checkBoxS = document.createElement("input");
-    checkBoxS.setAttribute("name",withoutDuplicates);
-    checkBoxS.setAttribute("id","Strengths");
-    checkBoxS.type = "checkbox";
-    checkBoxS.value = "Interview";
-    checkBoxS.style.cssText = "width: 40px;height: 40px;;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
-    labelS.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
-    labelS.appendChild(document.createTextNode("Interview"));
-    outputSS.appendChild(labelS);
-    outputSS.appendChild(checkBoxS);
-
-
-
-function checkCheckBoxes() {
-  var stageChecksSift = [];
-  var stageChecksInt = [];
-  var arr1 = [];
-  var arr2 = [];
-    var arr3 = [];
-
-    var arr4 = [];
-
-    const siftStage = { };
-    const intStage = { };
-
-    var checks = document.getElementsByTagName('input');
-
-    for (i = 0; i < checks.length; i++) {
-      if (checks[i].type == 'checkbox' && checks[i].checked ) {
-
-        if (checks[i].value == "Sift") {
-          arr1.push(checks[i].name);
-          arr2.push(checks[i].id);
-
-        // } else if (checks[i].value == "Interview") {
-        //   stageChecksInt.push(checks[i].value, checks[i].name, checks[i].id);
-        //
-        // }
-
-        // window.sessionStorage.setItem("stageChecksInt", JSON.stringify(stageChecksInt));
-      }
-
-      if (checks[i].value == "Interview") {
-        arr3.push(checks[i].name);
-        arr4.push(checks[i].id);
-
-      // } else if (checks[i].value == "Interview") {
-      //   stageChecksInt.push(checks[i].value, checks[i].name, checks[i].id);
-      //
-      // }
-
-      // window.sessionStorage.setItem("stageChecksInt", JSON.stringify(stageChecksInt));
-    }
-
-    }
-    }
-
-
-    for (var i = 0; i < arr1.length; i++) {
-      siftStage[arr1[i]] = arr2[i];
-    }
-     window.sessionStorage.setItem("siftStage", JSON.stringify(siftStage));
-
-
-     for (var j = 0; j < arr3.length; j++) {
-       intStage[arr3[j]] = arr4[j];
-     }
-      window.sessionStorage.setItem("intStage", JSON.stringify(intStage));
-
-
-
-}
-
-
-
-
-</script>
-  {% endblock %}
+    </script>
+    {% endblock %}

@@ -14,6 +14,25 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
     href: "javascript:window.history.back()"
   }) }}
 
+
+  <!-- {% if data['org'] == "ddat" %}
+    <div style="position:absolute;right:40px;top:90px;;">
+    <a href="/csu71/template-csofficial"><img src="/public/images/ddat.png" style=";width:250px"></a>
+    <p style="position:absolute;right:8px" class="govuk-body-s"><a href="/csu71/template-csofficial">Change template</a></p>
+    </div>
+  {% elif data['org'] == "co" %}
+    <div style="position:absolute;right:20px;top:0px;">
+   <a href="/csu71/template-csofficial"> <img src="/public/images/co-logo.png" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
+    <p class="govuk-body-xs">Template <a href="/csu71/template-csofficial">Change</a></p>
+    </div>
+  {% elif data['org'] == "ho" %}
+    <div style="position:absolute;right:20px;top:0px;">
+    <a href="/csu71/template-csofficial"><img src="/public/images/ho-logo.png" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
+    <p class="govuk-body-xs">Template <a href="/csu71/template-csofficial">Change</a></p>
+    </div>
+    {% endif %} -->
+
+
   {% endblock %}
 
 {% block content %}
@@ -61,24 +80,40 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
    <div class="govuk-grid-column-full" style="position:relative">
 
+     <!-- {% if data['org'] == "ddat" %}
+     <div id ="ddattag"  style="position:absolute;right:20px;top:0px;;">
+       <a href="/csu71/template-csofficial?return=select-skills"><img src="/public/images/ddat1.png" alt="Template by Digital, Data and Technology Profession" style="background:#F4FAFF;border:2px solid #1d70b8;padding:10px;border-radius:5px;width:80px"></a>
+
+     </div>
+     {% elif data['org'] == "co" %}
+     <div id ="cotag"  style="position:absolute;right:10px;top:60px;;">
+       <a  href="/csu71/template-csofficial?return=select-skills"> <img src="/public/images/co-logo.png" alt="Template by Cabinet Office" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
+     </div>
+     {% elif data['org'] == "ho" %}
+     <div id ="hotag"  style="position:absolute;right:10px;top:60px;;">
+       <a href="/csu71/template-csofficial?return=select-skills"><img src="/public/images/ho-logo.png" alt="Template by Home Office" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
+     </div>
+     {% endif %} -->
 
 
-     {% if data['template'] == "ddat" %}
+
+
+     <!-- {% if data['org'] == "ddat" %}
        <div style="position:absolute;right:20px;top:0px;;">
-       <a href="/csu71/template-csofficial"><img src="/public/images/ddat1.png" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
+       <a href="/csu71/template-csofficial"><img src="/public/images/ddat1.png" style="background:#F4FAFF;border:2px solid #1d70b8;padding:10px;border-radius:5px;width:80px"></a>
        <p class="govuk-body-xs">Template <a href="/csu71/template-csofficial">Change</a></p>
        </div>
-     {% elif data['template'] == "co" %}
+     {% elif data['org'] == "co" %}
        <div style="position:absolute;right:20px;top:0px;">
       <a href="/csu71/template-csofficial"> <img src="/public/images/co-logo.png" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
        <p class="govuk-body-xs">Template <a href="/csu71/template-csofficial">Change</a></p>
        </div>
-     {% elif data['template'] == "ho" %}
+     {% elif data['org'] == "ho" %}
        <div style="position:absolute;right:20px;top:0px;">
        <a href="/csu71/template-csofficial"><img src="/public/images/ho-logo.png" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
        <p class="govuk-body-xs">Template <a href="/csu71/template-csofficial">Change</a></p>
        </div>
-       {% endif %}
+       {% endif %} -->
 
 
 
@@ -107,15 +142,15 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
       </div>
       <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
-          {% if data['template'] == "ddat" %}
+          {% if data['org'] == "ddat" %}
             Your DDaT job template has been activated lorem ipsum.
-          {% elif data['template'] == "co" %}
+          {% elif data['org'] == "co" %}
             Your Cabinet Office job template has been activated lorem ipsum.
-          {% elif data['template'] == "ho" %}
+          {% elif data['org'] == "ho" %}
             Your Home Office job template has been activated lorem ipsum.
           {% endif %}
         </h3>
-        <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+        <strong style="float:right" class="govuk-tag--blue govuk-tag" id="financial-evidence-status">READY FOR REVIEW</strong>
 
         <p class="govuk-body">The sections pre-filled by the template are highlighted </p>
 
@@ -217,7 +252,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
               {% elif data['uk']|length >= 1 %}
               <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
               {% else %}
-              <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
               {% endif %}
             </li>
             <li class="app-task-list__item">
@@ -249,7 +284,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                   {% if data['benefits-viewed']|length >= 1 %}
                   <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
                   {% else %}
-                  <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
                   {% endif %}
 
 
@@ -290,7 +325,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                     {% elif data['person-spec']|length >= 1 %}
                     <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
                     {% else %}
-                    <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+                    <strong class="govuk-tag--blue govuk-tag app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
                     {% endif %}
 
 
@@ -329,145 +364,15 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                     </li>
                   </ul>
 
-
-
-
-<!--
                   <h2 class="app-task-list__section">
-                    <span class="app-task-list__section-number">3. </span>Selection criteria and assessment methods
+                    <span class="app-task-list__section-number">4. </span>Selection criteria and assessment methods
                   </h2>
                   <ul class="app-task-list__items">
 
 
                     <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
-                        <a class="govuk-link govuk-link--no-visited-state" href="/csu71/new-campaign-set-up/pick-criteria-type" aria-describedby="eligibility-status">
-                          Pick selection criteria
-                        </a>
-                      </span>
-
-
-                      {% if data['done'] == "dusted" %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                      {% else %}
-
-                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
-                      {%endif%}
-
-                    </li>
-
-
-                    <li class="app-task-list__item">
-                      <span class="app-task-list__task-name">
-                        <a class="govuk-link govuk-link--no-visited-state" href="#" aria-describedby="read-declaration-status">
-                          Assign selection criteria to sift, interview or both stages
-                        </a>
-                      </span>
-
-                      {% if data['done'] == "dusted" %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                      {% else %}
-                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
-                      {%endif%}
-
-                    </li>
-
-                    <li class="app-task-list__item">
-                      <span class="app-task-list__task-name">
-                        <a class="govuk-link govuk-link--no-visited-state" href="#" aria-describedby="read-declaration-status">
-                          Select assessment methods for sift
-                        </a>
-                      </span>
-
-                      {% if data['done'] == "dusted" %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                      {% else %}
-                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
-                      {%endif%}
-
-                    </li>
-
-
-
-
-                    <li class="app-task-list__item">
-                      <span class="app-task-list__task-name">
-                        <a class="govuk-link govuk-link--no-visited-state" href="#" aria-describedby="read-declaration-status">
-                          Select assessment methods for interview
-                        </a>
-                      </span>
-
-                      {% if data['done'] == "dusted" %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                      {% else %}
-                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
-                      {%endif%}
-
-
-
-
-                    </li>
-
-                    <li class="app-task-list__item">
-
-
-
-                      <span class="app-task-list__task-name">
-                        <a class="govuk-link govuk-link--no-visited-state" href="#" aria-describedby="read-declaration-status">
-                          Review your criteria and methods
-                        </a>
-                      </span>
-                      {% if data['done'] == "dusted" %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                      {% else %}
-
-                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
-                      {%endif%}
-                    </li>
-                    <li class="app-task-list__item">
-
-
-
-                      <span class="app-task-list__task-name">
-                        <a class="govuk-link govuk-link--no-visited-state" href="#" aria-describedby="read-declaration-status">
-                          Essential criteria
-                        </a>
-                      </span>
-                      {% if data['done'] == "dusted" %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                      {% else %}
-
-                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
-                      {%endif%}
-                    </li>
-                    <li class="app-task-list__item">
-
-
-
-                      <span class="app-task-list__task-name">
-                        <a class="govuk-link govuk-link--no-visited-state" href="#" aria-describedby="read-declaration-status">
-                          Pre-sift eligibility questions
-                        </a>
-                      </span>
-                      {% if data['done'] == "dusted" %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                      {% else %}
-
-                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">optional</strong>
-                      {%endif%}
-                    </li>
-
-                  </ul> -->
-
-                  <h2 class="app-task-list__section">
-                    <span class="app-task-list__section-number">3. </span>Selection criteria and assessment methods 
-                  </h2>
-                  <ul class="app-task-list__items">
-
-
-                    <li class="app-task-list__item">
-                      <span class="app-task-list__task-name">
-                        <a class="govuk-link govuk-link--no-visited-state" href="/csu71/new-campaign-set-up/pick-criteria-type" aria-describedby="eligibility-status">
+                        <a class="govuk-link govuk-link--no-visited-state" href="/csu71/new-campaign-set-up/pick-criteria-type?selectTemp={{data['template']}}" aria-describedby="eligibility-status">
                         Proposed selection criteria
                         </a>
                       </span>
@@ -477,7 +382,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                       <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
                       {% else %}
 
-                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+                      <strong class="govuk-tag--blue govuk-tag app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
                       {%endif%}
 
                     </li>
@@ -497,7 +402,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                       {% if data['done'] == "dusted" %}
                       <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
                       {% else %}
-                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+                      <strong class="govuk-tag--blue tag govuk-tag app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
                       {%endif%}
 
 
@@ -518,7 +423,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                       <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
                       {% else %}
 
-                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+                      <strong class="govuk-tag--blue govuk-tag app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
                       {%endif%}
                     </li>
                     <li class="app-task-list__item">
@@ -526,7 +431,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
 
                       <span class="app-task-list__task-name">
-                        <a class="govuk-link govuk-link--no-visited-state" href="#" aria-describedby="read-declaration-status">
+                        <a class="govuk-link govuk-link--no-visited-state" href="/csu71/new-campaign-set-up/select-essential-criteria" aria-describedby="read-declaration-status">
                           Essential criteria
                         </a>
                       </span>
@@ -542,8 +447,8 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
 
                       <span class="app-task-list__task-name">
-                        <a class="govuk-link govuk-link--no-visited-state" href="#" aria-describedby="read-declaration-status">
-                          Pre-sift eligibility questions
+                        <a class="govuk-link govuk-link--no-visited-state" href="/csu71/new-campaign-set-up/pre-sift-questions" aria-describedby="read-declaration-status">
+                          Pre-qualifying questions
                         </a>
                       </span>
                       {% if data['done'] == "dusted" %}
@@ -558,132 +463,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
 
 
-                  <!-- <h2 class="app-task-list__section">
-                    <span class="app-task-list__section-number">4. </span>Sifting and selection methods
-                  </h2>
-                  <ul class="app-task-list__items">
-                    <li class="app-task-list__item">
-                      <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/assessment-methods" aria-describedby="eligibility-status">
-                          Assessment methods
-                        </a>
-                      </span>
-                      {% if data['ass-methods']|length >= 1 %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
 
-                      {% else %}
-                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
-                      {% endif %}
-                    </li>
-
-                    <li class="app-task-list__item">
-                      <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/how-sift" aria-describedby="read-declaration-status">
-                          How will you assess at sift?
-                        </a>
-                      </span>
-                      {% if data['howsift']|length >= 1 %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-
-                      {% else %}
-                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
-                      {% endif %}
-
-
-                    </li>
-
-                    <li class="app-task-list__item">
-                      <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/interview-evidence" aria-describedby="read-declaration-status">
-                          How will you interview?
-                        </a>
-                      </span>
-                      {% if data['interview-assessments']|length >= 1 %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-
-                      {% elif data['what-assessments']|length >= 1 %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                      {% else %}
-                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
-                      {% endif %}
-                    </li>
-
-                    <li class="app-task-list__item">
-                      <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/online-tests" aria-describedby="read-declaration-status">
-                          Online tests
-                        </a>
-                      </span>
-                      {% if data['tests']|length >= 1 %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                      {% else %}
-                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
-                      {% endif %}
-
-
-                    </li>
-
-                    <li class="app-task-list__item">
-                      <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/experience" aria-describedby="read-declaration-status">
-                          Essential criteria at sift and interview
-                        </a>
-                      </span>
-                      {% if data['selinterviewexp']|length >= 1 %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                      {% elif data['selsiftexp']|length >= 1 %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                      {% else %}
-                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
-                      {% endif %}
-
-                    </li>
-                    <li class="app-task-list__item">
-                      <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/behaviours" aria-describedby="read-declaration-status">
-                          Behaviours at sift and interview
-                        </a>
-                      </span>
-                      {% if data['interviewbehaviours']|length >= 1 %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                      {% elif data['siftbehaviours']|length >= 1 %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                      {% elif data['behave1']|length >= 1 %}
-                      <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
-                      {% else %}
-                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
-                      {% endif %}
-
-                    </li>
-
-                    <li class="app-task-list__item">
-                      <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/technical" aria-describedby="read-declaration-status">
-                          Technical skills at sift and interview
-                        </a>
-                      </span>
-                      {% if data['selsiftskills']|length >= 1 %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                      {% elif data['selinterviewskills']|length >= 1 %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                      {% else %}
-                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
-                      {% endif %}
-                    </li>
-
-                    <li class="app-task-list__item">
-                      <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/other-methods" aria-describedby="read-declaration-status">
-                          Additional assessment requirements
-                        </a>
-                      </span>
-                      {% if data['additional-assessments']|length >= 1 %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                      {% else %}
-                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
-                      {% endif %}
-                    </li>
-                  </ul> -->
 
                   <h2 class="app-task-list__section">
                     <span class="app-task-list__section-number">5. </span>Recruitment channels
@@ -712,7 +492,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                       <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
                       {% else %}
-                      <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status">READY FOR REVIEW</strong>
+                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
                       {% endif %}
                     </li>
 
@@ -813,6 +593,38 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                     </div>
 
 
+                    {% include '/csu71/includes/footerarea.html' %}
+
+
+                    <!-- <div class="govuk-grid-row govuk-!-margin-top-9">
+                    <div class="govuk-grid-column-full">
+
+                    <div style="position:relative;">
+                    {% if data['org'] == "ddat" %}
+                    <div style="height:80px;width:95px;border-radius:5px;padding:8px;background:black;position:absolute;right:20px;bottom:0px;;">
+                    <a href="/csu71/template-csofficial"><img src="/public/images/ddatfu.png" style=";width:90px"></a>
+                    <p style="position:absolute;right:10px;font-size:12px" class="govuk-body-xs"><a style="color:white; font-weight:bold" href="/csu71/template-csofficial">Change template</a></p>
+                    </div>
+                    {% elif data['org'] == "co" %}
+                    <div style="height:60px;width:95px;border-radius:5px;padding:8px;background:#1d70b8;position:absolute;right:20px;bottom:-10px;;">
+                    <a href="/csu71/template-csofficial"> <img src="/public/images/cab.png" style=";width:100px"</a>
+                    <p style="position:absolute;right:10px;font-size:12px" class="govuk-body-xs"><a style="color:white; font-weight:bold" href="/csu71/template-csofficial">Change template</a></p>
+                    </div>
+                    {% elif data['org'] == "ho" %}
+                    <div style="border:1px solid black;height:60px;width:95px;border-radius:5px;padding:8px;background:white;position:absolute;right:20px;bottom:-10px;;">
+                    <a href="/csu71/template-csofficial"><img src="/public/images/ho-logo.png" style="width:80px"></a>
+                    <p style="position:absolute;right:10px;font-size:12px" class="govuk-body-xs"><a style="color:black; font-weight:bold" href="/csu71/template-csofficial">Change template</a></p>
+                    </div>
+                    {% endif %}
+                    </div>
+
+
+
+
+
+                    </div>
+                    </div> -->
+
                     <script>
 
 
@@ -822,6 +634,77 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                       var time = stamp.toLocaleTimeString('en-us', { hours:"numeric", minutes:"short", seconds:"numeric" })
                       var localStamp = stamp.toLocaleDateString('en-us', { day:"numeric", month:"short", year:"numeric" }) ;
                       dateField.innerHTML = time+", "+localStamp;
+
+
+
+                          const businessAnalystDDaT = {
+                              "1": {
+                                "title": "Agile working",
+                                "description": "You can identify and compare the best processes or delivery methods to use, including measuring and evaluating outcomes. You can help the team to decide the best approach. You can help teams to manage and visualise outcomes, prioritise work and adhere to agreed minimum viable product (MVP), priorities and scope.",
+                                "level": "practitioner"
+                              },
+                              "2": {
+                                "title": "Business analysis",
+                                "description": "You can advise on the approach to identify, investigate, analyse and communicate complex business problems and opportunities within a project or programme of work. You can inform tactical decision making and help to define longer-term strategic plans. You can recommend the approach to options analysis, feasibility assessment and operations, and can quantify potential business benefits. You can ensure the proposed solution aligns with business goals and objectives, and business and user needs, and achieves the required outcomes and expected benefits.",
+                                "level": "practitioner"
+                              },
+                              "3": {
+                                "title": "Business modelling",
+                                "description": "You can lead on the modelling of processes, systems and data at varying levels of detail or complexity across a project or programme. You can manage the effects of proposed changes.",
+                                "level": "practitioner"
+                              },
+                              "4": {
+                                "title": "Business process improvement",
+                                "description": "You can identify opportunities to improve business performance, within a project or programme. You can lead the analysis, identification, design, prioritisation and implementation of process and business changes to improve business operations and services. You can assess the feasibility of changes and recommend new approaches. You can support the implementation of proposed business improvements.",
+                                "level": "practitioner"
+                              },
+                              "5": {
+                                "title": "Business process testing",
+                                "description": "You can lead on the application of business analysis and evaluation skills to support the design, execution and assessment of business process tests and usability evaluations within a project or programme of work.",
+                                "level": "practitioner"
+                              },
+                              "6": {
+                                "title": "Methods and tools",
+                                "description": "You can build capability in methods and tools, ensuring they are adopted consistently and used effectively.",
+                                "level": "practitioner"
+                              },
+                              "7": {
+                                "title": "Requirements definition and management",
+                                "description": "You can advise on the approach to requirements management within a project or programme. You can define the most appropriate requirements management life cycle methods and ensure the requirement can be traced in the design, build, test, tender and evaluation phases. You can co-ordinate and review the prioritisation of requirements and engage in the negotiation of solutions to help meet programme objectives.",
+                                "level": "practitioner"
+                              },
+                              "8": {
+                                "title": "Stakeholder relationship management (business analysis)",
+                                "description": "You can lead on communicating with stakeholders, clarifying needs and commitments through consultation and consideration of consequences while focusing on user and business needs. You can develop or apply communication strategies to build relationships, using informal and formal channels to engage with stakeholders at all levels and resolving conflict where required.",
+                                "level": "practitioner"
+                              },
+                              "9": {
+                                "title": "Systems analysis",
+                                "description": "You can lead the identification and analysis of IT system capabilities, developing models and system requirements. You can use systems analysis to support a deeper understanding of how processes and systems work, and to identify gaps. You can work with other digital professionals to design and develop system and user interfaces, identify gaps in functionality and assess the effect of proposed software changes on users or the organisation.",
+                                "level": "practitioner"
+                              },
+                              "10": {
+                                "title": "Testing (business analysis)",
+                                "description": "You can advise on the approach to identify, investigate, analyse and communicate complex business problems and opportunities within a project or programme of work. You can inform tactical decision making and help to define longer-term strategic plans. You can recommend the approach to options analysis, feasibility assessment and operations, and can quantify potential business benefits. You can ensure the proposed solution aligns with business goals and objectives, and business and user needs, and achieves the required outcomes and expected benefits.",
+                                "level": "practitioner"
+                              },
+                              "11": {
+                                "title": "User experience analysis",
+                                "description": "You can recommend the value of testing and apply the relevant tools and techniques to ensure test validity. You can advise on business scenarios and develop acceptance criteria to ensure requirements can be traced to develop functionality. You can review prototypes, test plans and test outcome reporting.",
+                                "level": "practitioner"
+                              },
+                          }
+
+
+                      window.sessionStorage.setItem("ddatskills", JSON.stringify(businessAnalystDDaT));
+
+
+
+
+
+
+
+
                     </script>
 
 

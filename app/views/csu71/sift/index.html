@@ -1,9 +1,16 @@
+{% extends "layouts/main.html" %}
 
-{% extends "layout.html" %}
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+  {% block beforeContent %}
 
-{% block pageTitle %}
-  Home – GOV.UK Prototype Kit
-{% endblock %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+
+    {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">

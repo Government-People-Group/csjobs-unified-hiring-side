@@ -34,7 +34,7 @@
 
     </div>
 
-      <div class="" style="position:relative;left:right;margin-right:20px;margin-top:4px">
+      <div  style="position:relative;left:right;margin-right:20px;margin-top:4px">
 
   <span class="govuk-body-m" style="margin-left:30px;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/job-library"><strong>Create a vacancy</strong></a></span>
 
@@ -54,29 +54,13 @@
       <div>
         <div class="govuk-grid-column-full">
 
-<style>
-  p, strong,td {
-    font-size:18px;
-    ;
 
-  }
-
-
-  th {
-
-    width:40%;
-    background:#F4FAFF;
-    color:#1d70b8;
-    border-bottom:1px solid #1d70b8;
-  }
-</style>
 
               <!-- <div class="govuk-!-margin-top-7" style="position:absolute;float:left;width:20%;margin-left:250px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="#"><strong>Sift</strong></a></span>
 </div>
 
 <div class="govuk-!-margin-top-7" style="position:absolute;float:left;width:20%;margin-left:310px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="#"><strong>Interview</strong></a></span>
 </div> -->
-
 
 
 
@@ -92,15 +76,21 @@
             </div> -->
 
 
-            <H1 style="float:right;padding-bottom:25px; padding-right:30px" class="govuk-heading-l govuk-!-margin-top-3 govuk-!-margin-bottom-6">Welcome back, Jane Smith</H1>
+            <!-- <H1 style="float:right;padding-bottom:25px; padding-right:30px" class="govuk-heading-m govuk-!-margin-top-3 govuk-!-margin-bottom-6">Coming up milestone X</H1> -->
 
 
-            <div class="govuk-!-padding-top-3" style="padding:30px;height:600px;;;;border:1px solid lightgrey">
-                    <div class="govuk-tabs govuk-!-margin-top-9 " data-module="govuk-tabs">
+            <div class="govuk-!-padding-top-9" style="background:white;padding:30px;height:850px;;;border:1px solid lightgrey">
+                    <div style="" class="govuk-tabs govuk-!-margin-top-3 "  data-module="govuk-tabs">
                       <h2  class="govuk-tabs__title">
+
                         Contents
                       </h2>
-                      <ul class="govuk-tabs__list" >
+                      <ul class="govuk-tabs__list"  >
+                        <li class="govuk-tabs__list-item" >
+                          <a class="govuk-tabs__tab" href="#past-month" >
+                            <p style="color:#1d70b8;font-size:20px;font-weight:bold;height:0px" id="timestop"></p>
+                          </a>
+                        </li>
                         <li style="font-weight:bold;" class="govuk-tabs__list-item" >
                           <a style="color:#1d70b8;font-size:20px" class="govuk-tabs__tab" href="#past-week">
                             My vacancies
@@ -112,26 +102,22 @@
                           </a>
                         </li>
 
-                        <!-- <li class="govuk-tabs__list-item" >
-                          <a class="govuk-tabs__tab" href="#past-month">
-                            My tasks
-                          </a>
-                        </li> -->
+
 
                       </ul>
 
 
-                      <div style=";" class="govuk-tabs__panel" id="past-day">
+                      <div class="govuk-tabs__panel" style="height:725px;background:white" id="past-day">
                         <table class="govuk-table" >
-                          <thead class="govuk-table__head">
+                          <thead class="govuk-table__head" >
                             <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8">
                               <th style="padding-left:10px;background: #F4FAFF;color:#1d70b8;width:20%;" scope="col" class="govuk-table__header">Date⇕</th>
                               <th scope="col" class="govuk-table__header" style="width:20%;background: #F4FAFF;color:#1d70b8;">Job⇕</th>
 
-                              <th scope="col" class="govuk-table__header" style="width:40%background: #F4FAFF;color:#1d70b8;">Message⇕</th>
+                              <th scope="col" class="govuk-table__header" style="width:40%;background: #F4FAFF;color:#1d70b8;">Message⇕</th>
                             </tr>
                           </thead>
-                          <tbody class="govuk-table__body">
+                          <tbody class="govuk-table__body" >
                             <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8;">
                               <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><strong>Wed 26 Apr</strong></td>
                               <td class="govuk-table__cell" style="background: white;;"><strong><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="home?cta=none">Product manager</a></strong></td>
@@ -159,15 +145,15 @@
                           </tbody>
                         </table>
                       </div>
-                      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" style="" id="past-week">
+                      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" style="height:725px;background:white" id="past-week">
 
                         <table class="govuk-table">
 
                           <thead class="govuk-table__head">
                             <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8">
                               <th scope="col" class="govuk-table__header" style="width:20%;background: #F4FAFF;color:#1d70b8;">Last mod.</th>
-                              <th style="padding-left:10px;;color:#1d70b8;width:15%;" scope="col" class="govuk-table__header">Ref.</th>
-                              <th style="padding-left:10px;;color:#1d70b8;width:35%;" scope="col" class="govuk-table__header">Job⇕</th>
+                              <th style=";background: #F4FAFF;padding-left:10px;;color:#1d70b8;width:15%;" scope="col" class="govuk-table__header">Ref.</th>
+                              <th style=";background: #F4FAFF;padding-left:10px;;color:#1d70b8;width:35%;" scope="col" class="govuk-table__header">Job⇕</th>
                               <th scope="col" class="govuk-table__header" style="width:15%;background: #F4FAFF;color:#1d70b8;">Grade⇕</th>
 
 
@@ -183,13 +169,13 @@
                             {% if data['temp-copy-input-autocomplete'].length > 1 %}
 
                             <tr id="newJob" class="govuk-table__row" style=";border-bottom:0.5px solid #1d70b8;">
-                              <td class="govuk-table__cell" style="background: white;;"><strong id="dated"></strong></td>
+                              <td class="govuk-table__cell" style="background: white;;"><strong id="dated">tmp</strong></td>
 
                               <td class="govuk-table__cell" style=";padding-left:10px; background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="task-list-exp-co"><strong>224220</strong></a></td>
                               <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="task-list-exp-co"><strong>{{ data['temp-copy-input-autocomplete']}}</strong></a></td>
-                              <td class="govuk-table__cell" style="width:20%;background: white;;"><strong>{{data['grade']}}</strong></td>
+                              <td class="govuk-table__cell" style="width:30%;background: white;;"><strong>{{data['grade']}}</strong></td>
 
-                              <td class="govuk-table__cell" style="background: white;"><strong style="font-size:16px;" class="govuk-tag govuk-tag--green">DRAFTING</strong></td>
+                              <td class="govuk-table__cell" style="background: white;"><strong style="font-size:16px;" class="govuk-tag govuk-tag--green">set-up</strong></td>
                             </tr>
                             {% endif %}
                             <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8;">
@@ -197,7 +183,7 @@
 
                               <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="home?cta=none">210220</a></td>
                               <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="home?cta=none">Product manager</a></td>
-                              <td class="govuk-table__cell" style="width:20%;background: white;;">G7</td>
+                              <td class="govuk-table__cell" style="width:30%;background: white;;">Grade 7</td>
 
                               <td class="govuk-table__cell" style="background: white;"><strong style="font-size:16px;" class="govuk-tag govuk-tag--grey">CLOSED</strong></td>
                             </tr>
@@ -216,35 +202,97 @@
 
                         </table>
                       </div>
-                      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" style="background:white" id="past-month">
-                        <h2 class="govuk-heading-l">My tasks</h2>
+                      <div class="govuk-tabs__panel govuk-tabs__panel--hidden"  style="height:725px;background:white" id="past-month">
+
+<div>
+                        <span class="govuk-body-l " style="font-size:24x;;">Campaign mission control</span>
+                        <h2 class="govuk-heading-l">Lead delivery manager</h2>
+</div>
+
                         <table class="govuk-table">
+
+                          <div class="govuk-grid-row">
+                          <div class="govuk-grid-column-one-third" style="padding:5px;width:30%;height:200px;border:2px dashed lightgrey;margin-left:20px;margin-bottom:20px;;margin-top:60px">
+
+                            <div id="reminder">
+
+                            <h3 style="font-size:24px;text-align:center;vertical-align:top;margin-top:10px;padding:5px" class="govuk-heading-s">TODAY</h3>
+                           <p id="consensusTrigger" style="font-weight:bold;font-size:24px;text-align:center;padding-left:5px;margin-bottom:20px" class="govuk-body-l">It's time...</p>
+
+                            <span class="govuk-body-m" style="margin-left:30px;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/sift/setup-interview/setup-interview"><strong>Setup interviews</strong></a></span>
+
+
+
+                           </div>
+                           <div style="display:none" id="scoresAreIn">
+
+                           <h3 style=";margin-top:10px;padding:5px" class="govuk-heading-s">Now</h3>
+                          <p id="consensusTrigger" class="govuk-body-m">No consensus on sift scores</p>
+                          <a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state"  style="text-align: center;font-size:22px;font-weight:bold" href="/csu71/sift/1001334-panel-results">View panel results and recommendations</a>
+                          </div>
+
+                          <div style="display:none;" id="addConsensusOutcome">
+
+                          <h3 style=";margin-top:10px;padding:5px" class="govuk-heading-s">Now</h3>
+                         <p id="consensusTrigger" class="govuk-body-m">No consensus on sift scores</p>
+                         <a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state"  style="text-align: center;font-size:22px;font-weight:bold" href="/csu71/sift/1001334-panel-results">View panel results and recommendations</a>
+                         </div>
+
+                          </div>
+                          <div class="govuk-grid-column-one-third" style="width:30%;height:200px;border:2px dashed lightgrey;margin-left:20px;margin-bottom:20px;margin-top:60px">
+
+                            <h3 style="margin-top:10px;padding:5px" class="govuk-heading-s">Up next</h3>
+                           <p class="govuk-body-m"></p>
+
+                          </div>
+                          <div class="govuk-grid-column-one-third " style="width:30%;height:200px;border:2px dashed lightgrey;margin-left:20px;margin-bottom:20px;margin-top:60px">
+
+
+                            <h3 style="margin-top:10px;padding:5px" class="govuk-heading-s">Campaign schedule</h3>
+                           <p class="govuk-body-m">Dates, milestones etc<BR>Event information</p>
+                              <p class="govuk-body-m">Mini-tracker</p>
+
+                          </div>
+                          <div class="govuk-grid-column-two-thirds" style="width:62%;height:200px;border:2px dashed lightgrey;margin-left:20px">
+
+                            <h3 style="margin-top:10px;padding:5px" class="govuk-heading-s">Now</h3>
+                           <p class="govuk-body-m">Jobs to be done / CTA</p>
+
+
+                          </div>
+                          <!-- <div class="govuk-grid-column-one-third" style="width:30%;height:200px;border:2px dashed lightgrey;margin-left:20px">
+
+                            <h3 style="margin-top:10px;padding:5px" class="govuk-heading-s">Up next</h3>
+                           <p class="govuk-body-m"></p>
+
+                          </div> -->
+                          <div class="govuk-grid-column-one-third" style="width:30%;height:200px;border:2px dashed lightgrey;margin-left:20px">
+
+
+                            <h3 style="margin-top:10px;padding:5px" class="govuk-heading-s">Compliance</h3>
+                           <p class="govuk-body-m">Checklist and tracker</p>
+
+                          </div>
+                          </div>
+
                           <thead class="govuk-table__head">
                             <tr class="govuk-table__row">
-                              <th scope="col" class="govuk-table__header"></th>
-                              <th scope="col" class="govuk-table__header"></th>
-                              <th scope="col" class="govuk-table__header"></th>
+                              <!-- <th style="border:0px" scope="col" class="govuk-table__header"></th>
+                              <th style="border:0px" scope="col" class="govuk-table__header"></th>
+                              <th style="border:0px" scope="col" class="govuk-table__header"></th> -->
                             </tr>
                           </thead>
                           <tbody class="govuk-table__body">
                             <tr class="govuk-table__row">
-                              <td class="govuk-table__cell"></td>
-                              <td class="govuk-table__cell"></td>
-                              <td class="govuk-table__cell"></td>
-                            </tr>
-                            <tr class="govuk-table__row">
-                              <td class="govuk-table__cell"></td>
-                              <td class="govuk-table__cell"></td>
-                              <td class="govuk-table__cell"></td>
-                            </tr>
-                            <tr class="govuk-table__row">
-                              <td class="govuk-table__cell"></td>
-                              <td class="govuk-table__cell"></td>
-                              <td class="govuk-table__cell"></td>
+                              <!-- <td style="border:0px" class="govuk-table__cell"></td>
+                              <td style="border:0px" class="govuk-table__cell"></td>
+                              <td style="border:0px" class="govuk-table__cell"></td> -->
                             </tr>
                           </tbody>
                         </table>
                       </div>
+                      <!-- <strong style="font-size:10px;" class="govuk-!-margin-bottom-1 govuk-!-margin-top-6 govuk-!-margin-left-0 govuk-tag">beta</strong><p  style="display:inline;padding-left:10px;font-size:12px;"><strong><a href"">Feedback</a></strong></p> -->
+
                     </div>
                     <!-- <div class="govuk-!-margin-left-0" style="height:90px;width:36%;background:white ;border:0.5px solid grey;border-radius:2px">
 
@@ -258,7 +306,6 @@
 
                   </div> -->
 
-                  <strong style="font-size:10px;" class="govuk-!-margin-top-9 govuk-!-margin-left-3 govuk-tag">beta</strong><p  style="display:inline;padding-left:10px;font-size:12px;"><strong><a href"">Feedback</a></strong></p>
 
 
 
@@ -270,17 +317,31 @@
           </div>
 
           <script>
+const todayDay = document.getElementById('timestop');
+            const todaystamp = new Date();
+            const tickTock = todaystamp.toLocaleDateString('en-uk', { weekday:"long", day:"numeric", month:"long" }) ;
+            todayDay.innerHTML = tickTock;
 
-            const dateField = document.getElementById('dated');
-            var stamp = new Date();
-            var localStamp = stamp.toLocaleDateString('en-us', { day:"numeric", month:"short", year:"numeric" }) ;
-            dateField.innerHTML = localStamp;
 
 
-            function showDiv(div1) {
-              document.getElementById(div1).style.display = 'block';
+
+  const dateField = document.getElementById('dated');
+  console.log(dateField)
+
+
+            if (dateField.outerText == "tmp"){
+              const stamp = new Date();
+              const localStamp = stamp.toLocaleDateString('en-uk', { day:"numeric", month:"short", year:"numeric" }) ;
+              dateField.innerHTML = localStamp;
 
             }
+
+
+
+
+
+
+
 
 
           </script>
