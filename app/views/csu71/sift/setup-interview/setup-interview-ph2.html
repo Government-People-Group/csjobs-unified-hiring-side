@@ -88,7 +88,14 @@
       }) }}
 
 
-        <div id="conditional" style="padding:15px;border-left:10px solid #1d70b8;background:#F3F2F1;display:none">
+{% if (data['changedDates'].length > 0) or (data['changedDates'] == "Yes") %}
+{% set showOrNot = "block" %}
+{% else  %}
+{% set showOrNot = "none" %}
+
+
+
+        <div id="conditional" style="padding:15px;border-left:10px solid #1d70b8;background:#F3F2F1;display:{{ showOrNot }}">
 
           <p class="govuk-body-m"><strong>When will the interviews start?</strong><p>
 
@@ -118,7 +125,7 @@
             <!-- <p class="govuk-body-m">How many working days (Mon-Fri) will the interview schedule last for?</p> -->
       </div>
 
-
+{% endif %}
 
 
 
@@ -242,206 +249,6 @@ function showDiv(div1) {
   document.getElementById(div1).style.display = 'block';
 
 }
-
-
-
-  // const myObjectName = document.querySelector('#templateName');
-  // console.log(myObjectName.value)
-
-
-
-
-  // var myObjectName = {{ data.templateName | dump | safe }};
-
-
-  // const storedValue = document.getElementById("templateName");
-  // function showingOffTag(thing) {
-  //
-  //   storedValue.textContent = thing;
-  //
-  //   console.log(storedValue)
-  // }
-
-  // var ddattag = document.getElementById("ddattag");
-  // var cotag = document.getElementById("cotag");
-  // var hotag = document.getElementById("hotag");
-
-
-
-
-  var hea1 = document.getElementById("header1");
-
-
-  const object = JSON.parse(window.sessionStorage.getItem("behaviours"));
-  var obj0 = Object.values(object.level0);
-  var level = obj0;
-
-  for (var t=0;t<level.length;t++) {
-
-    var hintText = level[t].description;
-
-
-    var label = document.createElement("label");
-    var checkBox = document.createElement("input");
-    var hint = document.createElement("hint");
-    checkBox.type = "checkbox";
-    checkBox.style.cssText = "width: 30px;height: 30px;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
-    label.style.cssText = "display: block;padding-left: 15px;padding-top:30px;text-indent: 40px;";
-    hint.style.cssText = "display: block;padding-left: 55px;";
-    checkBox.value = level[t].title;
-    hint.value = level[t].description;
-    checkBox.setAttribute("id","behaviours-"+t);
-    checkBox.setAttribute("name","behaviours");
-
-    label.appendChild(document.createTextNode(level[t].title));
-
-    hea1.appendChild(label);
-
-
-    hea1.appendChild(checkBox);
-    hint.appendChild(document.createTextNode(level[t].description));
-    hea1.appendChild(hint);
-  }
-
-  graSelecta("levelgrade");
-
-
-  function graSelecta(grade){
-    var grade = document.getElementById(grade).value;
-
-    var hea1 = document.getElementById("header1");
-    hea1.innerText = "";
-    const object = JSON.parse(window.sessionStorage.getItem("behaviours"));
-
-
-    var level;
-    var obj0 = Object.values(object.level0);
-    var obj1 = Object.values(object.level1);
-    var obj2 = Object.values(object.level2);
-    var obj3 = Object.values(object.level3);
-    var obj4 = Object.values(object.level4);
-
-
-    if (grade == "level0") {
-      level = obj0;
-    }
-
-
-    if (grade == "level1") {
-      level = obj1;
-
-    } else if (grade == "level2") {
-      level = obj2;
-
-    } else if (grade == "level3") {
-      level = obj3;
-    }   else if (grade == "level4") {
-      level = obj4;
-    }
-
-
-
-
-    for (var t=0;t<level.length;t++) {
-      var hintText = level[t].description;
-
-      var label = document.createElement("label");
-      var checkBox = document.createElement("input");
-      var hint = document.createElement("hint");
-      checkBox.type = "checkbox";
-      checkBox.style.cssText = "width: 30px;height: 30px;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
-      label.style.cssText = "display: block;padding-left: 15px;padding-top:30px;text-indent: 40px;";
-      hint.style.cssText = "display: block;padding-left: 55px;";
-      checkBox.value = level[t].title;
-
-
-      hint.value = level[t].description;
-      checkBox.setAttribute("id","behaviours-"+t);
-      checkBox.setAttribute("name","behaviours");
-      hint.setAttribute("id",level[t].title);
-      hint.setAttribute("name",grade);
-      label.appendChild(document.createTextNode(level[t].title));
-
-      hea1.appendChild(label);
-
-
-      hea1.appendChild(checkBox);
-      hint.appendChild(document.createTextNode(level[t].description));
-      hea1.appendChild(hint);
-
-      if (myObjectName.value == "ddat"){
-        if (level[t].title == "Seeing the big picture" || level[t].title == "Changing and improving" || level[t].title == "Delivering at Pace" || level[t].title == "Communicating and Influencing"){
-          label.setAttribute("class","experiment");
-
-          checkBox.checked = "true";
-        }
-      }
-
-
-    }
-  }
-
-
-  function checkCheckBoxes() {
-    var behaviourCheck = [];
-
-    var checkboxB = document.getElementsByTagName('input');
-
-    for (i = 0; i < checkboxB.length; i++) {
-      var checkCt = checkboxB[i].checked.length;
-      if (checkboxB[i].type == 'checkbox' && checkboxB[i].checked ) {
-        behaviourCheck.push(checkboxB[i].value);
-        window.sessionStorage.setItem("BehavioursSelected", JSON.stringify(behaviourCheck));
-      }
-    }
-
-
-  }
-
-  const dwqq = JSON.parse(window.sessionStorage.getItem("BehavioursSelected"));
-
-
-  const keyDetails = {};
-  var keyD = JSON.parse(window.sessionStorage.getItem("keyDetails"));
-
-  // const title = document.getElementById("title").value;
-  // const grade = document.getElementById("newgrade").value
-  // const profession = document.getElementById("grabProf").value;
-  // const department = document.getElementById("dept").value;
-
-  // console.log(keyD)
-
-  keyDetails.title = keyD.jobTitle;
-  keyDetails.grade = keyD.grade;
-  keyDetails.profession = keyD.profession;
-  keyDetails.department = keyD.department;
-
-
-
-  //     var tempSelected = document.getElementById("templateName").value;
-  // keyDetails.template = tempSelected;
-  //     console.log(tempSelected)
-
-
-  // switch (keyDetails.profession) {
-  //   case 'title':
-  //   res.redirect('job-library')
-  //   break
-  //   case 'profession':
-  //   res.redirect('job-library-profession')
-  //   break
-  // case 'skill':
-  //   res.redirect('skills')
-  //   break
-  // }
-  // })
-
-
-
-
-
-
-
 
 
 
