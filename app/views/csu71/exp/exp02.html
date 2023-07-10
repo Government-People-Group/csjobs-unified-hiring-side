@@ -1,0 +1,122 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+  {% block beforeContent %}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+
+    {% endblock %}
+
+{% block content %}
+
+
+
+
+
+  {% macro taskListItem(title="'title'", link='#', completed='', cantStart='' ) %}
+  <li class="app-task-list__item"><span class="app-task-list__task-name">
+  {% if not (cantStart or completed)  %}
+  <a href="{{link}}" aria-describedby="eligibility-completed"> {% endif %}      {{title}}
+  {% if not (cantStart or completed)  %}
+  </a>{% endif %}  </span>{% if completed %}<strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+  {% else %}
+  {% endif %}
+  </li>
+  {% endmacro %}
+
+  <ol class="app-task-list"><li>
+  <h2 class="app-task-list__section">Check and approve</h2>
+  <ul class="app-task-list__items" style="padding-left: 0">
+  {{taskListItem(title="Find applicant on Searchlight", link="1-check/1", completed=(data['searchlight'] == "yes" or data['ni-number'] ), cantStart="")}}
+  {{taskListItem(title="Add National Insurance number", link="1-check/1-ni-number", completed=(data['ni-number'] ), cantStart=(not (data['searchlight'] == "yes") ))}}
+  {{taskListItem(title="Check for appointee", link="1-check/2", completed=(data['appointee'] ), cantStart=(not data['ni-number'] ) )}}
+  {{taskListItem(title="Check application", link="1-check/3", completed=((data['interview'] == 'yes' and data['company'] == 'yes' and data['personal'] == 'yes' ) ), cantStart=(not data['appointee'] ) )}}
+  </ul></li></ol>
+
+
+
+{% macro summaryListItem(title="'firstTitle'") %}
+
+{{ summaryListItem(title="this is the title") }}
+
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Sarah Philips"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "5 January 1978"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: "72 Guild Street<br>London<br>SE23 6FH"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+{% endblock %}

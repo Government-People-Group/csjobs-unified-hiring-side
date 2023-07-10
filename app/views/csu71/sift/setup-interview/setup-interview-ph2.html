@@ -18,7 +18,7 @@
 <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list"><strong>Return to task list</strong></a></span>
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
 
 </div>
 
@@ -34,9 +34,9 @@
 
 
 
-<form class="form" action="setup-interview-ph2-1" method="post">
+<form class="form" action="setup-interview-ph2-2-try" method="post">
 
-  <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">PH2</H1>
+  <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Schedule</H1>
 
 
   <div class="govuk-grid-row">
@@ -44,44 +44,53 @@
 
 
       <ul class="govuk-!-margin-top-6 govuk-list govuk-list--bullet-">
-        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview"><strong>Setup interview</a></p></strong></li>
-        <li><strong><p style ="border-left:5px solid white;;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph1"><strong>ph1</a></p></strong></li>
-        <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph2"><strong>Scheduling</a></p></strong></li>
-        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph3"><strong>ph3</a></p></strong></li>
-        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph4"><strong>ph4</a></p></strong></li>
+        <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph2"><strong>Schedule</a></p></strong></li>
+        <!-- <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview"><strong>Setup interview</a></p></strong></li> -->
+        <li><strong><p style ="border-left:5px solid white;;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph1"><strong>Approach</a></p></strong></li>
+
+        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph3"><strong>Assessment</a></p></strong></li>
+        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph4-1"><strong>Questions</a></p></strong></li>
         <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph5"><strong>ph5</a></p></strong></li>
       </ul>
     </div>
     <div class="govuk-!-margin-top-6 govuk-grid-column-three-quarters">
 
-      <h3 class="govuk-heading-m govuk-!-margin-bottom-6">Scheduling</h3>
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-6">Key dates</h2>
 
 
-        <div class="govuk-form-group" style="">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-              <h1 class="govuk-fieldset__heading">
-      Are you still planning to begin interviews on 07 Aug 2023?
-              </h1>
-            </legend>
-            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="timing" name="timing" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="timing">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="timing" name="timing" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="timing">
-                  No, they've changed
-                </label>
-              </div>
-                  </div>
-          </fieldset>
-        </div>
 
-        <div id="conditional" style="display:none">
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        name: "changedDates",
+        classes: " govuk-radios--inline",
+        fieldset: {
+          legend: {
+            text: "Are you still planning to begin interviews on 07 Aug 2023?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            id: "nochange",
+            value: "Yes",
+            checked: checked("changedDates","Yes"),
+            text: "Yes"
+          },
+          {
+            id: "newdates",
+            value: "No, they've changed",
+            checked: checked("changedDates","No, they've changed"),
+            text: "No, they've changed"
+          }
+        ]
+      }) }}
+
+
+        <div id="conditional" style="padding:15px;border-left:10px solid #1d70b8;background:#F3F2F1;display:none">
+
+          <p class="govuk-body-m"><strong>When will the interviews start?</strong><p>
 
             {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
             {{ govukDateInput({
@@ -112,13 +121,12 @@
 
 
 
-      <form>
 
         <div class="govuk-form-group" style="padding-top:35px;border-top:1px solid lightgrey">
           <label class="govuk-label" for="width-2">
             <strong>How many working days should the schedule continue for?</strong>
           </label>
-          <input class="govuk-input govuk-input--width-2" value="{{ data['duration']}}" id="duration" name="duration" type="text">
+          <input class="govuk-input govuk-input--width-2" value="{{ data['duration']|int}}" id="duration" name="duration" type="text">
         </div>
 
 
@@ -203,10 +211,42 @@
 
 
 
+const newD = document.getElementById("newdates");
+
+newD.addEventListener('change', (event) => {
+
+  if (newD.checked) {
+    showDiv("conditional");
+  }
+
+});
+
+const noC = document.getElementById("nochange");
+
+noC.addEventListener('change', (event) => {
+
+  if (noC.checked) {
+    hideDiv("conditional");
+  }
+
+});
 
 
-  const myObjectName = document.querySelector('#templateName');
-  console.log(myObjectName.value)
+
+function hideDiv(div1) {
+  document.getElementById(div1).style.display = 'none';
+
+}
+
+function showDiv(div1) {
+  document.getElementById(div1).style.display = 'block';
+
+}
+
+
+
+  // const myObjectName = document.querySelector('#templateName');
+  // console.log(myObjectName.value)
 
 
 

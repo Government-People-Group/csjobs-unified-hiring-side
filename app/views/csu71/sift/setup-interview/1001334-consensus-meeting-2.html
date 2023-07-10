@@ -14,11 +14,10 @@
 
 {% block content %}
 
+<form class="form" action="1001334-panel-results-postcon?sift=complete" method="post">
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-Full" style="">
-    <span class="govuk-caption-l">Consensus meeting</span>
-
-    <h1 class="govuk-heading-xl">Applicant 3</h1>
+    <div class="govuk-grid-column-Full" style="">
+    <h1 class="govuk-heading-xl">Applicant 4</h1>
 
     <ul class="govuk-list govuk-list--bullet-">
       <li>
@@ -984,7 +983,7 @@
             </div>
 
 
-            <div class="govuk-!-margin-bottom-0 govuk-!-margin-top-6" style=";border-bottom:0px solid #1d70b8;padding:10px">
+            <div class="govuk-!-margin-bottom-0 govuk-!-margin-top-6" style=";border-bottom:1px solid #1d70b8;padding:10px">
               <span class="govuk-!-margin-bottom-0 govuk-!-margin-top-3 govuk-caption-xl" style=";font-weight:bold;text-align: left;">Criteria 3</span>
               <h3 class="govuk-!-margin-bottom-3 govuk-!-margin-top-0 govuk-heading-l" style=";font-weight:normal;text-align: left;"><strong>Experience creating GOV.UK prototypes</strong></h3>
             </div>
@@ -1417,12 +1416,13 @@
 
 
             {{ govukRadios({
-              idPrefix: "proceed",
-              name: "proceed",
+              idPrefix: "app4Decided",
+              id: "app4Decided",
+              name: "app4Decided",
               classes: "govuk-!-margin-bottom-9",
               fieldset: {
                 legend: {
-                  text: "What is your decision on Applicant 3?",
+                  text: "What is your decision on Applicant 4?",
                   isPageHeading: false,
                   classes: "govuk-fieldset__legend--l"
                 }
@@ -1430,25 +1430,27 @@
               items: [
               {
                 value: "interview",
+                checked: checked("app4Decided","interview"),
                 text: "Invite to interview"
               },
               {
                 value: "reject",
+                checked: checked("app4Decided","reject"),
                 text: "Reject"
               },
               {
                 value: "hold",
+                checked: checked("app4Decided","hold"),
                 text: "Place on hold"
               }
               ]
             }) }}
 
             {{ govukButton({
-              text: "Next applicant",
-              href: "1001334-consensus-meeting-2"
+              text: "Submit your decision"
             }) }}
 
 
-
+</form>
 
               {% endblock %}

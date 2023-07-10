@@ -1,0 +1,93 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Home – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block beforeContent %}
+<div id="bluePanel" style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+  <!-- <div style="position:absolute;top:4px; right:62px"> -->
+
+  <a href="#"><img src="/public/images/search.png" style="float:right;margin-right:30px;padding:10px;;width:20px"></a>
+
+
+
+
+
+
+  <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="40" height="40"><path d="M25.7 24.8L21.9 21c.7-1 1.1-2.2 1.1-3.5 0-3.6-2.9-6.5-6.5-6.5S10 13.9 10 17.5s2.9 6.5 6.5 6.5c1.6 0 3-.6 4.1-1.5l3.7 3.7 1.4-1.4zM12 17.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5-4.5-2-4.5-4.5z" fill="#ffffff"/></svg> -->
+  <!-- </div> -->
+  <div  style="position:relative;float:right;width:40%;margin-right:30px;margin-top:-3px">
+    <div class="govuk-form-group">
+      <!-- <label style="float:left;color:white;margin-right:0;margin-top:0px;font-size:20px;;" class="govuk-label-s" for="width-20">Search</label> -->
+
+      <!-- <input onClick="this.value=''" onFocusOut="this.value='Search'" style="width:35%;height:40px;margin-left:20px;float:right;;font-size:16px;background:white ;border:1px solid #1d70b8;border-radius:5px;" class="govuk-input govuk-input--width-10" value="Search" id="width-20" name="width-20"  type="text"> -->
+
+    </div>
+
+
+
+  </div>
+
+  <div  style="position:relative;left:right;margin-right:20px;margin-top:4px">
+
+    <span class="govuk-body-m" style="margin-left:30px;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/job-library"><strong>Create a vacancy</strong></a></span>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+
+
+  {% macro homeDeviceOne(title="'title'", width='width', height='height', linkTitle='linkTitle', link='#' ) %}
+  <div style="border-radius:10px;padding:5px;width:{{width}};height:{{height}};border:2px dashed purple;margin-left:20px;margin-bottom:20px;;margin-top:60px">
+  <a href="{{link}}"><p class="govuk-body-m" style="margin-top:30px;text-align:center;font-size:38px">{{title}}</p>
+  <p class="govuk-body-m" style="text-align:center;height:30px;width250px;background:#00703c;color:white;font-weight:bold;padding:10px;font-size:22px;border:2px solid greem;border-radius:7px">{{linkTitle}}</p><a/>
+  </div>
+  {% endmacro %}
+
+ <!-- {{homeDeviceOne(title="First home device", width="300px",height="100%", linkTitle='sift complete'  ,link="1-check/1")}}
+ {{homeDeviceOne(title="Second home device", width="300px",height="100%",linkTitle='s complete'  ,link="1-check/1")}}
+  {{homeDeviceOne(title="thrd home device", width="300px",height="100%",linkTitle='s complete'  ,link="1-check/1")}}
+
+  {{homeDeviceOne(title="First home device", width="300px",height="100%", linkTitle='sift complete'  ,link="1-check/1")}}
+  {{homeDeviceOne(title="Second home device", width="300px",height="100%",linkTitle='s complete'  ,link="1-check/1")}}
+   {{homeDeviceOne(title="thrd home device", width="300px",height="100%",linkTitle='s complete'  ,link="1-check/1")}} -->
+
+
+   {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+   {{ govukSummaryList({
+     rows: [
+       { key: { text: "Name" }, value: { html: "Sarah Philips" }, actions: { items: [ { href: "#", text: "Change", visuallyHiddenText: "name" } ] } },
+       { key: { text: "Date of birth" }, value: { html: "5 January 1978" }, actions: { items: [ { href: "#", text: "Change", visuallyHiddenText: "name" } ] } },
+       { key: { text: "Address" }, value: { html: "72 Guild Street<br>London<br>SE23 6FH" }, actions: { items: [ { href: "#", text: "Change", visuallyHiddenText: "name" } ] } }
+       ]
+     }) }}
+
+
+
+
+
+</div>
+</div>
+
+
+
+{% endblock %}

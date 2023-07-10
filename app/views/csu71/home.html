@@ -88,7 +88,7 @@
                       <ul class="govuk-tabs__list"  >
                         <li class="govuk-tabs__list-item" >
                           <a class="govuk-tabs__tab" href="#past-month" >
-                            <p style="color:#1d70b8;font-size:20px;font-weight:bold;height:0px" id="timestop"></p>
+                            <p style="color:#1d70b8;font-size:20px;font-weight:bold;height:0px" ">This week</p>
                           </a>
                         </li>
                         <li style="font-weight:bold;" class="govuk-tabs__list-item" >
@@ -157,7 +157,7 @@
                               <th scope="col" class="govuk-table__header" style="width:15%;background: #F4FAFF;color:#1d70b8;">Grade⇕</th>
 
 
-                              <th scope="col" class="govuk-table__header" style="width:15%;background: #F4FAFF;color:#1d70b8;">Status⇕</th>
+                              <th scope="col" class="govuk-table__header" style="width:45%;background: #F4FAFF;color:#1d70b8;">Status⇕</th>
                             </tr>
                           </thead>
 
@@ -168,14 +168,24 @@
 
                             {% if data['temp-copy-input-autocomplete'].length > 1 %}
 
-                            <tr id="newJob" class="govuk-table__row" style=";border-bottom:0.5px solid #1d70b8;">
+                            <tr id="inter" class="govuk-table__row" style=";border-bottom:0.5px solid #1d70b8;">
                               <td class="govuk-table__cell" style="background: white;;"><strong id="dated">tmp</strong></td>
 
-                              <td class="govuk-table__cell" style=";padding-left:10px; background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="task-list-exp-co"><strong>224220</strong></a></td>
-                              <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="task-list-exp-co"><strong>{{ data['temp-copy-input-autocomplete']}}</strong></a></td>
-                              <td class="govuk-table__cell" style="width:30%;background: white;;"><strong>{{data['grade']}}</strong></td>
+                              <td class="govuk-table__cell" style=";padding-left:10px; background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="/csu71/sift/task-list"><strong>1001334</strong></a></td>
+                              <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="/csu71/sift/task-list"><strong>Lead delivery manager</strong></a></td>
+                              <td class="govuk-table__cell" style="width:30%;background: white;;"><strong>Grade 7</strong></td>
 
-                              <td class="govuk-table__cell" style="background: white;"><strong style="font-size:16px;" class="govuk-tag govuk-tag--green">set-up</strong></td>
+                              <td class="govuk-table__cell" style="width:50%;background: white;"><strong style="width:170px;font-size:16px;" class="govuk-tag govuk-tag--orange"><a href="/csu71/sift/setup-interview/setup-interview">setup interviews</a></strong></td>
+                            </tr>
+
+                            <tr id="newJob" class="govuk-table__row" style=";border-bottom:0.5px solid #1d70b8;">
+                              <td class="govuk-table__cell" style="background: white;;">1 Jul 2023</td>
+
+                              <td class="govuk-table__cell" style=";padding-left:10px; background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="task-list-exp-co">224220</a></td>
+                              <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="task-list-exp-co">{{ data['temp-copy-input-autocomplete']}}</a></td>
+                              <td class="govuk-table__cell" style=";background: white;;">{{data['grade']}}</td>
+
+                              <td class="govuk-table__cell" style=";width:500px;background: white;"><strong style="font-size:16px;width:140px" class="govuk-tag govuk-tag--yellow">new vacancy</strong></td>
                             </tr>
                             {% endif %}
                             <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8;">
@@ -209,18 +219,20 @@
                         <h2 class="govuk-heading-l">Lead delivery manager</h2>
 </div>
 
-                        <table class="govuk-table">
 
                           <div class="govuk-grid-row">
-                          <div class="govuk-grid-column-one-third" style="padding:5px;width:30%;height:200px;border:2px dashed lightgrey;margin-left:20px;margin-bottom:20px;;margin-top:60px">
+                          <div class="govuk-grid-column-one-third" style="padding:5px;width:30%;height:200px;border:2px dashed purple;margin-left:20px;margin-bottom:20px;;margin-top:60px">
 
                             <div id="reminder">
 
-                            <h3 style="font-size:24px;text-align:center;vertical-align:top;margin-top:10px;padding:5px" class="govuk-heading-s">TODAY</h3>
+                              <a href="/csu71/sift/setup-interview/setup-interview"><p class="govuk-body-m" style="margin-top:30px;text-align:center;font-size:32px"><strong id="timestop">Sift complete</strong><br>now, time to...</p>
+                              <p class="govuk-body-m" style="width:90%;background:#00703c;color:white;height:30px;font-weight:bold;padding:10px;text-align:center;font-size:22px;border:2px solid greem;border-radius:7px">Setup interviews</p><a/>
+
+                            <!-- <h3 style="font-size:24px;text-align:center;vertical-align:top;margin-top:10px;padding:5px" class="govuk-heading-s">TODAY</h3>
                            <p id="consensusTrigger" style="font-weight:bold;font-size:24px;text-align:center;padding-left:5px;margin-bottom:20px" class="govuk-body-l">It's time...</p>
 
-                            <span class="govuk-body-m" style="margin-left:30px;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/sift/setup-interview/setup-interview"><strong>Setup interviews</strong></a></span>
-
+                            <p class="govuk-body-m" style="width:60%;text-align:center;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/sift/setup-interview/setup-interview">Setup interviews</a></p>
+ -->
 
 
                            </div>
