@@ -11,6 +11,7 @@
     "@ministryofjustice/frontend": "^1.8.0",
     "govuk-frontend": "^4.6.0",
     "govuk-prototype-kit": "^13.8.1",
-    "hmrc-frontend": "5.37.0"
+    "hmrc-frontend": "5.37.0",
+    "notifications-node-client": "7.0.0"
   }
 }
