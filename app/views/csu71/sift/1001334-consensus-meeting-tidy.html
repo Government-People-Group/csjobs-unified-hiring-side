@@ -4,17 +4,30 @@
 {% include '/csu71/includes/header.html' %}
   {% endblock %}
   {% block beforeContent %}
+  <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
 
-    {{ govukBackLink({
-      text: "Back",
-      href: "javascript:window.history.back()"
-    }) }}
+    <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+  </div> -->
+  <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Sift</span>
 
-    {% endblock %}
+  <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
+
+  </div>
+
+  </div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
 
 {% block content %}
 <div>
-<h1 class="govuk-heading-xl">Applicant 1</h1>
+<h1 class="govuk-heading-xl">Candidate 1</h1>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
@@ -245,7 +258,7 @@ items: [
   <div class="govuk-grid-column-full">
 {{ govukInput({
 label: {
-text: "Additional feedback for applicants (optional)"
+text: "Additional feedback for candidates (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -255,7 +268,7 @@ value: "Would expect at least 2 years experience for this role"
 
 {{ govukInput({
 label: {
-text: "Notes for the panel, not seen by applicant (optional)"
+text: "Notes for the panel, not seen by candidate (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -361,7 +374,7 @@ items: [
   <div class="govuk-grid-column-full">
 {{ govukInput({
 label: {
-text: "Additional feedback for applicants (optional)"
+text: "Additional feedback for candidates (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -371,7 +384,7 @@ value: "Well written example in STAR format"
 
 {{ govukInput({
 label: {
-text: "Notes for the panel, not seen by applicant (optional)"
+text: "Notes for the panel, not seen by candidate (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -478,7 +491,7 @@ items: [
   <div class="govuk-grid-column-full">
 {{ govukInput({
 label: {
-text: "Additional feedback for applicants (optional)"
+text: "Additional feedback for candidates (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -488,7 +501,7 @@ value: ""
 
 {{ govukInput({
 label: {
-text: "Notes for the panel, not seen by applicant (optional)"
+text: "Notes for the panel, not seen by candidate (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -599,7 +612,7 @@ items: [
   <div class="govuk-grid-column-full">
 {{ govukInput({
 label: {
-text: "Additional feedback for applicants (optional)"
+text: "Additional feedback for candidates (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -609,7 +622,7 @@ value: "Would expect at least 2 years experience for this role"
 
 {{ govukInput({
 label: {
-text: "Notes for the panel, not seen by applicant (optional)"
+text: "Notes for the panel, not seen by candidate (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -715,7 +728,7 @@ items: [
   <div class="govuk-grid-column-full">
 {{ govukInput({
 label: {
-text: "Additional feedback for applicants (optional)"
+text: "Additional feedback for candidates (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -725,7 +738,7 @@ value: "Well written example in STAR format"
 
 {{ govukInput({
 label: {
-text: "Notes for the panel, not seen by applicant (optional)"
+text: "Notes for the panel, not seen by candidate (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -832,7 +845,7 @@ items: [
   <div class="govuk-grid-column-full">
 {{ govukInput({
 label: {
-text: "Additional feedback for applicants (optional)"
+text: "Additional feedback for candidates (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -842,7 +855,7 @@ value: ""
 
 {{ govukInput({
 label: {
-text: "Notes for the panel, not seen by applicant (optional)"
+text: "Notes for the panel, not seen by candidate (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -948,7 +961,7 @@ items: [
   <div class="govuk-grid-column-full">
 {{ govukInput({
 label: {
-text: "Additional feedback for applicants (optional)"
+text: "Additional feedback for candidates (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -958,7 +971,7 @@ value: "Would expect at least 2 years experience for this role"
 
 {{ govukInput({
 label: {
-text: "Notes for the panel, not seen by applicant (optional)"
+text: "Notes for the panel, not seen by candidate (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -1061,7 +1074,7 @@ items: [
   <div class="govuk-grid-column-full">
 {{ govukInput({
 label: {
-text: "Additional feedback for applicants (optional)"
+text: "Additional feedback for candidates (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -1071,7 +1084,7 @@ value: "Well written example in STAR format"
 
 {{ govukInput({
 label: {
-text: "Notes for the panel, not seen by applicant (optional)"
+text: "Notes for the panel, not seen by candidate (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -1174,7 +1187,7 @@ items: [
   <div class="govuk-grid-column-full">
 {{ govukInput({
 label: {
-text: "Additional feedback for applicants (optional)"
+text: "Additional feedback for candidates (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -1184,7 +1197,7 @@ value: ""
 
 {{ govukInput({
 label: {
-text: "Notes for the panel, not seen by applicant (optional)"
+text: "Notes for the panel, not seen by candidate (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -1289,7 +1302,7 @@ items: [
   <div class="govuk-grid-column-full">
 {{ govukInput({
 label: {
-text: "Additional feedback for applicants (optional)"
+text: "Additional feedback for candidates (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -1299,7 +1312,7 @@ value: "Would expect at least 2 years experience for this role"
 
 {{ govukInput({
 label: {
-text: "Notes for the panel, not seen by applicant (optional)"
+text: "Notes for the panel, not seen by candidate (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -1402,7 +1415,7 @@ items: [
   <div class="govuk-grid-column-full">
 {{ govukInput({
 label: {
-text: "Additional feedback for applicants (optional)"
+text: "Additional feedback for candidates (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -1412,7 +1425,7 @@ value: "Well written example in STAR format"
 
 {{ govukInput({
 label: {
-text: "Notes for the panel, not seen by applicant (optional)"
+text: "Notes for the panel, not seen by candidate (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -1515,7 +1528,7 @@ items: [
   <div class="govuk-grid-column-full">
 {{ govukInput({
 label: {
-text: "Additional feedback for applicants (optional)"
+text: "Additional feedback for candidates (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -1525,7 +1538,7 @@ value: ""
 
 {{ govukInput({
 label: {
-text: "Notes for the panel, not seen by applicant (optional)"
+text: "Notes for the panel, not seen by candidate (optional)"
 },
 classes: "govuk-input--width-50",
 id: "feedback",
@@ -1540,7 +1553,7 @@ value: "Experience asked for"
   name: "proceed",
   fieldset: {
     legend: {
-      text: "What do you want to do with the applicant?",
+      text: "What do you want to do with the candidate?",
       isPageHeading: false,
       classes: "govuk-fieldset__legend--m"
     }
@@ -1563,7 +1576,7 @@ value: "Experience asked for"
 </div>
 </div>
 {{ govukButton({
-  text: "Next applicant",
+  text: "Next candidate",
   href: ""
 }) }}
 <p><a href="task-list">Save and return to tasklist</a></p>

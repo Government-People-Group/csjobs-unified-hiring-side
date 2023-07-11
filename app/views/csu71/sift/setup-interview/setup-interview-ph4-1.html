@@ -36,7 +36,8 @@
 
 <form class="form" action="setup-interview-ph4-2" method="post">
 
-  <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Questions</H1>
+  <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Interview questions</H1>
+  <!-- <p class="govuk-body-m"><strong>You selected the assessment to test the behaviours 'Seeing the Big Picture' and 'Changing and Improving' by interview questions.</strong></p> -->
 
 
   <div class="govuk-grid-row">
@@ -45,13 +46,14 @@
       <ul class="govuk-!-margin-top-6 govuk-list govuk-list--bullet-">
         <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph2"><strong>Schedule</a></p></strong></li>
         <!-- <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview"><strong>Setup interview</a></p></strong></li> -->
-        <li><strong><p style ="border-left:5px solid white;;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph1"><strong>Approach</a></p></strong></li>
 
         <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph3"><strong>Assessment</a></p></strong></li>
-        <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph4-1"><strong>Questions</a></p></strong></li>
+        <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph4-1"><strong>Interview questions</a></p></strong></li>
         <li><strong><p style ="MARGIN-left:26px;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph4-1"><strong><span style="border-bottom:3px solid #1d70b8;">Experience</span></a></p></strong></li>
         <li><strong><p style ="MARGIN-left:26px;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph4-2">Behaviours</a></p></li>
         <li><strong><p style ="MARGIN-left:26px;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph4-3">Strengths</a></p></li>
+          <li><strong><p style ="border-left:5px solid white;;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph1"><strong>Type of interview</a></p></strong></li>
+
         <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph5"><strong>Review and invite</a></p></strong></li>
       </ul>
     </div>
@@ -60,22 +62,71 @@
       <h2 class="govuk-heading-l">Experience</h2>
 
 
-      <span class="govuk-caption-l">Question 1</span>
-      <h3 class="govuk-heading-m">Experience of working in user-centered design</h3>
+      <span class="govuk-caption-l">Criteria</span>
+      <h3 class="govuk-heading-m">Building engaging and effective relationships with stakeholders</h3>
 <div style="background:#F4FAFF;padding:20px;border-top:1px solid #1d70b8">
+
       {{ govukCharacterCount({
       name: "experience-question-1",
       id: "experience-question-1",
       maxwords: 50,
       rows: 3,
       label: {
-      text: "",
+      text: "Experience question 1",
       classes: "govuk-label--s",
       isPageHeading: false
       },
       value: data['experience-question-1']
       }) }}
+
+
+      <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+      <span style="font-size:18px;font-weight:bold;" class="govuk-details__summary-text">
+      Example question
+      </span>
+      </summary>
+      <div style="width:99.5%;background:white" class="govuk-details__text">
+        <ul class="govuk-list govuk-list--number">
+      <li id="qED1" style="margin-bottom:20px"><a style="font-weight:bold" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" onClick="loadQ('qED1','experience-question-1')" href="#">Can you tell me about your experience of building a trusted advisor-style relationship with a stakeholder? Can you give me examples of how you were able to achieve this?</a></li>
+      </ul>
       </div>
+      </details>
+
+      <p id="addlink2" class="govuk-body-m govuk-!-padding-bottom-1"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state"  onclick="showDiv('secQ2');hideDiv('addlink2')"><strong style="color:#1d70b8;float:right;margin-bottom:-10px">Add another question</strong></a></p>
+
+
+
+
+      <div class="govuk-!-padding-top-3" id="secQ2" style="display:none">
+
+      {{ govukCharacterCount({
+      name: "experience-question-1b",
+      id: "behaviour-question-1b",
+      maxwords: 50,
+      rows: 3,
+      label: {
+      text: "Experience question 2",
+      classes: "govuk-label--s",
+      isPageHeading: false
+      },
+      value: data['experience-question-1b']
+      }) }}
+
+    </div>
+
+      </div>
+
+                {{ govukButton({
+                  classes:"govuk-!-margin-top-9",
+                  text: "Continue"
+                }) }}
+      </div>
+
+
+      </div>
+
+
 
 
       <!-- <span class="govuk-caption-l govuk-!-margin-top-6">Question 2</span>
@@ -100,10 +151,6 @@
 
 
 
-          {{ govukButton({
-            classes:"govuk-!-margin-top-9",
-            text: "Continue"
-          }) }}
 
 
 
@@ -117,5 +164,25 @@
   <input type="hidden" name="source" value="behaviours">
 </FORM>
 
+<script>
 
+
+      function hideDiv(div1) {
+        document.getElementById(div1).style.display = 'none';
+
+      }
+
+      function showDiv(div1) {
+        document.getElementById(div1).style.display = 'block';
+
+      }
+
+
+  function loadQ(question, texta){
+    var propQ = document.getElementById(question);
+    const quest = document.getElementById(texta);
+    quest.innerHTML = propQ.innerText;
+
+  }
+</script>
 {% endblock %}

@@ -4,13 +4,26 @@
 {% include '/csu71/includes/header.html' %}
   {% endblock %}
   {% block beforeContent %}
+  <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
 
-    {{ govukBackLink({
-      text: "Back",
-      href: "javascript:window.history.back()"
-    }) }}
+    <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+  </div> -->
+  <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Sift</span>
 
-    {% endblock %}
+  <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
+
+  </div>
+
+  </div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
 
 {% block content %}
 
@@ -54,11 +67,11 @@ value and meet the diverse needs of all stakeholders.</p>
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full answer-panel">
-      <h2 class="govuk-heading-s">Applicant 1:</h2>
+      <h2 class="govuk-heading-s">Candidate 1:</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
     </div>
-    <p class="govuk-body-m">The applicant will see the score and feedback</p>
+    <p class="govuk-body-m">The candidate will see the score and feedback</p>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-third">
 
@@ -151,7 +164,7 @@ value and meet the diverse needs of all stakeholders.</p>
     </div>
     {{ govukInput({
     label: {
-    text: "Additional feedback for applicants (optional)"
+    text: "Additional feedback for candidates (optional)"
     },
     classes: "govuk-input--width-50",
     id: "feedback",
@@ -160,7 +173,7 @@ value and meet the diverse needs of all stakeholders.</p>
 
     {{ govukInput({
     label: {
-    text: "Notes for the panel, not seen by applicant (optional)"
+    text: "Notes for the panel, not seen by candidate (optional)"
     },
     classes: "govuk-input--width-50",
     id: "feedback",
@@ -171,11 +184,11 @@ value and meet the diverse needs of all stakeholders.</p>
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full answer-panel">
-      <h2 class="govuk-heading-s" id="app2">Applicant 2:</h2>
+      <h2 class="govuk-heading-s" id="app2">Candidate 2:</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
     </div>
-    <p>The applicant will see the score and feedback</p>
+    <p>The candidate will see the score and feedback</p>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-third">
 
@@ -268,7 +281,7 @@ value and meet the diverse needs of all stakeholders.</p>
               </div>
               {{ govukInput({
               label: {
-              text: "Additional feedback for applicants (optional)"
+              text: "Additional feedback for candidates (optional)"
               },
               classes: "govuk-input--width-50",
               id: "feedback",
@@ -277,7 +290,7 @@ value and meet the diverse needs of all stakeholders.</p>
 
               {{ govukInput({
               label: {
-              text: "Notes for the panel, not seen by applicant (optional)"
+              text: "Notes for the panel, not seen by candidate (optional)"
               },
               classes: "govuk-input--width-50",
               id: "feedback",
@@ -288,12 +301,12 @@ value and meet the diverse needs of all stakeholders.</p>
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full answer-panel">
-      <h2 class="govuk-heading-s">Applicant 3:</h2>
+      <h2 class="govuk-heading-s">Candidate 3:</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
     </div>
     </div>
-    <p>The applicant will see the score and feedback</p>
+    <p>The candidate will see the score and feedback</p>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-third">
 
@@ -386,7 +399,7 @@ value and meet the diverse needs of all stakeholders.</p>
               </div>
               {{ govukInput({
               label: {
-              text: "Additional feedback for applicants (optional)"
+              text: "Additional feedback for candidates (optional)"
               },
               classes: "govuk-input--width-50",
               id: "feedback",
@@ -395,7 +408,7 @@ value and meet the diverse needs of all stakeholders.</p>
 
               {{ govukInput({
               label: {
-              text: "Notes for the panel, not seen by applicant (optional)"
+              text: "Notes for the panel, not seen by candidate (optional)"
               },
               classes: "govuk-input--width-50",
               id: "feedback",
@@ -406,11 +419,11 @@ value and meet the diverse needs of all stakeholders.</p>
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full answer-panel">
-      <h2 class="govuk-heading-s">Applicant 4:</h2>
+      <h2 class="govuk-heading-s">Candidate 4:</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
     </div>
-        <p>The applicant will see the score and feedback</p>
+        <p>The candidate will see the score and feedback</p>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-third">
 
@@ -503,7 +516,7 @@ value and meet the diverse needs of all stakeholders.</p>
               </div>
               {{ govukInput({
               label: {
-              text: "Additional feedback for applicants (optional)"
+              text: "Additional feedback for candidates (optional)"
               },
               classes: "govuk-input--width-50",
               id: "feedback",
@@ -512,7 +525,7 @@ value and meet the diverse needs of all stakeholders.</p>
 
               {{ govukInput({
               label: {
-              text: "Notes for the panel, not seen by applicant (optional)"
+              text: "Notes for the panel, not seen by candidate (optional)"
               },
               classes: "govuk-input--width-50",
               id: "feedback",
@@ -524,11 +537,11 @@ value and meet the diverse needs of all stakeholders.</p>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full answer-panel">
 
-      <h2 class="govuk-heading-s">Applicant 5:</h2>
+      <h2 class="govuk-heading-s">Candidate 5:</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
     </div>
-        <p>The applicant will see the score and feedback</p>
+        <p>The candidate will see the score and feedback</p>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-third">
 
@@ -621,7 +634,7 @@ value and meet the diverse needs of all stakeholders.</p>
               </div>
               {{ govukInput({
               label: {
-              text: "Additional feedback for applicants (optional)"
+              text: "Additional feedback for candidates (optional)"
               },
               classes: "govuk-input--width-50",
               id: "feedback",
@@ -630,7 +643,7 @@ value and meet the diverse needs of all stakeholders.</p>
 
               {{ govukInput({
               label: {
-              text: "Notes for the panel, not seen by applicant (optional)"
+              text: "Notes for the panel, not seen by candidate (optional)"
               },
               classes: "govuk-input--width-50",
               id: "feedback",

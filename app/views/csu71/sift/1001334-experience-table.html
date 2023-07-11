@@ -4,13 +4,26 @@
 {% include '/csu71/includes/header.html' %}
   {% endblock %}
   {% block beforeContent %}
+  <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
 
-    {{ govukBackLink({
-      text: "Back",
-      href: "javascript:window.history.back()"
-    }) }}
+    <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+  </div> -->
+  <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Sift</span>
 
-    {% endblock %}
+  <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
+
+  </div>
+
+  </div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
 
 {% block content %}
 {{ govukBackLink({
@@ -19,7 +32,7 @@
 }) }}
 <div class="govuk-grid-row">
 <span class="govuk-caption-l">1001334</span>
-<h1 class="govuk-heading-l">Lead delivery manager</h1>
+<h1 class="govuk-heading-l">Policy adviser</h1>
 
 {{ govukTable({
   caption: "Applications",
@@ -50,7 +63,7 @@
   rows: [
     [
       {
-        html: "<a href'1001334-applicant-1'>Applicant 1</a>"
+        html: "<a href'1001334-applicant-1'>Candidate 1</a>"
       },
       {
         text: "4"
@@ -67,7 +80,7 @@
     ],
     [
     {
-      html: "<a href''>Applicant 2</a>"
+      html: "<a href''>Candidate 2</a>"
     },
     {
       text: "3"
@@ -84,7 +97,7 @@
     ],
     [
     {
-      html: "<a href''>Applicant 3</a>"
+      html: "<a href''>Candidate 3</a>"
     },
     {
       text: "4"
@@ -101,7 +114,7 @@
     ],
     [
     {
-      html: "<a href''>Applicant 4</a>"
+      html: "<a href''>Candidate 4</a>"
     },
     {
       text: "4"
@@ -118,7 +131,7 @@
     ],
     [
     {
-      html: "<a href''>Applicant 5</a>"
+      html: "<a href''>Candidate 5</a>"
     },
     {
       text: "4"

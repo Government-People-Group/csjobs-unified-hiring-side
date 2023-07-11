@@ -125,15 +125,20 @@
       <ul class="govuk-!-margin-top-6 govuk-list govuk-list--bullet-">
         <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph2"><strong>Schedule</a></p></strong></li>
         <!-- <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview"><strong>Setup interview</a></p></strong></li> -->
-        <li><strong><p style ="border-left:5px solid white;;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph1"><strong>Approach</a></p></strong></li>
 
         <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph3"><strong>Assessment</a></p></strong></li>
         <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph4-1"><strong>Questions</a></p></strong></li>
-        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph5"><strong>Review and invite</a></p></strong></li>
+        <li><strong><p style ="border-left:5px solid white;;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph1"><strong>Type of interview</a></p></strong></li>
+
+        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-l  ink govuk-link--no-visited-state" href="setup-interview-ph5"><strong>Review and invite</a></p></strong></li>
       </ul>
     </div>
     <div class="govuk-!-margin-top-6 govuk-grid-column-three-quarters">
-      <H2 class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-9">Edit schedule and check with panel</H2>
+      <H2 class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-3">Interview dates and times</H2>
+
+      <p class="govuk-body-m govuk-!-margin-bottom-9">Please select all dates and times you are available to interview. These times will be checked with the other panelists to confirm before times are sent out to candidates.</p>
+
+
 
       {% if data['act'] == "finalise" %}
 
@@ -189,7 +194,7 @@
 
 
       <!-- <a class="govuk-body-m govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" style="margin-bottom:30px;margin-top:30px;font-weight:bold" href="">Send this schedule to the panel now</a> -->
-      {{ govukCheckboxes({
+      <!-- {{ govukCheckboxes({
         name: "organisation",
         classes: "govuk-checkboxes--small",
         fieldset: {
@@ -206,10 +211,10 @@
           html: "<p class='govuk-body-m' style='font-weight:bold'>Send a copy of this schedule to the panel</p>"
         }
         ]
-      }) }}
+      }) }} -->
 
 
-        <button class="govuk-button govuk-!-margin-top-0 " data-module="govuk-button">Save this schedule</button>
+        <button class="govuk-button govuk-!-margin-top-0 " data-module="govuk-button">Submit dates</button>
       </div>
 
       <div id="listing3"></div>
