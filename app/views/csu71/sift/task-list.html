@@ -25,7 +25,7 @@
      <div class="govuk-grid-row">
         <div class="govuk-grid-column-three-quarters">
 
-
+{{data['interview']}}
 
 
 <p>You can save and return at any point to complete an action.</p>
@@ -36,7 +36,7 @@
 {% set bannerCount = 0 %}
 
 
-  {% if data['hide'] != "banner" %}
+  {% if data['interview'] != "done"  %}
     <div id="bann" style="width:100%" class="govuk-notification-banner govuk-notification-banner--success" role="alert"
       aria-labelledby="govuk-notification-banner-title"
       data-module="govuk-notification-banner">
