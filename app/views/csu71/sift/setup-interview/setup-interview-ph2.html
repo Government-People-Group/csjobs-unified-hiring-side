@@ -33,6 +33,21 @@
 
 
 
+  <!-- {{ govukCharacterCount({
+  name: "outputt",
+  id: "outputt",
+  maxwords: 50,
+  rows: 3,
+  label: {
+  text: "",
+  classes: "govuk-label--s",
+  isPageHeading: false
+  },
+  value: data['outputt']
+  }) }} -->
+
+
+
 
 <form class="form" action="setup-interview-ph2-2-try" method="post">
 
@@ -51,7 +66,7 @@
         <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph4-1"><strong>Questions</a></p></strong></li>
         <li><strong><p style ="border-left:5px solid white;;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph1"><strong>Type of interview</a></p></strong></li>
 
-        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph5"><strong>Review and invite</a></p></strong></li>
+        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-check-answers"><strong>Review interview setup</a></p></strong></li>
       </ul>
     </div>
     <div class="govuk-!-margin-top-6 govuk-grid-column-three-quarters">
@@ -93,9 +108,38 @@
 
 
 
-        <div id="conditional" style="padding:15px;border-left:10px solid #1d70b8;background:#F3F2F1;display:none">
+          <p class="govuk-body-m"><strong>What dates would you like to interview on?</strong><p>
 
-          <p class="govuk-body-m"><strong>What date would you like to start interviews on?</strong><p>
+
+<div style="padding:20px;background: #F4FAFF;width:65%;border-bottom:1px solid #1d70b8;">
+
+            <label class="govuk-label govuk-!-margin-top-6" style="font-weight:bold;font-size:20px" for="intDate">Pick your dates</label>
+            <input datetimeformat="dd/MM/y" style="font-size:25px;background:white;margin-top:10px"  value="{{ data['dates']}}" type="date" placeholder="dd-mm-yyyy" id="intDate" name="intDate">
+
+
+
+
+
+            <ul class="govuk-!-margin-top-6 govuk-list govuk-list--bullet-" id="output"></ul>
+
+            <dl class="govuk-summary-list govuk-summary-list--no-border" style=";width:70%;background:#F4FAFF">
+
+              <div class="govuk-summary-list__row"  style=";">
+                <dt class="govuk-summary-list__key" style="height:90px;">
+                  <div id="list1"></div>
+                </dt>
+                <dd class="govuk-summary-list__actions" style="height:90px;">
+                  <a class="govuk-link" href="#">
+                    <div style="margin-right:100px" id="list2"></div>
+                    <span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+</div>
+
+
+<div style="display:none">
 
             {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
             {{ govukDateInput({
@@ -105,23 +149,22 @@
             {
               classes: "govuk-input--width-2",
               name: "day",
-              value: "7" or data['day']
+              value: "7" or data['day'] | default("7")
             },
             {
               classes: "govuk-input--width-2",
               name: "month",
-              value: "Aug" or data['month']
+              value: "Aug" or data['month']  | default("Aug")
             },
             {
               classes: "govuk-input--width-4",
               name: "year",
-              value: "2023" or data['year']
+              value: "2023" or data['year']  | default("2023")
             }
             ]
             }) }}
 
             <!-- <p class="govuk-body-m">How many working days (Mon-Fri) will the interview schedule last for?</p> -->
-      </div>
 
 
 
@@ -131,10 +174,10 @@
           <label class="govuk-label" for="width-2">
             <strong>How many working days would you like to interview for?</strong>
           </label>
-          <input class="govuk-input govuk-input--width-2" value="{{ data['duration']|int}}" id="duration" name="duration" type="text">
+          <input class="govuk-input govuk-input--width-2" value="{{ data['duration']|int | default("3")}}" id="duration" name="duration" type="text">
         </div>
 
-
+</div>
         <div class="govuk-form-group" style="padding-top:35px;border-top:1px solid lightgrey">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -192,6 +235,9 @@
         </div>
 
 
+
+
+
         <button class="govuk-button govuk-!-margin-top-9" data-module="govuk-button">Build interview schedule</button>
 
 
@@ -202,6 +248,7 @@
     </div>
 
 
+
   </div>
 
   <span id='local-variable' style="display:none">{{ data['templateName'] }}</span>
@@ -210,8 +257,94 @@
 </FORM>
 
 
-
 <script>
+  var entry = document.getElementById("intDate");
+  var dte = document.getElementsByClassName("#date-time-edit")
+
+
+
+
+  var count = 0;
+    var loc = document.getElementById('list1');
+
+  entry.addEventListener('change', (event) => {
+
+    var location = event.target.value;
+    var strrr = location.toLocaleDateString;
+var gggr = [];
+
+
+
+    console.log(gggr.slice("/").reverse())
+
+
+
+    var loccontent = document.createElement("li");
+    var linkcontent = document.createElement("p");
+    // showDiv('default');
+    // numcontent.innerHTML = location;
+    count = count+1;
+
+
+
+      loccontent.innerText = location;
+    if (loccontent.innerHTML.length > 45){
+      loccontent.style.cssText = "margin-top:10px;height:60px;font-size:20px;width:100%";
+      linkcontent.style.cssText = "margin-top:10px;;height:60px;;font-size:20px;font-weight:bold";
+
+    } else {
+      loccontent.style.cssText = "margin-top:10px;height:20px;font-size:20px;width:100%";
+      linkcontent.style.cssText = "margin-top:10px;;height:20px;;font-size:20px;font-weight:bold";
+    }
+gggr.push(loccontent.innerHTML)
+// var conRay = [];
+// conRay.push(location)
+// console.log(conRay.split("/").reverse())
+
+
+console.log(gggr)
+
+    linkcontent.innerHTML = "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' id='"+count+"' onclick='kill(this.id)' href='#'> Delete</a>";
+
+    loc.appendChild(loccontent);
+    link.appendChild(linkcontent);
+    showDiv('head');
+    showDiv('buttons');
+
+    // content.innerHTML = "<span style='font-weight:regular;font-size:18px;line-height:1.5;'>"+location+"</span>"+""+"<a id='del"+item+"' onclick='' href='#'> delete</a>";
+    // item.appendChild(content);
+
+
+    try {
+      saveList(); // may throw three types of exceptions
+    } catch (e) {
+      if (e instanceof TypeError) {
+        // statements to handle TypeError exceptions
+      } else if (e instanceof RangeError) {
+        // statements to handle RangeError exceptions
+      } else if (e instanceof EvalError) {
+        // statements to handle EvalError exceptions
+      } else {
+        // statements to handle any unspecified exceptions
+        logMyErrors(e); // pass exception object to error handler
+      }
+    }
+
+
+
+
+  });
+
+
+// var dayRay = [];
+
+const vvt = document.getElementById("intDate");
+const output = document.getElementById("list1");
+const va = document.createElement("li");
+
+
+
+
 
 
 
@@ -248,10 +381,20 @@ function showDiv(div1) {
 
 }
 
+console.log(String(location));
 
+const dateControl = document.querySelector('input[type="datetime-local"]');
+dateControl.value = "2017-06-01T08:30";
+console.log(dateControl.value)
 
-
-
+console.log(gggr)
+// console.log(testvar.split("/").reverse())
+// const todaystamp = new Date(todayDay);
+// const tickTock = todaystamp.toLocaleDateString({ year:"numeric", month:"numeric", day:"numeric" }) ;
+// // todayDay.innerHTML = tickTock;
+// console.log(tickTock)
+// console.log(location)
+//
 
 
 

@@ -13,6 +13,9 @@ $(function () {
             arrAppointment.push(JSON.parse(localStorage.getItem('tbAppointment')));
             localStorage.setItem('tbAppointment', JSON.stringify(arrAppointment));
         }
+
+
+
     } else {
         iziToast.warning({
             title: 'Caution',

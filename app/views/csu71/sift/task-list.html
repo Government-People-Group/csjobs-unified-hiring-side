@@ -33,9 +33,10 @@
     <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Advert closed 23 September 2022.</h2>
     <p class="govuk-body govuk-!-margin-bottom-7">You have completed 4 of 15 sections.</p>
 
+{% set bannerCount = 0 %}
 
 
-    {% if data['sift'] == "complete" %}
+  {% if data['hide'] != "banner" %}
     <div id="bann" style="width:100%" class="govuk-notification-banner govuk-notification-banner--success" role="alert"
       aria-labelledby="govuk-notification-banner-title"
       data-module="govuk-notification-banner">
@@ -46,7 +47,8 @@
       </div>
       <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
-          The sift stage has been completed.
+          Sift has been completed
+          <p class="govuk-body  govuk-!-margin-top-3">The sift results have been confirmed and the list of candidates selected for interview has been achieved. </p>
         </h3>
         <!-- <p class="govuk-body">You can still view the sift task list by clicking on the sift headers below.</p> -->
 
@@ -54,9 +56,26 @@
 
       </div>
     </div>
-
-    {% else %}
     {% endif %}
+
+
+    <!-- <ol class="app-task-list">
+      <li>
+
+        <div style=";position:relative">
+
+          <h2 class="app-task-list__section">
+            <span style="" class="app-task-list__section-number">1. </span> Sift applications</h2>
+            <strong style="position:absolute;right:0px;top:12px;font-size:16px" class="govuk-tag" id="financial-evidence-status">completed</strong>
+          </div>
+          <div style=";position:relative">
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">2. </span> View and submit my scores</h2>
+              <strong style="position:absolute;right:0px;top:12px;font-size:16px" class="govuk-tag" id="financial-evidence-status">completed</strong>
+            </div>
+          </LI>
+        </ol> -->
+
 
     <ol class="app-task-list">
       <li>
@@ -185,7 +204,7 @@
                   </a>
                 </span>
 
-                {% if data['blue'] == "moon" %}
+                {% if data['leadConfirms']|default("true") == "true" %}
                 <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
                 {% else %}
                 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
@@ -215,23 +234,28 @@
                           </a>
                         </span>
 
-                {% if data['confirm'] == "true" %}
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
-                {% else %}
-                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Cannot start yet</strong>
+
+                        {% if data['interview'] == 'done' %}
+                        <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
                         {% endif %}
+
+
+
+
                       </li>
 
-                      {% if data['panelDate'] == "check" %}
+                      <!-- {% if data['panelDate'] == "check" %}
                       <li style ="" class="app-task-list__item">
                         <span class="app-task-list__task-name">
                           <a href="setup-interview/setup-interview-ph2?act=finalise" aria-describedby="contact-details-status">
                             Finalise schedule
                           </a>
                         </span>
-                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Cannot start yet</strong>
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
                       </li>
-                      {% endif %}
+                      {% endif %} -->
 
                       <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
@@ -239,7 +263,15 @@
                             Assessment
                           </a>
                         </span>
-                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Cannot start yet</strong>
+
+                        {% if data['interview'] == 'done' %}
+                        <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                        {% endif %}
+
+
+
                       </li>
                       <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
@@ -247,7 +279,14 @@
                             Interview questions
                           </a>
                         </span>
-                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Cannot start yet</strong>
+
+                        {% if data['interview'] == 'done' %}
+                        <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                        {% endif %}
+
+
                       </li>
 
                       <li class="app-task-list__item">
@@ -256,26 +295,157 @@
                             Type of interview
                           </a>
                         </span>
-                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Cannot start yet</strong>
+
+
+                        {% if data['interview'] == 'done'  %}
+                        <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                        {% endif %}
+
+
                       </li>
 
                       <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                          <a href="setup-interview/setup-interview-ph5" aria-describedby="contact-details-status">
-                            Review and send invites
+                          <a href="setup-interview/setup-interview-check-answers" aria-describedby="contact-details-status">
+                            Review interview setup
                           </a>
                         </span>
-                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Cannot start yet</strong>
+
+                        {% if data['interview'] == 'done' %}
+                        <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                        {% endif %}
+
                       </li>
 
                       </ul>
                       </li>
 
+                      <li>
+                        <h2 class="app-task-list__section">
+                          <span class="app-task-list__section-number">4. </span> Invite candidates to interview
+                        </h2>
+                        <ul class="app-task-list__items">
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <!-- <a href="#" aria-describedby="eligibility-status"> -->
+                              <a href="setup-interview/setup-interview-ph5-2-candAlltogether" aria-describedby="contact-details-status">
+                                Review sift feedback before sending to candidates
+                              </a>
+
+                            </span>
+
+                            {% if data['reviewFB'] == "done" %}
+                            <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+                            {% else %}
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                            {% endif %}
+                          </li>
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <!-- <a href="#" aria-describedby="eligibility-status"> -->
+                                Send interview invites to candidates
+                              <!-- </a> -->
+                            </span>
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>
+                          </li>
+
+
+
+
+
+                          <h2 class="app-task-list__section govuk-!-margin-top-6" style="font-weight:normal;font-size:22px">Monitor candidate responses</h2>
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <!-- <a href="#" aria-describedby="eligibility-status"> -->
+                                Mei Chen
+                              <!-- </a> -->
+                            </span>
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+                          </li>
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <!-- <a href="#" aria-describedby="eligibility-status"> -->
+                                Amelia Lawson
+                              <!-- </a> -->
+                            </span>
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+                          </li>
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <!-- <a href="#" aria-describedby="eligibility-status"> -->
+                                Javier Santos
+                              <!-- </a> -->
+                            </span>
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+                          </li>
+
+
+                        </ul>
+
+
+
+
+
+
+                        <h2 class="app-task-list__section">
+                          <span class="app-task-list__section-number">5. </span>Score interviews
+                        </h2>
+                        <ul class="app-task-list__items">
+
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <!-- <a href="#" aria-describedby="eligibility-status"> -->
+                                Score Mei Chen's interview
+                              <!-- </a> -->
+                            </span>
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">cannot start yet</strong>
+                          </li>
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <!-- <a href="#" aria-describedby="eligibility-status"> -->
+                                Score Amelia Lawson's interview
+                              <!-- </a> -->
+                            </span>
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">cannot start yet</strong>
+                          </li>
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <!-- <a href="#" aria-describedby="eligibility-status"> -->
+                                Score Javier Santos' interview
+                              <!-- </a> -->
+                            </span>
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">cannot start yet</strong>
+                          </li>
+
+
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <a href="/csu71/sift/score-interview/review-submit-interview-scores" aria-describedby="eligibility-status">
+                                Review and submit interview scores
+                              </a>
+                            </span>
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+                          </li>
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <a href="#" aria-describedby="eligibility-status">
+                                Finalise merit list
+                              </a>
+                            </span>
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+                          </li>
+                        </ul>
+
+
 
                       <ol class="app-task-list">
 
                         {% if data['leadConfirms'] == "true" %}
-                        {% set sectionfour = "5 "%}
+                        {% set sectionfour = "5. "%}
                         <li>
                           <h2 class="app-task-list__section">4. Track candidates
                           </h2>
@@ -283,7 +453,7 @@
                             <li class="app-task-list__item">
                               <span class="app-task-list__task-name">
                                 <!-- <a href="#" aria-describedby="eligibility-status"> -->
-                                  Firstname Surname
+                                  Mei Chen
                                 <!-- </a> -->
                               </span>
                               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
@@ -291,7 +461,7 @@
                             <li class="app-task-list__item">
                               <span class="app-task-list__task-name">
                                 <!-- <a href="#" aria-describedby="eligibility-status"> -->
-                                  Firstname Surname
+                                  Amelia Lawsom
                                 <!-- </a> -->
                               </span>
                               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
@@ -299,7 +469,7 @@
                             <li class="app-task-list__item">
                               <span class="app-task-list__task-name">
                                 <!-- <a href="#" aria-describedby="eligibility-status"> -->
-                                  Firstname Surname
+                                  Javier Santos
                                 <!-- </a> -->
                               </span>
                               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
@@ -309,7 +479,7 @@
                           </ul>
                           </li>
                           {% else %}
-                            {% set sectionfour = "4 "%}
+                            {% set sectionfour = "4. "%}
                           {% endif%}
                       </ol>
 
@@ -322,7 +492,7 @@
 
 
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">{{sectionfour}}. </span> Score interviews
+            <span class="app-task-list__section-number">{{sectionfour}}</span>Make a provisional offer
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -342,6 +512,8 @@
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
             </li>
         </ul>
+
+
 
 </ol>
   </div>

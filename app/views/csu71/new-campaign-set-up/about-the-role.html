@@ -134,37 +134,37 @@ const candidate = "A senior business analyst has a good understanding of strateg
 const candidate2 = "<p class='govuk-body-m'>A senior business analyst has a good understanding of strategic arenas and leads large or complex projects.</p><p class='govuk-body-m'>At this role level, you will:</p><ul class='govuk-!-margin-top-3 govuk-list govuk-list--number'><li>have functional or people management responsibilities, or a combination of both</li><li>mentor others</li><li>develop best practice</li><li>own stakeholder relationships</li><li>manage community of practice activities within a business area</li></ul>"
 
 
-fill.innerHTML = candidate;
-console.log(candidate)
+  fill.innerHTML = candidate;
+  console.log(candidate)
 
 
-const bullet = "–";
-const bulletWithSpace = `${bullet} `;
-const enter = 13;
+  const bullet = "–";
+  const bulletWithSpace = `${bullet} `;
+  const enter = 13;
 
 
-const handleInput = (event) => {
-  const { keyCode, target } = event;
-  const { selectionStart, value } = target;
+  const handleInput = (event) => {
+    const { keyCode, target } = event;
+    const { selectionStart, value } = target;
 
-  if (keyCode === enter) {
-    console.log('a');
-    target.value = [...value]
-      .map((c, i) => i === selectionStart - 1
-        ? `\n${bulletWithSpace}`
-        : c
-      )
-      .join('');
-      console.log(target.value);
+    if (keyCode === enter) {
+      console.log('a');
+      target.value = [...value]
+        .map((c, i) => i === selectionStart - 1
+          ? `\n${bulletWithSpace}`
+          : c
+        )
+        .join('');
+        console.log(target.value);
 
-    target.selectionStart = selectionStart+bulletWithSpace.length;
-    target.selectionEnd = selectionStart+bulletWithSpace.length;
+      target.selectionStart = selectionStart+bulletWithSpace.length;
+      target.selectionEnd = selectionStart+bulletWithSpace.length;
+    }
+
+    if (value[0] !== bullet) {
+      target.value = `${bulletWithSpace}${value}`;
+    }
   }
-
-  if (value[0] !== bullet) {
-    target.value = `${bulletWithSpace}${value}`;
-  }
-}
 </script>
 
 

@@ -111,9 +111,6 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
         <div class="govuk-grid-column-full">
           <div class="govuk-grid-row">
 
-            <label for="intDate">Select your interview dates</label>
-            <input  type="date" id="intDate" name="intDate">
-
 
             <div class="govuk-grid-column-three-quarters" >
 
@@ -367,8 +364,8 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
       const pointer = document.getElementById("autocomplete-default");
       pointer.addEventListener('blur', (event) => {
         var thing = event.target.value;
-        var ploccontent = document.createElement("li");
-        var plinkconten = document.createElement("li");
+        var ploccontent = document.createElement("p");
+        var plinkconten = document.createElement("p");
         ploccontent.innerHTML = thing;
 
 
@@ -424,7 +421,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
 
-    const entry = document.getElementById("intDate");
+    const entry = document.getElementById("autocomplete-default");
     var count = 0;
 
 
@@ -435,7 +432,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
       if (locArray !="" && locArray == "Bristol, Glasgow, York"){
         showDiv('head');
         showDiv('buttons');
-        var PREloccontent = document.createElement("li");
+        var PREloccontent = document.createElement("p");
         var PRElinkcontent = document.createElement("p");
         PREloccontent.innerHTML =  locArray;
         PRElinkcontent.innerHTML = "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' id='"+count+"' onclick='kill(this.id)' href='#'> Delete</a>";
