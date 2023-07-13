@@ -166,8 +166,8 @@
 
 
 
-      <!-- {% set startDate = [data['day'], data['month'], data['year']] %}
-{{ startDate}} -->
+      {% set startDate = [data['day'], data['month'], data['year']] %}
+{{ startDate}}
 
       <input type="hidden" id="dateCheck" name="source" value="{{startDate | join('/')}}">
       <input type="hidden" id="durationCheck" name="source" value="{{ data['duration']}}">
@@ -258,8 +258,8 @@
   var densityCheck = document.getElementById('densityCheck').value;
   const washup = document.getElementById('washup').value;
 
-
-  const startDate = new Date (dateCheck.value)
+  const datum = "08/07/2023";
+  const startDate = new Date (datum)
 
 
   const firstD = startDate.toLocaleDateString('en-uk', { weekday:"short", day:"numeric", month:"long", year:"numeric"}) ;

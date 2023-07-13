@@ -56,7 +56,7 @@ value: data['outputt']
 
 
 
-<form class="form" action="setup-interview-ph2-2-try?list=data[timeList]" method="post">
+<form class="form" action="setup-interview-ph2-2-try?list=location" method="post">
 
   <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Schedule</H1>
 
@@ -326,7 +326,7 @@ name: "event-name"
 
   var prt = document.getElementById('output');
 
-  entry.addEventListener('blur', (event) => {
+  entry.addEventListener('change', (event) => {
 
     var location = event.target.value;
     var strrr = location.toLocaleDateString;
