@@ -56,7 +56,7 @@ value: data['outputt']
 
 
 
-<form class="form" action="setup-interview-ph2-2-try?list=location" method="post">
+<form class="form" action="setup-interview-ph2-2-try" method="post">
 
   <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Schedule</H1>
 
@@ -345,6 +345,11 @@ name: "event-name"
     loc.appendChild(prtThing)
 
     timeList.push(location)
+
+    window.sessionStorage.setItem("dates", JSON.stringify(timeList));
+
+
+
 
     // prtThing.innerHTML = herein;
     // loc.appendChild(prt.value)

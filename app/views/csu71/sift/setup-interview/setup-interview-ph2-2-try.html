@@ -167,7 +167,6 @@
 
 
       {% set startDate = [data['day'], data['month'], data['year']] %}
-{{ startDate}}
 
       <input type="hidden" id="dateCheck" name="source" value="{{startDate | join('/')}}">
       <input type="hidden" id="durationCheck" name="source" value="{{ data['duration']}}">
@@ -247,6 +246,22 @@
 //
 // addWeeks(20);
 
+
+
+const object = JSON.parse(window.sessionStorage.getItem("dates"));
+
+
+  var datum = "08/07/2023";
+// datum = object[0]
+// console.log(datum)
+
+
+
+    // datum = datum.split("-").reverse();
+    // console.log(datum)
+    // txtbox.value = txtbox.value.replaceAll(",","/");
+    // let herein = txtbox.value;
+
   const list1 = document.getElementById('listing1')
   const list2 = document.getElementById('listing2')
   const list3 = document.getElementById('listing3')
@@ -258,7 +273,7 @@
   var densityCheck = document.getElementById('densityCheck').value;
   const washup = document.getElementById('washup').value;
 
-  const datum = "08/07/2023";
+
   const startDate = new Date (datum)
 
 
