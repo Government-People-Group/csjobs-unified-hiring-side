@@ -132,7 +132,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
                 <div style="display:none" id="scoresAreIn">
 
                   <h3 style=";margin-top:10px;padding:5px" class="govuk-heading-s">Now</h3>
-                  <p id="consensusTrigger" class="govuk-body-m">No consensus on sift scores</p>
+                    <p id="consensusTrigger" class="govuk-body-m">No consensus on sift scores</p>
                   <a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state"  style="text-align: center;font-size:22px;font-weight:bold" href="/csu71/sift/1001334-panel-results">View panel results and recommendations</a>
                 </div>
 
@@ -551,7 +551,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 <script>
   const todayDay = document.getElementById('timestop');
   const todaystamp = new Date();
-  const tickTock = todaystamp.toLocaleDateString('en-uk', { weekday:"long", day:"numeric", month:"long" }) ;
+  const tickTock = todaystamp.toLocaleDateString('en-uk', { weekday:"short", day:"numeric", month:"long" }) ;
   todayDay.innerHTML = tickTock;
 
 
