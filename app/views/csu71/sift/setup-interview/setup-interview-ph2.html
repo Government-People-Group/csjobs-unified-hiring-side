@@ -139,15 +139,20 @@ name: "event-name"
 
 <p class="govuk-body-m"><strong>The schedule should be large enough to accommodate your availability, the panel members and the candidate.</strong><p>
 
-
+<!-- Select the dates using the date picker, make a list of dates. -->
   <div >
+    <!-- <label class="govuk-label govuk-!-margin-bottom-3" style="font-weight:normal;font-size:22px" for="intDate">Select the dates using the date picker, make a list of dates.</label> -->
 
-    <!-- <label class="govuk-label govuk-!-margin-top-6" style="font-weight:bold;font-size:20px" for="intDate">Pick your dates</label>
-    <input datetimeformat="dd/MM/yyyy" style="font-size:25px;background:white;margin-top:10px"  value="{{ data['dates']}}" type="time" placeholder="dd-mm-yyyy" id="intDate" name="intDate"> -->
 
-    <label class="govuk-label govuk-!-margin-bottom-3" style="font-weight:normal;font-size:22px" for="intDate">Select the dates using the date picker, make a list of dates.</label>
-    <input datetimeformat="dd" style="border:1px solid lightgrey;width:200px;height:40px;font-size:24px;background:white;margin-top:10px"  value="{{ data['intDate']}}" type="date" placeholder="dd-mm-yyyy" id="intDate" name="intDate">
+
+
+<div>
+    <!-- <label class="govuk-label govuk-!-margin-bottom-3" style="font-weight:normal;font-size:22px" for="intDate">Select the dates using the date picker, make a list of dates.</label> -->
+    <input datetimeformat="dd/mm/yyyy" style="border:1px solid lightgrey;width:300px;height:40px;font-size:24px;background:white;margin-top:10px"  value="{{ data['intDate']}}" type="date" placeholder="dd-mm-yyyy" id="intDate" name="intDate">
     <div class="govuk-form-group">
+</div>
+
+
 
       <!-- <label class="govuk-label govuk-!-margin-bottom-3" style="font-weight:normal;font-size:22px" for="wkDate"></label>
       <input datetimeformat="dd" style="border:1px solid lightgrey;width:200px;height:40px;font-size:24px;background:white;margin-top:10px"  value="{{ data['wkDate']}}" type="week" placeholder="dd-mm-yyyy" id="wkDate" name="wkDate">
@@ -164,7 +169,7 @@ name: "event-name"
 
 
     <div class=" govuk-!-margin-top-6" style="" id="list1"></div>
-
+    <div class=" govuk-!-margin-top-6" style="" id="list1"></div>
 
     <ul class="govuk-!-margin-top-3 govuk-list govuk-list--bullet" id="output"></ul>
 
@@ -304,6 +309,7 @@ name: "event-name"
 
 <script>
 
+      const dateControl = document.querySelector('input[type="date"]');
 
   const timeList = [];
 
@@ -326,28 +332,46 @@ name: "event-name"
 
   var prt = document.getElementById('output');
 
-  entry.addEventListener('change', (event) => {
+  dateControl.addEventListener('change', (event) => {
+
+
+    // dateControl.value = "2017-06-01T21:30";
+
+var day = dateControl.value.substring(8, 10);
+var mon = dateControl.value.substring(5, 7);
+var yea = dateControl.value.substring(0, 4);
+
+txtbox.value = day+"/"+mon+"/"+yea;
+console.log(txtbox.value+"txt")
+timeList.push(day+"/"+mon+"/"+yea);
+
+
+  window.sessionStorage.setItem("dates1", JSON.stringify(timeList));
+
+// txtbox.value = dateControl.value.match("\d{4}\-\d{2}-\d{2}");
+// txtbox.value = dateControl.value.match("");
+// txtbox.value = dateControl.value.match("\[0-9].\:[0-9].");
 
     var location = event.target.value;
     var strrr = location.toLocaleDateString;
 
     var prtThing = document.createElement("li");
 
-
-    txtbox.value = location.split("-").reverse();
-    txtbox.value = txtbox.value.replaceAll(",","/");
+    // txtbox.value = location.split(":").reverse();
+    // txtbox.value = location.split("\T[0-9].\:[0-9].").reverse();
+    // txtbox.value = txtbox.value.replaceAll(",","/");
     let herein = txtbox.value;
     // herein = herein.replaceAll(",",".");
     // herein.style.cssText = "margin-top:10px;height:60px;font-size:20px;width:100%";
     prtThing.style.cssText = "font-size:26px"
-    prtThing.innerHTML = prt.innerHTML+herein;
-    timeList.push(prtThing.innerHTML)
+    prtThing.innerHTML = txtbox.value;
     loc.appendChild(prtThing)
+    // timeList.push(prtThing.innerHTML)
+    // loc.appendChild(prtThing)
 
-    timeList.push(location)
+    // timeList.push(location)
 
-    window.sessionStorage.setItem("dates", JSON.stringify(timeList));
-
+    // window.sessionStorage.setItem("dates", JSON.stringify(timeList));
 
 
 

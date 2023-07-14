@@ -27,10 +27,11 @@
   text: "Back",
   href: "javascript:window.history.back()"
 }) }}
+
 {% endblock %}
 
 {% block content %}
-
+<a style="float:right" href="setup-interview-ph2-2-try-alt">Alt</a>
 
 <style>
   p, div {
@@ -237,187 +238,139 @@
 <script>
 
 
-//   function addWeeks(numOfWeeks, date = new Date()) {
-//    date.setDate(date.getDate() + numOfWeeks * 7);
-//    return date;
-//    console.log(date)
-//   }
-//
-//
-// addWeeks(20);
+  const object = JSON.parse(window.sessionStorage.getItem("dates"));
+
+
+    var datum = "08/07/2023";
+  // datum = object[0]
+  // console.log(datum)
 
 
 
-const object = JSON.parse(window.sessionStorage.getItem("dates"));
+      // datum = datum.split("-").reverse();
+      // console.log(datum)
+      // txtbox.value = txtbox.value.replaceAll(",","/");
+      // let herein = txtbox.value;
+
+    const list1 = document.getElementById('listing1')
+    const list2 = document.getElementById('listing2')
+    const list3 = document.getElementById('listing3')
+    const list4 = document.getElementById('listing4')
+    const list5 = document.getElementById('listing5')
+
+    const dateCheck = document.getElementById('dateCheck');
+    const durationCheck = document.getElementById('durationCheck').value;
+    var densityCheck = document.getElementById('densityCheck').value;
+    const washup = document.getElementById('washup').value;
 
 
-  var datum = "08/07/2023";
-// datum = object[0]
-// console.log(datum)
+    const startDate = new Date (datum)
 
 
+    const firstD = startDate.toLocaleDateString('en-uk', { weekday:"short", day:"numeric", month:"long", year:"numeric"}) ;
+    var dateArray = [];
 
-    // datum = datum.split("-").reverse();
-    // console.log(datum)
-    // txtbox.value = txtbox.value.replaceAll(",","/");
-    // let herein = txtbox.value;
+    dateArray.push(firstD)
 
-  const list1 = document.getElementById('listing1')
-  const list2 = document.getElementById('listing2')
-  const list3 = document.getElementById('listing3')
-  const list4 = document.getElementById('listing4')
-  const list5 = document.getElementById('listing5')
-
-  const dateCheck = document.getElementById('dateCheck');
-  const durationCheck = document.getElementById('durationCheck').value;
-  var densityCheck = document.getElementById('densityCheck').value;
-  const washup = document.getElementById('washup').value;
+    console.log(durationCheck)
+    console.log("da"+dateArray.length)
 
 
-  const startDate = new Date (datum)
+    for (var d=0; d<durationCheck-1;d++){
+      console.log(startDate)
 
+      startDate.setDate(startDate.getDate() + 1 );
+      console.log(startDate)
+      console.log(d)
+      const tickTock = startDate.toLocaleDateString('en-uk', { weekday:"short"}) ;
+      if (tickTock === "Sat" || tickTock === "Sun") {
+      } else {
+        dateArray.push(startDate.toLocaleDateString('en-uk', { weekday:"short", day:"numeric", month:"long", year:"numeric"}));
+      }
 
-  const firstD = startDate.toLocaleDateString('en-uk', { weekday:"short", day:"numeric", month:"long", year:"numeric"}) ;
-  var dateArray = [];
-
-  dateArray.push(firstD)
-
-  console.log(durationCheck)
-  console.log("da"+dateArray.length)
-
-
-  for (var d=0; d<durationCheck-1;d++){
-    console.log(startDate)
-
-    startDate.setDate(startDate.getDate() + 1 );
-    console.log(startDate)
-    console.log(d)
-    const tickTock = startDate.toLocaleDateString('en-uk', { weekday:"short"}) ;
-    if (tickTock === "Sat" || tickTock === "Sun") {
-    } else {
-      dateArray.push(startDate.toLocaleDateString('en-uk', { weekday:"short", day:"numeric", month:"long", year:"numeric"}));
     }
 
-  }
 
 
-
-  var small = ['10:00 - 11:00','14:00 - 15:00'];
-  var small15 = ['10:00 - 11:15','14:00 - 15:15'];
-  var medium = ['10:00 - 11:00','12:00 - 13:00','14:00 - 15:00','16:00 - 17:00'];
-  var medium15 = ['10:00 - 11:15','12:00 - 13:15','14:00 - 15:15','16:00 - 17:15'];
-  var large = ['08:00 - 09:00','10:00 - 11:00','12:00 - 13:00','14:00 - 15:00','16:00 - 17:00','18:00 - 19:00'];
-  var large15 = ['08:00 - 09:15','10:00 - 11:15','12:00 - 13:15','14:00 - 15:15','16:00 - 17:15','18:00 - 19:15'];
+    var small = ['10:00 - 11:00','14:00 - 15:00'];
+    var small15 = ['10:00 - 11:15','14:00 - 15:15'];
+    var medium = ['10:00 - 11:00','12:00 - 13:00','14:00 - 15:00','16:00 - 17:00'];
+    var medium15 = ['10:00 - 11:15','12:00 - 13:15','14:00 - 15:15','16:00 - 17:15'];
+    var large = ['08:00 - 09:00','10:00 - 11:00','12:00 - 13:00','14:00 - 15:00','16:00 - 17:00','18:00 - 19:00'];
+    var large15 = ['08:00 - 09:15','10:00 - 11:15','12:00 - 13:15','14:00 - 15:15','16:00 - 17:15','18:00 - 19:15'];
 
 
 
 
-  if (densityCheck == '2' && washup == 'yes') {
-    var pickVer = small15;
-  } else if (densityCheck == '2' && washup == 'no'){
-    var pickVer = small;
-  } else if (densityCheck == '4' && washup == 'yes'){
-    var pickVer = medium15;
-  } else if (densityCheck == '4' && washup == 'no'){
-    var pickVer = medium;
-  } else if (densityCheck == '6' && washup == 'yes'){
-    var pickVer = large15;
-  } else if  (densityCheck == '6' && washup == 'no'){
-    var pickVer = large;
-  }
-
-
-  for (var k = 0; k < dateArray.length; k++) {
-    var wrapper = document.createElement("div");
-    wrapper.id = "divWrapID";
-
-
-    if (densityCheck == "6"){
-      wrapper.style.cssText = "margin-bottom:20px;width:400px;min-height:330px;background:white;border:1px solid #1d70b8;";
-    } else if (densityCheck = "4"){
-      wrapper.style.cssText = "margin-bottom:20px;width:400px;min-height:290px;background:white;border:1px solid #1d70b8;";
-    } else if (densityCheck = "2"){
-      wrapper.style.cssText = "margin-bottom:20px;width:400px;min-height:130px;background:white;border:1px solid #1d70b8;";
+    if (densityCheck == '2' && washup == 'yes') {
+      var pickVer = small15;
+    } else if (densityCheck == '2' && washup == 'no'){
+      var pickVer = small;
+    } else if (densityCheck == '4' && washup == 'yes'){
+      var pickVer = medium15;
+    } else if (densityCheck == '4' && washup == 'no'){
+      var pickVer = medium;
+    } else if (densityCheck == '6' && washup == 'yes'){
+      var pickVer = large15;
+    } else if  (densityCheck == '6' && washup == 'no'){
+      var pickVer = large;
     }
 
-    // wrapper.style.cssText = "margin-bottom:20px;width:400px;min-height:330px;background:white;border:1px solid #1d70b8;";
-    wrapper.setAttribute("id","div"+k);
-    var date = document.createElement("h3");
-    date.innerHTML = dateArray[k]+"<a style='float:right;margin-right:20px' href='#'>Delete day</a>";
-    date.style.cssText = "text-indent:10px;width:100%;background:#f3f2f1;;margin-top:-0px;height:45px;margin-top:0px;padding-top:5px;";
-    date.setAttribute("id","date"+k);
-    wrapper.appendChild(date);
 
-    var selectAllCheckBox = document.createElement("input");
-    var selectAllLabel = document.createElement("label");
-    selectAllCheckBox.type = "checkbox";
-    selectAllCheckBox.style.cssText = "margin-left:20px;;width:30px;height:30px;margin-bottom:15px";
-    selectAllLabel.innerHTML = "Select all"
-    selectAllLabel.style.cssText = "font-weight:normal;width:100%;display: block;text-indent:80px;margin-bottom:15px;margin-top:-28px";
-    selectAllCheckBox.setAttribute("id","selectAll"+k);
+    for (var k = 0; k < dateArray.length; k++) {
+      var wrapper = document.createElement("div");
+      wrapper.id = "divWrapID";
 
-    wrapper.appendChild(selectAllCheckBox);
-    wrapper.appendChild(selectAllLabel);
 
-    for (var m = 0; m < pickVer.length; m++) {
-      var checkBox = document.createElement("input");
-      var label = document.createElement("label");
-      checkBox.type = "checkbox";
-      checkBox.setAttribute("id", dateArray[k]+m);
+      if (densityCheck == "6"){
+        wrapper.style.cssText = "margin-bottom:20px;width:400px;min-height:330px;background:white;border:1px solid #1d70b8;";
+      } else if (densityCheck = "4"){
+        wrapper.style.cssText = "margin-bottom:20px;width:400px;min-height:290px;background:white;border:1px solid #1d70b8;";
+      } else if (densityCheck = "2"){
+        wrapper.style.cssText = "margin-bottom:20px;width:400px;min-height:130px;background:white;border:1px solid #1d70b8;";
+      }
 
-      // checkBox.style.cssText = "width: 40px;height: 40px;;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
-      // label.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
+      // wrapper.style.cssText = "margin-bottom:20px;width:400px;min-height:330px;background:white;border:1px solid #1d70b8;";
+      wrapper.setAttribute("id","div"+k);
+      var date = document.createElement("h3");
+      date.innerHTML = dateArray[k]+"<a style='float:right;margin-right:20px' href='#'>Delete day</a>";
+      date.style.cssText = "text-indent:10px;width:100%;background:#f3f2f1;;margin-top:-0px;height:45px;margin-top:0px;padding-top:5px;";
+      date.setAttribute("id","date"+k);
+      wrapper.appendChild(date);
 
-      checkBox.style.cssText = "background:white;margin-left:20px;;width:30px;height:30px;margin-bottom:15px";
-      label.style.cssText = "font-weight:normal;width:100%;display: block;text-indent:80px;margin-bottom:15px;margin-top:-28px;";
-      checkBox.value = pickVer[m];
-      label.appendChild(document.createTextNode(pickVer[m]));
-      label.innerHTML = pickVer[m]+"<a style='float:right;margin-right:20px' href='#'>Delete slot</a>";
+      var selectAllCheckBox = document.createElement("input");
+      var selectAllLabel = document.createElement("label");
+      selectAllCheckBox.type = "checkbox";
+      selectAllCheckBox.style.cssText = "margin-left:20px;;width:30px;height:30px;margin-bottom:15px";
+      selectAllLabel.innerHTML = "Select all"
+      selectAllLabel.style.cssText = "font-weight:normal;width:100%;display: block;text-indent:80px;margin-bottom:15px;margin-top:-28px";
+      selectAllCheckBox.setAttribute("id","selectAll"+k);
 
-      // label.appendChild(document.create Node(pickVer[m]+"<a style='float:right;margin-right:20px' href='#'>Delete</a>"));
-      wrapper.appendChild(checkBox);
-      wrapper.appendChild(label)
+      wrapper.appendChild(selectAllCheckBox);
+      wrapper.appendChild(selectAllLabel);
+
+      for (var m = 0; m < pickVer.length; m++) {
+        var checkBox = document.createElement("input");
+        var label = document.createElement("label");
+        checkBox.type = "checkbox";
+        checkBox.setAttribute("id", dateArray[k]+m);
+
+        // checkBox.style.cssText = "width: 40px;height: 40px;;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
+        // label.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
+
+        checkBox.style.cssText = "background:white;margin-left:20px;;width:30px;height:30px;margin-bottom:15px";
+        label.style.cssText = "font-weight:normal;width:100%;display: block;text-indent:80px;margin-bottom:15px;margin-top:-28px;";
+        checkBox.value = pickVer[m];
+        label.appendChild(document.createTextNode(pickVer[m]));
+        label.innerHTML = pickVer[m]+"<a style='float:right;margin-right:20px' href='#'>Delete slot</a>";
+
+        // label.appendChild(document.create Node(pickVer[m]+"<a style='float:right;margin-right:20px' href='#'>Delete</a>"));
+        wrapper.appendChild(checkBox);
+        wrapper.appendChild(label)
+      }
+
+      list1.appendChild(wrapper);
     }
-
-    list1.appendChild(wrapper);
-  }
-
-// list2.innerHTML = '<div class="govuk-form-group"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--m"><h1 class="govuk-fieldset__heading">Organisation</h1></legend> <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes"> <div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc"><label class="govuk-label govuk-checkboxes__label" for="organisation">HM Revenue and Customs (HMRC)</label> </div><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal"> <label class="govuk-label govuk-checkboxes__label" for="organisation-2">Employment Tribunal</label></div><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD"> <label class="govuk-label govuk-checkboxes__label" for="organisation-3"> Ministry of Defence </label> </div> <div class="govuk-checkboxes__item"> <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT"> <label class="govuk-label govuk-checkboxes__label" for="organisation-4"> Department for Transport </label> </div> </div> </fieldset></div></div>';
-
-
-  // const one = document.getElementById("Mon, 7 August 20230");
-  // const two = document.getElementById("Mon, 7 August 20231");
-  // const three = document.getElementById("Mon, 7 August 20232");
-  // const four = document.getElementById("Mon, 7 August 20233");
-  // const five = document.getElementById("Mon, 7 August 20234");
-  // const six = document.getElementById("Mon, 7 August 20235");
-  //
-  //
-  // const selectAll0 = document.getElementById("selectAll0");
-  // selectAll0.addEventListener('change', (event) => {
-  //
-  //   if (selectAll0.checked) {
-  //
-  //     one.checked = true;
-  //     two.checked = true;
-  //     three.checked = true;
-  //     four.checked = true;
-  //     five.checked = true;
-  //     six.checked = true;
-  //   } else {
-  //     one.checked = false;
-  //     two.checked = false;
-  //     three.checked = false;
-  //     four.checked = false;
-  //     five.checked = false;
-  //     six.checked = false;
-  //
-  //   }
-  //
-  //
-  //
-  //
-  // });
 
 
 
