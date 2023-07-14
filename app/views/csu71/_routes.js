@@ -475,7 +475,8 @@ router.post("/templates-altergo", function (req, res) {
   } else if (template == "csofficial"){
     res.redirect('template-csofficial')
 	} else if (template == "preselected") {
-		res.redirect('task-list-exp-copy-ad')
+		res.redirect('template-ad-duplicate')
+		// res.redirect('task-list-exp-copy-ad')
   } else if (template == "duplicate") {
 		res.redirect('template-ad-duplicate')
 
