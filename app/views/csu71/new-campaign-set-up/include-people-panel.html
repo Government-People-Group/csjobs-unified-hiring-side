@@ -95,21 +95,25 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
         {% endif %}
 
 
-        <h3 style="border-top:1px solid #1d70b8;padding-top:20px;width:65%" class="govuk-heading-m">What are the email addresses of the other panelists?</h3>
+        <h3 style="border-top:1px solid #1d70b8;padding-top:20px;width:65%" class="govuk-heading-m">Add the rest of the panel</h3>
+
+        <p class="govuk-body-m">It's recommended that a panel lorem ipsum dolor sit amet thingy bob.</p>
 
         <div  class="govuk-form-group" style="width:65%; ">
           <h2 class="govuk-label-wrapper">
             <label class="govuk-label govuk-label--s" for="panel5">
-              Panel member 2
+              What's the panel member's email?
             </label>
           </h2>
           <input tabindex="3" class="govuk-input" id="panel5" name="panel5" type="text">
         </div>
 
-        <div  class="govuk-form-group" style="width:65%">
+        <p id="cta" class="govuk-body-m"><a style="color:#1d70b8" onclick="showDiv('thirdP');hideDiv('cta')">Add the next panel member</a></p>
+
+        <div  id="thirdP" class="govuk-form-group" style="display:none;width:65%">
           <h2 class="govuk-label-wrapper">
             <label class="govuk-label govuk-label--s" for="panel6">
-              Panel member 3
+              What's the last panel member's email?
             </label>
           </h2>
           <input tabindex="3" class="govuk-input" id="panel6" name="panel6" type="text">
@@ -163,15 +167,18 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 //
 //   });
 //
-//   function showDiv(div1) {
-//     document.getElementById(div1).style.display = 'block';
-//
-//   }
-//
-//   function hideDiv(div1) {
-//     document.getElementById(div1).style.display = 'none';
-//
-//   }
+
+
+
+  function showDiv(div1) {
+    document.getElementById(div1).style.display = 'block';
+
+  }
+
+  function hideDiv(div1) {
+    document.getElementById(div1).style.display = 'none';
+
+  }
 
 
 
