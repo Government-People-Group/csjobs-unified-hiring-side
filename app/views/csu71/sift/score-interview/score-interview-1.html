@@ -1,10 +1,4 @@
-
-<div style="background:F3F2F1">
-<p class="govuk-body-l">Can you describe a time when you have had to bring together different viewpoints into one way forward? What was the situation? What did you do? What was the outcome?</p>
-
-
-
-</div>  {% extends "layouts/main.html" %}
+{% extends "layouts/main.html" %}
 
 {% block header %}
 {% include '/csu71/includes/header.html' %}
@@ -29,164 +23,207 @@
   href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
+
+
 {% block content %}
+<form class="form" action="#" method="post">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-Full" style="">
+    <span class="govuk-caption-l">Score interview</span>
 
-
-<style>
-
-
-  .selected:hover {
-      color: #f26d7d;
-      border:4px solid #f26d7d;
-  }
-
-  .selected:active {
-      color: #ccc;
-  }
-
-  .selected.selected {
-      background-color: #blue;
-  }
-
-
-  li.selected a {
-    font-weight: bold;
-    color: purple;
-  }
-
-  .selected:active
-  {
-      color: black;
-      font-weight: bold;
-      background: lightgrey;
-  }
-
-</style>
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full" style="">
-
-
-      <div class="govuk-!-margin-bottom-0" style="border:5px solid lightgrey;background:#f3f2f1;padding:20px">
-        <h4 class="govuk-heading-m" style="background:white;padding-left:20px;padding-top:20px;padding-bottom:20px;padding-left:20px;max-height:800px;">Experience criteria Building engaging and effective relationships with stakeholders</h4>
-        <div class="govuk-!-margin-top-4" style="padding-right:20px;">
-
-          <div class="govuk-!-margin-top-4" style="padding-right:20px;">
-
-  <div style="display:none;height:631px;background:silver" class="govuk-grid-column-one-half">
+    <h1 class="govuk-heading-xl">Candidate 3</h1>
 
 
 
-            <ul id="lister" style="width:100%;font-size:18px;margin-bottom:0px" class="govuk-list govuk-list--bullet-">
-                    <li style="  ;background:white;border:0px solid black;padding:20px;margin-bottom:2px">Can you tell me about your experience of building a trusted advisor-style relationship with a stakeholder? Can you give me examples of how you were able to achieve this?</li>
-                <li style="background:white;border:0px solid black;padding:20px;margin-bottom:2px">Can you describe a time when you have had to bring together different viewpoints into one way forward? What was the situation? What did you do? What was the outcome?</li>
-                <li style="background:white;border:0px solid black;padding:20px;margin-bottom:2px">Can you describe a time when you have received a reaction to a piece of work or project that you weren't expecting? How did you manage the situation?</li>
-                <li class="selected" style="background:white;border:0px solid black;padding:20px;margin-bottom:2px">Would others describe you as analytical? If so, why?</li>
-                <li style="background:white;border:0px solid black;padding:20px;margin-bottom:2px">What does a successful day look like?</li>
-                <li style="background:white;border:0px solid black;padding:20px;margin-bottom:2px">What aspect of problem solving do you least enjoy?</li>
-                <li style="background:white;border:0px solid black;padding:20px;margin-bottom:2px;">Give a presentation on the following subject, 'What interests you about working for the Civil Service in a policy role?'</li>
-            </ul>
-            <details class="govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span style="font-size:22px;font-weight:bold" class="govuk-details__summary-text">
-                  Scoring - marking scheme
-                </span>
-              </summary>
-              <div style="width:99.5%;background:white" class="govuk-details__text">
-                <ul style="font-size:18px;line-height:1.9;" class="govuk-list govuk-list--number">
-                  <li><strong>Not Demonstrated</strong> No positive evidence provided</li>
-                  <li><strong>Minimal Demonstration</strong> Limited positive evidence provided</li>
-                  <li><strong>Moderate Demonstration</strong> Moderate positive evidence provided</li>
-                  <li><strong>Acceptable Demonstration</strong> Adequate positive evidence provided</li>
-                  <li><strong>Good Demonstration</strong> Substantial positive evidence provided</li>
-                  <li><strong>Strong Demonstration</strong> Substantial, positive evidence provided including some evidence of exceeding expectations</li>
-                  <li><strong>Outstanding Demonstration</strong> - Evidence provided wholly exceeds expectation at this level</li>
-                </ul>
+
+
+
+
+            </div>
+
+
+            <div class="govuk-!-margin-bottom-0 govuk-!-margin-top-6" style=";border-bottom:1px solid #1d70b8;padding:10px">
+              <!-- <span class="govuk-!-margin-bottom-0 govuk-!-margin-top-3 govuk-caption-xl" style=";font-weight:bold;text-align: left;">Criteria 1</span>
+              <h3 class="govuk-!-margin-bottom-3 govuk-!-margin-top-0 govuk-heading-l" style=";font-weight:normal;text-align: left;"><strong>Lorem ipsum</strong></h3> -->
+            </div>
+            <div class="govuk-!-margin-bottom-0" style="border:0px solid lightgrey;background:#f3f2f1;padding:20px">
+                <div class="govuk-!-margin-top-4" style="padding-right:20px;">
+
+                <div class="govuk-!-margin-top-4" style="padding-right:20px;">
+                  <!-- <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                      <span style="font-size:22px;font-weight:bold" class="govuk-details__summary-text">
+                        Scoring - marking scheme
+                      </span>
+                    </summary>
+                    <div style="width:99.5%;background:white" class="govuk-details__text">
+                      <ul style="font-size:18px;line-height:1.9;" class="govuk-list govuk-list--number">
+                        <li><strong>Not Demonstrated</strong> No positive evidence provided</li>
+                        <li><strong>Minimal Demonstration</strong> Limited positive evidence provided</li>
+                        <li><strong>Moderate Demonstration</strong> Moderate positive evidence provided</li>
+                        <li><strong>Acceptable Demonstration</strong> Adequate positive evidence provided</li>
+                        <li><strong>Good Demonstration</strong> Substantial positive evidence provided</li>
+                        <li><strong>Strong Demonstration</strong> Substantial, positive evidence provided including some evidence of exceeding expectations</li>
+                        <li><strong>Outstanding Demonstration</strong> - Evidence provided wholly exceeds expectation at this level</li>
+                      </ul>
+
+                    </div>
+                  </details> -->
+                </div>
 
               </div>
-            </details>
-          </div>
 
 
-          <div style="display:none;height:631px;background:silver" class="govuk-grid-column-one-half">
-            <div class="govuk-!-margin-bottom-0 govuk-!-margin-top-6" style=";">
-              {{ govukCharacterCount({
-              name: "behaviour-question-1",
-              id: "behaviour-question-1",
-              maxwords: 50,
-              rows: 3,
-              label: {
-              text: "Seeing the big picture question 1",
-              classes: "govuk-label--s",
-              isPageHeading: false
-              },
-              value: data['behaviour-question-1']
-              }) }}
+
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                  {{ govukSelect({
+                    id: "score",
+                    name: "score",
+                    label: {
+                      text: "Score",
+                      classes: "govuk-label--s"
+                    },
+                    items: [
+                    {
+                      value: "1",
+                      text: "1"
+                    },
+                    {
+                      value: "2",
+                      text: "2"
+                    },
+                    {
+                      value: "3",
+                      text: "3",
+                      selected: true
+                    },
+                    {
+                      value: "4",
+                      text: "4"
+                    },
+                    {
+                      value: "5",
+                      text: "5"
+                    },
+                    {
+                      value: "6",
+                      text: "6"
+                    },
+                    {
+                      value: "7",
+                      text: "7"
+                    },
+                    {
+                      value: "---",
+                      text: "---"
+                    }
+                    ]
+                  }) }}
+
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                  {{ govukSelect({
+                    id: "reason",
+                    name: "reason",
+                    label: {
+                      text: "Reason",
+                      classes: "govuk-label--s"
+                    },
+                    items: [
+                    {
+                      value: "experienceLow",
+                      text: "Not enough experience",
+                      selected: true
+                    },
+                    {
+                      value: "experienceHigh",
+                      text: "High level of experience"
+                    },
+                    {
+                      value: "relevanceLow",
+                      text: "Not relevant to role"
+                    },
+                    {
+                      value: "relevanceHigh",
+                      text: "Very relevant to role"
+                    },
+                    {
+                      value: "exampleLow",
+                      text: "No or poor example given"
+                    },
+                    {
+                      value: "exampleHigh",
+                      text: "Strong example given"
+                    },
+                    {
+                      value: "---",
+                      text: "---"
+                    }
+                    ]
+                  }) }}
+                </div>
+              </div>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                  {{ govukInput({
+                    label: {
+                      text: "Additional feedback for candidates (optional)"
+                    },
+                    classes: "govuk-input--width-50",
+                    id: "feedback",
+                    name: "feedback",
+                    value: "Would expect at least 2 years experience for this role"
+                  }) }}
+
+                  {{ govukInput({
+                    label: {
+                      text: "Notes for the panel, not seen by candidate (optional)"
+                    },
+                    classes: "govuk-input--width-50",
+                    id: "feedback",
+                    name: "feedback",
+                    value: "Less than 1 year experience"
+                  }) }}
+                </div>
+              </div>
             </div>
-</div>
 
+            <div class="govuk-!-margin-top-6" style="border:0px solid lightgrey;background:#f3f2f1;padding:20px">
+              <h4 class="govuk-heading-m" style="background:white;padding-left:20px;padding-top:20px;padding-bottom:20px;padding-left:20px;max-height:800px;">Smith Clark (Panel)</h4>
+              <div class="govuk-!-margin-top-4" style="padding-right:20px;">
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span style="font-size:22px;font-weight:bold" class="govuk-details__summary-text">
+                      Scoring - marking scheme
+                    </span>
+                  </summary>
+                  <div style="width:99.5%;background:white" class="govuk-details__text">
+                    <ul style="font-size:18px;line-height:1.9;" class="govuk-list govuk-list--number">
+                      <li><strong>Not Demonstrated</strong> No positive evidence provided</li>
+                      <li><strong>Minimal Demonstration</strong> Limited positive evidence provided</li>
+                      <li><strong>Moderate Demonstration</strong> Moderate positive evidence provided</li>
+                      <li><strong>Acceptable Demonstration</strong> Adequate positive evidence provided</li>
+                      <li><strong>Good Demonstration</strong> Substantial positive evidence provided</li>
+                      <li><strong>Strong Demonstration</strong> Substantial, positive evidence provided including some evidence of exceeding expectations</li>
+                      <li><strong>Outstanding Demonstration</strong> - Evidence provided wholly exceeds expectation at this level</li>
+                    </ul>
 
-        </div>
-
-
-
-
-
-
-
-
-
-          <!-- 6 mins	Experience questions
-          Building engaging and effective relationships with stakeholders
-
-Understand the strategic drivers for your area of work. Align activities to contribute to wider organisational priorities. Remain alert to emerging issues and trends which might impact your work area. Seek out and share experiences to develop knowledge of the team’s business area. Understand how the strategies and activities of the team create value and meet the diverse needs of all stakeholders.
-
-"Work with others to identify areas for improvement and simplify processes to use fewer resources. Use technology where possible to increase efficiency. Encourage ideas for change from a wide range of sources. Clearly explain the reasons for change to colleagues and how to implement them, supporting individuals with different needs to adapt to change. Encourage an environment where colleagues know that they can challenge decisions and issues safely. Take managed risks by fully considering the varied impacts changes could have on the diverse range of end users."
-
-
-Can you tell me about your experience of building a trusted advisor-style relationship with a stakeholder? Can you give me examples of how you were able to achieve this?
-
-Can you describe a time when you have received a reaction to a piece of work or project that you weren't expecting? How did you manage the situation?
- -->
-
-        </div>
-
-        <div style="display:none;height:631px;background:#f3f2f1" class="govuk-grid-column-one-half">
-
-          <div style="margin-top:10px;height:120px;background:#1d70b8" class="govuk-grid-column-full">
-
-
-            </div>
-
-            <!-- <div style="height:157px;background:purple" class="govuk-grid-column-full">
-
-            </div> -->
+                  </div>
+                </details>
+              </div>
 
 
 
 
 
 
-        </div>
+            {{ govukButton({
+              text: "Next candidate"
+            }) }}
+
+</form>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-  </div>
-
-
-
-{% endblock %}
+              {% endblock %}

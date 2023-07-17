@@ -1,0 +1,172 @@
+
+
+<style>
+  #container
+  {
+    position:relative;
+    display: inline;
+    padding-left: 10px
+  }
+
+  #image
+  {
+    position:absolute;
+    left:25px;
+    top:0;
+    height:40px;
+  }
+
+  #text
+  {
+    z-index:100;
+    position:absolute;
+    color:white;
+    font-size:15px;
+    font-weight:bold;
+    left:9px;
+    top:40px;
+  }
+
+  #textly
+  {
+    z-index:100;
+    position:absolute;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    left:33px;
+    top:9px;
+  }
+</style>
+
+{% if (data['chosen'] == "ddat") or (data['template'] == "ddat") %}
+{% set orgColour = "#353F46" %}
+{% set orgName = "DD" %}
+{% set tempName = "Template" %}
+{% set dest = "template-csofficial" %}
+{% set tickTick = "#FFFFFF" %}
+{% endif %}
+
+
+{% if (data['chosen'] == "co") or (data['template'] == "co") %}
+{% set orgColour = "#1D70B8" %}
+{% set orgName = "CO" %}
+{% set tempName = "Template" %}
+{% set tickTick = "#FFFFFF" %}
+{% set dest = "template-csofficial" %}
+{% endif %}
+
+
+{% if (data['chosen'] == "ho") or (data['template'] == "ho") %}
+{% set orgName = "HO" %}
+{% set orgColour = "#803E98" %}
+{% set tempName = "Template" %}
+{% set tickTick = "#FFFFFF" %}
+{% set dest = "template-csofficial" %}
+{% endif %}
+
+
+{% if (data['chosen'] == "dfe") or (data['template'] == "dfe") %}
+{% set orgName = "ED" %}
+{% set orgColour = "#003a69" %}
+{% set tempName = "Template" %}
+{% set tickTick = "#FFFFFF" %}
+{% set dest = "template-csofficial" %}
+{% endif %}
+
+
+
+{% if data['template'] == "none" %}
+{% set orgColour = "" %}
+{% set orgName = "" %}
+{% set tempName = "Template" %}
+{% set tickCross = "#FFFFFF" %}
+{% set tickTick = "#000000" %}
+{% set dest = "templates-alt" %}
+{% endif %}
+
+
+
+
+
+
+<ul style="text-align:right">
+  <!-- <a href="#">
+      <li id="container"  style="display:inline;padding-left:100px">
+  <svg id="image"  width="35px" height="35px" viewBox="0 0 242 242" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <title>Group 4</title>
+      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Group-4" stroke="#FFFFFF" stroke-width="10">
+              <g id="Group-3">
+                  <path d="M150.059199,5.71977223 C161.048212,8.48987294 171.428539,12.7955901 180.960095,18.3955762 L180.960095,18.3955762 L175.915818,37.2598455 L203.328545,64.733909 L222.626905,59.5503356 C228.32638,68.9748463 232.757636,79.2555586 235.682984,90.1548158 L235.682984,90.1548158 L218.046415,100.360007 L218.046415,139.200903 L236.29992,149.763755 C233.624175,160.637029 229.456941,170.921675 224.028446,180.387375 L224.028446,180.387375 L203.328576,174.827063 L175.915864,202.301111 L181.596076,223.545263 C172.290068,229.09102 162.163372,233.398335 151.442096,236.239852 L151.442096,236.239852 L140.389932,217.055247 L101.610068,217.055247 L90.5579044,236.239852 C79.836628,233.398335 69.7099318,229.09102 60.4039243,223.545263 L60.4039243,223.545263 L66.0841359,202.301111 L38.6714238,174.827063 L17.9715542,180.387375 C12.5429224,170.921437 8.3756153,160.636512 5.69987827,149.762935 L5.69987827,149.762935 L23.9535853,139.201052 L23.9535853,100.360007 L6.31701582,90.1548158 C9.24236353,79.2555586 13.6736203,68.9748463 19.3730947,59.5503356 L19.3730947,59.5503356 L38.6714547,64.733909 L66.0841816,37.2598455 L61.039905,18.3955762 C70.5714605,12.7955901 80.9517879,8.48987294 91.9408009,5.71977223 L91.9408009,5.71977223 L101.609882,22.5057554 L140.390118,22.5057554 Z" id="Combined-Shape"></path>
+                  <path d="M139.450418,55.7678194 C144.578035,57.2019372 149.458661,59.2357545 154.01377,61.7893607 L154.01377,61.7893607 L151.176937,72.472524 L168.836564,90.2971423 L179.71214,87.3552295 C182.303118,91.9054565 184.385928,96.787956 185.882308,101.923844 L185.882308,101.923844 L175.956853,107.707545 L175.956853,132.861311 L186.271413,138.871705 C184.89831,143.988151 182.946419,148.864388 180.491081,153.424416 L180.491081,153.424416 L168.836587,150.27168 L151.177049,168.096209 L154.386794,180.186039 C149.960441,182.704916 145.222251,184.731189 140.245116,186.190643 L140.245116,186.190643 L134.013849,175.296774 L108.986151,175.296774 L102.754884,186.190643 C97.7777492,184.731189 93.0395592,182.704916 88.6132061,180.186039 L88.6132061,180.186039 L91.8229512,168.096209 L74.1634135,150.27168 L62.508919,153.424416 C60.0535805,148.864388 58.1016896,143.988151 56.7285872,138.871705 L56.7285872,138.871705 L67.0431474,132.861311 L67.0431474,107.707545 L57.1176917,101.923844 C58.6140715,96.787956 60.6968817,91.9054565 63.2878601,87.3552295 L63.2878601,87.3552295 L74.1634361,90.2971423 L91.8230625,72.472524 L88.9862302,61.7893607 C93.5413387,59.2357545 98.4219655,57.2019372 103.549582,55.7678194 L103.549582,55.7678194 L108.986208,65.2720713 L134.013792,65.2720713 Z" id="Combined-Shape" transform="translate(121.500000, 121.000000) rotate(-315.000000) translate(-121.500000, -121.000000) "></path>
+                  <circle id="Oval" cx="120.5" cy="121.5" r="25.5"></circle>
+              </g>
+          </g>
+      </g>
+  </svg>
+  <strong id="text">Settings</strong>
+  </li>
+</a> -->
+
+
+
+  <a href="/csu71/{{ dest }}">
+
+
+
+    <li id="container" style="display:inline;padding-left:100px">
+      <svg  alt="" id="image" width="40px" height="40px" viewBox="0 0 262 262" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Group" fill="{{ orgColour }}">
+            <circle id="Oval" cx="131" cy="131" r="131"></circle>
+          </g>
+        </g>
+      </svg>
+
+
+
+
+      <span id="text"><strong>{{tempName}}</strong>
+
+
+{% if tickCross == "#FFFFFF" %}
+<svg width="13px" height="13px" viewBox="0 0 16 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 2</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Group-2" transform="translate(3.375000, 3.000000)" stroke="{{tickCross}}" stroke-width="5.2">
+            <path d="M0,12 C2.33333333,6.55737705 5.54166667,2.55737705 9.625,0" id="Line"></path>
+            <path d="M0,12 C2.33333333,6.55737705 5.54166667,2.55737705 9.625,0" id="Line" transform="translate(4.812500, 6.000000) scale(-1, 1) translate(-4.812500, -6.000000) "></path>
+        </g>
+    </g>
+</svg>
+{% endif %}
+{% if tickTick == "#FFFFFF" %}
+          <svg width="13px" height="13px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <title>Line</title>
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+              <path d="M3,9.68852459 L7.375,15 C9.70833333,9.55737705 12.9166667,5.55737705 17,3" id="Line" stroke="{{tickTick}}" stroke-width="5.2"></path>
+            </g>
+          </svg>
+{% endif %}
+
+
+        </span>
+<span id="textly">{{ orgName }}</span>
+
+
+        </li>
+      </a>
+      <a href="/csu71/department-profile">
+        <li id="container"  style="display:inline;padding-left:100px">
+          <img id="image" class="" src="/public/images/dept-profile.png" alt="">
+          <strong id="text">Dept Profile</strong>
+        </li>
+      </a>
+      <a href="/csu71/my-profile">
+        <li id="container"  style="display:inline;padding-left:200px">
+          <img id="image" class="" src="/public/images/profblue.png" alt="">
+          <strong id="text">Jane Smith</strong>
+        </li>
+      </a>
+    </ul>

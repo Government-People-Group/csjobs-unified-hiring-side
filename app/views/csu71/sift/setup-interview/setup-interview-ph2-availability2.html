@@ -1,0 +1,200 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Interview</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+  p, div {
+    font-family: "GDS Transport", arial, sans-serif;
+    line-height: 1.2;
+  }
+
+</style>
+
+
+
+
+
+<form class="form" action="#" method="post">
+
+  <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Schedule</H1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter" style="">
+
+
+      <ul class="govuk-!-margin-top-6 govuk-list govuk-list--bullet-">
+        <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph2"><strong>Schedule</a></p></strong></li>
+        <!-- <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview"><strong>Setup interview</a></p></strong></li> -->
+
+        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph3"><strong>Assessment</a></p></strong></li>
+        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph4-1"><strong>Questions</a></p></strong></li>
+        <li><strong><p style ="border-left:5px solid white;;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph1"><strong>Type of interview</a></p></strong></li>
+
+        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-check-answers"><strong>Review interview setup</a></p></strong></li>
+      </ul>
+    </div>
+    <div class="govuk-!-margin-top-6 govuk-grid-column-three-quarters">
+
+
+<H2 style="" class="govuk-heading-l">Your availability</h2>
+
+<p class="govuk-body-m">The schedule should be large enough to accommodate your availability, the panel members and the candidate.</p>
+
+<!-- Select the dates using the date picker, make a list of dates. -->
+  <div id="list1"></div>
+
+
+
+  <!-- <input type="text" list="browsers"/>
+   <datalist id="browsers">
+      <option>Google</option>
+      <option>IE9</option>
+   </datalist> -->
+
+
+
+
+  </div>
+
+  <input type="hidden" id="densityCheck" name="source" value="{{ data['density']}}">
+
+
+
+
+  <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Continue</button>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+</FORM>
+
+
+<script>
+  var densityCheck = document.getElementById('densityCheck').value;
+
+  var from = JSON.parse(window.sessionStorage.getItem("fromDate"));
+  var to = JSON.parse(window.sessionStorage.getItem("toDate"));
+
+  var dDay = new Date(from)
+  var tDay = new Date(to)
+  const tickTock = dDay.toLocaleDateString('en-uk', { day:"numeric"}) ;
+
+  const tickTock2 = tDay.toLocaleDateString('en-uk', { day:"numeric"}) ;
+
+  var tweenDays = tickTock2 - tickTock;
+
+  const dateArray = [];
+  dateArray.push(dDay.toLocaleDateString('en-uk', { weekday:"short", day:"numeric", month:"short"}));
+
+    for (var d=0; d<=tweenDays-1;d++){
+
+
+      dDay.setDate(dDay.getDate() + 1 );
+      console.log(dDay)
+
+      const checkDay = dDay.toLocaleDateString('en-uk', { weekday:"short"}) ;
+      if (checkDay === "Sat" || checkDay === "Sun") {
+      } else {
+        dateArray.push(dDay.toLocaleDateString('en-uk', { weekday:"short", day:"numeric", month:"short"}));
+      }
+
+    }
+  console.log(dateArray)
+
+  for (var k = 0; k < dateArray.length; k++) {
+    var wrapper = document.createElement("div");
+    wrapper.id = "divWrapID";
+
+    //
+    // if (densityCheck == "6"){
+    //   wrapper.style.cssText = "margin-bottom:20px;width:400px;min-height:330px;background:white;border:1px solid #1d70b8;";
+    // } else if (densityCheck = "4"){
+    //   wrapper.style.cssText = "margin-bottom:20px;width:400px;min-height:290px;background:white;border:1px solid #1d70b8;";
+    // } else if (densityCheck = "2"){
+    //   wrapper.style.cssText = "margin-bottom:20px;width:400px;min-height:130px;background:white;border:1px solid #1d70b8;";
+    // }
+
+    wrapper.style.cssText = "position:relative;margin-bottom:20px;width:280px;min-height:330px;background:white;border:1px solid #1d70b8;";
+    wrapper.setAttribute("id","div"+k);
+    var date = document.createElement("h3");
+    date.innerHTML = dateArray[k];
+    date.style.cssText = "text-indent:10px;width:100%;background:#f3f2f1;;margin-top:-0px;height:45px;margin-top:0px;padding-top:5px;";
+    date.setAttribute("id","date"+k);
+    wrapper.appendChild(date);
+
+
+
+
+
+
+ for (var y=1;y<densityCheck;y++){
+
+
+
+    var checkBox = document.createElement("input");
+    checkBox.type = "checkbox";
+    checkBox.value = densityCheck[y]
+    checkBox.style.cssText = "position:absolute;top:75px;left:10px;height:25px;width:25px";
+    var tteexx1 = document.createElement("input")
+    var tteexx2 = document.createElement("input")
+    tteexx1.type = "text";
+    tteexx2.type = "text";
+    tteexx1.value = densityCheck[y]
+    tteexx2.value = densityCheck[y]
+    tteexx1.style.cssText = "border:1px solid grey;border-radius:5px;font-size:20px;position:absolute;top:75px;left:60px;height:30px;width:90px";
+    tteexx2.style.cssText = "border:1px solid grey;border-radius:5px;font-size:20px;position:absolute;top:75px;right:20px;height:30px;width:90px";
+    tteexx1.setAttribute("id",date+"1");
+    tteexx2.setAttribute("id",date+"1");
+
+    wrapper.appendChild(checkBox);
+
+    wrapper.appendChild(tteexx1)
+    wrapper.appendChild(tteexx2)
+
+    list1.appendChild(wrapper);
+}
+}
+
+</script>
+
+
+{% endblock %}

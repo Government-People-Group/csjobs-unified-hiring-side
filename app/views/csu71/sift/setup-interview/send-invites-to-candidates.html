@@ -32,7 +32,27 @@
     {% block content %}
 
 
+{% set inviteContent = "Dear {firstName},
 
+Policy adviser (1001334), Senior Executive Officer
+
+Congratulations, you've been invited to attend an interview.
+
+Interviews will take place between {firstSlotDay} and {lastSlotDay}.
+
+Access your account on CS Jobs to {book your interview time}.
+To get your preferred time we recommend that you book as early as possible.
+
+Your {application scores and feedback} are also available for your review in your account on CS Jobs.
+
+**Enter department specific ID requirements here**
+
+If you're no longer interested in this position, please withdraw your application.
+
+  Kind regards
+
+{Vacancy holder}
+Cabinet Office" %}
 
 
 
@@ -40,77 +60,167 @@
 
         <div style="" class="govuk-!-margin-top-6 govuk-grid-column-full">
           <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Send invites to candidates</H1>
+          <H2 class="govuk-heading-l"><strong>These candidates will be invited to attend an interview</strong></h2>
+
+  <ul class="govuk-!-margin-top-6 govuk-list govuk-list--number">
+    <li>Mei Chen</li>
+    <li>Amelia Lawson</li>
+    <li>Javier Santos</li>
+</ul>
+
+          <div style="background:#F4FAFF;padding:40px;border-top:1px solid #1d70b8">
+            <p class="govuk-body-m"><strong>An email will be sent to each candidate with the following invitation message.</strong></p>
+
+                {{ govukTextarea({
+                name: "genericInviteContent",
+                id: "genericInviteContent",
+                rows: 12,
+                label: {
+                text: "",
+                classes: "govuk-label--s",
+                isPageHeading: false
+                },
+                value: inviteContent or data['genericInviteContent']
+                }) }}
+
+          </div>
 
 
-          <p class="govuk-body-m"><strong>The following candidates will be invited to attend an interview.</strong></p>
-
-
-            <h2 style="" class="govuk-heading-l"><span style="border-bottom:0px solid black">Mei Chen</span></h2>
 
 
 
 
+            <h2 style="" class="govuk-heading-l govuk-!-margin-top-6"><span style="border-bottom:0px solid black">Personal message (optional)</span></h2>
 
-            <div style="background:#F4FAFF;padding:20px;border-top:1px solid #1d70b8">
-                  {{ govukCharacterCount({
-                  name: "meiPMessage",
-                  id: "meiPMessage",
-                  maxwords: 50,
+
+  <p class="govuk-body-m">You may choose to add a personal message to the invitation.</p>
+  <p class="govuk-body-m">For example to:</p>
+
+  <ul class="govuk-!-margin-top-6 govuk-list govuk-list--number">
+    <li>provide details regarding an earlier correspondance (e.g., reasonable adjustment request)</li>
+    <li>provide specific instructions on the interivew</li>
+    <li>just a note to add your personal touch</li>
+</ul>
+            <div style="background:#F4FAFF;padding:40px;border-top:1px solid #1d70b8">
+
+
+              {{ govukSelect({
+                        id: "personalmsg",
+                        name: "personalmsg",
+                        label: {
+                          text: "Select candidate",
+                          classes: "govuk-label--s"
+                        },
+                        items: [
+                        {
+                          value: "none",
+                          selected: "true",
+                          disabled: "true",
+                          text: "Select candidate"
+                        },
+                        {
+                          value: "All candidates",
+                          text: "All candidates",
+                          selected: checked("personalmsg","All candidates")
+                        },
+                        {
+                          value: "Amelia Lawson",
+                          text: "Amelia Lawson",
+                          selected: checked("personalmsg","Amelia Lawson")
+                        },
+                        {
+                          value: "Javier Santos",
+                          text: "Javier Santos",
+                          selected: checked("personalmsg","Javier Santos")
+                        },
+
+                        {
+                          value: "Mei Chen",
+                          text: "Mei Chen",
+                          selected: checked("personalmsg","Mei Chen")
+                        }
+
+                      ]
+                    }) }}
+
+                  {{ govukTextarea({
+                  name: "pMessage",
+                  id: "pMessage",
                   rows: 3,
                   label: {
-                  text: "You may choose to add a personal message to the invitation (optional)",
+                  text: "Enter your message here",
                   classes: "govuk-label--s",
                   isPageHeading: false
                   },
-                  value: '' or data['meiPMessage']
+                  value: '' or data['pMessage']
                   }) }}
+                  <p class="govuk-body-m"><a style="color:#1d70b8"><strong>Add another message</strong></a></p>
+
+</div>
+
+<div style="display:none;background:#F4FAFF;padding:20px;border-top:1px solid #1d70b8">
+
+
+  {{ govukSelect({
+            id: "personalmsg",
+            name: "personalmsg",
+            label: {
+              text: "Select candidate",
+              classes: "govuk-label--s"
+            },
+            items: [
+            {
+              value: "none",
+              selected: "true",
+              disabled: "true",
+              text: "Select candidate"
+            },
+
+            {
+              value: "Amelia Lawson",
+              text: "Amelia Lawson",
+              selected: checked("personalmsg","Amelia Lawson")
+            },
+            {
+              value: "Javier Santos",
+              text: "Javier Santos",
+              selected: checked("personalmsg","Javier Santos")
+            },
+            {
+              value: "Mei Chen",
+              text: "Mei Chen",
+              selected: checked("personalmsg","Mei Chen")
+            }
+
+          ]
+        }) }}
+
+      {{ govukTextarea({
+      name: "pMessage2",
+      id: "pMessage2",
+      rows: 3,
+      label: {
+      text: "Enter your message here",
+      classes: "govuk-label--s",
+      isPageHeading: false
+      },
+      value: '' or data['pMessage2']
+      }) }}
 
 </div>
 
 
-
-        <h2 style="border-top:0px solid #1d70b8;padding-top:50px" class="govuk-heading-l govuk-!-margin-top-6">Amelia Lawson</h2>
-
-        <div style="background:#F4FAFF;padding:20px;border-top:1px solid #1d70b8">
-              {{ govukCharacterCount({
-              name: "ameliaPMessage",
-              id: "ameliaPMessage",
-              maxwords: 50,
-              rows: 3,
-              label: {
-              text: "You may choose to add a personal message to the invitation (optional)",
-              classes: "govuk-label--s",
-              isPageHeading: false
-              },
-              value: '' or data['ameliaPMessage']
-              }) }}
-
-</div>
-        <h2 style="border-top:0 px solid #1d70b8;padding-top:50px" class="govuk-heading-l govuk-!-margin-top-6">Javier Santos</h2>
-
-        <div style="background:#F4FAFF;padding:20px;border-top:1px solid #1d70b8">
-              {{ govukCharacterCount({
-              name: "javierPMessage",
-              id: "javierPMessage",
-              maxwords: 50,
-              rows: 3,
-              label: {
-              text: "You may choose to add a personal message to the invitation (optional)",
-              classes: "govuk-label--s",
-              isPageHeading: false
-              },
-              value: '' or data['javierPMessage']
-              }) }}
-
-
-</div>
         {{ govukButton({
         text: "Send invites",
         classes: "govuk-!-margin-top-9",
         href: "/csu71/sift/task-list?invites=sent"
         }) }}
 
-
+        {{ govukButton({
+        text: "Preview invite",
+        classes: "govuk-button--secondary govuk-!-margin-top-9",
+        href: "#"
+        }) }}
         </div>
 
 

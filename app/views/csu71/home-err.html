@@ -15,7 +15,6 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
   <a href="#"><img src="/public/images/search.png" style="float:right;margin-right:30px;padding:10px;;width:20px"></a>
 
-
   <div  style="position:relative;float:right;width:40%;margin-right:30px;margin-top:-3px">
     <div class="govuk-form-group">
     </div>
@@ -31,33 +30,40 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 </div>
 
 
+
+
+
 {% endblock %}
 {% block content %}
-
-
-<div style="display:none">
-
-
-{{ vacNum | default("3") }}
-{{ data['firstNot']| default("notseen")}}
-{{ data['createVacancy']| default("false")}}
-{{ data['invites']| default("notsent")}}
-
-{{ data['temp-copy-input-autocomplete']|default("Policy adviser") }}
-{{ data['grade']|default("Senior executive officer") }}
-
-{% if data['createVacancy'] == "true" %}
-{% set vacNum = "4" %}
-{% endif %}
-
-
-
-</div>
-
-<div class="govuk-grid-row" >
+<div class="govuk-grid-row">
   <div style="width:100%;height:80px">
     <div>
       <div class="govuk-grid-column-full">
+
+
+<!-- {% set data['createVacancy'] = "false" %}
+{% set data['firstNot'] = "notseen" %}
+{% set data['grade'] = "Grade 7" %}
+{% set data['invites'] = "notsent" %}
+{% set data['candconf'] = "no" %} -->
+
+
+<!--
+{% if data['createVacancy'] == "true" %}
+{% set vacNum = "4" %}
+{% endif %} -->
+
+<!-- {% if data['grade'] | first =="S" %}
+{% set gradeS = "SEO" %}
+{% elif data['grade'] | first =="H" %}
+{% set gradeS = "HEO" %}
+{% elif data['grade'] | last =="7" %}
+{% set gradeS = "G7" %}
+{% elif data['grade'] | last =="6" %}
+{% set gradeS = "G6" %}
+{% endif %} -->
+
+
 
 <div class="govuk-!-padding-top-6" style="background:white;padding:30px;height:850px;;;border:1px solid lightgrey">
 
@@ -76,7 +82,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
         <strong style="color:#1d70b8">Current vacancies [{{vacNum | default("3")}}]</strong>
       </a>
 
-{% if data['firstNot'] !="seen" %}
+<!-- {% if data['firstNot'] !="seen" %}
       <div style="margin-top:-7px;margin-left:14px;float:right;height:15px; width:15px;border-radius:20px; text-align:center;font-size:19px;background:red;color:white;font-weight:bold">
       </div>
 
@@ -84,7 +90,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 <div style="margin-top:-7px;margin-left:14px;float:right;height:15px; width:15px;border-radius:20px; text-align:center;font-size:19px;background:red;color:white;font-weight:bold">
 </div>
 {% set vacNum = "4" %}
-{% endif %}
+{% endif %} -->
     </li>
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#past-month">
@@ -111,7 +117,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
 
             <div class="govuk-grid-row">
-              {% if data['invites'] == "sent" %}
+              <!-- {% if data['invites'] == "sent" %}
               {% else %}
 
               <div class="govuk-grid-column-one-third" style="background:#f3f2f1;padding:5px;width:30%;height:200px;border:1px dashed #1d70b8;margin-left:20px;margin-bottom:20px;;margin-top:60px">
@@ -124,7 +130,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
                   <a href="/csu71/sift/task-list"><p class="govuk-body-m" style="color:#1d70b8;margin-top:30px;text-align:center;font-size:32px"><strong id="timestop">Sift complete</strong><br>now, time to...</p>
                     <!-- <span class="govuk-body-m" style="width:120px;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px">Setup interviews</span> -->
                     <p class="govuk-body-m" style="width:90%;background:WHITE;color:#1d70b8;height:26px;font-weight:bold;padding:10px;text-align:center;font-size:20px;border:2px solid #1d70b8;border-radius:7px">Setup interviews</p><a/>
-                </div>{% endif %}
+                </div>{% endif %} -->
                 <div style="display:none" id="scoresAreIn">
 
                   <h3 style=";margin-top:10px;padding:5px" class="govuk-heading-s">Now</h3>
@@ -143,6 +149,9 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
               <div class="govuk-grid-column-two-thirds" style="background:WHITE;padding:5px;width:60%;height:200px;border:1px dashed #1d70b8;margin-left:20px;margin-bottom:20px;;margin-top:60px">
                 <h3 style="margin-top:10px;padding:5px;FONT-SIZE:32PX;" class="govuk-heading-m"><a href="/csu71/sift/task-list?leadConfirms=true" style="COLOR:#1d70b8">Track interview candidates</a></h3>
+
+
+
 
               <div style="border-bottom:1px dashed #1d70b8" class="govuk-!-margin-top-3">
                 <strong style=";padding:5px;font-size:22px;font-weight:normal">Mei Chan</strong>
@@ -180,7 +189,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
     </div>
 
     <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
-        <h2 class="govuk-heading-l">Current vacancies [{{vacNum | default("3")}}]</h2>
+        <h2 class="govuk-heading-l">Current vacancies [{{vacNum}}]</h2>
         <table class="govuk-table">
           <thead class="govuk-table__head">
 
@@ -191,7 +200,12 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
                 <th scope="col" class="govuk-table__header" style="background: #F4FAFF;color:#1d70b8;">Status⇕</th>
               </tr>
 
+
+
+
+
           </thead>
+
 <tbody class="govuk-table__body">
 
 {% if data['createVacancy'] == "true" %}
@@ -199,13 +213,15 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
   <tr id="d" class="govuk-table__row" style=";border-bottom:0.5px solid #1d70b8;">
     <td class="govuk-table__cell" style="border-top:2px solid #1d70b8;border-bottom:1px solid #1d70b8;background: #f3f2f1;;"><strong id="dated">tmp</strong></td>
     <td class="govuk-table__cell" style="border-top:2px solid #1d70b8;padding-left:10px;border-bottom:1px solid #1d70b8;background: #f3f2f1;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="/csu71/whichTaskList"><strong>{{ data['temp-copy-input-autocomplete']|default("Policy adviser") }} (1001891)</strong></a></td>
-    <td class="govuk-table__cell" style="border-top:2px solid #1d70b8;border-bottom:1px solid #1d70b8;width:30%;background: #f3f2f1;;"><strong>{{ data['grade']|default("Grade 7") }}</strong></td>
+    <td class="govuk-table__cell" style="border-top:2px solid #1d70b8;border-bottom:1px solid #1d70b8;width:30%;background: #f3f2f1;;"><strong>{{ gradeS }}</strong></td>
     <td class="govuk-table__cell" style="border-top:2px solid #1d70b8;border-bottom:1px solid #1d70b8;;background: #f3f2f1;"><strong style="font-size:16px;" class="govuk-tag govuk-tag--red">set-up campaign</strong></td>
 
 
     </tr>
 
 {% endif %}
+
+
 
             {% if data['firstNot'] !="seen" %}
           <tr id="inter" class="govuk-table__row" style=";border-bottom:0.5px solid #1d70b8;">
@@ -330,6 +346,11 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
         </table>
       </div>
     </div>
+
+
+
+
+
       </div>
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" style="height:725px;background:white" id="past-week">
 
@@ -344,11 +365,17 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
             </tr>
           </thead>
 
+
+
           <tbody class="govuk-table__body">
+
+
+
 
             <tr id="inter" class="govuk-table__row" style=";border-bottom:0.5px solid #1d70b8;">
               <td class="govuk-table__cell" style="background: white;;"><strong id="dated">tmp</strong></td>
 
+              <!-- <td class="govuk-table__cell" style=";padding-left:10px; background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="/csu71/sift/task-list"><strong>1001334</strong></a></td> -->
               <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="/csu71/sift/task-list?confirm=true"><strong>Policy adviser (1001334)</strong></a></td>
               <td class="govuk-table__cell" style="width:30%;background: white;;"><strong>SEO</strong></td>
 
@@ -372,6 +399,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
               <td class="govuk-table__cell" style="background: white;"><strong style="font-size:16px;" class="govuk-tag govuk-tag--grey">applications closed</strong></td>
             </tr>
+
 
         </tbody>
 
@@ -397,6 +425,8 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
             <a href="/csu71/sift/task-list"><p class="govuk-body-m" style="color:#1d70b8;margin-top:30px;text-align:center;font-size:32px"><strong id="timestop">Sift complete</strong><br>now, time to...</p>
               <p class="govuk-body-m" style="width:90%;background:WHITE;color:#1d70b8;height:26px;font-weight:bold;padding:10px;text-align:center;font-size:20px;border:2px solid #1d70b8;border-radius:7px">Setup interviews</p><a/>
 
+
+
           </div>
           <div style="display:none" id="scoresAreIn">
 
@@ -414,9 +444,15 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
         </div>
         <div class="govuk-grid-column-one-third" style="width:30%;height:200px;border:1px dashed #1d70b8;margin-left:20px;margin-bottom:20px;margin-top:60px">
+          <!-- <h3 style="margin-top:1px;padding:5px" class="govuk-heading-s">Up next</h3> -->
 
           <a href="/csu71/sift/setup-interview/1001334-panel-results-postcon"><p class="govuk-body-m" style="margin-top:34px;text-align:center;font-size:32px"><strong id="timestop">Sift complete</strong><br>now, time to...</p>
             <p class="govuk-body-m" style="width:90%;background:#1d70b8;color:white;height:26px;font-weight:bold;padding:10px;text-align:center;font-size:20px;border:2px solid #1d70b8;border-radius:7px">Confirm interview list</p><a/>
+
+
+
+
+
         </div>
         <div class="govuk-grid-column-one-third " style="width:30%;height:200px;border:1px dashed #1d70b8;margin-left:20px;margin-bottom:20px;margin-top:60px">
 
@@ -442,7 +478,11 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
               <strong style="padding:5px;font-size:20px;font-weight:normal">Firstname Surname</strong>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
             </div>
+
+
+
           </div>
+
         <div class="govuk-grid-column-one-third" style="width:30%;height:200px;border:1px dashed #1d70b8;margin-left:20px">
 
 
@@ -454,25 +494,29 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
+
         </tr>
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
+
         </tr>
       </tbody>
   </div>
+
 </div>
+
 
 </div>
 
 </div>
+
+
 <script>
   const todayDay = document.getElementById('timestop');
   const todaystamp = new Date();
   const tickTock = todaystamp.toLocaleDateString('en-uk', { weekday:"short", day:"numeric", month:"long" }) ;
   todayDay.innerHTML = tickTock;
-
-
 
 
   const dateField = document.getElementById('dated');
@@ -483,16 +527,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
     const stamp = new Date();
     const localStamp = stamp.toLocaleDateString('en-uk', { day:"numeric", month:"short", year:"numeric" }) ;
     dateField.innerHTML = localStamp;
-
   }
-
-
-
-
-
-
-
-
 
 </script>
 

@@ -19,8 +19,12 @@
 
   </div>
   {{ govukBackLink({
-          </div>
-          </div>
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
+      {% block content %}
           {{ govukInput({
           label: {
           text: "Additional feedback for candidates (optional)"
@@ -39,7 +43,6 @@
           name: "feedback"
           }) }}
 
-        <p><a href="task-list">Save and return to tasklist</a></p>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full answer-panel">
@@ -156,7 +159,6 @@
                     name: "feedback"
                     }) }}
 
-                  <p><a href="task-list">Save and return to tasklist</a></p>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full answer-panel">
@@ -274,7 +276,6 @@
                     name: "feedback"
                     }) }}
 
-                  <p><a href="task-list">Save and return to tasklist</a></p>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full answer-panel">
@@ -391,7 +392,6 @@
                     name: "feedback"
                     }) }}
 
-                  <p><a href="task-list">Save and return to tasklist</a></p>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full answer-panel">
@@ -509,11 +509,9 @@
                     name: "feedback"
                     }) }}
 
-                  <p><a href="task-list">Save and return to tasklist</a></p>
 
 {{ govukButton({
   text: "Score CV and personal statement",
   href: "cv-statement-v2"
 }) }}
-<p><a href="task-list">Save and return to tasklist</a></p>
 {% endblock %}

@@ -116,25 +116,44 @@
 }
 </style>
 
-<div  style="width:100%;background:#1d70b8;height:60px;border-bottom:0.5px solid #1d70b8;float:left">
+<div  style="width:100%;background:#1d70b8;height:5px;border-bottom:0.5px solid #1d70b8;float:left">
 
   <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
 </div> -->
 <!-- <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Advert set up</span> -->
 
-<div class="" style="position:relative;float:right;margin-right:20px;margin-top:15px;">
 
-
-
-
-  <!-- <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="#"><strong>Invite</strong></a></span> -->
-  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="#"><strong>Manage panel</strong></a></span>
+  <a style="color:white;margin-left:30px" href="javascript:window.history.back()" class="govuk-back-link govuk-back-link--inverse">Back</a>
 
 
 </div>
-<a style="color:white;margin-left:10px" href="#" class="govuk-back-link govuk-back-link--inverse">Back</a>
-</div>
+  <!-- <p style="font-size:24px;color:white;margin-left:10px" class="govuk-body-l govuk-!-margin-bottom-1">Vacancy <strong>1001334</strong></p>
+  <p style="font-size:24px;color:white;margin-left:10px" class="govuk-body-l govuk-!-margin-bottom-1">Grade <strong>{{ data['grade'] | default("SEO") }}</strong></p> -->
 
+
+
+
+<section class="dwp-key-details-bar govuk-!-padding-top-6" aria-label="Key details">
+<div class="dwp-key-details-bar__key-details">
+<dl class="dwp-key-details-bar__top-block">
+    <dt class="govuk-visually-hidden">Name:</dt>
+    <dd style="padding-bottom:20px;font-size:48px; font-weight:normal;font-family:'GDS Transport', arial, sans-serif" class="dwp-key-details-bar__primary">{{ data['title'] | default("Policy adviser") }}</dd>
+    <dt class="govuk-visually-hidden">Grade:</dt>
+    <dd style="font-size:28px; margin-top:20px;font-weight:normal;font-family:'GDS Transport', arial, sans-serif" class="dwp-key-details-bar__secondary">{{ data['grade'] | default("SEO") }}</dd>
+</dl>
+<dl class="dwp-key-details-bar__bottom-block">
+    <dt>Vacancy:</dt>
+    <dd>1001334</dd>
+    <dt>Applications closed:</dt>
+    <dd>09 Jul 2023</dd>
+    <dt>Completion:</dt>
+    <dd>50%</dd>
+</dl>
+</div>
+</section>
+<div  style="width:100%;background:#0B0C0C;height:65px;border-bottom:0.5px solid #1d70b8;">
+<span class="govuk-body-m" style="float:right;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="#"><strong>Manage panel</strong></a></span>
+</div>
 {% endblock %}
 
 
@@ -142,28 +161,26 @@
 {% block content %}
 
 
-<div class="govuk-grid-row govuk-!-margin-top-9">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-full" style="position:relative">
-    <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">Vacancy <strong>1001334</strong></p>
-
-    <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">Grade <strong>{{ data['grade'] | default("SEO") }}</strong></p>
 
 
-    <h1 style="border-bottom:1px solid #1d70b8;;padding-bottom:10px;" class="govuk-heading-xl">{{ data['title'] | default("Policy adviser") }}</h1>
 
+
+
+    <!-- <h1 style="border-bottom:1px solid #1d70b8;;padding-bottom:10px;" class="govuk-heading-xl">{{ data['title'] | default("Policy adviser") }}</h1> -->
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-three-quarters">
 
 
         <p>You can save and return at any point to complete an action.</p>
 
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Advert closed 23 September 2022.</h2>
         <p class="govuk-body govuk-!-margin-bottom-7">You have completed 4 of 15 sections.</p>
 
         {% set bannerCount = 0 %}
 
 
-        {% if data['hide'] != "banner" %}
+        {% if data['interview'] != "done"  %}
         <div id="bann" style="width:100%" class="govuk-notification-banner govuk-notification-banner--success" role="alert"
         aria-labelledby="govuk-notification-banner-title"
         data-module="govuk-notification-banner">
@@ -185,25 +202,15 @@
       </div>
       {% endif %}
 
-<div id="hide1">
-      <ol class="app-task-list">
-        <li>
 
-          <div style=";position:relative">
 
-            <h2 class="app-task-list__section">
-              <span style="" class="app-task-list__section-number">1. </span><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#" onclick="showHideDiv('section1','hide1')">Sift applications</a></h2>
-              <strong style="position:absolute;right:0px;top:12px;font-size:16px" class="govuk-tag govuk-tag" id="financial-evidence-status">completed</strong>
-            </div>
 
-          </LI>
-        </ol>
-</div>
-<div id="section1" style="display:none">
 <ol class="app-task-list">
+  <li>
+
 <li>
   <h2 class="app-task-list__section">
-    <span class="app-task-list__section-number">1. </span><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#" onclick="showHideDiv('hide1','section1')">Sift applications</a>
+    <span class="app-task-list__section-number">1. </span> Sift applications
   </h2>
   <ul class="app-task-list__items">
     <li class="app-task-list__item">
@@ -251,74 +258,7 @@
               </li>
             </ul>
           </li>
-</ol>
-</div>
-<div id="hide2">
-      <ol class="app-task-list">
-        <li>
-
-          <div style=";position:relative">
-
-            <h2 class="app-task-list__section">
-              <span style="" class="app-task-list__section-number">2. </span><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#" onclick="showHideDiv('section2','hide2')">View and submit my scores</a></h2>
-              <strong style="position:absolute;right:0px;top:12px;font-size:16px" class="govuk-tag govuk-tag" id="financial-evidence-status">completed</strong>
-            </div>
-
-          </LI>
-        </ol>
-</div>
-
-
-<div id="section2" style="display:none">
-<ol class="app-task-list">
-<li>
-  <h2 class="app-task-list__section">
-    <span class="app-task-list__section-number">2. </span><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#" onclick="showHideDiv('hide2','section2')">View and submit my scores</a>
-  </h2>
-  <ul class="app-task-list__items">
-    <li class="app-task-list__item">
-      <span class="app-task-list__task-name">
-        <a href="setup-interview/1001334-panel-results-alt" aria-describedby="read-declaration-status">
-          View panel results and recommendations
-        </a>
-      </span>
-      <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
-    </li>
-
-<li class="app-task-list__item">
-<span class="app-task-list__task-name">
-  <a href="setup-interview/consensus" aria-describedby="read-declaration-status">
-    Arrange a consensus meeting
-  </a>
-</span>
-<strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
-</li>
-<li class="app-task-list__item">
-<span class="app-task-list__task-name">
-  <a href="setup-interview/1001334-consensus-meeting" aria-describedby="read-declaration-status">
-    Review consensus meeting results
-  </a>
-</span>
-<strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
-</li>
-<li class="app-task-list__item">
-<span class="app-task-list__task-name">
-  <a href="setup-interview/1001334-panel-results-postcon?blue=moon" aria-describedby="company-information-status">
-    Confirm the sift results
-  </a>
-</span>
-
-{% if data['leadConfirms']|default("true") == "true" %}
-<strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
-{% else %}
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
-{% endif %}
-            </ul>
-          </li>
-</ol>
-</div>
-
-          <!-- <h2 class="app-task-list__section">
+          <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">2. </span> View and submit my scores
           </h2>
           <ul class="app-task-list__items">
@@ -362,9 +302,9 @@
         {% endif %}
       </li>
 
-</ul> -->
+</ul>
 
-<ol class="app-task-list govuk-!-margin-top-6">
+
 <li>
   <h2 id="intset" class="app-task-list__section">
     <span class="app-task-list__section-number">3. </span> Setup interview
@@ -542,7 +482,7 @@
 
 
     </ul>
-</ol>
+
 
 
 
@@ -574,13 +514,12 @@
     </LI>
   </ol>
 
-</div>
-</div>
-<script>
-  function showHideDiv(div1,div2) {
-    document.getElementById(div1).style.display = 'block';
-    document.getElementById(div2).style.display = 'none';
 
-  }
-</script>
+
+
+
+</ol>
+</div>
+</div>
+
 {% endblock %}

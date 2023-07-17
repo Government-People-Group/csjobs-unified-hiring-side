@@ -36,36 +36,56 @@ router.post("/location-handlerAdCopy", function (req, res) {
 })
 
 
-// router.post("/locations-handler", function (req, res) {
-// 	var remote = req.session.data['uk']
-// 	// if (req.session.data['edit2'] == "true") {
-// 		res.redirect('new-campaign-set-up/summary-section-2')
-// 	} else if (remote == "Remote") {
-// 		res.redirect('new-campaign-set-up/contract-details')
-// 	} else {
-// 		res.redirect('new-campaign-set-up/locations-2')
-// 	}
-// })
+router.get("/whichTaskList", function (req, res) {
 
+var templateStatus1 = req.session.data['chosen'];
+var templateStatus2 = req.session.data['template'];
 
+console.log(templateStatus1)
+console.log(templateStatus2)
 
+if (templateStatus1.length > 0 || templateStatus2.length > 0) {
+	res.redirect("/csu71/task-list-exp-co");
 
-
-
-router.post("/templateSelected", function (req, res) {
-
-var ret = req.session.data['path'];
-var template = req.session.data['org'];
-var tmp = req.session.data['templateSelected']
-
-console.log(tmp)
-
-if (ret != ""){
-	res.redirect("new-campaign-set-up/"+ret);
-
-} else {
-	res.redirect("/csu71/task-list-exp-co?template={{data['org']}}&banner=show");
 }
+
+// if (template == "co"){
+// 	res.redirect("/csu71/task-list-exp-co?template=co&banner=show");
+// } else if (template == "ddat"){
+// 	res.redirect("/csu71/task-list-exp-co?template=ddat&banner=show");
+// } else if (template == "ho"){
+// 	res.redirect("/csu71/task-list-exp-co?template=ho&banner=show");
+// } else if (template == "dfe"){
+// 	res.redirect("/csu71/task-list-exp-co?template=dfe&banner=show");
+// } else if (none == "none") {
+// 	res.redirect("/csu71/task-list-new-campaign?template=none&banner=noshow");
+// }
+
+})
+
+
+
+
+
+router.get("/templates-picker", function (req, res) {
+
+var none = req.session.data['pickTemp'];
+var template = req.session.data['chosen'];
+// var tmp = req.session.data['templateSelected']
+
+
+if (template == "co"){
+	res.redirect("/csu71/task-list-exp-co?template=co&banner=show");
+} else if (template == "ddat"){
+	res.redirect("/csu71/task-list-exp-co?template=ddat&banner=show");
+} else if (template == "ho"){
+	res.redirect("/csu71/task-list-exp-co?template=ho&banner=show");
+} else if (template == "dfe"){
+	res.redirect("/csu71/task-list-exp-co?template=dfe&banner=show");
+} else if (none == "none") {
+	res.redirect("/csu71/task-list-new-campaign?template=none&banner=noshow");
+}
+
 })
 
 
@@ -467,10 +487,10 @@ router.post("/csu71/approval-altergo", function (req, res) {
 
 
 router.post("/templates-altergo", function (req, res) {
-  var template = req.session.data['template']
+  var template = req.session.data['templatePicked']
 
   if (template == "commando") {
-    res.redirect('task-list-new-campaign')
+    res.redirect('task-list-new-campaign?template=none')
 
   } else if (template == "csofficial"){
     res.redirect('template-csofficial')

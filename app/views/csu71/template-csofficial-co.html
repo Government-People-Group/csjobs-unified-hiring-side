@@ -17,7 +17,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
-<form class="form" action="/csu71/templateSelected?templateSelected={{ data['org']}}" method="post">
+<form class="form" action="/csu71/templates-picker?chosen={{data['pickTemp']}}" method="post">
 <div class="govuk-grid-row govuk-!-margin-bottom-9">
   <div class="govuk-grid-column-full">
 
@@ -29,16 +29,16 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 <div class="govuk-!-margin-top-9" >
 
 
-
-    {% if data['org'] == "ddat" %}
+    {% if data['pickTemp'] == "ddat" %}
         <img src="/public/images/ddat.png" style="height:70px;;;padding:0px">
 
-    {% elif data['org'] == 'co' %}
+    {% elif data['pickTemp'] == 'co' %}
     <img src="/public/images/co-logo.png" style="height:70px;;;padding:0px">
 
-    {% elif data['org'] == 'ho' %}
+    {% elif data['pickTemp'] == 'ho' %}
     <img src="/public/images/ho-logo.png" style="height:70px;;;padding:0px">
-
+    {% elif data['pickTemp'] == 'dfe' %}
+    <img src="/public/images/dfe-logo.png" style="height:70px;;;padding:0px">
     {% endif %}
   <h1  style="border-bottom:1px solid #1d70b8;padding-bottom:20px" class="govuk-heading-xl govuk-!-margin-top-3">{{ data['temp-copy-input-autocomplete']}}, {{ data['grade']}} </h1>
 
@@ -86,13 +86,13 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 <div class="govuk-grid-column-one-third">
   <div style="height:750px;;padding:10px;background:#F4FAFF;border-left:1px solid #1d70b8;padding:30px;;">
 
-    {% if data['org'] == "ddat" %}
+    {% if data['pickTemp'] == "ddat" %}
         <p class="govuk-!-margin-top-0" style="background:#1d70b8;border:1px solid #1d70b8;;color:white;font-size:24px;padding:10px">What does #311 mean?</p>
 
-    {% elif data['org'] == 'co' %}
+    {% elif data['pickTemp'] == 'co' %}
     <p class="govuk-!-margin-top-0" style="background:#1d70b8;border:1px solid #1d70b8;;color:white;font-size:24px;padding:10px">What does #112 mean?</p>
 
-    {% elif data['org'] == 'ho' %}
+    {% elif data['pickTemp'] == 'ho' %}
     <p class="govuk-!-margin-top-0" style="background:#1d70b8;border:1px solid #1d70b8;;color:white;font-size:24px;padding:10px">What does #56 mean?</p>
 
     {% endif %}

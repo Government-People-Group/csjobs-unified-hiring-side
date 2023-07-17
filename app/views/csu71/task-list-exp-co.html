@@ -117,7 +117,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
 
 
-     <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">Vacancy <strong>102201</strong></p>
+     <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">Vacancy <strong>1001891</strong></p>
 
      <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">Grade <strong>{{ data['grade']}}</strong></p>
 
@@ -142,11 +142,11 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
       </div>
       <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
-          {% if data['org'] == "ddat" %}
+          {% if data['template'] == "ddat" %}
             Your DDaT job template has been activated lorem ipsum.
-          {% elif data['org'] == "co" %}
+          {% elif data['template'] == "co" %}
             Your Cabinet Office job template has been activated lorem ipsum.
-          {% elif data['org'] == "ho" %}
+          {% elif data['template'] == "ho" %}
             Your Home Office job template has been activated lorem ipsum.
           {% endif %}
         </h3>

@@ -1,0 +1,181 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Finalise and submit</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+<form class="form" action="include-people-others" method="post">
+
+    <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Add people to the campaign</H1>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter" style="">
+
+
+        <ul class="govuk-!-margin-top-6 govuk-list govuk-list--bullet-">
+            <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="contact-details"><strong>Main point of<BR>contact</a></p></strong></li>
+
+          <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="include-people"><strong>Panel members</a></p></strong></li>
+
+          <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="include-people-2"><strong>Other people</a></p></strong></li>
+        </ul>
+      </div>
+      <div class="govuk-!-margin-top-6 govuk-grid-column-three-quarters">
+
+        <h2 class="govuk-heading-l">Panel members</h2>
+
+
+
+        {% if data['elseChair'].length > 0 %}
+        <div  class="govuk-form-group" style="width:65%">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--s" for="panel1">
+              Panel chair
+            </label>
+          </h2>
+          <input tabindex="3" class="govuk-input" id="panel1" name="panel1" type="text" value="{{ data['elseChair-email']}}">
+        </div>
+        {% elif data['spoc'] == "Me" %}
+        <div  class="govuk-form-group" style="width:65%">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--s" for="panel2">
+              Panel chair
+            </label>
+          </h2>
+          <input tabindex="3" class="govuk-input" id="panel2" name="panel2" type="text" value="Me">
+        </div>
+        {% elif data['spoc'] == "me-and-another" %}
+
+
+        <div  class="govuk-form-group" style="width:65%">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--s" for="panel4">
+              Joint-panel chair
+            </label>
+          </h2>
+          <input tabindex="3" class="govuk-input" id="panel4" name="panel4" type="text" value="Me">
+        </div>
+        <div  class="govuk-form-group" style="width:65%">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--s" for="panel3">
+              Joint-panel chair
+            </label>
+          </h2>
+          <input tabindex="3" class="govuk-input" id="panel3" name="panel3" type="text" value="{{data['another-email']}}">
+        </div>
+        {% endif %}
+
+
+        <h3 style="border-top:1px solid #1d70b8;padding-top:20px;width:65%" class="govuk-heading-m">What are the email addresses of the other panelists?</h3>
+
+        <div  class="govuk-form-group" style="width:65%; ">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--s" for="panel5">
+              Panel member 2
+            </label>
+          </h2>
+          <input tabindex="3" class="govuk-input" id="panel5" name="panel5" type="text">
+        </div>
+
+        <div  class="govuk-form-group" style="width:65%">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--s" for="panel6">
+              Panel member 3
+            </label>
+          </h2>
+          <input tabindex="3" class="govuk-input" id="panel6" name="panel6" type="text">
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<button class="govuk-button govuk-!-margin-top-6"  data-module="govuk-button">Continue</button>
+</div>
+</div>
+</form>
+<script>
+
+
+//   const chairD = document.getElementById("elseCh").value;
+// console.log(chairD)
+//
+//   const meChair = document.getElementById('spocChair');
+//   const otherChair = document.getElementById('spocNotChair');
+//
+//   if (chairD.length > 0) {
+//     showDiv("another");
+//   }
+//
+//
+//   otherChair.addEventListener('change', (event) => {
+//     if (otherChair.checked) {
+//       showDiv("another");
+//     }
+//
+//   });
+//
+//   meChair.addEventListener('change', (event) => {
+//     if (meChair.checked) {
+//       hideDiv("another");
+//     }
+//
+//   });
+//
+//   function showDiv(div1) {
+//     document.getElementById(div1).style.display = 'block';
+//
+//   }
+//
+//   function hideDiv(div1) {
+//     document.getElementById(div1).style.display = 'none';
+//
+//   }
+
+
+
+
+
+</script>
+{% endblock %}
