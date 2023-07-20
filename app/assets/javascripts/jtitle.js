@@ -8,7 +8,7 @@ var j-title = [
   "Business Support Officer",
   "Change and release manager",
   "Chief Technology Officer",
-  "Command and control centre manager",
+  "Command and control centre mgr",
   "Content designer",
   "Content strategist",
   "Data analyst",

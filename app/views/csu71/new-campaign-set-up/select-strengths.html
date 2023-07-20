@@ -30,23 +30,17 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
   {% block content %}
 
-
   <style>
-
-
-
-      .experiment {
-        background:#F4FAFF;
-        border-bottom:1px solid #1d70b8;
-        margin-top:5px;
-        margin-bottom:-20px;
-        padding-top:20px;
-        padding-left:20px;
-        padding-bottom:15px;
-        font-weight:bold;
-
-      }
-
+    .experiment {
+      background:#F4FAFF;
+      border-bottom:1px solid #1d70b8;
+      margin-top:5px;
+      margin-bottom:-20px;
+      padding-top:20px;
+      padding-left:20px;
+      padding-bottom:15px;
+      font-weight:bold;
+    }
 
     p, div {
       font-family: "GDS Transport", arial, sans-serif;
@@ -54,37 +48,33 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
       margin: 0.8
     }
     p, li {
-      font-size: 18px; line-height: 1.2;
+      font-size: 22px; line-height: 1.2;
       vertical-align: text-top;
-
     }
 
 
     h2 {
       font-size: 30px; line-height: 0.5;
       vertical-align: text-top;
-
     }
-
-    hint {
-
-
-      font-size: 18px;
-      font-weight:normal;
-      line-height: 1.3;
-      vertical-align: text-top;
-    }
-
 
     h3 {
-      font-size: 20px;
+      font-size: 24px;
       line-height: 1.5;
-
     }
 
     label {
-      font-size: 18px;
+      font-size: 22px;
+      font-weight:normal;
       line-height: 1;
+      vertical-align: text-top;
+      padding-top:40px;
+    }
+
+    hint {
+      font-size: 18px;
+      font-weight:normal;
+      line-height: 1.2;
       vertical-align: text-top;
     }
 
@@ -120,38 +110,28 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
     }
   </style>
 
-
   <form class="form" action="/csu71/check-next-stepV5" method="post">
+    <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8;" class="govuk-heading-xl govuk-!-margin-top-1 govuk-!-margin-bottom-6">Strengths</H1>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter">
 
+        {% for items in data['selected'] %}
+        <ul class="govuk-!-margin-top-4 govuk-list govuk-list--bullet-">
+          {% if items == "strengths" %}
+          <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="select-{{items }}"><strong>{{ items | capitalize }}</a></p></strong></li>
+          {% else %}
+          <li><strong><p style ="border-left:2px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="select-{{items }}"><strong>{{ items | capitalize }}</a></p></strong></li>
+        </ul>
+        {% endif %}
+        {% endfor %}
 
-  <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-1 govuk-!-margin-bottom-3">Strengths</H1>
-
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-quarter" style="width:20%">
-
-          {% for items in data['selected'] %}
-          <ul class="govuk-!-margin-top-6 govuk-list govuk-list--bullet- ">
-
-            {% if items == "strengths" %}
-            <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="select-{{items | lower}}"><strong>{{ items | capitalize }}</a></p></strong></li>
-            {% else %}
-            <li><strong><p style ="border-left:2px solid white;padding-left:20px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="select-{{items | lower}}"><strong>{{ items | capitalize }}</a></p></strong></li>
-          </ul>
-
-
-          {% endif %}
-          {% endfor %}
-        </div>
-        <div class="govuk-grid-column-three-quarters">
-
-
-
-
+      </div>
+      <div class="govuk-grid-column-three-quarters">
 
 
 
           <div class="govuk-!-margin-left-3 govuk-!-margin-top-9" id="recom" style="display:none;background:#F4FAFF;border-left:5px solid #1d70b8;padding:10px">
-            <!-- <p class="govuk-body-m "><strong>Would you like to the most relevant strengths mapped to your selected behaviours? </strong></p> -->
+            <p class="govuk-body-m "><strong>Would you like to the most relevant strengths mapped to your selected behaviours? </strong></p>
 
             <div >
               {{ govukRadios({
@@ -191,16 +171,16 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
             <p class="govuk-body-m" style="font-size:20px;line-height:1.6"><strong>We recommend selecting 4-6 strengths in total.</strong><BR>They can be assessed at sift with the Work Strengths online test,<BR>and at interview with quick-response interview questions.</p>
           </div> -->
 
-          <div id="conditional" style="none;padding-top:10px;padding-bottom:10px" class="govuk-!-margin-top-3 govuk-!-margin-bottom-1">
+          <div id="conditional" style=";padding-top:10px;padding-bottom:10px" class="govuk-!-margin-top-3">
 
-            <div style="border-bottom:1px solid #1d70b8" class="govuk-!-margin-top-1" id="behave"></div>
-
-
-          </div>
+            <div style="border-bottom:1px solid #1d70b8" class="govuk-!-margin-bottom-3 govuk-!-margin-top-1" id="behave"></div>
 
 
 
-          <div style="position:relative;width:45%;"" class="govuk-form-group govuk-input--width-30 govuk-!-margin-top-3 govuk-!-margin-left-3">
+
+
+
+          <div style="position:relative;;" class="govuk-form-group govuk-input--width-30 govuk-!-margin-top-3 govuk-!-margin-left-3">
             <label for="autocomplete-default" class="govuk-label--s">Search the strengths dictionary</label>
             <div id="strengthsList" class="autocomplete-wrapper"></div>
 
@@ -214,7 +194,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
           <p class="govuk-!-margin-left-3 govuk-!-margin-top-3" id="item"></p>
           <a style="float:right;font-size:18px" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state govuk-!-margin-top-0" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/717274/CS_Strengths_2018.pdf"><strong>Strengths Dictionary PDF</strong></a>
-
+  </div>
           <script src="/public/javascripts/temp-copy.js"></script>
           <script src="/public/javascripts/temp.js"></script>
 
@@ -230,7 +210,6 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           <button class="govuk-button govuk-!-margin-top-6" onclick="checkCheckBoxes()" data-module="govuk-button">Continue</button>
 
         </form>
-        {% include '/csu71/includes/footerarea.html' %}
 
         <script>
 
@@ -317,7 +296,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
             for (var log=0; log < beLong; log++) {
               var outputB = document.getElementById('behave');
               var contentB = document.createElement("p");
-              contentB.style.cssText = "font-size:22px;border-bottom:1px solid #1d70b8;padding-bottom:10px";
+              contentB.style.cssText = "font-size:24px;border-bottom:1px solid #1d70b8;padding-bottom:10px";
               contentB.innerHTML = "For the behaviour <strong>"+behaviours[log]+"</strong>";
               outputB.appendChild(contentB)
 
@@ -372,7 +351,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
                     }
 
 
-                    hint.style.cssText = "display: block;padding-bottom: 35px;";
+                    hint.style.cssText = "font-size:20px;display: block;padding-bottom: 35px;";
                     hint.value = hinter[i];
                     checkBox.setAttribute("id","strengths"+behaviours[log]+i);
                     checkBox.setAttribute("name","strengths");

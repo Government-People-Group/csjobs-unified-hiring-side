@@ -15,22 +15,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
   }) }}
 
 
-  <!-- {% if data['org'] == "ddat" %}
-    <div style="position:absolute;right:40px;top:90px;;">
-    <a href="/csu71/template-csofficial"><img src="/public/images/ddat.png" style=";width:250px"></a>
-    <p style="position:absolute;right:8px" class="govuk-body-s"><a href="/csu71/template-csofficial">Change template</a></p>
-    </div>
-  {% elif data['org'] == "co" %}
-    <div style="position:absolute;right:20px;top:0px;">
-   <a href="/csu71/template-csofficial"> <img src="/public/images/co-logo.png" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
-    <p class="govuk-body-xs">Template <a href="/csu71/template-csofficial">Change</a></p>
-    </div>
-  {% elif data['org'] == "ho" %}
-    <div style="position:absolute;right:20px;top:0px;">
-    <a href="/csu71/template-csofficial"><img src="/public/images/ho-logo.png" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
-    <p class="govuk-body-xs">Template <a href="/csu71/template-csofficial">Change</a></p>
-    </div>
-    {% endif %} -->
+
 
 
   {% endblock %}
@@ -80,53 +65,20 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
    <div class="govuk-grid-column-full" style="position:relative">
 
-     <!-- {% if data['org'] == "ddat" %}
-     <div id ="ddattag"  style="position:absolute;right:20px;top:0px;;">
-       <a href="/csu71/template-csofficial?return=select-skills"><img src="/public/images/ddat1.png" alt="Template by Digital, Data and Technology Profession" style="background:#F4FAFF;border:2px solid #1d70b8;padding:10px;border-radius:5px;width:80px"></a>
 
-     </div>
-     {% elif data['org'] == "co" %}
-     <div id ="cotag"  style="position:absolute;right:10px;top:60px;;">
-       <a  href="/csu71/template-csofficial?return=select-skills"> <img src="/public/images/co-logo.png" alt="Template by Cabinet Office" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
-     </div>
-     {% elif data['org'] == "ho" %}
-     <div id ="hotag"  style="position:absolute;right:10px;top:60px;;">
-       <a href="/csu71/template-csofficial?return=select-skills"><img src="/public/images/ho-logo.png" alt="Template by Home Office" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
-     </div>
-     {% endif %} -->
-
-
-
-
-     <!-- {% if data['org'] == "ddat" %}
-       <div style="position:absolute;right:20px;top:0px;;">
-       <a href="/csu71/template-csofficial"><img src="/public/images/ddat1.png" style="background:#F4FAFF;border:2px solid #1d70b8;padding:10px;border-radius:5px;width:80px"></a>
-       <p class="govuk-body-xs">Template <a href="/csu71/template-csofficial">Change</a></p>
-       </div>
-     {% elif data['org'] == "co" %}
-       <div style="position:absolute;right:20px;top:0px;">
-      <a href="/csu71/template-csofficial"> <img src="/public/images/co-logo.png" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
-       <p class="govuk-body-xs">Template <a href="/csu71/template-csofficial">Change</a></p>
-       </div>
-     {% elif data['org'] == "ho" %}
-       <div style="position:absolute;right:20px;top:0px;">
-       <a href="/csu71/template-csofficial"><img src="/public/images/ho-logo.png" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
-       <p class="govuk-body-xs">Template <a href="/csu71/template-csofficial">Change</a></p>
-       </div>
-       {% endif %} -->
 
 
 
      <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">Vacancy <strong>1001891</strong></p>
 
-     <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">Grade <strong>{{ data['grade']}}</strong></p>
+     <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">Grade <strong>{{ data['grade']|default("SEO")}}</strong></p>
 
 
 
 </div></div>
 
 
-          <h1 style="border-bottom:1px solid #1d70b8;;padding-bottom:10px;" class="govuk-heading-xl">{{ data['temp-copy-input-autocomplete']}}</h1>
+          <h1 style="border-bottom:1px solid #1d70b8;;padding-bottom:10px;" class="govuk-heading-xl">{{ data['temp-copy-input-autocomplete']|default("Policy Adviser")}}</h1>
           <div class="govuk-grid-row">
              <div class="govuk-grid-column-three-quarters">
 
@@ -189,10 +141,11 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
           </li>
 
 
+
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="/csu71/new-campaign-set-up/approval" aria-describedby="read-declaration-status">
-                Approval
+              <a href="/csu71/new-campaign-set-up/reserved-status-role" aria-describedby="read-declaration-status">
+                Reserved status
               </a>
             </span>
 
@@ -210,8 +163,8 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="/csu71/new-campaign-set-up/reserved-status-role" aria-describedby="read-declaration-status">
-                Reserved status
+              <a href="/csu71/new-campaign-set-up/approval" aria-describedby="read-declaration-status">
+                Approval
               </a>
             </span>
 
@@ -593,46 +546,19 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                     </div>
 
 
-                    {% include '/csu71/includes/footerarea.html' %}
-
-
-                    <!-- <div class="govuk-grid-row govuk-!-margin-top-9">
-                    <div class="govuk-grid-column-full">
-
-                    <div style="position:relative;">
-                    {% if data['org'] == "ddat" %}
-                    <div style="height:80px;width:95px;border-radius:5px;padding:8px;background:black;position:absolute;right:20px;bottom:0px;;">
-                    <a href="/csu71/template-csofficial"><img src="/public/images/ddatfu.png" style=";width:90px"></a>
-                    <p style="position:absolute;right:10px;font-size:12px" class="govuk-body-xs"><a style="color:white; font-weight:bold" href="/csu71/template-csofficial">Change template</a></p>
-                    </div>
-                    {% elif data['org'] == "co" %}
-                    <div style="height:60px;width:95px;border-radius:5px;padding:8px;background:#1d70b8;position:absolute;right:20px;bottom:-10px;;">
-                    <a href="/csu71/template-csofficial"> <img src="/public/images/cab.png" style=";width:100px"</a>
-                    <p style="position:absolute;right:10px;font-size:12px" class="govuk-body-xs"><a style="color:white; font-weight:bold" href="/csu71/template-csofficial">Change template</a></p>
-                    </div>
-                    {% elif data['org'] == "ho" %}
-                    <div style="border:1px solid black;height:60px;width:95px;border-radius:5px;padding:8px;background:white;position:absolute;right:20px;bottom:-10px;;">
-                    <a href="/csu71/template-csofficial"><img src="/public/images/ho-logo.png" style="width:80px"></a>
-                    <p style="position:absolute;right:10px;font-size:12px" class="govuk-body-xs"><a style="color:black; font-weight:bold" href="/csu71/template-csofficial">Change template</a></p>
-                    </div>
-                    {% endif %}
-                    </div>
+                    <input type="hidden" name="othersR" value="{{othersArray}}">
+                    <input type="hidden" name="othersE" value="{{othersArray2}}">
 
 
 
 
-
-                    </div>
-                    </div> -->
 
                     <script>
 
-
-
                       const dateField = document.getElementById('lastEdit');
                       var stamp = new Date();
-                      var time = stamp.toLocaleTimeString('en-us', { hours:"numeric", minutes:"short", seconds:"numeric" })
-                      var localStamp = stamp.toLocaleDateString('en-us', { day:"numeric", month:"short", year:"numeric" }) ;
+                      var time = stamp.toLocaleTimeString('en-us', { hours:"numeric", minutes:"short", seconds:"numeric" });
+                      var localStamp = stamp.toLocaleDateString('en-us', { day:"numeric", month:"short", year:"numeric" });
                       dateField.innerHTML = time+", "+localStamp;
 
 

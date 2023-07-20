@@ -32,7 +32,6 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 {% block content %}
 
 
-<form class="form" action="#" method="post">
 
     <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Add people to the campaign</H1>
 
@@ -46,7 +45,8 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
           <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="include-people"><strong>Panel members</a></p></strong></li>
 
-          <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="include-people-others"><strong>Other people</a></p></strong></li>
+          <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="include-people-others"><strong>Other people</a></p></strong></li>
+          <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="include-people-review"><strong>Review people</a></p></strong></li>
         </ul>
       </div>
       <div class="govuk-!-margin-top-6 govuk-grid-column-three-quarters">
@@ -54,12 +54,293 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
         <h2 class="govuk-heading-l">Review and actions</h2>
 
 
+
+
+
+
+<h3 class="govuk-heading-m">Contact</h3>
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Main point of contact"
+              },
+              value: {
+                html: "jane.smith@cabinetoffice.gov.uk"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Question 1"
+                  },
+                  {
+                    href: "#",
+                    text: "Delete",
+                    visuallyHiddenText: "Question 3"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Main point of contact"
+              },
+              value: {
+                html: "s.cheeseman@cabinetoffice.gov.uk"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Question 3"
+                  },
+                  {
+                    href: "#",
+                    text: "Delete",
+                    visuallyHiddenText: "Question 3"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+
+        <h3 class="govuk-heading-m">Panel</h3>
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Joint panel chair"
+              },
+              value: {
+                  html: "jane.smith@cabinetoffice.gov.uk"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Question 1"
+                  },
+                  {
+                    href: "#",
+                    text: "Delete",
+                    visuallyHiddenText: "Question 3"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Joint panel chair"
+              },
+              value: {
+                  html: "s.cheeseman@cabinetoffice.gov.uk"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Question 2"
+                  },
+                  {
+                    href: "#",
+                    text: "Delete",
+                    visuallyHiddenText: "Question 3"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Panel member"
+              },
+              value: {
+                  html: "shuab.ali@dhsc.gov.uk"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Question 2"
+                  },
+                  {
+                    href: "#",
+                    text: "Delete",
+                    visuallyHiddenText: "Question 3"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Panel member"
+              },
+              value: {
+                html: "s.cohen@cabinetoffice.gov.uk"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Question 3"
+                  },
+                  {
+                    href: "#",
+                    text: "Delete",
+                    visuallyHiddenText: "Question 3"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+        <h3 class="govuk-heading-m">Other people</h3>
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Content contributor"
+              },
+              value: {
+                text: "terry.stamp@cabinetoffice.gov.uk"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Question 1"
+                  },
+                  {
+                    href: "#",
+                    text: "Delete",
+                    visuallyHiddenText: "Question 3"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Content contributor"
+              },
+              value: {
+                text: "deanna.lancelot@defra.gov.uk"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Question 2"
+                  },
+                  {
+                    href: "#",
+                    text: "Delete",
+                    visuallyHiddenText: "Question 3"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Reviewer"
+              },
+              value: {
+                text: "georgina.washandgo@ons.gov.uk"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Question 2"
+                  },
+                  {
+                    href: "#",
+                    text: "Delete",
+                    visuallyHiddenText: "Question 3"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Reviewer"
+              },
+              value: {
+                text: "peter.pandora@cabinetoffice.gov.uk"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "Question 2"
+                  },
+                  {
+                    href: "#",
+                    text: "Delete",
+                    visuallyHiddenText: "Question 3"
+                  }
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Approver"
+              },
+              value: {
+                text: "manjit.sharma@cabinetoffice.gov.uk"
+              },
+              actions: {
+                items: [
+
+                ]
+              }
+            }
+            ,
+            {
+              key: {
+                text: "Approver"
+              },
+              value: {
+                text: "tina.griffin@cabinetoffice.gov.uk"
+              },
+              actions: {
+                items: [
+
+                ]
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          href:"/csu71/task-list-exp-co",
+          text: "Continue"
+        }) }}
+
+</div>
 </div>
 
-<button class="govuk-button govuk-!-margin-top-6"  data-module="govuk-button">Continue</button>
-
-
-</div>
 
 
 
@@ -69,46 +350,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
 
-
-
-</form>
 <script>
-
-
-//   const chairD = document.getElementById("elseCh").value;
-// console.log(chairD)
-//
-//   const meChair = document.getElementById('spocChair');
-//   const otherChair = document.getElementById('spocNotChair');
-//
-//   if (chairD.length > 0) {
-//     showDiv("another");
-//   }
-//
-//
-//   otherChair.addEventListener('change', (event) => {
-//     if (otherChair.checked) {
-//       showDiv("another");
-//     }
-//
-//   });
-//
-//   meChair.addEventListener('change', (event) => {
-//     if (meChair.checked) {
-//       hideDiv("another");
-//     }
-//
-//   });
-//
-//   function showDiv(div1) {
-//     document.getElementById(div1).style.display = 'block';
-//
-//   }
-//
-//   function hideDiv(div1) {
-//     document.getElementById(div1).style.display = 'none';
-//
-//   }
 
 
 

@@ -133,10 +133,10 @@
   }
 
 </style>
-
+{{ data['org']}}
 <form class="form" action="select-criteria-stage" method="post">
 
-<input id="templateName" type="hidden" name="templateName" value="{{ data['org']}}">
+<input id="templateName" type="hidden" name="templateName" value="ddat">
 
   <!-- <H2 class="govuk-heading-l govuk-!-margin-top-3 govuk-!-margin-bottom-3">What will you assess within each element at sift and interview?</h2> -->
   <!-- <p class="govuk-body-l govuk-!-margin-bottom-6 govuk-!-margin-top-3">You have selected which elements are important to assess for this job role. You should now select what you will assess within each element at sift and interview.</p> -->
@@ -455,7 +455,7 @@
     const myObjectName = document.querySelector('#templateName');
 
   if (myObjectName.value == "ddat"){
-  // console.log(myObjectName.value)
+  console.log(myObjectName.value)
     // console.log(object)
   document.getElementById("skillsFrame").style.display = 'none';
   renderDDaTSkills();

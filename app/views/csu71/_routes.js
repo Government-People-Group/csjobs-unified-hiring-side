@@ -73,18 +73,20 @@ var none = req.session.data['pickTemp'];
 var template = req.session.data['chosen'];
 // var tmp = req.session.data['templateSelected']
 
+console.log(template)
 
 if (template == "co"){
 	res.redirect("/csu71/task-list-exp-co?template=co&banner=show");
 } else if (template == "ddat"){
 	res.redirect("/csu71/task-list-exp-co?template=ddat&banner=show");
-} else if (template == "ho"){
-	res.redirect("/csu71/task-list-exp-co?template=ho&banner=show");
-} else if (template == "dfe"){
-	res.redirect("/csu71/task-list-exp-co?template=dfe&banner=show");
-} else if (none == "none") {
-	res.redirect("/csu71/task-list-new-campaign?template=none&banner=noshow");
 }
+ // else if (template == "ho"){
+// 	res.redirect("/csu71/task-list-exp-co?template=ho&banner=show");
+// } else if (template == "dfe"){
+// 	res.redirect("/csu71/task-list-exp-co?template=dfe&banner=show");
+// } else if (none == "none") {
+// 	res.redirect("/csu71/task-list-new-campaign?template=none&banner=noshow");
+// }
 
 })
 
@@ -103,7 +105,7 @@ console.log(list)
 			res.redirect("new-campaign-set-up/select-criteria-stage");
 		} else if (src == list[a]){
 			a=a+1;
-			res.redirect("new-campaign-set-up/select-"+list[a]+"?template={{data['template']}}");
+			res.redirect("new-campaign-set-up/select-"+list[a]);
 			break;
 		}
 	}
@@ -363,13 +365,7 @@ router.post("/behaviours-handler", function (req, res) {
 
 
 
-router.post("/sift-or-interview-handler", function (req, res) {
-	if (req.session.data['edit19'] == "true") {
-		res.redirect('new-campaign-set-up/summary-section-4')
-	} else {
-		res.redirect('new-campaign-set-up/strengths-change')
-	}
-})
+
 
 router.post("/strengths-change-handler", function (req, res) {
 	if (req.session.data['edit20'] == "true") {

@@ -49,18 +49,19 @@
 {% endif %}
 
 
+
 {% set locs = "Bristol, Glasgow, York" %}
 
 
 {% set salary = "£31,550" %}
 <div style="background:#F7F7F7;padding:20px;border-bottom:1px solid #1D70B8">
-<h2 class="govuk-heading-m">{{ data['dept']}}</h2>
+<h2 class="govuk-heading-m">{{ data['dept']|default("Cabinet Office")}}</h2>
 
 
 
   <img src="/public/images/co-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
 
-      <h1 class="govuk-heading-xl">Product manager</h1>
+      <h1 class="govuk-heading-xl">{{data['title']|default("Policy adviser")}}</h1>
       <span class="govuk-caption-l">Cabinet Office</span>
 
 
@@ -106,7 +107,7 @@
                   text: "Grade"
                 },
                 value: {
-                  text: "Grade 7"
+                  text: data['grade']|default("G7")
                 }
               }
               ]

@@ -34,19 +34,21 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 <form class="form" action="include-people-others" method="post">
 
-    <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Add people to the campaign</H1>
+  <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Add people to the campaign</H1>
 
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-quarter" style="">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter" style="">
 
 
-        <ul class="govuk-!-margin-top-6 govuk-list govuk-list--bullet-">
-            <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="contact-details"><strong>Main point of<BR>contact</a></p></strong></li>
+      <ul class="govuk-!-margin-top-6 govuk-list govuk-list--bullet-">
+        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="contact-details"><strong>Main point of<BR>contact</a></p></strong></li>
 
           <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="include-people"><strong>Panel members</a></p></strong></li>
 
-          <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="include-people-2"><strong>Other people</a></p></strong></li>
+          <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="include-people-others"><strong>Other people</a></p></strong></li>
+          <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="include-people-review"><strong>Review people</a></p></strong></li>
+
         </ul>
       </div>
       <div class="govuk-!-margin-top-6 govuk-grid-column-three-quarters">
@@ -58,11 +60,11 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
         {% if data['elseChair'].length > 0 %}
         <div  class="govuk-form-group" style="width:65%">
           <h2 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--s" for="panel1">
+            <label class="govuk-label govuk-label--s" for="elseChair-email">
               Panel chair
             </label>
           </h2>
-          <input tabindex="3" class="govuk-input" id="panel1" name="panel1" type="text" value="{{ data['elseChair-email']}}">
+          <input tabindex="3" class="govuk-input" id="elseChair-email" name="elseChair-email" type="text" value="{{ data['elseChair-email']}}">
         </div>
         {% elif data['spoc'] == "Me" %}
         <div  class="govuk-form-group" style="width:65%">
@@ -73,9 +75,16 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           </h2>
           <input tabindex="3" class="govuk-input" id="panel2" name="panel2" type="text" value="Me">
         </div>
+        {% elif data['panelChair'].length > 0 %}
+        <div  class="govuk-form-group" style="width:65%">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--s" for="panelChair">
+              Panel chair
+            </label>
+          </h2>
+          <input tabindex="3" class="govuk-input" id="panelChair" name="panelChair" type="text" value="{{data['panelChair']}}">
+        </div>
         {% elif data['spoc'] == "me-and-another" %}
-
-
         <div  class="govuk-form-group" style="width:65%">
           <h2 class="govuk-label-wrapper">
             <label class="govuk-label govuk-label--s" for="panel4">
@@ -91,32 +100,79 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
             </label>
           </h2>
           <input tabindex="3" class="govuk-input" id="panel3" name="panel3" type="text" value="{{data['another-email']}}">
+
         </div>
         {% endif %}
 
+        <div id="addel1" class="govuk-grid-row" style="display:block;width:69%">
+          <div class="govuk-grid-column-one-half" >
+            <span><a href="#" id="ctaf" style=";color:#1d70b8" onclick="showDiv('ch2');hideDiv('ctaf');showDiv('addel1')">Add another panel chair</a></span>
 
-        <h3 style="border-top:1px solid #1d70b8;padding-top:20px;width:65%" class="govuk-heading-m">Add the rest of the panel</h3>
+          </div>
+          <div class="govuk-grid-column-one-half">
+
+
+          </div>
+          </div>
+
+
+          <div id="ch2" class="govuk-form-group" style="display:none;width:65%; ">
+            <h2 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--s" for="ch2">
+                What's the panel chair's email?
+              </label>
+            </h2>
+            <input tabindex="3" class="govuk-input" id="ch2" name="ch2" value="{{ data['ch2']}}" type="text">
+
+
+        <div id="addel1" class="govuk-!-margin-top-6 govuk-grid-row" style=";">
+          <div class="govuk-grid-column-one-half" >
+            <span><a href="#" id="ctag" style=";;color:#1d70b8" onclick="showDiv('secPanCh');hideDiv('ctaf')">Add another panel chair</a></span>
+
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <span><a href="#" id="cta3" style=";float:right;;color:#1d70b8;margin-bottom:20px" onclick=";hideDiv('ch2');showDiv('ctaf')">Delete</a></span>
+
+
+          </div>
+          </div>
+        </div>
+
+
+
+        <h3 style=";;padding-top:20px;width:65%" class="govuk-heading-m govuk-!-margin-top-6">Add the rest of the panel</h3>
+
 
         <p class="govuk-body-m">It's recommended that a panel lorem ipsum dolor sit amet thingy bob.</p>
 
-        <div  class="govuk-form-group" style="width:65%; ">
+        <div id="pl1" style=";position:relative;width:60%" class="govuk-!-margin-top-6">
           <h2 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--s" for="panel5">
-              What's the panel member's email?
+            <label class="govuk-label govuk-label--s" for="plist-1">
+              What's the panelist's email?
             </label>
           </h2>
-          <input tabindex="3" class="govuk-input" id="panel5" name="panel5" type="text">
+          <input  class="govuk-input govuk-input--width-20" id="plist-1" name="plist-1" type="text" value="{{data['plist-1']}}">
+          <a href="#" id="pl1acta" style="display:none;position:absolute;left:0px;bottom:-40px;color:#1d70b8" onclick="showDiv('pl2bcta');showDiv('pl2acta');showDiv('pl2');hideDiv('pl1acta')">Add another panelist</a>
         </div>
-
-        <p id="cta" class="govuk-body-m"><a style="color:#1d70b8" onclick="showDiv('thirdP');hideDiv('cta')">Add the next panel member</a></p>
-
-        <div  id="thirdP" class="govuk-form-group" style="display:none;width:65%">
+        <div id="pl2" style=";position:relative;width:60%" class="govuk-!-margin-top-6">
           <h2 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--s" for="panel6">
-              What's the last panel member's email?
+            <label class="govuk-label govuk-label--s" for="plist-2">
+              What's the panelist's email?
             </label>
           </h2>
-          <input tabindex="3" class="govuk-input" id="panel6" name="panel6" type="text">
+          <input  class="govuk-input govuk-input--width-20" id="plist-2" name="plist-2" type="text" value="{{data['plist-2']}}">
+          <a href="#" id="pl2acta" style=";position:absolute;left:0px;bottom:-40px;color:#1d70b8" onclick="showDiv('pl3');hideDiv('pl2acta');hideDiv('pl2bcta')">Add another panelist</a>
+          <a href="#" id="pl2bcta" style=";position:absolute;right:40px;bottom:-40px;color:#1d70b8" onclick="showDiv('pl1acta');;hideDiv('pl2acta');hideDiv('pl2bcta');hideDiv('pl2')">Delete</a>
+        </div>
+        <div id="pl3" style="display:none;position:relative;width:60%" class="govuk-!-margin-top-6">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--s" for="plist-3">
+              What's the panelist's email?
+            </label>
+          </h2>
+          <input  class="govuk-input govuk-input--width-20" id="plist-3" name="plist-3" type="text" value="{{data['plist-3']}}">
+          <a href="#" id="pl2acta" style="position:absolute;left:0px;bottom:-40px;color:#1d70b8" onclick="">Add another panelist</a>
+          <a href="#" id="pl3cta" style="position:absolute;right:40px;bottom:-40px;color:#1d70b8" onclick="hideDiv('pl3');showDiv('pl2acta');showDiv('pl2bcta');">Delete</a>
         </div>
 
 
@@ -131,58 +187,85 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
 
+<div>
 
 
-
-
-<button class="govuk-button govuk-!-margin-top-6"  data-module="govuk-button">Continue</button>
 </div>
+
+<div class=" govuk-!-margin-top-9">
+
+
+  <button class="govuk-button govuk-!-margin-top-6"  data-module="govuk-button">Continue</button>
+
 </div>
-</form>
-<script>
 
-
-//   const chairD = document.getElementById("elseCh").value;
-// console.log(chairD)
-//
-//   const meChair = document.getElementById('spocChair');
-//   const otherChair = document.getElementById('spocNotChair');
-//
-//   if (chairD.length > 0) {
-//     showDiv("another");
-//   }
-//
-//
-//   otherChair.addEventListener('change', (event) => {
-//     if (otherChair.checked) {
-//       showDiv("another");
-//     }
-//
-//   });
-//
-//   meChair.addEventListener('change', (event) => {
-//     if (meChair.checked) {
-//       hideDiv("another");
-//     }
-//
-//   });
-//
+</div>
 
 
 
-  function showDiv(div1) {
-    document.getElementById(div1).style.display = 'block';
 
-  }
-
-  function hideDiv(div1) {
-    document.getElementById(div1).style.display = 'none';
-
-  }
+  </div>
 
 
 
 
 
-</script>
-{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+    </form>
+    <script>
+
+
+      //   const chairD = document.getElementById("elseCh").value;
+      // console.log(chairD)
+      //
+      //   const meChair = document.getElementById('spocChair');
+      //   const otherChair = document.getElementById('spocNotChair');
+      //
+      //   if (chairD.length > 0) {
+      //     showDiv("another");
+      //   }
+      //
+      //
+      //   otherChair.addEventListener('change', (event) => {
+      //     if (otherChair.checked) {
+      //       showDiv("another");
+      //     }
+      //
+      //   });
+      //
+      //   meChair.addEventListener('change', (event) => {
+      //     if (meChair.checked) {
+      //       hideDiv("another");
+      //     }
+      //
+      //   });
+      //
+
+
+
+      function showDiv(div1) {
+        document.getElementById(div1).style.display = 'block';
+
+      }
+
+      function hideDiv(div1) {
+        document.getElementById(div1).style.display = 'none';
+
+      }
+
+
+
+
+
+    </script>
+    {% endblock %}

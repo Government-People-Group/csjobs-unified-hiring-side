@@ -20,6 +20,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 <form class="form" action="/csu71/templates-picker?chosen={{data['pickTemp']}}" method="post">
 <div class="govuk-grid-row govuk-!-margin-bottom-9">
   <div class="govuk-grid-column-full">
+    <input id="templateName" type="hidden" name="templateName" value="{{ data['org']}}">
 
     <!-- <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-2">Vacancy <strong>102201</strong></p>
 
