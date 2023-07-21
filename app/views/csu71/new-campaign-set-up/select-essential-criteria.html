@@ -37,7 +37,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 <h1 class="govuk-heading-xl">Essential criteria</h1>
 <form class="form" action="/csu71/new-campaign-set-up/pre-sift-questions" method="post">
 
-
+<div id="keydets"></div>
   <p class="govuk-body-m">Lorem ipsum dolor sit amet.</p>
 
   <p class="govuk-body-m">Lorem ipsum dolor sit amet.</p>
@@ -52,6 +52,44 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 </div>
 </div>
-{% include '/csu71/includes/footerarea.html' %}
+<script>
+
+  const object = JSON.parse(window.sessionStorage.getItem("behaviours"));
+  var obj = Object.values(object);
+
+console.log(obj)
+
+  // for (var t=0;t<level.length;t++) {
+  //
+  //   var hintText = level[t].description;
+  //
+  //
+  //   var label = document.createElement("label");
+  //   var checkBox = document.createElement("input");
+  //   var hint = document.createElement("hint");
+  //   checkBox.type = "checkbox";
+  //   checkBox.style.cssText = "width: 30px;height: 30px;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
+  //   label.style.cssText = "display: block;padding-left: 15px;padding-top:30px;text-indent: 40px;";
+  //   hint.style.cssText = "display: block;padding-left: 55px;";
+  //   checkBox.value = level[t].title;
+  //   hint.value = level[t].description;
+  //   checkBox.setAttribute("id","behaviours-"+t);
+  //   checkBox.setAttribute("name","behaviours");
+  //
+  //   label.appendChild(document.createTextNode(level[t].title));
+  //
+  //   hea1.appendChild(label);
+  //
+  //
+  //   hea1.appendChild(checkBox);
+  //   hint.appendChild(document.createTextNode(level[t].description));
+  //   hea1.appendChild(hint);
+  // }
+
+
+
+
+
+</script>
 
 {% endblock %}

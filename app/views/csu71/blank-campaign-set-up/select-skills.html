@@ -556,40 +556,40 @@
 
 
 
-    var thigg = document.getElementById("ddatSkills")
-    const object = JSON.parse(window.sessionStorage.getItem("ddatskills"));
-    var obj = Object.values(object);
-
-    for (var t=0;t<obj.length;t++) {
-
-      var hintText = obj[t].description;
-
-
-      var label = document.createElement("label");
-      var checkBox = document.createElement("input");
-      var hint = document.createElement("hint");
-      var level = document.createElement("hint");
-      checkBox.type = "checkbox";
-      checkBox.style.cssText = "width: 30px;height: 30px;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
-      label.style.cssText = "display: block;padding-left: 15px;padding-top:30px;text-indent: 40px;";
-      hint.style.cssText = "font-size:30px";
-      level.style.cssText = "float:right;font-size:22px";
-      checkBox.value = obj[t].title;
-      hint.value = obj[t].description;
-      level.value = obj[t].level;
-      checkBox.setAttribute("id","skills-"+t);
-      checkBox.setAttribute("name","skills");
-
-      label.appendChild(document.createTextNode(obj[t].title));
-      level.appendChild(document.createTextNode(obj[t].level));
-      ddatSkills.appendChild(label);
-      ddatSkills.appendChild(level);
-
-      ddatSkills.appendChild(checkBox);
-      ddatSkills.appendChild(document.createTextNode(obj[t].description));
-
-      ddatSkills.appendChild(hint);
-    }
+    // var thigg = document.getElementById("ddatSkills")
+    // const object = JSON.parse(window.sessionStorage.getItem("ddatskills"));
+    // var obj = Object.values(object);
+    //
+    // for (var t=0;t<obj.length;t++) {
+    //
+    //   var hintText = obj[t].description;
+    //
+    //
+    //   var label = document.createElement("label");
+    //   var checkBox = document.createElement("input");
+    //   var hint = document.createElement("hint");
+    //   var level = document.createElement("hint");
+    //   checkBox.type = "checkbox";
+    //   checkBox.style.cssText = "width: 30px;height: 30px;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
+    //   label.style.cssText = "display: block;padding-left: 15px;padding-top:30px;text-indent: 40px;";
+    //   hint.style.cssText = "font-size:30px";
+    //   level.style.cssText = "float:right;font-size:22px";
+    //   checkBox.value = obj[t].title;
+    //   hint.value = obj[t].description;
+    //   level.value = obj[t].level;
+    //   checkBox.setAttribute("id","skills-"+t);
+    //   checkBox.setAttribute("name","skills");
+    //
+    //   label.appendChild(document.createTextNode(obj[t].title));
+    //   level.appendChild(document.createTextNode(obj[t].level));
+    //   ddatSkills.appendChild(label);
+    //   ddatSkills.appendChild(level);
+    //
+    //   ddatSkills.appendChild(checkBox);
+    //   ddatSkills.appendChild(document.createTextNode(obj[t].description));
+    //
+    //   ddatSkills.appendChild(hint);
+    // }
 
 
 

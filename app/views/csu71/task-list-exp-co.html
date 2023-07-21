@@ -368,7 +368,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
 
                       <span class="app-task-list__task-name">
-                        <a class="govuk-link govuk-link--no-visited-state" href="#" aria-describedby="read-declaration-status">
+                        <a class="govuk-link govuk-link--no-visited-state" href="/csu71/new-campaign-set-up/review-sp-table-alt" aria-describedby="read-declaration-status">
                           Review your criteria and methods
                         </a>
                       </span>
@@ -625,6 +625,18 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                       window.sessionStorage.setItem("ddatskills", JSON.stringify(businessAnalystDDaT));
 
 
+                      const keyDetails = {};
+
+
+
+                      keyDetails.elements = ['behaviours','experience','strengths','skills'];
+                      keyDetails.behaviours = ['Seeing the Big Picture','Problem Solver'];
+                      keyDetails.skills = ['Challenge assumptions and explore diferent scales of impact','Use evaluation throughout the policy process to generate evidence and learning that informs decisions'];
+                      keyDetails.experience = ['Building engaging and effective relationships with stakeholders'];
+                      keyDetails.sift = [['Behaviours','Working Together'],['Behaviours','Making Effective Decisions'],['Skills','Challenge assumptions and explore diferent scales of impact'],['Skills','Use evaluation throughout the policy process to generate evidence and learning that informs decisions']];
+                      keyDetails.interview = [['Experience','Building engaging and effective relationships with stakeholders'],['Behaviours','Seeing the Big Picture'],['Behaviours','Changing and Improving'],['Strengths','Analytical'],['Strengths','Challenger'],['Strengths','Problem Solver']];
+
+                      window.sessionStorage.setItem("keyDetails", JSON.stringify(keyDetails));
 
 
 

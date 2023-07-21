@@ -31,6 +31,14 @@
 
 {% block content %}
 
+<style>
+
+h1, h2, h3, strong, label, hint, a {
+
+  font-family: "GDS Transport", arial, sans-serif;
+}
+</style>
+
 
 
 
@@ -74,7 +82,7 @@
       rows: 3,
       label: {
       text: "1 x experience question (6 mins)",
-      classes: "govuk-label--s",
+      classes: "govuk-label--xs",
       isPageHeading: false
       },
       value: data['experience-question-1']
@@ -83,7 +91,7 @@
 
       <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
-      <span style="font-size:18px;font-weight:bold;" class="govuk-details__summary-text">
+      <span style=";margin-left:-10px;font-size:20px;font-weight:bold;" class="govuk-details__summary-text">
       Example question
       </span>
       </summary>
@@ -94,7 +102,7 @@
       </div>
       </details>
 
-      <p id="addlink2" class="govuk-body-m govuk-!-padding-bottom-1"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state"  onclick="showDiv('secQ2');hideDiv('addlink2')"><strong style="color:#1d70b8;float:right;margin-bottom:-10px">Draft an alternative question</strong></a></p>
+      <p id="addlink2" class="govuk-body-m govuk-!-padding-bottom-1"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state"  onclick="showDiv('secQ2');hideDiv('addlink2')"><strong style=";color:#1d70b8;float:right;margin-bottom:-10px">Draft an alternative question</strong></a></p>
 
 
 
