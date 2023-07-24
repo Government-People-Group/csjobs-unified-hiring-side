@@ -10,11 +10,11 @@
 
   {% block beforeContent %}
 
-  <div  style="width:100%;background:#f3f2f1;height:125px;border-bottom:0.5px solid #1d70b8;float:left">
+  <div  style="width:100%;background:#f3f2f1;height:115px;border-bottom:0.5px solid #1d70b8;float:left">
     <span class="govuk-body-m" style="float:right;margin-right:23px;margin-top:10px;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
 
     <div  style=";width:100;">
-    <h2 style="border-top:0px solid #1d70b8;;background:#f3f2f1;padding-top:20px;padding-bottom:20px" class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-padding-left-3"><span style="">Mei Chen
+    <h2 style="border-bottom:2px solid #1d70b8;;background:#f3f2f1;padding-top:20px;padding-bottom:20px" class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-padding-left-3"><span style="">Mei Chen
       <span id="next" class="govuk-!-margin-top-0" style="padding-right:10px;padding-top:40px;font-size:20px;float:right">NEXT: Alexia</span>
 
       <span id="now" class="govuk-!-margin-top-0" style="padding-right:50px;padding-top:40px;font-size:20px;float:right">NOW: Sam</span>
@@ -36,7 +36,7 @@
   </div>
 
   </div>
-  <div style="position:absolute;top:50;left:370px;">
+  <div style="position:absolute;top:50;left:760px;">
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -411,12 +411,13 @@
 
 
   </div>
-  </div>
   {{ govukButton({
     text: "Save and continue",
     classes: "govuk-!-margin-top-5",
     href: "/csu71/task-list-exp-co"
   }) }}
+  </div>
+
   </div>
 
 

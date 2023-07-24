@@ -55,11 +55,11 @@
         <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph2"><strong>Schedule</a></p></strong></li>
         <!-- <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview"><strong>Setup interview</a></p></strong></li> -->
 
-        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph3"><strong>Assessment</a></p></strong></li>
+        <!-- <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph3"><strong>Assessment</a></p></strong></li>
         <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph4-1"><strong>Questions</a></p></strong></li>
         <li><strong><p style ="border-left:5px solid white;;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph1"><strong>Type of interview</a></p></strong></li>
 
-        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-check-answers"><strong>Review interview setup</a></p></strong></li>
+        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-check-answers"><strong>Review interview setup</a></p></strong></li> -->
       </ul>
     </div>
     <div class="govuk-!-margin-top-6 govuk-grid-column-three-quarters">
@@ -298,14 +298,43 @@
   var fromDate = document.getElementById("fromDate");
   var toDate = document.getElementById("toDate");
 
+  console.log(fromDate)
+
+    fromDate.addEventListener('change', (event) => {
 
 
-var dDay = new Date(fromDate.value)
+      window.sessionStorage.setItem("fromDate", JSON.stringify(fd));
+    });
+
+    toDate.addEventListener('change', (event) => {
+
+
+      window.sessionStorage.setItem("toDate", JSON.stringify(td));
+    });
+
+    var fday = fromDate.value.substring(8, 10);
+    var fmon = fromDate.value.substring(5, 7);
+    var fyea = fromDate.value.substring(0, 4);
+
+    var tday = toDate.value.substring(8, 10);
+    var tmon = toDate.value.substring(5, 7);
+    var tyea = toDate.value.substring(0, 4);
+
+
+
+  // const fd = fday+"/"+fmon+"/"+fyea;
+  const fd = fyea+"/"+fmon+"/"+fday;
+
+  // const td = tday+"/"+tmon+"/"+tyea;
+  const td =tyea+"/"+tmon+"/"+tday;
+
+
+var dDay = new Date(fd.value)
 var tDay = new Date(toDate.value)
-const tickTock = dDay.toLocaleDateString('en-uk', { day:"numeric"}) ;
-
-const tickTock2 = tDay.toLocaleDateString('en-uk', { day:"numeric"}) ;
-console.log(tickTock, tickTock2)
+// const tickTock = dDay.toLocaleDateString('en-uk', { day:"numeric"}) ;
+//
+// const tickTock2 = tDay.toLocaleDateString('en-uk', { day:"numeric"}) ;
+// console.log(tickTock, tickTock2)
 
 
 
@@ -325,22 +354,22 @@ console.log(tickTock, tickTock2)
 
 
 
-    var fday = fromDate.value.substring(8, 10);
-    var fmon = fromDate.value.substring(5, 7);
-    var fyea = fromDate.value.substring(0, 4);
+  //   var fday = fromDate.value.substring(8, 10);
+  //   var fmon = fromDate.value.substring(5, 7);
+  //   var fyea = fromDate.value.substring(0, 4);
+  //
+  //   var tday = toDate.value.substring(8, 10);
+  //   var tmon = toDate.value.substring(5, 7);
+  //   var tyea = toDate.value.substring(0, 4);
+  //
+  //
+  //
+  // const fd = fday+"/"+fmon+"/"+fyea;
+  //
+  // const td = tday+"/"+tmon+"/"+tyea;
 
-    var tday = toDate.value.substring(8, 10);
-    var tmon = toDate.value.substring(5, 7);
-    var tyea = toDate.value.substring(0, 4);
-
-
-
-  const fd = fday+"/"+fmon+"/"+fyea;
-
-  const td = tday+"/"+tmon+"/"+tyea;
-
-  window.sessionStorage.setItem("fromDate", JSON.stringify(dDay));
-  window.sessionStorage.setItem("toDate", JSON.stringify(tDay));
+  // window.sessionStorage.setItem("fromDate", JSON.stringify(fromDate));
+  // window.sessionStorage.setItem("toDate", JSON.stringify(toDate));
 
 
 

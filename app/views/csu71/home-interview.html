@@ -115,7 +115,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
                 <div id="interview-active">
 
-                  <a href="/csu71/sift/task-list"><p class="govuk-body-m" style="color:#1d70b8;margin-top:30px;text-align:center;font-size:32px"><strong>Mei Chen</strong><br>now, time to...</p>
+                  <a href="/csu71/sift/task-list"><p class="govuk-body-m" style="color:#1d70b8;margin-top:30px;text-align:center;font-size:32px"><strong>TODAY</strong><br>Mei Chen @14:00...</p>
                     <!-- <span class="govuk-body-m" style="width:120px;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px">Setup interviews</span> -->
                     <p class="govuk-body-m" style="width:90%;background:WHITE;color:#1d70b8;height:26px;font-weight:bold;padding:10px;text-align:center;font-size:20px;border:2px solid #1d70b8;border-radius:7px">Score interview</p><a/>
                 </div>
@@ -129,11 +129,14 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
               <div style="border-bottom:1px dashed #1d70b8" class="govuk-!-margin-top-3">
                 <strong style=";padding:5px;font-size:22px;font-weight:normal">Mei Chan</strong>
 
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="meiInterview"></strong>
+
+
                 {% if data['invites'] == "sent" %}
                 <strong style="font-size:16px;" class="govuk-tag govuk-tag--green app-task-list__tag">invites sent</strong></td>
 
                 {% else %}
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+                <strong class="govuk-tag  app-task-list__tag" id="meiInterview">interview</strong>
                 {% endif %}
               </div>
               <div style="border-bottom:1px dashed #1d70b8" class="govuk-!-margin-top-3">
@@ -431,14 +434,16 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
   const dateField = document.getElementById('dated');
 
-
+  const interviewDay = document.getElementById('meiInterview');
 
 
   // if (dateField.outerText == ""){
 
     const stamp = new Date();
     const localStamp = stamp.toLocaleDateString('en-uk', { day:"numeric", month:"short", year:"numeric" }) ;
-    dateField.outerText = localStamp;
+
+    interviewDay.cssText = "background:red; font-color:white; font-weight:bold"
+    interviewDay.innerHTML = localStamp;
 console.log(localStamp)
 
 

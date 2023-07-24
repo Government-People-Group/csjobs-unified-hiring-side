@@ -3,8 +3,9 @@
 {% block header %}
 {% include '/csu71/includes/header.html' %}
 {% endblock %}
+
 {% block pageTitle %}
-Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +18,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-co"><strong>Return to task list</strong></a></span>
 
 </div>
 
@@ -28,52 +29,66 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 }) }}
 {% endblock %}
 
-
-
-
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
+  <div class="govuk-grid-column-full">
 
-<h1 class="govuk-heading-xl">Pre-qualifying questions</h1>
+    <h1 class="govuk-heading-xl">Pre-qualifying questions</h1>
 <form class="form" action="/csu71/new-campaign-set-up/summary-section-4" method="post">
 
+{% set combinedCriteriaList = [] %}
 
-  <p class="govuk-body-m">Lorem ipsum dolor sit amet.</p>
+{% set combinedCriteriaList = (combinedCriteriaList.push(data['essCritSift']), combinedCriteriaList) %}
+{% set combinedCriteriaList = (combinedCriteriaList.push(data['essCritInterview']), combinedCriteriaList) %}
 
-  <p class="govuk-body-m">Lorem ipsum dolor sit amet.</p>
 
-  <p>These closed questions allow candidates to quickly find out if they are suitable for the role before they start their application.</p>
 
-  {% set changeHtml %}
-    <a href="">Change  </a>|<a href="">  Remove</a>
-  {% endset %}
+  <p class="govuk-body-m">These closed questions allow candidates to quickly find out if they are suitable for the role before they start their application.</p>
 
-  {{ govukTable({
-    caption: "We recommend these questions based on the role",
-    captionClasses: "govuk-table__caption--m",
-    firstCellIsHeader: false,
-    rows: [
 
-      [
-        {
-         text: "Are you able to speak French fluently?"
-        },
-        {
-          html: changeHtml
-        }
-      ],
-      [
-        {
-          text: "Are you able to work from the office 3 days a week?"
-        },
-        {
-          html: changeHtml
-        }
-      ]
-    ]
-  }) }}
+<div style="">
+  <h3 class="govuk-heading-l govuk-!-margin-top-0">Departmental questions</h3>
+
+  <p class="govuk-body-m"><strong>Your department requires all candidates to answer the following questions before starting their application as a matter of policy:</strong></p>
+
+    <ul class="govuk-list govuk-list--number">
+    <li style="border-bottom:1px solid #1d70b8;padding-bottom:15px;"><p class="govuk-body-m">Candidates that accept an interview invite will need to take and pass a compulsory drug test. If appointed, the role holder will be subject to random drug testing throughout their first year of employment.<BR><BR><strong>Are you able to comply with this policy?</strong></p></li>
+    <li style="padding-top:15px;">This role requires the highest security clearance known as Developed Vetting (or DV). Candidates should ensure they are familiar and comfortable with the vetting standard before they starting their application.<BR><BR><strong>Are you able to comply with this policy?</strong></li>
+
+</ul>
+
+
+<div style="margin-left:20px;border-bottom:0px solid #1d70b8;padding-bottom:1px;">
+<details class="govuk-details" data-module="govuk-details">
+<summary class="govuk-details__summary">
+<span style="font-size:18px;font-weight:bold;" class="govuk-details__summary-text">
+What does Developed Vetting mean?
+</span>
+</summary>
+<div style="width:99.5%;background:white" class="govuk-details__text"> Developed Vetting requires candidates to be interviewed by our vetting specialists, face-to-face and asked to discuss personal topics such as their drug use, political interests, financial affairs, their wider family background and relationships.
+</div>
+</details>
+</div>
+</div>
+
+<h3 class="govuk-heading-l govuk-!-margin-top-6">Would you like to add a question?</h3>
+<div style="background:#F4FAFF;padding:20px;border-top:1px solid #1d70b8">
+
+{{ govukCharacterCount({
+name: "experience-question-1",
+id: "experience-question-1",
+maxwords: 50,
+rows: 3,
+label: {
+text: "1 x experience question (6 mins)",
+classes: "govuk-label--xs",
+isPageHeading: false
+},
+value: data['experience-question-1']
+}) }}
+
+
 
 <p><a href="#">Add another question</a></p>
 <input type="hidden" name="pre-sift-viewed" value="true">
@@ -89,6 +104,5 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 </div>
 </div>
-{% include '/csu71/includes/footerarea.html' %}
 
 {% endblock %}

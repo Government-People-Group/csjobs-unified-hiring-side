@@ -9,43 +9,9 @@
 {% endblock %}
 
 {% block beforeContent %}
-<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
-
-  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
-</div> -->
-<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Summary</span>
-
-<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
-
-
-  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
-
-  <!-- {% if data['org'] == "ddat" %}
-  <div id ="ddattag"  style="position:absolute;right:10px;top:60px;;">
-    <a href="/csu71/template-csofficial?return=select-behaviours"><img src="/public/images/ddat1.png" alt="Template by Digital, Data and Technology Profession" style="background:#F4FAFF;border:2px solid #1d70b8;padding:10px;border-radius:5px;width:80px"></a>
-
-  </div>
-  {% elif data['org'] == "co" %}
-  <div id ="cotag"  style="position:absolute;right:10px;top:60px;;">
-    <a  href="/csu71/template-csofficial?return=select-behaviours"> <img src="/public/images/co-logo.png" alt="Template by Cabinet Office" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
-  </div>
-  {% elif data['org'] == "ho" %}
-  <div id ="hotag"  style="position:absolute;right:10px;top:60px;;">
-    <a href="/csu71/template-csofficial?return=select-behaviours"><img src="/public/images/ho-logo.png" alt="Template by Home Office" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
-  </div>
-  {% endif %} -->
-</div>
-
-
-</div>
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-
-
+{% set sectionref = "Summary" %}
+{% include '/csu71/includes/blue-subhead.html' %}
 {% endblock %}
-
 
 {% block content %}
 
@@ -65,7 +31,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Grade</dt>
-          <dd class="govuk-summary-list__value">{{ data['grade']}}</dd>
+          <dd class="govuk-summary-list__value">{{ data['grade']|default("SEO")}}</dd>
           <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> grade</span></a></dd>
         </div>
         <!-- <div class="govuk-summary-list__row">
@@ -80,7 +46,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Number of posts availables</dt>
-          <dd class="govuk-summary-list__value">{{ data['num-posts']}}</dd>
+          <dd class="govuk-summary-list__value">{{ data['num-posts']|default("1") }}</dd>
           <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> number of posts availables</span></a></dd>
         </div>
       </dl>
@@ -89,13 +55,13 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Reserved status</dt>
-          <dd class="govuk-summary-list__value">{{ data['reserved-status']}}</dd>
+          <dd class="govuk-summary-list__value">{{ data['reserved-status']|default("No")}}</dd>
           <dd class="govuk-summary-list__actions"><a href="reserved-status-role?edit1=true">Change<span class="govuk-visually-hidden"> Business area</span></a></dd>
         </div>
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Approval</dt>
-          <dd class="govuk-summary-list__value">{{ data['approval-status']}} <br>  {{ data['file-upload-1']}}</dd>
+          <dd class="govuk-summary-list__value">{{ data['approval-status']|default("Approved")}} <br>  {{ data['file-upload-1']|default("BCP-2231-23.pdf")}}</dd>
           <dd class="govuk-summary-list__actions"><a href="Approval">Change<span class="govuk-visually-hidden"> Business area</span></a></dd>
         </div>
 

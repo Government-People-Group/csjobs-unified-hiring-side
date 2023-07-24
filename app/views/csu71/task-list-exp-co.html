@@ -625,18 +625,115 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                       window.sessionStorage.setItem("ddatskills", JSON.stringify(businessAnalystDDaT));
 
 
+
+                      const siftCriteria = {
+                          "1": {
+                            "element": "Experience",
+                            "criteria": "Building engaging and effective relationships with stakeholders"
+                          },
+                          "2": {
+                            "element": "Behaviours",
+                            "criteria": "Working Together"
+                          },
+                          "3": {
+                            "element": "Behaviours",
+                            "criteria": "Making Effective Decisions"
+                          },
+                          "4": {
+                            "element": "Skills",
+                            "criteria": "Challenge assumptions and explore diferent scales of impact"
+                          },
+                          "5": {
+                            "element": "Skills",
+                            "criteria": "Use evaluation throughout the policy process to generate evidence and learning that informs decisions"
+                          }
+                        }
+
+
+                        const interviewCriteria = {
+                            "1": {
+                              "element": "Experience",
+                              "criteria": "Building engaging and effective relationships with stakeholders"
+                            },
+                            "2": {
+                              "element": "Behaviours",
+                              "criteria": "Seeing the Big Picture"
+                            },
+                            "3": {
+                              "element": "Behaviours",
+                              "criteria": "Changing and Improving"
+                            },
+                            "4": {
+                              "element": "Strengths",
+                              "criteria": "Analytical"
+                            },
+                            "5": {
+                              "element": "Strengths",
+                              "criteria": "Challenger"
+                            },
+                            "6": {
+                              "element": "Strengths",
+                              "criteria": "Problem Solver"
+                            }
+                          }
+
+
+                          const allSelectionCriteria = {
+                              "1": {
+                                "element": "Behaviours",
+                                "criteria": "Seeing the Big Picture"
+                              },
+                              "2": {
+                                "element": "Behaviours",
+                                "criteria": "Changing and Improving"
+                              },
+                              "3": {
+                                "element": "Behaviours",
+                                "criteria": "Working Together"
+                              },
+                              "4": {
+                                "element": "Behaviours",
+                                "criteria": "Making Effective Decisions"
+                              },
+                              "5": {
+                                "element": "Strengths",
+                                "criteria": "Analytical"
+                              },
+                              "6": {
+                                "element": "Strengths",
+                                "criteria": "Challenger"
+                              },
+                              "7": {
+                                "element": "Strengths",
+                                "criteria": "Problem Solver"
+                              },
+                              "8": {
+                                "element": "Skills",
+                                "criteria": "Challenge assumptions and explore diferent scales of impact"
+                              },
+                              "9": {
+                                "element": "Skills",
+                                "criteria": "Use evaluation throughout the policy process to generate evidence and learning that informs decisions"
+                              }
+                            }
+
+
+
                       const keyDetails = {};
 
 
 
-                      keyDetails.elements = ['behaviours','experience','strengths','skills'];
-                      keyDetails.behaviours = ['Seeing the Big Picture','Problem Solver'];
+                      // keyDetails.elements = ['behaviours','experience','strengths','skills'];
+                      keyDetails.behaviours = ['Seeing the Big Picture','Changing and Improving','Working Together','Making Effective Decisions'];
                       keyDetails.skills = ['Challenge assumptions and explore diferent scales of impact','Use evaluation throughout the policy process to generate evidence and learning that informs decisions'];
+                      keyDetails.strengths = ['Analytical','Challenger','Problem Solver'];
                       keyDetails.experience = ['Building engaging and effective relationships with stakeholders'];
-                      keyDetails.sift = [['Behaviours','Working Together'],['Behaviours','Making Effective Decisions'],['Skills','Challenge assumptions and explore diferent scales of impact'],['Skills','Use evaluation throughout the policy process to generate evidence and learning that informs decisions']];
+                      keyDetails.sift = [['Experience','Building engaging and effective relationships with stakeholders'],['Behaviours','Working Together'],['Behaviours','Making Effective Decisions'],['Skills','Challenge assumptions and explore diferent scales of impact'],['Skills','Use evaluation throughout the policy process to generate evidence and learning that informs decisions']];
                       keyDetails.interview = [['Experience','Building engaging and effective relationships with stakeholders'],['Behaviours','Seeing the Big Picture'],['Behaviours','Changing and Improving'],['Strengths','Analytical'],['Strengths','Challenger'],['Strengths','Problem Solver']];
 
-                      window.sessionStorage.setItem("keyDetails", JSON.stringify(keyDetails));
+                      window.sessionStorage.setItem("allSelectionCriteria", JSON.stringify(allSelectionCriteria));
+                      window.sessionStorage.setItem("siftCriteria", JSON.stringify(siftCriteria));
+                      window.sessionStorage.setItem("interviewCriteria", JSON.stringify(interviewCriteria));
 
 
 

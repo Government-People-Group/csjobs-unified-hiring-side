@@ -44,7 +44,7 @@
 
 
 
-<form class="form" action="#" method="post">
+<form class="form" action="/csu71/sift/task-list" method="post">
 
   <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Schedule</H1>
 
@@ -57,11 +57,11 @@
         <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph2"><strong>Schedule</a></p></strong></li>
         <!-- <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview"><strong>Setup interview</a></p></strong></li> -->
 
-        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph3"><strong>Assessment</a></p></strong></li>
+        <!-- <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph3"><strong>Assessment</a></p></strong></li>
         <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph4-1"><strong>Questions</a></p></strong></li>
         <li><strong><p style ="border-left:5px solid white;;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph1"><strong>Type of interview</a></p></strong></li>
 
-        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-check-answers"><strong>Review interview setup</a></p></strong></li>
+        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-check-answers"><strong>Review interview setup</a></p></strong></li> -->
       </ul>
     </div>
     <div class="govuk-!-margin-top-6 govuk-grid-column-three-quarters">
@@ -153,11 +153,11 @@
     //   wrapper.style.cssText = "margin-bottom:20px;width:400px;min-height:130px;background:white;border:1px solid #1d70b8;";
     // }
 
-    wrapper.style.cssText = "position:relative;margin-bottom:20px;width:280px;min-height:330px;background:white;border:1px solid #1d70b8;";
+    wrapper.style.cssText = "position:relative;margin-bottom:20px;width:300px;min-height:330px;background:white;border:1px solid #1d70b8;";
     wrapper.setAttribute("id","div"+k);
     var date = document.createElement("h3");
     date.innerHTML = dateArray[k];
-    date.style.cssText = "text-indent:10px;width:100%;background:#f3f2f1;;margin-top:-0px;height:45px;margin-top:0px;padding-top:5px;";
+    date.style.cssText = "font-size:28px;text-indent:10px;width:100%;background:#f3f2f1;;margin-top:-0px;height:45px;margin-top:0px;padding-top:5px;";
     date.setAttribute("id","date"+k);
     wrapper.appendChild(date);
 
@@ -171,25 +171,47 @@
 
 
     var checkBox = document.createElement("input");
+    var checkBox1 = document.createElement("input");
+
+
     checkBox.type = "checkbox";
-    checkBox.value = densityCheck[y]
+    checkBox.innerHTML = "";
+
+    checkBox1.type = "checkbox";
+    checkBox1.innerHTML = "";
+
+    checkBox1.setAttribute("id","chk"+k+y);
+    checkBox1.style.cssText = "position:absolute;top:155px;left:10px;height:25px;width:25px";
+
+    checkBox.setAttribute("id","chk"+k+y);
     checkBox.style.cssText = "position:absolute;top:75px;left:10px;height:25px;width:25px";
     var tteexx1 = document.createElement("input")
     var tteexx2 = document.createElement("input")
+    var tteexx3 = document.createElement("input")
+    var tteexx4 = document.createElement("input")
+
     tteexx1.type = "text";
     tteexx2.type = "text";
-    tteexx1.value = densityCheck[y]
-    tteexx2.value = densityCheck[y]
-    tteexx1.style.cssText = "border:1px solid grey;border-radius:5px;font-size:20px;position:absolute;top:75px;left:60px;height:30px;width:90px";
-    tteexx2.style.cssText = "border:1px solid grey;border-radius:5px;font-size:20px;position:absolute;top:75px;right:20px;height:30px;width:90px";
-    tteexx1.setAttribute("id",date+"1");
-    tteexx2.setAttribute("id",date+"1");
-
+    tteexx1.value = ""
+    tteexx2.value = ""
+    tteexx1.style.cssText = "text-align:center;border:1px solid grey;border-radius:5px;font-size:26px;position:absolute;top:75px;left:65px;height:40px;width:90px";
+    tteexx2.style.cssText = "text-align:center;border:1px solid grey;border-radius:5px;font-size:26px;position:absolute;top:75px;right:30px;height:40px;width:90px";
+    tteexx1.setAttribute("id","date"+k+y);
+    tteexx2.setAttribute("id","date2"+k+y);
+    tteexx3.type = "text";
+    tteexx4.type = "text";
+    tteexx3.value = ""
+    tteexx4.value = ""
+    tteexx3.style.cssText = "text-align:center;border:1px solid grey;border-radius:5px;font-size:26px;position:absolute;top:155px;left:65px;height:40px;width:90px";
+    tteexx4.style.cssText = "text-align:center;border:1px solid grey;border-radius:5px;font-size:26px;position:absolute;top:155px;right:30px;height:40px;width:90px";
+    tteexx3.setAttribute("id","date"+k+y);
+    tteexx4.setAttribute("id","date2"+k+y);
     wrapper.appendChild(checkBox);
-
+    wrapper.appendChild(checkBox1);
     wrapper.appendChild(tteexx1)
     wrapper.appendChild(tteexx2)
-
+    wrapper.appendChild(tteexx3)
+    wrapper.appendChild(tteexx4)
     list1.appendChild(wrapper);
 }
 }

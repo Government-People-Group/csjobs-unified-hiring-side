@@ -1,0 +1,149 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block header %}
+{% include '/csu71/includes/header-panelist-view.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Interview</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="#"><strong>Message panel chair</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<span class="govuk-caption-l">1001334</span>
+<h2 class="govuk-heading-l">Policy Adviser</h2>
+
+  <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Candidate sift status</H1>
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <ol class="app-task-list">
+      <li>
+        <h2 style="font-size:20px;font-weight:normal" class="app-task-list__section">You have completed 0 of 5 sections.
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-1" aria-describedby="eligibility-status">
+                Candidate 1
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-2" aria-describedby="eligibility-status">
+                Candidate 2
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-3" aria-describedby="eligibility-status">
+                Candidate 3
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-4" aria-describedby="eligibility-status">
+                Candidate 4
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state"href="1001334-applicant-5" aria-describedby="eligibility-status">
+                Candidate 5
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>
+          </li>
+        </ul>
+        </li>
+</ol>
+
+<div class="govuk-!-margin-top-6" style=";">
+<h2 class="app-task-list__section govuk-!-margin-top-1" style="font-weight:bold;font-size:22px">Monitor candidate responses</h2>
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+    <!-- <a href="#" aria-describedby="eligibility-status"> -->
+    <strong>Mei Chen</strong>
+    <!-- </a> -->
+  </span>
+  {% if data['invites'] == 'sent'%}
+  <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="contact-details-status">interview invite sent</strong>
+  {% else %}
+  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+  {% endif %}
+  <strong class="govuk-tag govuk-tag app-task-list__tag" id="contact-details-status">14:00, 14 Aug confirmed</strong>
+
+</li>
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+    <!-- <a href="#" aria-describedby="eligibility-status"> -->
+    <strong>Amelia Lawson</strong>
+    <!-- </a> -->
+  </span>
+
+  {% if data['invites'] == 'sent'%}
+  <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="contact-details-status">interview invite sent</strong>
+  {% else %}
+  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+  {% endif %}
+
+</li>
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+    <!-- <a href="#" aria-describedby="eligibility-status"> -->
+    <strong>Javier Santos</strong>
+    <!-- </a> -->
+  </span>
+
+
+          {% if data['invites'] == 'sent'%}
+          <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="contact-details-status">interview invite sent</strong>
+          {% else %}
+          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+          {% endif %}
+
+
+        </li>
+</div>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

@@ -489,7 +489,7 @@ router.post("/templates-altergo", function (req, res) {
     res.redirect('task-list-new-campaign?template=none')
 
   } else if (template == "csofficial"){
-    res.redirect('template-csofficial')
+    res.redirect('template-csofficial-exp')
 	} else if (template == "preselected") {
 		res.redirect('template-ad-duplicate')
 		// res.redirect('task-list-exp-copy-ad')
