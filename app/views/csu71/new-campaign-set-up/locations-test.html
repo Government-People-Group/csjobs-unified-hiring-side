@@ -8,9 +8,26 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-{% set sectionref = "Contract information" %}
-{% include '/csu71/includes/blue-subhead.html' %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Finalise and submit</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
 {% endblock %}
+
 
 {% block content%}
 <div class="govuk-grid-row govuk-!-margin-top-0">
@@ -27,21 +44,10 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
         </div>
 
         <h1 style="border-bottom:1px solid #1d70b8;padding-bottom:20px" class="govuk-heading-xl govuk-!-margin-top-0">List your locations</h1>
-        <!-- <form class="form" action="/csu71/new-campaign-set-up/contract-details" method="post"> -->
 
 
 
 
-        <!-- <div style="float:right;border-radius:2px;border:1px solid #1d70b8;padding:5px">
-        <h2 class="govuk-heading-m">Role location pattern</h2>
-        {% if data['uk'] == "Hybrid: remote and onsite" %}
-        <span class="govuk-caption-m">{{ data['uk']}}</span>
-
-
-
-
-        {% endif %}
-      </div> -->
 
       <div id="mroe" style="display: none">
         {{ govukRadios({
@@ -129,7 +135,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
 
-        <div class="govuk-grid-column-one-quarter" style=";border-left:1px solid black;height:550px">
+        <div class="govuk-grid-column-one-quarter" style="display:none;border-left:1px solid black;height:550px">
 
           <h3 class="govuk-heading-m govuk-!-margin-top-3">{{ data['dept-copy-input-autocomplete'] | default("Cabinet Office") }} locations</h3>
 
@@ -161,6 +167,8 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
       <div class="govuk-!-margin-bottom-9 govuk-!-margin-top-1" id="buttons" style="">
 
         <a href="contract-details" style="width:140px" onclick="storeToSession()" type="govuk-button" class="govuk-button govuk-!-margin-bottom-9 govuk-!-margin-top-1">Continue</a>
+
+        <input id="locID" type="hidden" name="loc" value="set">
 
 
         <!-- <button class="govuk-button" href="contract-details" onClick="storeToSession()" data-module="govuk-button">Continue</button> -->
@@ -198,6 +206,12 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
       var bulk = document.getElementById("bulk");
       var loc = document.getElementById('list1');
       var link = document.getElementById('list2');
+
+      var locID = document.getElementById('locID');
+
+      if (locID.value == "set") {
+        console.log("locID set!")
+      }
 
 
 
@@ -238,43 +252,43 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           locationListA.push("Bristol");
           locationListA.push("Glasgow");
           locationListA.push("York");
-          console.log(locationListA);
+
 
           // window.sessionStorage.setItem("locations", JSON.stringify("Bristol, Glasgow, York"));
         }
       }
 
-      function focusSearch(place){
-
-        showDiv('head');
-        var searchBox = document.getElementById("autocomplete-default");
-        searchBox.value = place;
-        const pointer = document.getElementById("autocomplete-default");
-        pointer.addEventListener('blur', (event) => {
-          var thing = event.target.value;
-          var ploccontent = document.createElement("p");
-          var plinkconten = document.createElement("p");
-          ploccontent.innerHTML = thing;
-
-
-          if (ploccontent.innerHTML.length > 45){
-            ploccontent.style.cssText = "margin-top:10px;height:60px;font-size:20px;width:100%";
-            plinkconten.style.cssText = "margin-top:10px;;height:60px;;font-size:20px;font-weight:bold";
-
-          } else {
-            ploccontent.style.cssText = "margin-top:10px;height:20px;font-size:20px;width:100%";
-            plinkconten.style.cssText = "margin-top:10px;;height:20px;;font-size:20px;font-weight:bold";
-          }
-
-          plinkconten.innerHTML = "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' id='1' onclick='kill(this.id)' href='#'> Delete</a>";
-          loc.appendChild(ploccontent);
-          link.appendChild(plinkconten);
-
-          locationListA.push(thing);
-          console.log(locationListA);
-        }, { once: true });
-
-      }
+      // function focusSearch(place){
+      //
+      //   showDiv('head');
+      //   var searchBox = document.getElementById("autocomplete-default");
+      //   searchBox.value = place;
+      //   const pointer = document.getElementById("autocomplete-default");
+      //   pointer.addEventListener('blur', (event) => {
+      //     var thing = event.target.value;
+      //     var ploccontent = document.createElement("p");
+      //     var plinkconten = document.createElement("p");
+      //     ploccontent.innerHTML = thing;
+      //
+      //
+      //     if (ploccontent.innerHTML.length > 45){
+      //       ploccontent.style.cssText = "margin-top:10px;height:60px;font-size:20px;width:100%";
+      //       plinkconten.style.cssText = "margin-top:10px;;height:60px;;font-size:20px;font-weight:bold";
+      //
+      //     } else {
+      //       ploccontent.style.cssText = "margin-top:10px;height:20px;font-size:20px;width:100%";
+      //       plinkconten.style.cssText = "margin-top:10px;;height:20px;;font-size:20px;font-weight:bold";
+      //     }
+      //
+      //     plinkconten.innerHTML = "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' id='1' onclick='kill(this.id)' href='#'> Delete</a>";
+      //     loc.appendChild(ploccontent);
+      //     link.appendChild(plinkconten);
+      //
+      //     locationListA.push(thing);
+      //     console.log(locationListA);
+      //   }, { once: true });
+      //
+      // }
 
       const entry = document.getElementById("autocomplete-default");
       var count = 0;
@@ -307,11 +321,11 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
         showDiv('head');
 
         locationListA.push(location);
-        console.log(locationListA);
 
 
 
       });
+
 
 
       function showDiv(div1) {
@@ -328,28 +342,25 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
         //
         // const dateField = document.getElementById('bulk');
 
+
+
         function storeToSession() {
 
 
-          var stamp = new Date();
-          var localStamp = stamp.toLocaleDateString('en-us', { hour:"numeric",minute:"numeric" }) ;
+          console.log(locationListA+"locationListA")
+          window.sessionStorage.setItem("locations", JSON.stringify(locationListA));
 
-
-          try{<q cite=""></q>                                            dwqe
-            const locationListB = JSON.parse(window.sessionStorage.getItem("locations"));
-          } catch(err) {
-            console.log(err.message);
-          }
-
-          if (locationListB.length > 0) {
-            locationListA.push(locationListB)
-            window.sessionStorage.setItem("locations-"+localStamp, JSON.stringify(locationListA));
-          } else {
-            window.sessionStorage.setItem("locations-"+localStamp, JSON.stringify(locationListA));
-          }
-
-
-          console.log(locationListA)
+          //
+          //   const locationListB = JSON.parse(window.sessionStorage.getItem("locations"));
+          //
+          //
+          // if (locationListB.length > 0) {
+          //   locationListA.push(locationListB)
+          //   window.sessionStorage.setItem("locations", JSON.stringify(locationListA));
+          // }
+          //
+          //
+          // console.log(locationListA)
         }
 
       </script>
