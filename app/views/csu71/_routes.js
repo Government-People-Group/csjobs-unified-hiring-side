@@ -6,60 +6,60 @@ const router = express.Router()
 router.post("/location-handler", function (req, res) {
 	var locType = req.session.data['uk'];
 
-		if (locType == "Remote") {
-			res.redirect("new-campaign-set-up/contract-details");
-		} else {
-			res.redirect("new-campaign-set-up/locations-test");
-		}
+	if (locType == "Remote") {
+		res.redirect("new-campaign-set-up/contract-details");
+	} else {
+		res.redirect("new-campaign-set-up/locations-test");
+	}
 })
 
 
 router.post("/location-handlerBlank", function (req, res) {
 	var locType = req.session.data['uk'];
 
-		if (locType == "Remote") {
-			res.redirect("blank-campaign-set-up/contract-details");
-		} else {
-			res.redirect("blank-campaign-set-up/locations-test");
-		}
+	if (locType == "Remote") {
+		res.redirect("blank-campaign-set-up/contract-details");
+	} else {
+		res.redirect("blank-campaign-set-up/locations-test");
+	}
 })
 
 
 router.post("/location-handlerAdCopy", function (req, res) {
 	var locType = req.session.data['uk'];
 
-		if (locType == "Remote") {
-			res.redirect("adcopy-campaign-set-up/contract-details");
-		} else {
-			res.redirect("adcopy-campaign-set-up/locations-test");
-		}
+	if (locType == "Remote") {
+		res.redirect("adcopy-campaign-set-up/contract-details");
+	} else {
+		res.redirect("adcopy-campaign-set-up/locations-test");
+	}
 })
 
 
 router.get("/whichTaskList", function (req, res) {
 
-var templateStatus1 = req.session.data['chosen'];
-var templateStatus2 = req.session.data['template'];
+	var templateStatus1 = req.session.data['chosen'];
+	var templateStatus2 = req.session.data['template'];
 
-console.log(templateStatus1)
-console.log(templateStatus2)
+	console.log(templateStatus1)
+	console.log(templateStatus2)
 
-if (templateStatus1.length > 0 || templateStatus2.length > 0) {
-	res.redirect("/csu71/task-list-exp-co");
+	if (templateStatus1.length > 0 || templateStatus2.length > 0) {
+		res.redirect("/csu71/task-list-exp-co");
 
-}
+	}
 
-// if (template == "co"){
-// 	res.redirect("/csu71/task-list-exp-co?template=co&banner=show");
-// } else if (template == "ddat"){
-// 	res.redirect("/csu71/task-list-exp-co?template=ddat&banner=show");
-// } else if (template == "ho"){
-// 	res.redirect("/csu71/task-list-exp-co?template=ho&banner=show");
-// } else if (template == "dfe"){
-// 	res.redirect("/csu71/task-list-exp-co?template=dfe&banner=show");
-// } else if (none == "none") {
-// 	res.redirect("/csu71/task-list-new-campaign?template=none&banner=noshow");
-// }
+	// if (template == "co"){
+	// 	res.redirect("/csu71/task-list-exp-co?template=co&banner=show");
+	// } else if (template == "ddat"){
+	// 	res.redirect("/csu71/task-list-exp-co?template=ddat&banner=show");
+	// } else if (template == "ho"){
+	// 	res.redirect("/csu71/task-list-exp-co?template=ho&banner=show");
+	// } else if (template == "dfe"){
+	// 	res.redirect("/csu71/task-list-exp-co?template=dfe&banner=show");
+	// } else if (none == "none") {
+	// 	res.redirect("/csu71/task-list-new-campaign?template=none&banner=noshow");
+	// }
 
 })
 
@@ -69,36 +69,64 @@ if (templateStatus1.length > 0 || templateStatus2.length > 0) {
 
 router.get("/templates-picker", function (req, res) {
 
-var none = req.session.data['pickTemp'];
-var template = req.session.data['chosen'];
-// var tmp = req.session.data['templateSelected']
+	var none = req.session.data['pickTemp'];
+	var template = req.session.data['chosen'];
+	// var tmp = req.session.data['templateSelected']
 
-console.log(template)
+	console.log(template)
 
-if (template == "co"){
-	res.redirect("/csu71/task-list-exp-co?template=co&banner=show");
-} else if (template == "ddat"){
-	res.redirect("/csu71/task-list-exp-co?template=ddat&banner=show");
-}
- // else if (template == "ho"){
-// 	res.redirect("/csu71/task-list-exp-co?template=ho&banner=show");
-// } else if (template == "dfe"){
-// 	res.redirect("/csu71/task-list-exp-co?template=dfe&banner=show");
-// } else if (none == "none") {
-// 	res.redirect("/csu71/task-list-new-campaign?template=none&banner=noshow");
-// }
+	if (template == "co"){
+		res.redirect("/csu71/task-list-exp-co?template=co&banner=show");
+	} else if (template == "ddat"){
+		res.redirect("/csu71/task-list-exp-co?template=ddat&banner=show");
+	}
+	// else if (template == "ho"){
+	// 	res.redirect("/csu71/task-list-exp-co?template=ho&banner=show");
+	// } else if (template == "dfe"){
+	// 	res.redirect("/csu71/task-list-exp-co?template=dfe&banner=show");
+	// } else if (none == "none") {
+	// 	res.redirect("/csu71/task-list-new-campaign?template=none&banner=noshow");
+	// }
 
 })
 
 
 
+  router.get("/csu71/new-campaign-set-up/select-undefined", function (req, res) {
+    res.redirect("/csu71/new-campaign-set-up/select-criteria-stage");
+  })
 
-router.post("/check-next-stepV5", function (req, res) {
+
+
+
+// router.post("/check-next-stepV5", function (req, res) {
+// 	var src = req.session.data['source'];
+// 	var list = req.session.data['selected'];
+// 	var num = list.length;
+// 	console.log(src)
+// 	console.log(list)
+//
+// 	for (var a=0;a<num;a++){
+// 		if (src == list[num]) {
+// 			res.redirect("new-campaign-set-up/select-criteria-stage");
+// 		} else if (src == list[a]){
+// 			a=a+1;
+// 			res.redirect("new-campaign-set-up/select-"+list[a]);
+// 			break;
+// 		} else if (list[a] == "undefined"){
+// 			a=a+1;
+// 			res.redirect("new-campaign-set-up/select-criteria-stage");
+// 		}
+// 	}
+// })
+
+
+router.post("/check-next-step", function (req, res) {
 	var src = req.session.data['source'];
 	var list = req.session.data['selected'];
 	var num = list.length;
-console.log(src)
-console.log(list)
+	console.log(src)
+	console.log(list)
 
 	for (var a=0;a<num;a++){
 		if (src == list[num]) {
@@ -116,8 +144,8 @@ router.post("/check-next-stepAdCopy", function (req, res) {
 	var src = req.session.data['source'];
 	var list = req.session.data['selected'];
 	var num = list.length;
-console.log(src)
-console.log(list)
+	console.log(src)
+	console.log(list)
 
 	for (var a=0;a<num;a++){
 		if (src == list[num]) {
@@ -134,8 +162,8 @@ router.post("/check-next-stepBlank", function (req, res) {
 	var src = req.session.data['source'];
 	var list = req.session.data['selected'];
 	var num = list.length;
-console.log(src)
-console.log(list)
+	console.log(src)
+	console.log(list)
 
 	for (var a=0;a<num;a++){
 		if (src == list[num]) {
@@ -151,8 +179,9 @@ console.log(list)
 
 
 
+
 router.get("/methods-handler", function (req, res) {
-  var choices = req.session.data['sift-method'].choices;
+	var choices = req.session.data['sift-method'].choices;
 	var src = req.session.data['source'];
 	var num = choices.length;
 
@@ -169,38 +198,58 @@ router.get("/methods-handler", function (req, res) {
 })
 
 
+router.post("/exp01", function (req, res) {
+	var list = req.session.data['selected'];
+
+	if (list !="") {
+		res.redirect("/csu71/exp/paging/page-title-"+list[0])
+	}
+})
+
+router.get("/selection-handlerAdcopy", function (req, res) {
+	var list = req.session.data['selected'];
+	console.log(list)
+
+	for (var i=0;i<1;i++){
+		res.redirect("/csu71/adcopy-campaign-set-up/select-"+list[i]);
+	}
+
+})
+
+
+
 
 
 router.get("/selection-handlerV5", function (req, res) {
-  var list = req.session.data['selected'];
-console.log(list.length)
+	var list = req.session.data['selected'];
+	console.log(list.length)
 
-  for (var i=0;i<1;i++){
-    res.redirect("/csu71/new-campaign-set-up/select-"+list[i]);
-  }
+	for (var i=0;i<1;i++){
+		res.redirect("/csu71/new-campaign-set-up/select-"+list[i]);
+	}
 
-  })
+})
 
-	router.get("/selection-handlerAdcopy", function (req, res) {
-	  var list = req.session.data['selected'];
+router.get("/selection-handlerAdcopy", function (req, res) {
+	var list = req.session.data['selected'];
 	console.log(list)
 
-	  for (var i=0;i<1;i++){
-	    res.redirect("/csu71/adcopy-campaign-set-up/select-"+list[i]);
-	  }
+	for (var i=0;i<1;i++){
+		res.redirect("/csu71/adcopy-campaign-set-up/select-"+list[i]);
+	}
 
-	  })
+})
 
 
-		router.get("/selection-handlerBlank", function (req, res) {
-		  var list = req.session.data['selected'];
-		console.log(list)
+router.get("/selection-handlerBlank", function (req, res) {
+	var list = req.session.data['selected'];
+	console.log(list)
 
-		  for (var i=0;i<1;i++){
-		    res.redirect("/csu71/blank-campaign-set-up/select-"+list[i]);
-		  }
+	for (var i=0;i<1;i++){
+		res.redirect("/csu71/blank-campaign-set-up/select-"+list[i]);
+	}
 
-		  })
+})
 
 
 router.post("/basic-details-handler", function (req, res) {
@@ -409,8 +458,6 @@ router.post("/approval-2-handler", function (req, res) {
 router.post("/reserve-list-handler", function (req, res) {
 	if (req.session.data['edit23'] == "true") {
 		res.redirect('new-campaign-set-up/summary-section-5')
-	} else {
-		res.redirect('new-campaign-set-up/attraction-methods')
 	}
 })
 
@@ -464,36 +511,58 @@ router.post("/pre-submit-reviewer-handler", function (req, res) {
 
 
 router.post("/submit", function (req, res) {
-  var reserve = req.session.data['reserve']
-  if (reserve == "yes") {
-    res.redirect('new-campaign-set-up/reserve-candidates')
-  } else {
-    res.redirect('new-campaign-set-up/summary-section-6')
-  }
+	var reserve = req.session.data['reserve']
+	if (reserve == "yes") {
+		res.redirect('new-campaign-set-up/reserve-candidates')
+	} else {
+		res.redirect('new-campaign-set-up/summary-section-6')
+	}
 })
 
 router.post("/csu71/approval-altergo", function (req, res) {
-  var approved = req.session.data['approval-status']
-  if (approved == "Yes - approved")  {
-    res.redirect('new-campaign-set-up/approval-upload')
-  } else {
-    res.redirect('new-campaign-set-up/reserve-list')
-  }
+	var approved = req.session.data['approval-status']
+	if (approved == "Yes - approved")  {
+		res.redirect('new-campaign-set-up/approval-upload')
+	} else {
+		res.redirect('new-campaign-set-up/reserve-list')
+	}
 })
 
 
 router.post("/templates-altergo", function (req, res) {
-  var template = req.session.data['templatePicked']
+	var template = req.session.data['templatePicked']
 
-  if (template == "commando") {
-    res.redirect('task-list-new-campaign?template=none')
+	console.log(template)
 
-  } else if (template == "csofficial"){
-    res.redirect('template-csofficial-exp')
+	if (template == "commando") {
+		res.redirect('task-list-new-campaign?template=none')
+
+	} else if (template == "csofficial"){
+		res.redirect('template-csofficial-exp')
 	} else if (template == "preselected") {
 		res.redirect('template-ad-duplicate')
 		// res.redirect('task-list-exp-copy-ad')
-  } else if (template == "duplicate") {
+	} else if (template == "duplicate") {
+		res.redirect('template-ad-duplicate')
+
+	}
+
+})
+
+router.post("/templates-prepick", function (req, res) {
+	var template = req.session.data['template']
+
+	console.log(template)
+
+	if (template == "commando") {
+		res.redirect('task-list-new-campaign?template=none')
+
+	} else if (template == "csofficial"){
+		res.redirect('template-csofficial-exp')
+	} else if (template == "preselected") {
+		res.redirect('template-ad-duplicate')
+		// res.redirect('task-list-exp-copy-ad')
+	} else if (template == "duplicate") {
 		res.redirect('template-ad-duplicate')
 
 	}
@@ -502,12 +571,12 @@ router.post("/templates-altergo", function (req, res) {
 
 
 router.post("/locations-handler", function (req, res){
-  var remote = req.session.data['uk']
-  if (remote == "Remote") {
-    res.redirect('new-campaign-set-up/contract-details')
-  } else {
-    res.redirect('new-campaign-set-up/locations-2')
-  }
+	var remote = req.session.data['uk']
+	if (remote == "Remote") {
+		res.redirect('new-campaign-set-up/contract-details')
+	} else {
+		res.redirect('new-campaign-set-up/locations-2')
+	}
 })
 
 

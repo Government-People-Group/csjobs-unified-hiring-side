@@ -91,22 +91,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
       {% else %}
       {% endif %}
 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Online tests</dt>
-        <dd class="govuk-summary-list__value">
-          {% if data['tests']|length > 0 %}
-          {% for items in data['tests'] | slice(1) %}
-          <ul class="govuk-list govuk-list--bullet {{ loop.index }}">
-            {% for item in items %}
-            <li>{{ item }}</li>
-            {% endfor %}
-          </ul>
-          {% endfor %}
-          {% else %}
-          {% endif %}
-        </dd>
-        <dd class="govuk-summary-list__actions"><a href="online-tests?edit17=true">Change<span class="govuk-visually-hidden"> grade</span></a></dd>
-      </div>
+
     </dl>
 
 

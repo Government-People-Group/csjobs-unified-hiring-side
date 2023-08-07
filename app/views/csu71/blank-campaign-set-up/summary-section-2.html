@@ -34,7 +34,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
         <dd class="govuk-summary-list__actions"><a href="locations?edit2=true">Change<span class="govuk-visually-hidden"> grade</span></a></dd>
       </div>
       {% if  data['uk'] !== "Remote" %}
-      {% include 'includes/location-reveal.html' %}
+      {% include '/csu71/includes/location-reveal.html' %}
       {% else %}
       {% endif %}
     </dl>
@@ -42,9 +42,9 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
     <h2 class="govuk-heading-m">Contract</h2>
     <dl class="govuk-summary-list">
       {% if data['contract'] == "Fixed term" %}
-      {% include 'includes/fixed.html' %}
+      {% include '/csu71/includes/fixed.html' %}
       {% else %}
-      {% include 'includes/notfixed.html' %}
+      {% include '/csu71/includes/notfixed.html' %}
       {% endif %}
 
       <div class="govuk-summary-list__row">
@@ -75,7 +75,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
         <dd class="govuk-summary-list__actions"><a href="grades?edit5=true">Change<span class="govuk-visually-hidden"> department</span></a></dd>
       </div>
       {% if  data['allowances'] == "yes" %}
-      {% include 'includes/noextras.html' %}
+      {% include '/csu71/includes/noextras.html' %}
       {% elseif data['allowances'] == "no" %}
       {% endif %}
       <div class="govuk-summary-list__row">
@@ -103,13 +103,13 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
     <h2 class="govuk-heading-m">Contact details</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-4">
       {% if  data['contact'] == "Me" %}
-      {% include 'includes/me-contact.html' %}
+      {% include '/csu71/includes/me-contact.html' %}
       {% else %}
-      {% include 'includes/someone-else-contact.html' %}
+      {% include '/csu71/includes/someone-else-contact.html' %}
       {% endif %}
 
       {% if  data['updates'] == "yes" %}
-      {% include 'includes/updates.html' %}
+      {% include '/csu71/includes/updates.html' %}
       {% elseif data['updates'] == "no" %}
       {% endif %}
     </dl>

@@ -12,6 +12,8 @@
     "govuk-frontend": "^4.6.0",
     "govuk-prototype-kit": "^13.8.1",
     "hmrc-frontend": "5.37.0",
-    "notifications-node-client": "7.0.0"
+    "notifications-node-client": "7.0.0",
+    "recursive-readdir": "^2.2.3",
+    "require-dir": "^1.2.0"
   }
 }

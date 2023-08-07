@@ -16,7 +16,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-blank"><strong>Return to task list</strong></a></span>
+    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-new-campaign"><strong>Return to task list</strong></a></span>
 
   </div>
 
@@ -35,7 +35,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 
-<form class="form" action="/csu71/selection-handlerV5" method="post">
+<form class="form" action="/csu71/selection-handlerBlank" method="post">
 
 
   <div class="govuk-grid-row govuk-!-margin-top-3">
@@ -56,7 +56,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
                 <div class="govuk-grid-column-two-thirds">
 
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="behaviours" name="selected" type="checkbox"  value="behaviours" checked aria-describedby="nationality-item-hint">
+                    <input class="govuk-checkboxes__input" id="behaviours" name="selected" type="checkbox"  value="behaviours" aria-describedby="nationality-item-hint">
                     <label class="govuk-label govuk-checkboxes__label" for="behaviours" style="line-height:0.8;font-size:32px;font-weight:bold;">
                       Behaviours
                     </label>
@@ -79,7 +79,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
                   </div>
 
                   <div class="govuk-checkboxes__item">
-                    <input style="margin-bottom:20px" class="govuk-checkboxes__input" id="experience" name="selected" type="checkbox" value="experience" checked aria-describedby="experience-item-hint">
+                    <input style="margin-bottom:20px" class="govuk-checkboxes__input" id="experience" name="selected" type="checkbox" value="experience" aria-describedby="experience-item-hint">
                     <label class="govuk-label govuk-checkboxes__label" for="experience" style="line-height:0.8;font-size:32px;font-weight:bold;">
                       Experience
                     </label>
@@ -123,7 +123,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="skills" name="selected" type="checkbox" value="skills" checked aria-describedby="skills-item-hint">
+                    <input class="govuk-checkboxes__input" id="skills" name="selected" type="checkbox" value="skills"  aria-describedby="skills-item-hint">
                     <label class="govuk-label govuk-checkboxes__label" for="skills" style="line-height:0.8;font-size:32px;font-weight:bold">
                       Technical skills
                     </label>

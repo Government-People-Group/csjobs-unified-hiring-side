@@ -68,14 +68,14 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
      <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">Vacancy <strong>1001891</strong></p>
 
-     <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">Grade <strong>{{ data['grade']}}</strong></p>
+     <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">Grade <strong>{{ data['grade']|default("SEO")}}</strong></p>
 
 
 
 </div></div>
 
 
-          <h1 style="border-bottom:1px solid #1d70b8;;padding-bottom:10px;" class="govuk-heading-xl">{{ data['temp-copy-input-autocomplete']}}</h1>
+          <h1 style="border-bottom:1px solid #1d70b8;;padding-bottom:10px;" class="govuk-heading-xl">{{ data['temp-copy-input-autocomplete']|default("Policy Adviser")}}</h1>
           <div class="govuk-grid-row">
              <div class="govuk-grid-column-three-quarters">
 
@@ -101,7 +101,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="/csu71/new-campaign-set-up/basic-details" aria-describedby="eligibility-status">
+              <a href="/csu71/blank-campaign-set-up/basic-details" aria-describedby="eligibility-status">
                 Basic details
               </a>
             </span>
@@ -121,7 +121,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="/csu71/new-campaign-set-up/approval" aria-describedby="read-declaration-status">
+              <a href="/csu71/blank-campaign-set-up/approval" aria-describedby="read-declaration-status">
                 Approval
               </a>
             </span>
@@ -140,7 +140,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="/csu71/new-campaign-set-up/reserved-status-role" aria-describedby="read-declaration-status">
+              <a href="/csu71/blank-campaign-set-up/reserved-status-role" aria-describedby="read-declaration-status">
                 Reserved status
               </a>
             </span>
@@ -169,7 +169,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="/csu71/new-campaign-set-up/locations" aria-describedby="list-convictions-status">
+              <a href="/csu71/blank-campaign-set-up/locations" aria-describedby="list-convictions-status">
                 Location</a>
               </span>
 
@@ -187,7 +187,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/csu71/new-campaign-set-up/contract-details" aria-describedby="list-convictions-status">
+                <a href="/csu71/blank-campaign-set-up/contract-details" aria-describedby="list-convictions-status">
                   Contract details</a>
                 </span>
 
@@ -207,7 +207,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
               </li>
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
-                  <a href="/csu71/new-campaign-set-up/salary-and-benefits" aria-describedby="list-convictions-status">
+                  <a href="/csu71/blank-campaign-set-up/salary-and-benefits" aria-describedby="list-convictions-status">
                     Salary and benefits</a>
                   </span>
 
@@ -223,7 +223,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
-                      <a href="/csu71/new-campaign-set-up/pecvet" aria-describedby="list-convictions-status">
+                      <a href="/csu71/blank-campaign-set-up/pecvet" aria-describedby="list-convictions-status">
                         Pre-employment checks and vetting</a>
                       </span>
 
@@ -245,7 +245,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                 <ul class="app-task-list__items">
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
-                      <a href="/csu71/new-campaign-set-up/about-the-role" aria-describedby="read-declaration-status">
+                      <a href="/csu71/blank-campaign-set-up/about-the-role" aria-describedby="read-declaration-status">
                         About the role
                       </a>
                     </span>
@@ -263,7 +263,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
-                      <a href="/csu71/new-campaign-set-up/about-the-team" aria-describedby="read-declaration-status">
+                      <a href="/csu71/blank-campaign-set-up/about-the-team" aria-describedby="read-declaration-status">
                         About the team
                       </a>
                     </span>
@@ -282,7 +282,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                   <!-- <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
-                      <a href="/csu71/new-campaign-set-up/essential-criteria" aria-describedby="read-declaration-status">
+                      <a href="/csu71/blank-campaign-set-up/essential-criteria" aria-describedby="read-declaration-status">
                         Essential criteria
                       </a>
                     </span>
@@ -300,7 +300,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                   <!-- <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
-                      <a href="/csu71/new-campaign-set-up/pre-sift-questions" aria-describedby="list-convictions-status">
+                      <a href="/csu71/blank-campaign-set-up/pre-sift-questions" aria-describedby="list-convictions-status">
                         Eliminating criteria</a>
                       </span>
 
@@ -316,7 +316,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                     <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/supporting-links" aria-describedby="read-declaration-status">
+                        <a href="/csu71/blank-campaign-set-up/supporting-links" aria-describedby="read-declaration-status">
                           Add any supporting links
                         </a>
                       </span>
@@ -342,7 +342,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                                       <li class="app-task-list__item">
                                         <span class="app-task-list__task-name">
-                                          <a class="govuk-link govuk-link--no-visited-state" href="/csu71/new-campaign-set-up/pick-criteria-type" aria-describedby="eligibility-status">
+                                          <a class="govuk-link govuk-link--no-visited-state" href="/csu71/blank-campaign-set-up/pick-criteria-type" aria-describedby="eligibility-status">
                                             Pick selection criteria
                                           </a>
                                         </span>
@@ -468,7 +468,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                   <ul class="app-task-list__items">
                     <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/assessment-methods" aria-describedby="eligibility-status">
+                        <a href="/csu71/blank-campaign-set-up/assessment-methods" aria-describedby="eligibility-status">
                           Assessment methods
                         </a>
                       </span>
@@ -482,7 +482,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                     <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/how-sift" aria-describedby="read-declaration-status">
+                        <a href="/csu71/blank-campaign-set-up/how-sift" aria-describedby="read-declaration-status">
                           How will you assess at sift?
                         </a>
                       </span>
@@ -498,7 +498,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                     <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/interview-evidence" aria-describedby="read-declaration-status">
+                        <a href="/csu71/blank-campaign-set-up/interview-evidence" aria-describedby="read-declaration-status">
                           How will you interview?
                         </a>
                       </span>
@@ -514,7 +514,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                     <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/online-tests" aria-describedby="read-declaration-status">
+                        <a href="/csu71/blank-campaign-set-up/online-tests" aria-describedby="read-declaration-status">
                           Online tests
                         </a>
                       </span>
@@ -529,7 +529,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                     <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/experience" aria-describedby="read-declaration-status">
+                        <a href="/csu71/blank-campaign-set-up/experience" aria-describedby="read-declaration-status">
                           Essential criteria at sift and interview
                         </a>
                       </span>
@@ -544,7 +544,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                     </li>
                     <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/behaviours" aria-describedby="read-declaration-status">
+                        <a href="/csu71/blank-campaign-set-up/behaviours" aria-describedby="read-declaration-status">
                           Behaviours at sift and interview
                         </a>
                       </span>
@@ -562,7 +562,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                     <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/technical" aria-describedby="read-declaration-status">
+                        <a href="/csu71/blank-campaign-set-up/technical" aria-describedby="read-declaration-status">
                           Technical skills at sift and interview
                         </a>
                       </span>
@@ -577,7 +577,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                     <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/other-methods" aria-describedby="read-declaration-status">
+                        <a href="/csu71/blank-campaign-set-up/other-methods" aria-describedby="read-declaration-status">
                           Additional assessment requirements
                         </a>
                       </span>
@@ -595,7 +595,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                   <ul class="app-task-list__items">
                     <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/approach" aria-describedby="company-information-status">
+                        <a href="/csu71/blank-campaign-set-up/approach" aria-describedby="company-information-status">
                           Approach
                         </a>
                       </span>
@@ -608,7 +608,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                     </li>
                     <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/attraction-methods" aria-describedby="list-convictions-status">
+                        <a href="/csu71/blank-campaign-set-up/attraction-methods" aria-describedby="list-convictions-status">
                           Attraction methods
                         </a>
                       </span>
@@ -622,7 +622,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                     <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/reserve-list" aria-describedby="list-convictions-status">
+                        <a href="/csu71/blank-campaign-set-up/reserve-list" aria-describedby="list-convictions-status">
                           Reserve list
                         </a>
                       </span>
@@ -642,7 +642,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                   <ul class="app-task-list__items">
                     <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/contact-details" aria-describedby="list-convictions-status">
+                        <a href="/csu71/blank-campaign-set-up/contact-details" aria-describedby="list-convictions-status">
                           Add people to the campaign</a>
                         </span>
                         {% if data['contact']|length >= 1 %}
@@ -659,7 +659,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                       </li>
                     <!-- <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
-                        <a href="/csu71/new-campaign-set-up/contact-details" aria-describedby="list-convictions-status">
+                        <a href="/csu71/blank-campaign-set-up/contact-details" aria-describedby="list-convictions-status">
                           Add people</a>
                         </span>
                         {% if data['contact']|length >= 1 %}
@@ -678,7 +678,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                       <li class="app-task-list__item">
                         <span class="app-task-list__task-name">
-                          <a href="/csu71/new-campaign-set-up/campaign-dates" aria-hidden="list-convictions-status">
+                          <a href="/csu71/blank-campaign-set-up/campaign-dates" aria-hidden="list-convictions-status">
                             Campaign dates
                           </span>
                           {% if data['advert-time']|length >= 1 %}
@@ -698,7 +698,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                           <li class="app-task-list__item">
                             <span class="app-task-list__task-name">
-                              <a href="/csu71/new-campaign-set-up/submit" aria-hidden="list-convictions-status">
+                              <a href="/csu71/blank-campaign-set-up/submit" aria-hidden="list-convictions-status">
                                 Submit
                               </span>
                               {% if data['submitted'] == "true" %}

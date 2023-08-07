@@ -1,0 +1,1141 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+<style>
+  .govuk-width-container {
+    max-width:1200px;
+  }
+
+  .column-width-40 {
+    width:40% !important;
+  }
+
+  :target{
+    background-color:#e5f5f0;
+  }
+</style>
+
+<div class="govuk-grid-row">
+
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#prototype">
+            Prototype
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#user-journeys">
+            User journeys
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#documents">
+            Requirement documents
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#list">
+            List
+          </a>
+        </li>
+
+
+      </ul>
+      <div class="govuk-tabs__panel" id="prototype">
+        <h2 class="govuk-heading-l">Civil Service Jobs - prototype</h2>
+
+        <div class="govuk-inset-text">
+          If you have any questions about using this prototype, please contact <a href="mailto:jonathan.inch@cabinetoffice.gov.uk" target="_blank">Jonathan Inch</a>, <a href="mailto:ismail.ismail@cabinetoffice.gov.uk" target="_blank">Ismail Ismail</a> or <a href="mailto:anna.smith@cabinetoffice.gov.uk" target="_blank">Anna Smith</a>.
+        </div><br><br>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <ul class="govuk-list">
+              <li>
+                (1) <a class="govuk-link" href="#step1">Vacancy is set up</a>
+              </li>
+              <li>
+                (2) <a class="govuk-link" href="#step2">Candidate finds role</a>
+              </li>
+              <li>
+                (3) <a class="govuk-link" href="#step3">Candidate applies</a>
+              </li>
+              <li>
+                (4) <a class="govuk-link" href="#step4">Applications are sifted</a>
+              </li>
+              <li>
+                (5) <a class="govuk-link" href="#step5">Interviews are set up and arranged</a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <ul class="govuk-list">
+              <li>
+                (6) <a class="govuk-link" href="#step6">Interviews take place</a>
+              </li>
+              <li>
+                (7) <a class="govuk-link" href="#step7">Provisional offer made</a>
+              </li>
+              <li>
+                (8) <a class="govuk-link" href="#step8">Pre-employment checks</a>
+              </li>
+              <li>
+                (9) <a class="govuk-link" href="#step9">Final offer</a>
+              </li>
+            </ul>
+          </div>
+        </div><br><br><br>
+
+
+
+
+<!-- Step 1 table -->
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m" id="step1">(1) Vacancy is set up</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header column-width-40">Event</th>
+              <th scope="col" class="govuk-table__header" style="width:17%">Who</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header" style="width:35%">Testing notes</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/csu71/job-library?firstNot=seen" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Vacancy holder starts the process of creating a new vacancy</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    They provide a few simple details at the start. The proposed job title and the grade, the profession that the role will be aligned to and finally their department. This information is assumed to be readily available to vacancy holders, as it is required during the business case and approval step. <BR><BR>The approval process is department-specific , but this common basic information should be attainable.<br><br>We use this information throughout the service, and certain features are dependent on them.
+                  </div>
+                </details><br>
+                <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+                <p class="govuk-body-m" style="padding-top:20px">OR</p>
+                <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br> -->
+              </td>
+
+
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--green">
+                  VACANCY HOLDER
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                Lorem ipsum wowowdingdong</td>
+            </tr>
+
+
+
+         <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/csu71/templates-alt" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">They are offered a choice of their vacancy set-up:</a><BR><br>
+                <ol type="A" class="govuk-list--spaced" style=";font-size:1.1em">
+                  <li><a href="#use-template" class="govuk-link govuk-link--no-visited-state">Use a Civil Service template</a></li>
+                  <li><a href="#copy-ad" class="govuk-link govuk-link--no-visited-state">Make a copy of a previous job advert</a></li>
+                  <li><a href="#new" class="govuk-link govuk-link--no-visited-state">Create a new vacancy</a></li>
+                </ol>
+
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Blah blah.<br><br>
+                  </div>
+                </details>
+
+
+              </td>
+
+
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--green">
+                  VACANCY HOLDER
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                Lorem ipsum wowowdingdong</td>
+            </tr>
+
+
+
+         <tr class="govuk-table__row" id="use-template">
+              <td class="govuk-table__cell"><a href="/csu71/template-csofficial-exp" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">A. Use a Civil Service template</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Blah blah.<br><br>
+                  </div>
+                </details><br>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--green">
+                  VACANCY HOLDER
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+
+              <td class="govuk-table__cell">
+                Tested many times in as is state (not many variations of it) - confidence is low because all findings are that people need more filters but we haven't tested this yet
+              </td>
+            </tr>
+            <tr class="govuk-table__row" id="copy-ad">
+              <td class="govuk-table__cell"><a href="/csu71/template-ad-duplicate" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">B. Make a copy of a previous job advert</a><br>
+
+                   <details class="govuk-details" data-module="govuk-details">
+                     <summary class="govuk-details__summary" style="color:#5d6062">
+                       <span class="govuk-details__summary-text" style="font-size:0.9em">
+                         Notes
+                       </span>
+                     </summary>
+                     <div class="govuk-details__text">
+                       Blah blah.<br><br>
+                     </div>
+                   </details><br>
+                 </td>
+                 <td class="govuk-table__cell">
+                   <strong class="govuk-tag govuk-tag--green">
+                     VACANCY HOLDER
+                   </strong>
+                 </td>
+                 <td class="govuk-table__cell">
+                   <strong class="govuk-tag">
+                     TESTED
+                   </strong>
+                 </td>
+
+                 <td class="govuk-table__cell">
+                   Tested many times in as is state (not many variations of it) - confidence is low because all findings are that people need more filters but we haven't tested this yet
+                 </td>
+               </tr>
+
+               <tr class="govuk-table__row" id="new">
+                 <td class="govuk-table__cell"><a href="/csu71/template-ad-duplicate" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">C. Create a new vacancy</a><br>
+                   <details class="govuk-details" data-module="govuk-details">
+                     <summary class="govuk-details__summary" style="color:#5d6062">
+                       <span class="govuk-details__summary-text" style="font-size:0.9em">
+                         Notes
+                       </span>
+                     </summary>
+                     <div class="govuk-details__text">
+                       Blah blah.<br><br>
+                     </div>
+                   </details><br>
+                 </td>
+                 <td class="govuk-table__cell">
+                   <strong class="govuk-tag govuk-tag--green">
+                     VACANCY HOLDER
+                   </strong>
+                 </td>
+                 <td class="govuk-table__cell">
+                   <strong class="govuk-tag">
+                     TESTED
+                   </strong>
+                 </td>
+
+                 <td class="govuk-table__cell">
+                   Tested many times in as is state (not many variations of it) - confidence is low because all findings are that people need more filters but we haven't tested this yet
+                 </td>
+               </tr>
+
+
+
+
+
+
+
+
+
+
+          </tbody>
+        </table>
+
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m"  id="step4">(4) Applications are sifted</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header column-width-40">Event</th>
+              <th scope="col" class="govuk-table__header" style="width:17%">Who</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header" style="width:35%">Testing notes</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/csu71/job-library?firstNot=seen" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Vacancy holder start process of creating a new vacancy</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Blah blah.<br><br>
+                  </div>
+                </details><br>
+                <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+                <p class="govuk-body-m" style="padding-top:20px">OR</p>
+                <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br>
+              </td>
+
+
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--green">
+                  VACANCY HOLDER
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                Lorem ipsum wowowdingdong</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/csu71/templates-alt-ad-pre-selected" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Vacancy holder chooses to use a template, copy a previous or start from scratch.</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Blah blah.<br><br>
+                  </div>
+                </details><br>
+                <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+                <p class="govuk-body-m" style="padding-top:20px">OR</p>
+                <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br> -->
+              </td>
+
+
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--green">
+                  VACANCY HOLDER
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                Lorem ipsum wowowdingdong</td>
+            </tr>
+
+            <!-- <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/csu71/job-library?firstNot=seen" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Vacancy holder creates a new vacancy</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Blah blah.<br><br>
+                  </div>
+                </details><br>
+                <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+                <p class="govuk-body-m" style="padding-top:20px">OR</p>
+                <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br>
+              </td>
+
+
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--green">
+                  VACANCY HOLDER
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                Lorem ipsum wowowdingdong</td>
+            </tr> -->
+
+
+
+            <!-- <tr class="govuk-table__row" id="use-template">
+              <td class="govuk-table__cell"><strong>Scenario A - using template</strong><br><br><a href="/csu71/template-csofficial-exp" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em"> egjsdg sodg</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Blah blah.<br><br>
+                  </div>
+                </details><br>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--green">
+                  VACANCY HOLDER
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+
+              <td class="govuk-table__cell">
+                Tested many times in as is state (not many variations of it) - confidence is low because all findings are that people need more filters but we haven't tested this yet
+              </td>
+            </tr> -->
+            <!-- <tr class="govuk-table__row" id="use-template">
+              <td class="govuk-table__cell"><a href="home" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em"> asdflkdfl</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Blah blah.<br><br>
+                  </div>
+                </details><br>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--green">
+                  VACANCY HOLDER
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+
+              <td class="govuk-table__cell">
+                Tested many times in as is state (not many variations of it) - confidence is low because all findings are that people need more filters but we haven't tested this yet
+              </td>
+            </tr> -->
+            <!-- <tr class="govuk-table__row" id="use-template">
+              <td class="govuk-table__cell"><a href="home" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em"> s dsdis disdh d</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Blah blah.<br><br>
+                  </div>
+                </details><br>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--green">
+                  VACANCY HOLDER
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+
+              <td class="govuk-table__cell">
+                Tested many times in as is state (not many variations of it) - confidence is low because all findings are that people need more filters but we haven't tested this yet
+              </td>
+            </tr> -->
+
+
+            <!-- <tr class="govuk-table__row" id="no-template">
+              <td class="govuk-table__cell"><strong>Scenario B - not using template</strong><br><br><a href="home" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">ahsdfkahsdafa</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Blah blah.<br><br>
+                  </div>
+                </details>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--green">
+                  VACANCY HOLDER
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                Tested many times in as is state (not many variations of it) - confidence is low because all findings are that people need more filters but we haven't tested this yet
+              </td>
+            </tr>
+            <tr class="govuk-table__row" id="use-template">
+              <td class="govuk-table__cell"><a href="home" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">fsodfh soa </a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Blah blah.<br><br>
+                  </div>
+                </details><br>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--green">
+                  VACANCY HOLDER
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+
+              <td class="govuk-table__cell">
+                Tested many times in as is state (not many variations of it) - confidence is low because all findings are that people need more filters but we haven't tested this yet
+              </td>
+            </tr>
+            <tr class="govuk-table__row" id="use-template">
+              <td class="govuk-table__cell"><a href="home" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">dg sdga fua</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Blah blah.<br><br>
+                  </div>
+                </details><br>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--green">
+                  VACANCY HOLDER
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+
+              <td class="govuk-table__cell">
+                Tested many times in as is state (not many variations of it) - confidence is low because all findings are that people need more filters but we haven't tested this yet
+              </td>
+            </tr>
+            <tr class="govuk-table__row" id="use-template">
+              <td class="govuk-table__cell"><a href="home" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">qewrqwurfioadjfd</a><br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary" style="color:#5d6062">
+                    <span class="govuk-details__summary-text" style="font-size:0.9em">
+                      Notes
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Blah blah.<br><br>
+                  </div>
+                </details><br>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--green">
+                  VACANCY HOLDER
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag">
+                  TESTED
+                </strong>
+              </td>
+
+              <td class="govuk-table__cell">
+                Tested many times in as is state (not many variations of it) - confidence is low because all findings are that people need more filters but we haven't tested this yet
+              </td>
+            </tr> -->
+
+
+          </tbody>
+        </table>
+
+
+
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m"  id="step5">(5) Interviews are set up and arranged</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header column-width-40">Event</th>
+      <th scope="col" class="govuk-table__header" style="width:17%">Who</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header" style="width:35%">Testing notes</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="/csu71/job-library?firstNot=seen" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Vacancy holder start process of creating a new vacancy</a><br>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary" style="color:#5d6062">
+            <span class="govuk-details__summary-text" style="font-size:0.9em">
+              Notes
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Blah blah.<br><br>
+          </div>
+        </details><br>
+        <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+        <p class="govuk-body-m" style="padding-top:20px">OR</p>
+        <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br> -->
+      </td>
+
+
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">
+          VACANCY HOLDER
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag">
+          TESTED
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        Lorem ipsum wowowdingdong</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="/csu71/templates-alt-ad-pre-selected" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Vacancy holder chooses to use a template, copy a previous or start from scratch.</a><br>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary" style="color:#5d6062">
+            <span class="govuk-details__summary-text" style="font-size:0.9em">
+              Notes
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Blah blah.<br><br>
+          </div>
+        </details><br>
+        <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+        <p class="govuk-body-m" style="padding-top:20px">OR</p>
+        <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br> -->
+      </td>
+
+
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">
+          VACANCY HOLDER
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag">
+          TESTED
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        Lorem ipsum wowowdingdong</td>
+    </tr>
+
+
+
+
+  </tbody>
+</table>
+
+
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m"  id="step6">(6) Interviews take place</caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header column-width-40">Event</th>
+        <th scope="col" class="govuk-table__header" style="width:17%">Who</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+        <th scope="col" class="govuk-table__header" style="width:35%">Testing notes</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><a href="/csu71/job-library?firstNot=seen" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Vacancy holder start process of creating a new vacancy</a><br>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary" style="color:#5d6062">
+              <span class="govuk-details__summary-text" style="font-size:0.9em">
+                Notes
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              Blah blah.<br><br>
+            </div>
+          </details><br>
+          <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+          <p class="govuk-body-m" style="padding-top:20px">OR</p>
+          <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br> -->
+        </td>
+
+
+        <td class="govuk-table__cell">
+          <strong class="govuk-tag govuk-tag--green">
+            VACANCY HOLDER
+          </strong>
+        </td>
+        <td class="govuk-table__cell">
+          <strong class="govuk-tag">
+            TESTED
+          </strong>
+        </td>
+        <td class="govuk-table__cell">
+          Lorem ipsum wowowdingdong</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><a href="/csu71/templates-alt-ad-pre-selected" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Vacancy holder chooses to use a template, copy a previous or start from scratch.</a><br>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary" style="color:#5d6062">
+              <span class="govuk-details__summary-text" style="font-size:0.9em">
+                Notes
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              Blah blah.<br><br>
+            </div>
+          </details><br>
+          <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+          <p class="govuk-body-m" style="padding-top:20px">OR</p>
+          <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br> -->
+        </td>
+
+
+        <td class="govuk-table__cell">
+          <strong class="govuk-tag govuk-tag--green">
+            VACANCY HOLDER
+          </strong>
+        </td>
+        <td class="govuk-table__cell">
+          <strong class="govuk-tag">
+            TESTED
+          </strong>
+        </td>
+        <td class="govuk-table__cell">
+          Lorem ipsum wowowdingdong</td>
+      </tr>
+
+
+
+
+    </tbody>
+  </table>
+
+
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m"  id="step7">(7) Provisional offer made</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header column-width-40">Event</th>
+      <th scope="col" class="govuk-table__header" style="width:17%">Who</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header" style="width:35%">Testing notes</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="/csu71/job-library?firstNot=seen" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Vacancy holder start process of creating a new vacancy</a><br>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary" style="color:#5d6062">
+            <span class="govuk-details__summary-text" style="font-size:0.9em">
+              Notes
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Blah blah.<br><br>
+          </div>
+        </details><br>
+        <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+        <p class="govuk-body-m" style="padding-top:20px">OR</p>
+        <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br> -->
+      </td>
+
+
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">
+          VACANCY HOLDER
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag">
+          TESTED
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        Lorem ipsum wowowdingdong</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="/csu71/templates-alt-ad-pre-selected" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Vacancy holder chooses to use a template, copy a previous or start from scratch.</a><br>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary" style="color:#5d6062">
+            <span class="govuk-details__summary-text" style="font-size:0.9em">
+              Notes
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Blah blah.<br><br>
+          </div>
+        </details><br>
+        <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+        <p class="govuk-body-m" style="padding-top:20px">OR</p>
+        <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br> -->
+      </td>
+
+
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">
+          VACANCY HOLDER
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag">
+          TESTED
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        Lorem ipsum wowowdingdong</td>
+    </tr>
+
+
+
+
+  </tbody>
+</table>
+
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m"  id="step8">(8) Pre-employment checks</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header column-width-40">Event</th>
+      <th scope="col" class="govuk-table__header" style="width:17%">Who</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header" style="width:35%">Testing notes</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="/csu71/job-library?firstNot=seen" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Vacancy holder start process of creating a new vacancy</a><br>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary" style="color:#5d6062">
+            <span class="govuk-details__summary-text" style="font-size:0.9em">
+              Notes
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Blah blah.<br><br>
+          </div>
+        </details><br>
+        <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+        <p class="govuk-body-m" style="padding-top:20px">OR</p>
+        <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br> -->
+      </td>
+
+
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">
+          VACANCY HOLDER
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag">
+          TESTED
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        Lorem ipsum wowowdingdong</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="/csu71/templates-alt-ad-pre-selected" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Vacancy holder chooses to use a template, copy a previous or start from scratch.</a><br>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary" style="color:#5d6062">
+            <span class="govuk-details__summary-text" style="font-size:0.9em">
+              Notes
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Blah blah.<br><br>
+          </div>
+        </details><br>
+        <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+        <p class="govuk-body-m" style="padding-top:20px">OR</p>
+        <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br> -->
+      </td>
+
+
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">
+          VACANCY HOLDER
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag">
+          TESTED
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        Lorem ipsum wowowdingdong</td>
+    </tr>
+
+
+  </tbody>
+</table>
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m"  id="step9">(9) Final offer</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header column-width-40">Event</th>
+      <th scope="col" class="govuk-table__header" style="width:17%">Who</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header" style="width:35%">Testing notes</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="/csu71/job-library?firstNot=seen" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Vacancy holder start process of creating a new vacancy</a><br>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary" style="color:#5d6062">
+            <span class="govuk-details__summary-text" style="font-size:0.9em">
+              Notes
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Blah blah.<br><br>
+          </div>
+        </details><br>
+        <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+        <p class="govuk-body-m" style="padding-top:20px">OR</p>
+        <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br> -->
+      </td>
+
+
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">
+          VACANCY HOLDER
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag">
+          TESTED
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        Lorem ipsum wowowdingdong</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="/csu71/templates-alt-ad-pre-selected" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Vacancy holder chooses to use a template, copy a previous or start from scratch.</a><br>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary" style="color:#5d6062">
+            <span class="govuk-details__summary-text" style="font-size:0.9em">
+              Notes
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Blah blah.<br><br>
+          </div>
+        </details><br>
+        <!-- <a href="#use-template" class="govuk-link govuk-link--no-visited-state">Yes - will use template (Scenario A)</a>
+        <p class="govuk-body-m" style="padding-top:20px">OR</p>
+        <a href="#no-template" class="govuk-link govuk-link--no-visited-state">No - will not use template (Scenario B)</a><br><br> -->
+      </td>
+
+
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">
+          VACANCY HOLDER
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag">
+          TESTED
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        Lorem ipsum wowowdingdong</td>
+    </tr>
+
+
+  </tbody>
+</table>
+
+
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="user-journeys">
+        <h2 class="govuk-heading-l">User journeys</h2>
+
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="documents">
+        <h2 class="govuk-heading-l">Requirement documents</h2>
+      </div>
+      <div style="background:white" class="govuk-tabs__panel govuk-tabs__panel--hidden" id="list">
+        <h2 class="govuk-heading-l">List All -ignore</h2>
+        <ul class="govuk-list govuk-list--bullet">
+        <h3 class="govuk-heading-l">Contract information</h3>
+          <li><a href="/csu71/new-campaign-set-up/locations" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Location</a></li>
+          <li><a href="/csu71/new-campaign-set-up/locations-test" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">List your locations</a></li>
+          <li><a href="/csu71/new-campaign-set-up/contract-details" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Contract details</a></li>
+          <li><a href="/csu71/new-campaign-set-up/salary-and-benefits" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Salary and benefits</a></li>
+          <li><a href="/csu71/new-campaign-set-up/pecvet" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Pre-employment checks and vetting</a></li>
+          <li><a href="/csu71/new-campaign-set-up/summary-section-2" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Contract information</a></li>
+          <li><a href="/csu71/new-campaign-set-up/about-the-role" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">About the role</a></li>
+          <li><a href="/csu71/new-campaign-set-up/about-the-team" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">About the team</a></li>
+          <li><a href="/csu71/new-campaign-set-up/supporting-links" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Add supporting links</a></li>
+
+          <li><a href="/csu71/new-campaign-set-up/summary-section-3" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Advert setup</a></li>
+
+          <h3 class="govuk-heading-l">Assessment methods</h3>
+
+          <li><a href="/csu71/new-campaign-set-up/pick-criteria-type?selectTemp=co" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Choose the elements you want to assess</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-behaviours" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Behaviours</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-experience?template=%7B%7Bdata[%27template%27]%7D%7D" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Experience</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-skills?template=%7B%7Bdata[%27template%27]%7D%7D" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Technical skills</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-criteria-stage" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">When will you assess each element?</a></li>
+          <li><a href="/csu71/new-campaign-set-up/selection-criteria-summary" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Review your assessment criteria</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-methods-sift" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">How will you assess at sift?</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-methods-int" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">How will you assess at the interview?</a></li>
+          <li><a href="/csu71/new-campaign-set-up/review-sp-table-alt" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Review your assessment methods</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-essential-criteria" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em"> Essential criteria (missing page)</a></li>
+          <li><a href="/csu71/new-campaign-set-up/pre-sift-questions" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Pre-qualifying questions</a></li>
+          <li><a href="/csu71/new-campaign-set-up/approach" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Who can apply?</a></li>
+          <li><a href="/csu71/new-campaign-set-up/attraction-methods" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Where do you want to advertise the vacancy?</a></li>
+          <li><a href="/csu71/new-campaign-set-up/summary-section-5" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Recruitment channels</a></li>
+          <li><a href="/csu71/new-campaign-set-up/reserve-list" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Is a reserve list required?</a></li>
+          <li><a href="/csu71/new-campaign-set-up/contact-details" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Add people to the campaign</a></li>
+          <li><a href="/csu71/new-campaign-set-up/include-people" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Add people to the campaign</a></li>
+          <li><a href="/csu71/new-campaign-set-up/include-people-others" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Add people to the campaign</a></li>
+          <li><a href="/csu71/new-campaign-set-up/include-people-review" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Add people to the campaign</a></li>
+          <li><a href="/csu71/new-campaign-set-up/campaign-dates" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Campaign dates</a></li>
+          <li><a href="/csu71/new-campaign-set-up/submit" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Reserve candidates found</a></li>
+          <li><a href="/csu71/new-campaign-set-up/reserve-candidates" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">13 results found matching, "Senior business analyst"</a></li>
+          <li><a href="/csu71/new-campaign-set-up/basic-details" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Basic details</a></li>
+          <li><a href="/csu71/new-campaign-set-up/reserved-status-role" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Reserved status</a></li>
+          <li><a href="/csu71/new-campaign-set-up/approval" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Approval</a></li>
+          <li><a href="/csu71/new-campaign-set-up/summary-section-1" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">About the vacancy</a></li>
+          <li><a href="/csu71/new-campaign-set-up/reserved-status-role" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Reserved status</a></li>
+          <li><a href="/csu71/new-campaign-set-up/locations-test#" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">List your locations</a></li>
+          <li><a href="/csu71/new-campaign-set-up/contract-details" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Contract details</a></li>
+            <li><a href="/csu71/new-campaign-set-up/salary-and-benefits?cost=£21500&costmax=£22000&allowances=yes&otherAllow=Fabio vel iudice vincam, sunt in culpa qui officia. Idque Caesaris facere voluntate liceret: sese habere. Etiam habebis sem dicantur magna mollis euismod. Contra legem facit qui id facit quod lex prohibet.
+Curabitur est gravida et libero vitae dictum. Tityre, tu patulae recubans sub tegmine fagi dolor. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ambitioni dedisse scripsisse iudicaretur." class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Salary and benefits</a></li>
+          <li><a href="/csu71/new-campaign-set-up/pecvet" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Pre-employment checks and vetting</a></li>
+          <li><a href="/csu71/new-campaign-set-up/summary-section-2" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Contract information</a></li>
+          <li><a href="/csu71/new-campaign-set-up/about-the-role" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">About the role</a></li>
+          <li><a href="/csu71/new-campaign-set-up/about-the-team" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">About the team</a></li>
+          <li><a href="/csu71/new-campaign-set-up/supporting-links" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Add supporting links</a></li>
+          <li><a href="/csu71/new-campaign-set-up/summary-section-3" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Advert setup</a></li>
+          <li><a href="/csu71/new-campaign-set-up/pick-criteria-type" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Choose the elements you want to assess</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-behaviours" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Behaviours</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-experience" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Experience</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-strengths" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Strengths</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-skills" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Technical skills</a></li>
+          <li><a href="/csu71/new-campaign-set-up/locations" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Location</a></li>
+          <li><a href="/csu71/new-campaign-set-up/locations-test#" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">List your locations</a></li>
+          <li><a href="/csu71/new-campaign-set-up/contract-details" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Contract details</a></li>
+          <li><a href="/csu71/new-campaign-set-up/salary-and-benefits" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Salary and benefits</a></li>
+          <li><a href="/csu71/new-campaign-set-up/pecvet" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Pre-employment checks and vetting</a></li>
+          <li><a href="/csu71/new-campaign-set-up/summary-section-2" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Contract information</a></li>
+          <li><a href="/csu71/new-campaign-set-up/about-the-role" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">About the role</a></li>
+          <li><a href="/csu71/new-campaign-set-up/about-the-team" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">About the team</a></li>
+          <li><a href="/csu71/new-campaign-set-up/supporting-links" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Add supporting links</a></li>
+          <li><a href="/csu71/new-campaign-set-up/summary-section-3" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Advert setup</a></li>
+          <li><a href="/csu71/new-campaign-set-up/pick-criteria-type" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Choose the elements you want to assess</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-behaviours" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Behaviours</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-experience" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Experience</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-skills" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Technical skills</a></li>
+          <li><a href="/csu71/new-campaign-set-up/salary-and-benefits" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Salary and benefits</a></li>
+          <li><a href="/csu71/new-campaign-set-up/pecvet" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Pre-employment checks and vetting</a></li>
+          <li><a href="/csu71/new-campaign-set-up/summary-section-2" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Contract information</a></li>
+          <li><a href="/csu71/new-campaign-set-up/about-the-role" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">About the role</a></li>
+          <li><a href="/csu71/new-campaign-set-up/about-the-team" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">About the team</a></li>
+          <li><a href="/csu71/new-campaign-set-up/supporting-links" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Add supporting links</a></li>
+          <li><a href="/csu71/new-campaign-set-up/summary-section-3" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Advert setup</a></li>
+          <li><a href="/csu71/new-campaign-set-up/pick-criteria-type" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Choose the elements you want to assess</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-behaviours" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Behaviours</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-experience" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Experience</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-skills" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Technical skills</a></li>
+          <li><a href="/csu71/new-campaign-set-up/approach" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Who can apply?</a></li>
+          <li><a href="/csu71/new-campaign-set-up/attraction-methods" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Where do you want to advertise the vacancy?</a></li>
+          <li><a href="/csu71/new-campaign-set-up/summary-section-5" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Recruitment channels</a></li>
+          <li><a href="/csu71/new-campaign-set-up/reserve-list" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Is a reserve list required?</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-essential-criteria" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Essential criteria</a></li>
+          <li><a href="/csu71/new-campaign-set-up/pre-sift-questions" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Pre-qualifying questions</a></li>
+          <li><a href="/csu71/new-campaign-set-up/summary-section-4" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Sifting and selection methods</a></li>
+          <li><a href="/csu71/new-campaign-set-up/approach" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Who can apply?</a></li>
+          <li><a href="/csu71/new-campaign-set-up/attraction-methods" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Where do you want to advertise the vacancy?</a></li>
+          <li><a href="/csu71/new-campaign-set-up/summary-section-5" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Recruitment channels</a></li>
+          <li><a href="/csu71/new-campaign-set-up/contact-details" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Add people to the campaign</a></li>
+          <li><a href="/csu71/new-campaign-set-up/include-people" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Add people to the campaign</a></li>
+          <li><a href="/csu71/new-campaign-set-up/include-people-panel" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Add people to the campaign</a></li>
+          <li><a href="/csu71/new-campaign-set-up/include-people-others" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Add people to the campaign</a></li>
+          <li><a href="/csu71/new-campaign-set-up/include-people-review" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Add people to the campaign</a></li>
+          <li><a href="/csu71/new-campaign-set-up/salary-and-benefits" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Salary and benefits</a></li>
+          <li><a href="/csu71/new-campaign-set-up/pecvet" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Pre-employment checks and vetting</a></li>
+          <li><a href="/csu71/new-campaign-set-up/summary-section-2" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Contract information</a></li>
+          <li><a href="/csu71/new-campaign-set-up/about-the-role" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">About the role</a></li>
+          <li><a href="/csu71/new-campaign-set-up/about-the-team" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">About the team</a></li>
+          <li><a href="/csu71/new-campaign-set-up/supporting-links" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Add supporting links</a></li>
+          <li><a href="/csu71/new-campaign-set-up/summary-section-3" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Advert setup</a></li>
+          <li><a href="/csu71/new-campaign-set-up/pick-criteria-type" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Choose the elements you want to assess</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-behaviours" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Behaviours</a></li>
+          <li><a href="/csu71/new-campaign-set-up/select-experience" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Experience</a></li>
+          <li><a href="/csu71/new-campaign-set-up/salary-and-benefits" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Salary and benefits</a></li>
+          <li><a href="/csu71/new-campaign-set-up/pecvet" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Pre-employment checks and vetting</a></li>
+          <li><a href="/csu71/new-campaign-set-up/summary-section-2" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Contract information</a></li>
+          <li><a href="/csu71/new-campaign-set-up/about-the-role" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">About the role</a></li>
+          <li><a href="/csu71/new-campaign-set-up/about-the-team" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">About the team</a></li>
+          <li><a href="/csu71/new-campaign-set-up/supporting-links" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Add supporting links</a></li>
+          <li><a href="/csu71/new-campaign-set-up/locations" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Location</a></li>
+          <li><a href="/csu71/new-campaign-set-up/contract-details" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Contract details</a></li>
+          <li><a href="/csu71/new-campaign-set-up/salary-and-benefits" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Salary and benefits</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

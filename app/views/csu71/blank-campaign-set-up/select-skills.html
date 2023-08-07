@@ -19,7 +19,7 @@
 
 
 
-  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-blank"><strong>Return to task list</strong></a></span>
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-new-campaign"><strong>Return to task list</strong></a></span>
 
   <!-- {% if data['org'] == "ddat" %}
   <div id ="ddattag"  style="position:absolute;right:10px;top:60px;;">
@@ -133,7 +133,7 @@
   }
 
 </style>
-
+{{ data['selected']}}
 <form class="form" action="select-criteria-stage" method="post">
 
 <input id="templateName" type="hidden" name="templateName" value="{{ data['org']}}">
@@ -235,7 +235,7 @@
 
           <div id="sklcta1" style="display:{{ nosee }}" class="govuk-body-m ">
 
-            <p class="govuk-body-m"><a style="color:#1d70b8" onclick="showHideDiv('skills4','sklcta1')">Add another skill</a></p>
+            <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" style="font-weight:bold;color:#1d70b8" onclick="showHideDiv('skills4','sklcta1')">Add another skill</a>
           </div>
 
 
@@ -295,9 +295,9 @@
 
             {% endfor %}{% endfor %}
             <div id="sklcta4" style="display:{{ nosee }}" class="govuk-body-m ">
-              <p class="govuk-body-m"><a style="color:#1d70b8;float:right" onclick="deleteDiv('skills4','sklcta1')">Delete this skill</a></p>
+            <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" style="font-weight:bold;color:#1d70b8;float:right" onclick="deleteDiv('skills4','sklcta1')">Delete this skill</a>
 
-              <p class="govuk-body-m"><a style="color:#1d70b8" onclick="showHideDiv('skills5','sklcta4')">Add another skill</a></p>
+              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" style="font-weight:bold;color:#1d70b8" onclick="showHideDiv('skills5','sklcta4')">Add another skill</a>
             </div>
           </div>
 
@@ -357,9 +357,9 @@
 
             {% endfor %}{% endfor %}
             <div id="sklcta5" style="display:{{ nosee }}" class="govuk-body-m ">
-              <p class="govuk-body-m"><a style="color:#1d70b8;float:right" onclick="deleteDiv('skills5','sklcta4')">Delete this skill</a></p>
+              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" style="font-weight:bold;color:#1d70b8;float:right" onclick="deleteDiv('skills5','sklcta4')">Delete this skill</a>
 
-              <p class="govuk-body-m"><a style="color:#1d70b8" onclick="showHideDiv('skills6','sklcta5')">Add another skill</a></p>
+              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" style="font-weight:bold;color:#1d70b8" onclick="showHideDiv('skills6','sklcta5')">Add another skill</a>
 
             </div>
 
@@ -421,7 +421,7 @@
             {% endfor %}{% endfor %}
 
             <div id="sklcta6" style="display:{{ nosee }}" class="govuk-body-m ">
-              <p class="govuk-body-m"><a style="color:#1d70b8" onclick="deleteDiv('skills6','sklcta5')">Delete this skill</a></p>
+              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" style="font-weight:bold;color:#1d70b8" onclick="deleteDiv('skills6','sklcta5')">Delete this skill</a>
             </div>
 
           </div>
