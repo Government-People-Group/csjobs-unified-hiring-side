@@ -135,59 +135,167 @@
 
   <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Candidate sift status</H1>
 
+  <h2 style="font-size:20px;font-weight:normal" class="app-task-list__section">You have sifted 5 of 5 applications.
+  </h2>
 
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
+  <div class="govuk-grid-column-full">
 
-    <ol class="app-task-list">
-      <li>
-        <h2 style="font-size:20px;font-weight:normal" class="app-task-list__section">You have sifted 0 of 5 applications.
-        </h2>
-        <ul class="app-task-list__items">
-          <li class="app-task-list__item">
+
+        <!-- <ul class="app-task-list__items"> -->
+          <!-- <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-1" aria-describedby="eligibility-status">
                 Candidate 1
               </a>
             </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not scored yet</strong>
-          </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-2" aria-describedby="eligibility-status">
-                Candidate 2
-              </a>
-            </span>
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>
-          </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-3" aria-describedby="eligibility-status">
-                Candidate 3
-              </a>
-            </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>
-          </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-4" aria-describedby="eligibility-status">
-                Candidate 4
-              </a>
-            </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>
-          </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state"href="1001334-applicant-5" aria-describedby="eligibility-status">
-                Candidate 5
-              </a>
-            </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>
-          </li>
-        </ul>
-        </li>
-</ol>
+          </li> -->
+
+
+          <table class="govuk-table" style="">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header app-custom-class"></th>
+                <th scope="col" class="govuk-table__header app-custom-class">Behaviour 1</th>
+                <th scope="col" class="govuk-table__header app-custom-class">Behaviour 2</th>
+                <th scope="col" class="govuk-table__header app-custom-class">Behaviour 3</th>
+                <th scope="col" class="govuk-table__header app-custom-class">Skills</th>
+                <th scope="col" class="govuk-table__header app-custom-class">Status</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+
+                  <span class="app-task-list__task-name">
+                    <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-1" aria-describedby="eligibility-status">
+                      Candidate 1
+                    </a>
+                  </span>
+
+
+
+
+</th>
+                <td class="govuk-table__cell">{{ data['c1score1']}}</td>
+                <td class="govuk-table__cell">{{ data['c1score2']}}</td>
+                <td class="govuk-table__cell">{{ data['c1score3']}}</td>
+                <td class="govuk-table__cell">{{ data['c1score4']}}</td>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag " id="contact-details-status">completed</strong>
+
+
+
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+
+                  <span class="app-task-list__task-name">
+                    <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-2" aria-describedby="eligibility-status">
+                      Candidate 2
+                    </a>
+                  </span>
+
+
+
+
+</th>
+                <td class="govuk-table__cell">4</td>
+                <td class="govuk-table__cell">3</td>
+                <td class="govuk-table__cell">5</td>
+                <td class="govuk-table__cell">3</td>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag " id="contact-details-status">completed</strong>
+
+
+
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+
+                  <span class="app-task-list__task-name">
+                    <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-3" aria-describedby="eligibility-status">
+                      Candidate 3
+                    </a>
+                  </span>
+
+
+
+
+</th>
+                <td class="govuk-table__cell">5</td>
+                <td class="govuk-table__cell">6</td>
+                <td class="govuk-table__cell">5</td>
+                <td class="govuk-table__cell">5</td>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag " id="contact-details-status">completed</strong>
+
+
+
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+
+                  <span class="app-task-list__task-name">
+                    <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-4" aria-describedby="eligibility-status">
+                      Candidate 4
+                    </a>
+                  </span>
+
+
+
+
+</th>
+                <td class="govuk-table__cell">2</td>
+                <td class="govuk-table__cell">2</td>
+                <td class="govuk-table__cell">3</td>
+                <td class="govuk-table__cell">2</td>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag " id="contact-details-status">completed</strong>
+
+
+
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+
+                  <span class="app-task-list__task-name">
+                    <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-5" aria-describedby="eligibility-status">
+                      Candidate 5
+                    </a>
+                  </span>
+
+
+
+
+</th>
+                <td class="govuk-table__cell">7</td>
+                <td class="govuk-table__cell">6</td>
+                <td class="govuk-table__cell">6</td>
+                <td class="govuk-table__cell">5</td>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag " id="contact-details-status">completed</strong>
+
+
+
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+                  <h2 class="govuk-heading-l">Review and submit sifting scores</h2>
+
+                <p clas="govuk-body-m">Review and submit your scores for the Policy Adviser application.</p>
+                <button type="submit" class="govuk-button" data-module="govuk-button">Submit my scores to panel</button>
+
+
   </div>
 </div>
 
