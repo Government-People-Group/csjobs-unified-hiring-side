@@ -33,8 +33,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <span class="govuk-caption-xl">Summary</span>
-    <h1 class="govuk-heading-xl">Finalise and submit</h1>
+    <h1 class="govuk-heading-xl">Review and submit</h1>
 
     <h2 class="govuk-heading-m">Panel</h2>
     <dl class="govuk-summary-list">
@@ -77,18 +76,39 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
       </div>
     </dl>
 
-    <span class="govuk-caption-l">Are you ready to submit?</span>
-    <h2 class="govuk-heading-l">What happens next</h2>
-    <p>Non equidem invideo, miror magis posuere velit aliquet. Fictum, deserunt mollit anim laborum astutumque! Ab illo tempore, ab est sed immemorabili. Sed haec quis possit intrepidus aestimare tellus.
-    </p>
-    <form action="confirmation" method="post" novalidate>
-      <input type="hidden" name="summary6" value="true">
-      <input type="hidden" name="submitted" value="true">
-      <button type="submit" class="govuk-button" data-module="govuk-button">Submit for approval</button>
+
+
+
+          <input type="hidden" name="summary6" value="true">
+          <input type="hidden" name="submitted" value="true">
+
+
+    <div class="govuk-!-margin-top-9" style="background:#f3f2f1;padding:20px">
+      <h2 class="govuk-heading-l ">What happens next</h2>
+
+    <p class="govuk-body-l">Review and submit your vacancy.</p>
+
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+Your job campaign will be sent to Government Recruitment Service (GRS). GRS wull perform an audit to make sure the campaign is compliant with the Civil Service Commission's principes.
+      </strong>
+    </div>
+
+
+<hr style="margin-bottom:40px;border-bottom:1px solid #1d70b8" style="border-top:1px solid black"">
+<form action="confirmation" method="post" novalidate>
+
+    <button type="submit" class="govuk-button" data-module="govuk-button">Submit for approval</button>
     </form>
+    </div>
+
+
 
   </div>
 </div>
-{% include '/csu71/includes/footerarea.html' %}
+
 
 {% endblock %}

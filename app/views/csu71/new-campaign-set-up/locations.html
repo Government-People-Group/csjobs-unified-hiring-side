@@ -6,9 +6,18 @@
 {% block pageTitle %}
 Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
+
 {% block beforeContent %}
-{% set sectionref = "Contract information" %}
-{% include '/csu71/includes/blue-subhead.html' %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Contract information</span>
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+<span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+</div>
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
 {% endblock %}
 
 {% block content %}

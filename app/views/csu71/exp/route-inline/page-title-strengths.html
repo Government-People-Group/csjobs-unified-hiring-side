@@ -1,0 +1,95 @@
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% extends "layouts/main.html" %}
+
+
+
+
+
+
+
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+    </div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Advert set up</span>
+
+    <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+      <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+<!--
+      {% if data['org'] == "ddat" %}
+      <div id ="ddattag"  style="position:absolute;right:10px;top:60px;;">
+        <a href="/csu71/template-csofficial?return=select-behaviours"><img src="/public/images/ddat1.png" alt="Template by Digital, Data and Technology Profession" style="background:#F4FAFF;border:2px solid #1d70b8;padding:10px;border-radius:5px;width:80px"></a>
+
+      </div>
+      {% elif data['org'] == "co" %}
+      <div id ="cotag"  style="position:absolute;right:10px;top:60px;;">
+        <a  href="/csu71/template-csofficial?return=select-behaviours"> <img src="/public/images/co-logo.png" alt="Template by Cabinet Office" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
+      </div>
+      {% elif data['org'] == "ho" %}
+      <div id ="hotag"  style="position:absolute;right:10px;top:60px;;">
+        <a href="/csu71/template-csofficial?return=select-behaviours"><img src="/public/images/ho-logo.png" alt="Template by Home Office" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
+      </div>
+      {% endif %} -->
+
+
+    </div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+{% if data['selected'][3] === "undefined" %}
+{% set destination = "pick" %}
+{% else %}
+{% set destination = "page-title-"+data['selected'][3]  %}
+{% endif %}
+
+
+
+
+<form class="form" action="{{ destination }}" method="post">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter" style="width:30%;">
+
+      {% for items in data['selected'] %}
+      <ul class="govuk-!-margin-top-4 govuk-list govuk-list--bullet-">
+
+          {% if items == "strengths" %}
+          <li style ="line-height:1.6;font-size:18px;font-weight:bold;border-left:5px solid #1d70b8;margin-left:10px;padding-left:15px"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="page-title-{{items }}">{{ items | capitalize }}</a></li>
+          {% else %}
+          <li style ="line-height:1.6;font-size:18px;border-left:2px solid white;margin-left:10px;padding-left:15px"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="page-title-{{items }}">{{ items | capitalize }}</a></p></li>
+        </ul>
+        {% endif %}
+        {% endfor %}
+
+      </div>
+
+
+
+
+      <input type="hidden" name="source" value="strengths">
+
+
+        </div>
+
+            {{ govukButton({
+              classes: "govuk-!-margin-top-3 govuk-!-margin-bottom-6",
+              text: "Continue"
+            }) }}
+              </form>
+
+        {% endblock %}

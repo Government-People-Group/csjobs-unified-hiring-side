@@ -128,7 +128,7 @@
 
   {% block content %}
 
-<form action="/csu71/sift/panelist/1001334-applicant-2" method="post">
+<form action="1001334-applicant-2" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 <span class="govuk-caption-l">1001334</span>
@@ -144,6 +144,64 @@
         <div class="govuk-grid-column-one-third">
 
           {{ govukSelect({
+                    id: "newgrade",
+                    name: "newgrade",
+                    label: {
+                      text: "What grade is the job role?",
+                      classes: "govuk-label--s"
+                    },
+                    items: [
+                    {
+                      value: "none",
+                      selected: "true",
+                      disabled: "true",
+                      text: "Select grade"
+                    },
+
+                    {
+                      value: "Administrative Assistant",
+                      text: "Administrative Assistant",
+                      selected: checked("grade","Administrative Assistant")
+                    },
+                    {
+                      value: "Administrative Officer",
+                      text: "Administrative Officer",
+                      selected: checked("grade","Administrative Officer")
+                    },
+                    {
+                      value: "Executive Officer",
+                      text: "Executive Officer",
+                      selected: checked("grade","Executive Officer")
+                    },
+                    {
+                      value: "Higher Executive Officer",
+                      text: "Higher Executive Officer",
+                      selected: checked("grade","Higher Executive Officer")
+                    },
+                    {
+                      value: "Senior Executive Officer",
+                      text: "Senior Executive Officer",
+                      selected: checked("grade","Senior Executive Officer")
+                    },
+                    {
+                      value: "Grade 7",
+                      text: "Grade 7",
+                      selected: checked("grade","Grade 7")
+                    },
+                    {
+                      value: "Grade 6",
+                      text: "Grade 6",
+                      selected: checked("grade","Grade 6")
+                    }
+                    ]
+                  }) }}
+
+
+
+
+
+
+          {{ govukSelect({
           id: "c1score1",
           name: "c1score1",
           label: {
@@ -153,6 +211,7 @@
           items: [
           {
             value: "1",
+            selected: checked("c1score1","1"),
             text: "1 Not Demonstrated - No positive evidence provided"
           },
           {

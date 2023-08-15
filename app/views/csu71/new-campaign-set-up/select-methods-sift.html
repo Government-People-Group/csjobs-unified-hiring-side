@@ -17,7 +17,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;line=helights   border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
 
 </div>
 
@@ -33,11 +33,11 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
   /* Example page specific styling. */
   p, div {
     font-family: "GDS Transport", arial, sans-serif;
-    line-height: 1.8;
-    margin: 1.8
+    line-height: 1.2;
+    margin: 0.8
   }
   p, li {
-    font-size: 20px; line-height: 1.8   ;
+    font-size: 20px; line-height: 1.2;
     vertical-align: text-top;
 
   }
@@ -150,6 +150,9 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           var headSift = document.createElement("h3");
           headSift.innerHTML = `${value}: ${key}`;
           siftOutput.appendChild(headSift);
+var tempVar = `${key}`
+
+console.log(tempVar)
 
 
 
@@ -188,7 +191,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
               label.style.cssText = "display: block;padding-left: 15px;text-indent: 40px;";
               checkBox.value = behavioursChkList[i];
               checkBox.setAttribute("id","sift-"+i)
-              checkBox.setAttribute("name",+"-"+siftStage)
+              checkBox.setAttribute("name",`${key}`)
 
 
 
@@ -239,6 +242,23 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
 
+                function checkCheckBoxes() {
+                  var sCheck = [];
+
+
+                  var checks = document.getElementsByTagName('input');
+
+                  for (i = 0; i < checks.length; i++) {
+                    if (checks[i].type == 'checkbox' && checks[i].checked ) {
+                        sCheck.push(checks[i].value, checks[i].name);
+                      }
+
+                      }
+console.log(sCheck)
+                    }
+
+
+
 
 
 
@@ -251,14 +271,13 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
         </script>
 
 
-        <button class="govuk-button govuk-!-margin-top-9" onclick="checkCheckboxesSift()" data-module="govuk-button">Continue</button>
+        <button class="govuk-button govuk-!-margin-top-9" onclick="checkCheckBoxes()" data-module="govuk-button">Continue</button>
 
 
       </div>
     </div>
 
 
-    {% include '/csu71/includes/footerarea.html' %}
 
   </form>
 

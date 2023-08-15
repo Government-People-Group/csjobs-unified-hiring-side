@@ -92,11 +92,13 @@ router.get("/templates-picker", function (req, res) {
 
 
 
-  router.get("/csu71/new-campaign-set-up/select-undefined", function (req, res) {
-    res.redirect("/csu71/new-campaign-set-up/select-criteria-stage");
-  })
-
-
+  // router.get("/select-undefined", function (req, res) {
+  //   res.redirect("/csu71/new-campaign-set-up/select-criteria-stage");
+  // })
+	//
+	// router.get("/csu71/blank-campaign-set-up/select-undefined", function (req, res) {
+  //   res.redirect("/csu71/blank-campaign-set-up/select-criteria-stage");
+  // })
 
 
 // router.post("/check-next-stepV5", function (req, res) {
@@ -124,15 +126,16 @@ router.get("/templates-picker", function (req, res) {
 router.post("/check-next-step", function (req, res) {
 	var src = req.session.data['source'];
 	var list = req.session.data['selected'];
+	var listLen = req.session.data['selected'].length;
 	var num = list.length;
 	console.log(src)
 	console.log(list)
 
 	for (var a=0;a<num;a++){
-		if (src == list[num]) {
+		if (src == list[num -1]) {
 			res.redirect("new-campaign-set-up/select-criteria-stage");
 		} else if (src == list[a]){
-			a=a+1;
+		a=a+1;
 			res.redirect("new-campaign-set-up/select-"+list[a]);
 			break;
 		}
@@ -143,38 +146,43 @@ router.post("/check-next-step", function (req, res) {
 router.post("/check-next-stepAdCopy", function (req, res) {
 	var src = req.session.data['source'];
 	var list = req.session.data['selected'];
+	var listLen = req.session.data['selected'].length;
 	var num = list.length;
 	console.log(src)
 	console.log(list)
 
 	for (var a=0;a<num;a++){
-		if (src == list[num]) {
+		if (src == list[num -1]) {
 			res.redirect("adcopy-campaign-set-up/select-criteria-stage");
 		} else if (src == list[a]){
-			a=a+1;
+		a=a+1;
 			res.redirect("adcopy-campaign-set-up/select-"+list[a]);
 			break;
 		}
 	}
 })
 
+
 router.post("/check-next-stepBlank", function (req, res) {
 	var src = req.session.data['source'];
 	var list = req.session.data['selected'];
+	var listLen = req.session.data['selected'].length;
 	var num = list.length;
 	console.log(src)
 	console.log(list)
 
 	for (var a=0;a<num;a++){
-		if (src == list[num]) {
+		if (src == list[num -1]) {
 			res.redirect("blank-campaign-set-up/select-criteria-stage");
 		} else if (src == list[a]){
-			a=a+1;
+		a=a+1;
 			res.redirect("blank-campaign-set-up/select-"+list[a]);
 			break;
 		}
 	}
 })
+
+
 
 
 
@@ -200,7 +208,7 @@ router.get("/methods-handler", function (req, res) {
 
 router.post("/exp01", function (req, res) {
 	var list = req.session.data['selected'];
-
+	console.log(list)
 	if (list !="") {
 		res.redirect("/csu71/exp/paging/page-title-"+list[0])
 	}
@@ -292,21 +300,23 @@ router.post("/contract-details-handler", function (req, res) {
 	}
 })
 
-router.post("/salary-handler", function (req, res) {
-	if (req.session.data['edit5'] == "true") {
-		res.redirect('new-campaign-set-up/summary-section-2')
+router.post("/contract-details-handlerAdcopy", function (req, res) {
+	if (req.session.data['edit4'] == "true") {
+		res.redirect('/csu71/adcopy-campaign-set-up/summary-section-2')
 	} else {
-		res.redirect('new-campaign-set-up/benefits')
+		res.redirect('/csu71/adcopy-campaign-set-up/salary-and-benefits')
 	}
 })
 
-router.post("/benefits-handler", function (req, res) {
-	if (req.session.data['edit6'] == "true") {
-		res.redirect('new-campaign-set-up/summary-section-2')
+router.post("/contract-details-handlerBlank", function (req, res) {
+	if (req.session.data['edit4'] == "true") {
+		res.redirect('blank-campaign-set-up/summary-section-2')
 	} else {
-		res.redirect('new-campaign-set-up/contact-details')
+		res.redirect('blank-campaign-set-up/salary-and-benefits')
 	}
 })
+
+
 
 router.post("/contact-details-handler", function (req, res) {
 	if (req.session.data['edit7'] == "true") {

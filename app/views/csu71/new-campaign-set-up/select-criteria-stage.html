@@ -115,7 +115,6 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
 
-
 <form class="form" action="selection-criteria-summary" method="post">
 
   <div class="govuk-grid-row">
@@ -125,45 +124,48 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
       </h1>
       <p class="govuk-body-l govuk-!-margin-bottom-3">You must choose when to assess all elements you have selected.</p>
 
+      {% if "behaviours" in data['selected'] %}
       <h2 id="bheader" class="govuk-heading-l govuk-!-margin-top-3" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Behaviours</h2>
+      {% endif %}
 
       <!-- <p id="lShip" class="govuk-body-m govuk-!-margin-bottom-3"></p> -->
 
       <div id="behDiv"></div>
 
-
+{% if "strengths" in data['selected'] %}
       <h2 id="stheader" class="govuk-heading-l govuk-!-margin-top-9" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Strengths</h2>
-
+{% endif %}
       <div id="strDiv"></div>
 
 
 
-
+      {% if "experience" in data['selected'] %}
       <h2 id="eheader" class="govuk-heading-l govuk-!-margin-top-9" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Experience</h2>
+{% endif %}
       {% set criteriaExpArr = [] %}
 
       {% if data['Experience 1'].length > 0 %}
-      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 1']|truncate(50)), criteriaExpArr) %}
+      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 1']|truncate(250)), criteriaExpArr) %}
       {% else %}{% endif %}
 
       {% if data['Experience 2'].length > 0 %}
-      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 2']|truncate(50)), criteriaExpArr) %}
+      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 2']|truncate(250)), criteriaExpArr) %}
       {% else %}{% endif %}
 
       {% if data['Experience 3'].length > 0 %}
-      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 3']|truncate(50)), criteriaExpArr) %}
+      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 3']|truncate(250)), criteriaExpArr) %}
       {% else %}{% endif %}
 
       {% if data['Experience 4'].length > 0 %}
-      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 4']|truncate(50)), criteriaExpArr) %}
+      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 4']|truncate(250)), criteriaExpArr) %}
       {% else %}{% endif %}
 
       {% if data['Experience 5'].length > 0 %}
-      {% set criteriaExpArr = (criteriaExpArr.push(data['Skills 5']|truncate(50)), criteriaExpArr) %}
+      {% set criteriaExpArr = (criteriaExpArr.push(data['Skills 5']|truncate(250)), criteriaExpArr) %}
       {% else %}{% endif %}
 
       {% if data['Experience 6'].length > 0 %}
-      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 6']|truncate(50)), criteriaExpArr) %}
+      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 6']|truncate(250)), criteriaExpArr) %}
       {% else %}{% endif %}
 
 
@@ -210,7 +212,9 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
       <div>
-        <h2 id="skheader" class="govuk-heading-l govuk-!-margin-top-9" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Skills</h2>
+            {% if "skills" in data['selected'] %}
+        <h2 id="skheader" class="govuk-heading-l govuk-!-margin-top-9" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Technical skills</h2>
+        {% endif %}
         <div id="skillsDDAT"></DIV>
 
 
@@ -221,27 +225,27 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
           {% if data['Technical skills 1'].length > 0 %}
-          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 1']|truncate(50)), criteriaSkillsArr) %}
+          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 1']|truncate(250)), criteriaSkillsArr) %}
           {% else %}{% endif %}
 
           {% if data['Technical skills 2'].length > 0 %}
-          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 2']|truncate(50)), criteriaSkillsArr) %}
+          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 2']|truncate(250)), criteriaSkillsArr) %}
           {% else %}{% endif %}
 
           {% if data['Technical skills 3'].length > 0 %}
-          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 3']|truncate(50)), criteriaSkillsArr) %}
+          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 3']|truncate(250)), criteriaSkillsArr) %}
           {% else %}{% endif %}
 
           {% if data['Technical skills 4'].length > 0 %}
-          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 4']|truncate(50)), criteriaSkillsArr) %}
+          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 4']|truncate(250)), criteriaSkillsArr) %}
           {% else %}{% endif %}
 
           {% if data['Technical skills 5'].length > 0 %}
-          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 5']|truncate(50)), criteriaSkillsArr) %}
+          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 5']|truncate(250)), criteriaSkillsArr) %}
           {% else %}{% endif %}
 
           {% if data['Technical skills 6'].length > 0 %}
-          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 6']|truncate(50)), criteriaSkillsArr) %}
+          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 6']|truncate(250)), criteriaSkillsArr) %}
           {% else %}{% endif %}
 
 
@@ -298,7 +302,6 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
       </div></div>
     </form>
-    {% include '/csu71/includes/footerarea.html' %}
 
     <script>
 
@@ -351,6 +354,8 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
         outputBS.appendChild(label2);
         outputBS.appendChild(checkBox2);
       }
+
+
 
 
 

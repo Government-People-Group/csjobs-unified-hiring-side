@@ -30,7 +30,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
-<form class="form" action="/csu71/task-list-exp-co" method="post">
+<form class="form" action="/csu71/adcopy-campaign-set-up/summary-section-3" method="post">
 
 
   <!-- <p class="govuk-body-m">This information will be visible on the advert for candidates to see.</p>
@@ -106,8 +106,6 @@ Supporting link 5
 </form>
 </div>
 </div> -->
-
-
 <div class="govuk-grid-row govuk-!-margin-top-3">
   <div class="govuk-grid-column-full">
 
@@ -118,14 +116,14 @@ Supporting link 5
 
 
       <div class="govuk-grid-column-three-quarters" >
-
+<h1 class="govuk-heading-xl">Add supporting links</h1>
         <div class="govuk-form-group">
           <h2 class="govuk-label-wrapper">
             <label class="govuk-label govuk-label--s" for="sinfo1">
               Supporting link 1
             </label>
           </h2>
-          <input style="width:600px" class="govuk-input" id="sinfo1" name="sinfo1" value="{{ data['video1']}}" type="text">
+          <input style="width:600px" class="govuk-input" id="sinfo1" name="sinfo1" value="https://www.youtube.com/watch?v=ZjvFInGlcIg&t=1s" type="text">
         </div>
 
 
@@ -134,26 +132,42 @@ Supporting link 5
 
 
 
-<iframe width="288" height="162" src="https://www.youtube.com/embed/ZjvFInGlcIg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="600" height="338" src="https://www.youtube.com/embed/ZjvFInGlcIg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
-<iframe width="202" height="113" src="https://www.youtube.com/embed/--nkB6rFM6s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<div class="govuk-form-group  govuk-!-margin-top-6">
+  <h2 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--s" for="sinfo2">
+      Supporting link 2
+    </label>
+  </h2>
+  <input style="width:600px" class="govuk-input" id="sinfo2" name="sinfo2" value="{{ data['sinfo2']}}" type="text">
+</div>
+
+<div class="govuk-form-group  govuk-!-margin-top-6">
+  <h2 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--s" for="sinfo3">
+      Supporting link 3
+    </label>
+  </h2>
+  <input style="width:600px" class="govuk-input" id="sinfo3" name="sinfo3" value="{{ data['sinfo3']}}" type="text">
+</div>
+
       </div>
 
 
 
 
 
-      <div class="govuk-grid-column-one-quarter" style=";border-left:1px solid black;height:550px">
+      <div class="govuk-grid-column-one-quarter" style=";border-left:1px solid black;height:750px">
 
         <h3 class="govuk-heading-m govuk-!-margin-top-3">{{ data['dept-copy-input-autocomplete'] | default("Cabinet Office") }} YouTube links</h3>
 
         <ul class=" govuk-list govuk-list--bullet- ">
           <li style="float:right;font-size:18px;padding-bottom:10px"><a onclick="cannedSearch('https://www.youtube.com/watch?v=7b39NgbfAGw')" style="line-height:1.4;;" href="#">
             Digital, Data and Technology in Government
-            <svg   style="float:left" height="30" width="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                  <path fill="#1d70b8" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
-                </svg>
+
               </a></li>
           <li style="font-size:18px;padding-bottom:0px"><a onclick="cannedSearch('https://www.youtube.com/watch?v=--nkB6rFM6s')" style="line-height:1.4;;" href="#">East Midlands - Career opportunities closer to home</a></li>
 
@@ -178,12 +192,25 @@ Supporting link 5
       </div>
 
 
+
     </div>
 
+    {{ govukButton({
+      text: "Continue",
+      classes: "govuk-button govuk-!-margin-top-6"
+    }) }}
 
+    {{ govukButton({
+      text: "Preview advert",
+      classes: "govuk-button--secondary govuk-!-margin-top-6",
+      href: "preview-advert"
+    }) }}
   </div>
 
 </div>
+
+{% include '/csu71/includes/footerarea.html' %}
+
 <script>
 
   function doit(item1){
@@ -209,9 +236,6 @@ console.log(asset)
   }
 
 
-
-
-ytv1
 
 
 

@@ -16,7 +16,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-new-campaign"><strong>Return to task list</strong></a></span>
+    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-co"><strong>Return to task list</strong></a></span>
 
   </div>
 
@@ -35,6 +35,15 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 
+{% set choices = [
+  ['Behaviours','Behaviours are the actions and activities that people do which result in effective performance in a job. Behaviours are best for assessing the core transferable skills and behavioural styles. Candidates can provide examples from work or home contexts. You can assess behaviours at the sift stage with a personal statement, written examples and online tests. At the interview, you can assess behaviours by presentation and assessment exercises.'],
+  ['Experience','The knowledge or mastery of an activity or subject gained through involvement in or exposure to it. Experience element is best used for assessing contextual knowledge or applied skills required for performing well in a job role. You can assess experience at sift with a personal statement, CV and Basic Knowledge online test and at interview you can assess by interview questions and a presentation.'],
+  ['Strengths','Strengths are what people enjoy doing and do well and often. Strengths help us to understand whether someone is a good fit for the role and organisation and let candidates show their potential. Strengths are a great way for candidates to show their potential when they do not have a lot of work experience. Strengths can only be assessed at sift by the Civil Service Work Strengths online test. At the interview, you can assess strengths by interview questions.'],
+  ['Skills','You can assess specific professional and technical skills, knowledge or qualifications. Relevant qualifications can be used as objective essential criteria for fast shortlisting. You can assess skills at sift by personal statement and specific skill-based online tests, and at interview, you can assess by presentation, work samples and assessment exercises.']
+  ] %}
+
+
+
 <form class="form" action="/csu71/selection-handlerBlank" method="post">
 
 
@@ -42,137 +51,64 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 
     <div class="govuk-grid-column-full">
-
-
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <h1 class="govuk-fieldset__heading">
-              Choose the elements you want to assess</h1>
-            </legend>
-
-            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-              <div class="govuk-grid-row govuk-!-margin-top-9" >
-                <div class="govuk-grid-column-two-thirds">
-
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="behaviours" name="selected" type="checkbox"  value="behaviours" aria-describedby="nationality-item-hint">
-                    <label class="govuk-label govuk-checkboxes__label" for="behaviours" style="line-height:0.8;font-size:32px;font-weight:bold;">
-                      Behaviours
-                    </label>
-                    <div id="behaviours-item-hint" class="govuk-hint govuk-checkboxes__hint" style="font-size:22px">
-                      Behaviours are the actions and activities that people do which result in effective performance in a job.
-                      <details class="govuk-details govuk-!-margin-top-3" data-module="govuk-details">
-                        <summary class="govuk-details__summary">
-                          <span style="font-size:22px" class="govuk-details__summary-text">
-                            Getting the most out of behaviours
-                          </span>
-                        </summary>
-                        <div class="govuk-details__text">
-                          <p style="font-size:22px" class="govuk-body-m">Behaviours are best for assessing the core transferable skills and behavioural styles. Candidates can provide examples from work or home contexts.</p>
-                          <p style="font-size:22px" class="govuk-body-m">You can assess behaviours at the sift stage with a personal statement, written examples and online tests. At the interview, you can assess behaviours by presentation and assessment exercises.</p>
-                        </div>
-                      </details>
-
-
-                    </div>
-                  </div>
-
-                  <div class="govuk-checkboxes__item">
-                    <input style="margin-bottom:20px" class="govuk-checkboxes__input" id="experience" name="selected" type="checkbox" value="experience" aria-describedby="experience-item-hint">
-                    <label class="govuk-label govuk-checkboxes__label" for="experience" style="line-height:0.8;font-size:32px;font-weight:bold;">
-                      Experience
-                    </label>
-                    <div id="experience-item-hint" class="govuk-hint govuk-checkboxes__hint" style="font-size:22px">
-                      The knowledge or mastery of an activity or subject gained through involvement in or exposure to it.
-                      <details class="govuk-details govuk-!-margin-top-3" data-module="govuk-details">
-                        <summary class="govuk-details__summary">
-                          <span style="font-size:22px" class="govuk-details__summary-text">
-                            What should you consider when assessing experience?
-                          </span>
-                        </summary>
-                        <div class="govuk-details__text">
-                          <p style="font-size:22px" class="govuk-body-m">The experience element is best used for assessing contextual knowledge or applied skills required for performing well in a job role.</p>
-                          <p style="font-size:22px" class="govuk-body-m">You can assess experience at sift with a personal statement, CV and Basic Knowledge online test and at interview you can assess by interview questions and a presentation.</p>
-                        </div>
-                      </details>
-                    </div>
-                  </div>
-
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="strengths" name="selected" type="checkbox" value="strengths" aria-describedby="strengths-item-hint">
-                    <label class="govuk-label govuk-checkboxes__label" for="strengths" style="line-height:0.8;font-size:32px;font-weight:bold">
-                      Strengths
-                    </label>
-                    <div id="strengths-item-hint" class="govuk-hint govuk-checkboxes__hint" style="font-size:22px">
-                      Strengths are what people enjoy doing and do well and often.
-                      <details class="govuk-details govuk-!-margin-top-3" data-module="govuk-details">
-                        <summary class="govuk-details__summary">
-                          <span style="font-size:22px" class="govuk-details__summary-text">
-                            How could you assess strengths at sift?
-                          </span>
-                        </summary>
-                        <div class="govuk-details__text">
-                          <p style="font-size:22px" class="govuk-body-m">Strengths help us to understand whether someone is a good fit for the role and organisation and let candidates show their potential. Strengths are a great way for candidates to show their potential when they do not have a lot of work experience.</p>
-                          <p style="font-size:22px" class="govuk-body-m">Strengths can only be assessed at sift by the Civil Service Work Strengths online test. At the interview, you can assess strengths by interview questions.</p>
-                        </div>
-                      </details>
-                    </div>
-                  </div>
+          <h1 class="govuk-heading-xl">Choose the elements you want to assess</h1>
+      <div class="govuk-grid-row govuk-!-margin-top-9" >
+        <div class="govuk-grid-column-three-quarters">
 
 
 
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="skills" name="selected" type="checkbox" value="skills"  aria-describedby="skills-item-hint">
-                    <label class="govuk-label govuk-checkboxes__label" for="skills" style="line-height:0.8;font-size:32px;font-weight:bold">
-                      Technical skills
-                    </label>
-                    <div id="experience-item-hint" class="govuk-hint govuk-checkboxes__hint" style="font-size:22px">
-                      You can assess specific professional and technical skills, knowledge or qualifications.
-                      <details class="govuk-details govuk-!-margin-top-3" data-module="govuk-details">
-                        <summary class="govuk-details__summary">
-                          <span style="font-size:22px" class="govuk-details__summary-text">
-                            More on technical skills
-                          </span>
-                        </summary>
-                        <div class="govuk-details__text">
-                          <p style="font-size:22px" class="govuk-body-m">Relevant qualifications can be used as objective essential criteria for fast shortlisting.</p>
-                          <p style="font-size:22px" class="govuk-body-m">You can assess skills at sift by personal statement and specific skill-based online tests, and at interview, you can assess by presentation, work samples and assessment exercises.</p>
-                        </div>
-                      </details>
-                    </div>
-                  </div>
+      {% for choice, description in choices %}
+
+      {{ govukCheckboxes({
+        name: "selected",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+        {
+          checked: checked('selected',choice | lower),
+          value: choice | lower,
+          classes: "govuk-label-l",
+          text: choice,
+          hint: {
+            text: description
+          }
+        }
+        ]
+      }) }}
+
+      {%endfor%}
+
+
+
+
+
+
+
 
 
                 </div>
-                <div class="govuk-grid-column-one-third">
+                <!-- <div class="govuk-grid-column-one-quarter">
                   <div class="govuk-!-margin-top-3" style="margin-left:50px;width:200px;height:160px;background:#1d70b8;border-radius:7px;float:right">
 
                     <span style="padding:20px;color:white;font-size:28px;font-weight:bold" class="govuk-caption-l">Thinking about online testing?</span>
 
                   </div>
 
-                  <!-- <div class="govuk-!-margin-top-3" style="margin-left:50px;width:200px;height:160px;background:darkgreen;border-radius:7px;float:right">
 
-                  <span style="padding:20px;color:white;font-size:28px;font-weight:bold" class="govuk-caption-l">The science behind online tests</span>
 
-                </div>
-
-                <div class="govuk-!-margin-top-3" style="margin-left:50px;width:200px;height:160px;background:black;border-radius:7px;float:right">
-
-                <span style="padding:20px;color:white;font-size:24px;font-weight:bold" class="govuk-caption-l">Teaser / CTA</span>
-
-              </div> -->
-
-            </div>
+            </div> -->
           </div>
-        </fieldset>
-      </div>
+
       {{ govukButton({
         classes: "govuk-!-margin-top-3 govuk-!-margin-bottom-6",
         text: "Continue"
       }) }}
-    </div>
+
 
 
 

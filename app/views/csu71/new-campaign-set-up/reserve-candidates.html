@@ -2,20 +2,48 @@
 
 {% block header %}
 {% include '/csu71/includes/header.html' %}
-  {% endblock %}
-
+{% endblock %}
 {% block pageTitle %}
-  Search – {{ serviceName }} – GOV.UK Prototype Kit
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
-<div class="govuk-width-container">
-<main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing">
-  <div class="govuk-grid-row">
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
 
-      <h1 class="govuk-heading-l">
-        13 results found matching, "{{ data['temp-copy-input-autocomplete']}}"
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Finalise and submit</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        13 results found matching "{{ data['temp-copy-input-autocomplete']|default("Policy Adviser")}}"
       </h1>
+
+        <p class="govuk-!-margin-top-3">You should look through the candidate's application to see if they are a match. Candidates shown on the reserve list match details of your job advert:</p>
+        <ul class="govuk-list govuk-list--bullet">
+<li>Similar job title</li>
+<li>Grade</li>
+          </ul>
+
+<hr style="margin-bottom:30px;margin-top:30px;border-bottom:1px solid #1d70b8;">
+
 <div class="govuk-grid-row">
 
 <div class="govuk-grid-column-one-third csr-side-search-panel govuk-!-margin-0" style="padding-right: 0px;">
@@ -155,7 +183,7 @@ text: "Part-time"
          ]
        }) }}
 
-       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 1</a></p>
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 1</a></p>
 
        <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
 
@@ -168,7 +196,7 @@ text: "Part-time"
 
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 2</a></p>
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 2</a></p>
 
        <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
 
@@ -180,7 +208,7 @@ text: "Part-time"
        Expires : 6th July 2023</p>
 
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 3</a></p>
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 3</a></p>
 
        <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
 
@@ -192,7 +220,7 @@ text: "Part-time"
        Expires : 6th July 2023</p>
 
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 4</a></p>
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 4</a></p>
 
        <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
 
@@ -204,7 +232,7 @@ text: "Part-time"
        Expires : 6th July 2023</p>
 
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 5</a></p>
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 5</a></p>
 
        <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
 
@@ -216,7 +244,7 @@ text: "Part-time"
        Expires : 6th July 2023</p>
 
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 6</a></p>
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 6</a></p>
 
        <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
 
@@ -228,7 +256,7 @@ text: "Part-time"
        Expires : 6th July 2023</p>
 
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 7</a></p>
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 7</a></p>
 
        <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
 
@@ -240,7 +268,7 @@ text: "Part-time"
        Expires : 6th July 2023</p>
 
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 8</a></p>
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 8</a></p>
 
        <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
 
@@ -252,7 +280,7 @@ text: "Part-time"
        Expires : 6th July 2023</p>
 
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 9</a></p>
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 9</a></p>
 
        <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
 
@@ -264,7 +292,7 @@ text: "Part-time"
        Expires : 6th July 2023</p>
 
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 10</a></p>
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 10</a></p>
 
        <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
 
@@ -276,7 +304,7 @@ text: "Part-time"
        Expires : 6th July 2023</p>
 
        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Applicant 11</a></p>
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 11</a></p>
 
        <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
 
@@ -293,6 +321,4 @@ text: "Part-time"
 </div>
 </div>
 
-</main>
-</div>
 {% endblock %}

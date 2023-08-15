@@ -37,13 +37,13 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Role location</dt>
-        <dd class="govuk-summary-list__value">{{ data['uk']}}</dd>
-        <dd class="govuk-summary-list__actions"><a href="locations?edit2=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+        <dd class="govuk-summary-list__value">{{ data['uk']|default("A hybrid of both remote and onsite")}}</dd>
+        <dd class="govuk-summary-list__actions"><a href="#">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Onsite locations</dt>
         <dd id="locas" class="govuk-summary-list__value"></dd>
-        <dd class="govuk-summary-list__actions"><a href="locations?edit2=true">Change<span class="govuk-visually-hidden"> grade</span></a></dd>
+        <dd class="govuk-summary-list__actions"><a href="#">Change<span class="govuk-visually-hidden"> grade</span></a></dd>
       </div>
       {% if  data['uk'] !== "Remote" %}
       {% else %}
@@ -55,12 +55,12 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Contractual arrangement</dt>
-        <dd id="locas" class="govuk-summary-list__value">{{data['contract']}} </dd>
-        <dd class="govuk-summary-list__actions"><a href="locations?edit2=true">Change<span class="govuk-visually-hidden"> grade</span></a></dd>
+        <dd id="locas" class="govuk-summary-list__value">{{data['contract']|default("Permanent")}} </dd>
+        <dd class="govuk-summary-list__actions"><a href="#">Change<span class="govuk-visually-hidden"> grade</span></a></dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Working pattern</dt>
-        <dd class="govuk-summary-list__value">
+        <dd class="govuk-summary-list__value">{{ data['working-pattern']|default("Annualised hours, compressed hours, job-share and part-time available")}}
 
           {% if data['working-pattern'].length > 0 %}
           {% for items in data['working-pattern'] | slice(1) %}
@@ -73,7 +73,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           {% else %}
           {% endif %}
         </dd>
-        <dd class="govuk-summary-list__actions"><a href="contract-details?edit4=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+        <dd class="govuk-summary-list__actions"><a href="#">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
       </div>
 
     </dl>
@@ -83,28 +83,21 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Salary</dt>
 
-        {% if data['costmax'].length > 0 %}
 
-        <dd class="govuk-summary-list__value">£{{ data['cost']}} - {{ data['costmax']}} per annum</dd>
-        {% else %}
-        <dd class="govuk-summary-list__value">£{{ data['cost']}} per annum</dd>
-        {% endif %}
+        <dd class="govuk-summary-list__value">£{{ data['cost']|default("42,550")}} - {{ data['costmax']|default("46,900")}} per annum</dd>
 
 
-        <dd class="govuk-summary-list__actions"><a href="grades?edit5=true">Change<span class="govuk-visually-hidden"> department</span></a></dd>
+        <dd class="govuk-summary-list__actions"><a href="#">Change<span class="govuk-visually-hidden"> department</span></a></dd>
       </div>
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Allowances</dt>
 
-        {% if data['allowances'] == "yes" %}
+        <dd class="govuk-summary-list__value">{{ data['otherAllow']|default("London weighting £4,650 (non-pensionable)")}}</dd>
 
-        <dd class="govuk-summary-list__value">{{ data['otherAllow']}}</dd>
-        {% endif %}
-
-
-        <dd class="govuk-summary-list__actions"><a href="grades?edit5=true">Change<span class="govuk-visually-hidden"> department</span></a></dd>
+        <dd class="govuk-summary-list__actions"><a href="#">Change<span class="govuk-visually-hidden"> department</span></a></dd>
       </div>
+
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Standard Civil Service benefits</dt>
@@ -124,7 +117,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
             </li>
           </ul>
         </dd>
-        <dd class="govuk-summary-list__actions"><a href="salary-and-benefits?edit6=true">Change<span class="govuk-visually-hidden"> number</span></a></dd>
+        <dd class="govuk-summary-list__actions"><a href="#">Change<span class="govuk-visually-hidden"> number</span></a></dd>
       </div>
     </dl>
 
@@ -134,8 +127,8 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Department default </dt>
-        <dd class="govuk-summary-list__value">{{ data['bpss-correct']}}</dd>
-        <dd class="govuk-summary-list__actions"><a href="reserved-status">Change<span class="govuk-visually-hidden"> profession</span></a></dd>
+        <dd class="govuk-summary-list__value">{{ data['bpss-correct']|default("BPSS")}}</dd>
+        <dd class="govuk-summary-list__actions"><a href="#">Change<span class="govuk-visually-hidden"> profession</span></a></dd>
       </div>
     </dl>
 
@@ -148,7 +141,6 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
     </div
 
   </div>
-  {% include '/csu71/includes/footerarea.html' %}
 
   <script>
     var insertloc = document.getElementById("locas");

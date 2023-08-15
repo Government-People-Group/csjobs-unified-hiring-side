@@ -1,0 +1,177 @@
+{% extends "layouts/main.html" %}
+{% block header %}
+{% include '/reserve-list-01/header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Basic details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+    </div> -->
+<!-- <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l"></span> -->
+
+    <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+      <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/reserve-list-01/task-list"><strong>Return to task list</strong></a></span>
+
+    </div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row  govuk-!-margin-top-9">
+<div class="govuk-grid-column-three-quarters">
+<h1 class="govuk-heading-xl">Here's your match</h1>
+
+<!-- <h2 class="govuk-heading-m">Determine appetite / interest - proceed or revert to vacancy set-up</h2> -->
+
+
+<form class="form" action="/reserve-list-01/reserve-candidate-contact" method="post">
+
+
+  {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+  {{ govukSummaryList({
+    rows: [
+      {
+        key: {
+          text: "Name"
+        },
+        value: {
+          text: "Sarah Philips"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: "name"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Match criteria 1"
+        },
+        value: {
+          text: "5 January 1978"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: "date of birth"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Match criteria 2"
+        },
+        value: {
+          html: "72 Guild Street<br>London<br>SE23 6FH"
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: "address"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Match criteria 3"
+        },
+        value: {
+          html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: "contact details"
+            }
+          ]
+        }
+      }
+    ]
+  }) }}
+
+
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+  {{ govukRadios({
+    classes: "govuk-radios--inline",
+    name: "changed-name",
+    fieldset: {
+      legend: {
+        text: "Contact candidate?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "yes",
+        text: "Yes"
+      },
+      {
+        value: "no",
+        text: "No"
+      }
+    ]
+  }) }}
+
+
+
+        <input id="grabProf" type="hidden" name="profession" value="{{ data['proff']}}">
+
+       <button class="govuk-button" data-module="govuk-button">Continue</button>
+     </FORM>
+</div>
+</div>
+
+
+<script>
+
+const keyDetails = {};
+const title = document.getElementById("title").value;
+const grade = document.getElementById("newgrade").value
+const profession = document.getElementById("grabProf").value;
+const department = document.getElementById("dept").value;
+
+console.log(title, grade, profession, department)
+
+keyDetails.jobTitle = title;
+keyDetails.grade = grade;
+keyDetails.profession = profession;
+keyDetails.department = department;
+
+window.sessionStorage.setItem("keyDetails", JSON.stringify(keyDetails));
+
+
+console.log(keyDetails);
+
+
+</script>
+{% endblock %}

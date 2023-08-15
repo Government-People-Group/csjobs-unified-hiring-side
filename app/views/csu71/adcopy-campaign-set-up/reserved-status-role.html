@@ -18,7 +18,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-      <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-co"><strong>Return to task list</strong></a></span>
+      <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-copy-ad?firstNot=noshow"><strong>Return to task list</strong></a></span>
 
     </div>
 
@@ -43,10 +43,43 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
   <p class="govuk-body-m">These roles are <strong>reserved</strong> because of the sensitive nature of the work carried out. For example, all individuals working in any of the security and intelligence services will be employed into a post with a reserved status.</p>
 
 
+
+  {{ govukRadios({
+    classes: "govuk-radios--inline",
+    idPrefix: "reserved-status",
+    name: "reserved-status",
+    fieldset: {
+      legend: {
+        text: "Has there been financial approval for this vacancy?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {
+      text: "The advert can only go live once approval has been confirmed"
+    },
+    items: [
+    {
+      id: "reserved",
+      value: "Yes - reserved",
+      text: "Yes - reserved",
+      checked: checked("reserved-status","Yes - approved")
+    },
+    {
+      id: "notreserved",
+      value: "No",
+      text: "No",
+      checked: checked("reserved-status","No")
+    }
+    ]
+  }) }}
+
+
   {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
   {{ govukRadios({
     name: "reserved-status",
+    id: "reserved-status",
     fieldset: {
       legend: {
         text: "To the best of your knowlege, has this role been reserved for UK nationals only?",
@@ -56,19 +89,14 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
     },
     items: [
       {
-        value: "Yes - this vacancy is reserved",
-        checked: checked("reserved-status","Yes - this vacancy is reserved"),
-        text: "Yes - this vacancy is reserved"
+        value: "yes",
+        checked: checked("reserved-status","yes"),
+        text: "Yes"
       },
       {
-        value: "No - this vacancy is not reserved",
-        checked: checked("reserved-status","No, - this vacancy is not reserved"),
-        text: "No, - this vacancy is not reserved"
-      },
-      {
-        value: "I'm not sure",
-        checked: checked("reserved-status","I'm not sure"),
-        text: "I'm not sure"
+        value: "no",
+        checked: checked("reserved-status","no"),
+        text: "No"
       }
     ]
   }) }}

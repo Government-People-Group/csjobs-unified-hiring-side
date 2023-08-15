@@ -1,109 +1,14 @@
 {% extends "layouts/main.html" %}
 
+
+
 {% block header %}
-
-
-<style>
-  #container
-  {
-    position:relative;
-    display: inline;
-    padding-left: 30px
-    top:20px;
-  }
-
-  #image
-  {
-    position:absolute;
-    padding-left: 0px;
-    left:-50px;
-    top:-20px;
-    height:40px;
-  }
-
-  #text
-  {
-    z-index:100;
-    position:absolute;
-    color:white;
-    font-size:15px;
-    font-weight:bold;
-    left: -10px;
-    top:50px;
-  }
-
-  #textly
-  {
-    z-index:100;
-    position:absolute;
-    color:white;
-    font-size:18px;
-    font-weight:bold;
-    left:33px;
-    top:9px;
-  }
-</style>
+{% include '/csu71/includes/pheader.html' %}
+  {% endblock %}
 
 
 
-<header class="govuk-header govuk-!-padding-top-6" role="banner" data-module="govuk-header">
-  <div class="govuk-header__container govuk-width-container">
-    <div class="govuk-header__logo">
-      <a href="#" class="govuk-header__link govuk-header__link--homepage">
-        <span class="govuk-header__logotype">
-          <!--[if gt IE 8]><!-->
-          <svg
-            aria-hidden="true"
-            focusable="false"
-            class="govuk-header__logotype-crown"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 132 97"
-            height="30"
-            width="36">
-            <path
-              fill="currentColor" fill-rule="evenodd"
-              d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"></path>
-          </svg>
-          <!--<![endif]-->
-          <!--[if IE 8]>
-          <img src="/assets/images/govuk-logotype-crown.png" class="govuk-header__logotype-crown-fallback-image" width="36" height="32" alt="">
-          <![endif]-->
-          <span class="govuk-header__logotype-text">
-            GOV.UK
-          </span>
-        </span>
-      </a>
-    </div>
-    <div class="govuk-header__content govuk-!-margin-bottom-6">
-      <a href="/csu71/sift/panelist/task-list-applicants-not-started-yet.html" class="govuk-header__link govuk-header__service-name">
-        Civil Service Jobs
-      </a>
-      <div style="position:absolute;top:-10px; right:30px">
 
-        <a href="/csu71/sift/panelist/my-profile">
-          <li style="float:right" id="container"  style="">
-            <svg width="35px" height="35px" viewBox="0 0 479 479" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Combined Shape</title>
-    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <path d="M239.5,0 C371.772198,0 479,107.227802 479,239.5 C479,371.772198 371.772198,479 239.5,479 C107.227802,479 0,371.772198 0,239.5 C0,107.227802 107.227802,0 239.5,0 Z M239.5,235.645202 C187.282765,235.645202 147.752268,264.197048 120.908508,321.300739 L120.098261,323.039579 C116.572639,330.689718 117.53085,339.657725 122.593228,346.390256 C148.971807,381.4633 187.940573,399 239.5,399 C291.059427,399 330.028193,381.4633 356.4063,346.389901 L356.406772,346.390256 C361.46915,339.657725 362.427361,330.689718 358.901739,323.039579 C332.045033,264.776766 292.244681,235.645202 239.5,235.645202 Z M239.614723,81 C201.408915,81 170.436988,111.991605 170.436988,150.221687 C170.436988,188.451769 201.408915,219.443373 239.614723,219.443373 C277.82053,219.443373 308.792457,188.451769 308.792457,150.221687 C308.792457,111.991605 277.82053,81 239.614723,81 Z" id="Combined-Shape" fill="#FFFFFF"></path>
-    </g>
-</svg>
-
-
-            <strong id="text">Account</strong>
-          </li>
-        </a>
-
-
-
-  </div>
-    </div>
-  </div>
-</header>
-
-
-
-{% endblock %}
 
 {% block beforeContent %}
 <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
@@ -115,7 +20,7 @@
 <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/panelist/task-list-applicants-not-started-yet"><strong>Return to sift list</strong></a></span>
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="#"><strong>Message panel chair</strong></a></span>
 
 </div>
 
@@ -128,66 +33,143 @@
 {% block content %}
 
 
-
+{{data['c1score2']}}
 
 <span class="govuk-caption-l">1001334</span>
 <h2 class="govuk-heading-l">Policy Adviser</h2>
 
-  <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Candidate sift status</H1>
+  <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Sift your candidates</H1>
 
+<p class="govuk-body-l">Applications are closed. You should sift all candidates and decide which candidates you will invite to interview.</p>
 
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
+  <div class="govuk-grid-column-full">
 
-    <ol class="app-task-list">
-      <li>
-        <h2 style="font-size:20px;font-weight:normal" class="app-task-list__section">You have sifted 0 of 5 applications.
-        </h2>
-        <ul class="app-task-list__items">
-          <li class="app-task-list__item">
+
+    <table class="govuk-table" style="">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header app-custom-class"></th>
+          <th scope="col" class="govuk-table__header app-custom-class">Behaviour 1</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Behaviour 2</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Behaviour 3</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Skills</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
             <span class="app-task-list__task-name">
               <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-1" aria-describedby="eligibility-status">
                 Candidate 1
               </a>
             </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not scored yet</strong>
-          </li>
-          <li class="app-task-list__item">
+          </th>
+
+
+
+
+          <td class="govuk-table__cell">{{ data['c1score1']}}</td>
+          <td class="govuk-table__cell">{{ data['c1score2']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c1score3']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c1score4']|default("")}}</td>
+          <td class="govuk-table__cell">
+
+          {% if (data['c1score1'] == "2") and (data['c1score2'] !="") and (data['c1score3']!= "") and (data['c1score4']!= "")  %}
+          <strong class="govuk-tag " id="contact-details-status">completed</strong>
+          {% elif  data['c1score1'] != "" %}
+          <strong class="govuk-tag govuk-tag--blue"  id="contact-details-status">in progress</strong>
+          {% else %}
+          <strong class="govuk-tag govuk-tag--grey"  id="contact-details-status">NOT SCORED YET</strong>
+          {% endif %}
+
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
             <span class="app-task-list__task-name">
               <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-2" aria-describedby="eligibility-status">
                 Candidate 2
               </a>
             </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>
-          </li>
-          <li class="app-task-list__item">
+          </th>
+          <td class="govuk-table__cell">{{ data['c2score1']|default("—")}}</td>
+          <td class="govuk-table__cell">{{ data['c2score2']|default("—")}}</td>
+          <td class="govuk-table__cell">{{ data['c2score3']|default("—")}}</td>
+          <td class="govuk-table__cell">{{ data['c2score4']|default("—")}}</td>
+          <td class="govuk-table__cell">
+
+
+
+
+
+
+            <strong class="govuk-tag " id="contact-details-status">completed</strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
             <span class="app-task-list__task-name">
               <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-3" aria-describedby="eligibility-status">
                 Candidate 3
               </a>
             </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>
-          </li>
-          <li class="app-task-list__item">
+          </th>
+          <td class="govuk-table__cell">{{ data['c3score1']|default("7")}}</td>
+          <td class="govuk-table__cell">{{ data['c3score2']|default("7")}}</td>
+          <td class="govuk-table__cell">{{ data['c3score3']|default("7")}}</td>
+          <td class="govuk-table__cell">{{ data['c3score4']|default("7")}}</td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag " id="contact-details-status">completed</strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+
             <span class="app-task-list__task-name">
               <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-4" aria-describedby="eligibility-status">
                 Candidate 4
               </a>
             </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>
-          </li>
-          <li class="app-task-list__item">
+          </th>
+          <td class="govuk-table__cell">{{ data['c4score1']|default("7")}}</td>
+          <td class="govuk-table__cell">{{ data['c4score2']|default("6")}}</td>
+          <td class="govuk-table__cell">{{ data['c4score3']|default("7")}}</td>
+          <td class="govuk-table__cell">{{ data['c4score4']|default("5")}}</td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag " id="contact-details-status">completed</strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
             <span class="app-task-list__task-name">
-              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state"href="1001334-applicant-5" aria-describedby="eligibility-status">
+              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-5" aria-describedby="eligibility-status">
                 Candidate 5
               </a>
             </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>
-          </li>
-        </ul>
-        </li>
-</ol>
+          </th>
+          <td class="govuk-table__cell">{{ data['c5score1']|default("2")}}</td>
+          <td class="govuk-table__cell">{{ data['c5score2']|default("2")}}</td>
+          <td class="govuk-table__cell">{{ data['c5score3']|default("3")}}</td>
+          <td class="govuk-table__cell">{{ data['c5score4']|default("3")}}</td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag " id="contact-details-status">completed</strong>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <h2 class="govuk-heading-l">Review and submit sifting scores</h2>
+
+    <p clas="govuk-body-m">Review and submit your scores for the Policy Adviser application.</p>
+    <button type="submit" class="govuk-button" data-module="govuk-button">Submit my scores to panel</button>
+
+
+
+
   </div>
 </div>
 

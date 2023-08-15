@@ -113,21 +113,25 @@
       </h1>
       <p class="govuk-body-l govuk-!-margin-bottom-3">You must choose when to assess all elements you have selected.</p>
 
-      <h2 id="bheader" class="govuk-heading-l govuk-!-margin-top-3" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Behaviours</h2>
+      {% if "behaviours" in data['selected'] %}
 
+      <h2 id="bheader" class="govuk-heading-l govuk-!-margin-top-3" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Behaviours</h2>
+{% endif %}
 <p id="lShip" class="govuk-body-m govuk-!-margin-bottom-3"></p>
 
       <div id="behDiv"></div>
 
-
+    {% if "strengths" in data['selected'] %}
   <h2 id="stheader" class="govuk-heading-l govuk-!-margin-top-9" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Strengths</h2>
-
+{% endif %}
       <div id="strDiv"></div>
 
 
 
 
+      {% if "experience" in data['selected'] %}
       <h2 id="eheader" class="govuk-heading-l govuk-!-margin-top-9" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Experience</h2>
+      {% endif %}
       {% set criteriaExpArr = [] %}
 
       {% if data['Experience 1'].length > 0 %}
@@ -198,7 +202,9 @@
 
 
       <div>
+        {% if "skills" in data['selected'] %}
         <h2 id="skheader" class="govuk-heading-l govuk-!-margin-top-9" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Skills</h2>
+        {% endif %}
   <div id="sklDiv"></div>
 
         {% set criteriaSkillsArr = [] %}

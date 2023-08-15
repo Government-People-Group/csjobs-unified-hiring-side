@@ -8,12 +8,22 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-{% set sectionref = "About the vacancy" %}
-{% include '/csu71/includes/blue-subhead.html' %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">About the vacancy</span>
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+<span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+</div>
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
 {% endblock %}
 
 
 {% block content %}
+
+
 
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-three-quarters">
@@ -79,6 +89,7 @@ value: data['temp-copy-input-autocomplete']|default("Policy Adviser")
           {
             value: "Senior Executive Officer",
             text: "Senior Executive Officer",
+            selected: "true",
             selected: checked("grade","Senior Executive Officer")
           },
           {
@@ -105,7 +116,7 @@ value: data['temp-copy-input-autocomplete']|default("Policy Adviser")
         classes: "govuk-input--width-20",
         id: "dept",
         name: "dept",
-        value: data['dept-copy-input-autocomplete']
+        value: data['dept-copy-input-autocomplete']|default("Cabinet Office")
 
 
         }) }}

@@ -1,0 +1,179 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">About the vacancy</span>
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+<span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+</div>
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-three-quarters">
+<h1 class="govuk-heading-xl">Basic details</h1>
+
+
+
+<form class="form" action="/csu71/basic-details-handler" method="post">
+
+
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{{ govukInput({
+label: {
+text: "Job title",
+classes: "govuk-label--m",
+isPageHeading: false
+},
+classes: "govuk-input--width-20",
+id: "title",
+name: "title",
+value: data['temp-copy-input-autocomplete']|default("Policy Adviser")
+}) }}
+
+
+
+
+{{ govukSelect({
+          id: "newgrade",
+          name: "newgrade",
+          label: {
+            text: "What grade is the job role?",
+            classes: "govuk-label--s"
+          },
+          items: [
+          {
+            value: "none",
+            selected: "true",
+            disabled: "true",
+            text: "Select grade"
+          },
+
+          {
+            value: "Administrative Assistant",
+            text: "Administrative Assistant",
+            selected: checked("grade","Administrative Assistant")
+          },
+          {
+            value: "Administrative Officer",
+            text: "Administrative Officer",
+            selected: checked("grade","Administrative Officer")
+          },
+          {
+            value: "Executive Officer",
+            text: "Executive Officer",
+            selected: checked("grade","Executive Officer")
+          },
+          {
+            value: "Higher Executive Officer",
+            text: "Higher Executive Officer",
+            selected: checked("grade","Higher Executive Officer")
+          },
+          {
+            value: "Senior Executive Officer"|default("Senior Executive Officer"),
+            text: "Senior Executive Officer",
+            selected: "true",
+            selected: checked("grade","Senior Executive Officer")
+          },
+          {
+            value: "Grade 7",
+            text: "Grade 7",
+            selected: checked("grade","Grade 7")
+          },
+          {
+            value: "Grade 6",
+            text: "Grade 6",
+            selected: checked("grade","Grade 6")
+          }
+          ]
+        }) }}
+
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+        label: {
+        text: "Department",
+        classes: "govuk-label--m",
+        isPageHeading: false
+        },
+        classes: "govuk-input--width-20",
+        id: "dept",
+        name: "dept",
+        value: data['dept-copy-input-autocomplete']|default("Cabinet Office")
+
+
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+        label: {
+        text: "How many posts are available?",
+        classes: "govuk-label--m",
+        isPageHeading: false
+        },
+        classes: "govuk-input--width-3",
+        id: "num-posts",
+        name: "num-posts",
+        value: data['num-posts']
+        }) }}
+
+
+        <input id="grabProf" type="hidden" name="profession" value="{{ data['proff']}}">
+
+       <button class="govuk-button govuk-!-margin-bottom-9" data-module="govuk-button">Continue</button>
+
+
+     </FORM>
+
+</div>
+</div>
+
+
+
+<script>
+
+const keyDetails = {};
+const title = document.getElementById("title").value;
+const grade = document.getElementById("newgrade").value
+const profession = document.getElementById("grabProf").value;
+const department = document.getElementById("dept").value;
+
+console.log(title, grade, profession, department)
+
+keyDetails.jobTitle = title;
+keyDetails.grade = grade;
+keyDetails.profession = profession;
+keyDetails.department = department;
+keyDetails.elements = ['behaviours','experience','strengths','skills'];
+keyDetails.behaviours = ['Seeing the Big Picture','Problem Solver'];
+keyDetails.skills = ['Challenge assumptions and explore diferent scales of impact','Use evaluation throughout the policy process to generate evidence and learning that informs decisions'];
+keyDetails.experience = ['Building engaging and effective relationships with stakeholders'];
+keyDetails.sift = [['Behaviours','Working Together'],['Behaviours','Making Effective Decisions'],['Skills','Challenge assumptions and explore diferent scales of impact'],['Skills','Use evaluation throughout the policy process to generate evidence and learning that informs decisions']];
+keyDetails.interview = [['Experience','Building engaging and effective relationships with stakeholders'],['Behaviours','Seeing the Big Picture'],['Behaviours','Changing and Improving'],['Strengths','Analytical'],['Strengths','Challenger'],['Strengths','Problem Solver']];
+
+window.sessionStorage.setItem("keyDetails", JSON.stringify(keyDetails));
+
+
+console.log(keyDetails);
+
+
+</script>
+
+{% endblock %}

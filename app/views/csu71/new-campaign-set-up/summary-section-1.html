@@ -26,12 +26,12 @@
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Job title</dt>
-          <dd class="govuk-summary-list__value">{{ data['temp-copy-input-autocomplete'] }}</dd>
+          <dd class="govuk-summary-list__value">{{ data['temp-copy-input-autocomplete']|default("Policy Adviser") }}</dd>
           <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Grade</dt>
-          <dd class="govuk-summary-list__value">{{ data['grade']|default("SEO")}}</dd>
+          <dd class="govuk-summary-list__value">{{ data['grade']|default("Senior Executive Officer")}}</dd>
           <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> grade</span></a></dd>
         </div>
         <!-- <div class="govuk-summary-list__row">
@@ -41,7 +41,7 @@
         </div> -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Department</dt>
-          <dd class="govuk-summary-list__value">{{ data['dept']}} </dd>
+          <dd class="govuk-summary-list__value">{{ data['dept']|default("Cabinet Office")}} </dd>
           <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> department</span></a></dd>
         </div>
         <div class="govuk-summary-list__row">

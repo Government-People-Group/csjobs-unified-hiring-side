@@ -1,0 +1,125 @@
+{% extends "layouts/main.html" %}
+{% block header %}
+{% include '/reserve-list-01/header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Basic details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+    </div> -->
+<!-- <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">About the vacancy</span> -->
+
+    <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+      <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/reserve-list-01/task-list"><strong>Return to task list</strong></a></span>
+
+    </div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row  govuk-!-margin-top-9">
+<div class="govuk-grid-column-three-quarters">
+
+
+
+<form class="form" action="/reserve-list-01/reserve-guidance" method="post">
+
+
+
+  {% set inviteContent = "Dear {firstName},
+
+  Policy adviser (1001334), Senior Executive Officer
+
+  Congratulations, you've been invited to attend an interview.
+
+  Interviews will take place between {firstSlotDay} and {lastSlotDay}.
+
+  Access your account on CS Jobs to {book your interview time}.
+  To get your preferred time we recommend that you book as early as possible.
+
+  Your {application scores and feedback} are also available for your review in your account on CS Jobs.
+
+  **Enter department specific ID requirements here**
+
+  If you're no longer interested in this position, please withdraw your application.
+
+  Kind regards
+
+  {Vacancy holder}
+  Cabinet Office" %}
+
+
+
+        <div class="govuk-grid-row">
+
+          <div style="" class="govuk-!-margin-top-0 govuk-grid-column-full">
+
+            <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+              aria-labelledby="govuk-notification-banner-title"
+              data-module="govuk-notification-banner">
+              <div class="govuk-notification-banner__header">
+                <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                  Success
+                </h2>
+              </div>
+              <div class="govuk-notification-banner__content">
+                <h3 class="govuk-notification-banner__heading">
+
+                </h3>
+                <!-- <strong style="margin:20px;float:right" class="govuk-tag govuk-tag--blue" id="financial-evidence-status">review copied content</strong> -->
+                <p class="govuk-body-m" style="font-size:20px">Confirmation, woohoo.</p>
+
+
+
+              </div>
+            </div>
+            <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">What happens next?</H1>
+
+
+
+        <input id="grabProf" type="hidden" name="profession" value="{{ data['proff']}}">
+
+       <button class="govuk-button" data-module="govuk-button">Continue</button>
+     </FORM>
+</div>
+</div>
+
+
+<script>
+
+const keyDetails = {};
+const title = document.getElementById("title").value;
+const grade = document.getElementById("newgrade").value
+const profession = document.getElementById("grabProf").value;
+const department = document.getElementById("dept").value;
+
+console.log(title, grade, profession, department)
+
+keyDetails.jobTitle = title;
+keyDetails.grade = grade;
+keyDetails.profession = profession;
+keyDetails.department = department;
+
+window.sessionStorage.setItem("keyDetails", JSON.stringify(keyDetails));
+
+
+console.log(keyDetails);
+
+
+</script>
+{% endblock %}
