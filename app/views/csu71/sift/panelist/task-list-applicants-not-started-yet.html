@@ -32,21 +32,45 @@
 {% endblock %}
 {% block content %}
 
+{% if (data['c1score1'].length) and (data['c1score2'].length) and (data['c1score3'].length) and (data['c1score4'].length) %}
+{% set cand1 = "true" %}
+{% endif %}
 
-{{data['c1score2']}}
+{% if (data['c2score1'].length) and (data['c2score2'].length) and (data['c2score3'].length) and (data['c2score4'].length) %}
+{% set cand2 = "true" %}
+{% endif %}
+
+{% if (data['c3score1'].length) and (data['c1score2'].length) and (data['c1score3'].length) and (data['c1score4'].length) %}
+{% set cand3 = "true" %}
+{% endif %}
+
+{% if (data['c4score1'].length) and (data['c4score2'].length) and (data['c4score3'].length) and (data['c4score4'].length) %}
+{% set cand4 = "true" %}
+{% endif %}
+
+{% if (data['c5score1'].length) and (data['c5score2'].length) and (data['c5score3'].length) and (data['c5score4'].length) %}
+{% set cand5 = "true" %}
+{% endif %}
+
 
 <span class="govuk-caption-l">1001334</span>
 <h2 class="govuk-heading-l">Policy Adviser</h2>
 
-  <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Sift your candidates</H1>
 
-<p class="govuk-body-l">Applications are closed. You should sift all candidates and decide which candidates you will invite to interview.</p>
+
+
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-
+    {% if (cand1 === "true") and (cand2 === "true") and (cand3 === "true") and (cand4 === "true") and (cand5 === "true") %}
+    <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Review and submit sifting scores</H1>
+    <p class="govuk-body-l">Review and submit your scores for the Policy Adviser application.</p>
+    {% elif cand1 != "true" %}
+    <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Sift your candidates</H1>
+    <p class="govuk-body-l">Applications are closed. You should sift all candidates and decide which candidates you will invite to interview.</p>
+    {% endif %}
     <table class="govuk-table" style="">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -71,19 +95,18 @@
 
 
 
-          <td class="govuk-table__cell">{{ data['c1score1']}}</td>
+          <td class="govuk-table__cell">{{ data['c1score1']|default("")}}</td>
           <td class="govuk-table__cell">{{ data['c1score2']|default("")}}</td>
           <td class="govuk-table__cell">{{ data['c1score3']|default("")}}</td>
           <td class="govuk-table__cell">{{ data['c1score4']|default("")}}</td>
           <td class="govuk-table__cell">
 
-          {% if (data['c1score1'] == "2") and (data['c1score2'] !="") and (data['c1score3']!= "") and (data['c1score4']!= "")  %}
-          <strong class="govuk-tag " id="contact-details-status">completed</strong>
-          {% elif  data['c1score1'] != "" %}
-          <strong class="govuk-tag govuk-tag--blue"  id="contact-details-status">in progress</strong>
-          {% else %}
+            {% if data['c1score1'].length > 0 %}
+            <strong class="govuk-tag govuk-tag"  id="contact-details-status">completed</strong>
+            {% else %}
           <strong class="govuk-tag govuk-tag--grey"  id="contact-details-status">NOT SCORED YET</strong>
           {% endif %}
+
 
           </td>
         </tr>
@@ -95,18 +118,22 @@
               </a>
             </span>
           </th>
-          <td class="govuk-table__cell">{{ data['c2score1']|default("—")}}</td>
-          <td class="govuk-table__cell">{{ data['c2score2']|default("—")}}</td>
-          <td class="govuk-table__cell">{{ data['c2score3']|default("—")}}</td>
-          <td class="govuk-table__cell">{{ data['c2score4']|default("—")}}</td>
+          <td class="govuk-table__cell">{{ data['c2score1']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c2score2']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c2score3']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c2score4']|default("")}}</td>
           <td class="govuk-table__cell">
 
 
 
 
 
+            {% if data['c2score1'].length > 0 %}
+            <strong class="govuk-tag govuk-tag"  id="contact-details-status">completed</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey"  id="contact-details-status">NOT SCORED YET</strong>
+            {% endif %}
 
-            <strong class="govuk-tag " id="contact-details-status">completed</strong>
           </td>
         </tr>
         <tr class="govuk-table__row">
@@ -117,12 +144,18 @@
               </a>
             </span>
           </th>
-          <td class="govuk-table__cell">{{ data['c3score1']|default("7")}}</td>
-          <td class="govuk-table__cell">{{ data['c3score2']|default("7")}}</td>
-          <td class="govuk-table__cell">{{ data['c3score3']|default("7")}}</td>
-          <td class="govuk-table__cell">{{ data['c3score4']|default("7")}}</td>
+          <td class="govuk-table__cell">{{ data['c3score1']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c3score2']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c3score3']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c3score4']|default("")}}</td>
           <td class="govuk-table__cell">
-            <strong class="govuk-tag " id="contact-details-status">completed</strong>
+
+            {% if data['c3score1'].length > 0 %}
+            <strong class="govuk-tag govuk-tag"  id="contact-details-status">completed</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey"  id="contact-details-status">NOT SCORED YET</strong>
+            {% endif %}
+
           </td>
         </tr>
         <tr class="govuk-table__row">
@@ -134,12 +167,20 @@
               </a>
             </span>
           </th>
-          <td class="govuk-table__cell">{{ data['c4score1']|default("7")}}</td>
-          <td class="govuk-table__cell">{{ data['c4score2']|default("6")}}</td>
-          <td class="govuk-table__cell">{{ data['c4score3']|default("7")}}</td>
-          <td class="govuk-table__cell">{{ data['c4score4']|default("5")}}</td>
+          <td class="govuk-table__cell">{{ data['c4score1']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c4score2']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c4score3']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c4score4']|default("")}}</td>
           <td class="govuk-table__cell">
-            <strong class="govuk-tag " id="contact-details-status">completed</strong>
+
+
+            {% if data['c4score1'].length > 0 %}
+            <strong class="govuk-tag govuk-tag"  id="contact-details-status">completed</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey"  id="contact-details-status">NOT SCORED YET</strong>
+            {% endif %}
+
+
           </td>
         </tr>
         <tr class="govuk-table__row">
@@ -150,27 +191,50 @@
               </a>
             </span>
           </th>
-          <td class="govuk-table__cell">{{ data['c5score1']|default("2")}}</td>
-          <td class="govuk-table__cell">{{ data['c5score2']|default("2")}}</td>
-          <td class="govuk-table__cell">{{ data['c5score3']|default("3")}}</td>
-          <td class="govuk-table__cell">{{ data['c5score4']|default("3")}}</td>
+          <td class="govuk-table__cell">{{ data['c5score1']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c5score2']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c5score3']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c5score4']|default("")}}</td>
           <td class="govuk-table__cell">
-            <strong class="govuk-tag " id="contact-details-status">completed</strong>
+            {% if data['c5score1'].length > 0 %}
+            <strong class="govuk-tag govuk-tag"  id="contact-details-status">completed</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey"  id="contact-details-status">NOT SCORED YET</strong>
+            {% endif %}
+
           </td>
         </tr>
       </tbody>
     </table>
 
 
-    <h2 class="govuk-heading-l">Review and submit sifting scores</h2>
-
-    <p clas="govuk-body-m">Review and submit your scores for the Policy Adviser application.</p>
-    <button type="submit" class="govuk-button" data-module="govuk-button">Submit my scores to panel</button>
 
 
+
+{% if (cand1 === "true") and (cand2 === "true") and (cand3 === "true") and (cand4 === "true") and (cand5 === "true") %}
+<button type="submit" class="govuk-button" data-module="govuk-button">Submit my scores to panel</button>
+{% else %}
+{% endif %}
 
 
   </div>
 </div>
+<script>
 
+  var dat =  document.getElementsByTagName("tr")
+  console.log(dat)
+
+  for (var t=0;t<dat.length;t++){
+    // if (dat.textContent[t]) {
+      console.log(dat.length)
+
+    // }
+
+
+  }
+
+
+
+
+</script>
 {% endblock %}

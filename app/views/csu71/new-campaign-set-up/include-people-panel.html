@@ -145,19 +145,42 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
         <!-- <p class="govuk-body-m">It's recommended that a panel lorem ipsum dolor sit amet thingy bob.</p> -->
 
-        <div id="pl1" style=";position:relative;width:60%" class="govuk-!-margin-top-6">
+
+
+        <div id="pl1" style=";position:relative;width:65%" class="govuk-!-margin-top-6">
           <h2 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--s" for="plist-1">
-              What's the panelist's email?
+            <label class="govuk-label govuk-label--s" for="pname-1">
+              What's the first panelist's name?
             </label>
           </h2>
-          <input  class="govuk-input govuk-input--width-20" id="plist-1" name="plist-1" type="text" value="{{data['plist-1']}}">
+          <input style="" class="govuk-input govuk-input--width-20" id="pname-1" name="pname-1" type="text" value="{{data['pname-1']}}">
+
+        </div>
+
+        <div id="pl1" style=";position:relative;width:65%" class="govuk-!-margin-top-6">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--s" for="plist-1">
+              What's the first panelist's email?
+            </label>
+          </h2>
+          <input style="" class="govuk-input govuk-input--width-20" id="plist-1" name="plist-1" type="text" value="{{data['plist-1']}}">
           <a href="#" id="pl1acta" style="display:none;position:absolute;left:0px;bottom:-40px;color:#1d70b8" onclick="showDiv('pl2bcta');showDiv('pl2acta');showDiv('pl2');hideDiv('pl1acta')">Add another panelist</a>
         </div>
+
+        <div id="pl1" style=";position:relative;width:60%" class="govuk-!-margin-top-9">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--s" for="pname-2">
+              What's the next panelist's name?
+            </label>
+          </h2>
+          <input  class="govuk-input govuk-input--width-20" id="pname-2" name="pname-2" type="text" value="{{data['pname-2']}}">
+
+        </div>
+
         <div id="pl2" style=";position:relative;width:60%" class="govuk-!-margin-top-6">
           <h2 class="govuk-label-wrapper">
             <label class="govuk-label govuk-label--s" for="plist-2">
-              What's the panelist's email?
+              What's the next panelist's email?
             </label>
           </h2>
           <input  class="govuk-input govuk-input--width-20" id="plist-2" name="plist-2" type="text" value="{{data['plist-2']}}">
