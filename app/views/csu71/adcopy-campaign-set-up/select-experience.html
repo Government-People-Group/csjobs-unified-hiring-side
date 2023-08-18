@@ -6,19 +6,19 @@
 
 {% block header %}
 {% include '/csu71/includes/header.html' %}
-  {% endblock %}
+{% endblock %}
 
-  {% block beforeContent %}
-  <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
 
-    <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
-  </div> -->
-  <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Selection criteria and assessment methods</span>
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Selection criteria and assessment methods</span>
 
-  <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-copy-ad"><strong>Return to task list</strong></a></span>
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-copy-ad"><strong>Return to task list</strong></a></span>
 
     <!-- {% if data['org'] == "ddat" %}
     <div id ="ddattag"  style="position:absolute;right:10px;top:60px;;">
@@ -50,8 +50,7 @@
 
 
 
-
-<form class="form" action="/csu71/check-next-stepAdCopy" method="post">
+<form class="form" action="select-strengths" method="post">
   <!-- <H2 class="govuk-heading-l govuk-!-margin-top-3 govuk-!-margin-bottom-3">What will you assess within each element at sift and interview?</h2>
     <p class="govuk-body-l govuk-!-margin-bottom-6 govuk-!-margin-top-3">You have selected which elements are important to assess for this job role. You should now select what you will assess within each element at sift and interview.</p> -->
 
@@ -96,56 +95,35 @@
 
 
 
+            <div class="govuk-form-group">
+              <h2 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--m" for="exp1">
+                  Experience 1
+                </label>
+              </h2>
+
+              <textarea class="govuk-textarea" id="exp1" name="exp1" value="{{ data['exp1']}}" rows="2" aria-describedby="respon-hint">Experience of building relationships with busy stakeholders to achieve change.</textarea>
+            </div>
+
+            <div class="govuk-form-group">
+              <h2 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--m" for="exp2">
+                  Experience 2
+                </label>
+              </h2>
+
+              <textarea class="govuk-textarea" id="exp2" name="exp2" value="{{ data['exp2']}}" rows="2" aria-describedby="respon-hint">Experience of operating in a fast-paced and ever-changing environment to provide policy advice and briefing to seniors and stakeholders.</textarea>
+            </div>
 
 
+            <div class="govuk-form-group">
+              <h2 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--m" for="exp3">
+                  Experience 3
+                </label>
+              </h2>
 
-            {% if data['Experience 4'].length > 0 %}
-            {% set see = "block" %}
-            {% set nosee = "none" %}
-            {% else %}
-            {% set see = "none" %}
-            {% endif %}
-
-
-
-
-
-            {% set expArray = ['Experience 1','Experience 2','Experience 3'] %}
-            {% set expArray4 = ['Experience 4'] %}
-            {% set expArray5 = ['Experience 5'] %}
-            {% set expArray6 = ['Experience 6'] %}
-
-
-
-            <div class="govuk-!-margin-bottom-2 govuk-!-margin-top-2" style="background:#F4FAFF;border-left:5px solid #1d70b8;padding:10px">
-
-              <p class="govuk-body-m" style="font-size:20px;line-height:1.6"><strong>77% of users typically look at a job ad for the first time on a mobile phone, and only spend 11 seconds on the page.</strong></p>
-              <p class="govuk-body-s ">Source: Civil Service Jobs (2023), Cabinet Office.</p>
-
-              {% for items in expArray | slice(1) %}
-              {% for item in items  %}
-
-
-              <div class="govuk-form-group">
-                <h1 class="govuk-label-wrapper">
-                  <label class="govuk-label govuk-label--s" for="{{item}}">
-                    {{item}}
-                  </label>
-                </h1>
-
-                <textarea class="govuk-textarea" id="{{item}}" value="{{ data['item']}}" name="{{item}}" rows="2" aria-describedby="more-detail-hint"></textarea>
-              </div>
-
-
-              <!-- {{ govukTextarea({
-                label: {
-                  text: item,
-                  classes: "govuk-label--s"
-                },
-                rows: "2",
-                name: item,
-                value: data[item]
-              }) }} -->
+              <textarea class="govuk-textarea" id="exp3" name="exp3" value="{{ data['exp3']}}" rows="2" aria-describedby="respon-hint"></textarea>
             </div>
 
 
@@ -153,104 +131,6 @@
 
 
 
-
-            <!-- <div class="govuk-form-group">
-              <h1 class="govuk-label-wrapper">
-                <label class="govuk-label govuk-label--s" for="{{item}}">
-                  {{item}}
-                </label>
-              </h1>
-
-              <textarea style="width:69%" class="govuk-textarea" id="{{item}}" value="{{ data['item']}}" name="{{item}}" rows="2" aria-describedby="more-detail-hint"></textarea>
-            </div> -->
-
-
-
-
-
-
-{% endfor %}{% endfor %}
-
-
-<div id="expcta1" style="display:{{ nosee }}" class="govuk-body-m ">
-
-  <p class="govuk-body-m"><a style="color:#1d70b8" onclick="showHideDiv('experience4','expcta1')"><strong>Add another experience</strong></a></p>
-</div>
-
-
-<div id="experience4" style="display:{{ see }}">
-  {% for items in expArray4 | slice(1) %}
-  {% for item in items %}
-
-
-
-
-  <div class="govuk-form-group">
-    <h1 class="govuk-label-wrapper">
-      <label class="govuk-label govuk-label--s" for="{{item}}">
-        {{item}}
-      </label>
-    </h1>
-
-    <textarea class="govuk-textarea" id="{{item}}" value="{{ data['item']}}" name="{{item}}" rows="2" aria-describedby="more-detail-hint"></textarea>
-  </div>
-
-  {% endfor %}{% endfor %}
-  <div id="expcta4" style="display:{{ nosee }}" class="govuk-body-m ">
-    <p class="govuk-body-m"><a style="color:#1d70b8;float:right" onclick="deleteDiv('experience4','expcta1')"><strong>Delete this experience</strong></a></p>
-
-    <p class="govuk-body-m"><a style="color:#1d70b8" onclick="showHideDiv('experience5','expcta4')"><strong>Add another experience</strong></a></p>
-  </div>
-</div>
-
-<div id="experience5" style="display:{{ see }}">
-  {% for items in expArray5 | slice(1) %}
-  {% for item in items %}
-
-
-
-
-  <div class="govuk-form-group">
-    <h1 class="govuk-label-wrapper">
-      <label class="govuk-label govuk-label--s" for="{{item}}">
-        {{item}}
-      </label>
-    </h1>
-
-    <textarea class="govuk-textarea" id="{{item}}" value="{{ data['item']}}" name="{{item}}" rows="2" aria-describedby="more-detail-hint"></textarea>
-  </div>
-
-  {% endfor %}{% endfor %}
-  <div id="expcta5" style="display:{{ nosee }}" class="govuk-body-m ">
-    <p class="govuk-body-m"><a style="color:#1d70b8;float:right" onclick="deleteDiv('experience5','expcta4')"><strong>Delete this experience</strong></a></p>
-
-    <p class="govuk-body-m"><a style="color:#1d70b8" onclick="showHideDiv('experience6','expcta5')"><strong>Add another experience</strong></a></p>
-
-  </div>
-
-</div>
-
-<div id="experience6" style="display:{{ see }}">
-  {% for items in expArray6 | slice(1) %}
-  {% for item in items %}
-
-
-
-
-  <div class="govuk-form-group">
-    <h1 class="govuk-label-wrapper">
-      <label class="govuk-label govuk-label--s" for="{{item}}">
-        {{item}}
-      </label>
-    </h1>
-
-    <textarea  class="govuk-textarea" id="{{item}}" value="{{ data['item']}}" name="{{item}}" rows="2" aria-describedby="more-detail-hint"></textarea>
-  </div>
-  {% endfor %}{% endfor %}
-
-  <div id="expcta6" style="display:{{ nosee }}" class="govuk-body-m ">
-    <p class="govuk-body-m"><a style="color:#1d70b8" onclick="deleteDiv('experience6','expcta5')"><strong>Delete this experience</strong></a></p>
-  </div>
 
 </div>
 
@@ -264,7 +144,6 @@
 </div></div>
 
 
-</div>
 
 
 <input type="hidden" name="source" value="experience">

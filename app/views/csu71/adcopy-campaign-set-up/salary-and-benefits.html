@@ -36,7 +36,6 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-three-quarters">
 
 
-/csu71/contract-details-handlerAdcopy
 
     <h1 class="govuk-heading-xl">Salary and benefits</h1>
     <form class="form" action="/csu71/adcopy-campaign-set-up/pecvet" method="post">
@@ -53,7 +52,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
         },
         classes: "govuk-input--width-5",
         spellcheck: false,
-        value: data['cost']
+        value: "41,480" or data['cost']
       }) }}
 
 
@@ -70,7 +69,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
         },
         classes: "govuk-input--width-5",
         spellcheck: false,
-        value: data['costmax']
+        value: "45,919" or data['costmax']
       }) }}
 
 
@@ -90,7 +89,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
       {{ govukTextarea({
         name: "otherAllow",
         id: "otherAllow",
-        value: data['otherAllow'],
+        value: "Policy+ non-pensionable allowance of £4,342" or data['otherAllow'],
         label: {
           text: "Tell us about the additional allowances",
           classes: "govuk-label--s",
@@ -117,6 +116,8 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
           value: "yes",
           text: "Yes",
           checked: checked("allowances", "yes"),
+          checked: "true",
+
           conditional: {
             html: otherHTML
           }

@@ -44,133 +44,102 @@ Basic details – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
-{% from "govuk/components/input/macro.njk" import govukInput %}
-{{ govukInput({
-label: {
-text: "Job title",
-classes: "govuk-label--m",
-isPageHeading: false
-},
-classes: "govuk-input--width-20",
-id: "title",
-name: "title",
-value: data['temp-copy-input-autocomplete']
-}) }}
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+  {{ govukInput({
+  label: {
+  text: "Job title",
+  classes: "govuk-label--m",
+  isPageHeading: false
+  },
+  classes: "govuk-input--width-20",
+  id: "title",
+  name: "title",
+  value: "Policy Adviser"
+  }) }}
 
 
 
 
-{{ govukSelect({
-          id: "newgrade",
-          name: "newgrade",
+  {{ govukSelect({
+            id: "newgrade",
+            name: "newgrade",
+            label: {
+              text: "What grade is the job role?",
+              classes: "govuk-label--s"
+            },
+            items: [
+            {
+              value: "none",
+              selected: "true",
+              disabled: "true",
+              text: "Select grade"
+            },
+            {
+              value: "Senior Executive Officer",
+              text: "Senior Executive Officer",
+              selected: "true"
+            }
+            ]
+          }) }}
+
+
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+          {{ govukInput({
           label: {
-            text: "What grade is the job role?",
-            classes: "govuk-label--s"
+          text: "Department",
+          classes: "govuk-label--m",
+          isPageHeading: false
           },
-          items: [
-          {
-            value: "none",
-            selected: "true",
-            disabled: "true",
-            text: "Select grade"
+          classes: "govuk-input--width-20",
+          id: "dept",
+          name: "dept",
+          value: data['dept-copy-input-autocomplete']|default("Cabinet Office")
+
+
+          }) }}
+
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+          {{ govukInput({
+          label: {
+          text: "How many posts are available?",
+          classes: "govuk-label--m",
+          isPageHeading: false
           },
-
-          {
-            value: "Administrative Assistant",
-            text: "Administrative Assistant",
-            selected: checked("grade","Administrative Assistant")
-          },
-          {
-            value: "Administrative Officer",
-            text: "Administrative Officer",
-            selected: checked("grade","Administrative Officer")
-          },
-          {
-            value: "Executive Officer",
-            text: "Executive Officer",
-            selected: checked("grade","Executive Officer")
-          },
-          {
-            value: "Higher Executive Officer",
-            text: "Higher Executive Officer",
-            selected: checked("grade","Higher Executive Officer")
-          },
-          {
-            value: "Senior Executive Officer",
-            text: "Senior Executive Officer",
-            selected: checked("grade","Senior Executive Officer")
-          },
-          {
-            value: "Grade 7",
-            text: "Grade 7",
-            selected: checked("grade","Grade 7")
-          },
-          {
-            value: "Grade 6",
-            text: "Grade 6",
-            selected: checked("grade","Grade 6")
-          }
-          ]
-        }) }}
+          classes: "govuk-input--width-3",
+          id: "num-posts",
+          name: "num-posts",
+          value: data['num-posts']|default("1")
+          }) }}
 
 
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {{ govukInput({
-        label: {
-        text: "Department",
-        classes: "govuk-label--m",
-        isPageHeading: false
-        },
-        classes: "govuk-input--width-20",
-        id: "dept",
-        name: "dept",
-        value: data['dept-copy-input-autocomplete']
+          <input id="grabProf" type="hidden" name="profession" value="{{ data['proff']}}">
+
+         <button class="govuk-button" data-module="govuk-button">Continue</button>
+       </FORM>
+  </div>
+  </div>
 
 
-        }) }}
+  <script>
 
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {{ govukInput({
-        label: {
-        text: "How many posts are available?",
-        classes: "govuk-label--m",
-        isPageHeading: false
-        },
-        classes: "govuk-input--width-3",
-        id: "num-posts",
-        name: "num-posts",
-        value: data['num-posts']
-        }) }}
+  const keyDetails = {};
+  const title = document.getElementById("title").value;
+  const grade = document.getElementById("newgrade").value
+  const profession = document.getElementById("grabProf").value;
+  const department = document.getElementById("dept").value;
 
+  console.log(title, grade, profession, department)
 
-        <input id="grabProf" type="hidden" name="profession" value="{{ data['proff']}}">
+  keyDetails.jobTitle = title;
+  keyDetails.grade = grade;
+  keyDetails.profession = profession;
+  keyDetails.department = department;
 
-       <button class="govuk-button" data-module="govuk-button">Continue</button>
-     </FORM>
-</div>
-</div>
+  window.sessionStorage.setItem("keyDetails", JSON.stringify(keyDetails));
 
 
-<script>
-
-const keyDetails = {};
-const title = document.getElementById("title").value;
-const grade = document.getElementById("newgrade").value
-const profession = document.getElementById("grabProf").value;
-const department = document.getElementById("dept").value;
-
-console.log(title, grade, profession, department)
-
-keyDetails.jobTitle = title;
-keyDetails.grade = grade;
-keyDetails.profession = profession;
-keyDetails.department = department;
-
-window.sessionStorage.setItem("keyDetails", JSON.stringify(keyDetails));
+  console.log(keyDetails);
 
 
-console.log(keyDetails);
-
-
-</script>
-{% endblock %}
+  </script>
+  {% endblock %}

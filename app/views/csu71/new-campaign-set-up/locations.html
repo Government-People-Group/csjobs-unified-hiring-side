@@ -31,88 +31,62 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
 
-      <!-- {% macro taskListItem(title="'title'", link='#', completed='', cantStart='' ) %}
-      <li class="app-task-list__item"><span class="app-task-list__task-name">
-      {% if not (cantStart or completed)  %}
-      <a href="{{link}}" aria-describedby="eligibility-completed"> {% endif %}      {{title}}
-      {% if not (cantStart or completed)  %}
-    </a>{% endif %}  </span>{% if completed %}<strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
-    {% else %}
-    {% endif %}
-  </li>
-  {% endmacro %}
 
-  <ol class="app-task-list"><li>
-  <h2 class="app-task-list__section">Check and approve</h2>
-  <ul class="app-task-list__items" style="padding-left: 0">
-  {{taskListItem(title="Find applicant on Searchlight", link="1-check/1", completed=(data['searchlight'] == "yes" or data['ni-number'] ), cantStart="")}}
-  {{taskListItem(title="Add National Insurance number", link="1-check/1-ni-number", completed=(data['ni-number'] ), cantStart=(not (data['searchlight'] == "yes") ))}}
-  {{taskListItem(title="Check for appointee", link="1-check/2", completed=(data['appointee'] ), cantStart=(not data['ni-number'] ) )}}
-  {{taskListItem(title="Check application", link="1-check/3", completed=((data['interview'] == 'yes' and data['company'] == 'yes' and data['personal'] == 'yes' ) ), cantStart=(not data['appointee'] ) )}}
-</ul></li></ol> -->
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="mroe" style="">
-  {{ govukRadios({
-    id: "uk",
-    name: "uk",
-    classes: "",
-    fieldset: {
-      legend: {
-        text: "Where will the role be located?",
-        isPageHeading: false,
-        classes: "govuk-fieldset__legend--m"
-      }
-    },
-    items: [
-    {
-      id: "rem",
-      value: "Remote",
-      text: "Remote",
-      checked: checked("uk","Remote")
-    },
-    {
-      id: "off",
-      value: "Onsite at a government-managed location",
-      text: "Onsite at a government-managed location",
-      checked: checked("uk","Onsite at a government-managed location")
-    },
-    {
-      id: "hyb",
-      value: "A hybrid of both remote and onsite",
-      text: "A hybrid of both remote and onsite",
-      checked: checked("uk","A hybrid of both remote and onsite")
-    }
+    <div id="mroe" style="">
+      {{ govukRadios({
+        id: "uk",
+        name: "uk",
+        classes: "",
+        fieldset: {
+          legend: {
+            text: "Where will the role be located?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+        {
+          id: "rem",
+          value: "Remote",
+          text: "Remote"
+        },
+        {
+          id: "off",
+          value: "Onsite at a government-managed location",
+          text: "Onsite at a government-managed location"
+        },
+        {
+          id: "hyb",
+          value: "A hybrid of both remote and onsite",
+          text: "A hybrid of both remote and onsite",
+          checked: "true"
+        }
 
 
-    ]
-  }) }}
-</div>
+        ]
+      }) }}
+    </div>
 
-  </div>
-</div>
 
-{{ govukButton({
-  text: "Continue",
-  classes: "govuk-button govuk-!-margin-top-9"
-}) }}
 
-{{ govukButton({
-  text: "Preview advert",
-  classes: "govuk-button--secondary govuk-!-margin-top-9",
-  href: "preview-advert"
-}) }}
-</form>
-{% include '/csu71/includes/footerarea.html' %}
 
-{% endblock %}
+
+      </div>
+    </div>
+
+
+
+
+
+    {{ govukButton({
+      text: "Continue",
+      classes: "govuk-button govuk-!-margin-top-9"
+    }) }}
+
+    {{ govukButton({
+      text: "Preview advert",
+      classes: "govuk-button--secondary govuk-!-margin-top-9",
+      href: "preview-advert"
+    }) }}
+    </form>
+    {% endblock %}

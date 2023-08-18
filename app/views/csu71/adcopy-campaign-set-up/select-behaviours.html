@@ -47,6 +47,10 @@
 {% endblock %}
 
 {% block content %}
+
+
+{{ data['selected']}}
+
 <style>
   /* Example page specific styling. */
 
@@ -138,8 +142,7 @@
 </style>
 
 
-
-  <form class="form" action="/csu71/check-next-stepAdCopy" method="post">
+  <form class="form" action="select-experience" method="post">
 
     <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-1 govuk-!-margin-bottom-6">Behaviours</H1>
 
@@ -390,13 +393,13 @@ console.log(myObjectName.value)
           hint.appendChild(document.createTextNode(level[t].description));
           hea1.appendChild(hint);
 
-          if (myObjectName.value == "ddat"){
+
             if (level[t].title == "Seeing the big picture" || level[t].title == "Changing and improving" || level[t].title == "Delivering at Pace" || level[t].title == "Communicating and Influencing"){
-              label.setAttribute("class","experiment");
+
 
               checkBox.checked = "true";
             }
-          }
+
 
 
         }
@@ -419,11 +422,11 @@ console.log(myObjectName.value)
 
       }
 
-      // const dwqq = JSON.parse(window.sessionStorage.getItem("BehavioursSelected"));
-      //
-      //
-      // const keyDetails = {};
-      // var keyD = JSON.parse(window.sessionStorage.getItem("keyDetails"));
+      const dwqq = JSON.parse(window.sessionStorage.getItem("BehavioursSelected"));
+
+
+      const keyDetails = {};
+      var keyD = JSON.parse(window.sessionStorage.getItem("keyDetails"));
 
       // const title = document.getElementById("title").value;
       // const grade = document.getElementById("newgrade").value
@@ -432,10 +435,10 @@ console.log(myObjectName.value)
 
       // console.log(keyD)
 
-      // keyDetails.title = keyD.jobTitle;
-      // keyDetails.grade = keyD.grade;
-      // keyDetails.profession = keyD.profession;
-      // keyDetails.department = keyD.department;
+      keyDetails.title = keyD.jobTitle;
+      keyDetails.grade = keyD.grade;
+      keyDetails.profession = keyD.profession;
+      keyDetails.department = keyD.department;
 
 
 

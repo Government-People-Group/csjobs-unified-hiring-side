@@ -443,6 +443,13 @@ router.post("/approach-handler", function (req, res) {
 })
 
 
+router.post("/approach-handlerAdcopy", function (req, res) {
+	if (req.session.data['edit21'] == "true") {
+		res.redirect('/csu71/adcopy-campaign-set-up/summary-section-5')
+	} else {
+		res.redirect('/csu71/adcopy-campaign-set-up/attraction-methods')
+	}
+})
 
 
 
@@ -528,6 +535,17 @@ router.post("/submit", function (req, res) {
 		res.redirect('new-campaign-set-up/summary-section-6')
 	}
 })
+
+router.post("/submitAdcopy", function (req, res) {
+	var reserve = req.session.data['reserve']
+	if (reserve == "yes") {
+		res.redirect('/csu71/adcopy-campaign-set-up/reserve-candidates')
+	} else {
+		res.redirect('/csu71/adcopy-campaign-set-up/summary-section-6')
+	}
+})
+
+
 
 router.post("/csu71/approval-altergo", function (req, res) {
 	var approved = req.session.data['approval-status']

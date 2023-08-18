@@ -44,7 +44,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
   <div class="govuk-grid-column-three-quarters">
     <h1 class="govuk-heading-xl">Contract details</h1>
 
-<form class="form" action="/csu71/contract-details-handler" method="post">
+<form class="form" action="salary-and-benefits" method="post">
     {{ govukRadios({
     id: "contract",
     name: "contract",
@@ -58,13 +58,11 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
     items: [
       {
         value: "Apprenticeship",
-        text: "Apprenticeship",
-        checked: checked("contract", "Apprenticeship")
+        text: "Apprenticeship"
       },
       {
         value: "Assisted transfer",
-        text: "Assisted transfer",
-        checked: checked("contract", "Assisted")
+        text: "Assisted transfer"
       },
       {
         value: "Fixed term",
@@ -76,28 +74,23 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
       },
       {
         value: "Internship",
-        text: "Internship",
-        checked: checked("contract", "Internship")
+        text: "Internship"
       },
       {
         value: "Loan",
-        text: "Loan",
-        checked: checked("contract", "Loan")
-      },
+        text: "Loan"      },
       {
         value: "Overseas",
-        text: "Overseas",
-        checked: checked("contract", "Overseas")
+        text: "Overseas"
       },
       {
         value: "Permanent",
         text: "Permanent",
-        checked: checked("contract", "Permanent")
+        checked: "true"
       },
       {
         value: "Temporary",
-        text: "Temporary",
-        checked: checked("contract", "Temporary")
+        text: "Temporary"
       }
     ]
   }) }}
@@ -123,17 +116,16 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
     {
       value: "Compressed",
       text: "Compressed hours",
-      checked: checked("working-pattern", "Compressed")
+      checked: "true"
     },
     {
       value: "Flexible-working",
-      text: "Flexible working",
-      checked: checked("working-pattern", "Flexible-working")
+      text: "Flexible working"
     },
     {
       value: "Fulltime",
       text: "Full-time",
-      checked: checked("working-pattern", "Fulltime")
+      checked: "true"
     },
     {
       value: "Homeworking",
@@ -142,8 +134,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
     },
     {
       value: "Jobshare",
-      text: "Job share",
-      checked: checked("working-pattern", "Jobshare")
+      text: "Job share"
     },
     {
       value: "Part-time",
@@ -165,6 +156,4 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 </form>
 </div>
 </div>
-{% include '/csu71/includes/footerarea.html' %}
-
 {% endblock %}

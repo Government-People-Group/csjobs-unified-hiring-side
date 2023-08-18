@@ -1,20 +1,34 @@
 {% extends "layouts/main.html" %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% block header %}
 {% include '/csu71/includes/header.html' %}
-  {% endblock %}
+{% endblock %}
 
-  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Selection criteria and assessment methods</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-copy-ad"><strong>Return to task list</strong></a></span>
 
-  {% block beforeContent %}
+    </div>
+
+  </div>
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
-
   {% endblock %}
+
 
 {% block content %}
 
@@ -96,15 +110,9 @@
 </style>
 
 
-{% set countBe  = 0 %}
-{% set countSt  = 0 %}
-{% set countEx  = 0 %}
-{% set countSk  = 0 %}
 
 
-
-
-<form class="form" action="selection-criteria-summary" method="post">
+<form class="form" action="selection-criteria-summary?stage=ok" method="post">
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
@@ -114,49 +122,36 @@
       <p class="govuk-body-l govuk-!-margin-bottom-3">You must choose when to assess all elements you have selected.</p>
 
       {% if "behaviours" in data['selected'] %}
-
       <h2 id="bheader" class="govuk-heading-l govuk-!-margin-top-3" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Behaviours</h2>
 {% endif %}
 <p id="lShip" class="govuk-body-m govuk-!-margin-bottom-3"></p>
 
       <div id="behDiv"></div>
 
-    {% if "strengths" in data['selected'] %}
+      {% if "strengths" in data['selected'] %}
   <h2 id="stheader" class="govuk-heading-l govuk-!-margin-top-9" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Strengths</h2>
 {% endif %}
       <div id="strDiv"></div>
 
 
 
-
       {% if "experience" in data['selected'] %}
       <h2 id="eheader" class="govuk-heading-l govuk-!-margin-top-9" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Experience</h2>
-      {% endif %}
+      {%  endif %}
       {% set criteriaExpArr = [] %}
 
-      {% if data['Experience 1'].length > 0 %}
-      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 1']|truncate(50)), criteriaExpArr) %}
+      {% if data['exp1'].length > 0 %}
+      {% set criteriaExpArr = (criteriaExpArr.push(data['exp1']|truncate(150)), criteriaExpArr) %}
       {% else %}{% endif %}
 
-      {% if data['Experience 2'].length > 0 %}
-      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 2']|truncate(50)), criteriaExpArr) %}
+      {% if data['exp2'].length > 0 %}
+      {% set criteriaExpArr = (criteriaExpArr.push(data['exp2']|truncate(150)), criteriaExpArr) %}
       {% else %}{% endif %}
 
-      {% if data['Experience 3'].length > 0 %}
-      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 3']|truncate(50)), criteriaExpArr) %}
+      {% if data['exp3'].length > 0 %}
+      {% set criteriaExpArr = (criteriaExpArr.push(data['exp3']|truncate(150)), criteriaExpArr) %}
       {% else %}{% endif %}
 
-      {% if data['Experience 4'].length > 0 %}
-      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 4']|truncate(50)), criteriaExpArr) %}
-      {% else %}{% endif %}
-
-      {% if data['Experience 5'].length > 0 %}
-      {% set criteriaExpArr = (criteriaExpArr.push(data['Skills 5']|truncate(50)), criteriaExpArr) %}
-      {% else %}{% endif %}
-
-      {% if data['Experience 6'].length > 0 %}
-      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 6']|truncate(50)), criteriaExpArr) %}
-      {% else %}{% endif %}
 
 
 
@@ -180,7 +175,7 @@
         {
           name: eon,
           id: "Experience",
-          checked: checked('experience-stage',"Sift"),
+          checked: "true",
           value: "Sift",
           classes: "govuk-label-l",
           text: "Sift"
@@ -205,7 +200,6 @@
         {% if "skills" in data['selected'] %}
         <h2 id="skheader" class="govuk-heading-l govuk-!-margin-top-9" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Skills</h2>
         {% endif %}
-  <div id="sklDiv"></div>
 
         {% set criteriaSkillsArr = [] %}
 
@@ -213,29 +207,19 @@
 
 
 
-        {% if data['Technical skills 1'].length > 0 %}
-        {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 1']|truncate(50)), criteriaSkillsArr) %}
+        {% if data['skills1'].length > 0 %}
+        {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['skills1']|truncate(150)), criteriaSkillsArr) %}
         {% else %}{% endif %}
 
-        {% if data['Technical skills 2'].length > 0 %}
-        {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 2']|truncate(50)), criteriaSkillsArr) %}
+        {% if data['skills2'].length > 0 %}
+        {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['skills2']|truncate(150)), criteriaSkillsArr) %}
         {% else %}{% endif %}
 
-        {% if data['Technical skills 3'].length > 0 %}
-        {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 3']|truncate(50)), criteriaSkillsArr) %}
+        {% if data['skills3'].length > 0 %}
+        {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['skills2']|truncate(150)), criteriaSkillsArr) %}
         {% else %}{% endif %}
 
-        {% if data['Technical skills 4'].length > 0 %}
-        {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 4']|truncate(50)), criteriaSkillsArr) %}
-        {% else %}{% endif %}
 
-        {% if data['Technical skills 5'].length > 0 %}
-        {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 5']|truncate(50)), criteriaSkillsArr) %}
-        {% else %}{% endif %}
-
-        {% if data['Technical skills 6'].length > 0 %}
-        {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 6']|truncate(50)), criteriaSkillsArr) %}
-        {% else %}{% endif %}
 
 
 
@@ -258,7 +242,7 @@
           {
             name: e,
             id: "Technical skills",
-            checked: checked('skills-stage',"Sift"),
+            checked: "true",
             value: "Sift",
             classes: "govuk-label-l",
             text: "Sift"
@@ -293,8 +277,6 @@
 <script>
   const behavioursSelected = JSON.parse(window.sessionStorage.getItem("BehavioursSelected"));
 
-
-
     var outputBS = document.getElementById("behDiv");
     var lShip = document.getElementById("lShip");
     var bsList = document.createElement("p");
@@ -309,6 +291,12 @@
       var label = document.createElement("label");
       var checkBox = document.createElement("input");
 
+      if (behavioursSelected[log] == "Leadership") {
+
+        lShipContent.style.cssText = "line-height:1.6;font-size:20px;background:#F4FAFF;;border-left:5px solid #1d70b8;padding:20px";
+        lShipContent.innerHTML = lShipMessage;
+        lShip.appendChild(lShipContent);
+      }
 
 
       checkBox.type = "checkbox";
@@ -328,6 +316,7 @@
       checkBox2.value = "Interview";
       checkBox2.setAttribute("name",behavioursSelected[log]);
       checkBox2.setAttribute("id","Behaviours");
+      checkBox2.checked = "true";
       checkBox2.style.cssText = "width: 40px;height: 40px;;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
       label2.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
       label2.appendChild(document.createTextNode("Interview"));
@@ -359,76 +348,12 @@ console.log(withoutDuplicates);
     checkBoxS.setAttribute("id","Strengths");
     checkBoxS.type = "checkbox";
     checkBoxS.value = "Interview";
+    checkBoxS.checked = "true";
     checkBoxS.style.cssText = "width: 40px;height: 40px;;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
     labelS.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
     labelS.appendChild(document.createTextNode("Interview"));
     outputSS.appendChild(labelS);
     outputSS.appendChild(checkBoxS);
-
-
-
-    const skillsPicked = JSON.parse(window.sessionStorage.getItem("skills"));
-
-
-            // var outputSkl = document.getElementById("sklDiv");
-            // var sklList = document.createElement("p");
-            //
-
-
-        // sklList.style.cssText = "font-size:24px;font-weight:bold";
-        // sklList.innerHTML = skillsPicked;
-        // outputSkl.appendChild(sklList)
-        // var labelSkl = document.createElement("label");
-        // var checkBoxSkl = document.createElement("input");
-        // checkBoxSkl.setAttribute("name",skillsPicked);
-        // checkBoxSkl.setAttribute("id","skills");
-        // checkBoxSkl.type = "checkbox";
-        // checkBoxSkl.value = "Interview";
-        // checkBoxSkl.style.cssText = "width: 40px;height: 40px;;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
-        // labelSkl.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
-        // labelSkl.appendChild(document.createTextNode("Interview"));
-        // outputSkl.appendChild(labelSkl);
-        // outputSkl.appendChild(checkBoxSkl);
-
-
-
-
-
-      //   for (var logSkl=0; logSkl < skillsPicked.length; logSkl++) {
-      //     var outputSkl = document.getElementById('sklDiv');
-      //     var sklList = document.createElement("p");
-      //     sklList.style.cssText = "font-size:24px;font-weight:bold";
-      //     sklList.innerHTML = skillsPicked[logSkl];
-      //     console.log(skillsPicked[logSkl])
-      //
-      //     outputSkl.appendChild(sklList);
-      //     var label = document.createElement("label");
-      //     var checkBox = document.createElement("input");
-      //
-      //     checkBox.type = "checkbox";
-      //     checkBox.value = "Sift";
-      //     checkBox.setAttribute("name",skillsPicked[logSkl]);
-      //     checkBox.setAttribute("id","skills"+logSkl);
-      //
-      //     checkBox.style.cssText = "width: 40px;height: 40px;;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
-      //     label.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
-      //     label.appendChild(document.createTextNode("Sift"));
-      //     outputSkl.appendChild(label);
-      //     outputSkl.appendChild(checkBox);
-      //
-      //     var label2 = document.createElement("label");
-      //     var checkBox2 = document.createElement("input");
-      //     checkBox2.type = "checkbox";
-      //     checkBox2.value = "Interview";
-      //     checkBox2.setAttribute("name",skillsPicked[logSkl]);
-      //     checkBox2.setAttribute("id","skills");
-      //     checkBox2.style.cssText = "width: 40px;height: 40px;;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
-      //     label2.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
-      //     label2.appendChild(document.createTextNode("Interview"));
-      //     outputSkl.appendChild(label2);
-      //     outputSkl.appendChild(checkBox2);
-      // }
-
 
 
 

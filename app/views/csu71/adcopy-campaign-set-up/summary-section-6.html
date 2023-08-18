@@ -1,10 +1,11 @@
 {% extends "layouts/main.html" %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% block header %}
 {% include '/csu71/includes/header.html' %}
-{% endblock %}
-{% block pageTitle %}
-Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,9 +18,9 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-copy-ad"><strong>Return to task list</strong></a></span>
 
-</div>
+  </div>
 
 </div>
 {{ govukBackLink({
@@ -35,24 +36,6 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
     <h1 class="govuk-heading-xl">Review and submit</h1>
 
-    <h2 class="govuk-heading-m">Panel</h2>
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Panel selected for sift and interview?</dt>
-        <dd class="govuk-summary-list__value">{{ data['panel-selected']}}</dd>
-        <dd class="govuk-summary-list__actions"><a href="interviews?edit25=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Same panel for sift and interview?</dt>
-        <dd class="govuk-summary-list__value">{{ data['panel-sift-int']}}</dd>
-        <dd class="govuk-summary-list__actions"><a href="interviews?edit25=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Email addresses of panelists</dt>
-        <dd class="govuk-summary-list__value">{{ data['panelist1']}}<br>{{ data['panelist2']}}<br>{{ data['panelist3']}}</dd>
-        <dd class="govuk-summary-list__actions"><a href="interviews?edit25=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
-      </div>
-    </dl>
 
     <h2 class="govuk-heading-m">Campaign dates</h2>
     <dl class="govuk-summary-list">
@@ -67,23 +50,16 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
         <dd class="govuk-summary-list__actions"><a href="campaign-dates?edit26=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
       </div>
     </dl>
-    <h2 class="govuk-heading-m">Share with internal reviewers</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-30">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Share with reviewer</dt>
-        <dd class="govuk-summary-list__value">{{ data['reviewer']}}</dd>
-        <dd class="govuk-summary-list__actions"><a href="pre-submit-reviewer?edit27=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
-      </div>
-    </dl>
 
 
 
 
           <input type="hidden" name="summary6" value="true">
           <input type="hidden" name="submitted" value="true">
+          <div style="background:#f3f2f1;padding:20px">
 
 
-    <div class="govuk-!-margin-top-9" style="background:#f3f2f1;padding:20px">
+    <div class="govuk-!-margin-top-3" >
       <h2 class="govuk-heading-l ">What happens next</h2>
 
     <p class="govuk-body-l">Review and submit your vacancy.</p>
@@ -106,7 +82,7 @@ Your job campaign will be sent to Government Recruitment Service (GRS). GRS wull
     </div>
 
 
-
+</div>
   </div>
 </div>
 

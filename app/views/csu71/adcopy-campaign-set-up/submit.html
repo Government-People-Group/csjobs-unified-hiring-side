@@ -1,62 +1,71 @@
 {% extends "layouts/main.html" %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% block header %}
 {% include '/csu71/includes/header.html' %}
   {% endblock %}
 
-{% block pageTitle %}
-Create a job advert – Civil service jobs – GOV.UK Prototype Kit
-{% endblock %}
+  {% block beforeContent %}
+  <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
 
-{% block beforeContent %}
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
+    <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+      </div> -->
+  <span style="float:left;margin-top:10px;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-m">Review and submit</span>
+
+      <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+        <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-copy-ad"><strong>Return to task list</strong></a></span>
+
+      </div>
+
+  </div>
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">Before you submit</span>
-    <h1 class="govuk-heading-l">Reserve candidates found</h1>
-    <form class="form" action="/csu71/submit" method="post">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Reserve candidates found</h1>
+    <form class="form" action="/csu71/submitAdcopy" method="post">
 
-      <p><strong>13</strong> candidates matching the job title <strong>{{ data['temp-copy-input-autocomplete']}}</strong> are available on our reserve list.
-
-      {{ govukRadios({
-        idPrefix: "reserve",
-        name: "reserve",
-        fieldset: {
-          legend: {
-            text: "Would you like to review the pre-qualified candidates?",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No, I want to advertise this role"
-          }
-        ]
-      }) }}
-
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
-      {{ govukButton({
-        text: "Preview advert",
-        classes: "govuk-button--secondary",
-        href: "preview-advert"
-      }) }}
-
-    </form>
+        <h2 class="govuk-heading-l" style="font-weight:normal">13 candidates matching the job <strong>{{ data['temp-copy-input-autocomplete']|default("Policy Adviser")}}</strong> are available on the reserve list.</h2>
 
 
-  </div>
-</div>
-{% endblock %}
+            {{ govukRadios({
+              idPrefix: "reserve",
+              name: "reserve",
+              fieldset: {
+                legend: {
+                  text: "Would you like to review the reserve candidates?",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes"
+                },
+                {
+                  value: "no",
+                  text: "No, I want to advertise this role"
+                }
+              ]
+            }) }}
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+          </form>
+
+
+        </div>
+      </div>
+      {% endblock %}

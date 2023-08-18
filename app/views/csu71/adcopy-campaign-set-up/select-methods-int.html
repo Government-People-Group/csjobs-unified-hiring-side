@@ -1,22 +1,35 @@
 {% extends "layouts/main.html" %}
-
-{% block header %}
-{% include '/csu71/includes/header.html' %}
-  {% endblock %}
-
 {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
 
-  {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
 
-  {% endblock %}
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Selection criteria and assessment methods</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-copy-ad"><strong>Return to task list</strong></a></span>
+
+  </div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
 
 {% block content %}
 <style>
@@ -27,7 +40,7 @@
     margin: 0.8
   }
   p, li {
-    font-size: 20px; line-height: 1.2;
+  font-size: 22px; line-height: 1.4;
     vertical-align: text-top;
 
   }
@@ -87,7 +100,7 @@
 
 </style>
 
-<form class="form" action="review-sp-table-alt" method="post">
+<form class="form" action="review-table-template?intm=ok" method="post">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
@@ -113,8 +126,8 @@
 
   for (const [key, value] of Object.entries(intStage)) {
     // console.log(`${value}: ${key}`);
-    var headint = document.createElement("h3");
-    headint.innerHTML = `${value}: ${key}`;
+    var headint = document.createElement("p");
+    headint.innerHTML = `${value}:<BR><p style="font-weight:bold">${key}`;
     intOutput.appendChild(headint);
 
 
@@ -129,8 +142,14 @@
         checkBox.style.cssText = "width: 30px;height: 30px;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
         label.style.cssText = "display: block;padding-left: 15px;text-indent: 40px;";
         checkBox.value = strengthsChkList[i];
-        checkBox.setAttribute("id","int-"+i)
-        checkBox.setAttribute("name",+"-"+intStage)
+
+        checkBox.checked  = "true";
+
+
+
+        checkBox.setAttribute("id",`${value}`)
+        checkBox.setAttribute("name",`${key}`)
+
         label.appendChild(document.createTextNode(strengthsChkList[i]));
         intOutput.appendChild(label);
         intOutput.appendChild(checkBox);
@@ -144,8 +163,14 @@
           checkBox.style.cssText = "width: 30px;height: 30px;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
           label.style.cssText = "display: block;padding-left: 15px;text-indent: 40px;";
           checkBox.value = chkList[i];
-          checkBox.setAttribute("id","sift-"+i)
-          checkBox.setAttribute("name",+"-"+intStage)
+
+          if (chkList[i] == "Interview question(s)"){
+            checkBox.checked = "true";
+          }
+
+          checkBox.setAttribute("id",`${value}`)
+          checkBox.setAttribute("name",`${key}`)
+
           label.appendChild(document.createTextNode(chkList[i]));
           intOutput.appendChild(label);
           intOutput.appendChild(checkBox);
@@ -170,16 +195,57 @@
 
         function checkCheckboxesInt() {
           var interviewCheck = [];
+          var entryArray = [];
+
 
           var checkboxInt = document.getElementsByTagName('input');
           console.log(checkboxInt)
-          for (i = 0; i < checkboxInt.length; i++) {
+          for (var i = 0; i < checkboxInt.length; i++) {
             if (checkboxInt[i].type == 'checkbox' && checkboxInt[i].checked ) {
+              entryArray.push(checkboxInt[i].value,checkboxInt[i].id,checkboxInt[i].name);
               interviewCheck.push(checkboxInt[i].id,checkboxInt[i].name,checkboxInt[i].value);
-              window.sessionStorage.setItem("interviewCheck", JSON.stringify(interviewCheck));
+              const withoutDuplicates1 = [...new Set(entryArray)];
+              window.sessionStorage.setItem("Interview-New", JSON.stringify(entryArray));
+              window.sessionStorage.setItem("Interview-Newde", JSON.stringify(withoutDuplicates1));
             }
           }
         }
+
+
+
+        var methodCheckStore = [];
+        var elementCheckStore = [];
+        var criteriaCheckStore = [];
+
+
+        var checkboxes = document.getElementsByTagName('input');
+
+        for (var s = 0; s < checkboxes.length; s++) {
+          if (checkboxes[s].type == 'checkbox' && checkboxes[s].checked ) {
+            // checkStore.push("Method":checkboxes[i].value, "Element":checkboxes[i].id, "Criteria":checkboxes[i].name);
+            // methodCheckStore.push("method", checkboxes[s].value, "element", checkboxes[s].id, "criteria",checkboxes[s].name);
+
+            methodCheckStore.push(checkboxes[s].value);
+            elementCheckStore.push(checkboxes[s].id);
+            criteriaCheckStore.push(checkboxes[s].name);
+
+              }
+
+
+              const withoutDuplicates1 = [...new Set(methodCheckStore)];
+              const withoutDuplicates2 = [...new Set(elementCheckStore)];
+              const withoutDuplicates3 = [...new Set(criteriaCheckStore)];
+
+              // entryArray.push(withoutDuplicates1,withoutDuplicates2,withoutDuplicates3);
+
+
+window.sessionStorage.setItem("Int-New1", JSON.stringify(withoutDuplicates1));
+window.sessionStorage.setItem("Int-New2", JSON.stringify(withoutDuplicates2));
+window.sessionStorage.setItem("Int-New3", JSON.stringify(withoutDuplicates3));
+
+}
+
+
 
 
       </script>
@@ -199,3 +265,34 @@
   </form>
 
   {% endblock %}
+
+
+
+    var elementCheckStore = [];
+    var criteriaCheckStore = [];
+
+
+    var checkboxes = document.getElementsByTagName('input');
+
+    for (var s = 0; s < checkboxes.length; s++) {
+      if (checkboxes[s].type == 'checkbox' && checkboxes[s].checked ) {
+        // checkStore.push("Method":checkboxes[i].value, "Element":checkboxes[i].id, "Criteria":checkboxes[i].name);
+        // methodCheckStore.push("method", checkboxes[s].value, "element", checkboxes[s].id, "criteria",checkboxes[s].name);
+        entryArray.push(checkboxes[s].value,checkboxes[s].id,checkboxes[s].name);
+        var key = ['element','element','element','element','element','element','element','element'];
+  // methodCheckStore.push(checkboxes[s].id);
+  // var obj = Object.assign({}, ...key.map((e, i) => ({[e]: methodCheckStore[i]})))
+
+
+          }
+  window.sessionStorage.setItem("Interview-New", JSON.stringify(entryArray));
+
+
+
+
+
+  }
+
+
+
+  }
