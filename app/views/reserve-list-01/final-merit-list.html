@@ -1,10 +1,10 @@
 {% extends "layouts/main.html" %}
-
 {% block header %}
-{% include '/csu71/includes/header.html' %}
+{% include '/reserve-list-01/header.html' %}
 {% endblock %}
+
 {% block pageTitle %}
-Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -37,26 +37,6 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 <p class="govuk-body-l"><strong>The interview scores from all panelists have been confirmed.<BR>You should check and confirm the successful candidate.</strong></p>
 
-{% set checkboxHTML %}
-{{ govukCheckboxes({
-  idPrefix: "proceed",
-  name: "proceed",
-  classes: "govuk-checkboxes--small",
-  fieldset: {
-    legend: {
-      text: "",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "confirm",
-      text: "Confirm decision"
-    }
-  ]
-}) }}
-{% endset %}
 
   {% set offerHTML %}
   {{govukTag({
@@ -64,12 +44,17 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
     classes: "govuk-tag--green"
   })}}
   {% endset %}
+
+
+
   {% set reserveHTML %}
-  {{govukTag({
-    text: "Passed - offer reserve list",
-    classes: "govuk-tag--blue"
-  })}}
+    <div style="margin-bottom:-25px;margin-top:5px"><strong style="padding:5px;font-size:17px" class='govuk-tag--blue'>PASSED - OFFER RESERVE LIST</strong>
+    <BR><BR><details  class='govuk-details' data-module='govuk-details'><summary class='govuk-details__summary'><span class='govuk-details__summary-text' style='width:25%'>What is this?</span></summary><div class='govuk-details__text'>This candidate passed the interview and can be offered a place on the department's reserve list. Hiring a candidate from the reserve list will save time and resources.</div></details></div>
   {% endset %}
+
+
+
+
 
   {% set rejectHTML %}
   {{govukTag({
@@ -78,29 +63,13 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
   })}}
   {% endset %}
 
-  {% set confirmHTML %}
-  {{ govukCheckboxes({
-    idPrefix: "proceed",
-    name: "proceed",
-    classes: "govuk-checkboxes--small",
-    fieldset: {
-      legend: {
-        text: "",
-        isPageHeading: false,
-        classes: "govuk-fieldset__legend--s"
-      }
-    },
-    items: [
-      {
-        value: "confirm",
-        id:"confirmall",
-        text: "Confirm all",
-        classes: "govuk-heading-s"
-      }
-    ]
-  }) }}
-  {% endset %}
+<style>
 
+th {
+  width:25%
+}
+
+</style>
 
 
 
@@ -138,7 +107,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
       ],
       [
           {
-            html: "<span style='font-size:22px'>Amelia Lawson <STRONG>‡</STRONG></span>"
+            html: "<span style='font-size:22px'>Amelia Lawson</span>"
           },
           {
             html: "<span style='font-size:22px'>33</span>"
@@ -162,7 +131,14 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
     ]
   }) }}
 
-<p class="govuk-body-l"><STRONG>‡</STRONG> This candidate passed the interview and can be offered a place on the department's reserve list. Hiring a candidate from the reserve list will save time and resources.</p>
+
+
+<!--
+  "<strong class='govuk-tag--blue'>passed - offer reserve list</strong><details class='govuk-details' data-module='govuk-details'><summary class='govuk-details__summary'><span class='govuk-details__summary-text'>What is this?</span></summary><div class='govuk-details__text'>This candidate passed the interview and can be offered a place on the department's reserve list. Hiring a candidate from the reserve list will save time and resources.</div></details>"
+
+
+<p class="govuk-body-l"><STRONG>‡</STRONG> This candidate passed the interview and can be offered a place on the department's reserve list. Hiring a candidate from the reserve list will save time and resources.</p> -->
+
   {{ govukButton({
     text: "Confirm my decision",
     href: "#"
