@@ -1,0 +1,77 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/reserve-list-01/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Departmental reserve list</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/reserve-list-01/task-list-reserve"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+<style>
+
+
+p {
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
+
+
+}
+</style>
+
+
+  <div class="govuk-grid-row govuk-!-margin-top-0">
+  <div class="govuk-grid-column-three-quarters">
+
+
+
+  <h1 class="govuk-heading-xl">Phone call with candidate</h1>
+<p class="govuk-body-l">You should use the phone call with the candidate to:</p>
+<ul class="govuk-list govuk-list--bullet" style="font-size:22px">
+  <li>share details about the role, like salary and the location</li>
+  <li>understand their work experience better</li>
+</ul>
+
+
+<div class="govuk-warning-text govuk-!-margin-top-6">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive" style="font-size:18px">Warning</span>
+    Please note candidates do not have to accept the job offer on the phone call.
+  </strong>
+  <p class="govuk-body-m govuk-!-margin-top-3" style="margin-left:45px;font-weight:bold">They have the right to make a decision after seeing the provisional offer,which you can send after the phone call.</p>
+
+</div>
+<a href="task-list-reserve?callprep=viewed" type="button"  class="govuk-button govuk-!-margin-top-6">Back to task-list</a>
+
+  </div>
+
+</div>
+
+
+
+
+
+{% endblock %}

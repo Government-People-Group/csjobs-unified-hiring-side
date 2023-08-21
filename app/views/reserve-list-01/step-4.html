@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/reserve-list-01/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Departmental reserve list</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/reserve-list-01/task-list"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+<style>
+
+
+p {
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
+
+
+}
+</style>
+
+
+
+
+
+
+  <div class="govuk-grid-row govuk-!-margin-top-0">
+  <div class="govuk-grid-column-three-quarters">
+
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+      aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          Your email has been sent.
+        </h3>
+        <!-- <strong style="margin:20px;float:right" class="govuk-tag govuk-tag--blue" id="financial-evidence-status">review copied content</strong> -->
+
+
+
+      </div>
+    </div>
+
+
+
+  <h1 class="govuk-heading-xl">What happens next?</h1>
+<p class="govuk-body-l">You will receive an email when the candidate emails back with their availability.</p>
+
+<p class="govuk-body-l">Your job advert can not go live during this process.</p>
+
+<p class="govuk-body-l">You can <a href="#"><strong>cancel your reserve list match</strong></a> at any time.</p>
+<a href="task-list-reserve?message=sent" type="button"  class="govuk-button govuk-!-margin-top-9">Continue to task-list</a>
+
+<script>
+
+      function showDiv(div1) {
+        document.getElementById(div1).style.display = 'block';
+      }
+
+
+
+      function hideDiv(div1) {
+        document.getElementById(div1).style.display = 'none';
+
+      }
+
+
+</script>
+{% endblock %}

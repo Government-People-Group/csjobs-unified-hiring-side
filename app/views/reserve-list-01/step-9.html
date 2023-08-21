@@ -1,0 +1,153 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/reserve-list-01/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Departmental reserve list</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/reserve-list-01/task-list-reserve"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+<style>
+
+
+p {
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
+
+
+}
+</style>
+
+    <div class="govuk-grid-row govuk-!-margin-top-0">
+    <div class="govuk-grid-column-full">
+
+
+
+  <h1 class="govuk-heading-xl">Candidate has not accepted the provisional offer</h1>
+
+  <p class="govuk-body-l">{{ data['candidate-name']|default("Amelia Lawson") }} has not accepted the provisional offer.</p>
+
+
+
+
+
+
+  <h2 class="govuk-heading-l govuk-!-margin-top-6">We've found a 2nd reserve list match</h2>
+  <p class="govuk-body-l">View details of the reserve list candidate and decide if you want to arrange a phone call with them.</p>
+
+
+  {{ govukSummaryList({
+    classes: "govuk-summary-list--no-border",
+    rows: [
+      {
+        key: {
+          html: "<p class='govuk-body-l'>Name</p>"
+        },
+        value: {
+          html: "<p class='govuk-body-l'>Javier Santos</p>"
+        }
+      },
+      {
+        key: {
+          html: "<p class='govuk-body-l'>Location</p>"
+        },
+        value: {
+          html: "<ul style='font-size:22px;line-height:1.4;padding-top:10px;padding-bottom:10px' class='govuk-list govuk-list--bullet-'><li>London (preference)</li><li>Bristol (optional)</li></ul>"
+        }
+      },
+      {
+        key: {
+          html: "<p class='govuk-body-l'>Placed in the reserve list for</p>"
+        },
+        value: {
+          html: "<ul style='font-size:22px;l;line-height:1.4;padding-top:10px;padding-bottom:10px' class='govuk-list govuk-list--bullet-'><li>Policy Adviser</li><li>Senior Executive Officer (SEO)</li><li>Cabinet Office</li></ul>"
+        }
+      },
+      {
+        key: {
+          html: "<p class='govuk-body-l'>Date placed on reserve list</p>"
+        },
+        value: {
+          html: "<p style='font-size:22px;lline-height:1.4;padding-top:10px;padding-bottom:10px' class='govuk-body-m'>09 May 2023</p>"
+        }
+      },
+      {
+        key: {
+          text: ""
+        },
+        value: {
+          html: "<a href='#' style='font-size:22px;lline-height:1.4;padding-top:10px;padding-bottom:10px' class='govuk-link'>View previous application and feedback</a>"
+        }
+      }
+    ]
+  }) }}
+
+
+
+
+
+  <div class="govuk-!-margin-top-9">
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+    {{ govukRadios({
+      classes: "govuk-radios",
+      name: "contact-candidate-2",
+      fieldset: {
+        legend: {
+          text: "Would you like to contact the candidate?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+  </div>
+
+
+  <button type="submit" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Continue</button>
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+
+{% endblock %}

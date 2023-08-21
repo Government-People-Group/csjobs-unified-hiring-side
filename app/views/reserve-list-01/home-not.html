@@ -1,0 +1,103 @@
+<!-- <div id="panblack" style="border-radius:0px 0px 7px 7px;padding:20px;z-index:100;position:absolute;top:79px;right:90px;height:170px;width:420px;background:#000822;display:none;"> -->
+<div id="panblack" style="box-shadow: 12px 8px 8px #888888;border-radius:0px 0px 5px 5px;padding:20px;z-index:100;position:absolute;top:79px;right:90px;height:160px;width:320px;background:#000822;display:none;">
+    <!-- <span id="cal" style="float:left;;padding-top:30px;font-size:1px;color:white"></span> -->
+
+
+
+<div id="ameliaDeclines" style="display:none">
+  <span id="watch" style=";;padding-right:20px;;padding-top:0px;font-size:20px;color:white"></span>
+    <h2 class="govuk-heading-m" style="margin-top:0px;:left;color:white">Amelia Lawson</h2>
+    <p class="govuk-body-m govuk-!-padding-bottom13" style="font-size:22px;;;;color:white">Message received.</p>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "View message",
+      href: "task-list-reserve",
+      classes: "govuk-button--secondary"
+    }) }}
+
+    <a href="task-list-reserve?candidate-name=Amelia Lawson" style="text-align:center;width:40%;border-radius:6px;background:white;color:black;border:1px solid white;padding:8px;font-size:22px;float:left;;;">View</a>
+</div>
+<div id="amelia" style="display:none">
+  <span id="watch" style=";;padding-right:20px;;padding-top:0px;font-size:20px;color:white"></span>
+    <h2 class="govuk-heading-m" style="margin-top:0px;:left;color:white">Amelia Lawson</h2>
+    <p class="govuk-body-m govuk-!-padding-bottom13" style="font-size:22px;;;;color:white">Message received.</p>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "View message",
+      href: "step-4-resp?candidate-name=Amelia Lawson&message=old",
+      onclick: "hideDiv('panblack')",
+      classes: "govuk-button--secondary"
+    }) }}
+
+    <!-- <button  style="width:50%;float:left" href="step-4-resp?candidate-name=Amelia Lawson" class="govuk-button govuk-button--secondary" data-module="govuk-button">View message</button> -->
+
+    <!-- <a class="" href="step-4-resp?candidate-name=Amelia Lawson" style="border-radius:6px;background:white;color:black;padding:9px;font-size:20px">View message</a> -->
+</div>
+<div id="ameliano" style="display:none">
+  <span id="watch" style=";;padding-right:20px;;padding-top:0px;font-size:20px;color:white"></span>
+    <h2 class="govuk-heading-m" style="margin-top:0px;:left;color:white">Amelia Lawson</h2>
+    <p class="govuk-body-m govuk-!-padding-bottom13" style="font-size:22px;;;;color:white">Message received.</p>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "View message",
+      href: "step-9?candidate-name=Amelia Lawson",
+      onclick: "hideDiv('panblack')",
+      classes: "govuk-button--secondary"
+    }) }}
+
+    <!-- <button  style="width:50%;float:left" href="step-4-resp?candidate-name=Amelia Lawson" class="govuk-button govuk-button--secondary" data-module="govuk-button">View message</button> -->
+
+    <!-- <a class="" href="step-4-resp?candidate-name=Amelia Lawson" style="border-radius:6px;background:white;color:black;padding:9px;font-size:20px">View message</a> -->
+</div>
+
+    <hr style="position:absolute;top:-8px;right:7px;width:50%;border:1px solid red">
+
+</div>
+
+<script>
+  const datum = document.getElementById('watch');
+  const cald = document.getElementById('cal');
+  const stampTime = new Date();
+  const clock = stampTime.toLocaleTimeString();
+  const tock = stampTime.toLocaleDateString('en-uk', { weekday:"short", day:"numeric", month:"short" }) ;
+  // datum.innerHTML = clock + tock;
+
+  datum.innerHTML = clock + " / " + tock;
+  // cald.innerHTML = tock
+
+  function showDiv(div1) {
+    document.getElementById(div1).style.display = 'block';
+  }
+
+
+
+  function hideDiv(div1) {
+    document.getElementById(div1).style.display = 'none';
+
+  }
+
+  function showHideDiv(div1,div2) {
+    document.getElementById(div1).style.display = 'block';
+    document.getElementById(div2).style.display = 'none';
+
+  }
+
+  function switcherDiv(div1) {
+    // var switch = document.getElementById(div1);
+    console.log(document.getElementById(div1).style.display)
+
+    if (document.getElementById(div1).style.display === "none") {
+      document.getElementById(div1).style.display = "block";
+    } else if (document.getElementById(div1).style.display === "block") {
+      document.getElementById(div1).style.display = "none";
+    } else {
+      document.getElementById(div1).style.display = "block";
+    }
+  }
+
+
+
+</script>

@@ -1,7 +1,7 @@
 
 
 <style>
-  #container
+  .container
   {
     position:relative;
     display: inline;
@@ -27,6 +27,28 @@
     top:38px;
   }
 
+  #textnot
+  {
+    z-index:120;
+    position:absolute;
+    color:white;
+    font-size:14px;
+    font-weight:bold;
+    right:130px;
+    top:54px;
+  }
+
+  #stilltext
+  {
+    z-index:120;
+    position:absolute;
+    color:white;
+    font-size:14px;
+    font-weight:bold;
+    right:130px;
+    top:54px;
+  }
+
   #textly
   {
     z-index:100;
@@ -35,17 +57,92 @@
     border-bottom:1px solid white;
     font-size:20px;
     font-weight:bold;
-    left:28px;
+    left:68px;
     top:16px;
   }
 </style>
 
+
+
+
+
+
+
 <ul style="text-align:right">
 
       <a href="#">
-        <li id="container"  style="display:inline;padding-left:200px">
+        <li class="container"  style="position:absolute;right:120px;display:inline;padding-left:200px">
           <img id="image" class="" src="/public/images/profblue.png" alt="">
           <strong id="text">Profile</strong>
         </li>
       </a>
     </ul>
+
+<a style="display:none" id="icon" href="#" onclick="switcherDiv('panblack')">
+    <svg  class="container" style="z-index:100;  position:absolute;top:17px;right:130px" width="35px" height="35px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <title>Group 3</title>
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Group-3">
+                <circle id="Oval"  fill="#FF0000" cx="25" cy="25" r="23.5"></circle>
+                <text id="1" font-family="GDSTransportWebsite-Bold, GDS Transport Website" font-size="28" font-weight="bold" fill="#FFFFFF">
+                    <tspan x="18.09375" y="35">1</tspan>
+                </text>
+            </g>
+        </g>
+    </svg>
+    <strong id="textnot">Alerts</strong>
+  </a>
+
+
+
+          <!-- <a id="still" onclick="switcherDiv('panblack');showDiv('amelia')" href="#"> -->
+        <!-- <a id="still" onclick="showHideDiv('panblack','still',)" href="#"> -->
+            <!-- <svg  class="container" style="z-index:100;  position:absolute;top:17px;right:130px" width="35px" height="35px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>Group 3</title>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Group-3">
+                        <circle id="Oval"  fill="#1d70b8" cx="25" cy="25" r="23.5"></circle>
+                        <text id="1" font-family="GDSTransportWebsite-Bold, GDS Transport Website" font-size="24" font-weight="bold" fill="#FFFFFF">
+                            <tspan x="18.09375" y="35">0</tspan>
+                        </text>
+                    </g>
+                </g>
+            </svg>
+            <strong id="stilltext">Alerts</strong>
+          </a> -->
+
+
+<script>
+
+      function showDiv(div1) {
+        document.getElementById(div1).style.display = 'block';
+      }
+
+
+
+      function hideDiv(div1) {
+        document.getElementById(div1).style.display = 'none';
+
+      }
+
+      function showHideDiv(div1,div2) {
+        document.getElementById(div1).style.display = 'block';
+        document.getElementById(div2).style.display = 'none';
+
+      }
+
+      function switcherDiv(div1) {
+        // var switch = document.getElementById(div1);
+        console.log(document.getElementById(div1).style.display)
+
+        if (document.getElementById(div1).style.display === "none") {
+          document.getElementById(div1).style.display = "block";
+        } else if (document.getElementById(div1).style.display === "block") {
+          document.getElementById(div1).style.display = "none";
+        } else {
+          document.getElementById(div1).style.display = "block";
+        }
+      }
+
+
+</script>

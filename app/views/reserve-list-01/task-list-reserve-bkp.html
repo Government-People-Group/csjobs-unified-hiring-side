@@ -1,0 +1,136 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/reserve-list-01/header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Create a job – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="/reserve-list-01/task-list"><strong>Cancel reserve list match</strong></a></span>
+
+<form class="form" action="#" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters" >
+
+      <!-- <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">Vacancy <strong>{{ data['ref']}}</strong></p> -->
+      <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1"><strong>{{ data['title']|default("Policy Adviser")}}, {{ data['grade']|default("SEO")}}</strong></p>
+    </div>
+  </div>
+
+  <h1 style="border-bottom:1px solid #1d70b8;;padding-bottom:0px;" class="govuk-heading-xl">Reserve list match</h1>
+  <!-- <h1 style="border-bottom:1px solid #1d70b8;;padding-bottom:0px;" class="govuk-heading-xl">{{ data['title']|default("Policy Adviser")}}</h1> -->
+  <!-- <h2 class="govuk-heading-l" style="font-weight:normal;margin-top:-40px">{{ data['candidate-name']}}</h2> -->
+      <p class="govuk-body-m govuk-!-margin-bottom-9">Last modified on <strong  id="lastEdit"></strong></p>
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span>{{ data['candidate-name']}}
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  View application for reserve list candidate
+                </a>
+              </span>
+              {% if data['candidate'] == "discuss" %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="read-declaration-status">
+                  View candidate's email response
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">cannot start yet</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="read-declaration-status">
+                  Task item 3
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span>Provisional offer
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="list-convictions-status">
+                  Task item 4</a>
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+              </li>
+              </ul>
+
+            </li>
+
+
+
+
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">3. </span>Pre-employment checks
+            </h2>
+            <ul class="app-task-list__items">
+
+
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="#" aria-hidden="list-convictions-status">
+                      Task item 5
+                    </span>
+                    {% if data['advert-time']|length >= 1 %}
+
+                    <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                    {% elif data['day']|length >= 1 %}
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+                    {% elif data['month']|length >= 1 %}
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+                    {% elif data['year']|length >= 1 %}
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+                    {% else %}
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+                    {% endif %}
+
+                  </li>
+
+
+                  </ul>
+
+                </ol>
+              </div>
+            </div>
+
+
+            <script>
+
+
+
+              const dateField = document.getElementById('lastEdit');
+              var stamp = new Date();
+              var time = stamp.toLocaleTimeString('en-us', { hours:"numeric", minutes:"short", seconds:"numeric" })
+              var localStamp = stamp.toLocaleDateString('en-us', { day:"numeric", month:"short", year:"numeric" }) ;
+              dateField.innerHTML = time+", "+localStamp;
+            </script>
+
+
+            {% endblock %}

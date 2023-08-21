@@ -1,0 +1,102 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/reserve-list-01/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Departmental reserve list</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/reserve-list-01/task-list"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+<style>
+
+p {
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
+
+
+}
+</style>
+<form class="form" action="/reservist1-handler" method="post">
+
+<div class="govuk-grid-row govuk-!-margin-top-0">
+<div class="govuk-grid-column-full">
+<h1 class="govuk-heading-xl">We've found a reserve list match</h1>
+
+<p class="govuk-body-l">There is a match for your job on the departmental reserve list. </p>
+<p class="govuk-body"></p>
+
+<ul class="govuk-list govuk-list--bullet" style="font-size:22px">
+  <li>Job title: <strong>{{data['title']|default("Policy Adviser")}}</strong></li>
+  <li>Grade: <strong>{{data['grade']|default("Senior Executive Officer (SEO)")}}</strong></li>
+</ul>
+
+<h2 class="govuk-heading-l">What is a reserve list?</h2>
+<p class="govuk-body-l">Candidates who passed the recruitment process are placed on the reserve list for 1 year when there isn't a role available for them.</p>
+<p class="govuk-body-l">You could save time and resources by recruiting from the reserve list.</p>
+
+
+<p class="govuk-body-l">To recruit from the reserve list you will:</p>
+<ul class="govuk-list govuk-list--bullet"  style="font-size:22px">
+  <li>look through their previous successful application</li>
+  <li>arrange a phone call to see if they are suitable for the role</li>
+</ul>
+
+
+
+
+<div class="govuk-!-margin-top-7">
+
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+  {{ govukRadios({
+    classes: "govuk-radios",
+    name: "see-candidate",
+    fieldset: {
+      legend: {
+        text: "Would you like to look at the reserve list candidate?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "yes",
+        text: "Yes"
+      },
+      {
+        value: "no",
+        text: "No"
+      }
+    ]
+  }) }}
+</div>
+
+
+       <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Continue</button>
+     </FORM>
+
+
+{% endblock %}

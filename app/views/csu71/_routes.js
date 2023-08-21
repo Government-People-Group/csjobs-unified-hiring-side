@@ -3,6 +3,13 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
+
+
+
+
+
+
+
 router.post("/location-handler", function (req, res) {
 	var locType = req.session.data['uk'];
 

@@ -11,8 +11,7 @@
   {% block beforeContent %}
   <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
 
-    <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
-  </div> -->
+
   <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Selection criteria and assessment methods</span>
 
   <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
@@ -20,20 +19,7 @@
 
     <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/reserve-list-01/task-list"><strong>Return to task list</strong></a></span>
 
-    <!-- {% if data['org'] == "ddat" %}
-    <div id ="ddattag"  style="position:absolute;right:10px;top:60px;;">
-      <a href="/csu71/template-csofficial"><img src="/public/images/ddat1.png" alt="Template by Digital, Data and Technology Profession" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
 
-    </div>
-    {% elif data['org'] == "co" %}
-    <div id ="cotag"  style="position:absolute;right:10px;top:60px;;">
-      <a  href="/csu71/template-csofficial"> <img src="/public/images/co-logo.png" alt="Template by Cabinet Office" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
-    </div>
-    {% elif data['org'] == "ho" %}
-    <div id ="hotag"  style="position:absolute;right:10px;top:60px;;">
-      <a href="/csu71/template-csofficial"><img src="/public/images/ho-logo.png" alt="Template by Home Office" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
-    </div>
-    {% endif %} -->
   </div>
 
 
@@ -51,8 +37,6 @@
 
 
 <form class="form" action="/reserve-list-01/select-strengths" method="post">
-  <!-- <H2 class="govuk-heading-l govuk-!-margin-top-3 govuk-!-margin-bottom-3">What will you assess within each element at sift and interview?</h2>
-    <p class="govuk-body-l govuk-!-margin-bottom-6 govuk-!-margin-top-3">You have selected which elements are important to assess for this job role. You should now select what you will assess within each element at sift and interview.</p> -->
 
     <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-1 govuk-!-margin-bottom-6">Experience</H1>
 
@@ -74,8 +58,7 @@
       <div class="govuk-grid-column-three-quarters" style="width:80%;">
         <div id="Experience" style="padding:10px;">
           <p class="govuk-body-m govuk-!-margin-top-4 govuk-!-margin-bottom-2"><strong>You should define what type and level of experience is needed to perform well in this job role. Include as many experiences as you want to assess at sift and interview.</strong></p>
-          <!-- <p class="govuk-body-m govuk-!-margin-bottom-6" style="background: #f3f2f1;padding:5px;">The experiences you write here will appear on your job advert as bullet points for candidates to see. It can help to write your bullet points:</p> -->
-          <div >
+          <div>
 
             <p class="govuk-body-m govuk-!-margin-top-1 govuk-!-margin-bottom-2"><strong>The experiences you write here will appear on your job advert as bullet points for candidates to see.</strong></p>
 
@@ -162,13 +145,14 @@
   }
 
   function getExpValues() {
+    var expRaym = [];
 
-    var textA1 = document.getElementById('Experience 1');
-    var textA2 = document.getElementById('Experience 2');
-    var textA3 = document.getElementById('Experience 3');
-    var textA4 = document.getElementById('Experience 4');
-    var textA5 = document.getElementById('Experience 5');
-    var textA6 = document.getElementById('Experience 6');
+    var textA1 = document.getElementById('exp1').value;
+    expRaym.push(textA1)
+    var textA2 = document.getElementById('exp2').value;
+    expRaym.push(textA2)
+    var textA3 = document.getElementById('exp3').value;
+    expRaym.push(textA3)
 
     function experience(title) {
       this.title = title;
@@ -186,163 +170,19 @@
       const experience3 = new experience(textA3.value);
 
 
-      const experience4 = new experience(textA4.value);
-      const experience5 = new experience(textA5.value);
-      const experience6 = new experience(textA6.value);
 
 
-
-    // if (textA4 !="" && levelA4 !=""){
-    //   const skill4 = new skill(textA4.value, levelA4.value);
-    // }
-    //
-    // if (textA5 !="" && levelA5 !=""){
-    //   const skill5 = new skill(textA5.value, levelA5.value);
-    // }
-    //
-    // if (textA6 !="" && levelA6 !=""){
-    //   const skill6 = new skill(textA6.value, levelA6.value);
-    // }
-
-
-    // const skill2 = new skill(textA2.value, levelA2.value);
-    // const skill3 = new skill(textA3.value, levelA3.value);
-    // const skill4 = new skill(textA4.value, levelA4.value);
-    // const skill5 = new skill(textA5.value, levelA5.value);
-    // const skill6 = new skill(textA6.value, levelA6.value);
 
 
     const experienceSelected = {
 
-      experience1, experience2, experience3, experience4, experience5, experience6
+      experience1, experience2, experience3
     }
 
-    // window.sessionStorage.setItem("skill1", JSON.stringify(skill1));
-    // window.sessionStorage.setItem("skill2", JSON.stringify(skill2));
-    // window.sessionStorage.setItem("skill3", JSON.stringify(skill3));
+    window.sessionStorage.setItem("experienceSelected", JSON.stringify(expRaym));
 
-    window.sessionStorage.setItem("experienceSelected", JSON.stringify(experienceSelected));
 
-    // skill1.level = levelA1.value;
-    //
-    // window.sessionStorage.setItem("skill1", JSON.stringify(skill1));
-
-    // for (i = 1; i < 4; i++) {
-    // if (checks[i].type == 'textarea' && checks[i].innerText !="" ) {
-
-    // if (checks[i].value == "Sift") {
-    //   arr1.push(checks[i].name);
-    //   arr2.push(checks[i].id);
-
-    // } else if (checks[i].value == "Interview") {
-    //   stageChecksInt.push(checks[i].value, checks[i].name, checks[i].id);
-    //
-    // }
-
-    // window.sessionStorage.setItem("stageChecksInt", JSON.stringify(stageChecksInt));
-    // }
-
-    // if (checks[i].value == "Interview") {
-    //   arr3.push(checks[i].name);
-    //   arr4.push(checks[i].id);
-
-    // } else if (checks[i].value == "Interview") {
-    //   stageChecksInt.push(checks[i].value, checks[i].name, checks[i].id);
-    //
-    // }
-
-    // window.sessionStorage.setItem("stageChecksInt", JSON.stringify(stageChecksInt));
-    // }
-
-    // }
   }
-
-
-  // for (var i = 0; i < arr1.length; i++) {
-  //   siftStage[arr1[i]] = arr2[i];
-  // }
-  //  window.sessionStorage.setItem("siftStage", JSON.stringify(siftStage));
-  //
-  //
-  //  for (var j = 0; j < arr3.length; j++) {
-  //    intStage[arr3[j]] = arr4[j];
-  //  }
-  //   window.sessionStorage.setItem("intStage", JSON.stringify(intStage));
-
-
-
-
-  //   var checks = document.getElementsByTagName('input');
-  //
-  //   for (i = 0; i < checks.length; i++) {
-  //     if (checks[i].type == 'checkbox' && checks[i].checked ) {
-  //
-  //       if (checks[i].value == "Sift") {
-  //         stageChecksSift.push(checks[i].value, checks[i].name, checks[i].id);
-  //
-  //       } else if (checks[i].value == "Interview") {
-  //         stageChecksInt.push(checks[i].value, checks[i].name, checks[i].id);
-  //
-  //       }
-  //
-  //       window.sessionStorage.setItem("stageChecksSift", JSON.stringify(stageChecksSift));
-  //       window.sessionStorage.setItem("stageChecksInt", JSON.stringify(stageChecksInt));
-  //     }
-  //   }
-  // }
-
-
-
-
-
-
-  //       var label2 = document.createElement("label");
-  //       var checkBox2 = document.createElement("input");
-  //
-  //       checkBox2.type = "checkbox";
-  //
-  //       checkBox2.value = "Interview";
-  //       label2.innerText = "Interview";
-  //       label2.appendChild(document.createTextNode("Interview"));
-  //       outputBS.appendChild(label2);
-  //       outputBS.appendChild(checkBox2);
-  // }
-
-
-
-
-  // for (var i = 0; i < behavioursSelected.length; i++) {
-  //   bsList.innerText = behavioursSelected[i];
-  //   console.log(bsList.innerText)
-  //   outputBS.appendChild(bsList);
-  //   var label = document.createElement("label");
-  //   var checkBox = document.createElement("input");
-  //   var label2 = document.createElement("label");
-  //   var checkBox2 = document.createElement("input");
-  //   checkBox.type = "checkbox";
-  //   checkBox2.type = "checkbox";
-  //   checkBox.style.cssText = "width: 30px;height: 30px;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
-  //   label.style.cssText = "display: block;font-size:18px;padding-left: 15px;text-indent: 40px;";
-  //   checkBox.innerText = "Sift";
-  //   checkBox.value = "Sift";
-  //   checkBox.setAttribute("id","behaviours-stage"+bsList+i);
-  //   checkBox.setAttribute("name","behaviours");
-  //   checkBox2.style.cssText = "width: 30px;height: 30px;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
-  //   label.style.cssText = "display: block;font-size:18px;padding-left: 15px;text-indent: 40px;";
-  //   checkBox2.innerText = "Interview";
-  //   checkBox2.value = "Interview";
-  //   checkBox2.setAttribute("id","behaviours-stage"+bsList+i);
-  //   checkBox2.setAttribute("name","behaviours");
-  //
-  //   label.appendChild(document.createTextNode(bsList[i]));
-  //   outputBS.appendChild(label);
-  //   outputBS.appendChild(checkBox);
-  //     outputBS.appendChild(checkBox2);
-  // hint.appendChild(document.createTextNode(hinter[i]));
-  // outputB.appendChild(hint);
-
-
-
 
 
 

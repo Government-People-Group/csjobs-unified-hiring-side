@@ -119,14 +119,14 @@
 
       {% if "behaviours" in data['selected'] %}
       <h2 id="bheader" class="govuk-heading-l govuk-!-margin-top-3" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Behaviours</h2>
-      {% endif %}
+{% endif %}
 <p id="lShip" class="govuk-body-m govuk-!-margin-bottom-3"></p>
 
       <div id="behDiv"></div>
 
       {% if "strengths" in data['selected'] %}
   <h2 id="stheader" class="govuk-heading-l govuk-!-margin-top-9" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Strengths</h2>
-  {% endif %}
+{% endif %}
       <div id="strDiv"></div>
 
 
@@ -139,7 +139,60 @@
 
 
 
+      <!-- {% set criteriaExpArr = [] %}
 
+      {% if data['exp1'].length > 0 %}
+      {% set criteriaExpArr = (criteriaExpArr.push(data['exp1']|truncate(150)), criteriaExpArr) %}
+      {% else %}{% endif %}
+
+      {% if data['exp2'].length > 0 %}
+      {% set criteriaExpArr = (criteriaExpArr.push(data['exp2']|truncate(150)), criteriaExpArr) %}
+      {% else %}{% endif %}
+
+      {% if data['exp3'].length > 0 %}
+      {% set criteriaExpArr = (criteriaExpArr.push(data['exp3']|truncate(150)), criteriaExpArr) %}
+      {% else %}{% endif %} -->
+
+
+
+
+
+
+      <!-- {% for eons in criteriaExpArr | slice(1) %}
+      {% for eon in eons %}
+
+
+
+      {{ govukCheckboxes({
+        name: "experience-stage",
+        fieldset: {
+          legend: {
+            text: eon,
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+        {
+          name: eon,
+          id: "Experience",
+          checked: "true",
+          value: "Sift",
+          classes: "govuk-label-l",
+          text: "Sift"
+        },
+        {
+          name: eon,
+          id: "Experience",
+          checked: checked('experience-stage',"Interview"),
+          value: "Interview",
+          classes: "govuk-label-l",
+          text: "Interview"
+        }
+        ]
+      }) }}
+
+      {%endfor%}{%endfor%} -->
 
 
 
@@ -152,7 +205,66 @@
 
   <div id="sklArea"></div>
 
+        <!-- {% set criteriaSkillsArr = [] %}
 
+
+
+
+
+        {% if data['skills1'].length > 0 %}
+        {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['skills1']|truncate(150)), criteriaSkillsArr) %}
+        {% else %}{% endif %}
+
+        {% if data['skills2'].length > 0 %}
+        {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['skills2']|truncate(150)), criteriaSkillsArr) %}
+        {% else %}{% endif %}
+
+        {% if data['skills3'].length > 0 %}
+        {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['skills2']|truncate(150)), criteriaSkillsArr) %}
+        {% else %}{% endif %}
+
+
+
+
+
+
+
+        {% for es in criteriaSkillsArr | slice(1) %}
+        {% for e in es %}
+
+
+        {{ govukCheckboxes({
+          name: "skills-stage",
+          fieldset: {
+            legend: {
+              text: e,
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+          {
+            name: e,
+            id: "Technical skills",
+            checked: "true",
+            value: "Sift",
+            classes: "govuk-label-l",
+            text: "Sift"
+          },
+          {
+            name: e,
+            id: "Technical skills",
+            checked: checked('skills-stage',"Interview"),
+            value: "Interview",
+            classes: "govuk-label-l",
+            text: "Interview"
+          }
+          ]
+        }) }} -->
+
+
+{% endfor %}
+{% endfor %}
       </div>
 
 
@@ -268,7 +380,7 @@ console.log(withoutDuplicates);
       checkBox.value = "Sift";
       checkBox.setAttribute("name",experienceSel[log]);
       checkBox.setAttribute("id","Experience");
-      checkBox.checked = "true";
+
       checkBox.style.cssText = "width: 40px;height: 40px;;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
       label.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
       label.appendChild(document.createTextNode("Sift"));
@@ -281,6 +393,7 @@ console.log(withoutDuplicates);
       checkBox2.value = "Interview";
       checkBox2.setAttribute("name",experienceSel[log]);
       checkBox2.setAttribute("id","Experience");
+      checkBox2.checked = "true";
       checkBox2.style.cssText = "width: 40px;height: 40px;;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
       label2.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
       label2.appendChild(document.createTextNode("Interview"));
@@ -294,37 +407,8 @@ console.log(withoutDuplicates);
 
     const skillsSel = JSON.parse(window.sessionStorage.getItem("skillsSession"));
     var outSkl = document.getElementById('sklArea');
-    var sklList = document.createElement("p");
-    for (var log=0; log < skillsSel.length; log++) {
-      sklList.style.cssText = "font-size:24px;font-weight:bold";
-      sklList.innerHTML = skillsSel[log];
-      outSkl.appendChild(sklList);
-      var label = document.createElement("label");
-      var checkBox = document.createElement("input");
 
-      checkBox.type = "checkbox";
-      checkBox.value = "Sift";
-      checkBox.setAttribute("name",skillsSel[log]);
-      checkBox.setAttribute("id","Skills");
-      checkBox.checked = "true";
-      checkBox.style.cssText = "width: 40px;height: 40px;;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
-      label.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
-      label.appendChild(document.createTextNode("Sift"));
-      outSkl.appendChild(label);
-      outSkl.appendChild(checkBox);
 
-      var label2 = document.createElement("label");
-      var checkBox2 = document.createElement("input");
-      checkBox2.type = "checkbox";
-      checkBox2.value = "Interview";
-      checkBox2.setAttribute("name",skillsSel[log]);
-      checkBox2.setAttribute("id","Skills");
-      checkBox2.style.cssText = "width: 40px;height: 40px;;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
-      label2.style.cssText = "display: block;font-size:20px;padding-left: 15px;text-indent: 40px;";
-      label2.appendChild(document.createTextNode("Interview"));
-      outSkl.appendChild(label2);
-      outSkl.appendChild(checkBox2);
-    }
 
 function checkCheckBoxes() {
   var stageChecksSift = [];

@@ -1,0 +1,132 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/reserve-list-01/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Departmental reserve list</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/reserve-list-01/task-list"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+<style>
+
+
+p {
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
+
+
+}
+</style>
+
+
+<input type="hidden" id="messageSent" value="{{data['message']}}">
+
+<input type="hidden" id="offer" value="{{data['offer']}}">
+
+
+<script>
+const sent = document.getElementById("messageSent");
+
+if (sent.value == "old") {
+
+  var icu1 = document.getElementById("still");
+  var icu2 = document.getElementById("stilltext");
+  document.getElementById("linkall").style.display = "block"
+  document.getElementById("icon2").style.display = "block";
+  document.getElementById("icon").style.display = "block";
+  document.getElementById("textnot").style.display = "block";
+  document.getElementById("amelia").style.display = "block";
+
+  icu1.style.cssText = "z-index:-1"
+  icu1.style.display = "none"
+  icu2.style.cssText = "z-index:-1"
+  icu2.style.display = "none"
+
+}
+</script>
+
+
+  <div class="govuk-grid-row govuk-!-margin-top-0">
+  <div class="govuk-grid-column-three-quarters">
+
+
+
+
+
+  <h1 class="govuk-heading-xl">Candidate response</h1>
+
+
+{{ govukSummaryList({
+  classes: "govuk-summary-list--no-border",
+  rows: [
+    {
+      key: {
+        html: "<p class='govuk-body-l'>Date</p>"
+      },
+      value: {
+        html: "<p class='govuk-body-l'>14:22, 22 Aug 2023</p>"
+      }
+    },
+    {
+      key: {
+        html: "<p class='govuk-body-l'>From</p>"
+      },
+      value: {
+        html: "<p class='govuk-body-l'>Amelia Lawson</p>"
+      }
+    },
+    {
+      key: {
+        html: "<p class='govuk-body-l'>Message</p>"
+      },
+      value: {
+        html: "<p class='govuk-body-l'>Thanks for getting in touch. I'm available tomorrow between 9-midday and Wednesday all day. My phone number is 07951 266 112. Look forward to speaking. Amelia.</p>"
+      }
+}
+  ]
+}) }}
+
+
+
+
+<a href="task-list-reserve?message=old" type="button"  class="govuk-button govuk-!-margin-top-9">Continue to task-list</a>
+
+<script>
+
+      function showDiv(div1) {
+        document.getElementById(div1).style.display = 'block';
+      }
+
+
+
+      function hideDiv(div1) {
+        document.getElementById(div1).style.display = 'none';
+
+      }
+
+
+</script>
+{% endblock %}

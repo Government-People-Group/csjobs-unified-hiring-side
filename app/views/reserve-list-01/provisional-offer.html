@@ -1,0 +1,221 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/reserve-list-01/header.html' %}
+  {% endblock %}
+
+
+  {% block pageTitle %}
+  Home – {{ serviceName }} – GOV.UK Prototype Kit
+  {% endblock %}
+
+
+{% block content %}
+
+{% if data['dept'] == "Department for Education" %}
+{% set salary = "£38,995" %}
+{% set locs = "Exeter, Manchester, "+data['searchwhere'] | capitalize %}
+{% elif data['dept'] == "Cabinet Office" %}
+{% set salary = "£41,550" %}
+{% set locs = "Glasgow, "+data['searchwhere'] | capitalize+", Cardiff" %}
+{% elif data['dept'] == "Home Office" %}
+{% set salary = "£44,900" %}
+{% set locs = "London, "+data['searchwhere'] | capitalize+", Bristol" %}
+{% endif %}
+
+
+
+
+
+  <div class="govuk-grid-row">
+
+    {% if data['searchwhat'] %}
+      {% set Job = data['searchwhat'] %}
+    {% else %}
+      {% set Job = 'Delivery Manager' %}
+    {% endif %}
+
+    {% if data['dept'] %}
+      {% set Dept = data['dept'] %}
+    {% else %}
+      {% set Dept = 'DWP' %}
+    {% endif %}
+
+
+
+    {% set salary = "£31,550" %}
+
+
+
+
+
+
+
+
+
+
+
+    <div class="govuk-grid-column-full">
+
+      <span class="govuk-caption-l">
+        {{ govukBackLink({
+                  text: "Back",
+                  href: "javascript:history.go(-1)"
+                }) }}<br><br>
+
+                <img src="/public/images/co-logo.png" style="padding:20px;min-width:70px;max-width:165px;float:right" alt="Cabinet Office logo">
+
+                <span class="govuk-caption-l">{{ data['dept']|default("Cabinet Office")}}</span>
+
+                <h2 class="govuk-heading-l">Policy Adviser</h2>
+
+
+                <h1 class="govuk-heading-xl">
+                  Provisional offer
+                </h1>
+
+
+
+        <!-- <form action="provisional-offer-confirm" method="post"> -->
+
+      <p class="govuk-body"><strong>Dear {{ data['candidate-name']|default("Amelia Lawson")}},</strong></p>
+
+      <p class="govuk-body"><strong>We would like to make you a provisional offer.</strong></p>
+
+
+      <dl style="width:70%" class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Salary
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['costmax']|default("£32,450")}} per annum
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Location
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Remote with 2 days in the London office
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Grade
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Senior Executive Officer (SEO)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Working pattern
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">Full-time with flexible working available</p>
+          </dd>
+        </div>
+      </dl>
+
+
+
+
+
+      <p class="govuk-body"><strong>Your benefits include:</strong></p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>25 days leave, increasing by 1 day every year to a maximum of 30 days after five years' service</li>
+        <li>joining the highly competitive <a href="#">Civil Service Pension Scheme</a></li>
+        <li>flexible working arrangements, such as job sharing, term-time working, flexi-time and compressed hours</li>
+      </ul>
+      <br>
+
+      <h2 class="govuk-heading-m">
+        What is a provisional job offer?
+      </h2>
+
+      <p class="govuk-body">The civil service must carry out pre-employment checks before formally offering a job. You will receive a formal offer when your pre-employment checks are complete.</p>
+
+      <div class="govuk-inset-text"><strong>Please note that pre-employment checks can take up to 10 weeks</strong></div>
+
+      <!-- <p class="govuk-body">You can view your <a href="../interview-feedback">interview feedback</a>.</p> -->
+
+
+
+
+
+
+
+      <div class="govuk-form-group govuk-!-margin-top-9">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              What would you like to do about your provisional offer for Policy Adviser?
+            </h1>
+          </legend>
+          <div id="changed-name-hint" class="govuk-hint">
+            You can <a href="#">speak to the hiring manager</a> before making your decision.
+          </div>
+
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              You have until 24 August 2023 to decide if you would like to accept this provisional offer.
+            </strong>
+          </div>
+
+
+          <div class="govuk-radios" data-module="govuk-radios">
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name" name="provisional-offer" type="radio" value="accept the provisional offer">
+              <label class="govuk-label govuk-radios__label" for="changed-name">
+                Accept the provisional offer
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name-2" name="provisional-offer" type="radio" value="decline the provisional offer">
+              <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                Decline the provisional offer
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name-2" name="provisional-offer" type="radio" value="speak to hiring manager">
+              <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                Speak to the hiring manager
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      {{ govukButton({
+        classes: "govuk-!-margin-top-6",
+        text: "Continue"
+      }) }}
+
+      </div>
+
+  </div>
+
+  <script>
+  var monthNames = [
+  "January", "February", "March",
+  "April", "May", "June", "July",
+  "August", "September", "October",
+  "November", "December"
+  ];
+
+  newDate = new Date();
+  var numberOfDaysToAdd = 14;
+  newDate.setDate(newDate.getDate() + numberOfDaysToAdd);
+  ny = newDate.getFullYear();
+  nm = newDate.getMonth();
+  nd = newDate.getDate();
+
+  document.querySelector(".deadline").innerHTML = nd + " " + monthNames[nm] + " " + ny;
+  document.querySelector(".deadline2").innerHTML = nd + " " + monthNames[nm] + " " + ny;
+  </script>
+
+
+{% endblock %}

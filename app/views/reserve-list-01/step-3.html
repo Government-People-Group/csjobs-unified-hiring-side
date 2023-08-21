@@ -1,0 +1,93 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/reserve-list-01/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Departmental reserve list</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/reserve-list-01/task-list"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+<style>
+
+
+p {
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
+
+
+}
+</style>
+
+
+  <div class="govuk-grid-row govuk-!-margin-top-0">
+  <div class="govuk-grid-column-full">
+  <h1 class="govuk-heading-xl">Contact Reserve list candidate</h1>
+
+
+
+
+  <div class="govuk-form-group" style="">
+    <h1 class="govuk-label-wrapper">
+      <label style="padding-bottom:20px" class="govuk-label govuk-label--m" for="messageContent">
+        You can edit the email that will be sent to the candidate to arrange the phone call
+      </label>
+    </h1>
+
+<textarea style="font-size:22px" class="govuk-textarea" id="messageContent" name="messageContent" rows="16" aria-describedby="messageContent-hint">
+Hi Amelia,
+
+You've been selected as a potential match on the reserve list for the role:
+
+Policy Adviser
+Grade: Senior Executive Officer
+Department: Cabinet Office
+Salary: £29,000 - 32.450
+Locations: Bristol, Glasgow, London, York
+Contract type: Permanent
+
+{View draft job advert}
+
+The hiring manager would like to arrange a phone call with you to discuss if this role is suitable for you.
+
+Please reply to this email with your availability for a 30 minute phone call.
+
+Thanks
+
+Reserve list admin
+Cabinet Office
+</textarea>
+
+<a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" style="font-weight:bold;font-size:20px" href="preview-advert">View draft job advert</a>
+
+  </div>
+
+
+<a href="step-4" type="button" class="govuk-button govuk-!-margin-top-9">Send this email</a>
+<a href="task-list" type="button" class="govuk-button govuk-button--secondary govuk-!-margin-top-9">Cancel and return to task list</a>
+
+
+
+{% endblock %}
