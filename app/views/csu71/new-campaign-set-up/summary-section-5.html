@@ -37,28 +37,16 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Approach</dt>
-        <dd class="govuk-summary-list__value">{{ data['who-can-apply']}}
+        <dd class="govuk-summary-list__value">{{ data['who-can-apply']|default("External, everyone will be able to see and apply for this vacancy")}}
 
         </dd>
-        <dd class="govuk-summary-list__actions"><a href="approach?edit21=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+        <dd class="govuk-summary-list__actions"><a href="#">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Approval</dt>
-        <dd class="govuk-summary-list__value">{{ data['approval-status']}}<br>{{ data['file-upload-1']}}
-        </dd>
-        <dd class="govuk-summary-list__actions"><a href="approval?edit22=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Reserve list</dt>
-        <dd class="govuk-summary-list__value">{{ data['reserve-list-required']}}
 
-        </dd>
-        <dd class="govuk-summary-list__actions"><a href="reserve-list?edit23=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
-      </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Attraction methods</dt>
-        <dd class="govuk-summary-list__value">
-          {% if data['attraction'].length >= 1 %}
+        <dd class="govuk-summary-list__value"> {{ data['attraction']|default("Civil Service Jobs, LinkedIn, Indeed")}}
+          {% if data['attraction'].length >= 1 |default("Civil Service Jobs, LinkedIn, Indeed") %}
           {% for items in data['attraction'] | slice(1) %}
           <ul class="govuk-list govuk-list--bullet {{ loop.index }}">
             {% for item in items %}
@@ -69,8 +57,17 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           {% else %}
           {% endif %}
         </dd>
-        <dd class="govuk-summary-list__actions"><a href="attraction-methods?edit24=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+        <dd class="govuk-summary-list__actions"><a href="#">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
       </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Reserve list</dt>
+        <dd class="govuk-summary-list__value">{{ data['reserve-list-required']|default("Yes")}}
+
+        </dd>
+        <dd class="govuk-summary-list__actions"><a href="#">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+      </div>
+
     </dl>
 
 

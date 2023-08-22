@@ -16,7 +16,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">Job campaign submitted for approval</h1>
-        <div style="font-size:34px"class="govuk-panel__body"><strong style="font-size:38px">{{ data['temp-copy-input-autocomplete']|default("Policy Adviser") }} </strong>(1001334)<BR>{{ data['grade']}}
+        <div style="font-size:34px"class="govuk-panel__body"><strong style="font-size:38px">{{ data['temp-copy-input-autocomplete']|default("Policy Adviser") }} </strong>(1001334)<BR>{{ data['grade']|default("Senior Executive Officer")}}
 
           <!-- {{data['temp-copy-input-autocomplete']|default("Policy Adviser")}} (1001334)<BR>{{ data['grade']}} <br><strong> </strong> -->
         </div>

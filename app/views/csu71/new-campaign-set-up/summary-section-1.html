@@ -9,8 +9,24 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% set sectionref = "Summary" %}
-{% include '/csu71/includes/blue-subhead.html' %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Summary</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -34,11 +50,6 @@
           <dd class="govuk-summary-list__value">{{ data['grade']|default("Senior Executive Officer")}}</dd>
           <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> grade</span></a></dd>
         </div>
-        <!-- <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Cabinet Office role?</dt>
-          <dd class="govuk-summary-list__value">{{ data['cabinet-office-role']}}</dd>
-          <dd class="govuk-summary-list__actions"><a href="basic-details">Change<span class="govuk-visually-hidden"> cabinet office role?</span></a></dd>
-        </div> -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Department</dt>
           <dd class="govuk-summary-list__value">{{ data['dept']|default("Cabinet Office")}} </dd>
@@ -66,21 +77,11 @@
         </div>
 
       </dl>
-
-
-
-      <!-- {{ data['team-detail'] | escape | nl2br }} -->
-
-
-
-
-
       <form action="locations" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
       <span class="govuk-caption-l">Next section</span>
       <h2 class="govuk-heading-l">Contract information</h2>
       <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
     </form>
-    {% include '/csu71/includes/footerarea.html' %}
 
     {% endblock %}

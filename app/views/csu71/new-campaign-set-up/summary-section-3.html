@@ -37,13 +37,24 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Person specification</dt>
-        <dd class="govuk-summary-list__value">{{ data['person-spec'] | truncate(150)}}</dd>
-        <dd class="govuk-summary-list__actions"><a href="about-the-role?edit9=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+        <dd class="govuk-summary-list__value">{{ data['person-spec'] | default("Policy professionals support ministers to shape and deliver policy that delivers the government’s objectives. We do this by bringing together a wide range of people and evidence to design, test and deliver solutions to often complex policy problems") | truncate(150)}}</dd>
+        <dd class="govuk-summary-list__actions"><a href="#">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Responsibilities</dt>
-        <dd class="govuk-summary-list__value">{{ data['respon']  | truncate(150)}}</dd>
-        <dd class="govuk-summary-list__actions"><a href="about-the-role?edit9=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+        <dd class="govuk-summary-list__value">{{ data['respon'] | default("Lead or support the development of policy and related projects which align with the Department and wider government’s priorities.
+") | truncate(150)}}</dd>
+        <dd class="govuk-summary-list__actions"><a href="#">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">About the team</dt>
+        <dd class="govuk-summary-list__value">{{ data['team-detail'] | default("The Government Security Function (GSF) oversees the delivery of protective security across Government. Our Mission is to enable Government to protect citizens and provide vital public services by understanding and managing security risks. ") | truncate(150)}}</dd>
+        <dd class="govuk-summary-list__actions"><a href="#">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Supporting links</dt>
+        <dd class="govuk-summary-list__value">{{ data['sinfo1']|default("www.youtube.com/departments/caboff")}}</dd>
+        <dd class="govuk-summary-list__actions"><a href="#">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
       </div>
     </dl>
 
