@@ -718,7 +718,45 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
 
                     <script>
+                      const newbeh = ["Seeing the big picture","Changing and improving","Communicating and Influencing","Delivering at Pace"];
+                      const newexp = ['Experience of building relationships with busy stakeholders to achieve change','Experience of operating in a fast-paced and ever-changing environment to provide policy advice and briefing to seniors and stakeholders'];
+                      const newstr = ['Challenger','Mission','Courageous','Change Agent','Authentic','Explainer','Disciplined'];
+                      const newski = ['Evidence of understanding the current national policy challenges for the population impacted by this area','Knowledge of how to deliver oral and written information effectively'];
 
+
+                      document.getElementById("beh1").value = newbeh;
+
+
+                      window.sessionStorage.setItem("behavioursSession", JSON.stringify(newbeh));
+                      window.sessionStorage.setItem("experienceSession", JSON.stringify(newexp));
+                      window.sessionStorage.setItem("strengthsSession", JSON.stringify(newstr));
+                      window.sessionStorage.setItem("skillsSession", JSON.stringify(newski));
+
+
+
+                      const sift1 = ["CV","Personal statement (1250 words)"];
+                      const sift2 = ["Experience","Skills"];
+                      const sift3 = ["Experience of building relationships with busy stakeholders to achieve change","Experience of operating in a fast-paced and ever-changing environment to provide policy advice and briefing to seniors and stakeholders","Evidence of understanding the current national policy challenges for the population impacted by this area","Knowledge of how to deliver oral and written information effectively"];
+
+
+
+
+
+
+                      const int1 = ["Interview question(s)"];
+                      const int2 = ["Behaviours","Strengths"];
+                      const int3 = ["Seeing the big picture","Changing and improving","Communicating and Influencing","Delivering at Pace","Challenger,Mission,Courageous,Change Agent,Authentic,Explainer,Disciplined"];
+
+
+
+
+                      window.sessionStorage.setItem("Sift-New1", JSON.stringify(sift1));
+                      window.sessionStorage.setItem("Sift-New2", JSON.stringify(sift2));
+                      window.sessionStorage.setItem("Sift-New3", JSON.stringify(sift3));
+                      window.sessionStorage.setItem("Int-New1", JSON.stringify(int1));
+                      window.sessionStorage.setItem("Int-New2", JSON.stringify(int2));
+                      window.sessionStorage.setItem("Int-New3", JSON.stringify(int3));
+                    
 
 
                       const dateField = document.getElementById('lastEdit');

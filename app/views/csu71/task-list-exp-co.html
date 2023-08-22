@@ -61,6 +61,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
 
 
+
 <div class="govuk-grid-row">
    <div class="govuk-grid-column-full" style="position:relative">
 
@@ -224,7 +225,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                 Location</a>
               </span>
 
-              {% if data['loc'] == "set" %}
+              {% if data['loc'] == "Remote" %}
               <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
               {% elif data['loc2-viewed']|length >= 1 %}
               <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
@@ -353,7 +354,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                     <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
-                        <a class="govuk-link govuk-link--no-visited-state" href="/csu71/new-campaign-set-up/pick-criteria-type?selectTemp={{data['template']}}" aria-describedby="eligibility-status">
+                        <a class="govuk-link govuk-link--no-visited-state" href="/csu71/new-campaign-set-up/pick-criteria-type?selectTemp={{data['template']}}&selected=Behaviours,Experience,Strengths,Skills" aria-describedby="eligibility-status">
                         Proposed selection criteria
                         </a>
                       </span>

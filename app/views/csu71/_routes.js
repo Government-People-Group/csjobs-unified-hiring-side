@@ -240,7 +240,7 @@ router.get("/selection-handlerV5", function (req, res) {
 	console.log(list.length)
 
 	for (var i=0;i<1;i++){
-		res.redirect("/csu71/new-campaign-set-up/select-"+list[i]);
+		res.redirect("/csu71/new-campaign-set-up/select-"+list[i]+"?grade=Senior Executive Officer");
 	}
 
 })
