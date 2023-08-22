@@ -215,11 +215,7 @@ document.getElementById("textnot").style.display = "none"
                                           </a>
                                         </span>
 
-                                        {% if data['siftm'] == "ok" %}
                                         <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                                        {% else %}
-                                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">not started</strong>
-                                        {% endif %}
                                       </li>
 
 
@@ -231,16 +227,7 @@ document.getElementById("textnot").style.display = "none"
                                             Select assessment methods for interview
                                           </a>
                                         </span>
-
-                                        {% if data['intm'] == "ok" %}
                                         <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                                          {% else %}
-                                          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">not started</strong>
-                                          {% endif %}
-
-
-
-
 
 
 
@@ -255,12 +242,8 @@ document.getElementById("textnot").style.display = "none"
                                             Review your criteria and methods
                                           </a>
                                         </span>
-                                        {% if data['rev'] == "ok" %}
-                                        <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                                        {% else %}
-
                                         <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
-                                        {%endif%}
+
                                       </li>
                                       <!-- <li class="app-task-list__item">
 
