@@ -163,7 +163,7 @@
         {% set bannerCount = 0 %}
 
 
-        {% if data['prov'] != "sent" %}
+        {% if data['merit'] == "confirmed" %}
         <div id="bann" style="width:100%" class="govuk-notification-banner govuk-notification-banner--success" role="alert"
         aria-labelledby="govuk-notification-banner-title"
         data-module="govuk-notification-banner">
@@ -174,9 +174,9 @@
         </div>
         <div class="govuk-notification-banner__content">
           <h3 class="govuk-notification-banner__heading">
-            The merit list has been established.
+            The merit list has been confirmed.
             <!-- <p class="govuk-body  govuk-!-margin-top-3">The sift results have been confirmed and the interview list is avaiable.</p> -->
-            <p class="govuk-body  govuk-!-margin-top-3">You can now make a <a style="font-weight:bold" href="/csu71/sift/setup-interview/merit-list-provisional-offer">provisional offer to Candidate 5 - Mei Chen</a>.</p>
+            <p class="govuk-body  govuk-!-margin-top-3">You can now make a <a style="font-weight:bold" href="/csu71/sift/setup-interview/merit-list-provisional-offer">provisional offer to Mei Chen (Candidate 5)</a>.</p>
           </h3>
 
 
