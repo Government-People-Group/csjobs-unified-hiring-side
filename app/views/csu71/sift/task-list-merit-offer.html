@@ -160,10 +160,10 @@
         <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Advert closed 23 August 2023.</h2>
         <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 21 sections.</p>
 
-        <!-- {% set bannerCount = 0 %}
+        {% set bannerCount = 0 %}
 
 
-        {% if data['hide'] != "banner" %}
+        {% if data['prov'] != "sent" %}
         <div id="bann" style="width:100%" class="govuk-notification-banner govuk-notification-banner--success" role="alert"
         aria-labelledby="govuk-notification-banner-title"
         data-module="govuk-notification-banner">
@@ -174,16 +174,16 @@
         </div>
         <div class="govuk-notification-banner__content">
           <h3 class="govuk-notification-banner__heading">
-            Sift has been completed
-            <p class="govuk-body  govuk-!-margin-top-3">The sift results have been confirmed and the interview list is avaiable.</p>
-            <p class="govuk-body  govuk-!-margin-top-3">You can now <a style="font-weight:bold" href="#intset">setup the interview stage</a>.</p>
+            The merit list has been established.
+            <!-- <p class="govuk-body  govuk-!-margin-top-3">The sift results have been confirmed and the interview list is avaiable.</p> -->
+            <p class="govuk-body  govuk-!-margin-top-3">You can now make a <a style="font-weight:bold" href="/csu71/sift/setup-interview/merit-list-provisional-offer">provisional offer to Candidate 5 - Mei Chen</a>.</p>
           </h3>
 
 
 
         </div>
       </div>
-      {% endif %} -->
+      {% endif %}
       <h2 class="govuk-heading-m govuk-!-padding-bottom-3" style="">Stage 1: Sift</h2>
 
         <ol style="" class="govuk-prototype-kit-task-list">
@@ -198,7 +198,7 @@
                   View candidates (5)
                   </a>
                 </span>
-                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+                <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
               </li>
               <li class="govuk-prototype-kit-task-list__item">
                 <span class="govuk-prototype-kit-task-list__task-name">
@@ -206,7 +206,7 @@
                     Behaviour 1: Seeing the big picture (0 of 5 sifted)
                   </a>
                 </span>
-                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+                <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
               </li>
               <li class="govuk-prototype-kit-task-list__item">
                 <span class="govuk-prototype-kit-task-list__task-name">
@@ -214,7 +214,7 @@
                       Behaviour 2: Changing and improving (0 of 5 sifted)
                   </a>
                 </span>
-                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+                <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
               </li>
               <li class="govuk-prototype-kit-task-list__item">
                 <span class="govuk-prototype-kit-task-list__task-name">
@@ -222,7 +222,7 @@
                     Behaviour 3: Managing a quality service (0 of 5 sifted)
                   </a>
                 </span>
-                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+                <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
               </li>
               <li class="govuk-prototype-kit-task-list__item">
                 <span class="govuk-prototype-kit-task-list__task-name">
@@ -230,13 +230,14 @@
                     CV and personal statements (0 of 5 sifted)
                   </a>
                 </span>
-                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+                <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
               </li>
               <li class="govuk-prototype-kit-task-list__item">
                 <span class="govuk-prototype-kit-task-list__task-name">
-                    Review and submit individual sifting scores
+                                    <a href="#" aria-describedby="eligibility-status">
+                    Review and submit individual sifting scores<a/>
                 </span>
-                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">cannot start yet</strong>
+                <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
               </li>
             </ul>
           </li>
@@ -248,29 +249,32 @@
         <ul class="govuk-prototype-kit-task-list__items">
           <li class="govuk-prototype-kit-task-list__item">
             <span class="govuk-prototype-kit-task-list__task-name">
-                View panel results and recommendations
+                                <a href="#" aria-describedby="eligibility-status">
+                View panel results and recommendations</a>
             </span>
-            <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">cannot start yet</strong>
+            <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
           </li>
           <li class="govuk-prototype-kit-task-list__item">
             <span class="govuk-prototype-kit-task-list__task-name">
-                Arrange a consensus meeting
+                                <a href="#" aria-describedby="eligibility-status">
+                Arrange a consensus meeting</a>
             </span>
-            <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">cannot start yet</strong>
+            <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
           </li>
           <li class="govuk-prototype-kit-task-list__item">
             <span class="govuk-prototype-kit-task-list__task-name">
+                  <a href="#" aria-describedby="eligibility-status">
+                Review consensus meeting results</a>
 
-                Review consensus meeting results
-
             </span>
-            <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">cannot start yet</strong>
+            <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
           </li>
           <li class="govuk-prototype-kit-task-list__item">
             <span class="govuk-prototype-kit-task-list__task-name">
-                Confirm the sift results
+                  <a href="#" aria-describedby="eligibility-status">
+                Confirm the sift results</a>
             </span>
-            <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">cannot start yet</strong>
+            <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
           </li>
         </ul>
         </li>
@@ -283,6 +287,7 @@
         <ol class="govuk-prototype-kit-task-list govuk-!-margin-top-0">
           <li>
             <h2 class="govuk-prototype-kit-task-list__section">
+
               <span class="govuk-prototype-kit-task-list__section-number">1. </span> Prepare interview schedule and invite candidates
             </h2>
             <ul class="govuk-prototype-kit-task-list__items">
@@ -292,14 +297,14 @@
                     Your availability
                   </a>
                 </span>
-                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+                <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
               </li>
               <li class="govuk-prototype-kit-task-list__item">
                 <span class="govuk-prototype-kit-task-list__task-name">
-                                      Send interview invites to candidates
-
+                  <a href="#" aria-describedby="eligibility-status">
+                                      Send interview invites to candidates</a>
                 </span>
-                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">cannot start yet</strong>
+                <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
               </li>
             </ul>
           </li>
@@ -314,7 +319,7 @@
                   Review interview assessment plan
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+              <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
             </li>
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
@@ -322,7 +327,7 @@
                   Choose the type of interview
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+              <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
             </li>
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
@@ -330,7 +335,7 @@
                   Draft interview questions
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+              <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
             </li>
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
@@ -338,7 +343,7 @@
                   Produce a brief for the candidate presentation task
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+              <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
             </li>
           </ul>
         </li>
@@ -357,21 +362,24 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                  Score interviews
+                                  <a href="#" aria-describedby="eligibility-status">
+                  Score interviews</a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">CANNOT START YET</strong>
+              <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                  Review and submit your interview scores
+                                  <a href="#" aria-describedby="eligibility-status">
+                  Review and submit your interview scores</a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">CANNOT START YET</strong>
+              <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
             </li>
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
-                  View panel results and confirm merit list
+                                  <a href="#" aria-describedby="eligibility-status">
+                  View panel results and confirm merit list</a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">CANNOT START YET</strong>
+              <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
             </li>
         </ul>
         </li>
@@ -387,19 +395,23 @@
           <ul class="govuk-prototype-kit-task-list__items">
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
-
-                  Review provisional offer details
+                  <a href="#" aria-describedby="eligibility-status">
+                  Review provisional offer details</a>
 
               </span>
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">CANNOT START YET</strong>
+              <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
             </li>
             <li class="govuk-prototype-kit-task-list__item">
               <span class="govuk-prototype-kit-task-list__task-name">
-                <!-- <a href="/csu71/sift/setup-interview/merit-list-provisional-offer" aria-describedby="company-information-status"> -->
+                <a href="/csu71/sift/setup-interview/merit-list-provisional-offer" aria-describedby="company-information-status">
                               Send provisional offer to candidate
 
               </span>
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">CANNOT START YET</strong>
+              {% if data['prov'] == "sent" %}
+              <strong class="govuk-tag govuk-tag govuk-prototype-kit-task-list__tag" id="list-convictions-status">completed</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">not started</strong>
+              {% endif %}
             </li>
           </ul>
         </li>

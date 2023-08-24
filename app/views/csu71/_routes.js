@@ -271,7 +271,7 @@ router.post("/basic-details-handler", function (req, res) {
 	if (req.session.data['edit1'] == "true") {
 		res.redirect('new-campaign-set-up/summary-section-1')
 	} else {
-		res.redirect('new-campaign-set-up/reserved-status-role')
+		res.redirect('new-campaign-set-up/approval')
 	}
 })
 
@@ -279,7 +279,7 @@ router.post("/basic-details-handlerAdcopy", function (req, res) {
 	if (req.session.data['edit1'] == "true") {
 		res.redirect('adcopy-campaign-set-up/summary-section-1')
 	} else {
-		res.redirect('adcopy-campaign-set-up/reserved-status-role')
+		res.redirect('adcopy-campaign-set-up/approval')
 	}
 })
 
@@ -287,7 +287,7 @@ router.post("/basic-details-handlerBlank", function (req, res) {
 	if (req.session.data['edit1'] == "true") {
 		res.redirect('blank-campaign-set-up/summary-section-1')
 	} else {
-		res.redirect('blank-campaign-set-up/reserved-status-role')
+		res.redirect('blank-campaign-set-up/approval')
 	}
 })
 

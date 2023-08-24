@@ -138,25 +138,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
             {% endif %}
           </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="/csu71/blank-campaign-set-up/reserved-status-role" aria-describedby="read-declaration-status">
-                Reserved status
-              </a>
-            </span>
-
-
-
-            {% if data['team-detail']|length >= 1 %}
-            <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-            {% elif data['business-area']|length >= 1 %}
-            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
-            {% elif data['prof']|length >= 1 %}
-            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
-            {% else %}
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
-            {% endif %}
-          </li>
+          
         </ul>
       </li>
 
@@ -756,7 +738,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                       window.sessionStorage.setItem("Int-New1", JSON.stringify(int1));
                       window.sessionStorage.setItem("Int-New2", JSON.stringify(int2));
                       window.sessionStorage.setItem("Int-New3", JSON.stringify(int3));
-                    
+
 
 
                       const dateField = document.getElementById('lastEdit');

@@ -30,7 +30,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
 {% block content %}
-<form class="form" action="submit" method="post">
+<form class="form" action="summary-section-6" method="post">
 
 <div class="govuk-grid-row  govuk-!-margin-top-3">
   <div class="govuk-grid-column-three-quarters">
@@ -49,17 +49,17 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
       {
         classes: "govuk-input--width-2",
         name: "day",
-        value: data['day']
+        value: "19" or data['day']
       },
       {
         classes: "govuk-input--width-2",
         name: "month",
-        value: data['month']
+        value: "Sept" or data['month']
       },
       {
         classes: "govuk-input--width-4",
         name: "year",
-        value: data['year']
+        value: "2023" or data['year']
       }
     ]
   }) }}

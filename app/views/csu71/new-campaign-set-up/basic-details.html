@@ -121,17 +121,64 @@ value: data['temp-copy-input-autocomplete']|default("Policy Adviser")
 
         }) }}
 
+        <h2 class="govuk-heading-m govuk-!-padding-top-4">Has this role been reserved for UK nationals only?</h2>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary" style="color:#5d6062">
+              <span class="govuk-details__summary-text" style="font-size:0.9em">
+                What's this?
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+        Some roles may only be filled by UK nationals because of the sensitive work the role includes. <BR><BR>For example: only UK nationals may work in security and intelligence services.
+            </div>
+          </details>
+
+
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            name: "reserved-status",
+            fieldset: {
+              legend: {
+                text: "",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                checked: checked("reserved-status","yes"),
+                text: "Yes, this vacancy is reserved"
+              },
+              {
+                value: "no",
+                checked: checked("reserved-status","no"),
+                checked: "true",
+                text: "No, this vacancy is not reserved"
+              },
+              {
+                value: "dont-know",
+                checked: checked("reserved-status","dont-know"),
+                text: "I'm not sure"
+              }
+            ]
+          }) }}
+
+
+
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
         label: {
         text: "How many posts are available?",
-        classes: "govuk-label--m",
+        classes: "govuk-label--m govuk-heading-m govuk-!-padding-top-4",
         isPageHeading: false
         },
         classes: "govuk-input--width-3",
         id: "num-posts",
         name: "num-posts",
-        value: data['num-posts']
+        value: data['num-posts']|default("1")
         }) }}
 
 

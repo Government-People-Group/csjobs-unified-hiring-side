@@ -56,23 +56,21 @@
           <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> department</span></a></dd>
         </div>
         <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Reserved status</dt>
+          <dd class="govuk-summary-list__value">{{ data['reserved-status']|default("No, this vacancy is not reserved")}}</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> number of posts availables</span></a></dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Number of posts availables</dt>
           <dd class="govuk-summary-list__value">{{ data['num-posts']|default("1") }}</dd>
           <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> number of posts availables</span></a></dd>
         </div>
-      </dl>
-
-      <h2 class="govuk-heading-m">Reserved status and Approval</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Reserved status</dt>
-          <dd class="govuk-summary-list__value">{{ data['reserved-status']|default("No")}}</dd>
-          <dd class="govuk-summary-list__actions"><a href="reserved-status-role?edit1=true">Change<span class="govuk-visually-hidden"> Business area</span></a></dd>
-        </div>
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Approval</dt>
-          <dd class="govuk-summary-list__value">{{ data['approval-status']|default("Approved")}} <br>  {{ data['file-upload-1']|default("BCP-2231-23.pdf")}}</dd>
+          <dd class="govuk-summary-list__value">{{ data['approval-status']|default("Yes it has been approved")}} <br>  {{ data['file-upload-1']|default("BCP-2231-23.pdf")}}</dd>
           <dd class="govuk-summary-list__actions"><a href="Approval">Change<span class="govuk-visually-hidden"> Business area</span></a></dd>
         </div>
 

@@ -240,6 +240,10 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
   <script>
 
+    const locationListA = ['Bristol','Glasgow','London','York'];
+
+    window.sessionStorage.setItem("locations", JSON.stringify(locationListA));
+
 
     function loadList(){
 
@@ -497,7 +501,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
-function saveList(){
+  function saveList(){
 
   // locArray.push(location)
   // var longish = locArray.length;
@@ -513,7 +517,7 @@ function saveList(){
   //   showDiv('bulk');
   // }
 
-}
+  }
 
 
 

@@ -65,7 +65,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 </div>
 
 <h3 class="govuk-heading-l govuk-!-margin-top-9">Would you like to add a question?</h3>
-<div style="margin-left:0px;margin-right:20px;background:#F4FAFF;padding:20px;border-top:1px solid #1d70b8">
+<div style="">
 
 {{ govukCharacterCount({
 name: "killQ3",
@@ -80,37 +80,18 @@ isPageHeading: false
 value: data['killQ3']
 }) }}
 
-
-<div style="">
-{{ govukCharacterCount({
-name: "killQ1",
-id: "killQ1",
+<!-- {{ govukCharacterCount({
+name: "killQ4",
+id: "killQ4",
 maxwords: 50,
 rows: 3,
 label: {
-text: "Question 1",
+text: "Question 4",
 classes: "govuk-label--xs",
 isPageHeading: false
 },
-value: data['killQ1']
-}) }}
-
-
-
-{{ govukCharacterCount({
-name: "killQ2",
-id: "killQ2",
-maxwords: 50,
-rows: 3,
-label: {
-text: "Question 2",
-classes: "govuk-label--xs",
-isPageHeading: false
-},
-value: data['killQ2']
-}) }}
-</div>
-
+value: data['killQ4']
+}) }} -->
 
 
 

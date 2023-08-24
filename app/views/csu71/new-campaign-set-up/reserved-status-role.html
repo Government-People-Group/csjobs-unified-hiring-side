@@ -25,6 +25,19 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
   <p class="govuk-body-m">These roles are <strong>reserved</strong> because of the sensitive nature of the work carried out. For example, all individuals working in any of the security and intelligence services will be employed into a post with a reserved status.</p>
 
+<h2 class="govuk-heading-m">Has this role been reserved for UK nationals only?</h2>
+
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary" style="color:#5d6062">
+      <span class="govuk-details__summary-text" style="font-size:0.9em">
+        What's this?
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+Some roles may only be filled by UK nationals because of the sensitive work the role includes. <BR><BR>For example: only UK nationals may work in security and intelligence services.
+    </div>
+  </details>
+
 
   {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -32,7 +45,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
     name: "reserved-status",
     fieldset: {
       legend: {
-        text: "To the best of your knowlege, has this role been reserved for UK nationals only?",
+        text: "",
         isPageHeading: false,
         classes: "govuk-fieldset__legend--s"
       }
@@ -41,12 +54,12 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
       {
         value: "yes",
         checked: checked("reserved-status","yes"),
-        text: "Yes - this vacancy is reserved"
+        text: "Yes, this vacancy is reserved"
       },
       {
         value: "no",
         checked: checked("reserved-status","no"),
-        text: "No, - this vacancy is not reserved"
+        text: "No, this vacancy is not reserved"
       },
       {
         value: "dont-know",

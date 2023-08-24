@@ -44,19 +44,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Requirement documents
         </a>
       </li>
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#list">
-          List
-        </a>
-      </li>
-
 
     </ul>
     <div class="govuk-tabs__panel" id="prototype">
       <h2 class="govuk-heading-l">Civil Service Jobs - prototype</h2>
 
       <div class="govuk-inset-text">
-        If you have any questions about using this prototype, please contact <a href="mailto:jonathan.inch@cabinetoffice.gov.uk" target="_blank">Jonathan Inch</a>, <a href="mailto:ismail.ismail@cabinetoffice.gov.uk" target="_blank">Ismail Ismail</a> or <a href="mailto:anna.smith@cabinetoffice.gov.uk" target="_blank">Anna Smith</a>.
+If you have any questions about this prototype, please contact via the <a href="https://crowncommercialservice.bravosolution.co.uk/web/login.html">CCS Jaggear platform</a>.
+
+
+
+        <!-- If you have any questions about using this prototype, please contact <a href="mailto:jonathan.inch@cabinetoffice.gov.uk" target="_blank">Jonathan Inch</a>, <a href="mailto:ismail.ismail@cabinetoffice.gov.uk" target="_blank">Ismail Ismail</a> or <a href="mailto:anna.smith@cabinetoffice.gov.uk" target="_blank">Anna Smith</a>. -->
       </div><br><br>
 
       <div class="govuk-grid-row">
@@ -90,9 +88,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             <li>
               (8) <a class="govuk-link" href="#step8">Pre-employment checks</a>
             </li>
-            <li>
+            <!-- <li>
               (9) <a class="govuk-link" href="#step9">Final offer</a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div><br><br><br>
@@ -197,7 +195,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   </tr>
 
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell" style="font-size:1.2em">They're offered a choice of 3 vacancy set-up options:<BR><br>
+                <td class="govuk-table__cell" style="font-size:1em">Offered a choice of 3 vacancy set-up options:<BR><br>
                   <ol type="A" class="govuk-list--spaced" style=";font-size:1em">
                     <li><a href="#use-template" class="govuk-link govuk-link--no-visited-state">Use a Civil Service template</a></li>
                     <li><a href="#copy-ad" class="govuk-link govuk-link--no-visited-state">Make a copy of a previous job advert</a></li>
@@ -243,7 +241,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                       </strong>
                     </td>
                     <td class="govuk-table__cell">
-                      The template selection page is new and untested.
+                      The template selection page is a new version and untested.
                     </td>
                   </tr>
 
@@ -277,7 +275,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                       </strong>
                     </td>
                     <td class="govuk-table__cell">
-                      The pages that support the advert copy feature are untested. The effect of copying an advert, in terms of duplicated content has been assumed to me fairly comprehensive with the exception of dates and content derived from workflow.
+
+                      The pages that support the advert copy feature are untested. The effect of copying an advert, in terms of duplicated content has been assumed to be fairly comprehensive with the exception of dates and content derived from workflow.
                     </td>
                   </tr>
 
@@ -316,9 +315,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                         <li><a href="#about" class="govuk-link govuk-link--no-visited-state">About the vacancy</a></li>
                         <li><a href="#contract-info" class="govuk-link govuk-link--no-visited-state">Contract information</a></li>
                         <li><a href="#ad-set-up" class="govuk-link govuk-link--no-visited-state">Advert set-up</a></li>
-                        <li><a href="#assmeth" class="govuk-link govuk-link--no-visited-state">Selection criteria and assessment methods</a></li>
+                        <li><a href="#assmeth" class="govuk-link govuk-link--no-visited-state">Selection criteria and assessment methods</a><BR><BR><a href="#reserve" class="govuk-link govuk-link--no-visited-state">"We've found a reserve list match" (new version)</a></li>
                         <li><a href="#channels" class="govuk-link govuk-link--no-visited-state">Recruitment channels</a></li>
-                        <li><a href="#finalise" class="govuk-link govuk-link--no-visited-state">Finalise and submit</a></li>
+                        <li><a href="#finalise" class="govuk-link govuk-link--no-visited-state">Review and submit</a><BR><BR><a href="#reserve2" class="govuk-link govuk-link--no-visited-state">"Reserve candidates found" (previous version)</a></li>
                       </ol>
                       <details class="govuk-details" data-module="govuk-details">
                         <summary class="govuk-details__summary" style="color:#5d6062">
@@ -344,7 +343,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                         </strong>
                       </td>
                       <td class="govuk-table__cell">
-                        The task-list is probably the most well-established pattern used in prototype - tested many times, and refined through many iterations. The current version has involved a significant rationalisation of the task structure, consolidating many steps to streamline the journey. This version hasn't been tested, and indeed the structure is likely to change further as aspects of the proposition and experience are further refined.
+                        The task-list is probably the most well-established pattern used in prototype - tested many times, and refined through many iterations. The current version has involved a significant rationalisation of the task structure, consolidating many steps to streamline the journey. The structure is likely to change further as aspects of the proposition and experience are further refined.
                       </tr>
 
 
@@ -382,13 +381,15 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                           </strong>
                         </td>
                         <td class="govuk-table__cell">
-                          <strong class="govuk-tag govuk-tag--grey">
-                            UNTESTED
+                          <strong class="govuk-tag">
+                            TESTED
                           </strong>
                         </td>
 
                         <td class="govuk-table__cell">
-                          The location pages in this section haven't been tested at all in this context (although the mechanism used for list-building has been successfully tested elsewhere). There a more tried and tested design patterns available within the govuk design system, which could be used with some modification.<BR><BR>Notwithstanding the location pages, the remainder of the section has been broadly tested during earlier design iterations during Alpha and unlikely to be risky.
+The contract information has been tested in several design cycles. The location pages in this section haven't been tested at all in this context (although the mechanism used for list-building has been successfully tested elsewhere). There are more tried and tested design patterns available within the govuk design system, which could be used with some modification.
+
+                          With exception to the location pages, the remainder of the section has been broadly tested during earlier design iterations during Alpha and unlikely to be risky.
                         </td>
                       </tr>
 
@@ -437,6 +438,37 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                             </td>
                           </tr>
 
+                          <tr class="govuk-table__row" id="reserve">
+                            <td class="govuk-table__cell"><a href="/reserve-list-01/step-1" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">"We've found a reserve list match"</a><br>
+                              <details class="govuk-details" data-module="govuk-details">
+                                <summary class="govuk-details__summary" style="color:#5d6062">
+                                  <span class="govuk-details__summary-text" style="font-size:0.9em">
+                                    Notes
+                                  </span>
+                                </summary>
+                                <div class="govuk-details__text">
+                                  Upon choosing their selection criteria and assessment methods (section 4), the VH is informed that a candidate on the department's reserve list has come up as a match for their role.<BR><BR>
+                                  If they decide to pursue the reserve list option their current journey of campaign set-up is suspended and new branch (the reserve list) is followed (they have the option of cancelling and reverting back to their set-up).
+                                </div>
+                              </details><br>
+                            </td>
+                              <td class="govuk-table__cell">
+                                <strong class="govuk-tag govuk-tag--green">
+                                  VACANCY HOLDER
+                                </strong>
+                              </td>
+                              <td class="govuk-table__cell">
+                                <strong class="govuk-tag">
+                                  TESTED
+                                </strong>
+                              </td>
+
+                              <td class="govuk-table__cell">
+                                Tested once.
+                              </td>
+                            </tr>
+
+
 
 
                           <tr class="govuk-table__row" id="channels">
@@ -448,8 +480,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                                 </strong>
                               </td>
                               <td class="govuk-table__cell">
-                                <strong class="govuk-tag govuk-tag--grey">
-                                  UNTESTED
+                                <strong class="govuk-tag">
+                                  TESTED
                                 </strong>
                               </td>
 
@@ -459,33 +491,35 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                             </tr>
 
 
+                            <!-- <tr class="govuk-table__row" id="finalise">
+                              <td class="govuk-table__cell" style="font-size:1.2em">6. Review and submit<br></td>
 
-
-
-
-                            <tr class="govuk-table__row" id="finalise">
-                              <td class="govuk-table__cell" style="font-size:1.2em">6. Finalise and submit<br>
-                                <ol type="A" class="govuk-list--spaced" style=";font-size:1em">
-                                  <li><a href="#panel" class="govuk-link govuk-link--no-visited-state">Set-up the panel</a></li>
-                                  <li><a href="#key-dates" class="govuk-link govuk-link--no-visited-state">Define dates for key campaign milestones</a></li>
-                                  <li><a href="#submit" class="govuk-link govuk-link--no-visited-state">Submit for approval</a></li>
+                                <ol class="govuk-list--spaced" >
+                                  <li style=";font-size:1em"><a href="#panel" class="govuk-link govuk-link--no-visited-state">Set-up the panel</a></li>
+                                  <li style=";font-size:1em"><a href="#key-dates" class="govuk-link govuk-link--no-visited-state">Define dates for key campaign milestones</a></li>
+                                  <li style=";font-size:1em"><a href="#submit" class="govuk-link govuk-link--no-visited-state">Submit for approval</a></li>
                                 </ol>
-                                </td>
+                                <br>
+
+
                                 <td class="govuk-table__cell">
                                   <strong class="govuk-tag govuk-tag--green">
                                     VACANCY HOLDER
                                   </strong>
                                 </td>
                                 <td class="govuk-table__cell">
-                                  <strong class="govuk-tag govuk-tag--grey">
+                                  <strong class="govuk-tag">
                                     UNTESTED
                                   </strong>
                                 </td>
-
                                 <td class="govuk-table__cell">
                                   These final steps are new and haven't been tested.
-                                </td>
-                              </tr>
+                                </tr> -->
+
+
+
+
+
 
 
                               <tr class="govuk-table__row" id="panel">
@@ -529,18 +563,42 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                                       </strong>
                                     </td>
                                     <td class="govuk-table__cell">
-                                      <strong class="govuk-tag govuk-tag--grey">
-                                        UNTESTED
+                                      <strong class="govuk-tag">
+                                        TESTED
                                       </strong>
                                     </td>
 
                                     <td class="govuk-table__cell">
-                                      The campaign dates page is based on an earlier version which has been tested - however will need to be reviewed to provide better support for the end-to-end campaign dates.
+                                      The campaign dates page is based on an earlier version which has been tested.
                                     </td>
                                   </tr>
 
+
+                                  <tr class="govuk-table__row" id="reserve2">
+                                    <td class="govuk-table__cell"><a href="/csu71/new-campaign-set-up/submit" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">"Reserve candidates found"</a><br>
+
+                                      <br>
+
+
+                                      </td>
+                                      <td class="govuk-table__cell">
+                                        <strong class="govuk-tag govuk-tag--green">
+                                          VACANCY HOLDER
+                                        </strong>
+                                      </td>
+                                      <td class="govuk-table__cell">
+                                        <strong class="govuk-tag">
+                                          TESTED
+                                        </strong>
+                                      </td>
+
+                                      <td class="govuk-table__cell">
+                                        Tested at least twice.
+                                      </td>
+                                    </tr>
+
                                   <tr class="govuk-table__row" id="submit">
-                                    <td class="govuk-table__cell" style="font-size:1.2em">C. Submit for approval<br>
+                                    <td class="govuk-table__cell">C. <a href="/csu71/new-campaign-set-up/summary-section-6" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Submit for approval</a><br>
                                       <details class="govuk-details" data-module="govuk-details">
                                         <summary class="govuk-details__summary" style="color:#5d6062">
                                           <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -549,7 +607,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                                         </summary>
                                         <div class="govuk-details__text">
                                           Upon submission of the new campaign, and before the job advert is published to production, the vacancy must be approved. This workflow places a gate checkpoint to assess quality and conformance with the Civil Service Commission principles. Whilst not depicted in prototype, an approval workflow is triggered at this point and should be supported.
-
 
 
                                         </div>
@@ -589,8 +646,77 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   </tr>
                 </thead>
                 <tbody class="govuk-table__body">
+
                   <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"><a href="/csu71/sift/panelist/task-list-applicants-not-started-yet" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Panelists sift through the candidate applications, rating them against the scoring scheme (and any stated benchmark scores)</a><br>
+                    <td style="font-size:1.2em" class="govuk-table__cell">Job ad has closed on Civil Service Jobs - there are 5 applications to sift<br>
+                        <ol type="A" class="govuk-list--spaced" >
+                          <li><a href="#vh-tasklist" class="govuk-link govuk-link--no-visited-state">Panel chair works through sift task-list, coordinating with panel members</a></li>
+                          <li><a style=";font-size:1em" href="#sift-tasks" class="govuk-link govuk-link--no-visited-state">Sift tasks allocated to panel members to complete</a></li>
+
+                        </ol>
+
+
+                      <br>
+                    </td>
+
+
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag govuk-tag--green">
+                        PANEL CHAIR
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        TESTED
+                      </strong>
+                    </td>
+                    <td class="govuk-table__cell">
+                      These pages remain largely the same since they were designed and tested previously.
+                    </td>
+                    </tr>
+
+
+                    <tr class="govuk-table__row" id="vh-tasklist">
+                      <td class="govuk-table__cell">A. <a href="/csu71/sift/task-list-sift" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Panel chair works through sift task-list, coordinating with panel members</a><br>
+                        </td>
+                        <td class="govuk-table__cell">
+                          <strong class="govuk-tag govuk-tag--green">
+                            VACANCY HOLDER
+                          </strong>
+                        </td>
+                        <td class="govuk-table__cell">
+                          <strong class="govuk-tag">
+                            TESTED
+                          </strong>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                          This section is new and untested. The set-up of the panel has been consolidated into a broader feature to allow vacancy holders to add other users (roles) to the campaign, such as reviewers, approvers, content contributers and so on.
+                        </td>
+                      </tr>
+
+                    <tr class="govuk-table__row" id="sift-tasks">
+                      <td class="govuk-table__cell">B. <a href="/csu71/sift/panelist/task-list-applicants-not-started-yet" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Sift tasks allocated to panel members to complete</a><br>
+                        </td>
+                        <td class="govuk-table__cell">
+                          <strong class="govuk-tag govuk-tag--green">
+                            PANEL MEMBER
+                          </strong>
+                        </td>
+                        <td class="govuk-table__cell">
+                          <strong class="govuk-tag govuk-tag--grey">
+                            UNTESTED
+                          </strong>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                          This section is new and untested. The set-up of the panel has been consolidated into a broader feature to allow vacancy holders to add other users (roles) to the campaign, such as reviewers, approvers, content contributers and so on.
+                        </td>
+                      </tr>
+
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="/csu71/sift/panelist/1001334-applicant-1" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Panel members sift through the candidate applications, rating them against the scoring scheme (and any stated benchmark scores)</a><br>
                       <details class="govuk-details" data-module="govuk-details">
                         <summary class="govuk-details__summary" style="color:#5d6062">
                           <span class="govuk-details__summary-text" style="font-size:0.9em">
@@ -633,12 +759,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                         </strong>
                       </td>
                       <td class="govuk-table__cell">
-                        <strong class="govuk-tag govuk-tag--grey">
-                          UNTESTED
+                        <strong class="govuk-tag">
+                          TESTED
                         </strong>
                       </td>
                       <td class="govuk-table__cell">
-                         This screen is an untested version of a design that was tested previously during Alpha. This version frames the purpose and call-to-action required of the vacancy holder more explicitly.
+                         This screen is an improved version of a design that was tested previously when focusing on sift. This version frames the purpose and call-to-action required of the vacancy holder more explicitly.
                         </td>
                       </tr>
 
@@ -677,6 +803,25 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                           These pages have been refined since they were designed and tested previously.
                           </td>
                         </tr>
+
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell" style="font-size:1.2em">Candidate 4 applied under the Disibility Confident Scheme and will be offered an interview if they meet the minimum criteria for the role.<BR><BR><span style="font-size:1em">Achieving the second highest score (pass) guarantees an interview anyway, so it isn't revealed.</span><br>
+                          </td>
+
+                          <td class="govuk-table__cell">
+                            <strong class="govuk-tag govuk-tag--green">
+                              PANEL CHAIR
+                            </strong>
+                          </td>
+                          <td class="govuk-table__cell">
+                            <strong class="govuk-tag">
+                              TESTED
+                            </strong>
+                          </td>
+                          <td class="govuk-table__cell">
+                          Tested during an earlier stage in the project focused on sift. The impact of schemes isn't modelled in this version of the prototype at the moment.</td>
+                          </tr>
 
                         <tr class="govuk-table__row">
                           <td class="govuk-table__cell"><a href="/csu71/sift/setup-interview/1001334-panel-results-postcon" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Panel chair confirms the final sift results</a><br>
@@ -788,7 +933,9 @@ Also not clear on being able to pick multiple dates, and need to be able to choo
                           </strong>
                         </td>
                         <td class="govuk-table__cell">
-                          This version hasn't been tested in this form - refinements were made following the testing of the previous version.</td>
+                          This version hasn't been tested in this form - refinements were made following the testing of the previous version.<br><br>
+                          Research is underway with the team (not included in prototype) to explore the approach of reasonable adjustment communication between vacancy holder and candidates.
+                          </td>
                         </tr>
 
                       <tr class="govuk-table__row">
@@ -925,17 +1072,17 @@ Also not clear on being able to pick multiple dates, and need to be able to choo
                                 </strong>
                               </td>
                               <td class="govuk-table__cell">
-                                <strong class="govuk-tag govuk-tag--grey">
-                                  UNTESTED
+                                <strong class="govuk-tag">
+                                  TESTED
                                 </strong>
                               </td>
                               <td class="govuk-table__cell">
-                                This particular form has not been tested, however similar versions were tested during earlier iterations focused on siftiing.</td>
+This particular form has not been tested, however similar versions were tested during earlier iterations focused on sifting.</td>
                               </tr>
 
 
                               <tr class="govuk-table__row">
-                                <td class="govuk-table__cell"><a href="/csu71/sift/setup-interview/merit-list-confirmation" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Once the final scores and recommendations of the panel are accepted by the panel chair, they have a merit list.</a><br><BR>
+                                <td class="govuk-table__cell"><a href="/csu71/sift/setup-interview/merit-list-confirmation" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Once the final scores and recommendations of the panel are accepted by the panel chair, they have the merit list</a><br><BR>
                                 </td>
 
 
@@ -945,12 +1092,12 @@ Also not clear on being able to pick multiple dates, and need to be able to choo
                                   </strong>
                                 </td>
                                 <td class="govuk-table__cell">
-                                  <strong class="govuk-tag govuk-tag--grey">
-                                    UNTESTED
+                                  <strong class="govuk-tag govuk-tag">
+                                    TESTED
                                   </strong>
                                 </td>
                                 <td class="govuk-table__cell">
-                                  This is a simplified version of an earier prototype which had been tested. This version consolidates a number of interactions into a single click required of the panel chair to denote their acceptance.</td>
+                                  This particular form has not been tested, however similar versions were tested during earlier iterations focused on sifting.</td>
                                 </tr>
 
 
@@ -1056,7 +1203,7 @@ The VH may not see the exact same view as the candidate PEC overview page - we a
                               </thead>
                               <tbody class="govuk-table__body">
                                 <tr class="govuk-table__row">
-                                  <td class="govuk-table__cell"><a href="/csu71/sift/pec-candidate-list" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Checks to see the progress made and status of candidate's pre-employment checks.</a><br>
+                                  <td class="govuk-table__cell"><a href="/csu71/sift/pec-candidate-list" target="_blank" class="govuk-link govuk-link--no-visited-state" style="font-size:1.2em">Checks to see the progress made and status of candidate's pre-employment checks</a><br>
                                     <!-- <details class="govuk-details" data-module="govuk-details">
                                       <summary class="govuk-details__summary" style="color:#5d6062">
                                         <span class="govuk-details__summary-text" style="font-size:0.9em">
