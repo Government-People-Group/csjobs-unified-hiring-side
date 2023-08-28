@@ -32,26 +32,6 @@
 {% endblock %}
 {% block content %}
 
-{% if (data['c1score1'].length) and (data['c1score2'].length) and (data['c1score3'].length) and (data['c1score4'].length) %}
-{% set cand1 = "true" %}
-{% endif %}
-
-{% if (data['c2score1'].length) and (data['c2score2'].length) and (data['c2score3'].length) and (data['c2score4'].length) %}
-{% set cand2 = "true" %}
-{% endif %}
-
-{% if (data['c3score1'].length) and (data['c1score2'].length) and (data['c1score3'].length) and (data['c1score4'].length) %}
-{% set cand3 = "true" %}
-{% endif %}
-
-{% if (data['c4score1'].length) and (data['c4score2'].length) and (data['c4score3'].length) and (data['c4score4'].length) %}
-{% set cand4 = "true" %}
-{% endif %}
-
-{% if (data['c5score1'].length) and (data['c5score2'].length) and (data['c5score3'].length) and (data['c5score4'].length) %}
-{% set cand5 = "true" %}
-{% endif %}
-
 
 <span class="govuk-caption-l">1001334</span>
 <h2 class="govuk-heading-l">Policy Adviser</h2>
@@ -59,30 +39,11 @@
 
 
 
-{% set ameliaTotal =  data['Amelia Lawsonscore1']|default("5")|int +
-                      data['Amelia Lawsonscore2']|default("6")|int +
-                      data['Amelia Lawsonscore3']|default("6")|int +
-                      data['Amelia Lawsonscore4']|default("5")|int +
-                      data['Amelia Lawsonscore5']|default("6")|int +
-                      data['Amelia Lawsonscore6']|default("6")|int +
-                      data['Amelia Lawsonscore7']|default("7")|int %}
 
+{% set meiTotal = data['Mei Chen score'][0]|int + data['Mei Chen score'][1]|int + data['Mei Chen score'][2]|int + data['Mei Chen score'][3]|int + data['Mei Chen score'][4]|int + data['Mei Chen score'][5]|int + data['Mei Chen score'][6]|int %}
+{% set ameliaTotal = data['Amelia Lawson score'][0]|int + data['Amelia Lawson score'][1]|int + data['Amelia Lawson score'][2]|int + data['Amelia Lawson score'][3]|int + data['Amelia Lawson score'][4]|int + data['Amelia Lawson score'][5]|int + data['Amelia Lawson score'][6]|int %}
+{% set javierTotal = data['Javier Santos score'][0]|int + data['Javier Santos score'][1]|int + data['Javier Santos score'][2]|int + data['Javier Santos score'][3]|int + data['Javier Santos score'][4]|int + data['Javier Santos score'][5]|int + data['Javier Santos score'][6]|int %}
 
-{% set meiTotal =  data['Mei Chen1']|default("6")|int +
-                      data['Mei Chen2']|default("6")|int +
-                      data['Mei Chen3']|default("6")|int +
-                      data['Mei Chen4']|default("6")|int +
-                      data['Mei Chen5']|default("6")|int +
-                      data['Mei Chen6']|default("6")|int +
-                      data['Mei Chen7']|default("6")|int %}
-
-{% set javierTotal =  data['Javier Santos1']|default("6")|int +
-                      data['Javier Santos2']|default("5")|int +
-                      data['Javier Santos3']|default("5")|int +
-                      data['Javier Santos4']|default("5")|int +
-                      data['Javier Santos5']|default("5")|int +
-                      data['Javier Santos6']|default("5")|int +
-                      data['Javier Santos7']|default("4")|int %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -120,13 +81,13 @@
 
           </th>
           <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">10:00-10:45<BR><span id="intDate1"></span></td>
-          <td style=";text-align:left;" class="govuk-table__cell govuk-table__cell--numeric">{{data['Mei Chen1']|default("6")|int}}</td>
-          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{data['Mei Chen2']|default("6")|int}}</td>
-          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{data['Mei Chen3']|default("6")|int}}</td>
-          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{data['Mei Chen4']|default("6")|int}}</td>
-          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{data['Mei Chen5']|default("6")|int}}</td>
-          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{data['Mei Chen6']|default("6")|int}}</td>
-          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{data['Mei Chen7']|default("6")|int}}</td>
+            <td style=";text-align:left;" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Mei Chen score'][0]|default("7")|int}}</td>
+            <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Mei Chen score'][1]|default("7")|int}}</td>
+            <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Mei Chen score'][2]|default("7")|int}}</td>
+            <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Mei Chen score'][3]|default("7")|int}}</td>
+            <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Mei Chen score'][4]|default("7")|int}}</td>
+            <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Mei Chen score'][5]|default("7")|int}}</td>
+            <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Mei Chen score'][6]|default("7")|int}}</td>
           <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric"><strong>{{ meiTotal}}</strong></td>
           <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric">
 
@@ -143,13 +104,13 @@
 
           </th>
           <td style=";text-align:left;" class="govuk-table__cell govuk-table__cell--numeric">13:00-13:45<BR><span id="intDate2"></span></td>
-          <td style=";text-align:left;" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawsonscore1']|default("5")|int}}</td>
-          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawsonscore2']|default("6")|int}}</td>
-          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawsonscore3']|default("6")|int}}</td>
-          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawsonscore4']|default("5")|int}}</td>
-          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawsonscore5']|default("6")|int}}</td>
-          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawsonscore6']|default("6")|int}}</td>
-          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawsonscore7']|default("7")|int}}</td>
+          <td style=";text-align:left;" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawson score'][0]|default("6")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawson score'][1]|default("6")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawson score'][2]|default("6")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawson score'][3]|default("6")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawson score'][4]|default("6")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawson score'][5]|default("6")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawson score'][6]|default("6")|int}}</td>
           <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric"><strong>{{ ameliaTotal }}</strong></td>
           <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric">
 
@@ -166,13 +127,13 @@
 
           </th>
           <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">16:00-16:45<BR><span id="intDate3"></span></td>
-          <td style=";text-align:left;" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santosscore1']|default("6")|int}}</td>
-          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos2']|default("5")|int}}</td>
-          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos3']|default("5")|int}}</td>
-          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos4']|default("5")|int}}</td>
-          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos5']|default("5")|int}}</td>
-          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos6']|default("5")|int}}</td>
-          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos7']|default("4")|int}}</td>
+          <td style=";text-align:left;" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos score'][0]|default("6")|int}}</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos score'][1]|default("5")|int}}</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos score'][2]|default("5")|int}}</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos score'][3]|default("5")|int}}</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos score'][4]|default("5")|int}}</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos score'][5]|default("5")|int}}</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos score'][6]|default("4")|int}}</td>
           <td style="font-size:24px;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric"><strong>{{ javierTotal }}</strong></td>
 
           <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric">
