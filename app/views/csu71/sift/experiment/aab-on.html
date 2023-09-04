@@ -34,8 +34,6 @@
 
 {% block content %}
 
-<div class="govuk-grid-row">
-<div class="govuk-grid-column-full">
 
 <style>
 
@@ -83,7 +81,7 @@
 <div class="govuk-grid-column-full">
   <h1 class="govuk-heading-xl">Personal statement</h1>
   <h2 class="govuk-heading-l">Criteria</h2>
-<div style=";">
+<div style="">
 
 <ul class="govuk-list govuk-list--bullet" style="line-height:1.6;font-size:18px;font-weight:bold;">
   <li>Experience of building relationships with busy stakeholders to achieve change (Experience)</li>
@@ -178,33 +176,6 @@
 
 
 
-      <!-- <span id="on"  class="govuk-body-m"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;color:white;padding-left:8px;padding-right:8px" href="aab-off">
-        <svg  width="36px" height="36px" viewBox="0 0 106 106" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <title>Group 2</title>
-            <defs>
-                <circle id="path-1" cx="53" cy="53" r="53"></circle>
-            </defs>
-            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <g id="Artboard" transform="translate(-2368.000000, -1498.000000)">
-                    <g id="Group" transform="translate(2368.000000, 1498.000000)">
-                        <mask id="mask-2" fill="white">
-                            <use xlink:href="#path-1"></use>
-                        </mask>
-                        <circle stroke="#FFEF00" stroke-width="6.21" cx="53" cy="53" r="49.895"></circle>
-                        <g mask="url(#mask-2)">
-                            <g transform="translate(13.984687, -79.954683)">
-                                <path d="M31.8974526,43.2739912 L160.631488,50.7212 C167.607153,51.1247393 173.140174,56.7519391 173.425932,63.733421 L174.211587,82.9280803 C174.518555,90.4277481 168.68772,96.7562768 161.188052,97.0632448 C161.157226,97.0645066 161.126396,97.0656633 161.095562,97.0667151 L35.9116222,101.336877 C32.0471696,101.468698 28.80755,98.4428016 28.6757293,94.5783491 C28.672725,94.4902761 28.6713839,94.4021542 28.6717066,94.3140306 L28.8480969,46.1415034 C28.8539268,44.5493434 30.1493536,43.2633688 31.7415136,43.2691987 C31.793527,43.2693892 31.8455257,43.2709873 31.8974526,43.2739912 Z" id="Rectangle" fill="#FFEF00" transform="translate(101.708142, 72.341489) rotate(-45.000000) translate(-101.708142, -72.341489) "></path>
-                                <polygon id="Rectangle" fill="#FFEF00" transform="translate(15.203076, 156.285492) rotate(-46.000000) translate(-15.203076, -156.285492) " points="7.01257857 150.561019 11.3999883 149.188216 22.5675121 149.676535 23.3935743 163.382768 11.4889825 161.70418"></polygon>
-                                <path d="M60.2737361,158.299785 L60.269914,161.209581 L8.47554774,161.277613 L9.06209336,157.785094 C17.0224151,152.537015 22.1710807,146.419691 24.5080903,139.433123 C26.8450999,132.446556 27.4296071,130.505927 26.2616119,133.611238 C26.4573819,132.253079 26.6539163,130.31296 26.8512152,127.790882 C26.9789443,126.158116 25.7046166,120.006666 28.0288929,117.314088 C28.8728621,116.336385 31.298329,115.848233 35.3052936,115.849632 C39.2471199,116.31796 41.6710579,116.993728 42.5771078,117.876937 C43.6908205,118.962574 43.9986636,121.277946 43.7341464,123.113041 C43.1468364,127.18752 43.3357267,131.066993 44.3008174,134.75146 C45.7116757,140.228105 47.1613501,144.202915 48.6498408,146.67589 C51.420038,151.27829 55.2946698,155.152922 60.2737361,158.299785 Z" id="Triangle" fill="white" transform="translate(34.374642, 138.563623) rotate(-135.000000) translate(-34.374642, -138.563623) "></path>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </svg>
-        <strong>Text highlighter </strong></a></span> -->
-
-
 
 
 
@@ -214,11 +185,6 @@
       </ul>
     </div>
   </div>
-
-</div>
-
-</div>
-
 
 
 
@@ -290,23 +256,6 @@ function stylizeHighlightedString() {
 
 
 
-  // function getSelectedParagraphText() {
-  //   if (window.getSelection) {
-  //       selection = window.getSelection();
-  //   } else if (document.selection) {
-  //       selection = document.selection.createRange();
-  //   }
-  //   var parent = selection.anchorNode;
-  //   while (parent != null && parent.localName != "P") {
-  //     parent = parent.parentNode;
-  //   }
-  //   if (parent == null) {
-  //     return "";
-  //   } else {
-  //     return parent.innerText || parent.textContent;
-  //   }
-  // }
-  //
 
 
   const selectContent = document.getElementById("content")
@@ -355,4 +304,3 @@ function stylizeHighlightedString() {
 </script>
 
 {% endblock %}
-“Well, Prince, so Genoa and Lucca are now just family estates of the Buonapartes. But I warn you, if you don’t tell me that this means war, if you still try to defend the infamies and horrors perpetrated by that Antichrist—I really believe he is Antichrist—I will have nothing more to do with you and you are no longer my friend, no longer my ‘faithful slave,’ as you call yourself! But how do you do? I see I have frightened you—sit down and tell me all the news.”<BR><BR>It was in July, 1805, and the speaker was the well-known Anna Pávlovna Schérer, maid of honor and favorite of the Empress Márya Fëdorovna. With these words she greeted Prince Vasíli Kurágin, a man of high rank and importance, who was the first to arrive at her reception. Anna Pávlovna had had a cough for some days. She was, as she said, suffering from la grippe; grippe being then a new word in St. Petersburg, used only by the elite.<BR><BR>All her invitations without exception, written in French, and delivered by a scarlet-liveried footman that morning, ran as follows:<BR><BR>“If you have nothing better to do, Count (or Prince), and if the prospect of spending an evening with a poor invalid is not too terrible, I shall be very charmed to see you tonight between 7 and 10—Annette Schérer.”<BR><BR>“Heavens! what a virulent attack!” replied the prince, not in the least disconcerted by this reception. He had just entered, wearing an embroidered court uniform, knee breeches, and shoes, and had stars on his breast and a serene expression on his flat face. He spoke in that refined French in which our grandfathers not only spoke but thought, and with the gentle, patronizing intonation natural to a man of importance who had grown old in society and at court. He went up to Anna Pávlovna, kissed her hand, presenting to her his bald, scented, and shining head, and complacently seated himself on the sofa.<BR><BR>“First of all, dear friend, tell me how you are. Set your friend’s mind at rest,” said he without altering his tone, beneath the politeness and affected sympathy of which indifference and even irony could be discerned.<BR><BR>“Can one be well while suffering morally? Can one be calm in times like these if one has any feeling?” said Anna Pávlovna. “You are staying the whole evening, I hope?”<BR><BR>“And the fete at the English ambassador’s? Today is Wednesday. I must put in an appearance there,” said the prince. “My daughter is coming for me to take me there.”<BR><BR>“I thought today’s fete had been canceled. I confess all these festivities and fireworks are becoming wearisome.”<BR><BR>“If they had known that you wished it, the entertainment would have been put off,” said the prince, who, like a wound-up clock, by force of habit said things he did not even wish to be believed.<BR><BR>“Don’t tease! Well, and what has been decided about Novosíltsev’s dispatch? You know everything.”<BR><BR>“What can one say about it?” replied the prince in a cold, listless tone. “What has been decided? They have decided that Buonaparte has burnt his boats, and I believe that we are ready to burn ours.”<BR><BR>Prince Vasíli always spoke languidly, like an actor repeating a stale part. Anna Pávlovna Schérer on the contrary, despite her forty years, overflowed with animation and impulsiveness. To be an enthusiast had become her social vocation and, sometimes even when she did not feel like it, she became enthusiastic in order not to disappoint the expectations of those who knew her. The subdued smile which, though it did not suit her faded features, always played round her lips expressed, as in a spoiled child, a continual consciousness of her charming defect, which she neither wished, nor could, nor considered it necessary, to correct.<BR><BR>In the midst of a conversation on political matters Anna Pávlovna burst out:<BR><BR>“Oh, don’t speak to me of Austria. Perhaps I don’t understand things, but Austria never has wished, and does not wish, for war. She is betraying us! Russia alone must save Europe. Our gracious sovereign recognizes his high vocation and will be true to it. That is the one thing I have faith in! Our good and wonderful sovereign has to perform the noblest role on earth, and he is so virtuous and noble that God will not forsake him. He will fulfill his vocation and crush the hydra of revolution, which has become more terrible than ever in the person of this murderer and villain! We alone must avenge the blood of the just one.... Whom, I ask you, can we rely on?... England with her commercial spirit will not and cannot understand the Emperor Alexander’s loftiness of soul. She has refused to evacuate Malta. She wanted to find, and still seeks, some secret motive in our actions. What answer did Novosíltsev get? None. The English have not understood and cannot understand the self-abnegation of our Emperor who wants nothing for himself, but only desires the good of mankind. And what have they promised? Nothing! And what little they have promised they will not perform! Prussia has always declared that Buonaparte is invincible, and that all Europe is powerless before him.... And I don’t believe a word that Hardenburg says, or Haugwitz either. This famous Prussian neutrality is just a trap. I have faith only in God and the lofty destiny of our adored monarch. He will save Europe!”<BR><BR>She suddenly paused, smiling at her own impetuosity.<BR><BR>“I think,” said the prince with a smile, “that if you had been sent instead  ofour dear Wintzingerode you would have captured the King of Prussia’s consent by assault. You are so eloquent. Will you give me a cup of tea?”<BR><BR>“In a moment. À propos,” she added, becoming calm again, “I am expecting two very interesting men tonight, le Vicomte de Mortemart, who is connected with the Montmorencys through the Rohans, one of the best French families. He is one of the genuine émigrés, the good ones. And also the Abbé Morio. Do you know that profound thinker? He has been received by the Emperor. Had you heard?”<BR><BR>“I shall be delighted to meet them,” said the prince. “But tell me,” he added with studied carelessness as if it had only just occurred to him, though the question he was about to ask was the chief motive of his visit, “is it true that the Dowager Empress wants Baron Funke to be appointed first secretary at Vienna? The baron by all accounts is a poor creature.”<BR><BR>Prince Vasíli wished to obtain this post for his son, but others were trying through the Dowager Empress Márya Fëdorovna to secure it for the baron.<BR><BR>Anna Pávlovna almost closed her eyes to indicate that neither she nor anyone else had a right to criticize what the Empress desired or was pleased with.<BR><BR>“Baron Funke has been recommended to the Dowager Empress by her sister,” was all she said, in a dry and mournful tone.<BR><BR>As she named the Empress, Anna Pávlovna’s face suddenly assumed an expression of profound and sincere devotion and respect mingled with sadness, and this occurred every time she mentioned her illustrious patroness. She added that Her Majesty had deigned to show Baron Funke beaucoup d’estime, and again her face clouded over with sadness.
