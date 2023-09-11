@@ -461,7 +461,78 @@ I understand that Weltanschauung can be a complex and abstract concept to grasp.
       });
     });
 
+    const myHL = [];
+      function getSelectedParagraphText() {
+        const selectContent = document.getElementById("pane");
 
+        var x = window.getSelection();
+        var z = x.anchorNode.parentNode;
+
+        if (x != "") {
+          var deed = document.createElement("li");
+          deed.style.cssText = "padding-top:20px";
+          deed.innerText = x;
+          myHL.push(deed.innerText);
+          selectContent.appendChild(deed);
+          // pane.innerText = x;
+          stylizeHighlightedString();
+          window.sessionStorage.setItem("highlights", JSON.stringify(myHL));
+        }
+
+        // var deed = document.createElement("li");
+        // deed.innerText = x;
+        // selectContent.appendChild(deed);
+        // // pane.innerText = x;
+        // stylizeHighlightedString();
+      }
+
+      function stylizeHighlightedString() {
+        var text = window.getSelection();
+        var start = text.anchorOffset;
+        var end = text.focusOffset - text.anchorOffset;
+
+        range = window.getSelection().getRangeAt(0);
+
+        var selectionContents = range.extractContents();
+        var span = document.createElement("span");
+        var tally = document.createElement("div");
+        span.appendChild(selectionContents);
+
+        span.style.backgroundColor = "yellow";
+        span.style.color = "black";
+
+        range.insertNode(span);
+      }
+
+      const selectContent = document.getElementById("content");
+
+      selectContent.addEventListener("mouseup", (event) => {
+        getSelectedParagraphText();
+
+        // selectContent.innerText = val;
+      });
+
+      let screenLog = document.querySelector("#screen-log");
+      document.addEventListener("mousemove", logKey);
+
+      // function logKey(e) {
+      //   screenLog.innerText = `
+      //     Screen X/Y: ${e.screenX}, ${e.screenY}
+      //     Client X/Y: ${e.clientX}, ${e.clientY}`;
+      // }
+
+      function showHideDiv(div1, div2) {
+        document.getElementById(div1).style.display = "block";
+        document.getElementById(div2).style.display = "none";
+      }
+
+      function hideDiv(div1) {
+        document.getElementById(div1).style.display = "none";
+      }
+
+      function showDiv(div1) {
+        document.getElementById(div1).style.display = "block";
+      }
 
   </script>
 
