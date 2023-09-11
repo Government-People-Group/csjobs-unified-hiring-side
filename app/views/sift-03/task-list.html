@@ -106,19 +106,19 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
         </li>
         <li class="govuk-prototype-kit-task-list__item">
           <span class="govuk-prototype-kit-task-list__task-name">
+            <!-- Sift candidate applications (16) -->
+            <a href="task-list-siftstage1" aria-describedby="eligibility-status">
             Sift candidate applications (16)
-            <!-- <a href="task-list-siftstage1" aria-describedby="eligibility-status">
-            Sift candidate applications (16)
-          </a> -->
+          </a>
         </span>
         <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">CANNOT START yet</strong>
       </li>
       <li class="govuk-prototype-kit-task-list__item">
         <span class="govuk-prototype-kit-task-list__task-name">
+          <!-- Review and submit sift scores -->
+          <a href="lead-panel-results" aria-describedby="eligibility-status">
           Review and submit sift scores
-          <!-- <a href="lead-panel-results" aria-describedby="eligibility-status">
-          Review and submit sift scores
-        </a> -->
+        </a>
 
       </span>
 
@@ -126,10 +126,10 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
     </li>
     <li class="govuk-prototype-kit-task-list__item">
       <span class="govuk-prototype-kit-task-list__task-name">
+        <!-- View lead criteria panel results -->
+        <a href="lead-panel-results" aria-describedby="eligibility-status">
         View lead criteria panel results
-        <!-- <a href="lead-panel-results" aria-describedby="eligibility-status">
-        View lead criteria panel results
-      </a> -->
+      </a>
     </span>
 
     <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
@@ -137,10 +137,10 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
   </li>
   <li class="govuk-prototype-kit-task-list__item">
     <span class="govuk-prototype-kit-task-list__task-name">
-      <!-- <a href="confirm-lead-results" aria-describedby="eligibility-status">
+      <a href="confirm-lead-results" aria-describedby="eligibility-status">
       Confirm lead criteria results
-    </a> -->
-    Confirm lead criteria results
+    </a>
+    <!-- Confirm lead criteria results -->
   </span>
 
   {% if data['leadConfirms'] == "true" %}
