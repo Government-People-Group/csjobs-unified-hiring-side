@@ -1,0 +1,290 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/includes/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l"></span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<form class="form" action="manage-minimum-scores-exp" method="post">
+
+{% if data['tasklist'] === "true "%}
+
+{% elif data['panel'] == "scores" %}
+<span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="lead-panel-results"><strong>Back to panel scores</strong></a></span>
+
+{% endif %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full" style="">
+<span class="govuk-caption-l">Policy Adviser (1001334)</span>
+<h1 class="govuk-heading-xl">Manage minimum scores</h1>
+
+<p class="govuk-body-m"><strong>As panel lead, you need to decide if you are happy to proceed with the panel consensus. Select and confirm to enact these decisions.</strong></p>
+
+
+
+<div class="govuk-tabs govuk-!-margin-top-9" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#past-day">
+        Sift Stage 1
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        Sift Stage 2
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-month">
+        Interview Stage
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-year">
+        Change log
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-tabs__panel" id="past-day">
+
+    <a id="chnge" class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#" onclick="activateCell()" style="font-weight:bold;font-size:20px;float:right">Change</a>
+    <div id="butter" style="float:right;display:none">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+text: "Save changes",
+classes: "govuk-button--secondary"
+}) }}
+
+{{ govukButton({
+classes:"govuk-!-padding-right-6",
+text: "Cancel",
+classes: "govuk-button--secondary"
+}) }}
+      </div>
+      </form>
+    <h2 class="govuk-heading-l">Sift Stage 1</h2>
+
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th style="width:40% !important;" scope="col" class="govuk-table__header">Criteria</th>
+          <th scope="col" class="govuk-table__header">Minimum score required<br>for PASS</th>
+          <th scope="col" class="govuk-table__header">Priority schemes<BR>minimum score required for PASS</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Lead criteria Seeing the Big Picture</td>
+          <td class="govuk-table__cell">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="width-2">
+
+              </label>
+              <input style="border:0px;margin-top:-30px" class="govuk-input govuk-input--width-2" id="width-2" name="width2" type="text" value="{{data['width2']|default("5")}}">
+            </div>
+
+
+
+          </td>
+          <td class="govuk-table__cell">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="width-3">
+
+              </label>
+              <input style="border:0px;margin-top:-30px" class="govuk-input govuk-input--width-3" id="width-3" name="width3" type="text" value="{{data['width3']|default("4")}}">
+            </div>
+
+
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+    <a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#" style="font-weight:bold;font-size:20px;float:right">Change</a>
+
+    <h2 class="govuk-heading-l">Sift Stage 2</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th style="width:40% !important;" scope="col" class="govuk-table__header">Criteria</th>
+          <th scope="col" class="govuk-table__header">Minimum score required<br>for PASS</th>
+          <th scope="col" class="govuk-table__header">Priority schemes<BR>minimum score required for PASS</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Experience of operating in a fast-paced environment to provide policy advice and briefing to seniors and stakeholders</td>
+          <td class="govuk-table__cell">5</td>
+          <td class="govuk-table__cell">4 </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Knowledge of how to deliver oral and written information effectively</td>
+          <td class="govuk-table__cell">5</td>
+          <td class="govuk-table__cell">4 </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Evidence of understanding the current national policy challenges for the population impacted by this area</td>
+          <td class="govuk-table__cell">5</td>
+          <td class="govuk-table__cell">4 </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+    <a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#" style="font-weight:bold;font-size:20px;float:right">Change</a>
+
+    <h2 class="govuk-heading-l">Interview Stage</h2>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" style="width:40% !important;" class="govuk-table__header">Criteria</th>
+          <th scope="col" class="govuk-table__header">Minimum score required<br>for PASS</th>
+          <th scope="col" class="govuk-table__header">Priority schemes<BR>minimum score required for PASS</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Building engaging and effective relationships with stakeholders</td>
+          <td class="govuk-table__cell">5</td>
+          <td class="govuk-table__cell">4 </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Seeing the Big Picture</td>
+          <td class="govuk-table__cell">5</td>
+          <td class="govuk-table__cell">4 </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Changing and Improving</td>
+          <td class="govuk-table__cell">5</td>
+          <td class="govuk-table__cell">4 </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Analytical (Strengths)</td>
+          <td class="govuk-table__cell">5</td>
+          <td class="govuk-table__cell">4 </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Challenger (Strengths)</td>
+          <td class="govuk-table__cell">5</td>
+          <td class="govuk-table__cell">4 </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Problem Solver (Strengths)</td>
+          <td class="govuk-table__cell">5</td>
+          <td class="govuk-table__cell">4 </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
+    <h2 class="govuk-heading-l">Change log</h2>
+
+    <div class="moj-timeline">
+      <div class="moj-timeline__item">
+
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Increase Sift Stage 1: Lead Criteria</h2>
+
+          <p class="moj-timeline__byline">by Panel Chair</p>
+
+        </div>
+
+        <p class="moj-timeline__date">
+          <time datetime="2019-06-14T14:01:00.000Z">14 June 2019 at 2:01pm</time>
+        </p>
+
+        <div class="moj-timeline__description">
+          <p>Change log content lorem ipsum dolor sit amet.</p>
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+              </div>
+<script>
+function activateCell(){
+
+const first = document.getElementById("width-2");
+const second = document.getElementById("width-3");
+const butter = document.getElementById("butter");
+
+const chgn = document.getElementById("chnge");
+
+first.style = "border:1px solid black"
+first.focus();
+
+second.style = "border:1px solid black"
+butter.style.display ="block";
+chgn.style.display ="none ";
+
+}
+
+</script>
+  {% endblock %}

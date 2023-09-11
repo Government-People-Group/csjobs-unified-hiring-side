@@ -1,0 +1,212 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/includes/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l"></span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list?killit=true"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+
+
+
+
+
+
+<span class="govuk-caption-l">1001334</span>
+<h2 class="govuk-heading-l">Policy Adviser</h2>
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+
+
+    {% set v16 = 4 %}
+    {% set v7 = 4 %}
+
+    {% set v1 = 5.33 %}
+    {% set v2 = 3 %}
+    {% set v3 = 7 %}
+    {% set v4 = 4 %}
+    {% set v5 = 6.33 %}
+    {% set v6 = 3 %}
+    {% set v8 = 4 %}
+    {% set v9 = 5 %}
+    {% set v10 = 3 %}
+    {% set v11 = 6 %}
+    {% set v12 = 4.66 %}
+    {% set v13 = 4.66 %}
+    {% set v14 = 4 %}
+    {% set v15 = 6 %}
+
+
+
+    <table class="govuk-table" style=""">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header app-custom-class"></th>
+          <th scope="col" class="govuk-table__header app-custom-class">Lead</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Experience 1</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Skills 1</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Skills 2</th>
+          <th scope="col" class="govuk-table__header app-custom-class">CV & Personal statement</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Total</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" id="ca1">Candidate 3</th>
+          <td class="govuk-table__cell" id="ca1Score">{{ v3 }}</td>
+          <td class="govuk-table__cell">
+            <td class="govuk-table__cell">
+              <td class="govuk-table__cell">
+                <td class="govuk-table__cell">
+
+                  <td class="govuk-table__cell">
+                  <td class="govuk-table__cell">
+
+                  </td>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header" id="ca2">Candidate 5</th>
+                    <td class="govuk-table__cell" id="ca2Score">{{ v5 }}</td>
+                    <td class="govuk-table__cell">
+                      <td class="govuk-table__cell">
+                        <td class="govuk-table__cell">
+                          <td class="govuk-table__cell">
+                            <td class="govuk-table__cell">
+                              <td class="govuk-table__cell">
+                              <td class="govuk-table__cell">
+
+                              </td>
+                            </tr>
+
+                            <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header" id="ca3">Candidate 15</th>
+                              <td class="govuk-table__cell" id="ca3Score">{{ v15 }}</td>
+                              <td class="govuk-table__cell">
+                                <td class="govuk-table__cell">
+
+                                <td class="govuk-table__cell">
+                                  <td class="govuk-table__cell">
+                                    <td class="govuk-table__cell">
+                                      <td class="govuk-table__cell">
+                                        <td class="govuk-table__cell">
+                                        </td>
+                                      </tr>
+
+                                      <tr class="govuk-table__row">
+                                        <th scope="row" class="govuk-table__header" id="ca4">Candidate 11</th>
+                                        <td class="govuk-table__cell" id="ca4Score">{{ v11 }}</td>
+                                        <td class="govuk-table__cell">
+                                          <td class="govuk-table__cell">
+                                            <td class="govuk-table__cell">
+                                              <td class="govuk-table__cell">
+                                                <td class="govuk-table__cell">
+                                                  <td class="govuk-table__cell">
+                                                    <td class="govuk-table__cell">
+
+                                                  </td>
+                                                </tr>
+
+                                                <tr class="govuk-table__row">
+                                                  <th scope="row" class="govuk-table__header" id="ca5">Candidate 1</th>
+                                                  <td class="govuk-table__cell" id="ca5Score">{{ v1 }}</td>
+                                                  <td class="govuk-table__cell">
+                                                    <td class="govuk-table__cell">
+                                                      <td class="govuk-table__cell">
+                                                        <td class="govuk-table__cell">
+                                                          <td class="govuk-table__cell">
+                                                            <td class="govuk-table__cell">
+                                                              <td class="govuk-table__cell">
+
+                                                            </td>
+                                                          </tr>
+
+                                                          <tr class="govuk-table__row">
+                                                            <th scope="row" class="govuk-table__header" id="ca6">Candidate 9</th>
+                                                            <td class="govuk-table__cell" id="ca6Score">{{ v9 }}</td>
+                                                            <td class="govuk-table__cell">
+                                                              <td class="govuk-table__cell">
+                                                                <td class="govuk-table__cell">
+                                                                  <td class="govuk-table__cell">
+                                                                    <td class="govuk-table__cell">
+                                                                      <td class="govuk-table__cell">
+                                                                      <td class="govuk-table__cell">
+
+                                                                      </td>
+                                                                    </tr>
+
+                                                                    <tr class="govuk-table__row">
+                                                                      <th scope="row" class="govuk-table__header" id="ca7">Candidate 7</th>
+                                                                      <td class="govuk-table__cell" id="ca7Score">{{ v7 }}</td>
+                                                                      <td class="govuk-table__cell">
+                                                                        <td class="govuk-table__cell">
+                                                                          <td class="govuk-table__cell">
+                                                                            <td class="govuk-table__cell">
+                                                                              <td class="govuk-table__cell">
+                                                                                <td class="govuk-table__cell">
+                                                                                <td class="govuk-table__cell">
+
+
+
+
+                                                                                </td>
+                                                                              </tr>
+                                                                              <tr class="govuk-table__row" style="">
+                                                                                <th scope="row" class="govuk-table__header" id="ca8">Candidate 16</th>
+                                                                                <td class="govuk-table__cell" id="ca8Score">{{ v16 }}</td>
+                                                                                <td class="govuk-table__cell">
+
+                                                                                  <td class="govuk-table__cell">
+                                                                                    <td class="govuk-table__cell">
+                                                                                      <td class="govuk-table__cell">
+                                                                                        <td class="govuk-table__cell">
+                                                                                          <td class="govuk-table__cell">
+                                                                                            <td class="govuk-table__cell">
+
+
+
+                                                                                          </td>
+                                                                                        </tr>
+                                                                                      </tbody>
+                                                                                    </table>
+
+
+
+
+
+
+
+                                                                                  </div>
+
+
+
+
+                                                                                </div>
+
+                                                                                {% endblock %}

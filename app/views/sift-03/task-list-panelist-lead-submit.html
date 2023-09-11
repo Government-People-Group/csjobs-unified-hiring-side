@@ -1,0 +1,175 @@
+{% extends "layouts/main.html" %}
+
+
+
+{% block header %}
+{% include '/includes/pheader.html' %}
+  {% endblock %}
+
+
+
+
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Sift Stage 1</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="#"><strong>Message panel chair</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{% if (data['c1score1'].length) and (data['c1score2'].length) and (data['c1score3'].length) and (data['c1score4'].length) %}
+{% set cand1 = "true" %}
+{% endif %}
+
+{% if (data['c2score1'].length) and (data['c2score2'].length) and (data['c2score3'].length) and (data['c2score4'].length) %}
+{% set cand2 = "true" %}
+{% endif %}
+
+{% if (data['c3score1'].length) and (data['c1score2'].length) and (data['c1score3'].length) and (data['c1score4'].length) %}
+{% set cand3 = "true" %}
+{% endif %}
+
+{% if (data['c4score1'].length) and (data['c4score2'].length) and (data['c4score3'].length) and (data['c4score4'].length) %}
+{% set cand4 = "true" %}
+{% endif %}
+
+{% if (data['c5score1'].length) and (data['c5score2'].length) and (data['c5score3'].length) and (data['c5score4'].length) %}
+{% set cand5 = "true" %}
+{% endif %}
+
+
+<span class="govuk-caption-l">1001334</span>
+<h2 class="govuk-heading-l">Policy Adviser</h2>
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% if (cand1 === "true") and (cand2 === "true") and (cand3 === "true") and (cand4 === "true") and (cand5 === "true") %}
+    <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Review and submit sifting scores</H1>
+    <p class="govuk-body-l">Review and submit your scores for the Policy Adviser application.</p>
+    {% elif cand1 != "true" %}
+    <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Sift candidates lead criteria only</H1>
+    <p class="govuk-body-m">Applications are closed. You should sift all candidates against the lead criteria to determine which candidates will be shortlisted to Sift Stage 2.</p>
+    {% endif %}
+
+    <dl class="govuk-summary-list" style="width:75%">
+
+      <div class="govuk-summary-list__row">
+
+
+
+        <dt class="govuk-summary-list__key">
+
+
+
+Candidates sifted
+        </dt>
+        <dd class="govuk-summary-list__value">
+          16
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Lead criteria
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Seeing the Big Picture
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <strong class="govuk-tag"  id="contact-details-status">COMPLETED</strong>
+        </dd>
+      </div>
+
+    </dl>
+    <h2 class="govuk-heading-l govuk-!-margin-top-6">Review and submit your scores</h2>
+
+    <p class="govuk-body-m">Review and submit your scores for the lead criteria sift.</p>
+
+    <table class="govuk-table govuk-!-margin-top-3" style="width:75%;border-top:1px solid lightgrey">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row"  style="background:#F3F2F1">
+          <th style="border-right:1px solid lightgrey;;border-left:1px solid lightgrey;padding-left:10px" scope="col" class="govuk-table__header">Candidate</th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;border-left:1px solid lightgrey;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">1</th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px;" scope="col" class="govuk-table__header govuk-table__header--numeric">2</th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">3</th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">4</th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">5</th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">6</th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">7</th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">8</th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">9</th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">10</th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">11</th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">12</th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">13</th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">14</th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">15</th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px;border-right:1px solid lightgrey" scope="col" class="govuk-table__header govuk-table__header--numeric">16</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+
+
+
+
+          <th scope="row" style="border-right:1px solid lightgrey;;border-left:1px solid lightgrey;padding-left:10px" class="govuk-table__header">Score</th>
+          <td style="border-right:1px solid lightgrey;;text-align::center;;border-left:1px solid lightgrey;padding:5px" class="govuk-table__cell govuk-table__cell--numeric">2</td>
+          <td style="border-right:1px solid lightgrey;;text-align:center;;padding:5px;" class="govuk-table__cell govuk-table__cell--numeric">4</td>
+          <td style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" class="govuk-table__cell govuk-table__cell--numeric">3</td>
+          <td style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" class="govuk-table__cell govuk-table__cell--numeric">5</td>
+          <td style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" class="govuk-table__cell govuk-table__cell--numeric">2</td>
+          <td style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" class="govuk-table__cell govuk-table__cell--numeric">3</td>
+          <td style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" class="govuk-table__cell govuk-table__cell--numeric">5</td>
+          <td style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" class="govuk-table__cell govuk-table__cell--numeric">3</td>
+          <td style="border-right:1px solid lightgrey;;text-align:center;;padding:5px;" class="govuk-table__cell govuk-table__cell--numeric">3</td>
+          <td style="border-right:1px solid lightgrey;;text-align:center;;padding:5px;" class="govuk-table__cell govuk-table__cell--numeric">4</td>
+          <td style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" class="govuk-table__cell govuk-table__cell--numeric">1</td>
+          <td style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" class="govuk-table__cell govuk-table__cell--numeric">2</td>
+          <td style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" class="govuk-table__cell govuk-table__cell--numeric">3</td>
+          <td style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" class="govuk-table__cell govuk-table__cell--numeric">2</td>
+          <td style="border-right:1px solid lightgrey;;text-align:center;;padding:5px;" class="govuk-table__cell govuk-table__cell--numeric">3</td>
+          <td style="border-right:1px solid lightgrey;;text-align:center;;padding:5px;border-right:1px solid lightgrey" class="govuk-table__cell govuk-table__cell--numeric">6</td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+
+    {{ govukButton({
+      classes:"govuk-!-margin-top-6",
+          text: "Submit my scores to panel",
+          href: "task-list-panelist-lead-submit-confirm"
+        }) }}
+
+
+
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,242 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/includes/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l"></span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list?leadcrit=done"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+{% if (data['c1score1'].length) and (data['c1score2'].length) and (data['c1score3'].length) and (data['c1score4'].length) %}
+{% set cand1 = "true" %}
+{% endif %}
+
+{% if (data['c2score1'].length) and (data['c2score2'].length) and (data['c2score3'].length) and (data['c2score4'].length) %}
+{% set cand2 = "true" %}
+{% endif %}
+
+{% if (data['c3score1'].length) and (data['c1score2'].length) and (data['c1score3'].length) and (data['c1score4'].length) %}
+{% set cand3 = "true" %}
+{% endif %}
+
+{% if (data['c4score1'].length) and (data['c4score2'].length) and (data['c4score3'].length) and (data['c4score4'].length) %}
+{% set cand4 = "true" %}
+{% endif %}
+
+{% if (data['c5score1'].length) and (data['c5score2'].length) and (data['c5score3'].length) and (data['c5score4'].length) %}
+{% set cand5 = "true" %}
+{% endif %}
+
+
+<style>
+
+</style>
+
+<!-- <form class="form" action="task-list-siftstage1-submit?ss1=complete" method="post"> -->
+
+<!-- <form class="form" action="task-list-siftstage1" method="post"> -->
+
+<span class="govuk-caption-l" style="margin-top:-20px">1001334</span>
+<h2 class="govuk-heading-l">Policy Adviser</h2>
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <H1 style=";padding-top:0px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-0">Score candidate 3 of 16</H1>
+
+    <div style="background:#F3F2F1;padding:10px;border-bottom:1px solid #1d70b8">
+
+<h2 class="govuk-heading-m" style="font-weight:normal">Lead criteria <strong>Seeing the Big Picture (SEO)</strong></h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Understand the strategic drivers for your area of work</li>
+  <li>Align activities to contribute to wider organisational priorities</li>
+  <li>Remain alert to emerging issues and trends which might impact your work area</li>
+  <li>Seek out and share experiences to develop knowledge of the team’s business area</li>
+<li>Understand how the strategies and activities of the team create value and meet the diverse needs of all stakeholders</li>
+</ul>
+</div>
+
+    <div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds govuk-!-margin-top-4" style="width:60%">
+<p style="padding:10px;line-height:1.5">
+“Well, Prince, so Genoa and Lucca are now just family estates of the
+Buonapartes. But I warn you, if you don’t tell me that this means
+war, if you still try to defend the infamies and horrors perpetrated
+by that Antichrist—I really believe he is Antichrist—I will have
+nothing more to do with you and you are no longer my friend, no
+longer my ‘faithful slave,’ as you call yourself! But how do you do?
+I see I have frightened you—sit down and tell me all the news.”<br /><br />
+It was in July, 1805, and the speaker was the well-known Anna
+Pávlovna Schérer, maid of honor and favorite of the Empress Márya
+Fëdorovna. With these words she greeted Prince Vasíli Kurágin, a man
+of high rank and importance, who was the first to arrive at her
+reception. Anna Pávlovna had had a cough for some days. She was, as
+she said, suffering from la grippe; grippe being then a new word in
+St. Petersburg, used only by the elite.<br /><br />
+All her invitations without exception, written in French, and
+delivered by a scarlet-liveried footman that morning, ran as
+follows:<br /><br />
+“If you have nothing better to do, Count (or Prince), and if the
+prospect of spending an evening with a poor invalid is not too
+terrible, I shall be very charmed to see you tonight between 7 and
+10—Annette Schérer.”<br /><br />
+“Heavens! what a virulent attack!” replied the prince, not in the
+least disconcerted by this reception.</p>
+</div>
+
+<div class="govuk-grid-column-one-third" style="width:40%">
+<div style=";height:790px;border-left:1px solid #1d70b8">
+
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+<div style="">
+  {{ govukRadios({
+    classes:"govuk-!-margin-top-6 govuk-!-margin-left-4",
+    name: "3scorePanel",
+    fieldset: {
+      legend: {
+        text: "",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    items: [
+      {
+        id:"3scorePanel1",
+        value: "1",
+        text: "1 - Not Demonstrated",
+        checked: checked("3scorePanel","1")
+      },
+      {
+        id:"3scorePanel2",
+        value: "2",
+        text: "2",
+        checked: checked("3scorePanel","2")
+      },
+      {
+        id:"3scorePanel3",
+        value: "3",
+        text: "3",
+        checked: checked("3scorePanel","3")
+      },
+      {
+        id:"3scorePanel4",
+        value: "4",
+        text: "4 - Acceptable Demonstration",
+        checked: checked("3scorePanel","4")
+      },
+      {
+        id:"3scorePanel5",
+        value: "5",
+        text: "5",
+        checked: checked("3scorePanel","5")
+      },
+      {
+        id:"3scorePanel6",
+        value: "6",
+        text: "6",
+        checked: checked("3scorePanel","6")
+      },
+      {
+        id:"3scorePanel7",
+        value: "7",
+        text: "7 - Outstanding Demonstration",
+        checked: checked("3scorePanel","7")
+      }
+    ]
+  }) }}
+</div>
+
+<div style="margin-left:20px;">
+  {{ govukSelect({
+    classes:"govuk-!-margin-top-1",
+    name: "3reason",
+    label: {
+      text: "Reason"
+    },
+    items: [
+    {
+      value: "none",
+      selected: "true",
+      disabled: "true",
+      text: "Select reason"
+    },
+    {
+      value: "Not enough experience",
+      text: "Not enough experience",
+      selected: checked("3reason","Not enough experience")
+    },
+    {
+      value: "High level of experience",
+      text: "High level of experience",
+      selected: checked("3reason","High level of experience")
+    },
+    {
+      value: "Not relevant to role",
+      text: "Not relevant to role",
+      selected: checked("3reason","Not relevant to role")
+    },
+    {
+      value: "Very relevant to role",
+      text: "Very relevant to role",
+      selected: checked("3reason","Very relevant to role")
+    },
+    {
+      value: "No or poor example given",
+      text: "No or poor example given",
+      selected: checked("3reason","No or poor example given")
+    },
+    {
+      value: "Strong example given",
+      text: "Strong example given",
+      selected: checked("3reason","Strong example given")
+    }
+    ]
+  }) }}
+</div>
+<button style="margin-left:20px" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+Add notes (optional)
+</button>
+<div style="margin-left:20px;margin-top:30px">
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+text: "Save and proceed to candidate 4"
+}) }}
+</div>
+  </div>
+</form>
+</div>
+</div>
+</div>
+
+
+  </div>
+
+{% endblock %}
