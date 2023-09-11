@@ -8,89 +8,101 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
+
+
 <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
-
-  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
-</div> -->
-<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l"></span>
-
 <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
-
-
-  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list"><strong>Return to task list</strong></a></span>
-
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list-siftstage1"><strong>Return to task list</strong></a></span>
+</div>
+<a style="color:white;margin-left:10px" href="javascript:window.history.back()" class="govuk-back-link govuk-back-link--inverse">Back</a>
 </div>
 
-</div>
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+
 {% endblock %}
 
+
 {% block content %}
+
+
+
+
+
+  <span class="govuk-caption-m govuk-!-margin-top-6" style="">1001334</span>
+  <p class="govuk-body-l">Policy Adviser</p>
+
+
+
+{% set v13 = 4 %}
+{% set v13p = [2,5,5] %}
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <span class="govuk-caption-l">Policy Adviser (1001334)</span>
 
 <h1 class="govuk-heading-xl">Consensus meeting for Sift Stage 1 results</h1>
 <p class="gov-body-m">Arrange a panel consensus meeting to make sure the average score for Candidate 13 is correct before confirming the Sift Stage 1 results and proceeding to Sift Stage 2:</p>
 
 <div style="width:75%">
-{{ govukTable({
-  caption: "",
-  captionClasses: "govuk-table__caption--m",
-  firstCellIsHeader: false,
-  head: [
-    {
-      text: "",
-      classes: 'app-custom-class'
-
-    },
-    {
-      text: "Average",
-      classes: 'app-custom-class'
-
-    },
-    {
-      text: "P1",
-      classes: 'app-custom-class'
-
-    },
-    {
-      text: "P2",
-      classes: 'app-custom-class'
-
-    },
-    {
-      text: "P3",
-      classes: 'app-custom-class'
-
-    }
-  ],
-  rows: [
 
 
-  [
+  {{ govukTable({
+    caption: "",
+    captionClasses: "govuk-table__caption--m",
+    firstCellIsHeader: false,
+    head: [
       {
-        html: "<strong>Candidate 13</strong>"
+        text: "",
+        classes: 'app-custom-class'
+
       },
       {
-        text: "4.66"
+        text: "Average",
+        classes: 'app-custom-class'
+
       },
       {
-        text: "2"
+        text: "P1",
+        classes: 'app-custom-class'
+
       },
       {
-        text: "6"
+        text: "P2",
+        classes: 'app-custom-class'
+
       },
       {
-        text: "6"
+        text: "P3",
+        classes: 'app-custom-class'
+
       }
-    ]
+    ],
+    rows: [
 
-  ]
-}) }}
+
+    [
+        {
+          html: "<strong>Candidate 13</strong>"
+        },
+        {
+          text: v13
+        },
+        {
+          text: v13p[0]
+        },
+        {
+          text: v13p[1]
+        },
+        {
+          text: v13p[2]
+        }
+      ]
+
+    ]
+  }) }}
+
+
+
+
 </div>
 
 

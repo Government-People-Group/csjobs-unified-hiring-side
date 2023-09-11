@@ -7,56 +7,94 @@
 Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
 
+
+
 {% block beforeContent %}
+
+
 <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
-
-  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
-</div> -->
-<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l"></span>
-
 <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
-
-
-  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list"><strong>Return to task list</strong></a></span>
-
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list-siftstage1"><strong>Return to task list</strong></a></span>
+</div>
+<a style="color:white;margin-left:10px" href="javascript:window.history.back()" class="govuk-back-link govuk-back-link--inverse">Back</a>
 </div>
 
-</div>
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+
 {% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+  <span class="govuk-caption-m govuk-!-margin-top-6" style="">1001334</span>
+  <p class="govuk-body-l">Policy Adviser</p>
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-<span class="govuk-caption-l">Policy Adviser (1001334)</span>
 <h1 class="govuk-heading-xl">Confirm the Sift Stage 1 results</h1>
 
 <p class="govuk-body-l"><strong>As panel lead, you need to decide if you are ready to proceed to Sift Stage 2 with this list.</strong></p>
 <form class="form" action="task-list?leadConfirms=true" method="post">
 
 
-
-
   {% set v16 = 4 %}
   {% set v7 = 4 %}
 
   {% set v1 = 5.33 %}
+  {% set v1p = [5,5,6] %}
+
+
   {% set v2 = 3 %}
+  {% set v2p = [3,3,3] %}
+
   {% set v3 = 7 %}
+  {% set v3p = [7,7,7] %}
+
+
   {% set v4 = 4 %}
+  {% set v4p = [3,4,5] %}
+
   {% set v5 = 6.33 %}
-  {% set v6 = 3 %}
+  {% set v5p = [5,7,7] %}
+
+  {% set v6 = 3.33 %}
+  {% set v6p = [2,4,4] %}
+
+  {% set v7 = 4 %}
+  {% set v7p = [4,4,4] %}
+
   {% set v8 = 4 %}
+  {% set v8p = [4,4,4] %}
+
   {% set v9 = 5 %}
+  {% set v9p = [4,5,6] %}
+
   {% set v10 = 3 %}
-  {% set v11 = 6 %}
-  {% set v12 = 4.66 %}
-  {% set v13 = 4.66 %}
+  {% set v10p = [3,3,3] %}
+
+  {% set v11 = 5.66 %}
+  {% set v11p = [5,5,7] %}
+
+  {% set v12 = 4.33 %}
+  {% set v12p = [3,3,5] %}
+
+  {% set v13 = 4 %}
+  {% set v13p = [2,5,5] %}
+
   {% set v14 = 4 %}
+  {% set v14p = [4,4,4] %}
+
   {% set v15 = 6 %}
+  {% set v15p = [5,6,7] %}
+
+  {% set v16 = 4 %}
+  {% set v16p = [3,4,5] %}
+
+
 
   <table class="govuk-table" style="width:75%"">
     <thead class="govuk-table__head">
@@ -208,7 +246,21 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
           </td>
         </tr>
-
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 12</th>
+          <td class="govuk-table__cell">{{ v12 }}</td>
+          <td class="govuk-table__cell">
+            {% if v12|float >= data['width2']|float  %}
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+        </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Candidate 4</th>
           <td class="govuk-table__cell">{{ v4 }}</td>
@@ -224,6 +276,8 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
             {% endif %}
           </td>
         </tr>
+
+
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Candidate 8</th>
@@ -241,21 +295,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           </td>
         </tr>
 
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Candidate 12</th>
-          <td class="govuk-table__cell">{{ v12 }}</td>
-          <td class="govuk-table__cell">
-            {% if v12|float >= data['width2']|float  %}
-            <strong class="govuk-tag govuk-tag--green">
-              PASS SIFT STAGE 1
-            </strong>
-            {% else %}
-            <strong class="govuk-tag govuk-tag--red">
-              REJECT CANDIDATE
-            </strong>
-            {% endif %}
-          </td>
-        </tr>
+
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Candidate 13</th>

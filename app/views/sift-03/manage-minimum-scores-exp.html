@@ -8,42 +8,47 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
+
+
 <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
-
-  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
-</div> -->
-<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l"></span>
-
 <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
-
-
   <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list"><strong>Return to task list</strong></a></span>
-
+</div>
+<a style="color:white;margin-left:10px" href="javascript:window.history.back()" class="govuk-back-link govuk-back-link--inverse">Back</a>
 </div>
 
-</div>
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+
 {% endblock %}
 
+
 {% block content %}
+
+
+
+
+
+  <span class="govuk-caption-m govuk-!-margin-top-6" style="">1001334</span>
+  <p class="govuk-body-l">Policy Adviser</p>
+
 <form class="form" action="manage-minimum-scores-exp" method="post">
 
-{% if data['tasklist'] === "true "%}
+{% if data['tasklist'] === "first" %}
+<span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="task-list?leadScores=set"><strong>Back to task-list</strong></a></span>
+{% endif %}
 
-{% elif data['panel'] == "scores" %}
+{% if data['panel'] == "scores" %}
 <span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="lead-panel-results"><strong>Back to panel scores</strong></a></span>
-
+{% endif %}
+{% if data['confirm'] == "scores" %}
+<span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="confirm-lead-results"><strong>Back to confirm lead results</strong></a></span>
 {% endif %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full" style="">
-<span class="govuk-caption-l">Policy Adviser (1001334)</span>
-<h1 class="govuk-heading-xl">Manage minimum scores</h1>
 
-<p class="govuk-body-m"><strong>As panel lead, you need to decide if you are happy to proceed with the panel consensus. Select and confirm to enact these decisions.</strong></p>
+<h1 class="govuk-heading-xl">Set your minimum pass marks</h1>
+
+<!-- <p class="govuk-body-m"><strong>As panel lead, you need to decide if you are happy to proceed with the panel consensus. Select and confirm to enact these decisions.</strong></p> -->
 
 
 
@@ -54,28 +59,27 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
   <ul class="govuk-tabs__list">
     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
       <a class="govuk-tabs__tab" href="#past-day">
-        Sift Stage 1
+        Lead criteria
       </a>
     </li>
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#past-week">
-        Sift Stage 2
+        All sift criteria
       </a>
     </li>
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#past-month">
-        Interview Stage
+        Interview criteria
       </a>
     </li>
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#past-year">
-        Change log
+        View the changes to pass marks
       </a>
     </li>
   </ul>
-  <div class="govuk-tabs__panel" id="past-day">
+  <div class="govuk-tabs__panel" id="past-day" >
 
-    <a id="chnge" class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#" onclick="activateCell()" style="font-weight:bold;font-size:20px;float:right">Change</a>
     <div id="butter" style="float:right;display:none">
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
@@ -90,16 +94,40 @@ text: "Cancel",
 classes: "govuk-button--secondary"
 }) }}
       </div>
-      </form>
-    <h2 class="govuk-heading-l">Sift Stage 1</h2>
 
+      <style>
+
+        .parent {
+
+          overflow: hidden;
+        }
+        .segment-a {
+          float: left;
+        }
+        .segment-b {
+          float: right;
+        }
+
+      </style>
+
+
+
+      </form>
+      <div class="parent">
+    <div class="segment-a">
+      <h2 style="" class="govuk-heading-l">Lead criteria pass marks</h2>
+    </div>
+    <div class="segment-b">
+    <a id="chnge" class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#" onclick="activateCell()" style="font-weight:bold;font-size:20px;float:right">Change</a>
+    </div>
+    </div>
 
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th style="width:40% !important;" scope="col" class="govuk-table__header">Criteria</th>
-          <th scope="col" class="govuk-table__header">Minimum score required<br>for PASS</th>
-          <th scope="col" class="govuk-table__header">Priority schemes<BR>minimum score required for PASS</th>
+          <th scope="col" class="govuk-table__header">Minimum pass mark</th>
+          <th scope="col" class="govuk-table__header">Minimum pass mark-Priority schemes</th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
@@ -133,15 +161,22 @@ classes: "govuk-button--secondary"
     </table>
   </div>
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
-    <a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#" style="font-weight:bold;font-size:20px;float:right">Change</a>
 
-    <h2 class="govuk-heading-l">Sift Stage 2</h2>
+    <div class="parent">
+    <div class="segment-a">
+    <h2 style="" class="govuk-heading-l">All sift criteria pass marks</h2>
+    </div>
+    <div class="segment-b">
+    <a id="chnge" class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#"  style="font-weight:bold;font-size:20px;float:right">Change</a>
+    </div>
+    </div>
+
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th style="width:40% !important;" scope="col" class="govuk-table__header">Criteria</th>
-          <th scope="col" class="govuk-table__header">Minimum score required<br>for PASS</th>
-          <th scope="col" class="govuk-table__header">Priority schemes<BR>minimum score required for PASS</th>
+          <th scope="col" class="govuk-table__header">Minimum pass mark</th>
+          <th scope="col" class="govuk-table__header">Minimum pass mark-Priority schemes</th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
@@ -167,17 +202,23 @@ classes: "govuk-button--secondary"
 
   </div>
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
-    <a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#" style="font-weight:bold;font-size:20px;float:right">Change</a>
 
-    <h2 class="govuk-heading-l">Interview Stage</h2>
+<div class="parent">
+<div class="segment-a">
+<h2 style="" class="govuk-heading-l">Interview criteria pass marks</h2>
+</div>
+<div class="segment-b">
+<a id="chnge" class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#"  style="font-weight:bold;font-size:20px;float:right">Change</a>
+</div>
+</div>
 
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="col" style="width:40% !important;" class="govuk-table__header">Criteria</th>
-          <th scope="col" class="govuk-table__header">Minimum score required<br>for PASS</th>
-          <th scope="col" class="govuk-table__header">Priority schemes<BR>minimum score required for PASS</th>
-        </tr>
+          <th scope="col" class="govuk-table__header">Minimum pass mark</th>
+          <th scope="col" class="govuk-table__header">Minimum pass mark-Priority schemes</th>
+                </tr>
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
@@ -219,7 +260,7 @@ classes: "govuk-button--secondary"
 
   </div>
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
-    <h2 class="govuk-heading-l">Change log</h2>
+    <h2 class="govuk-heading-l">Changes to pass marks</h2>
 
     <div class="moj-timeline">
       <div class="moj-timeline__item">

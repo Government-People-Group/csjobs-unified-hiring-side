@@ -31,7 +31,22 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
 
+<style>
+  .al {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color:#1d70b8;
+  width:25px;
+}
 
+a:visited {
+  color:#1d70b8;
+
+  text-decoration: none;
+}
+
+</style>
 
 
 <span class="govuk-caption-l">1001334</span>
@@ -47,8 +62,8 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
     <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Review and submit sifting scores</H1>
     <p class="govuk-body-l">Review and submit your scores for the Policy Adviser application.</p>
     {% elif cand1 != "true" %}
-    <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Sift candidates lead criteria only</H1>
-    <p class="govuk-body-m">Applications are closed. You should sift all candidates against the lead criteria to determine which candidates will be shortlisted to Sift Stage 2.</p>
+    <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Sift lead criteria: Seeing the Big Picture</H1>
+    <p class="govuk-body-m">Only candidates who pass the lead criteria will have the rest of their application marked.</p>
     {% endif %}
 
     <dl class="govuk-summary-list" style="width:75%">
@@ -85,30 +100,31 @@ Candidates sifted
       </div>
 
     </dl>
-    <h2 class="govuk-heading-l govuk-!-margin-top-6">Review and submit your scores</h2>
+    <h2 class="govuk-heading-l govuk-!-margin-top-6">Review and submit sift scores</h2>
 
-    <p class="govuk-body-m">Review and submit your scores for the lead criteria sift.</p>
+    <p class="govuk-body-m">Review and submit your sift scores for the lead criteria: Seeing the Big Picture.</p>
 
-    <table class="govuk-table govuk-!-margin-top-3" style="width:75%;border-top:1px solid lightgrey">
+
+    <table class="govuk-table govuk-!-margin-top-3" style="width:85%;border-top:1px solid lightgrey">
       <thead class="govuk-table__head">
-        <tr class="govuk-table__row"  style="background:#F3F2F1">
-          <th style="border-right:1px solid lightgrey;;border-left:1px solid lightgrey;padding-left:10px" scope="col" class="govuk-table__header">Candidate</th>
-          <th style="border-right:1px solid lightgrey;;text-align:center;border-left:1px solid lightgrey;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">1</th>
-          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px;" scope="col" class="govuk-table__header govuk-table__header--numeric">2</th>
-          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">3</th>
-          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">4</th>
-          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">5</th>
-          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">6</th>
-          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">7</th>
-          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">8</th>
-          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">9</th>
-          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">10</th>
-          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">11</th>
-          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">12</th>
-          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">13</th>
-          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">14</th>
-          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric">15</th>
-          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px;border-right:1px solid lightgrey" scope="col" class="govuk-table__header govuk-table__header--numeric">16</th>
+        <tr class="govuk-table__row"  style="background:#1d70b8">
+          <th style="color:white;width:15%;border-right:1px solid lightgrey;;border-left:1px solid lightgrey;padding-left:10px" scope="col" class="govuk-table__header">Candidate</th>
+          <th style=";border-right:1px solid lightgrey;;text-align:center;border-left:1px solid lightgrey;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric"><a class="al" style="border:2px solid #1d70b8;padding:3px;background:#1d70b8;color:white" href="view-scored-lead?ca=1&sc=2&reason=Not enough experience">1</a></th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px;" scope="col" class="govuk-table__header govuk-table__header--numeric"><a class="al" style="border:2px solid #1d70b8;padding:3px;background:#1d70b8;color:white" href="view-scored-lead?ca=2&sc=4&reason=Very relevant to role">2</a></th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric"><a class="al" style="border:2px solid #1d70b8;padding:3px;background:#1d70b8;color:white" href="view-scored-lead?ca=3&sc=3&reason=No or poor example given">3</a></th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric"><a class="al" style="border:2px solid #1d70b8;padding:3px;background:#1d70b8;color:white" href="view-scored-lead?ca=4&sc=5&reason=Strong example given">4</a></th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric"><a class="al" style="border:2px solid #1d70b8;padding:3px;background:#1d70b8;color:white" href="view-scored-lead?ca=5&sc=2&reason=Not enough experience">5</a></th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric"><a class="al" style="border:2px solid #1d70b8;padding:3px;background:#1d70b8;color:white" href="view-scored-lead?ca=6&sc=3&reason=No or poor example given">6</a></th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric"><a class="al" style="border:2px solid #1d70b8;padding:3px;background:#1d70b8;color:white" href="view-scored-lead?ca=7&sc=5&reason=Strong example given">7</a></th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric"><a class="al" style="border:2px solid #1d70b8;padding:3px;background:#1d70b8;color:white" href="view-scored-lead?ca=8&sc=3&reason=No or poor example given">8</a></th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric"><a class="al" style="border:2px solid #1d70b8;padding:3px;background:#1d70b8;color:white" href="view-scored-lead?ca=9&sc=3&reason=No or poor example given">9</a></th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric"><a class="al" style="border:2px solid #1d70b8;padding:3px;background:#1d70b8;color:white" href="view-scored-lead?ca=10&sc=4&reason=Very relevant to role">10</a></th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric"><a class="al" style="border:2px solid #1d70b8;padding:3px;background:#1d70b8;color:white" href="view-scored-lead?ca=11&sc=1&reason=No or poor example given">11</a></th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric"><a class="al" style="border:2px solid #1d70b8;padding:3px;background:#1d70b8;color:white" href="view-scored-lead?ca=12&sc=2&reason=Not enough experience">12</a></th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric"><a class="al" style="border:2px solid #1d70b8;padding:3px;background:#1d70b8;color:white" href="view-scored-lead?ca=13&sc=3&reason=No or poor example given">13</a></th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric"><a class="al" style="border:2px solid #1d70b8;padding:3px;background:#1d70b8;color:white" href="view-scored-lead?ca=14&sc=2&reason=Not enough experience">14</a></th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" scope="col" class="govuk-table__header govuk-table__header--numeric"><a class="al" style="border:2px solid #1d70b8;padding:3px;background:#1d70b8;color:white" href="view-scored-lead?ca=15&sc=3&reason=Not enough experience"">15</a></th>
+          <th style="border-right:1px solid lightgrey;;text-align:center;;padding:5px;border-right:1px solid lightgrey" scope="col" class="govuk-table__header govuk-table__header--numeric"><a class="al" style=";border:2px solid #1d70b8;padding:3px;background:#1d70b8;color:white" href="view-scored-lead?ca=16&sc=6&reason=Strong example given">16</a></th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
@@ -118,7 +134,7 @@ Candidates sifted
 
 
           <th scope="row" style="border-right:1px solid lightgrey;;border-left:1px solid lightgrey;padding-left:10px" class="govuk-table__header">Score</th>
-          <td style="border-right:1px solid lightgrey;;text-align::center;;border-left:1px solid lightgrey;padding:5px" class="govuk-table__cell govuk-table__cell--numeric">2</td>
+          <td style="border-right:1px solid lightgrey;;text-align:center;;border-left:1px solid lightgrey;padding:5px" class="govuk-table__cell govuk-table__cell--numeric">2</td>
           <td style="border-right:1px solid lightgrey;;text-align:center;;padding:5px;" class="govuk-table__cell govuk-table__cell--numeric">4</td>
           <td style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" class="govuk-table__cell govuk-table__cell--numeric">3</td>
           <td style="border-right:1px solid lightgrey;;text-align:center;;padding:5px" class="govuk-table__cell govuk-table__cell--numeric">5</td>

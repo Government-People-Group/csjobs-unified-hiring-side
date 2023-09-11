@@ -11,54 +11,34 @@
 
 
 {% block beforeContent %}
+
+
 <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
-
-  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
-</div> -->
-<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Sift Stage 1</span>
-
 <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
-
-
-  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="#"><strong>Message panel chair</strong></a></span>
-
+<span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="#"><strong>Message panel chair</strong></a></span>
+</div>
+<a style="color:white;margin-left:10px" href="#" class="govuk-back-link govuk-back-link--inverse">Back</a>
 </div>
 
-</div>
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+
 {% endblock %}
 
 {% block content %}
 
-{% if (data['c1score1'].length) and (data['c1score2'].length) and (data['c1score3'].length) and (data['c1score4'].length) %}
-{% set cand1 = "true" %}
-{% endif %}
-
-{% if (data['c2score1'].length) and (data['c2score2'].length) and (data['c2score3'].length) and (data['c2score4'].length) %}
-{% set cand2 = "true" %}
-{% endif %}
-
-{% if (data['c3score1'].length) and (data['c1score2'].length) and (data['c1score3'].length) and (data['c1score4'].length) %}
-{% set cand3 = "true" %}
-{% endif %}
-
-{% if (data['c4score1'].length) and (data['c4score2'].length) and (data['c4score3'].length) and (data['c4score4'].length) %}
-{% set cand4 = "true" %}
-{% endif %}
-
-{% if (data['c5score1'].length) and (data['c5score2'].length) and (data['c5score3'].length) and (data['c5score4'].length) %}
-{% set cand5 = "true" %}
-{% endif %}
 
 
-<span class="govuk-caption-l">1001334</span>
-<h2 class="govuk-heading-l">Policy Adviser</h2>
+<span class="govuk-caption-m govuk-!-margin-top-6" style="">1001334</span>
+<p class="govuk-body-l">Policy Adviser</p>
 
 
-<div style="width:75%" class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+
+
+<div style="" class="govuk-notification-banner govuk-notification-banner--success" role="alert"
   aria-labelledby="govuk-notification-banner-title"
   data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
@@ -68,24 +48,17 @@
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-      Your Sift scores have been submitted successfully.
+      Your sift scores for lead criteria have been submitted successfully.
     </h3>
     <!-- <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there’s a problem.</p> -->
   </div>
 </div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-
-    {% if (cand1 === "true") and (cand2 === "true") and (cand3 === "true") and (cand4 === "true") and (cand5 === "true") %}
-    <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Review and submit sifting scores</H1>
-    <p class="govuk-body-l">Review and submit your scores for the Policy Adviser application.</p>
-    {% elif cand1 != "true" %}
-    <H1 style=";padding-top:20px;padding-bottom:5px;; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">What happens next?</H1>
-    <p class="govuk-body-m">The panel scores and averaged and the lorem ipsum happens. Those candidates that have scored lorem will be sifted with the full sift criteria to determine which candidates should be interviewed.</p>
-    <p class="govuk-body-m">You will be notified by email etc will be called Sift Stage 2 upon lorem ipsum.</p>
-    {% endif %}
+<H1 style="width:75%;padding-top:0px;;" class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-6">What happens next?</H1>
 
 
+    <p class="govuk-body-m">The panel scores for the lead criteria will be collected and averaged. The panel chair will review the scores and will arrange a meeting to review abnormal scores if necessary.</p>
+    <p class="govuk-body-m">Successful candidates who pass the sift on lead criteria will have the rest of their application marked to find out who should be interviewed.</p>
+      <p class="govuk-body-m">You will be contacted by email for next steps.</p>
 
 
 

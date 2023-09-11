@@ -43,13 +43,10 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    {% if (cand1 === "true") and (cand2 === "true") and (cand3 === "true") and (cand4 === "true") and (cand5 === "true") %}
-    <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Review and submit sifting scores</H1>
-    <p class="govuk-body-l">Review and submit your scores for the Policy Adviser application.</p>
-    {% elif cand1 != "true" %}
-    <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Sift candidates lead criteria only</H1>
-    <p class="govuk-body-m">Applications are closed. You should sift all candidates against the lead criteria to determine which candidates will be shortlisted to Sift Stage 2.</p>
-    {% endif %}
+
+    <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Sift lead criteria: Seeing the Big Picture</H1>
+    <p class="govuk-body-m">Only candidates who pass the lead criteria will have the rest of their application marked.</p>
+
 
     <dl class="govuk-summary-list" style="width:75%">
 
@@ -64,7 +61,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 Candidates to sift
         </dt>
         <dd class="govuk-summary-list__value">
-      {% if data['scorePanel'].length > 0 and data['2scorePanel'].length > 0 %}
+      {% if data['ss1'] == "complete" %}
       14 out of 16
       {% elif data['scorePanel'].length > 0 %}
       15 out of 16
