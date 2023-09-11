@@ -1,0 +1,480 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/includes/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block beforeContent %}
+
+
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list-siftstage1"><strong>Return to task list</strong></a></span>
+</div>
+<a style="color:white;margin-left:10px" href="javascript:window.history.back()" class="govuk-back-link govuk-back-link--inverse">Back</a>
+</div>
+
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+  <span class="govuk-caption-m govuk-!-margin-top-6" style="">1001334</span>
+  <p class="govuk-body-l">Policy Adviser</p>
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+<h1 class="govuk-heading-xl">Confirm the Sift Stage 1 results</h1>
+
+<p class="govuk-body-l"><strong>As panel lead, you need to decide if you are ready to proceed to Sift Stage 2 with this list.</strong></p>
+<form class="form" action="task-list?leadConfirms=true" method="post">
+
+
+  {% set v16 = 4 %}
+  {% set v7 = 4 %}
+
+  {% set v1 = 5.33 %}
+  {% set v1p = [5,5,6] %}
+
+
+  {% set v2 = 3 %}
+  {% set v2p = [3,3,3] %}
+
+  {% set v3 = 7 %}
+  {% set v3p = [7,7,7] %}
+
+
+  {% set v4 = 4 %}
+  {% set v4p = [3,4,5] %}
+
+  {% set v5 = 6.33 %}
+  {% set v5p = [5,7,7] %}
+
+  {% set v6 = 3.33 %}
+  {% set v6p = [2,4,4] %}
+
+  {% set v7 = 4 %}
+  {% set v7p = [4,4,4] %}
+
+  {% set v8 = 4 %}
+  {% set v8p = [4,4,4] %}
+
+  {% set v9 = 5 %}
+  {% set v9p = [4,5,6] %}
+
+  {% set v10 = 3 %}
+  {% set v10p = [3,3,3] %}
+
+  {% set v11 = 5.66 %}
+  {% set v11p = [5,5,7] %}
+
+  {% set v12 = 4.33 %}
+  {% set v12p = [3,3,5] %}
+
+  {% set v13 = 4 %}
+  {% set v13p = [2,5,5] %}
+
+  {% set v14 = 4 %}
+  {% set v14p = [4,4,4] %}
+
+  {% set v15 = 6 %}
+  {% set v15p = [5,6,7] %}
+
+  {% set v16 = 4 %}
+  {% set v16p = [3,4,5] %}
+
+
+
+  <table class="govuk-table" style="width:75%"">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header app-custom-class"></th>
+        <th scope="col" class="govuk-table__header app-custom-class">Lead criteria average</th>
+        <th scope="col" class="govuk-table__header app-custom-class">Panel recommendation</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header" id="ca1">Candidate 3</th>
+        <td class="govuk-table__cell" id="ca1Score">{{ v3 }}</td>
+        <td class="govuk-table__cell">
+          {% if v3|float >= data['width2']|float  %}
+          <strong class="govuk-tag govuk-tag--green">
+            PASS SIFT STAGE 1
+          </strong>
+          {% else %}
+          <strong class="govuk-tag govuk-tag--red">
+            REJECT CANDIDATE
+          </strong>
+          {% endif %}
+        </td>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" id="ca2">Candidate 5</th>
+          <td class="govuk-table__cell" id="ca2Score">{{ v5 }}</td>
+          <td class="govuk-table__cell">
+            {% if v5|float >= data['width2']|float  %}
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" id="ca3">Candidate 15</th>
+          <td class="govuk-table__cell" id="ca3Score">{{ v15 }}</td>
+          <td class="govuk-table__cell">
+            {% if v15|float >= data['width2']|float  %}
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" id="ca4">Candidate 11</th>
+          <td class="govuk-table__cell" id="ca4Score">{{ v11 }}</td>
+          <td class="govuk-table__cell">
+            {% if v11|float >= data['width2']|float  %}
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" id="ca5">Candidate 1</th>
+          <td class="govuk-table__cell" id="ca5Score">{{ v1 }}</td>
+          <td class="govuk-table__cell">
+            {% if v1|float >= data['width2']|float  %}
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" id="ca6">Candidate 9</th>
+          <td class="govuk-table__cell" id="ca6Score">{{ v9 }}</td>
+          <td class="govuk-table__cell">
+            {% if v9|float >= data['width2']|float  %}
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" id="ca7">Candidate 7</th>
+          <td class="govuk-table__cell" id="ca7Score">{{ v7 }}</td>
+          <td class="govuk-table__cell">
+
+
+
+            {% if v7|float >= data['width3']|float  %}
+
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+
+            {% else %}
+
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+
+
+          </td>
+        </tr>
+        <tr class="govuk-table__row" style="border-bottom:2px solid #1d70b8;">
+          <th scope="row" class="govuk-table__header" id="ca8">Candidate 16</th>
+          <td class="govuk-table__cell" id="ca8Score">{{ v16 }}</td>
+          <td class="govuk-table__cell">
+
+
+
+
+            {% if v16|float >= data['width3']|float  %}
+
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+
+            {% else %}
+
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+
+
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 12</th>
+          <td class="govuk-table__cell">{{ v12 }}</td>
+          <td class="govuk-table__cell">
+            {% if v12|float >= data['width2']|float  %}
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 4</th>
+          <td class="govuk-table__cell">{{ v4 }}</td>
+          <td class="govuk-table__cell">
+            {% if v4|float >= data['width2']|float  %}
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 8</th>
+          <td class="govuk-table__cell">{{ v8 }}</td>
+          <td class="govuk-table__cell">
+            {% if v8|float >= data['width2']|float  %}
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 13</th>
+          <td class="govuk-table__cell">{{ v13 }}</td>
+          <td class="govuk-table__cell">
+            {% if v13|float >= data['width2']|float  %}
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 14</th>
+          <td class="govuk-table__cell">{{ v14 }}</td>
+          <td class="govuk-table__cell">
+            {% if v14|float >= data['width2']|float  %}
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 6</th>
+          <td class="govuk-table__cell">{{ v6 }}</td>
+          <td class="govuk-table__cell">
+            {% if v6|float >= data['width2']|float  %}
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 6</th>
+          <td class="govuk-table__cell">{{ v10 }}</td>
+          <td class="govuk-table__cell">
+            {% if v10|float >= data['width2']|float  %}
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 2</th>
+          <td class="govuk-table__cell">{{ v2 }}</td>
+          <td class="govuk-table__cell">
+            {% if v2|float >= data['width2']|float  %}
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+        </tr>
+
+    </tbody>
+  </table>
+  <button onclick="grabScores()" class="govuk-button" data-module="govuk-button">Confirm my decision</button>
+
+</form>
+
+
+
+
+<script>
+
+
+
+
+  function grabScores() {
+
+
+
+
+
+
+
+    var cc1 = document.getElementById('ca1').innerHTML;
+    var cc1s = document.getElementById('ca1Score').innerHTML;
+
+console.log(cc1)
+    var k = cc1.innerHTML;
+    var v = cc1s.innerHTML;
+
+
+    var cc2 = document.getElementById('ca2').innerHTML;
+    var cc2s = document.getElementById('ca2Score').innerHTML;
+
+    var k = cc2.innerHTML;
+    var v = cc2s.innerHTML;
+
+    var cc3 = document.getElementById('ca3').innerHTML;
+    var cc3s = document.getElementById('ca3Score').innerHTML;
+
+    var k = cc3.innerHTML;
+    var v = cc3s.innerHTML;
+
+    var cc4 = document.getElementById('ca4').innerHTML;
+    var cc4s = document.getElementById('ca4Score').innerHTML;
+
+    var k = cc4.innerHTML;
+    var v = cc4s.innerHTML;
+
+    var cc5 = document.getElementById('ca5').innerHTML;
+    var cc5s = document.getElementById('ca5Score').innerHTML;
+
+    var k = cc5.innerHTML;
+    var v = cc5s.innerHTML;
+
+    var cc6 = document.getElementById('ca6').innerHTML;
+    var cc6s = document.getElementById('ca6Score').innerHTML;
+
+    var k = cc6.innerHTML;
+    var v = cc6s.innerHTML;
+
+
+    var cc7 = document.getElementById('ca7').innerHTML;
+    var cc7s = document.getElementById('ca7Score').innerHTML;
+
+    var k = cc7.innerHTML;
+    var v = cc7s.innerHTML;
+
+    var cc8 = document.getElementById('ca8').innerHTML;
+    var cc8s = document.getElementById('ca8Score').innerHTML;
+
+    var k = cc8.innerHTML;
+    var v = cc8s.innerHTML;
+
+
+    let siftStage1Obj = {
+      '1':[cc1,cc1s],
+      '2':[cc2,cc2s],
+      '3':[cc3,cc3s],
+      '4':[cc4,cc4s],
+      '5':[cc5,cc5s],
+      '6':[cc6,cc6s],
+      '7':[cc7,cc7s],
+      '8':[cc8,cc8s]
+};
+
+
+const sortable = Object.fromEntries(
+    Object.entries(siftStage1Obj).sort(([,a],[,b]) => a-b)
+);
+
+console.log(sortable.length)
+    window.sessionStorage.setItem("ss1", JSON.stringify(sortable));
+
+
+  }
+
+
+
+</script>
+{% endblock %}

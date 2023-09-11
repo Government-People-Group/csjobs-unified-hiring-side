@@ -1,0 +1,243 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/includes/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l"></span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+
+
+
+
+
+
+<span class="govuk-caption-l">1001334</span>
+<h2 class="govuk-heading-l">Policy Adviser</h2>
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full" style="">
+
+<h1 class="govuk-heading-xl">Manage minimum scores</h1>
+
+<p class="govuk-body-m"><strong>As panel lead, you need to decide if you are happy to proceed with the panel consensus. Select and confirm to enact these decisions.</strong></p>
+
+
+
+
+
+<h2 style="font-size:32px;border-bottom:1px solid grey" class="govuk-heading-l">Sift Stage 1</h2>
+<dl class="govuk-summary-list" style="margin-top:-20px">
+  <div class="govuk-summary-list__row">
+    <dt style="width:50%;font-weight:normal" class="govuk-summary-list__key">
+      Lead criteria: Seeing the Big Picture
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['score']|default("4")}}
+      {{ data['score']|default("4")}}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="manage-minimum-scores-change?criteria=Lead criteria: Seeing the Big Picture">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a>
+    </dd>
+  </div>
+</dl>
+
+<h2 style="font-size:32px;border-bottom:1px solid grey" class="govuk-heading-l">Sift Stage 2</h2>
+<dl class="govuk-summary-list" style="margin-top:-20px">
+  <div class="govuk-summary-list__row">
+    <dt style="width:50%;font-weight:normal" class="govuk-summary-list__key">
+      Experience of operating in a fast-paced environment to provide policy advice and briefing to seniors and stakeholders
+    </dt>
+    <dd class="govuk-summary-list__value">
+      4
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="manage-minimum-scores-change?criteria=Experience of operating in a fast-paced environment to provide policy advice and briefing to seniors and stakeholders">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt style="width:50%;font-weight:normal" class="govuk-summary-list__key">
+      Knowledge of how to deliver oral and written information effectively
+    </dt>
+    <dd class="govuk-summary-list__value">
+      4
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> date of birth</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="width:50%;font-weight:normal">
+      Evidence of understanding the current national policy challenges for the population impacted by this area
+    </dt>
+    <dd class="govuk-summary-list__value">
+      4
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> address</span>
+      </a>
+    </dd>
+  </div>
+
+</dl>
+
+<h2 style="font-size:32px;border-bottom:1px solid grey" class="govuk-heading-l">Interview Stage</h2>
+<dl class="govuk-summary-list" style="margin-top:-20px">
+  <div class="govuk-summary-list__row">
+    <dt style="width:50%;font-weight:normal" class="govuk-summary-list__key">
+Building engaging and effective relationships with stakeholders
+    </dt>
+    <dd class="govuk-summary-list__value">
+      4
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt style="width:50%;font-weight:normal" class="govuk-summary-list__key">
+      Seeing the Big Picture
+    </dt>
+    <dd class="govuk-summary-list__value">
+      4
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> date of birth</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="width:50%;font-weight:normal">
+      Changing and Improving
+    </dt>
+    <dd class="govuk-summary-list__value">
+      4
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> address</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="width:50%;font-weight:normal">
+      Analytical (Strengths)
+    </dt>
+    <dd class="govuk-summary-list__value">
+      4
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> address</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="width:50%;font-weight:normal">
+      Challenger (Strengths)
+    </dt>
+    <dd class="govuk-summary-list__value">
+      4
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> address</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="width:50%;font-weight:normal">
+      Problem Solver (Strengths)
+    </dt>
+    <dd class="govuk-summary-list__value">
+      4
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> address</span>
+      </a>
+    </dd>
+  </div>
+
+</dl>
+
+
+  {{ govukButton({
+    text: "Confirm change",
+    href: "task-list"
+  }) }}
+
+              </div>
+              </div>
+
+<script>
+
+
+
+  const confirm = document.getElementById("confirmall");
+  confirm.addEventListener('change', (event) => {
+
+
+
+    for (var p=0; p < proceed.length;p++){
+        const proceed = document.getElementsByTagName("input");
+
+        if (confirm.checked){
+            proceed[p].checked = "true"
+        }
+
+        if (confirm.unchecked){
+            proceed[p].checked = "false"
+    }
+}
+
+
+    // if (confirm.checked) {
+    //
+    //   proceed.checked = true;
+    // } else {
+    //   proceed.checked = false;
+    // }
+
+
+
+
+  });
+
+</script>
+  {% endblock %}

@@ -1,0 +1,132 @@
+{% extends "layouts/main.html" %}
+
+
+
+{% block header %}
+{% include '/includes/pheader.html' %}
+  {% endblock %}
+
+
+
+
+
+
+    {% block beforeContent %}
+
+
+    <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+    <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="#"><strong>Message panel chair</strong></a></span>
+    </div>
+    <a style="color:white;margin-left:10px" href="#" class="govuk-back-link govuk-back-link--inverse">Back</a>
+    </div>
+
+
+    {% endblock %}
+  {% block content %}
+
+
+
+  <span class="govuk-caption-m govuk-!-margin-top-6" style="">1001334</span>
+  <p class="govuk-body-l">Policy Adviser</p>
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% if (cand1 === "true") and (cand2 === "true") and (cand3 === "true") and (cand4 === "true") and (cand5 === "true") %}
+    <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Review and submit sifting scores</H1>
+    <p class="govuk-body-l">Review and submit your scores for the Policy Adviser application.</p>
+    {% elif cand1 != "true" %}
+    <H1 style="width:70%;padding-top:0px;padding-bottom:5px;border-bottom:1px solid #1d70b8;" class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-6">Sift lead criteria: Seeing the Big Picture</H1>
+    <p class="govuk-body-m">Only candidates who pass the lead criteria will have the rest of their application marked.</p>
+    {% endif %}
+
+    <dl class="govuk-summary-list" style="width:75%">
+
+      <div class="govuk-summary-list__row">
+
+
+
+        <dt class="govuk-summary-list__key">
+
+
+
+Candidates to sift
+        </dt>
+        <dd class="govuk-summary-list__value">
+      {% if data['scorePanel'].length > 0 %}
+      15 out of 16
+      {% else %}
+      16
+      {% endif %}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Lead criteria
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Seeing the Big Picture
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['scorePanel'].length > 0 and data['2scorePanel'].length > 0 %}
+
+          <strong class="govuk-tag govuk-tag--blue"  id="contact-details-status">IN PROGRESS</strong>
+          {% else %}
+          <strong class="govuk-tag govuk-tag--grey"  id="contact-details-status">NOT STARTED</strong>
+          {% endif %}
+        </dd>
+      </div>
+
+    </dl>
+
+
+
+
+
+{% if data['scorePanel'].length > 0 %}
+{{ govukButton({
+  text: "Continue from where you left off",
+  href: "task-list-panelist-lead-scoring-2"
+  }) }}
+{% else %}
+{{ govukButton({
+      text: "Start sift",
+      href: "task-list-panelist-lead-scoring"
+    }) }}
+
+
+{% endif %}
+
+
+
+
+
+  </div>
+</div>
+<script>
+
+  var dat =  document.getElementsByTagName("tr")
+  console.log(dat)
+
+  for (var t=0;t<dat.length;t++){
+    // if (dat.textContent[t]) {
+      console.log(dat.length)
+
+    // }
+
+
+  }
+
+
+
+
+</script>
+{% endblock %}

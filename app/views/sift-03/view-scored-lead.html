@@ -1,0 +1,367 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/includes/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+
+{% block beforeContent %}
+
+
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list-siftstage1"><strong>Return to task list</strong></a></span>
+</div>
+<a style="color:white;margin-left:10px" href="javascript:window.history.back()" class="govuk-back-link govuk-back-link--inverse">Back</a>
+</div>
+
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<style>
+
+
+
+  input[type="radio"]:checked + label:before,
+  input[type="radio"]:not(:checked) + label:before {
+      content: '';
+      border:2px solid #1d70b8;
+      border-radius: 100%;
+
+      background: white;
+  }
+
+
+</style>
+
+
+
+
+
+
+
+
+
+  <span class="govuk-caption-m govuk-!-margin-top-6" style="">1001334</span>
+  <p class="govuk-body-l">Policy Adviser</p>
+
+
+
+<input type="hidden" id="cRef" value="{{ data['ca']}}">
+<input type="hidden" id="sc" value="{{ data['sc']}}">
+<input type="hidden" id="reas" value="{{ data['reason']}}">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <H1 style=";padding-top:0px;padding-bottom:5px; " class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-0">Sift lead criteria: Seeing the Big Picture</H1>
+    <H2 style=";padding-top:0px;padding-bottom:5px;font-weight:normal;; " class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-0">Candidate {{ data['ca']}} of 16</H2>
+
+    <div class="govuk-!-margin-top-3" style="border-top:1px solid #1d70b8;background:#F3F2F1;padding:10px;border-bottom:1px solid #1d70b8">
+
+<h3 class="govuk-heading-m" style="font-size:20px;font-weight:normal">Seeing the Big Picture description for Senior Executive Officer (SEO) grade</h3>
+<ul class="govuk-list govuk-list--bullet" style="font-size:18px;line-height:1.3;margin-bottom:-2px">
+  <li>Understand the strategic drivers for your area of work</li>
+  <li>Align activities to contribute to wider organisational priorities</li>
+  <li>Remain alert to emerging issues and trends which might impact your work area</li>
+  <li>Seek out and share experiences to develop knowledge of the team’s business area</li>
+<li>Understand how the strategies and activities of the team create value and meet the diverse needs of all stakeholders</li>
+</ul>
+</div>
+
+<div class="govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+
+  <p class="govuk-body-m">When it came to tackling the issue at hand, I knew that seeing the big picture was my secret weapon. I’ve always had a knack for zooming out and taking in the landscape. This allowed me to identify the root cause that was fuelling problems, and then I collaborated with the right people to make my vision come to life.<BR><BR>
+
+  It was a thrilling experience that made a real impact when it was needed.<BR><BR>
+
+  Before I could rally my team to contribute to the solution, I had to get to the bottom of what was driving the policy. It was crucial for me to understand the main drivers so that I could align our activities with the department’s priorities. It was like putting together a puzzle, and once I had all the pieces, I could create a clear roadmap for my team to follow. It was a challenge, but I was determined to make it work.<BR><BR>
+
+  I had to inspire my team to persevere with a challenging objective, empowering them to take ownership of their work. I ensured that each member of my team felt valued and appreciated, instilling in them a sense of pride and ownership in their work. Through my leadership, every individual was encouraged to reach their full potential and contribute to the collective success of the team.<BR><BR>
+
+  In the end, my effort paid off, and I made a significant impact on the policy success and outcomes for the communities affected by government decisions.</p>
+
+
+
+  <!-- <p class="govuk-body-m">When it came to tackling the issue at hand, I knew that seeing the big picture was my secret weapon. Ive always had a knack for zooming out and taking in the landscape. This allowed me to identify the root cause that was fueling problems, and then I collaborated with the right people to make my vision come to life. It was a thrilling experience and made a real impact.<BR><BR>Before I could rally my team to contribute to the bigger picture, I had to get to the bottom of what was driving the policy. It was crucial for me to understand the main drivers so that I could align our activities with the wider political context. It was like putting together a puzzle, and once I had all the pieces, I could create a clear roadmap for my team to follow. It was a challenge, but I was determined to make it work.<BR><BR>I had to inspire my team to persevere with a challenging objective, empowering them to take ownership of their work. I ensured that each member of my team felt valued and appreciated, instilling in them a sense of pride and ownership in their work. Through my leadership, every individual was encouraged to reach their full potential and contribute to the collective success of the team.<BR><BR>And in the end, our efforts paid off, and we were able to make a significant impact on the policy success and outcomes for the communities affected by our decisions.</p> -->
+
+<!-- <p style="padding:20px;" class="govuk-!-padding-top-6 govuk-body-m">Quisque ut dolor gravida, placerat libero vel, euismod. Plura mihi bona sunt, inclinet, amari petere vellent. At nos hinc posthac, sitientis piros Afros. Praeterea iter est quasdam res quas ex communi. Integer legentibus erat a ante historiarum dapibus. Ut enim ad minim veniam, quis nostrud exercitation.<BR><BR>Qui ipsorum lingua Celtae, nostra Galli appellantur. Nec dubitamus multa iter quae et nos invenerat. A communi observantia non est recedendum. Cum ceteris in veneratione tui montes, nascetur mus.<BR><BR>Salutantibus vitae elit libero, a pharetra augue. Quam diu etiam furor iste tuus nos eludet? Fictum, deserunt mollit anim laborum astutumque!<BR><BR>Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Ab illo tempore, ab est sed immemorabili. Cum sociis natoque penatibus et magnis dis parturient. Paullum deliquit, ponderibus modulisque suis ratio utitur. Tu quoque, Brute, fili mi, nihil timor populi, nihil!<BR><BR>Nihil hic munitissimus habendi senatus locus, nihil horum? Excepteur sint obcaecat cupiditat non proident culpa. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Idque Caesaris facere voluntate liceret: sese habere. Non equidem invideo, miror magis posuere velit aliquet.<BR><BR>Praeterea iter est quasdam res quas ex communi. Curabitur est gravida et libero vitae dictum. Donec sed odio operae, eu vulputate felis rhoncus. Quo usque tandem abutere, Catilina, patientia nostra? Excepteur sint obcaecat cupiditat non proident culpa.<BR><BR>Excepteur sint obcaecat cupiditat non proident culpa. Plura mihi bona sunt, inclinet, amari petere vellent. Curabitur est gravida et libero vitae dictum.<BR><BR>Etiam habebis sem dicantur magna mollis euismod.</p> -->
+
+</div>
+
+
+
+  <div style="background:#F2FAFF;height:auto;">
+
+  <div style="border-top:1px solid #1d70b8;padding:20px;">
+
+
+
+    <!-- <form class="form" action="task-list-panelist-lead-scoring-2" method="post"> -->
+
+
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h3 style="font-size:22px" class="govuk-fieldset__heading">
+            Score
+          </h3>
+          <div id="subject-hint" class="govuk-hint" style="font-size:18px;font-weight:bold">This will be shared with the candidate.</div>
+
+        </legend>
+        <!-- <div style="background:white;border-radius:4px;border:1px solid #1d70b8;;padding:10px"> -->
+        <div class="govuk-radios" data-module="govuk-radios" style="border:1px solid #1d70b8;border-radius:5px;width:47%;padding:15px;background:white">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="scorePanel-1" name="scorePanel" type="radio" value="1">
+            <label  class="govuk-label govuk-radios__label" for="scorePanel-1">
+              <strong>1</strong> - not demonstrated
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="scorePanel-2" name="scorePanel" type="radio" value="2">
+            <label class="govuk-label govuk-radios__label" for="scorePanel-2">
+              <strong>2</strong> - minimal demonstration
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="scorePanel-3" name="scorePanel" type="radio" value="3">
+            <label class="govuk-label govuk-radios__label" for="scorePanel-3">
+              <strong>3</strong> - moderate demonstration
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="scorePanel-4" name="scorePanel" type="radio" value="4">
+            <label class="govuk-label govuk-radios__label" for="scorePanel-4">
+              <strong>4</strong> - acceptable demonstration
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="scorePanel-5" name="scorePanel" type="radio" value="5">
+            <label class="govuk-label govuk-radios__label" for="scorePanel-5">
+              <strong>5</strong> - good demonstration
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="scorePanel-6" name="scorePanel" type="radio" value="6">
+            <label class="govuk-label govuk-radios__label" for="scorePanel-6">
+              <strong>6</strong> - strong demonstration
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="scorePanel-7" name="scorePanel" type="radio" value="7">
+            <label class="govuk-label govuk-radios__label" for="scorePanel-7">
+              <strong>7</strong> - outstanding demonstration
+            </label>
+          </div>
+          </div>
+        <!-- </div> -->
+      </fieldset>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="govuk-form-group" style="margin-top:-5px">
+      <label style="font-size:20px;margin-bottom:20px" class="govuk-label" for="reason">
+        <strong>Optional feedback for candidates</strong>
+      </label>
+      <!-- <div id="subject-hint" class="govuk-hint" style="font-size:18px;font-weight:bold">This will be shared with the candidate.</div> -->
+      <select style="width:50%;border:2px solid #1d70b8;" class="govuk-select" id="reason" name="reason">
+        <option selected disabled value="--">Select from the list (optional)</option>
+        <option id="newreason" value="Add a new reason to the list">Add a new reason to the list</option>
+        <option disabled value="--">-</option>
+        <option value="Not enough experience">Not enough experience</option>
+        <option value="High level of experience">High level of experience</option>
+        <option value="Strong example given">Strong example given</option>
+        <option value="No or poor example given">No or poor example given</option>
+        <option value="Very relevant to role">Very relevant to role</option>
+        <option value="Not relevant to role">Not relevant to role</option>
+      </select>
+    </div>
+
+<div id="addReasonPanel" style="display:none">
+    <div  class="govuk-form-group">
+      <label class="govuk-label" for="addReason">Your new reason</label>
+      <input style="width:50%;background:white;border:1px solid #1d70b8;" class="govuk-input " id="addReason" name="addReason" type="text">
+      <!-- <a style=";border:1px solid #1d70b8;width:125px;height:40px" onclick="addToReasonSelector(addReason.value)" class="govuk-button govuk-button--secondary">Add to list</a> -->
+      <button onclick="addToReasonSelector(addReason.value)" class="govuk-button govuk-button--secondary" data-module="govuk-button">Add to list</button>
+
+    </div>
+
+</div>
+
+<!-- <button style="width:25%" onclick="showDiv('notesPanel')" class="govuk-button govuk-button--secondary" data-module="govuk-button">Add notes (optional)</button> -->
+
+    <!-- <a style="border:1px solid #1d70b8;width:25%;margin-top:8px;height:40px" onclick="showDiv('notesPanel')" class="govuk-button govuk-button--secondary">Add notes (optional)</a> -->
+
+
+
+    <div style="display:none" id="notesPanel" class="govuk-form-group">
+    <div style="font-size:18px;background:white;font-weight:bold" id="notesPanel" class="govuk-hint">
+    Notes written here will be visible to you and the Panel Chair only.
+    </div>
+    <textarea id="textA" style="width:100%;background:white;border:2px solid #1d70b8" class="govuk-textarea" id="notes" name="notes" rows="3"></textarea>
+    </div>
+    <div style="text-align:right">
+      <form class="form" action="task-list-siftstage1-submit" method="post">
+
+    {{ govukButton({
+      classes: "govuk-!-margin-right-1 govuk-!-margin-top-0",
+    text: "Back to review"
+    }) }}
+        </form>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+const ref = document.getElementById("cRef").value;
+const sc = document.getElementById("sc").value;
+const reas = document.getElementById("reas").value;
+
+console.log(ref,sc,reas)
+
+  let item = "scorePanel-"+sc;
+
+
+
+  console.log(item)
+  let sco = document.getElementById(item);
+  sco.checked = "true"
+  console.log(sco)
+
+
+  let selector = document.getElementById("reason");
+
+  selector.value = reas;
+
+
+
+
+
+  selector.addEventListener("click", () => {
+    console.log("click")
+
+
+    selector.addEventListener("change", () => {
+
+      switch (selector.value) {
+        case "Add a new reason to the list":
+        showDiv('addReasonPanel');
+          break;
+        case "remove":
+          break;
+      }
+      }, { once: true });
+  });
+
+  selector.addEventListener("keyup", () => {
+    console.log("keyup")
+
+
+    selector.addEventListener("change", () => {
+
+      switch (selector.value) {
+        case "Add a new reason to the list":
+        showDiv('addReasonPanel');
+          break;
+        case "remove":
+          break;
+      }
+      }, { once: true });
+  });
+
+
+
+
+  function addToReasonSelector(adder) {
+    console.log(adder)
+    var newOption = document.createElement("option")
+    newOption.innerHTML = adder;
+    selector.appendChild(newOption).selected = "true";
+    selector.focus();
+    hideDiv('addReasonPanel');
+    document.getElementById('addReason').value = '';
+
+  }
+
+
+
+  function showDiv(div1) {
+    document.getElementById(div1).style.display = 'block';
+    if (div1 == "notesPanel"){
+      const textA = document.getElementById("textA");
+      textA.focus();
+    } else if (div1 == "addReasonPanel") {
+      document.getElementById(div1).style.display = 'block';
+      const reaBox = document.getElementById("addReason");
+      reaBox.focus();
+    }
+  }
+
+  function hideDiv(div1) {
+    document.getElementById(div1).style.display = 'none';
+  }
+
+
+  const newReason = document.getElementById("newreason");
+
+  newReason.addEventListener("focus", (event) => {
+    console.log(newReason.value)
+  });
+
+
+  selector.addEventListener("click", () => {
+  // if default value is changed
+    selector.addEventListener("change", () => {
+    // if value switched by client
+      switch (selector.value) {
+        case "add":
+        //do somthing with  , "add" value
+          result.innerHTML = selector.value;
+          break;  // then take break
+        case "remove":
+        //do somthing with  , "remove" value
+          result.innerHTML = selector.value;
+          break; // then take break
+      }
+    });
+  });
+
+
+
+
+</script>
+{% endblock %}
+
+
+
+Not enough experience
+High level of experience
+
+
+<p class="govuk-body-m">When it came to tackling the issue at hand, I knew that seeing the big picture was my secret weapon. Ive always had a knack for zooming out and taking in the landscape. This allowed me to identify the root cause that was causing problems, and then I collaborated with the right people to make my vision come to life. It was a thrilling experience and made a real impact.<BR><BR>Before I could rally my team to contribute to the bigger picture, I had to get to the bottom of what was driving the policy. It was crucial for me to understand the main drivers so that I could align our activities with the wider political context. It was like putting together a puzzle, and once I had all the pieces, I could create a clear roadmap for my team to follow. It was a challenge, but I was determined to make it work.<BR><BR>I had to inspire my team to persevere with a challenging objective, empowering them to take ownership of their work. I ensured that each member of my team felt valued and appreciated, instilling in them a sense of pride and ownership in their work. Through my leadership, every individual was encouraged to reach their full potential and contribute to the collective success of the team.<BR><BR>And in the end, our efforts paid off, and we were able to make a significant impact on the policy success and outcomes for the communities affected by our decisions.</p>

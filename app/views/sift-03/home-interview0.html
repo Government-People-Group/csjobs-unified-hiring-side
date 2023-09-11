@@ -1,0 +1,427 @@
+{% extends "layouts/main.html" %} {% block header %} {% include
+'/includes/header.html' %} {% endblock %} {% block pageTitle %} Home – {{
+serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block beforeContent %}
+
+<div
+  id="bluePanel"
+  style="
+    width: 100%;
+    background: #1d70b8;
+    height: 45px;
+    border-bottom: 0.5px solid #1d70b8;
+    float: left;
+  "
+>
+  <a href="#"
+    ><img
+      src="/public/images/search.png"
+      style="float: right; margin-right: 30px; padding: 10px; width: 20px"
+  /></a>
+
+  <div
+    style="
+      position: relative;
+      float: right;
+      width: 40%;
+      margin-right: 30px;
+      margin-top: -3px;
+    "
+  ></div>
+
+  <div
+    style="position: relative; left: right; margin-right: 20px; margin-top: 4px"
+  >
+    <span
+      class="govuk-body-m"
+      style="
+        margin-left: 30px;
+        background: white;
+        border: 1px solid #1d70b8;
+        border-radius: 5px;
+        padding: 6px;
+      "
+      ><a
+        class="govuk-link govuk-link--no-underline govuk-link--no-visited-state"
+        style="color: #1d70b8"
+        href="#"
+        ><strong>Create a vacancy</strong></a
+      ></span
+    >
+  </div>
+</div>
+
+{% endblock %} {% block content %}
+
+<div
+  style="
+    background: white;
+    height: 950px;
+    border: 1px solid #1d70b8;
+    padding: 30px;
+  "
+>
+  <div class="govuk-tabs govuk-!-padding-top-6" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">Contents</h2>
+    <ul class="govuk-tabs__list">
+
+
+
+
+      <li class="govuk-tabs__list-item">
+        <a
+          class="govuk-tabs__tab govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state"
+          href="#past-week"
+          ><strong>Current vacancies</strong>
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+
+        <a class="govuk-tabs__tab" href="#past-month"><strong>Candidate care</strong></a>
+      </li>
+    </ul>
+
+    <div
+      class="govuk-tabs__panel govuk-tabs__panel--hidden"
+      id="past-week"
+      style="height: 800px; background: white"
+    >
+    <h2 class="govuk-heading-l">Current vacancies</h2>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr
+            class="govuk-table__row"
+            style="border-bottom: 0.5px solid #1d70b8; width: 19%"
+          >
+            <th
+              scope="col"
+              class="govuk-table__header"
+              style="width: 15%; background: #f4faff; color: #1d70b8"
+            >
+              Last mod.
+            </th>
+            <th
+              style="
+                background: #f4faff;
+                padding-left: 10px;
+                color: #1d70b8;
+                width: 30%;
+              "
+              scope="col"
+              class="govuk-table__header"
+            >
+              Job⇕
+            </th>
+            <th
+              scope="col"
+              class="govuk-table__header"
+              style="width: 15%; background: #f4faff; color: #1d70b8"
+            >
+              Grade⇕
+            </th>
+            <th
+              scope="col"
+              class="govuk-table__header"
+              style="width: 40%; background: #f4faff; color: #1d70b8"
+            >
+              Status⇕
+            </th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <tr
+            id="inter"
+            class="govuk-table__row"
+            style="border-bottom: 0.5px solid #1d70b8"
+          >
+            <td class="govuk-table__cell" style="background: white">
+              <strong id="date"></strong>
+            </td>
+
+            <td
+              class="govuk-table__cell"
+              style="padding-left: 10px; background: white"
+            >
+              <strong
+                ><a
+                  class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state"
+                  href="task-list-step2"
+                  >Policy Adviser (1001334)</a
+                ></strong
+              >
+            </td>
+            <td class="govuk-table__cell" style="width: 30%; background: white">
+              <strong>SEO</strong>
+            </td>
+
+            <td class="govuk-table__cell" style="background: white">
+              <strong style="font-size: 16px" class="govuk-tag"
+                >SIFT COMPLETE</strong
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month" style=";height:800px">
+
+      <h2 class="govuk-heading-l govuk-!-padding-bottom-0">Candidate care</h2>
+
+
+
+
+
+        <div class="govuk-grid-column-one-third" style="border-right:1px solid #1d70b8;margin-top:10px;height:700px;background:#F3F2F1;;">
+
+
+          <div class="govuk-form-group" style="margin-top:10px;">
+            <label class="govuk-label" for="sort">
+              List
+            </label>
+            <select style="width:100%;border:1px solid lightgrey" class="govuk-select" id="sort" name="sort">
+              <option value="published">Recently published</option>
+              <option value="All" selected>All</option>
+              <option value="views">Most views</option>
+              <option value="comments">Most comments</option>
+            </select>
+          </div>
+
+
+<!-- <div style="box-shadow: 0px 0px 2px 1px #737373;;margin-bottom:10px;margin-top:5px;height:auto;background:white"> -->
+
+<div style=";border:1px solid #1d70b8;margin-bottom:10px;margin-top:5px;height:auto;background:white">
+
+<a id="ra1" href="#" onclick="showHideDiv('rapanel','questionpanel')">
+<p class="govuk-body-s"  style="" id="msgStamp"></p>
+<p class="govuk-body-s" style="margin-top:-15px;padding-left:10px;padding-top:1px;padding-bottom:10px;;font-weight:normal">Reasonable adjustment request<br>Approve spend</p></a></div>
+
+
+<a id="q1" href="#" onclick="showHideDiv('questionpanel','rapanel');">
+<div style=";border:1px solid #1d70b8;margin-bottom:10px;margin-top:5px;height:auto;background:white">
+<p class="govuk-body-s"  style="" id="oldd"></p>
+<p class="govuk-body-s" style="margin-top:-15px;padding-left:10px;padding-top:1px;padding-bottom:10px;;font-weight:normal">Question about the role</p></a></div>
+
+
+
+</div>
+<div id="questionpanel" class="govuk-grid-column-two-thirds" style=";height:655px;margin-top:0px;">
+<div style=";margin-bottom:10px;margin-top:10px;height:700px;background:#F4FAFF">
+<!-- <div style="box-shadow: 0px 1px 2px 1px #737373;;margin-bottom:10px;margin-top:10px;height:650px;background:white"> -->
+
+
+  <div class="govuk-grid-column-full govuk-!-padding-top-3" style=";margin-bottom:10px;height:90px;background:#F3F2F1;border-bottom:1px solid #1d70b8">
+
+
+    <div class="govuk-grid-column-one-third">
+
+  <p style=";line-height:1.6" class="govuk-body-s">Request date</p>
+  <p style="margin-top:-20px;line-height:1.6" class="govuk-body-s">Request type</p>
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+          <p class="govuk-body-s" style="font-weight:bold;line-height:1.6" id="old2"></p>
+          <p class="govuk-body-s" style="font-weight:bold;margin-top:-20px;line-height:1.6">Question about the role</p>
+        </div>
+
+
+
+<!-- <p style="" id="msgStamp2"></p> -->
+
+  </div>
+
+  <!-- <h4 style="margin-left:20px" class="govuk-heading-m govuk-!-padding-top-3">Budget approval required</h4> -->
+
+  <p class="govuk-body-m" style="margin-left:20px;;font-weight:normal">A communi observantia non est recedendum. At nos hinc posthac, sitientis piros Afros. Fictum, deserunt mollit anim laborum astutumque!
+    Quae vero auctorem tractata ab fiducia dicuntur. Nec dubitamus multa iter quae et nos invenerat. Ullamco laboris nisi ut aliquid ex ea commodi consequat. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Sed haec quis possit intrepidus aestimare tellus.
+Paullum deliquit, ponderibus modulisque suis ratio utitur. Magna pars studiorum, prodita quaerimus. Phasellus laoreet lorem vel dolor tempus vehicula. Curabitur est gravida et libero vitae dictum.
+Hi omnes lingua, institutis, legibus inter se differunt. Quam temere in vitiis, legem sancimus haerentia. Donec sed odio operae, eu vulputate felis rhoncus.
+
+  </p>
+
+
+  <!-- <details class="govuk-details" style="margin-left:20px" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Why am I receiving this?
+      </span>
+    </summary>
+    <div class="govuk-details__text" style="background:white">
+      A communi observantia non est recedendum. At nos hinc posthac, sitientis piros Afros. Fictum, deserunt mollit anim laborum astutumque!
+    </div>
+  </details> -->
+
+
+  <!-- <h5 style="margin-left:20px" class="govuk-heading-s govuk-!-padding-top-3">Why am I receiving this?</h5> -->
+
+
+
+
+
+
+
+    <button class="govuk-button govuk-!-margin-left-3" data-module="govuk-button">
+      Reply to candidate
+    </button>
+
+
+<div class="govuk-!-margin-top-9" style="margin-left:20px;margin-top:30px;border-top:1px solid  #1d70b8;height:40px;;">
+
+<p class="govuk-body-m" style="padding:20px">Did you know that ...?<BR> You can share this question and your answer on the job advert</p>
+
+  </div>
+
+
+</div>
+
+</div>
+
+<div id="rapanel" class="govuk-grid-column-two-thirds" style=";height:655px;margin-top:0px;display:none">
+<div style=";margin-bottom:10px;margin-top:10px;height:700px;background:#F4FAFF">
+<!-- <div style="box-shadow: 0px 1px 2px 1px #737373;;margin-bottom:10px;margin-top:10px;height:650px;background:white"> -->
+
+
+  <div class="govuk-grid-column-full govuk-!-padding-top-3" style=";margin-bottom:10px;height:120px;background:#F3F2F1;border-bottom:1px solid #1d70b8">
+
+
+    <div class="govuk-grid-column-one-third">
+
+  <p style=";line-height:1.6" class="govuk-body-s">Request date</p>
+  <p style="margin-top:-20px;line-height:1.6" class="govuk-body-s">Request type</p>
+    <p style="margin-top:-20px;line-height:1.6" class="govuk-body-s">Purpose </p>
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+          <p class="govuk-body-s" style="font-weight:bold;line-height:1.6" id="msgStamp2"></p>
+          <p class="govuk-body-s" style="font-weight:bold;margin-top:-20px;line-height:1.6">Reasonable adjustment</p>
+          <p class="govuk-body-s" style="font-weight:bold;margin-top:-20px;line-height:1.6">Approve spend</p>
+        </div>
+
+
+
+<!-- <p style="" id="msgStamp2"></p> -->
+
+  </div>
+
+  <!-- <h4 style="margin-left:20px" class="govuk-heading-m govuk-!-padding-top-3">Budget approval required</h4> -->
+
+  <p class="govuk-body-m" style="margin-left:20px;;font-weight:normal">A communi observantia non est recedendum. At nos hinc posthac, sitientis piros Afros. Fictum, deserunt mollit anim laborum astutumque!</p>
+
+
+  <details class="govuk-details" style="margin-left:20px" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Why am I receiving this?
+      </span>
+    </summary>
+    <div class="govuk-details__text" style="background:white">
+      A communi observantia non est recedendum. At nos hinc posthac, sitientis piros Afros. Fictum, deserunt mollit anim laborum astutumque!
+    </div>
+  </details>
+
+
+  <!-- <h5 style="margin-left:20px" class="govuk-heading-s govuk-!-padding-top-3">Why am I receiving this?</h5> -->
+
+
+  <h2 class="govuk-heading-m" style="width:86%;border-bottom:1px solid  #1d70b8;margin-left:20px">Please act by {date}</h2>
+
+  <p class="govuk-body-m" style="margin-left:20px;;font-weight:normal">A communi observantia non est recedendum. At nos hinc posthac, sitientis piros Afros. Fictum, deserunt mollit anim laborum astutumque!</p>
+
+  <div class="govuk-form-group" style="padding:20px;">
+    <label style="margin-right:10px" class="govuk-label--s" for="costCode">
+      Select charge code
+    </label>
+    <select style="" class="govuk-select" id="costCode" name="costCode">
+      <option value="CO-GRP145-13445" selected>CO-GRP145-13445</option>
+      <option value="CO-GRP145-10981">CO-GRP145-10981</option>
+      <option value="CO-GRP145-09924">CO-GRP145-09924</option>
+    </select>
+  </div>
+
+
+
+  <div class="govuk-button-group" style="margin-left:20px">
+    <button class="govuk-button" data-module="govuk-button">
+      Approve spend request
+    </button>
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Forward request
+    </button>
+
+  </div>
+
+<div class="govuk-!-padding-top-6" style="margin-left:20px;margin-top:30px;border-top:1px solid  #1d70b8;height:40px;;">
+
+  <p class="govuk-body-m" style="padding:20px">Did you know that ...?<BR> You can share this question and your answer on the job advert</p>
+
+
+  </div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+    </div>
+  </div>
+<script>
+
+  function showHideDiv(div1,div2) {
+    document.getElementById(div1).style.display = 'block';
+    document.getElementById(div2).style.display = 'none';
+
+  }
+
+
+
+  const dateField = document.getElementById("date");
+  const msgSt = document.getElementById("msgStamp");
+  const msgSt2 = document.getElementById("msgStamp2");
+  const olddd = document.getElementById("oldd");
+  const old2 = document.getElementById("old2");
+
+  const stamp = new Date();
+  const localStamp = stamp.toLocaleDateString("en-uk", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+
+  const timeStamp = stamp.toLocaleDateString("en-uk", {
+    hour: "numeric",
+    minute: "numeric",
+    day: "numeric",
+    month: "short",
+    year: "numeric"
+  });
+
+  dateField.outerText = localStamp;
+  msgSt.style = ";padding-left:10px;padding-top:20px;font-weight:normal";
+  msgSt.innerHTML = timeStamp;
+  // msgSt2.style = "font-size:18px;padding-left:10px;padding-top:20px;font-weight:normal";
+  msgSt2.innerHTML = timeStamp;
+
+
+  var monthNames = new Array("Jan", "Feb", "Mar",
+      "Apr", "May", "June", "July", "August", "Sept",
+      "Oct", "Nov", "Dec");
+
+  const newStamp = new Date();
+  var oldDate = newStamp.getMonth()-3;
+  var curr_month = newStamp.getMonth();
+  var curr_year = newStamp.getFullYear();
+  var olderStamp = oldDate + " " + monthNames[curr_month] + " " + curr_year + ", 11:33";
+  olddd.style = ";padding-left:10px;padding-top:20px;font-weight:normal";
+  olddd.innerHTML = olderStamp;
+
+  old2.innerHTML= olderStamp
+
+  console.log(olderStamp)
+
+
+
+
+
+</script>
+{% endblock %}

@@ -1,0 +1,755 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/includes/header.html' %}
+  {% endblock %}
+  {% block beforeContent %}
+  <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+    <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+  </div> -->
+  <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Sift</span>
+
+  <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list"><strong>Return to task list</strong></a></span>
+
+  </div>
+
+  </div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
+
+{% block content %}
+
+
+<!--
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-l" style="margin-top:-20px">1001334</span>
+    <h2 class="govuk-heading-l">Policy Adviser</h2>
+
+<h1 style="font-weight:normal" class="govuk-heading-xl">Behaviour <strong>Seeing the Big Picture</strong></h1>
+
+</div>
+</div> -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-m" style="margin-top:-20px">1001334</span>
+    <p class="govuk-body-l">Policy Adviser</p>
+
+    <h1 style="font-weight:normal" class="govuk-heading-xl">Behaviour <strong>Seeing the Big Picture</strong></h1>
+
+
+<p>Understand the strategic drivers for your area of work. Align activities to contribute to
+wider organisational priorities. Remain alert to emerging issues and trends which might
+impact your work area. Seek out and share experiences to develop knowledge of the
+team’s business area. Understand how the strategies and activities of the team create
+value and meet the diverse needs of all stakeholders.</p>
+{% set scoreHTML %}
+  <h3 class="govuk-heading-s">1 - Not demonstrated</h3>
+  <p>No positive evidence and/or substantial negative evidence demonstrated.</p>
+<h3 class="govuk-heading-s">2 - Minimal demonstration</h3>
+<p>Limited positive evidence and/or mainly negative evidence demonstrated.</p>
+<h3 class="govuk-heading-s">3 - Moderate demonstration</h3>
+<p>Moderate positive evidence but some negative evidence demonstrated.</p>
+<h3 class="govuk-heading-s">4 - Acceptable demonstration</h3>
+<p>Adequate positive evidence and any negative evidence would not cause concern.</p>
+<h3 class="govuk-heading-s">5 - Good demonstration</h3>
+<p>Substantial positive evidence of the behaviour.</p>
+<h3 class="govuk-heading-s">6 - Strong demonstration</h3>
+<p>Substantial positive evidence; includes some evidence of exceeding expectations at this level.</p>
+<h3 class="govuk-heading-s">7 - Outstanding demonstration</h3>
+<p>The evidence provided wholly exceeds expectation at this level.</p>
+{% endset %}
+{{ govukDetails({
+  summaryText: "Help with scoring",
+  html: scoreHTML
+}) }}
+
+<p>You can save your progress and return at any time to complete an action.</p>
+
+  </div>
+  </div>
+  <div class="govuk-grid-row" >
+    <div class="govuk-grid-column-full answer-panel govuk-!-margin-top-6" >
+      <h2 style="padding-top:20px;border-top:1px solid #1d70b8;font-size:32px" class="govuk-heading-l">Candidate 1</h2>
+
+      <p class="govuk-body-m">When it came to tackling the issue at hand, I knew that seeing the big picture was my secret weapon. I’ve always had a knack for zooming out and taking in the landscape. This allowed me to identify the root cause that was fuelling problems, and then I collaborated with the right people to make my vision come to life.<BR><BR>
+
+      It was a thrilling experience that made a real impact when it was needed.<BR><BR>
+
+      Before I could rally my team to contribute to the solution, I had to get to the bottom of what was driving the policy. It was crucial for me to understand the main drivers so that I could align our activities with the department’s priorities. It was like putting together a puzzle, and once I had all the pieces, I could create a clear roadmap for my team to follow. It was a challenge, but I was determined to make it work.<BR><BR>
+
+      I had to inspire my team to persevere with a challenging objective, empowering them to take ownership of their work. I ensured that each member of my team felt valued and appreciated, instilling in them a sense of pride and ownership in their work. Through my leadership, every individual was encouraged to reach their full potential and contribute to the collective success of the team.<BR><BR>
+
+      In the end, my effort paid off, and I made a significant impact on the policy success and outcomes for the communities affected by government decisions.</p>
+
+      <!-- <p class="govuk-body-m">Quisque ut dolor gravida, placerat libero vel, euismod. Plura mihi bona sunt, inclinet, amari petere vellent. At nos hinc posthac, sitientis piros Afros. Praeterea iter est quasdam res quas ex communi. Integer legentibus erat a ante historiarum dapibus. Ut enim ad minim veniam, quis nostrud exercitation.<BR><BR>Qui ipsorum lingua Celtae, nostra Galli appellantur. Nec dubitamus multa iter quae et nos invenerat. A communi observantia non est recedendum. Cum ceteris in veneratione tui montes, nascetur mus.<BR><BR>Salutantibus vitae elit libero, a pharetra augue. Quam diu etiam furor iste tuus nos eludet? Fictum, deserunt mollit anim laborum astutumque!<BR><BR>Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Ab illo tempore, ab est sed immemorabili. Cum sociis natoque penatibus et magnis dis parturient. Paullum deliquit, ponderibus modulisque suis ratio utitur. Tu quoque, Brute, fili mi, nihil timor populi, nihil!<BR><BR>Nihil hic munitissimus habendi senatus locus, nihil horum? Excepteur sint obcaecat cupiditat non proident culpa. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Idque Caesaris facere voluntate liceret: sese habere. Non equidem invideo, miror magis posuere velit aliquet.<BR><BR>Praeterea iter est quasdam res quas ex communi. Curabitur est gravida et libero vitae dictum. Donec sed odio operae, eu vulputate felis rhoncus. Quo usque tandem abutere, Catilina, patientia nostra? Excepteur sint obcaecat cupiditat non proident culpa.<BR><BR>Excepteur sint obcaecat cupiditat non proident culpa. Plura mihi bona sunt, inclinet, amari petere vellent. Curabitur est gravida et libero vitae dictum.<BR><BR>Etiam habebis sem dicantur magna mollis euismod.</p> -->
+
+
+    </div>
+    </div>
+    <!-- <hr style="border:0px dashed #1d70b8" class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+    <div class="govuk-!-margin-top-3" style="background:#F2FAFF;height:auto;padding:20px;border-bottom:1px solid #1d70b8">
+
+    <p class="govuk-body-m">The candidate will see the score and feedback</p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+
+          {{ govukSelect({
+          id: "score",
+          name: "score",
+          label: {
+          text: "Score",
+          classes: "govuk-label--m"
+          },
+          items: [
+          {
+            value: "1",
+            text: "1 Not Demonstrated - No positive evidence provided"
+          },
+          {
+            value: "2",
+            text: "2 Minimal Demonstration - Limited positive evidence provided"
+          },
+          {
+            value: "3",
+            text: "3 Moderate Demonstration - Moderate positive evidence provided"
+          },
+          {
+            value: "4",
+            text: "4 Acceptable Demonstration - Adequate positive evidence provided"
+          },
+          {
+            value: "5",
+            text: "5 Good Demonstration - Substantial positive evidence provided"
+          },
+          {
+            value: "6",
+            text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
+          },
+          {
+            value: "7",
+            text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
+          },
+          {
+            value: "---",
+            text: "---",
+            selected: true
+          }
+          ]
+          }) }}
+
+    </div>
+      <div class="govuk-grid-column-two-thirds">
+    {{ govukSelect({
+    id: "reason",
+    name: "reason",
+    label: {
+    text: "Reason",
+    classes: "govuk-label--m"
+    },
+    items: [
+    {
+      value: "experienceLow",
+      text: "Not enough experience"
+    },
+    {
+      value: "experienceHigh",
+      text: "High level of experience"
+    },
+    {
+      value: "relevanceLow",
+      text: "Not relevant to role"
+    },
+    {
+      value: "relevanceHigh",
+      text: "Very relevant to role"
+    },
+    {
+      value: "exampleLow",
+      text: "No or poor example given"
+    },
+    {
+      value: "exampleHigh",
+      text: "Strong example given"
+    },
+    {
+      value: "---",
+      text: "---",
+      selected: true
+    }
+    ]
+    }) }}
+    </div>
+    </div>
+    {{ govukInput({
+    label: {
+    text: "Additional feedback for candidates (optional)"
+    },
+    classes: "govuk-input--width-50",
+    id: "feedback",
+    name: "feedback"
+    }) }}
+
+    {{ govukInput({
+    label: {
+    text: "Notes for the panel, not seen by candidate (optional)"
+    },
+    classes: "govuk-input--width-50",
+    id: "feedback",
+    name: "feedback"
+    }) }}
+<a class="govuk-link" style="font-size:20px" href="task-list">Save and return to tasklist</a>
+</div>
+
+  <!-- <hr  style="border:1px solid #1d70b8" class="govuk-!-margin-top-9 govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full answer-panel">
+
+    <h2 style="font-size:32px" class="govuk-heading-l govuk-!-margin-top-6">Candidate 2</h2>
+
+      <p class="govuk-body-m">When it came to tackling the issue at hand, I knew that seeing the big picture was my secret weapon. I’ve always had a knack for zooming out and taking in the landscape. This allowed me to identify the root cause that was fuelling problems, and then I collaborated with the right people to make my vision come to life.<BR><BR>
+
+      It was a thrilling experience that made a real impact when it was needed.<BR><BR>
+
+      Before I could rally my team to contribute to the solution, I had to get to the bottom of what was driving the policy. It was crucial for me to understand the main drivers so that I could align our activities with the department’s priorities. It was like putting together a puzzle, and once I had all the pieces, I could create a clear roadmap for my team to follow. It was a challenge, but I was determined to make it work.<BR><BR>
+
+      I had to inspire my team to persevere with a challenging objective, empowering them to take ownership of their work. I ensured that each member of my team felt valued and appreciated, instilling in them a sense of pride and ownership in their work. Through my leadership, every individual was encouraged to reach their full potential and contribute to the collective success of the team.<BR><BR>
+
+      In the end, my effort paid off, and I made a significant impact on the policy success and outcomes for the communities affected by government decisions.</p>
+
+
+
+
+
+
+    </div>
+    </div>
+    <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+    <div class="govuk-!-margin-top-3" style="background:#F2FAFF;height:auto;padding:20px;border-bottom:1px solid #1d70b8">
+
+    <p>The candidate will see the score and feedback</p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+
+                    {{ govukSelect({
+                    id: "score",
+                    name: "score",
+                    label: {
+                    text: "Score",
+                    classes: "govuk-label--m"
+                    },
+                    items: [
+                    {
+                      value: "1",
+                      text: "1 Not Demonstrated - No positive evidence provided"
+                    },
+                    {
+                      value: "2",
+                      text: "2 Minimal Demonstration - Limited positive evidence provided"
+                    },
+                    {
+                      value: "3",
+                      text: "3 Moderate Demonstration - Moderate positive evidence provided"
+                    },
+                    {
+                      value: "4",
+                      text: "4 Acceptable Demonstration - Adequate positive evidence provided"
+                    },
+                    {
+                      value: "5",
+                      text: "5 Good Demonstration - Substantial positive evidence provided"
+                    },
+                    {
+                      value: "6",
+                      text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
+                    },
+                    {
+                      value: "7",
+                      text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
+                    },
+                    {
+                      value: "---",
+                      text: "---",
+                      selected: true
+                    }
+                    ]
+                    }) }}
+
+              </div>
+                <div class="govuk-grid-column-two-thirds">
+              {{ govukSelect({
+              id: "reason",
+              name: "reason",
+              label: {
+              text: "Reason",
+              classes: "govuk-label--m"
+              },
+              items: [
+              {
+                value: "experienceLow",
+                text: "Not enough experience"
+              },
+              {
+                value: "experienceHigh",
+                text: "High level of experience"
+              },
+              {
+                value: "relevanceLow",
+                text: "Not relevant to role"
+              },
+              {
+                value: "relevanceHigh",
+                text: "Very relevant to role"
+              },
+              {
+                value: "exampleLow",
+                text: "No or poor example given"
+              },
+              {
+                value: "exampleHigh",
+                text: "Strong example given"
+              },
+              {
+                value: "---",
+                text: "---",
+                selected: true
+              }
+              ]
+              }) }}
+              </div>
+              </div>
+              {{ govukInput({
+              label: {
+              text: "Additional feedback for candidates (optional)"
+              },
+              classes: "govuk-input--width-50",
+              id: "feedback",
+              name: "feedback"
+              }) }}
+
+              {{ govukInput({
+              label: {
+              text: "Notes for the panel, not seen by candidate (optional)"
+              },
+              classes: "govuk-input--width-50",
+              id: "feedback",
+              name: "feedback"
+              }) }}
+
+              <a class="govuk-link" style="font-size:20px" href="task-list">Save and return to tasklist</a>
+              </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full answer-panel">
+          <h2 style="font-size:32px" class="govuk-heading-l govuk-!-margin-top-6">Candidate 3</h2>
+
+      <p class="govuk-body-m">When it came to tackling the issue at hand, I knew that seeing the big picture was my secret weapon. I’ve always had a knack for zooming out and taking in the landscape. This allowed me to identify the root cause that was fuelling problems, and then I collaborated with the right people to make my vision come to life.<BR><BR>
+
+      It was a thrilling experience that made a real impact when it was needed.<BR><BR>
+
+      Before I could rally my team to contribute to the solution, I had to get to the bottom of what was driving the policy. It was crucial for me to understand the main drivers so that I could align our activities with the department’s priorities. It was like putting together a puzzle, and once I had all the pieces, I could create a clear roadmap for my team to follow. It was a challenge, but I was determined to make it work.<BR><BR>
+
+      I had to inspire my team to persevere with a challenging objective, empowering them to take ownership of their work. I ensured that each member of my team felt valued and appreciated, instilling in them a sense of pride and ownership in their work. Through my leadership, every individual was encouraged to reach their full potential and contribute to the collective success of the team.<BR><BR>
+
+      In the end, my effort paid off, and I made a significant impact on the policy success and outcomes for the communities affected by government decisions.</p>
+
+
+    </div>
+    </div>
+    <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+    <div class="govuk-!-margin-top-3" style="background:#F2FAFF;height:auto;padding:20px;border-bottom:1px solid #1d70b8">
+
+    <p>The candidate will see the score and feedback</p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+
+                    {{ govukSelect({
+                    id: "score",
+                    name: "score",
+                    label: {
+                    text: "Score",
+                    classes: "govuk-label--m"
+                    },
+                    items: [
+                    {
+                      value: "1",
+                      text: "1 Not Demonstrated - No positive evidence provided"
+                    },
+                    {
+                      value: "2",
+                      text: "2 Minimal Demonstration - Limited positive evidence provided"
+                    },
+                    {
+                      value: "3",
+                      text: "3 Moderate Demonstration - Moderate positive evidence provided"
+                    },
+                    {
+                      value: "4",
+                      text: "4 Acceptable Demonstration - Adequate positive evidence provided"
+                    },
+                    {
+                      value: "5",
+                      text: "5 Good Demonstration - Substantial positive evidence provided"
+                    },
+                    {
+                      value: "6",
+                      text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
+                    },
+                    {
+                      value: "7",
+                      text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
+                    },
+                    {
+                      value: "---",
+                      text: "---",
+                      selected: true
+                    }
+                    ]
+                    }) }}
+
+              </div>
+                <div class="govuk-grid-column-two-thirds">
+              {{ govukSelect({
+              id: "reason",
+              name: "reason",
+              label: {
+              text: "Reason",
+              classes: "govuk-label--m"
+              },
+              items: [
+              {
+                value: "experienceLow",
+                text: "Not enough experience"
+              },
+              {
+                value: "experienceHigh",
+                text: "High level of experience"
+              },
+              {
+                value: "relevanceLow",
+                text: "Not relevant to role"
+              },
+              {
+                value: "relevanceHigh",
+                text: "Very relevant to role"
+              },
+              {
+                value: "exampleLow",
+                text: "No or poor example given"
+              },
+              {
+                value: "exampleHigh",
+                text: "Strong example given"
+              },
+              {
+                value: "---",
+                text: "---",
+                selected: true
+              }
+              ]
+              }) }}
+              </div>
+              </div>
+              {{ govukInput({
+              label: {
+              text: "Additional feedback for candidates (optional)"
+              },
+              classes: "govuk-input--width-50",
+              id: "feedback",
+              name: "feedback"
+              }) }}
+
+              {{ govukInput({
+              label: {
+              text: "Notes for the panel, not seen by candidate (optional)"
+              },
+              classes: "govuk-input--width-50",
+              id: "feedback",
+              name: "feedback"
+              }) }}
+
+              <a class="govuk-link" style="font-size:20px" href="task-list">Save and return to tasklist</a>
+              </div>
+
+            <!-- <hr  style="border:1px solid #1d70b8" class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full answer-panel">
+        <h2 style="font-size:32px" class="govuk-heading-l govuk-!-margin-top-6">Candidate 4</h2>
+
+      <p class="govuk-body-m">When it came to tackling the issue at hand, I knew that seeing the big picture was my secret weapon. I’ve always had a knack for zooming out and taking in the landscape. This allowed me to identify the root cause that was fuelling problems, and then I collaborated with the right people to make my vision come to life.<BR><BR>
+
+      It was a thrilling experience that made a real impact when it was needed.<BR><BR>
+
+      Before I could rally my team to contribute to the solution, I had to get to the bottom of what was driving the policy. It was crucial for me to understand the main drivers so that I could align our activities with the department’s priorities. It was like putting together a puzzle, and once I had all the pieces, I could create a clear roadmap for my team to follow. It was a challenge, but I was determined to make it work.<BR><BR>
+
+      I had to inspire my team to persevere with a challenging objective, empowering them to take ownership of their work. I ensured that each member of my team felt valued and appreciated, instilling in them a sense of pride and ownership in their work. Through my leadership, every individual was encouraged to reach their full potential and contribute to the collective success of the team.<BR><BR>
+
+      In the end, my effort paid off, and I made a significant impact on the policy success and outcomes for the communities affected by government decisions.</p>
+
+
+    </div>
+    </div>
+    <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+    <div class="govuk-!-margin-top-3" style="background:#F2FAFF;height:auto;padding:20px;border-bottom:1px solid #1d70b8">
+
+        <p>The candidate will see the score and feedback</p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+
+                    {{ govukSelect({
+                    id: "score",
+                    name: "score",
+                    label: {
+                    text: "Score",
+                    classes: "govuk-label--m"
+                    },
+                    items: [
+                    {
+                      value: "1",
+                      text: "1 Not Demonstrated - No positive evidence provided"
+                    },
+                    {
+                      value: "2",
+                      text: "2 Minimal Demonstration - Limited positive evidence provided"
+                    },
+                    {
+                      value: "3",
+                      text: "3 Moderate Demonstration - Moderate positive evidence provided"
+                    },
+                    {
+                      value: "4",
+                      text: "4 Acceptable Demonstration - Adequate positive evidence provided"
+                    },
+                    {
+                      value: "5",
+                      text: "5 Good Demonstration - Substantial positive evidence provided"
+                    },
+                    {
+                      value: "6",
+                      text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
+                    },
+                    {
+                      value: "7",
+                      text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
+                    },
+                    {
+                      value: "---",
+                      text: "---",
+                      selected: true
+                    }
+                    ]
+                    }) }}
+
+              </div>
+                <div class="govuk-grid-column-two-thirds">
+              {{ govukSelect({
+              id: "reason",
+              name: "reason",
+              label: {
+              text: "Reason",
+              classes: "govuk-label--m"
+              },
+              items: [
+              {
+                value: "experienceLow",
+                text: "Not enough experience"
+              },
+              {
+                value: "experienceHigh",
+                text: "High level of experience"
+              },
+              {
+                value: "relevanceLow",
+                text: "Not relevant to role"
+              },
+              {
+                value: "relevanceHigh",
+                text: "Very relevant to role"
+              },
+              {
+                value: "exampleLow",
+                text: "No or poor example given"
+              },
+              {
+                value: "exampleHigh",
+                text: "Strong example given"
+              },
+              {
+                value: "---",
+                text: "---",
+                selected: true
+              }
+              ]
+              }) }}
+              </div>
+              </div>
+              {{ govukInput({
+              label: {
+              text: "Additional feedback for candidates (optional)"
+              },
+              classes: "govuk-input--width-50",
+              id: "feedback",
+              name: "feedback"
+              }) }}
+
+              {{ govukInput({
+              label: {
+              text: "Notes for the panel, not seen by candidate (optional)"
+              },
+              classes: "govuk-input--width-50",
+              id: "feedback",
+              name: "feedback"
+              }) }}
+
+              <a class="govuk-link" style="font-size:20px" href="task-list">Save and return to tasklist</a>
+              </div>
+
+            <!-- <hr  style="border:1px solid #1d70b8" class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full answer-panel">
+
+          <h2 style="font-size:32px" class="govuk-heading-l govuk-!-margin-top-6">Candidate 5</h2>
+
+      <p class="govuk-body-m">When it came to tackling the issue at hand, I knew that seeing the big picture was my secret weapon. I’ve always had a knack for zooming out and taking in the landscape. This allowed me to identify the root cause that was fuelling problems, and then I collaborated with the right people to make my vision come to life.<BR><BR>
+
+      It was a thrilling experience that made a real impact when it was needed.<BR><BR>
+
+      Before I could rally my team to contribute to the solution, I had to get to the bottom of what was driving the policy. It was crucial for me to understand the main drivers so that I could align our activities with the department’s priorities. It was like putting together a puzzle, and once I had all the pieces, I could create a clear roadmap for my team to follow. It was a challenge, but I was determined to make it work.<BR><BR>
+
+      I had to inspire my team to persevere with a challenging objective, empowering them to take ownership of their work. I ensured that each member of my team felt valued and appreciated, instilling in them a sense of pride and ownership in their work. Through my leadership, every individual was encouraged to reach their full potential and contribute to the collective success of the team.<BR><BR>
+
+      In the end, my effort paid off, and I made a significant impact on the policy success and outcomes for the communities affected by government decisions.</p>
+
+    </div>
+    </div>
+    <div class="govuk-!-margin-top-3" style="background:#F2FAFF;height:auto;padding:20px;border-bottom:1px solid #1d70b8">
+
+        <p>The candidate will see the score and feedback</p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+
+                    {{ govukSelect({
+                    id: "score",
+                    name: "score",
+                    label: {
+                    text: "Score",
+                    classes: "govuk-label--m"
+                    },
+                    items: [
+                    {
+                      value: "1",
+                      text: "1 Not Demonstrated - No positive evidence provided"
+                    },
+                    {
+                      value: "2",
+                      text: "2 Minimal Demonstration - Limited positive evidence provided"
+                    },
+                    {
+                      value: "3",
+                      text: "3 Moderate Demonstration - Moderate positive evidence provided"
+                    },
+                    {
+                      value: "4",
+                      text: "4 Acceptable Demonstration - Adequate positive evidence provided"
+                    },
+                    {
+                      value: "5",
+                      text: "5 Good Demonstration - Substantial positive evidence provided"
+                    },
+                    {
+                      value: "6",
+                      text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
+                    },
+                    {
+                      value: "7",
+                      text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
+                    },
+                    {
+                      value: "---",
+                      text: "---",
+                      selected: true
+                    }
+                    ]
+                    }) }}
+
+              </div>
+                <div class="govuk-grid-column-two-thirds">
+              {{ govukSelect({
+              id: "reason",
+              name: "reason",
+              label: {
+              text: "Reason",
+              classes: "govuk-label--m"
+              },
+              items: [
+              {
+                value: "experienceLow",
+                text: "Not enough experience"
+              },
+              {
+                value: "experienceHigh",
+                text: "High level of experience"
+              },
+              {
+                value: "relevanceLow",
+                text: "Not relevant to role"
+              },
+              {
+                value: "relevanceHigh",
+                text: "Very relevant to role"
+              },
+              {
+                value: "exampleLow",
+                text: "No or poor example given"
+              },
+              {
+                value: "exampleHigh",
+                text: "Strong example given"
+              },
+              {
+                value: "---",
+                text: "---",
+                selected: true
+              }
+              ]
+              }) }}
+              </div>
+              </div>
+              {{ govukInput({
+              label: {
+              text: "Additional feedback for candidates (optional)"
+              },
+              classes: "govuk-input--width-50",
+              id: "feedback",
+              name: "feedback"
+              }) }}
+
+              {{ govukInput({
+              label: {
+              text: "Notes for the panel, not seen by candidate (optional)"
+              },
+              classes: "govuk-input--width-50",
+              id: "feedback",
+              name: "feedback"
+              }) }}
+
+</div>
+
+{{ govukButton({
+  classes:"govuk-!-margin-top-6",
+  text: "Next behaviour",
+  href: "1001334-score-changing"
+}) }}
+  <p><a href="task-list">Save and return to tasklist</a></p>
+
+{% endblock %}
