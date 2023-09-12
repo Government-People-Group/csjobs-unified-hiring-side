@@ -36,7 +36,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-  <h1 class="govuk-heading-xl">Full sift panel results</h1>
+  <h1 class="govuk-heading-xl">Confirm the sift results</h1>
 
   <p class="govuk-body-m">All scores and recommendations from panel members have been combined to show the average scores.</p>
 
@@ -103,9 +103,6 @@
         <th scope="col" class="govuk-table__header app-custom-class"></th>
         <th scope="col" class="govuk-table__header app-custom-class">Average score</th>
         <th scope="col" class="govuk-table__header app-custom-class">Panel consensus</th>
-        <th scope="col" class="govuk-table__header app-custom-class">P1</th>
-        <th scope="col" class="govuk-table__header app-custom-class">P2</th>
-        <th scope="col" class="govuk-table__header app-custom-class">P3</th>
       </tr>
     </thead>
     <tbody class="govuk-table__body">
@@ -123,9 +120,7 @@
           </strong>
           {% endif %}
         </td>
-        <td class="govuk-table__cell">{{ v3p[0] }}</td>
-        <td class="govuk-table__cell">{{ v3p[1] }}</td>
-        <td class="govuk-table__cell">{{ v3p[2] }}</td></tr>
+      </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Candidate 7</th>
           <td class="govuk-table__cell">{{ v7 }}</td>
@@ -148,9 +143,7 @@
 
 
           </td>
-          <td class="govuk-table__cell">{{ v7p[0] }}</td>
-          <td class="govuk-table__cell">{{ v7p[1] }}</td>
-          <td class="govuk-table__cell">{{ v7p[2] }}</td>
+
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Candidate 5</th>
@@ -166,9 +159,7 @@
             </strong>
             {% endif %}
           </td>
-          <td class="govuk-table__cell">{{ v5p[0] }}</td>
-          <td class="govuk-table__cell">{{ v5p[1] }}</td>
-          <td class="govuk-table__cell">{{ v5p[2] }}</td>
+
         </tr>
 
 
@@ -198,9 +189,7 @@
 
 
           </td>
-          <td class="govuk-table__cell">{{ v16p[0] }}</td>
-          <td class="govuk-table__cell">{{ v16p[1] }}</td>
-          <td class="govuk-table__cell">{{ v16p[2] }}</td>
+
         </tr>
 
         <tr class="govuk-table__row">
@@ -217,9 +206,7 @@
             </strong>
             {% endif %}
           </td>
-          <td class="govuk-table__cell">{{ v15p[0] }}</td>
-          <td class="govuk-table__cell">{{ v15p[1] }}</td>
-          <td class="govuk-table__cell">{{ v15p[2] }}</td>
+
         </tr>
 
         <tr class="govuk-table__row">
@@ -236,9 +223,7 @@
             </strong>
             {% endif %}
           </td>
-          <td class="govuk-table__cell">{{ v1p[0] }}</td>
-          <td class="govuk-table__cell">{{ v1p[1] }}</td>
-          <td class="govuk-table__cell">{{ v1p[2] }}</td>
+
         </tr>
 
         <tr class="govuk-table__row">
@@ -255,9 +240,7 @@
             </strong>
             {% endif %}
           </td>
-          <td class="govuk-table__cell">{{ v9p[0] }}</td>
-          <td class="govuk-table__cell">{{ v9p[1] }}</td>
-          <td class="govuk-table__cell">{{ v9p[2] }}</td>
+
         </tr>
 
         <tr class="govuk-table__row">
@@ -274,9 +257,7 @@
             </strong>
             {% endif %}
           </td>
-          <td class="govuk-table__cell">{{ v11p[0] }}</td>
-          <td class="govuk-table__cell">{{ v11p[1] }}</td>
-          <td class="govuk-table__cell">{{ v11p[2] }}</td>
+
         </tr>
 
     </tbody>
