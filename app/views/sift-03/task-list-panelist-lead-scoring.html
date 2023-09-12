@@ -67,7 +67,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
     <div class="govuk-!-margin-top-3" style="border-top:1px solid #1d70b8;background:#F3F2F1;padding:10px;border-bottom:1px solid #1d70b8">
 
 <h3 class="govuk-heading-m" style="font-size:20px;font-weight:normal">Seeing the Big Picture description for Senior Executive Officer (SEO) grade</h3>
-<ul class="govuk-list govuk-list--bullet" style="font-size:18px;line-height:1.3;margin-bottom:-2px">
+<ul class="govuk-list govuk-list--bullet" style="font-size:20px;line-height:1.3;margin-bottom:-2px">
   <li>Understand the strategic drivers for your area of work</li>
   <li>Align activities to contribute to wider organisational priorities</li>
   <li>Remain alert to emerging issues and trends which might impact your work area</li>
@@ -210,34 +210,46 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
   </div>
   <textarea id="textA" style="width:100%;background:white;border:2px solid #1d70b8" class="govuk-textarea" id="notes" name="notes" rows="3"></textarea>
   </div> -->
-  <div style="margin-top:20px">
+  <div style="margin-top:50px; ">
 
-    <div id="succBanner" style="display:none;width:55%;float:right" class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-      aria-labelledby="govuk-notification-banner-title"
-      data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Success
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <div style="float:right"><a href="#" onClick="hideDiv('succBanner')">Dismiss message</a>
-        </div>
-        <h3 class="govuk-notification-banner__heading">
-          Saved.
-        </h3>
-      </div>
-    </div>
 
-    <button class="govuk-button" onclick="shDiv('succBanner')" data-module="govuk-button">
-      Save
+
+    <button id="saveB" class="govuk-button govuk-!-margin-top-5" style="width:25%" onclick="shDiv('succBanner');hideDiv('saveB');shDiv('butopt')" data-module="govuk-button">
+      Save score
     </button>
 
   <!-- {{ govukButton({
     classes: "govuk-!-margin-right-1 govuk-!-margin-top-6",
   text: "Save"
   }) }} -->
-
+  <div id="succBanner" style="display:none;width:49%;" class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+    aria-labelledby="govuk-notification-banner-title"
+    data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header" style="">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content"  style="height:15px">
+      <div style="float:right;"><a href="#" onClick="hideDiv('succBanner')">Dismiss</a>
+      </div>
+      <h3 style="font-size:20px" class="govuk-notification-banner__heading">
+        Saved.
+      </h3>
+    </div>
+  </div>
+  <div style="display:none" id="butopt">
+  <form class="form" action="task-list-panelist-lead-scoring-2" method="post">
+{{ govukButton({
+  classes: "govuk-!-margin-right-1 govuk-!-margin-top-3",
+text: "Continue to Candidate 16"
+}) }}
+{{ govukButton({
+  classes: "govuk-button govuk-button--secondary govuk-!-margin-left-3 govuk-!-margin-top-3",
+text: "Return to task list"
+}) }}
+</form>
+</div>
 </div>
 </div>
 </div>
@@ -317,7 +329,7 @@ function hideDiv(div1) {
 }
 
 function shDiv(div1) {
-  document.getElementById(div1).style.display = 'none';
+  document.getElementById(div1).style.display = 'block';
 }
 
 

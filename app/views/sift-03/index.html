@@ -5,17 +5,64 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
 
-
-    <h2 class="govuk-heading-l">
-      {{ serviceName }}
-    </h2>
       <h1 class="govuk-heading-xl">Sift v03</h1>
 
-<p class="gov-body-m">Scenario: active campaign</p>
-<ol class="govuk-list">
-<li><a href="home-new#vacancies">Home</a></li>
+<h2 class="govuk-heading-l">Panel chair</h2>
+<h4 class="govuk-heading-m">Home page</h4>
+<ol class="govuk-list govuk-list--number">
+<li><a href="/sift-03/home-new#action">Reasonable adjustment request tab</a></li>
+<li><a href="/sift-03/home-new#vacancies">Vacancy list tab</a></li>
+<li><a href="/sift-03/home-new#dash">Campaign dashboard tab</a></li>
+</ol>
+
+<h4 class="govuk-heading-m govuk-!-margin-top-9">Sift by lead criteria</h4>
+<ol start="4" class="govuk-list govuk-list--number">
+<li><a href="/sift-03/task-list">Task list</a></li>
+
+<li><a href="/sift-03/manage-minimum-scores-exp?tasklist=first">Setting minimum pass marks from task-list</a></li>
+<li><a href="/sift-03/task-list-siftstage1">Panel chair clicks to start sifting applications against the lead criteria</a></li>
+
+<li><a href="/sift-03/task-list-lead-scoring">Panel chair scores Candidate 1 for lead criteria - scoring panel at bottom of page - opportunity to prompt around canned comments feature</a></li>
+<li><a href="/sift-03/task-list-lead-scoring-2">Panel chair scores Candidate 16 for lead criteria - scoring panel to right of candidate answer</a></li>
+<li><a href="/sift-03/task-list-siftstage1-submit">Panel chair has completed sift for lead criteria and is presented their sift results page</a></li>
+<li><a href="/sift-03/task-list-siftstage1-submit">Panel chair has completed sift for lead criteria and is presented their sift results page</a></li>
+<li><a href="/sift-03/task-list-siftstage1-submit">Panel chair submits their results and receives confirmation</a></li>
+
+<li><a href="/sift-03/lead-panel-results?width2=5&width3=4">Panel chair views the consolidated scores from all Panel members - for all candidates, including those on priority schemes</a></li>
+
+<li><a href="/sift-03/consensus?sc=2,5,5">A consensus meeting is needed for one candidate result - the Panel chair sets up the consensus meeting and returns to the service when it's done</a></li>
+<li><a href="/sift-03/confirm-lead-results">The Panel chair returns to the service to confirm the results of the sift by lead criteria</a></li>
+
+
+<h4 class="govuk-heading-m govuk-!-margin-top-9">Sift successful candidates</h4>
+
+<li><a href="/sift-03/task-list-siftstage2">The Panel chair views the candidate list of scores</a></li>
+<li><a href="/sift-03/score-changing">The Panel sifts through the candidate answers by the behaviour Changing and Improving</a></li>
+
+<li><a href="score-managing-quality-1">The next behaviour (managing a quality service) is next, but variant presents 1 candidate answer for the behaviour on a page</a></li>
+<li><a href="score-managing-quality-1">Managing a quality service second page</a></li>
+<li><a href="score-managing-quality-5">Managing a quality service final page before returning to task-list</a></li>
+<li><a href="/sift-03/task-list-lead-scoring-personal-statement">The Panel chair examines a candidate's personal statement</a></li>
+
+<li><a href="/sift-03/view-sift2-panel-results">Meanwhile, the panel have finished scoring the candidates, thhis means the Panel chair can reviews the proposed averaged scores for the candidates (no need for a consensus meeting)</a></li>
+<li><a href="/sift-03/confirm-sift2-result">The Panel chair is satisfied with the panel's scores, so accept it and confirms - by doing so, the sift is completed and the candidate interview list is established</a></li>
+
+<li><a href="/sift-03/task-list-interview?confs2=yes#contact">The Panel chair is presented with a confirmation (of their confirmation) and floats the idea that some of the interviewees have reasonable adjustments that are needed...the task list is refined focusing on the interview actions required of the vacancy holder</a></li>
+
+</ol>
+
+<h2 class="govuk-heading-l">Panel member</h2>
+<ol start="4" class="govuk-list govuk-list--number">
+<li><a href="/sift-03/sign-in">Panel member invited to sign into CSJ</a></li>
+<li><a href="/sift-03/task-list-panelist-lead">Panel member provided with limited access - simplified task list for lead criteria sift</a></li>
+<li><a href="/sift-03/task-list-panelist-lead-scoring">Panel member scores Candidate 1 for lead criteria - scoring panel at bottom of page</a></li>
+<li><a href="/sift-03/task-list-panelist-lead-scoring-2">Panel member scores Candidate 2 for lead criteria - scoring panel to right of candidate answer</a></li>
+<li><a href="/sift-03/task-list-panelist-lead-submit">Task list complete - Panel member has completed assessment of lead criteria</a></li>
+<li><a href="/sift-03/panelist-view-scored-lead?ca=1&sc=2&reason=Not%20enough%20experience">Task list complete - Panel member can review the candidate answers and scoring before submitting to the panel</a></li>
+<li><a href="/sift-03/task-list-panelist-lead-submit-confirm">Panel member views confirmation upon submission of the results</a></li>
+
 </ol>
 
   </div>

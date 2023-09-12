@@ -32,8 +32,22 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 <form class="form" action="manage-minimum-scores-exp" method="post">
 
+  {% if data['lll'] == "y" %}
+  <span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="view-sift2-panel-results"><strong>Back to panel results</strong></a></span>
+
+  {% endif %}
+
 {% if data['tasklist'] === "first" %}
 <span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="task-list?leadScores=set"><strong>Back to task-list</strong></a></span>
+{% endif %}
+
+{% if data['s2'] === "true" %}
+<span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="view-sift2-panel-results"><strong>Back to task-list</strong></a></span>
+{% endif %}
+
+
+{% if data['sift2'] === "true" %}
+<span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="task-listsiftstage2"><strong>Back to candidate list</strong></a></span>
 {% endif %}
 
 {% if data['panel'] == "scores" %}
@@ -42,6 +56,11 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 {% if data['confirm'] == "scores" %}
 <span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="confirm-lead-results"><strong>Back to confirm lead results</strong></a></span>
 {% endif %}
+
+
+
+
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full" style="">
@@ -181,17 +200,17 @@ classes: "govuk-button--secondary"
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Experience of operating in a fast-paced environment to provide policy advice and briefing to seniors and stakeholders</td>
+          <td class="govuk-table__cell">Behaviours: Changing and Improving</td>
           <td class="govuk-table__cell">5</td>
           <td class="govuk-table__cell">4 </td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Knowledge of how to deliver oral and written information effectively</td>
+          <td class="govuk-table__cell">Behaviours: Managing a Quality Service</td>
           <td class="govuk-table__cell">5</td>
           <td class="govuk-table__cell">4 </td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Evidence of understanding the current national policy challenges for the population impacted by this area</td>
+          <td class="govuk-table__cell">Experience of building relationships with busy stakeholders ...<BR>Knowledge of how to deliver oral and written information effectively</td>
           <td class="govuk-table__cell">5</td>
           <td class="govuk-table__cell">4 </td>
         </tr>
@@ -223,35 +242,35 @@ classes: "govuk-button--secondary"
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Building engaging and effective relationships with stakeholders</td>
-          <td class="govuk-table__cell">5</td>
+          <td class="govuk-table__cell">4</td>
           <td class="govuk-table__cell">4 </td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Seeing the Big Picture</td>
-          <td class="govuk-table__cell">5</td>
+          <td class="govuk-table__cell">4</td>
           <td class="govuk-table__cell">4 </td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Changing and Improving</td>
-          <td class="govuk-table__cell">5</td>
+          <td class="govuk-table__cell">4</td>
           <td class="govuk-table__cell">4 </td>
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Analytical (Strengths)</td>
-          <td class="govuk-table__cell">5</td>
+          <td class="govuk-table__cell">4</td>
           <td class="govuk-table__cell">4 </td>
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Challenger (Strengths)</td>
-          <td class="govuk-table__cell">5</td>
+          <td class="govuk-table__cell">4</td>
           <td class="govuk-table__cell">4 </td>
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Problem Solver (Strengths)</td>
-          <td class="govuk-table__cell">5</td>
+          <td class="govuk-table__cell">4</td>
           <td class="govuk-table__cell">4 </td>
         </tr>
 

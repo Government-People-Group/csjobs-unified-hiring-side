@@ -1,0 +1,294 @@
+
+
+  {% extends "layouts/main.html" %}
+
+  {% block header %}
+  {% include '/includes/header.html' %}
+  {% endblock %}
+  {% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+  {% endblock %}
+
+  {% block beforeContent %}
+
+
+  <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+  <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="manage-minimum-scores-exp?lll=y#past-week"><strong>Manage minimum scores</strong></a></span>
+
+    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list"><strong>Return to task list</strong></a></span>
+  </div>
+  <a style="color:white;margin-left:10px" href="javascript:window.history.back()" class="govuk-back-link govuk-back-link--inverse">Back</a>
+  </div>
+
+
+  {% endblock %}
+
+
+  {% block content %}
+
+
+
+
+
+    <span class="govuk-caption-m govuk-!-margin-top-6" style="">1001334</span>
+    <p class="govuk-body-l">Policy Adviser</p>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+  <h1 class="govuk-heading-xl">Full sift panel results</h1>
+
+  <p class="govuk-body-m">All scores and recommendations from panel members have been combined to show the average scores.</p>
+
+  {% set v16 = 5 %}
+  {% set v7 = 6 %}
+
+  {% set v1 = 14 %}
+  {% set v1p = [13,14,15] %}
+
+
+  {% set v2 = 13 %}
+  {% set v2p = [3,3,3] %}
+
+  {% set v3 = 18.66 %}
+  {% set v3p = [18,20,18] %}
+
+
+  {% set v4 = 14 %}
+  {% set v4p = [3,4,5] %}
+
+  {% set v5 = 15.66 %}
+  {% set v5p = [17,15,15] %}
+
+  {% set v6 = 13.33 %}
+  {% set v6p = [2,4,4] %}
+
+  {% set v7 = 17.66 %}
+  {% set v7p = [18,17,18] %}
+
+  {% set v8 = 14 %}
+  {% set v8p = [4,4,4] %}
+
+  {% set v9 = 14 %}
+  {% set v9p = [13,14,15] %}
+
+  {% set v10 = 13 %}
+  {% set v10p = [3,3,3] %}
+
+  {% set v11 = 13.66 %}
+  {% set v11p = [12,14,15] %}
+
+  {% set v12 = 14.33 %}
+  {% set v12p = [3,3,5] %}
+
+  {% set v13 = 14 %}
+  {% set v13p = [2,5,5] %}
+
+  {% set v14 = 14 %}
+  {% set v14p = [4,4,4] %}
+
+  {% set v15 = 15.33 %}
+  {% set v15p = [16,15,16] %}
+
+  {% set v16 = 15.66 %}
+  {% set v16p = [15,17,15] %}
+
+{% set minpass = 15 | float %}
+
+  <table class="govuk-table" style="width:75%"">
+    <caption class="govuk-table__caption govuk-table__caption--s">
+  The minimum pass mark = {{ data['width2'] | default(15)}}.</caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header app-custom-class"></th>
+        <th scope="col" class="govuk-table__header app-custom-class">Average score</th>
+        <th scope="col" class="govuk-table__header app-custom-class">Panel consensus</th>
+        <th scope="col" class="govuk-table__header app-custom-class">P1</th>
+        <th scope="col" class="govuk-table__header app-custom-class">P2</th>
+        <th scope="col" class="govuk-table__header app-custom-class">P3</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Candidate 3</th>
+        <td class="govuk-table__cell">{{ v3 }}</td>
+        <td class="govuk-table__cell">
+          {% if v3|float >= minpass  %}
+          <strong class="govuk-tag govuk-tag--green">
+            RECOMMENDATION FOR INTERVIEW
+          </strong>
+          {% else %}
+          <strong class="govuk-tag govuk-tag--red">
+            REJECT CANDIDATE
+          </strong>
+          {% endif %}
+        </td>
+        <td class="govuk-table__cell">{{ v3p[0] }}</td>
+        <td class="govuk-table__cell">{{ v3p[1] }}</td>
+        <td class="govuk-table__cell">{{ v3p[2] }}</td></tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 7</th>
+          <td class="govuk-table__cell">{{ v7 }}</td>
+          <td class="govuk-table__cell">
+
+
+
+            {% if v7|float >= minpass  %}
+
+            <strong class="govuk-tag govuk-tag--green">
+              RECOMMENDATION FOR INTERVIEW
+            </strong>
+
+            {% else %}
+
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+
+
+          </td>
+          <td class="govuk-table__cell">{{ v7p[0] }}</td>
+          <td class="govuk-table__cell">{{ v7p[1] }}</td>
+          <td class="govuk-table__cell">{{ v7p[2] }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 5</th>
+          <td class="govuk-table__cell">{{ v5 }}</td>
+          <td class="govuk-table__cell">
+            {% if v5|float >= minpass  %}
+            <strong class="govuk-tag govuk-tag--green">
+              RECOMMENDATION FOR INTERVIEW
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+          <td class="govuk-table__cell">{{ v5p[0] }}</td>
+          <td class="govuk-table__cell">{{ v5p[1] }}</td>
+          <td class="govuk-table__cell">{{ v5p[2] }}</td>
+        </tr>
+
+
+
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 16</th>
+          <td class="govuk-table__cell">{{ v16 }}</td>
+          <td class="govuk-table__cell">
+
+
+
+
+            {% if v16|float >= minpass  %}
+
+            <strong class="govuk-tag govuk-tag--green">
+              RECOMMENDATION FOR INTERVIEW
+            </strong>
+
+            {% else %}
+
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+
+
+          </td>
+          <td class="govuk-table__cell">{{ v16p[0] }}</td>
+          <td class="govuk-table__cell">{{ v16p[1] }}</td>
+          <td class="govuk-table__cell">{{ v16p[2] }}</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 15</th>
+          <td class="govuk-table__cell">{{ v15 }}</td>
+          <td class="govuk-table__cell">
+            {% if v15|float >= minpass  %}
+            <strong class="govuk-tag govuk-tag--green">
+              RECOMMENDATION FOR INTERVIEW
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+          <td class="govuk-table__cell">{{ v15p[0] }}</td>
+          <td class="govuk-table__cell">{{ v15p[1] }}</td>
+          <td class="govuk-table__cell">{{ v15p[2] }}</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 1</th>
+          <td class="govuk-table__cell">{{ v1 }}</td>
+          <td class="govuk-table__cell">
+            {% if v1|float >= minpass  %}
+            <strong class="govuk-tag govuk-tag--green">
+              RECOMMENDATION FOR INTERVIEW
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+          <td class="govuk-table__cell">{{ v1p[0] }}</td>
+          <td class="govuk-table__cell">{{ v1p[1] }}</td>
+          <td class="govuk-table__cell">{{ v1p[2] }}</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 9</th>
+          <td class="govuk-table__cell">{{ v9 }}</td>
+          <td class="govuk-table__cell">
+            {% if v9|float >= minpass  %}
+            <strong class="govuk-tag govuk-tag--green">
+              RECOMMENDATION FOR INTERVIEW
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+          <td class="govuk-table__cell">{{ v9p[0] }}</td>
+          <td class="govuk-table__cell">{{ v9p[1] }}</td>
+          <td class="govuk-table__cell">{{ v9p[2] }}</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 11</th>
+          <td class="govuk-table__cell">{{ v11 }}</td>
+          <td class="govuk-table__cell">
+            {% if v11|float >= minpass  %}
+            <strong class="govuk-tag govuk-tag--green">
+              RECOMMENDATION FOR INTERVIEW
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+          <td class="govuk-table__cell">{{ v11p[0] }}</td>
+          <td class="govuk-table__cell">{{ v11p[1] }}</td>
+          <td class="govuk-table__cell">{{ v11p[2] }}</td>
+        </tr>
+
+    </tbody>
+  </table>
+
+    {{ govukButton({
+      classes:"govuk-!-margin-top-6",
+          text: "Confirm the sift list",
+          href: "task-list-interview?confs2=yes"
+        }) }}
+
+
+                </div>
+
+    {% endblock %}

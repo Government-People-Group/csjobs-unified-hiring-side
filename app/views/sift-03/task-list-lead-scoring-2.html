@@ -64,27 +64,12 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
 
-<div id="succBanner" style="width:55%" class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-  aria-labelledby="govuk-notification-banner-title"
-  data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <div style="float:right"><a href="#" onClick="hideDiv('succBanner')">Dismiss message</a>
-    </div>
-    <h3 class="govuk-notification-banner__heading">
-      Candidate {{ data['ca1']|default("1")}} : score saved.
-    </h3>
-  </div>
-</div>
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <H1 style=";padding-top:0px;padding-bottom:5px; " class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-0">Sift lead criteria: Seeing the Big Picture</H1>
-    <H2 style=";padding-top:0px;padding-bottom:5px;font-weight:normal;; " class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-0">Candidate 2 of 16</H2>
+    <H2 style=";padding-top:0px;padding-bottom:5px;font-weight:normal;; " class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-0">Candidate 16 of 16</H2>
 
     <div class="govuk-!-margin-top-3" style="border-top:1px solid #1d70b8;background:#F3F2F1;padding:10px;border-bottom:1px solid #1d70b8">
 
@@ -103,7 +88,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
   </span>
 </summary>
 <div class="govuk-details__text" style="background:white">
-  What I'm looking for is x, y, z.
+  I want a policy adviser who can make good decisions. They should have knowledge and experience in the area we are working on.<BR><BR>They should be able to explain complex ideas in a simple way. They should be able to work well with others and be a good listener. They should be able to think creatively and come up with new ideas. They should be able to work under pressure and meet deadlines. They should be honest and trustworthy. Overall, I want someone who can help me make the best decisions for the people I serve.
 </div>
 </details>
 </div>
@@ -232,11 +217,37 @@ Add notes (optional)
 </button> -->
 <div style="margin-left:20px;margin-top:30px">
 {% from "govuk/components/button/macro.njk" import govukButton %}
-<form class="form" action="task-list-lead-scoring-3" method="post">
-{{ govukButton({
+<button id="saveB" class="govuk-button govuk-!-margin-top-5" style="width:50%" onclick="shDiv('succBanner');hideDiv('saveB');shDiv('butopt')" data-module="govuk-button">
+  Save score
+</button>
+
+<!-- {{ govukButton({
 classes: "govuk-!-margin-right-1 govuk-!-margin-top-6",
-text: "Save and continue"
+text: "Save"
+}) }} -->
+<div id="succBanner" style="display:none;width:90%;" class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+aria-labelledby="govuk-notification-banner-title"
+data-module="govuk-notification-banner">
+<div class="govuk-notification-banner__header" style="">
+  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+    Success
+  </h2>
+</div>
+<div class="govuk-notification-banner__content"  style="height:35px">
+  <div style="float:right;"><a href="#" onClick="hideDiv('succBanner')">Dismiss</a>
+  </div>
+  <h3 style="font-size:20px" class="govuk-notification-banner__heading">
+    Saved. Sift complete.
+  </h3>
+</div>
+</div>
+<div style="display:none" id="butopt">
+<form class="form" action="task-list-siftstage1-submit" method="post">
+{{ govukButton({
+classes: " govuk-!-margin-top-3",
+text: "Return to task list"
 }) }}
+
 </form>
 
 </div>
@@ -246,7 +257,9 @@ text: "Save and continue"
   function hideDiv(div1) {
     document.getElementById(div1).style.display = 'none';
   }
-
+  function shDiv(div1) {
+    document.getElementById(div1).style.display = 'block';
+  }
 
 </script>
 {% endblock %}

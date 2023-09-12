@@ -1,0 +1,274 @@
+{% extends "layouts/main.html" %}
+{% block header %}
+
+{% include '/includes/header.html' %}
+
+{% endblock %}
+
+
+{% block pageTitle %}
+Home – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+</div>
+{% block beforeContent %}
+
+<style>
+
+  .parent {
+    overflow: hidden;
+    border-bottom:1px solid lightgrey;
+    margin-bottom:5px
+  }
+  .segment-a {
+    float: left;
+  }
+  .segment-b {
+    float: right;
+    margin-top:22px
+  }
+
+</style>
+<div class="" id="bluePanel" style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+
+
+
+
+  <div  style="position:relative;;margin-right:20px;margin-top:-3px">
+    <span class="govuk-body-m" style="float:right;;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;margin-left:20px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="#"><strong>Manage panel</strong></a></span>
+
+    <span class="govuk-body-m" style="float:right;;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="manage-minimum-scores-exp?tasklist=true&panel=snores"><strong>Manage minimum scores</strong></a></span>
+
+
+  </div>
+
+  <a style="color:white;margin-left:10px" href="#" class="govuk-back-link govuk-back-link--inverse">Back</a>
+
+</div>
+
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-m govuk-!-margin-top-9" style="margin-top:-20px;font-size:26px"">1001334</span>
+    <span class="govuk-caption-m govuk-!-margin-top-0" style="margin-top:-20px;font-size:26px"">{{ data['grade'] | default("Senior Executive Officer") }}</span>
+    <h2 class="govuk-heading-l" style="font-size:32px;font-weight:bold">{{ data['title'] | default("Policy Adviser") }}</h2>
+
+
+
+    {% if data['confs2'] == "yes" %}
+    <div id="bann" style="width:73%" class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+    aria-labelledby="govuk-notification-banner-title"
+    data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 style="font-size:23px" class="govuk-notification-banner__heading">
+        Sift has been completed.<p class="govuk-body-m">Interview preparation can start.</p>
+            <h4 class="govuk-heading-m" style="font-size:23px;margin-bottom:1px;">Reasonable adjustment</h4>
+        <p class="govuk-body-m" style="font-weight:normal"><a href="#contact"><strong>Contact candidates that have made a request straightaway</strong></a>, allowing plenty of time to accommodate their request.</p>
+
+      </h3>
+
+
+      <dl class="govuk-summary-list" style=";margin-bottom:15px;font-size:20px">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width:20% !important;">
+            Gabriel
+          </dt>
+          <dd class="govuk-summary-list__value">Will require a reasonable adjustment</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width:35% !important;">
+            Latisha
+          </dt>
+          <dd class="govuk-summary-list__value"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Monty
+          </dt>
+          <dd class="govuk-summary-list__value">Will require a reasonable adjustment</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Moriya
+          </dt>
+          <dd class="govuk-summary-list__value">Will require a reasonable adjustment</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width:35% !important;">
+            Shakir
+          </dt>
+          <dd class="govuk-summary-list__value"></dd>
+        </div>
+
+      </dl>
+        {% endif %}
+</div></div>
+<div class="govuk-grid-column-three-quarters">
+
+  <h2 class="govuk-heading-xl govuk-!-margin-top-1">Sift</h2>
+
+  <ol class="govuk-prototype-kit-task-list">
+    <div class="parent" style="margin-top:-50px">
+    <div class="segment-a">
+    <li>
+      <h2 class="govuk-prototype-kit-task-list__section">
+        <span class="govuk-prototype-kit-task-list__section-number">1. </span> Sift by lead criteria: Seeing the Big Picture
+      </h2>
+</li>
+</div>
+
+<div class="segment-b">
+<strong style="float:right;font-size:16px;margin-right:12px" class="govuk-tag">Completed</strong>
+
+</div>
+</div>
+
+<div class="parent">
+<div class="segment-a">
+<li>
+  <h2 class="govuk-prototype-kit-task-list__section">
+    <span class="govuk-prototype-kit-task-list__section-number">2. </span> Sift successful candidates
+  </h2>
+</li>
+</div>
+
+<div class="segment-b">
+<strong style="float:right;font-size:16px;margin-right:12px" class="govuk-tag">Completed</strong>
+
+</div>
+</div>
+<div class="parent">
+<div class="segment-a">
+<li>
+  <h2 class="govuk-prototype-kit-task-list__section">
+    <span class="govuk-prototype-kit-task-list__section-number">3. </span> Review and confirm sift results
+  </h2>
+</li>
+</div>
+
+<div class="segment-b">
+<strong style="float:right;font-size:16px;margin-right:12px" class="govuk-tag">Completed</strong>
+
+</div>
+</div>
+
+
+
+
+<h2 class="govuk-heading-xl govuk-!-margin-top-9" >Interview</h2>
+
+
+
+  <li>
+  <h2 class="govuk-prototype-kit-task-list__section">
+    <span id="contact" class="govuk-prototype-kit-task-list__section-number">4. </span> Act on candidate reasonable adjustment requests
+  </h2>
+  <ul class="govuk-prototype-kit-task-list__items">
+    <li class="govuk-prototype-kit-task-list__item">
+      <span class="govuk-prototype-kit-task-list__task-name">
+        <a href="#" aria-describedby="company-information-status">
+          Gabriel
+        </a>
+      </span>
+
+      <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">not started</strong>
+    </li>
+    <li class="govuk-prototype-kit-task-list__item">
+      <span class="govuk-prototype-kit-task-list__task-name">
+        <a href="#" aria-describedby="company-information-status">
+          Monty
+        </a>
+      </span>
+
+      <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">not started</strong>
+    </li>
+    <li class="govuk-prototype-kit-task-list__item">
+      <span class="govuk-prototype-kit-task-list__task-name">
+        <a href="#" aria-describedby="company-information-status">
+          Moriya
+        </a>
+      </span>
+
+      <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">not started</strong>
+    </li>
+
+  </ul>
+  </li>
+
+
+  <div class="parent" style="margin-top:-50px">
+  <div class="segment-a">
+  <li>
+    <h2 class="govuk-prototype-kit-task-list__section">
+      <span class="govuk-prototype-kit-task-list__section-number">5. </span> Schedule interviews
+    </h2>
+  </li>
+  </div>
+
+  <div class="segment-b">
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">not started</strong>
+
+  </div>
+  </div>
+
+  <div class="parent">
+  <div class="segment-a">
+  <li>
+    <h2 class="govuk-prototype-kit-task-list__section">
+      <span class="govuk-prototype-kit-task-list__section-number">6. </span> Review assessments
+    </h2>
+  </li>
+  </div>
+
+  <div class="segment-b">
+    <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">not started</strong>
+
+  </div>
+  </div>
+
+<div class="govuk-!-margin-bottom-9"><div class="govuk-!-margin-bottom-9"></div></div>
+
+
+
+
+</ol>
+      </div>
+
+    </div>
+
+<script>
+
+  const hh = document.getElementById("here")
+  const ss1Scores = JSON.parse(window.sessionStorage.getItem("ss1"));
+
+
+  for (const [key, value] of Object.entries(ss1Scores)) {
+    hh.outerText = `${key}: ${value}`;
+  }
+
+
+  function hideDiv(div1) {
+    document.getElementById(div1).style.display = 'none';
+  }
+
+
+
+
+</script>
+
+{% endblock %}

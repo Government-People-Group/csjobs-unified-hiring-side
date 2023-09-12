@@ -22,22 +22,18 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 {% endblock %}
 
-
 {% block content %}
-
-
-
 
 
   <span class="govuk-caption-m govuk-!-margin-top-6" style="">1001334</span>
   <p class="govuk-body-l">Policy Adviser</p>
 
-{% block content %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-<h1 class="govuk-heading-xl">Confirm the Sift Stage 1 results</h1>
+<h1 class="govuk-heading-xl">Confirm the results of sift by lead criteria</h1>
 
-<p class="govuk-body-l"><strong>As panel lead, you need to decide if you are ready to proceed to Sift Stage 2 with this list.</strong></p>
+<p class="govuk-body-m">As panel lead, you need to decide if you are ready to proceed to the next stage. The candidates who are successful at this stage will have the rest of their application marked.</p>
 <form class="form" action="task-list?leadConfirms=true" method="post">
 
 
@@ -109,7 +105,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
         <th scope="row" class="govuk-table__header" id="ca1">Candidate 3</th>
         <td class="govuk-table__cell" id="ca1Score">{{ v3 }}</td>
         <td class="govuk-table__cell">
-          {% if v3|float >= data['width2']|float  %}
+          {% if v3|float >= data['width2']|float |default(5)  %}
           <strong class="govuk-tag govuk-tag--green">
             PASS SIFT STAGE 1
           </strong>
@@ -123,7 +119,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           <th scope="row" class="govuk-table__header" id="ca2">Candidate 5</th>
           <td class="govuk-table__cell" id="ca2Score">{{ v5 }}</td>
           <td class="govuk-table__cell">
-            {% if v5|float >= data['width2']|float  %}
+            {% if v5|float >= data['width2']|float |default(5)   %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -139,7 +135,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           <th scope="row" class="govuk-table__header" id="ca3">Candidate 15</th>
           <td class="govuk-table__cell" id="ca3Score">{{ v15 }}</td>
           <td class="govuk-table__cell">
-            {% if v15|float >= data['width2']|float  %}
+            {% if v15|float >= data['width2']|float |default(5)   %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -155,7 +151,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           <th scope="row" class="govuk-table__header" id="ca4">Candidate 11</th>
           <td class="govuk-table__cell" id="ca4Score">{{ v11 }}</td>
           <td class="govuk-table__cell">
-            {% if v11|float >= data['width2']|float  %}
+            {% if v11|float >= data['width2']|float |default(5)   %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -171,7 +167,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           <th scope="row" class="govuk-table__header" id="ca5">Candidate 1</th>
           <td class="govuk-table__cell" id="ca5Score">{{ v1 }}</td>
           <td class="govuk-table__cell">
-            {% if v1|float >= data['width2']|float  %}
+            {% if v1|float >= data['width2']|float  |default(5)  %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -187,7 +183,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           <th scope="row" class="govuk-table__header" id="ca6">Candidate 9</th>
           <td class="govuk-table__cell" id="ca6Score">{{ v9 }}</td>
           <td class="govuk-table__cell">
-            {% if v9|float >= data['width2']|float  %}
+            {% if v9|float >= data['width2']|float  |default(5)  %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -206,7 +202,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
 
-            {% if v7|float >= data['width3']|float  %}
+            {% if v7|float >= data['width3']|float  |default(5)  %}
 
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
@@ -230,7 +226,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
 
-            {% if v16|float >= data['width3']|float  %}
+            {% if v16|float >= data['width3']|float  |default(5)  %}
 
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
@@ -250,7 +246,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           <th scope="row" class="govuk-table__header">Candidate 12</th>
           <td class="govuk-table__cell">{{ v12 }}</td>
           <td class="govuk-table__cell">
-            {% if v12|float >= data['width2']|float  %}
+            {% if v12|float >= data['width2']|float  |default(5)  %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -265,7 +261,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           <th scope="row" class="govuk-table__header">Candidate 4</th>
           <td class="govuk-table__cell">{{ v4 }}</td>
           <td class="govuk-table__cell">
-            {% if v4|float >= data['width2']|float  %}
+            {% if v4|float >= data['width2']|float  |default(5)  %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -283,7 +279,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           <th scope="row" class="govuk-table__header">Candidate 8</th>
           <td class="govuk-table__cell">{{ v8 }}</td>
           <td class="govuk-table__cell">
-            {% if v8|float >= data['width2']|float  %}
+            {% if v8|float >= data['width2']|float  |default(5)  %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -301,7 +297,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           <th scope="row" class="govuk-table__header">Candidate 13</th>
           <td class="govuk-table__cell">{{ v13 }}</td>
           <td class="govuk-table__cell">
-            {% if v13|float >= data['width2']|float  %}
+            {% if v13|float >= data['width2']|float  |default(5)  %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -333,7 +329,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           <th scope="row" class="govuk-table__header">Candidate 6</th>
           <td class="govuk-table__cell">{{ v6 }}</td>
           <td class="govuk-table__cell">
-            {% if v6|float >= data['width2']|float  %}
+            {% if v6|float >= data['width2']|float  |default(5)  %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -350,7 +346,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           <th scope="row" class="govuk-table__header">Candidate 6</th>
           <td class="govuk-table__cell">{{ v10 }}</td>
           <td class="govuk-table__cell">
-            {% if v10|float >= data['width2']|float  %}
+            {% if v10|float >= data['width2']|float  |default(5)  %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -366,7 +362,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           <th scope="row" class="govuk-table__header">Candidate 2</th>
           <td class="govuk-table__cell">{{ v2 }}</td>
           <td class="govuk-table__cell">
-            {% if v2|float >= data['width2']|float  %}
+            {% if v2|float >= data['width2']|float  |default(5)  %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
