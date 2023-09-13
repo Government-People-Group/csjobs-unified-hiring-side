@@ -17,7 +17,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list"><strong>Return to task list</strong></a></span>
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list?leadScoring=prog"><strong>Return to task list</strong></a></span>
 
 </div>
 
@@ -32,11 +32,8 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
 
-
-
-  <span class="govuk-caption-m govuk-!-margin-top-6" style="">1001334</span>
-  <p class="govuk-body-l">Policy Adviser</p>
-
+<span class="govuk-caption-m govuk-!-margin-top-6" style="">1001334</span>
+<p class="govuk-body-l">Policy Adviser</p>
 
 
 
@@ -62,7 +59,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 Candidates to sift
         </dt>
         <dd class="govuk-summary-list__value">
-      {% if data['ss1'] == "complete" %}
+      {% if data['leadScoring'] == "complete" or data['leadScoring'] == "confirmed"  %}
       14 out of 16
       {% elif data['scorePanel'].length > 0 %}
       15 out of 16
@@ -84,7 +81,7 @@ Candidates to sift
           Status
         </dt>
         <dd class="govuk-summary-list__value">
-          {% if data['scorePanel'].length > 0  %}
+          {% if data['leadScoring'] == "prog"  %}
 
           <strong class="govuk-tag govuk-tag--blue"  id="contact-details-status">IN PROGRESS</strong>
           {% else %}
@@ -99,7 +96,7 @@ Candidates to sift
 
 
 
-{% if data['scorePanel'].length > 0 %}
+{% if data['leadScoring'] == "prog" %}
 {{ govukButton({
   text: "Continue from where you left off",
   href: "task-list-lead-scoring-2"

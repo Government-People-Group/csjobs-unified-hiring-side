@@ -32,14 +32,25 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 <form class="form" action="manage-minimum-scores-exp" method="post">
 
+
+
+
+  {% if data['from'] == "tasklist" %}
+  <span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="task-list?from=passMarks&fromStat=completed %}"><strong>Back to task list</strong></a></span>
+
+  {% endif %}
+
+{% if data['from'] == "tasklistsift2" %}
+<span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="task-list?sift2min=done"><strong>Back to task list</strong></a></span>
+
+{% endif %}
+
   {% if data['lll'] == "y" %}
   <span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="view-sift2-panel-results"><strong>Back to panel results</strong></a></span>
 
   {% endif %}
 
-{% if data['tasklist'] === "first" %}
-<span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="task-list?leadScores=set"><strong>Back to task-list</strong></a></span>
-{% endif %}
+
 
 {% if data['s2'] === "true" %}
 <span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="view-sift2-panel-results"><strong>Back to task-list</strong></a></span>

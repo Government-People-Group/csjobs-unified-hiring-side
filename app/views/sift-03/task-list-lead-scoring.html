@@ -17,7 +17,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
 
-  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list-siftstage1"><strong>Return to task list</strong></a></span>
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list-siftstage1?leadScoring=prog"><strong>Return to task list</strong></a></span>
 
 </div>
 
@@ -30,25 +30,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 {% block content %}
 
-{% if (data['c1score1'].length) and (data['c1score2'].length) and (data['c1score3'].length) and (data['c1score4'].length) %}
-{% set cand1 = "true" %}
-{% endif %}
 
-{% if (data['c2score1'].length) and (data['c2score2'].length) and (data['c2score3'].length) and (data['c2score4'].length) %}
-{% set cand2 = "true" %}
-{% endif %}
-
-{% if (data['c3score1'].length) and (data['c1score2'].length) and (data['c1score3'].length) and (data['c1score4'].length) %}
-{% set cand3 = "true" %}
-{% endif %}
-
-{% if (data['c4score1'].length) and (data['c4score2'].length) and (data['c4score3'].length) and (data['c4score4'].length) %}
-{% set cand4 = "true" %}
-{% endif %}
-
-{% if (data['c5score1'].length) and (data['c5score2'].length) and (data['c5score3'].length) and (data['c5score4'].length) %}
-{% set cand5 = "true" %}
-{% endif %}
 
 
 <style>
@@ -241,16 +223,14 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
       </div>
     </div>
     <div style="display:none" id="butopt">
-    <form class="form" action="task-list-lead-scoring-2" method="post">
+    <form class="form" action="task-list-lead-scoring-2?leadScoring=prog" method="post">
   {{ govukButton({
     classes: "govuk-!-margin-right-1 govuk-!-margin-top-3",
   text: "Continue to Candidate 2"
   }) }}
-  {{ govukButton({
-    classes: "govuk-button govuk-button--secondary govuk-!-margin-left-3 govuk-!-margin-top-3",
-  text: "Return to task list"
-  }) }}
+
   </form>
+  <a href="task-list-siftstage1?prog=yes" style="font-size:20px" class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state">Return to task list</a>
 
 </div>
 </div>

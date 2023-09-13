@@ -30,25 +30,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 {% block content %}
 
-{% if (data['c1score1'].length) and (data['c1score2'].length) and (data['c1score3'].length) and (data['c1score4'].length) %}
-{% set cand1 = "true" %}
-{% endif %}
 
-{% if (data['c2score1'].length) and (data['c2score2'].length) and (data['c2score3'].length) and (data['c2score4'].length) %}
-{% set cand2 = "true" %}
-{% endif %}
-
-{% if (data['c3score1'].length) and (data['c1score2'].length) and (data['c1score3'].length) and (data['c1score4'].length) %}
-{% set cand3 = "true" %}
-{% endif %}
-
-{% if (data['c4score1'].length) and (data['c4score2'].length) and (data['c4score3'].length) and (data['c4score4'].length) %}
-{% set cand4 = "true" %}
-{% endif %}
-
-{% if (data['c5score1'].length) and (data['c5score2'].length) and (data['c5score3'].length) and (data['c5score4'].length) %}
-{% set cand5 = "true" %}
-{% endif %}
 
 
 <style>
@@ -57,9 +39,8 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
 <form class="form" action="task-list-lead-scoring-2" method="post">
-<span class="govuk-caption-l" style="margin-top:-20px">1001334</span>
-<h2 class="govuk-heading-l">Policy Adviser</h2>
-
+  <span class="govuk-caption-m govuk-!-margin-top-6" style="margin-top:-20px">1001334</span>
+  <p class="govuk-body-l">Policy Adviser</p>
 
 
 

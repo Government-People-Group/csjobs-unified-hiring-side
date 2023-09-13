@@ -1,0 +1,194 @@
+
+<div style="background:#F2FAFF;height:auto;">
+
+<div style="border-top:1px solid #1d70b8;padding:20px;">
+
+
+  <div class="govuk-!-margin-top-6 govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h3 style="font-size:22px" class="govuk-fieldset__heading">
+          Score
+        </h3>
+        <div id="subject-hint" class="govuk-hint" style="font-size:18px;font-weight:bold">This will be shared with the candidate.</div>
+
+      </legend>
+      <div class="govuk-radios" data-module="govuk-radios" style="border:1px solid #1d70b8;border-radius:5px;width:47%;padding:15px;background:white">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="scorePanel-1" name="scorePanel" type="radio" value="1">
+          <label  class="govuk-label govuk-radios__label" for="scorePanel-1">
+            <strong>1</strong> - not demonstrated
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="scorePanel-2" name="scorePanel" type="radio" value="2">
+          <label class="govuk-label govuk-radios__label" for="scorePanel-2">
+            <strong>2</strong> - minimal demonstration
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="scorePanel-3" name="scorePanel" type="radio" value="3">
+          <label class="govuk-label govuk-radios__label" for="scorePanel-3">
+            <strong>3</strong> - moderate demonstration
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="scorePanel-4" name="scorePanel" type="radio" value="4">
+          <label class="govuk-label govuk-radios__label" for="scorePanel-4">
+            <strong>4</strong> - acceptable demonstration
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="scorePanel-5" name="scorePanel" type="radio" value="5">
+          <label class="govuk-label govuk-radios__label" for="scorePanel-5">
+            <strong>5</strong> - good demonstration
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="scorePanel-6" name="scorePanel" type="radio" value="6">
+          <label class="govuk-label govuk-radios__label" for="scorePanel-6">
+            <strong>6</strong> - strong demonstration
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="scorePanel-7" name="scorePanel" type="radio" value="7">
+          <label class="govuk-label govuk-radios__label" for="scorePanel-7">
+            <strong>7</strong> - outstanding demonstration
+          </label>
+        </div>
+        </div>
+    </fieldset>
+  </div>
+
+
+
+
+  <div class="govuk-form-group" style="margin-top:5px">
+    <label style="font-size:20px;margin-bottom:20px" class="govuk-label" for="reason">
+      <strong>Optional feedback for candidates</strong>
+    </label>
+    <select style="width:50%;border:2px solid #1d70b8;" class="govuk-select" id="reason" name="reason">
+      <option selected disabled value="--">Select from the list (optional)</option>
+      <option id="newreason" value="Add a new reason to the list">Add a new reason to the list</option>
+      <option disabled value="--">-</option>
+      <option value="Not enough experience">Not enough experience</option>
+      <option value="High level of experience">High level of experience</option>
+      <option value="Strong example given">Strong example given</option>
+      <option value="No or poor example given">No or poor example given</option>
+      <option value="Very relevant to role">Very relevant to role</option>
+      <option value="Not relevant to role">Not relevant to role</option>
+    </select>
+  </div>
+
+<div id="addReasonPanel" style="display:none">
+  <div  class="govuk-form-group">
+    <label class="govuk-label" for="addReason">Your new reason</label>
+    <input style="width:50%;background:white;border:1px solid #1d70b8;" class="govuk-input " id="addReason" name="addReason" type="text">
+
+    <button onclick="addToReasonSelector(addReason.value)" class="govuk-button govuk-button--secondary" data-module="govuk-button">Add to list</button>
+
+
+  </div>
+
+</div>
+
+
+      <button id="saveB" class="govuk-button govuk-button--secondary govuk-!-margin-top-5" style="width:25%"  data-module="govuk-button">
+        Save score
+      </button>
+
+</div>
+<script>
+
+
+  let selector = document.getElementById("reason");
+
+  selector.addEventListener("keyup", () => {
+    console.log("keypress")
+
+
+    selector.addEventListener("change", () => {
+
+      switch (selector.value) {
+        case "Add a new reason to the list":
+        showDiv('addReasonPanel');
+          break;
+        case "remove":
+          break;
+      }
+      }, { once: true });
+  });
+
+  selector.addEventListener("click", () => {
+    console.log("keypress")
+
+
+    selector.addEventListener("change", () => {
+
+      switch (selector.value) {
+        case "Add a new reason to the list":
+        showDiv('addReasonPanel');
+          break;
+        case "remove":
+          break;
+      }
+      }, { once: true });
+  });
+
+  function addToReasonSelector(adder) {
+    console.log(adder)
+    var newOption = document.createElement("option")
+    newOption.innerHTML = adder;
+    selector.appendChild(newOption).selected = "true";
+    selector.focus();
+    hideDiv('addReasonPanel');
+    document.getElementById('addReason').value = '';
+  }
+
+
+
+  function showDiv(div1) {
+    document.getElementById(div1).style.display = 'block';
+    if (div1 == "notesPanel"){
+      const textA = document.getElementById("textA");
+      textA.focus();
+    } else if (div1 == "addReasonPanel") {
+      document.getElementById(div1).style.display = 'block';
+      const reaBox = document.getElementById("addReason");
+      reaBox.focus();
+    }
+  }
+
+  function hideDiv(div1) {
+    document.getElementById(div1).style.display = 'none';
+  }
+
+
+  const newReason = document.getElementById("newreason");
+
+  newReason.addEventListener("focus", (event) => {
+    console.log(newReason.value)
+  });
+
+
+  selector.addEventListener("click", () => {
+  // if default value is changed
+    selector.addEventListener("change", () => {
+    // if value switched by client
+      switch (selector.value) {
+        case "add":
+        //do somthing with  , "add" value
+          result.innerHTML = selector.value;
+          break;  // then take break
+        case "remove":
+        //do somthing with  , "remove" value
+          result.innerHTML = selector.value;
+          break; // then take break
+      }
+    });
+  });
+
+
+
+</script>
+</div>
