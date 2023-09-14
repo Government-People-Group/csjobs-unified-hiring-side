@@ -8,32 +8,26 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
+
+
 <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
-
-  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
-</div> -->
-<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l"></span>
-
 <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
-
-
   <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list?leadScoring=prog"><strong>Return to task list</strong></a></span>
-
+</div>
+<a style="color:white;margin-left:10px" href="#" class="govuk-back-link govuk-back-link--inverse">Back</a>
 </div>
 
-</div>
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+
 {% endblock %}
+
+
 {% block content %}
 
 
 
 
-<span class="govuk-caption-m govuk-!-margin-top-6" style="">1001334</span>
-<p class="govuk-body-l">Policy Adviser</p>
+  <span class="govuk-caption-m govuk-!-margin-top-6" style="">1001334</span>
+  <p class="govuk-body-l">Policy Adviser</p>
 
 
 
@@ -43,7 +37,11 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
     <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Sift lead criteria: Seeing the Big Picture</H1>
-    <p class="govuk-body-m">Only candidates who pass the lead criteria will have the rest of their application marked.</p>
+
+    <div class="govuk-inset-text">
+      Only candidates who pass the lead criteria will have the rest of their application marked.
+    </div>
+    <!-- <p class="govuk-body-m">Only candidates who pass the lead criteria will have the rest of their application marked.</p> -->
 
 
     <dl class="govuk-summary-list" style="width:75%">
@@ -78,16 +76,9 @@ Candidates to sift
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Status
+          Complete by date
         </dt>
-        <dd class="govuk-summary-list__value">
-          {% if data['leadScoring'] == "prog"  %}
-
-          <strong class="govuk-tag govuk-tag--blue"  id="contact-details-status">IN PROGRESS</strong>
-          {% else %}
-          <strong class="govuk-tag govuk-tag--grey"  id="contact-details-status">NOT STARTED</strong>
-          {% endif %}
-        </dd>
+        <dd class="govuk-summary-list__value">18 Sept 2023</dd>
       </div>
 
     </dl>
@@ -120,5 +111,47 @@ Candidates to sift
 
 
 </div>
+<script>
 
+                var monthNames = new Array("Jan", "Feb", "Mar",
+                "Apr", "May", "June", "July", "August", "Sept",
+                "Oct", "Nov", "Dec");
+
+                const dateField = document.getElementById("drySpell");
+
+
+                const stamp = new Date();
+                var thing = stamp.getMonth()+5;
+
+                const localStamp = stamp.toLocaleDateString("en-uk", {
+                  day: "numeric",
+                  month: "short",
+                  year: "numeric",
+                });
+
+
+                dateField.outerText = localStamp;
+
+                var curr_month = stamp.getMonth();
+                var curr_year = stamp.getFullYear();
+                 thing = stamp + " " + monthNames[curr_month] + " " + curr_year + ", 11:33";
+
+
+
+                const newStamp = new Date();
+                var oldDate = newStamp.getMonth()+5;
+                  var curr_month = newStamp.getMonth();
+                  var curr_year = newStamp.getFullYear();
+                  var olderStamp = oldDate + " " + monthNames[curr_month] + " " + curr_year + ", 11:33";
+
+                  var futureDate = newStamp.getMonth()+2;
+                  var futureStamp = futureDate + " " + monthNames[curr_month] + " " + curr_year + ", 11:33";
+
+
+
+
+
+                console.log(olderStamp)
+
+</script>
 {% endblock %}

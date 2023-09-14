@@ -60,69 +60,87 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
     <p class="govuk-body-l">Policy Adviser</p>
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
+      <div class="govuk-grid-column-three-quarters">
 
 
-    {% if data['confs2'] == "yes" %}
-    <div id="bann" style="width:73%" class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-    aria-labelledby="govuk-notification-banner-title"
-    data-module="govuk-notification-banner">
-    <div class="govuk-notification-banner__header">
-      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-        Success
-      </h2>
-    </div>
-    <div class="govuk-notification-banner__content">
-      <h3 style="font-size:23px" class="govuk-notification-banner__heading">
-        Sift has been completed.<p class="govuk-body-m">Interview preparation can start.</p>
-            <h4 class="govuk-heading-m" style="font-size:23px;margin-bottom:1px;">Reasonable adjustments requested</h4>
-        <p class="govuk-body-m" style="font-weight:normal"><a href="#contact"><strong>Contact candidates that have made a request straightaway</strong></a>, allowing plenty of time to accommodate their request.</p>
-
-      </h3>
+        <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+          aria-labelledby="govuk-notification-banner-title"
+          data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Success
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
 
 
-      <dl class="govuk-summary-list" style=";margin-bottom:15px;font-size:20px">
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="width:20% !important;">
-            Gabriel
-          </dt>
-          <dd class="govuk-summary-list__value">Will require a reasonable adjustment</dd>
+
+            <h3 style="font-size:18px" class="govuk-notification-banner__heading">
+
+              Sift has been completed.<BR>
+              Interview preparation can start.
+
+
+
+            </h3>
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+
+                Reasonable adjustments requested<BR><BR>
+                Contact candidates that have made a request straightaway, allowing plenty of time to accommodate their request.
+              </strong>
+            </div>
+
+
+
+
+
+
+
+            <dl class="govuk-summary-list" style="margin-top:-20px;margin-bottom:15px;font-size:20px">
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key" style="padding-left:50px;width:20% !important;">
+                  Gabriel
+                </dt>
+                <dd class="govuk-summary-list__value">Will require a reasonable adjustment</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key" style="padding-left:50px">
+                  Monty
+                </dt>
+                <dd class="govuk-summary-list__value">Will require a reasonable adjustment</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key" style="padding-left:50px">
+                  Moriya
+                </dt>
+                <dd class="govuk-summary-list__value">Will require a reasonable adjustment</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+              </div>
+
+            </dl>
+
+
+
+
+          </div>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="width:35% !important;">
-            Latisha
-          </dt>
-          <dd class="govuk-summary-list__value"></dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Monty
-          </dt>
-          <dd class="govuk-summary-list__value">Will require a reasonable adjustment</dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Moriya
-          </dt>
-          <dd class="govuk-summary-list__value">Will require a reasonable adjustment</dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="width:35% !important;">
-            Shakir
-          </dt>
-          <dd class="govuk-summary-list__value"></dd>
-        </div>
 
-      </dl>
-        {% endif %}
-</div></div>
-<div class="govuk-grid-column-three-quarters">
 
-  <h2 class="govuk-heading-xl govuk-!-margin-top-1">Sift</h2>
+
+
+  <h2 class="govuk-heading-l govuk-!-margin-top-1">Sift</h2>
 
   <ol class="govuk-prototype-kit-task-list">
-    <div class="parent" style="margin-top:-50px">
+    <div class="parent" style="margin-top:-20px">
     <div class="segment-a">
     <li>
       <h2 class="govuk-prototype-kit-task-list__section">
@@ -169,7 +187,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
-<h2 class="govuk-heading-xl govuk-!-margin-top-9" >Interview</h2>
+<h2 class="govuk-heading-l govuk-!-margin-top-9" >Interview</h2>
 
 
 

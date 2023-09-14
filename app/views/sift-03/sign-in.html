@@ -10,14 +10,12 @@
 {% block beforeContent %}
 {% endblock %}
 {% block content %}
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:history.go(-1)"
-}) }}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
 
-<h1 class="govuk-heading-l">Sign in to your Civil Service Recruitment account</h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <img src="/public/images/co-logo.png" class="govuk-!-margin-bottom-3" style=";;padding:0px;min-width:175px;max-width:165px;" alt="Cabinet Office logo">
+
+<h1 class="govuk-heading-xl">Panelist Service</h1>
 
 {{ govukInput({
   label: {
@@ -46,7 +44,7 @@
 
 {{ govukButton({
   text: "Sign in",
-  href: "task-list-panelist-lead"
+  href: "panel-welcome"
 }) }}
 <p><a href="#">Register a new account</a></p>
 <p><a href="#">Forgotten your password?</a></p>

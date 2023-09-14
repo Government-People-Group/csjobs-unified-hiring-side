@@ -27,181 +27,326 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
     <h2 class="govuk-heading-l" style="font-size:32px;font-weight:bold">{{ data['title'] | default("Policy Adviser") }}</h2>
 
 
-{{ data |dump}}
 
+    <h1 class="govuk-heading-l">Sift</h1>
 
-    <h1 class="govuk-heading-xl">Sift</h1>
+    <ol class="govuk-prototype-kit-task-list">
+      <li>
+        <h2 class="govuk-prototype-kit-task-list__section">
+          <span class="govuk-prototype-kit-task-list__section-number">1. </span> Sift by lead criteria: Seeing the Big Picture
+          <div class="govuk-warning-text govuk-!-margin-top-3">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong style="margin-bottom:-40px" class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              Only candidates who pass the lead criteria assessment will have the rest of their application marked.
+            </strong>
 
-      <ol class="govuk-prototype-kit-task-list">
-        <li>
-          <h2 class="govuk-prototype-kit-task-list__section">
-            <span class="govuk-prototype-kit-task-list__section-number">1. </span> Sift by lead criteria: Seeing the Big Picture
-            <div class="govuk-warning-text govuk-!-margin-top-3">
-              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-              <strong style="margin-bottom:-40px" class="govuk-warning-text__text">
-                <span class="govuk-warning-text__assistive">Warning</span>
-                Only candidates who pass the lead criteria assessment will have the rest of their application marked.
-              </strong>
-
-            </div>
-          </h2>
-          <ul class="govuk-prototype-kit-task-list__items">
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="manage-minimum-scores-exp?from=tasklist" aria-describedby="eligibility-status">
-                  Set minimum pass marks for lead criteria sift
-                </a>
-              </span>
+          </div>
+        </h2>
+        <ul class="govuk-prototype-kit-task-list__items">
+          <li class="govuk-prototype-kit-task-list__item">
+            <span class="govuk-prototype-kit-task-list__task-name">
+              <a href="manage-minimum-scores-exp?from=tasklist" class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" aria-describedby="eligibility-status">
+                Set minimum pass marks for lead criteria sift
+              </a>
+            </span>
 
             {% if data['from'] == "passMarks" %}
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+            <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
             {% else %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+            <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
             {% endif %}
-            </li>
-            <li class="govuk-prototype-kit-task-list__item">
+          </li>
+
+
+
+          <li class="govuk-prototype-kit-task-list__item">
+            {% if data['from'] == "passMarks" %}
+            <span class="govuk-prototype-kit-task-list__task-name">
+              <a href="task-list-siftstage1" class="govuk-link--no-underline govuk-link--no-visited-state" aria-describedby="eligibility-status">
+                Sift candidate applications (16)
+              </a>
+            </span>
+            {% else %}
+            <span class="govuk-prototype-kit-task-list__task-name">Sift candidate applications (16)</span>
+            {% endif %}
+
+            {% if data['leadScoring'] == "complete" or data['leadScoring'] == "confirmed" %}
+            <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="read-declaration-status">Completed</strong>
+            {% elif data['leadScoring'] == "prog"  %}
+            <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+
+            {% elif data['from'] == "passMarks" %}
+            <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+            {% elif data['from'] != "passMarks"  %}
+            <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+            {% endif  %}
+
+          </li>
+
+
+          <li class="govuk-prototype-kit-task-list__item">
+            {% if data['from'] == "passMarks"  %}
+            <span class="govuk-prototype-kit-task-list__task-name">
+              <a href="task-list-siftstage1-submit" class="govuk-link--no-underline govuk-link--no-visited-state" aria-describedby="eligibility-status">
+                Review and submit sift scores
+              </a>
+            </span>
+            {% else  %}
+            <span class="govuk-prototype-kit-task-list__task-name">
+              Review and submit sift scores
+            </span>
+            {% endif %}
+
+            {% if data['leadScoring'] == "confirmed" %}
+            <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="read-declaration-status">Completed</strong>
+            {% elif data['leadScoring'] == "prog" or data['leadScoring'] == "complete" %}
+            <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+
+            {% elif data['from'] != "passMarks"  %}
+            <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+            {% endif %}
+          </li>
+          <li class="govuk-prototype-kit-task-list__item">
+
+
+
+            {% if data['leadScoring'] == "confirmed" %}
+            <span class="govuk-prototype-kit-task-list__task-name">
+              <a href="lead-panel-results?width2=5&width3=4" class="govuk-link--no-underline govuk-link--no-visited-state" aria-describedby="eligibility-status">
+                View lead criteria panel results
+              </a>
+            </span>
+            {% else %}
+            <span class="govuk-prototype-kit-task-list__task-name">View lead criteria panel results</span>
+            {% endif %}
+
+            {% if data['leadPanelResults'] == "viewed" %}
+            <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="read-declaration-status">Completed</strong>
+            {% elif data['leadScoring'] == "confirmed" %}
+            <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+            {% endif %}
+          </li>
+          <li class="govuk-prototype-kit-task-list__item">
+
+  {% if data['leadPanelResults'] == "viewed" %}
               <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="task-list-siftstage1" aria-describedby="eligibility-status">
-                  Sift candidate applications (16)
-                </a>
+              <a href="confirm-lead-results?confirmLeadViewed=true" class="govuk-link--no-underline govuk-link--no-visited-state" aria-describedby="eligibility-status">
+                Confirm lead criteria results
+              </a>
+            </span>
+            {% else %}
+            <span class="govuk-prototype-kit-task-list__task-name">Confirm lead criteria results</span>
+            {% endif %}
+
+            {% if data['siftStageOne'] == "complete" and data['confirmLeadViewed'] == "true" %}
+            <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="read-declaration-status">Completed</strong>
+            {% elif data['leadPanelResults'].length > 0 %}
+            <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h2 class="govuk-prototype-kit-task-list__section">
+          <span class="govuk-prototype-kit-task-list__section-number">2. </span> Sift successful candidates
+        </h2>
+        <ul class="govuk-prototype-kit-task-list__items">
+          <li class="govuk-prototype-kit-task-list__item">
+            <span class="govuk-prototype-kit-task-list__task-name">
+              <a href="manage-minimum-scores-exp?from=tasklistsift2#past-week" class="govuk-link--no-underline govuk-link--no-visited-state" aria-describedby="eligibility-status">
+                Set minimum pass marks for remaining sift criteria stage
+              </a>
+            </span>
+            {% if data['sift2min'] == "done" %}
+            <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="company-information-status">Completed</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+            {% endif %}
+          </li>
+          <li class="govuk-prototype-kit-task-list__item">
+
+
+            {% if data['sift2min'] == "done" %}
+            <span class="govuk-prototype-kit-task-list__task-name">
+              <a href="task-list-siftstage2" class="govuk-link--no-underline govuk-link--no-visited-state" aria-describedby="company-information-status">
+                Sift applications by candidate (8)</a>
               </span>
-
-              {% if data['leadScoring'] == "complete" or data['leadScoring'] == "confirmed" %}
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="read-declaration-status">Completed</strong>
-                {% elif data['leadScoring'] == "prog"  %}
-                <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
-
-              {% elif data['from'] == "passMarks" %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% elif data['from'] != "passMarks"  %}
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
-              {% endif  %}
-
-            </li>
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="task-list-siftstage1-submit" aria-describedby="eligibility-status">
-                  Review and submit sift scores
-                </a>
-              </span>
-                {% if data['leadScoring'] == "confirmed" %}
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="read-declaration-status">Completed</strong>
-               {% elif data['leadScoring'] == "prog" or data['leadScoring'] == "complete" %}
-               <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
-
-                 {% elif data['from'] != "passMarks"  %}
-                 <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
-                 {% else %}
-                 <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-               {% endif %}
-            </li>
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="lead-panel-results?width2=5&width3=4" aria-describedby="eligibility-status">
-                  View lead criteria panel results
-                </a>
-              </span>
-              {% if data['panelLeadScores'] == "viewed" %}
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="read-declaration-status">Completed</strong>
-              {% elif data['leadScoring'] == "confirmed" %}
+              {% else  %}
+              <span class="govuk-prototype-kit-task-list__task-name">Sift applications by candidate</span>
+              {% endif %}
+              {% if data['sift2min'] == "done" %}
               <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
               {% else %}
               <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
               {% endif %}
             </li>
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="confirm-lead-results" aria-describedby="eligibility-status">
-                  Confirm lead criteria results
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="read-declaration-status">Completed</strong>
-            </li>
-          </ul>
-        </li>
 
 
 
 
-        <li>
-          <h2 class="govuk-prototype-kit-task-list__section">
-            <span class="govuk-prototype-kit-task-list__section-number">2. </span> Sift successful candidates
-          </h2>
-          <ul class="govuk-prototype-kit-task-list__items">
+
             <li class="govuk-prototype-kit-task-list__item">
+              {% if data['sift2min'] == "done" %}
               <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="manage-minimum-scores-exp?#past-week?from=tasklistsift2" aria-describedby="eligibility-status">
-                  Set minimum pass marks for all sift criteria stage
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="company-information-status">Completed</strong>
-            </li>
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="task-list-siftstage2" aria-describedby="company-information-status">
-                  Sift applications by candidate (8)</a>
-              </span>
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="company-information-status">Completed</strong>
-            </li>
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="score-changing" aria-describedby="company-information-status">
+                <a href="score-changing" aria-describedby="company-information-status" class="govuk-link--no-underline govuk-link--no-visited-state">
                   Sift applications by criteria: Changing and Improving</a>
-              </span>
-              <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
-            </li>
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="score-managing-quality-1" aria-describedby="contact-details-status">
-                Sift by criteria: Managing a Quality Service
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-            </li>
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="task-list-lead-scoring-personal-statement" aria-describedby="company-information-status">
-                  Sift by criteria: Personal statement (1250 words)
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
-            </li>
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="task-list-siftstage2-submit" aria-describedby="list-convictions-status">
-                  Review and submit sift scores
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="medical-information-status">Cannot start yet</strong>
-            </li>
-          </ul>
-        </li>
+                </span>
+                {% else %}
+                <span class="govuk-prototype-kit-task-list__task-name">Sift applications by criteria: Changing and Improving</span>
+                {% endif %}
 
-        <li>
-          <h2 class="govuk-prototype-kit-task-list__section">
-            <span class="govuk-prototype-kit-task-list__section-number">3. </span> Review and confirm sift results
-          </h2>
-          <ul class="govuk-prototype-kit-task-list__items">
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="view-sift2-panel-results?width2=5&width3=4" aria-describedby="company-information-status">
-                  Review panel results for sift
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-            </li>
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="confirm-sift2-results" aria-describedby="laist-convictions-status">
-                  Confirm the sift results
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-            </li>
-          </ul>
-        </li>
-      </ol>
+
+                {% if data['sift2min'] == "done" %}
+                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+                {% endif %}
+
+
+              </li>
+
+
+              <li class="govuk-prototype-kit-task-list__item">
+              {% if data['sift2min'] == "done" %}
+                <span class="govuk-prototype-kit-task-list__task-name">
+                  <a href="score-managing-quality-1" aria-describedby="contact-details-status" class="govuk-link--no-underline govuk-link--no-visited-state">
+                    Sift by criteria: Managing a Quality Service
+                  </a>
+                </span>
+                {%  else %}
+                <span class="govuk-prototype-kit-task-list__task-name">Sift by criteria: Managing a Quality Service</span>
+                {% endif %}
+
+                {% if data['sift2min'] == "done" %}
+                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+                {% endif %}
+              </li>
+
+              <li class="govuk-prototype-kit-task-list__item">
+                {% if data['sift2min'] == "done" %}
+                <span class="govuk-prototype-kit-task-list__task-name">
+                  <a href="task-list-lead-scoring-personal-statement" class="govuk-link--no-underline govuk-link--no-visited-state" aria-describedby="company-information-status">
+                    Sift by criteria: Personal statement (1250 words)
+                  </a>
+                </span>
+                {% else %}
+                <span class="govuk-prototype-kit-task-list__task-name">Sift by criteria: Personal statement (1250 words)</span>
+                {% endif %}
+
+                {% if data['sift2min'] == "done" %}
+                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+                {% endif %}
+              </li>
+
+              <li class="govuk-prototype-kit-task-list__item">
+                {% if data['sift2min'] == "done" %}
+                <span class="govuk-prototype-kit-task-list__task-name">
+                  <a href="task-list-siftstage2-submit" class="govuk-link--no-underline govuk-link--no-visited-state"aria-describedby="list-convictions-status">
+                    Review and submit my sift scores
+                  </a>
+                </span>
+                {% else %}
+                <span class="govuk-prototype-kit-task-list__task-name">Review and submit sift scores</span>
+                {% endif %}
+
+                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="medical-information-status">Cannot start yet</strong>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h2 class="govuk-prototype-kit-task-list__section">
+              <span class="govuk-prototype-kit-task-list__section-number">3. </span> Review and confirm sift results
+            </h2>
+            <ul class="govuk-prototype-kit-task-list__items">
+              <li class="govuk-prototype-kit-task-list__item">
+
+                {% if data['vs2'] == "yes" %}
+                <span class="govuk-prototype-kit-task-list__task-name">
+                  <a href="view-sift2-panel-results?width2=5&width3=4" class="govuk-link--no-underline govuk-link--no-visited-state" aria-describedby="company-information-status">
+                    Review panel results for sift
+                  </a>
+                </span>
+
+                {% else %}
+                <span class="govuk-prototype-kit-task-list__task-name">Review panel results for sift</span>
+                {% endif %}
+
+
+                {% if data['vs2'] == "yes" %}
+                <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="company-information-status">Completed</strong>
+                {% elif data['vs2'].length > 0 %}
+                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+                {% endif %}
+              </li>
+              <li class="govuk-prototype-kit-task-list__item">
+                {% if data['vs2'] == "yes" %}
+                <span class="govuk-prototype-kit-task-list__task-name">
+                  <a href="confirm-sift2-results"  class="govuk-link--no-underline govuk-link--no-visited-state"  aria-describedby="laist-convictions-status">
+                    Confirm the sift results
+                  </a>
+                </span>
+                {% else %}
+                <span class="govuk-prototype-kit-task-list__task-name">Confirm the sift results</span>
+                {% endif %}
+
+
+                {% if data['siftStageTwo'] == "complete" %}
+                <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="company-information-status">Completed</strong>
+                {% elif data['vs2'].length > 0 %}
+                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+                {% endif %}
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
     </div>
-  </div>
 
-{% endblock %}
+    {% endblock %}
+
+
+
+    {% if data['from'] == "passMarks" %}
+    <li class="govuk-prototype-kit-task-list__item">
+      <span class="govuk-prototype-kit-task-list__task-name">
+
+        <a href="task-list-siftstage1" class="govuk-link--no-underline govuk-link--no-visited-state" aria-describedby="eligibility-status">
+          Sift candidate applications (16)
+        </a>
+      </span>
+
+
+      {% elif data['from'].length == 0 %}
+      Sift candidate applications (16)
+      {% endif %}
+
+      {% if data['leadScoring'] == "complete" or data['leadScoring'] == "confirmed" %}
+      <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="read-declaration-status">Completed</strong>
+      {% elif data['leadScoring'] == "prog"  %}
+      <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+
+      {% elif data['from'] == "passMarks" %}
+      <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+      {% elif data['from'] != "passMarks"  %}
+      <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+      {% endif  %}
+
+    </li>

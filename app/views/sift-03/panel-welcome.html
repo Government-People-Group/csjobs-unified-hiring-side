@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/includes/pheader.html' %}
+  {% endblock %}
+
+
+  {% block pageTitle %}
+  Home – {{ serviceName }} – GOV.UK Prototype Kit
+  {% endblock %}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row " style="margin-left:0px;margin-right:0px;max-width:100%;">
+  <div class="govuk-grid-column-full" >
+    <img src="/public/images/co-logo.png" class="govuk-!-margin-bottom-3" style=";padding:0px;min-width:175px;max-width:165px;" alt="Cabinet Office logo">
+
+    <h1 style="font-size:127px;text-align:left;" class="govuk-heading-xl govuk-!-margin-bottom-6 govuk-!-margin-top-9">Welcome</h1>
+
+
+    <p class="govuk-body-l">Onboarding details from Sumayyah.
+    <div class="govuk-width-container">
+      <main class="govuk-main-wrapper">
+
+        <dl class="govuk-summary-list govuk-summary-list" style="width:85%;font-size:20px;margin-top:-15px;margin-bottom:-5px;margin-left:0px;">
+          <div class="govuk-summary-list__row" style="">
+            <dt class="govuk-summary-list__key" style="width:35% !important;">
+              Assessment plan
+            </dt>
+            <dd class="govuk-summary-list__value" style="font-weight:600;padding-left:150px"><a class="govuk-link--no-underline govuk-link--no-visited-state" href="">Job description</a><BR><a class="govuk-link--no-underline govuk-link--no-visited-state" href="">Assessment format and criteria</a></dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="font-weight:600;width:35% !important;">
+              Key dates, milestones
+            </dt>
+            <dd class="govuk-summary-list__value" style="font-weight:600;padding-left:150px"><a class="govuk-link--no-underline govuk-link--no-visited-state" href="">Schedule</a></dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:35% !important;">
+              Two panel ceremonies
+            </dt>
+            <dd class="govuk-summary-list__value" style="font-weight:600;padding-left:150px"><a class="govuk-link--no-underline govuk-link--no-visited-state" href="">Daily 15 min huddle</a></dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:35% !important;">
+              Panel chair notes
+            </dt>
+            <dd class="govuk-summary-list__value" style="font-weight:600;padding-left:150px"><a class="govuk-link--no-underline govuk-link--no-visited-state" href="">Key observations to make</a></dd>
+          </div>
+
+
+        </dl>
+
+
+          </div>
+
+          <div class="govuk-!-margin-top-9" style="background: #F4FAFF;width:85%;padding:10px;border-top:2px solid #1d70b8;">
+            <h2 style="text-align:left;" class="govuk-heading-l govuk-!-margin-bottom-3 govuk-!-margin-top-3">You have items to sift</h2>
+            <p class="govuk-body-m">16 applications have been assigned to the panel to be assessed against the lead criteria only: Seeing the Big Picture.</p>
+
+          {{ govukButton({
+            classes: "task-list-panelist-lead govuk-button  govuk-!-margin-top-6",
+          text: "Proceed to sift",
+          href:"task-list-panelist-lead"
+          }) }}
+          </div>
+
+
+      </div>
+    </div>
+
+
+
+
+{% endblock %}

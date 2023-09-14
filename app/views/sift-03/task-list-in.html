@@ -1,0 +1,209 @@
+{% extends "layouts/main.html" %}
+{% block header %}
+
+{% include '/includes/header.html' %}
+
+{% endblock %}
+
+
+{% block pageTitle %}
+Home – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+</div>
+{% block beforeContent %}
+<div class="" id="bluePanel" style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+  <div  style="position:relative;;margin-right:20px;margin-top:-3px">
+    <span class="govuk-body-m" style="float:right;;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;margin-left:20px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="#"><strong>Manage panel</strong></a></span>
+    <span class="govuk-body-m" style="float:right;;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="manage-minimum-scores-exp?tasklist=true&panel=snores"><strong>Manage minimum scores</strong></a></span>
+  </div>
+  <a style="color:white;margin-left:10px" href="#" class="govuk-back-link govuk-back-link--inverse">Back</a>
+</div>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row ">
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-m govuk-!-margin-top-9" style="margin-top:-20px;font-size:26px"">1001334</span>
+    <span class="govuk-caption-m govuk-!-margin-top-0" style="margin-top:-20px;font-size:26px"">{{ data['grade'] | default("Senior Executive Officer") }}</span>
+    <h2 class="govuk-heading-l" style="font-size:32px;font-weight:bold">{{ data['title'] | default("Policy Adviser") }}</h2>
+
+
+
+
+
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+      aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+
+
+
+
+        <h3 style="font-size:18px" class="govuk-notification-banner__heading">
+
+          Sift has been completed.<BR>
+          Interview preparation can start.
+
+
+
+        </h3>
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+
+            Reasonable adjustments requested<BR><BR>
+            Contact candidates that have made a request straightaway, allowing plenty of time to accommodate their request.
+          </strong>
+        </div>
+
+
+
+
+
+
+
+        <dl class="govuk-summary-list" style="margin-top:-20px;margin-bottom:15px;font-size:20px">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="padding-left:50px;width:20% !important;">
+              Gabriel
+            </dt>
+            <dd class="govuk-summary-list__value">Will require a reasonable adjustment</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="padding-left:50px">
+              Monty
+            </dt>
+            <dd class="govuk-summary-list__value">Will require a reasonable adjustment</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="padding-left:50px">
+              Moriya
+            </dt>
+            <dd class="govuk-summary-list__value">Will require a reasonable adjustment</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+          </div>
+
+        </dl>
+
+
+
+
+      </div>
+    </div>
+
+
+
+    <h1 class="govuk-heading-l">Sift</h1>
+
+    <ol class="govuk-prototype-kit-task-list">
+      <li>
+        <h2 class="govuk-prototype-kit-task-list__section">
+          <span class="govuk-prototype-kit-task-list__section-number">1. </span> Sift by lead criteria: Seeing the Big Picture
+          <strong style="float:right;font-size:16px;margin-left:12px" class="govuk-tag">Completed</strong>
+
+        </h2>
+
+      </li>
+
+      <li>
+        <h2 class="govuk-prototype-kit-task-list__section">
+          <span class="govuk-prototype-kit-task-list__section-number">2. </span> Sift successful candidates
+        </h2>
+        <ul class="govuk-prototype-kiŵqat-task-q0qlist__items">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </ul>11
+          </li>
+
+          <li>
+            <h2 class="govuk-prototype-kit-task-list__section">
+              <span class="govuk-prototype-kit-task-list__section-number">3. </span> Review and confirm sift results
+            </h2>
+
+          </li>
+        </ol>
+      </div>
+    </div>
+
+<h1 class="govuk-heading-l">Interview</h1>
+
+    <li>
+      <h2 class="govuk-prototype-kit-task-list__section">
+        <span class="govuk-prototype-kit-task-list__section-number">4. </span> Act on candidate reasonable adjustment requests
+      </h2>
+
+    </li>
+
+
+
+
+
+    <li>
+      <h2 class="govuk-prototype-kit-task-list__section">
+        <span class="govuk-prototype-kit-task-list__section-number">5. </span> Schedule interviews
+      </h2>
+
+    </li>
+
+
+    <li>
+      <h2 class="govuk-prototype-kit-task-list__section">
+        <span class="govuk-prototype-kit-task-list__section-number">6. </span> Review assessments
+      </h2>
+
+    </li>
+
+
+    {% endblock %}
+
+
+
+    {% if data['from'] == "passMarks" %}
+    <li class="govuk-prototype-kit-task-list__item">
+      <span class="govuk-prototype-kit-task-list__task-name">
+
+        <a href="task-list-siftstage1" class="govuk-link--no-underline govuk-link--no-visited-state" aria-describedby="eligibility-status">
+          Sift candidate applications (16)
+        </a>
+      </span>
+
+
+      {% elif data['from'].length == 0 %}
+      Sift candidate applications (16)
+      {% endif %}
+
+      {% if data['leadScoring'] == "complete" or data['leadScoring'] == "confirmed" %}
+      <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="read-declaration-status">Completed</strong>
+      {% elif data['leadScoring'] == "prog"  %}
+      <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+
+      {% elif data['from'] == "passMarks" %}
+      <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+      {% elif data['from'] != "passMarks"  %}
+      <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+      {% endif  %}
+
+    </li>

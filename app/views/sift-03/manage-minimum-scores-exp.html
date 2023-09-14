@@ -35,6 +35,20 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
 
+
+
+{% if data['panelLeadResults'] == "true" %}
+<span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="confirm-lead-results"><strong>Back to panel results for lead</strong></a></span>
+
+{% endif %}
+
+
+  {% if data['conflead'] == "true" %}
+  <span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="confirm-lead-results"><strong>Back to confirm lead results</strong></a></span>
+
+  {% endif %}
+
+
   {% if data['from'] == "tasklist" %}
   <span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="task-list?from=passMarks&fromStat=completed %}"><strong>Back to task list</strong></a></span>
 
@@ -42,6 +56,8 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 {% if data['from'] == "tasklistsift2" %}
 <span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="task-list?sift2min=done"><strong>Back to task list</strong></a></span>
+
+<!-- <span class="govuk-body-m" style="float:right;background:#1d70b8;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:white;padding-left:8px;padding-right:8px" href="task-list?sift2MinSCores=done"><strong>Back to task list</strong></a></span> -->
 
 {% endif %}
 
@@ -94,7 +110,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
     </li>
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#past-week">
-        All sift criteria
+        Other sift criteria
       </a>
     </li>
     <li class="govuk-tabs__list-item">
@@ -194,7 +210,7 @@ classes: "govuk-button--secondary"
 
     <div class="parent">
     <div class="segment-a">
-    <h2 style="" class="govuk-heading-l">All sift criteria pass marks</h2>
+    <h2 style="" class="govuk-heading-l">Other sift criteria pass marks</h2>
     </div>
     <div class="segment-b">
     <a id="chnge" class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#"  style="font-weight:bold;font-size:20px;float:right">Change</a>
