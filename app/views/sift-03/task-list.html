@@ -27,7 +27,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
     <h2 class="govuk-heading-l" style="font-size:32px;font-weight:bold">{{ data['title'] | default("Policy Adviser") }}</h2>
 
 
-
+{{ data | dump }}
     <h1 class="govuk-heading-l">Sift</h1>
 
     <ol class="govuk-prototype-kit-task-list">
@@ -170,13 +170,14 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
             {% else %}
             <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
             {% endif %}
-          </li>
+
+          <!-- </li>
           <li class="govuk-prototype-kit-task-list__item">
 
 
             {% if data['sift2min'] == "done" %}
             <span class="govuk-prototype-kit-task-list__task-name">
-              <a href="task-list-siftstage2" class="govuk-link--no-underline govuk-link--no-visited-state" aria-describedby="company-information-status">
+              <a href="task-list-siftstage2?ss2=prog" class="govuk-link--no-underline govuk-link--no-visited-state" aria-describedby="company-information-status">
                 Sift applications by candidate (8)</a>
               </span>
               {% else  %}
@@ -184,11 +185,13 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
               {% endif %}
               {% if data['sift2min'] == "done" %}
               <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% elif data['ss2'] == "prog" %}
+              <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
               {% else %}
               <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
               {% endif %}
             </li>
-
+ -->
 
 
 
@@ -200,14 +203,16 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
                   Sift applications by criteria: Changing and Improving</a>
                 </span>
                 {% else %}
-                <span class="govuk-prototype-kit-task-list__task-name">Sift applications by criteria: Changing and Improving</span>
+                <span class="govuk-prototype-kit-task-list__task-name">Sift by criteria: Changing and Improving</span>
                 {% endif %}
 
-
-                {% if data['sift2min'] == "done" %}
+                {% if data['changing'] == "done" %}
+                <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="read-declaration-status">Completed</strong>
+                {% elif data['sift2min'] == "done" %}
                 <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
                 {% else %}
                 <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+
                 {% endif %}
 
 
@@ -225,12 +230,18 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
                 <span class="govuk-prototype-kit-task-list__task-name">Sift by criteria: Managing a Quality Service</span>
                 {% endif %}
 
-                {% if data['sift2min'] == "done" %}
+                {% if data['quality'] == "done" %}
+                <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="read-declaration-status">Completed</strong>
+                {% elif data['sift2min'] == "done" %}
                 <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
                 {% else %}
                 <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+
                 {% endif %}
-              </li>
+
+
+
+
 
               <li class="govuk-prototype-kit-task-list__item">
                 {% if data['sift2min'] == "done" %}
@@ -243,7 +254,9 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
                 <span class="govuk-prototype-kit-task-list__task-name">Sift by criteria: Personal statement (1250 words)</span>
                 {% endif %}
 
-                {% if data['sift2min'] == "done" %}
+                {% if data['ps'] == "done" %}
+                <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="read-declaration-status">Completed</strong>
+                {% elif data['sift2min'] == "done" %}
                 <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
                 {% else %}
                 <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
@@ -258,10 +271,16 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
                   </a>
                 </span>
                 {% else %}
-                <span class="govuk-prototype-kit-task-list__task-name">Review and submit sift scores</span>
+                <span class="govuk-prototype-kit-task-list__task-name">Review and submit my sift scores</span>
                 {% endif %}
 
-                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="medical-information-status">Cannot start yet</strong>
+                {% if data['s2confirm'] == "true" %}
+                <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="read-declaration-status">Completed</strong>
+                {% elif data['sift2min'] == "done" %}
+                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+                {% endif %}
               </li>
             </ul>
           </li>
@@ -273,9 +292,9 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
             <ul class="govuk-prototype-kit-task-list__items">
               <li class="govuk-prototype-kit-task-list__item">
 
-                {% if data['vs2'] == "yes" %}
+                  {% if data['s2confirm'] == "true" %}
                 <span class="govuk-prototype-kit-task-list__task-name">
-                  <a href="view-sift2-panel-results?width2=5&width3=4" class="govuk-link--no-underline govuk-link--no-visited-state" aria-describedby="company-information-status">
+                  <a href="view-sift2-panel-results??s2Viewed=yes&width2=5&width3=4" class="govuk-link--no-underline govuk-link--no-visited-state" aria-describedby="company-information-status">
                     Review panel results for sift
                   </a>
                 </span>
@@ -287,14 +306,15 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
                 {% if data['vs2'] == "yes" %}
                 <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="company-information-status">Completed</strong>
-                {% elif data['vs2'].length > 0 %}
+                {% elif data['s2confirm'] == "true" %}
                 <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
                 {% else %}
                 <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
                 {% endif %}
               </li>
+
               <li class="govuk-prototype-kit-task-list__item">
-                {% if data['vs2'] == "yes" %}
+              {% if data['vs2'] == "yes" %}
                 <span class="govuk-prototype-kit-task-list__task-name">
                   <a href="confirm-sift2-results"  class="govuk-link--no-underline govuk-link--no-visited-state"  aria-describedby="laist-convictions-status">
                     Confirm the sift results
@@ -307,7 +327,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
                 {% if data['siftStageTwo'] == "complete" %}
                 <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="company-information-status">Completed</strong>
-                {% elif data['vs2'].length > 0 %}
+                {% elif data['vs2'] == "yes" %}
                 <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
 
                 {% else %}
