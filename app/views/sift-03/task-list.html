@@ -51,7 +51,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
               </a>
             </span>
 
-            {% if data['from'] == "passMarks" %}
+            {% if data['from'] == "passMarks" or data['fromStat'] == "completed" %}
             <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
             {% else %}
             <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
