@@ -36,80 +36,87 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
   <div class="govuk-grid-column-full">
 <h1 class="govuk-heading-xl">Sift Stage 1 panel scores<BR>(lead criteria only)</h1>
 
-<p class="govuk-body-m">All scores and recommendations from panel members have been combined to show the average scores.</p>
+<p class="govuk-body-m">All scores and recommendations from panel members have been combined to show the total scores.</p>
 
-  {% set v16 = 4 %}
-  {% set v7 = 4 %}
+  {% set v16 = 12 %}
+  {% set v7 = 12 %}
 
-  {% set v1 = 5.33 %}
+  {% set v1 = 16 %}
   {% set v1p = [5,5,6] %}
 
 
-  {% set v2 = 3 %}
+  {% set v2 = 9 %}
   {% set v2p = [3,3,3] %}
 
-  {% set v3 = 7 %}
+  {% set v3 = 21 %}
   {% set v3p = [7,7,7] %}
 
 
-  {% set v4 = 4 %}
+  {% set v4 = 12 %}
   {% set v4p = [3,4,5] %}
 
-  {% set v5 = 6.33 %}
+  {% set v5 = 19 %}
   {% set v5p = [5,7,7] %}
 
-  {% set v6 = 3.33 %}
+  {% set v6 = 10 %}
   {% set v6p = [2,4,4] %}
 
-  {% set v7 = 4 %}
+  {% set v7 = 12 %}
   {% set v7p = [4,4,4] %}
 
-  {% set v8 = 4 %}
+  {% set v8 = 12 %}
   {% set v8p = [4,4,4] %}
 
-  {% set v9 = 5 %}
+  {% set v9 = 15 %}
   {% set v9p = [4,5,6] %}
 
-  {% set v10 = 3 %}
+  {% set v10 = 9 %}
   {% set v10p = [3,3,3] %}
 
-  {% set v11 = 5.66 %}
+  {% set v11 = 17 %}
   {% set v11p = [5,5,7] %}
 
-  {% set v12 = 4.33 %}
+  {% set v12 = 11 %}
   {% set v12p = [3,3,5] %}
 
-  {% set v13 = 4 %}
+  {% set v13 = 12 %}
   {% set v13p = [2,5,5] %}
 
-  {% set v14 = 4 %}
+  {% set v14 = 12 %}
   {% set v14p = [4,4,4] %}
 
-  {% set v15 = 6 %}
+  {% set v15 = 18 %}
   {% set v15p = [5,6,7] %}
 
-  {% set v16 = 4 %}
+  {% set v16 = 12 %}
   {% set v16p = [3,4,5] %}
 
-  <table class="govuk-table" style="width:75%"">
-    <caption class="govuk-!-margin-bottom-6 govuk-table__caption govuk-table__caption--s">
-  The minimum pass mark for the lead criteria was {{ data['width2'] | default("4")}}.</caption>
+  <table class="govuk-table" style="width:100%"">
+    <!-- <caption class="govuk-!-margin-bottom-6 govuk-table__caption govuk-table__caption--s">
+  The minimum pass mark for the lead criteria was {{ data['width2'] | default("4")}}.</caption> -->
     <thead class="govuk-table__head">
       <tr class="govuk-table__row" style="border-top:1px solid lightgrey">
         <th scope="col" class="govuk-table__header app-custom-class"></th>
-        <th scope="col" class="govuk-table__header app-custom-class">Average score</th>
+        <th scope="col" class="govuk-table__header app-custom-class">Minimum pass</th>
+        <th scope="col" class="govuk-table__header app-custom-class">Total score</th>
+        <th scope="col" class="govuk-table__header app-custom-class">Panel 1</th>
+        <th scope="col" class="govuk-table__header app-custom-class">Panel 2</th>
+        <th scope="col" class="govuk-table__header app-custom-class">Panel 3</th>
         <th scope="col" class="govuk-table__header app-custom-class">Panel consensus</th>
-        <th scope="col" class="govuk-table__header app-custom-class">P1</th>
-        <th scope="col" class="govuk-table__header app-custom-class">P2</th>
-        <th scope="col" class="govuk-table__header app-custom-class">P3</th>
+
       </tr>
     </thead>
     <tbody class="govuk-table__body">
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Candidate 3</th>
+        <td class="govuk-table__cell">{{ data['width2']|float*3 }}</td>
         <td class="govuk-table__cell">{{ v3 }}</td>
+
+        <td class="govuk-table__cell">{{ v3p[0] }}</td>
+        <td class="govuk-table__cell">{{ v3p[1] }}</td>
+        <td class="govuk-table__cell">{{ v3p[2] }}</td>
         <td class="govuk-table__cell">
-          {% if v3|float >= data['width2']|float  %}
+          {% if v3|float >= data['width2']|float*3  %}
           <strong class="govuk-tag govuk-tag--green">
             PASS SIFT STAGE 1
           </strong>
@@ -119,14 +126,17 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           </strong>
           {% endif %}
         </td>
-        <td class="govuk-table__cell">{{ v3p[0] }}</td>
-        <td class="govuk-table__cell">{{ v3p[1] }}</td>
-        <td class="govuk-table__cell">{{ v3p[2] }}</td>
+        </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Candidate 5</th>
+          <td class="govuk-table__cell">{{ data['width2']|float*3 }}</td>
+
           <td class="govuk-table__cell">{{ v5 }}</td>
+          <td class="govuk-table__cell">{{ v5p[0] }}</td>
+          <td class="govuk-table__cell">{{ v5p[1] }}</td>
+          <td class="govuk-table__cell">{{ v5p[2] }}</td>
           <td class="govuk-table__cell">
-            {% if v5|float >= data['width2']|float  %}
+            {% if v5|float >= data['width2']|float*3  %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -136,16 +146,19 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
             </strong>
             {% endif %}
           </td>
-          <td class="govuk-table__cell">{{ v5p[0] }}</td>
-          <td class="govuk-table__cell">{{ v5p[1] }}</td>
-          <td class="govuk-table__cell">{{ v5p[2] }}</td>
+
         </tr>
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Candidate 15</th>
+          <td class="govuk-table__cell">{{ data['width2']|float*3 }}</td>
+
           <td class="govuk-table__cell">{{ v15 }}</td>
+          <td class="govuk-table__cell">{{ v15p[0] }}</td>
+          <td class="govuk-table__cell">{{ v15p[1] }}</td>
+          <td class="govuk-table__cell">{{ v15p[2] }}</td>
           <td class="govuk-table__cell">
-            {% if v15|float >= data['width2']|float  %}
+            {% if v15|float >= data['width2']|float*3  %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -155,16 +168,19 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
             </strong>
             {% endif %}
           </td>
-          <td class="govuk-table__cell">{{ v15p[0] }}</td>
-          <td class="govuk-table__cell">{{ v15p[1] }}</td>
-          <td class="govuk-table__cell">{{ v15p[2] }}</td>
+
         </tr>
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Candidate 11</th>
+          <td class="govuk-table__cell">{{ data['width2']|float*3 }}</td>
+
           <td class="govuk-table__cell">{{ v11 }}</td>
+          <td class="govuk-table__cell">{{ v11p[0] }}</td>
+          <td class="govuk-table__cell">{{ v11p[1] }}</td>
+          <td class="govuk-table__cell">{{ v11p[2] }}</td>
           <td class="govuk-table__cell">
-            {% if v11|float >= data['width2']|float  %}
+            {% if v11|float >= data['width2']|float*3  %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -174,16 +190,19 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
             </strong>
             {% endif %}
           </td>
-          <td class="govuk-table__cell">{{ v11p[0] }}</td>
-          <td class="govuk-table__cell">{{ v11p[1] }}</td>
-          <td class="govuk-table__cell">{{ v11p[2] }}</td>
+
         </tr>
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Candidate 1</th>
+          <td class="govuk-table__cell">{{ data['width2']|float*3 }}</td>
+
           <td class="govuk-table__cell">{{ v1 }}</td>
+          <td class="govuk-table__cell">{{ v1p[0] }}</td>
+          <td class="govuk-table__cell">{{ v1p[1] }}</td>
+          <td class="govuk-table__cell">{{ v1p[2] }}</td>
           <td class="govuk-table__cell">
-            {% if v1|float >= data['width2']|float  %}
+            {% if v1|float >= data['width2']|float*3  %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -193,34 +212,19 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
             </strong>
             {% endif %}
           </td>
-          <td class="govuk-table__cell">{{ v1p[0] }}</td>
-          <td class="govuk-table__cell">{{ v1p[1] }}</td>
-          <td class="govuk-table__cell">{{ v1p[2] }}</td>
+
         </tr>
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Candidate 9</th>
+          <td class="govuk-table__cell">{{ data['width2']|float*3 }}</td>
+
           <td class="govuk-table__cell">{{ v9 }}</td>
-          <td class="govuk-table__cell">
-            {% if v9|float >= data['width2']|float  %}
-            <strong class="govuk-tag govuk-tag--green">
-              PASS SIFT STAGE 1
-            </strong>
-            {% else %}
-            <strong class="govuk-tag govuk-tag--red">
-              REJECT CANDIDATE
-            </strong>
-            {% endif %}
-          </td>
           <td class="govuk-table__cell">{{ v9p[0] }}</td>
           <td class="govuk-table__cell">{{ v9p[1] }}</td>
           <td class="govuk-table__cell">{{ v9p[2] }}</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Candidate 12</th>
-          <td class="govuk-table__cell">{{ v12 }}</td>
           <td class="govuk-table__cell">
-            {% if v12|float >= data['width2']|float  %}
+            {% if v9|float >= data['width2']|float*3 %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -230,16 +234,19 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
             </strong>
             {% endif %}
           </td>
-          <td class="govuk-table__cell">{{ v12p[0] }}</td>
-          <td class="govuk-table__cell">{{ v12p[1] }}</td>
-          <td class="govuk-table__cell">{{ v12p[2] }}</td>
+
         </tr>
 
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Candidate 4</th>
-          <td class="govuk-table__cell">{{ v4 }}</td>
+          <th scope="row" class="govuk-table__header">Candidate 7</th>
+          <td class="govuk-table__cell">{{ data['width3']|float*3 }}</td>
+
+          <td class="govuk-table__cell">{{ v7 }}</td>
+          <td class="govuk-table__cell">{{ v7p[0] }}</td>
+          <td class="govuk-table__cell">{{ v7p[1] }}</td>
+          <td class="govuk-table__cell">{{ v7p[2] }}</td>
           <td class="govuk-table__cell">
-            {% if v4|float >= data['width2']|float  %}
+            {% if v7|float >= data['width3']|float*3  %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -249,37 +256,64 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
             </strong>
             {% endif %}
           </td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 16</th>
+          <td class="govuk-table__cell">{{ data['width3']|float*3 }}</td>
+
+          <td class="govuk-table__cell">{{ v16 }}</td>
+          <td class="govuk-table__cell">{{ v16p[0] }}</td>
+          <td class="govuk-table__cell">{{ v16p[1] }}</td>
+          <td class="govuk-table__cell">{{ v16p[2] }}</td>
+          <td class="govuk-table__cell">
+            {% if v16|float >= data['width3']|float*3  %}
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 4</th>
+          <td class="govuk-table__cell">{{ data['width2']|float*3 }}</td>
+
+          <td class="govuk-table__cell">{{ v4 }}</td>
           <td class="govuk-table__cell">{{ v4p[0] }}</td>
           <td class="govuk-table__cell">{{ v4p[1] }}</td>
           <td class="govuk-table__cell">{{ v4p[2] }}</td>
+          <td class="govuk-table__cell">
+            {% if v4|float >= data['width2']|float*3  %}
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+
         </tr>
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Candidate 8</th>
+          <td class="govuk-table__cell">{{ data['width2']|float*3 }}</td>
+
           <td class="govuk-table__cell">{{ v8 }}</td>
-          <td class="govuk-table__cell">
-            {% if v8|float >= data['width2']|float  %}
-            <strong class="govuk-tag govuk-tag--green">
-              PASS SIFT STAGE 1
-            </strong>
-            {% else %}
-            <strong class="govuk-tag govuk-tag--red">
-              REJECT CANDIDATE
-            </strong>
-            {% endif %}
-          </td>
           <td class="govuk-table__cell">{{ v8p[0] }}</td>
           <td class="govuk-table__cell">{{ v8p[1] }}</td>
           <td class="govuk-table__cell">{{ v8p[2] }}</td>
-        </tr>
-
-
-
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Candidate 14</th>
-          <td class="govuk-table__cell">{{ v14 }}</td>
           <td class="govuk-table__cell">
-            {% if v14|float >= data['width2']|float  %}
+            {% if v8|float >= data['width2']|float*3  %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -289,36 +323,65 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
             </strong>
             {% endif %}
           </td>
-          <td class="govuk-table__cell">{{ v14p[0] }}</td>
-          <td class="govuk-table__cell">{{ v14p[1] }}</td>
-          <td class="govuk-table__cell">{{ v14p[2] }}</td>
+
         </tr>
+
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Candidate 14</th>
+                  <td class="govuk-table__cell">{{ data['width2']|float*3 }}</td>
+
+                  <td class="govuk-table__cell">{{ v14 }}</td>
+                  <td class="govuk-table__cell">{{ v14p[0] }}</td>
+                  <td class="govuk-table__cell">{{ v14p[1] }}</td>
+                  <td class="govuk-table__cell">{{ v14p[2] }}</td>
+                  <td class="govuk-table__cell">
+                    {% if v14|float >= data['width2']|float*3  %}
+                    <strong class="govuk-tag govuk-tag--green">
+                      PASS SIFT STAGE 1
+                    </strong>
+                    {% else %}
+                    <strong class="govuk-tag govuk-tag--red">
+                      REJECT CANDIDATE
+                    </strong>
+                    {% endif %}
+                  </td>
+
+                </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 12</th>
+          <td class="govuk-table__cell">{{ data['width2']|float*3 }}</td>
+
+          <td class="govuk-table__cell">{{ v12 }}</td>
+          <td class="govuk-table__cell">{{ v12p[0] }}</td>
+          <td class="govuk-table__cell">{{ v12p[1] }}</td>
+          <td class="govuk-table__cell">{{ v12p[2] }}</td>
+          <td class="govuk-table__cell">
+            {% if v12|float >= data['width2']|float*3  %}
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+
+        </tr>
+
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Candidate 6</th>
+          <td class="govuk-table__cell">{{ data['width2']|float*3 }}</td>
+
           <td class="govuk-table__cell">{{ v6 }}</td>
-          <td class="govuk-table__cell">
-            {% if v6|float >= data['width2']|float  %}
-            <strong class="govuk-tag govuk-tag--green">
-              PASS SIFT STAGE 1
-            </strong>
-            {% else %}
-            <strong class="govuk-tag govuk-tag--red">
-              REJECT CANDIDATE
-            </strong>
-            {% endif %}
-          </td>
           <td class="govuk-table__cell">{{ v6p[0] }}</td>
           <td class="govuk-table__cell">{{ v6p[1] }}</td>
           <td class="govuk-table__cell">{{ v6p[2] }}</td>
-        </tr>
-
-
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Candidate 6</th>
-          <td class="govuk-table__cell">{{ v10 }}</td>
           <td class="govuk-table__cell">
-            {% if v10|float >= data['width2']|float  %}
+            {% if v6|float >= data['width2']|float*3  %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -328,16 +391,42 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
             </strong>
             {% endif %}
           </td>
+
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Candidate 10</th>
+          <td class="govuk-table__cell">{{ data['width2']|float*3 }}</td>
+
+          <td class="govuk-table__cell">{{ v10 }}</td>
           <td class="govuk-table__cell">{{ v10p[0] }}</td>
           <td class="govuk-table__cell">{{ v10p[1] }}</td>
           <td class="govuk-table__cell">{{ v10p[2] }}</td>
+          <td class="govuk-table__cell">
+            {% if v10|float >= data['width2']|float*3  %}
+            <strong class="govuk-tag govuk-tag--green">
+              PASS SIFT STAGE 1
+            </strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--red">
+              REJECT CANDIDATE
+            </strong>
+            {% endif %}
+          </td>
+
         </tr>
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Candidate 2</th>
+          <td class="govuk-table__cell">{{ data['width2']|float*3 }}</td>
+
           <td class="govuk-table__cell">{{ v2 }}</td>
+          <td class="govuk-table__cell">{{ v2p[0] }}</td>
+          <td class="govuk-table__cell">{{ v2p[1] }}</td>
+          <td class="govuk-table__cell">{{ v2p[2] }}</td>
           <td class="govuk-table__cell">
-            {% if v2|float >= data['width2']|float  %}
+            {% if v2|float >= data['width2']|float*3  %}
             <strong class="govuk-tag govuk-tag--green">
               PASS SIFT STAGE 1
             </strong>
@@ -347,9 +436,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
             </strong>
             {% endif %}
           </td>
-          <td class="govuk-table__cell">{{ v2p[0] }}</td>
-          <td class="govuk-table__cell">{{ v2p[1] }}</td>
-          <td class="govuk-table__cell">{{ v2p[2] }}</td>
+
         </tr>
 
     </tbody>
@@ -359,7 +446,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
 
-<h2 class="govuk-heading-l govuk-!-margin-top-9">Priority scheme candidates</h2>
+<!-- <h2 class="govuk-heading-l govuk-!-margin-top-9">Priority scheme candidates</h2>
 
 <table class="govuk-table" style="width:75%"">
   <caption class="govuk-!-margin-bottom-6 govuk-table__caption govuk-table__caption--s">
@@ -368,16 +455,19 @@ The minimum pass mark for the lead criteria was {{ data['width3'] | default("4")
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header app-custom-class"></th>
       <th scope="col" class="govuk-table__header app-custom-class">Average score</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Panel 1</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Panel 2</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Panel 3</th>
       <th scope="col" class="govuk-table__header app-custom-class">Panel consensus</th>
-      <th scope="col" class="govuk-table__header app-custom-class">P1</th>
-      <th scope="col" class="govuk-table__header app-custom-class">P2</th>
-      <th scope="col" class="govuk-table__header app-custom-class">P3</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Candidate 7</th>
       <td class="govuk-table__cell">{{ v7 }}</td>
+      <td class="govuk-table__cell">{{ v7p[0] }}</td>
+      <td class="govuk-table__cell">{{ v7p[1] }}</td>
+      <td class="govuk-table__cell">{{ v7p[2] }}</td>
       <td class="govuk-table__cell">
 
 
@@ -397,13 +487,14 @@ The minimum pass mark for the lead criteria was {{ data['width3'] | default("4")
 
 
       </td>
-      <td class="govuk-table__cell">{{ v7p[0] }}</td>
-      <td class="govuk-table__cell">{{ v7p[1] }}</td>
-      <td class="govuk-table__cell">{{ v7p[2] }}</td>
+
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Candidate 16</th>
       <td class="govuk-table__cell">{{ v16 }}</td>
+      <td class="govuk-table__cell">{{ v16p[0] }}</td>
+      <td class="govuk-table__cell">{{ v16p[1] }}</td>
+      <td class="govuk-table__cell">{{ v16p[2] }}</td>
       <td class="govuk-table__cell">
 
 
@@ -424,13 +515,11 @@ The minimum pass mark for the lead criteria was {{ data['width3'] | default("4")
 
 
       </td>
-      <td class="govuk-table__cell">{{ v16p[0] }}</td>
-      <td class="govuk-table__cell">{{ v16p[1] }}</td>
-      <td class="govuk-table__cell">{{ v16p[2] }}</td>
+
     </tr>
 
   </tbody>
-</table>
+</table> -->
 
 
 
@@ -477,22 +566,22 @@ The minimum pass mark for the lead criteria was {{ data['width3'] | default("4")
 
       },
       {
-        text: "Average",
+        text: "Total",
         classes: 'app-custom-class'
 
       },
       {
-        text: "P1",
+        text: "Panel 1",
         classes: 'app-custom-class'
 
       },
       {
-        text: "P2",
+        text: "Panel 2",
         classes: 'app-custom-class'
 
       },
       {
-        text: "P3",
+        text: "Panel 3",
         classes: 'app-custom-class'
 
       }
