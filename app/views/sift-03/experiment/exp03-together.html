@@ -1,0 +1,698 @@
+{% extends "layouts/main.html" %}
+{% block header %}
+{% include '/includes/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+  <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="#"><strong>Return to task list</strong></a></span>
+  </div>
+  <a style="color:white;margin-left:10px" href="javascript:window.history.back()" class="govuk-back-link govuk-back-link--inverse">Back</a>
+</div>
+{% endblock %}
+{% block content %}
+
+
+
+
+
+<!-- <p style="font-size:16px;text-align:right;color:lightgrey;float:right" id="screen-log"></p> -->
+  <span class="govuk-caption-m govuk-!-margin-top-6" style="speak-as: numbers">1001334</span>
+<p class="govuk-body-l">Policy Adviser</p>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <H1 style=";padding-top:0px;padding-bottom:5px;; " class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-0">CV and Personal statement</H1>
+    <span class="govuk-caption-l govuk-!-margin-top-6">Candidate 3 of 16
+    <H2 style=";padding-top:0px;padding-bottom:5px;font-weight:normal;; " class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-0">2446148</H2></span>
+    <p id="" class="govuk-body-m">You may find it helpful to mark-up the personal statement with highlights where you feel the content is pertinent to the assessment criteria.</p>
+    <div id="topB"  class="topbar govuk-!-margin-top-0" style=";;padding:15px;border-top:1px solid #1d70b8;border-top:1px solid #1d70b8;box-shadow: 0px 0.5px 0.5px 0px #000000">
+      <h2 class="govuk-heading-m" style="line-height:1">Criteria</h2>
+      <div>
+
+        <ol style="line-height:1.2" class="govuk-list govuk-list--number">
+        <li>
+          Experience of building relationships with busy stakeholders to achieve change.
+        </li>
+        <li>
+          Knowledge of how to deliver oral and written information effectively.
+        </li>
+      </ol>
+
+      <a onclick="showHideDiv('contentcv','contentps')" style="font-size:20px; float:left;display:inline;font-weight:800;" class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#">CV</a>
+      <a onclick="showHideDiv('contentps','contentcv')" style="margin-left:30px;font-size:20px;float:left;font-weight:800;display:inline" class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#">Personal statement</a>
+
+    </div>
+
+  </div>
+
+  <div id="topBalt" class="topbar govuk-!-margin-top-3" style="display:none;height:auto;;padding:15px;border-top:1px solid #1d70b8;border-top:1px solid #1d70b8;box-shadow: 0px 1px 1px 0px #000000">
+    <div>
+
+      <ul class="govuk-list govuk-list--bullet" style="font-weight: normal">
+      <li>
+        Experience of building relationships with busy stakeholders to achieve change (Experience)
+      </li>
+      <li>
+        Knowledge of how to deliver oral and written information effectively (Technical skills)
+      </li>
+    </ul>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          <strong>Panel chair's notes</strong>
+        </span>
+      </summary>
+      <div class="govuk-details__text" style="background:white">
+        I want a policy adviser who can make good decisions. They should have knowledge and experience in the area we are working on.<BR><BR>They should be able to explain complex ideas in a simple way. They should be able to work well with others and be a good listener. They should be able to think creatively and come up with new ideas. They should be able to work under pressure and meet deadlines. They should be honest and trustworthy. Overall, I want someone who can help me make the best decisions for the people I serve.
+        </div>
+      </details>
+    </div>
+  </div>
+  <style>
+    .custom {
+      cursor: url(/public/images/uparrow.png), auto;
+      cursor: url(/public/images/hlcur.svg) 15 15, move;
+    }
+
+    .move {
+      cursor: move;}
+
+      .del {
+        cursor:pointer;
+      }
+
+      .topbar {
+        width: 96%;
+        height: auto;
+        min-height: auto;
+        background:#F8F7F7;
+        padding:10px;
+        overflow: auto;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0%;
+        opacity:98%;
+        z-index:289;
+      }
+
+      .sidebar {
+        width: 35%;
+        height: 250vh;
+        min-height: 800px;
+        overflow: auto;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 13%;
+      }
+
+      .main {
+        width: 65%;
+        height: 300vh;
+        min-height: 360vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .main,
+      .sidebar {
+        padding: 15px;
+      }
+
+      .wrapper {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .bottom {
+        justify-self: bottom;
+      }
+    </style>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+      </div>
+
+      <div class="wrapper">
+        <div class="main">
+
+<div id="contentps">
+          <span id="contentps" class="custom">
+            <p id="content" style="padding:6px">
+              <span class="govuk-caption-l govuk-!-margin-bottom-3 govuk-!-margin-top-3">Candidate answer: Personal statement</span>
+
+              I understand that Weltanschauung can be a complex and abstract concept to grasp. It encompasses an individual's worldview, beliefs, and values that shape their perception of the world. It can be challenging to reconcile differing Weltanschauungen, but it's important to approach these differences with empathy and an open mind. We all come from different backgrounds and experiences that shape our Weltanschauung, and it's crucial to respect and understand each other's perspectives. Let's strive to create a world where we can appreciate and learn from our differences, rather than letting them divide us.<BR><BR>
+                The absence of resolute determination is a most lamentable deficiency. To be without the unwavering fortitude to pursue one's goals with unbridled passion is a most regrettable state of affairs. The absence of conviction is a most egregious shortcoming, one that must be remedied with utmost haste. For those who aspire to the highest echelons of society, a lack of conviction is simply unacceptable. It is only through the unwavering pursuit of excellence that one can attain the pinnacle of success. Therefore, let us all strive to cultivate within ourselves the unyielding conviction necessary to achieve greatness. The dearth of unwavering determination is a most unfortunate inadequacy. To lack the unbridled fortitude to pursue one's aspirations with fervor is a most regrettable predicament. The absence of conviction is a most egregious shortcoming, one that must be rectified with utmost haste. For those who aspire to the uppermost echelons of society, a lack of conviction is simply unacceptable. It is only through the unflinching pursuit of excellence that one can attain the zenith of success. Hence, let us all endeavor to inculcate within ourselves the unyielding conviction indispensable to achieve greatness.<BR><BR>
+                  The cartographic representation of the land is but a mere approximation of the true terrain. The map, though a useful tool, cannot fully capture the essence of the luxurious and opulent landscape that lies before us. It is merely a glimpse, a tantalizing taste of the grandeur that awaits those who dare to venture forth. For those who seek the ultimate in refinement and sophistication, the map is but a starting point, a mere suggestion of the lavish and indulgent experiences that await. The true luxury lies not in the map, but in the journey itself, as we explore the uncharted territories of the opulent lifestyle.<BR><BR>
+                    I understand that it can be frustrating when things don't match up exactly as we expect them to. It's important to remember that the map is simply a representation of the territory, and not the territory itself. We all have our own unique experiences and perspectives that shape how we interpret and navigate the world around us. It's okay if our maps don't always align perfectly with reality. Instead, we can use them as a tool to help us better understand and navigate the world, while also remaining open to new experiences and perspectives that may challenge our existing maps.<BR><BR>
+                      The acquisition of the refined art of cultivating relationships with individuals of elevated status, who are encumbered by demanding schedules, has been a most valuable experience. This proficiency has been honed through the establishment of connections with stakeholders who possess limited availability due to their professional obligations. The ability to navigate these circumstances with finesse has resulted in successful outcomes, as objectives have been met through the establishment of productive partnerships. The cultivation of these relationships has been a crucial component in the achievement of desired results. The mastery of this skill has been a significant asset in the pursuit of progress and the attainment of goals, elevating one's status to the highest echelons of society.<BR><BR>
+                        Design thinking is a methodology that I find particularly useful. Its focus on empathy, ideation, prototyping, and testing allows for a human-centered approach to problem-solving. By understanding the needs and perspectives of the end-users, design thinking enables the creation of innovative and effective solutions. The iterative nature of the process also allows for continuous improvement and refinement. As a result, design thinking has become a popular approach in various fields, including business, education, and healthcare. Its versatility and effectiveness make it a valuable tool for anyone seeking to tackle complex challenges and create meaningful change.<BR><BR>
+                          I am a connoisseur of life's intricacies, and I embrace both the challenges and the pleasures that come my way. I am not one to shy away from the rough patches, for they are the very essence of growth and refinement. Rather, I relish in the opportunity to overcome obstacles and emerge stronger and more polished than before. I also savor the smooth moments, those times of ease and indulgence that make life all the more sweet.<BR><BR>
+                            As a resilient individual, I am able to navigate through both challenging and favorable circumstances with equal poise. I understand that life is a journey filled with ups and downs, and I am prepared to face any obstacle that comes my way. I am not deterred by setbacks, but rather, I use them as opportunities to learn and grow. My ability to adapt to changing situations and maintain a positive attitude is a testament to my strength and determination.<BR><BR>
+                              I am enamored with the art of storytelling. The mere thought of weaving a tale that captivates the imagination and transports the listener to a world of wonderment is a true delight. The power of words to evoke emotion and create a sense of enchantment is a gift that I cherish. The intricacies of crafting a narrative that is both compelling and memorable is a challenge that I relish. For me, storytelling is not just a pastime, it is a passion that I hold dear. It is a privilege to share my stories with those who appreciate the beauty of language and the magic of storytelling.<BR><BR>
+                                My professional background includes a proven track record of successfully building relationships with busy stakeholders to achieve change. Through my experience, I have developed a keen ability to effectively communicate and collaborate with individuals from diverse backgrounds and levels of authority. My approach is centered on active listening, empathy, and a commitment to understanding the unique needs and perspectives of each stakeholder. By fostering trust and mutual respect, I have been able to facilitate meaningful dialogue and drive positive outcomes. I am confident in my ability to leverage these skills to build strong partnerships and achieve impactful change in any professional setting.<BR><BR>
+                                  I understand how important it is to have the ability to communicate information both orally and in writing. It can be challenging to know how to effectively deliver information, but with the right knowledge and skills, it can make a significant difference in how the message is received. I empathize with those who may struggle with this, and I am here to offer support and guidance in developing these essential communication skills. Let's work together to improve your ability to convey information with confidence and clarity.<BR><BR>
+                                    As a seasoned professional, I possess a wealth of experience in cultivating profitable relationships with a wide range of stakeholders. My expertise lies in identifying and leveraging opportunities to establish and maintain strong connections with individuals and organizations across various industries. Through my strategic approach, I have consistently delivered exceptional results, driving growth and success for both my clients and my own business ventures. My ability to communicate effectively, build trust, and negotiate win-win outcomes has earned me a reputation as a trusted partner and advisor. I am committed to delivering excellence and achieving mutually beneficial outcomes for all parties involved.<BR><BR></p>
+                                    </span>
+</div>
+                                    <div id="contentcv" style="display:none">
+
+
+
+                                    <span id="content" class="custom">
+                                      <p id="content" style="padding:6px">
+              <span class="govuk-caption-l govuk-!-margin-bottom-3 govuk-!-margin-top-3">Candidate answer: CV</span>
+                                        <h3 class="govuk-heading-m">Summary</h3>
+                              <p id="content">I am experienced and knowledgeable policy adviser with a rich experience drawn from a number of departments and policy areas of focus.</p>
+                              <ul class="govuk-list govuk-list--bullet">
+                              <LI>My job is to provide guidance and recommendations to decision-makers</li>
+                              <LI>I analyse data and research to ensure that policies are effective and beneficial for the public</li>
+                              <LI>I also work with stakeholders to gather input and feedback. </li>
+                              <LI>It is important to consider different perspectives and opinions when creating policies. </li>
+                              <LI>My goal is to help create policies that improve the lives of citizens and promote the common good.</li>
+                              </ul>
+
+                              <h3 class="govuk-heading-m">Senior Policy Adviser
+                              <span class="govuk-caption-m">Department of xxxxxxxxxxxxxxxxxxxxxx<span class="govuk-caption-m">Sept 2018 - date</span>
+                              </h3>
+
+                              <p id="content" style="">Over the course of the pandemic I advised the Ministerial and Policy leadership on matters arising and wrote much of the proposed legislative framework that contributed to the bill set before the house:<BR>
+                              <ul class="govuk-list govuk-list--bullet">
+                              <li>providing evidence and guidance on the options available to meet the demand of the public and budgetary appetite for expenditure at the department</li>
+                              <li>leading a specialist, cross-cutting team to establish the feasibility and impact of the preferred solution SofS</li>
+                              <li>after the Ministerial reshuffle, ensuring the new SofS's communication preferences were effectively cascaded to relevant teams</li>
+                              </ul>
+
+                              <h3 class="govuk-heading-m">Policy Adviser
+                              <span class="govuk-caption-m">Department of xxxxxxxxxxxxxxxxxxxxxx<span class="govuk-caption-m">Oct 2014 - Sept 2018</span>
+                              </h3>
+
+                              <p class="govuk-body-m">
+                              I had the privilege of presenting the Minister with the evidence and guidance on the various options that could be considered to effectively address the policy intention.<BR><BR>Supported by a highly skilled team, I was able to convey the salient points knowing that a thorough analysis had been carried out. My primary objective and contribution was to determine the feasibility and potential impact of the proposed solution. I was able to provide valuable insights and recommendations to inform the decision-making process.<BR><BR>I was delighted when I received a commendation for my efforts from the Permanent Secretary during her Christmas Address.</p>
+
+                              <h3 class="govuk-heading-m">Policy Internship
+                              <span class="govuk-caption-m">Department of xxxxxxxxxxxxxxxxxxxxxx<span class="govuk-caption-m">Sept 2013 - Oct 2014</span>
+                              </h3>
+                              <p class="govuk-body-m">During my second internship, I had the opportunity to enhance my professional skills as a policy practitioner, with a specific focus on the development of concise and informative summaries of evidence and policy options.<BR><BR>These summaries were intended for presentation to the policy leadership and ministerial team. I am grateful for the valuable experience gained during my internship, which has contributed significantly to my growth as a professional. I look forward to utilizing these skills in future endeavors and continuing to develop my abilities in the field of policy development and analysis.</p>
+
+
+
+
+                              <h3 class="govuk-heading-m">Policy Internship
+                              <span class="govuk-caption-m">xxxxxxxxxxxxxxxxxxxxxx Corporation<span class="govuk-caption-m">Jun 2013 - Sept 2013</span>
+                              </h3>
+                              <p class="govuk-body-m">My first internship allowed me to build my skills as a policy practitioner by learning how to write summaries of evidence and policy options.<BR><BR>These summaries were presented to the policy leadership and ministerial team.
+
+
+
+
+
+                              <h3 class="govuk-heading-m">Education</h3>
+
+
+                              <ul class="govuk-list govuk-list--bullet">
+                              <li>Master of Public Policy (Distinction)</li>
+                              <li>BA Philosophy, Politics and Economics (First Class)</li>
+                              </ul>
+
+                              <h3 class="govuk-heading-m">Languages</h3>
+                              <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-9">
+
+                              <li>French (spoken: business, written: judicial)</li>
+                              <li>Arabic (spoken: professional)</li>
+                              </ul>
+</div>
+
+
+
+                                    <div style="background:#F2FAFF;height:auto;">
+
+                                      <div style="border-top:1px solid #1d70b8;padding:20px;">
+
+                                        <div class="govuk-form-group">
+                                          <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                              <h3 style="font-size:22px" class="govuk-fieldset__heading">
+                                                Score
+                                              </h3>
+                                              <div id="subject-hint" class="govuk-hint" style="font-size:18px;font-weight:bold">This will be shared with the candidate.</div>
+
+                                            </legend>
+                                            <div class="govuk-radios" data-module="govuk-radios" style="border:1px solid #1d70b8;border-radius:5px;;padding:15px;background:white">
+                                              <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input" id="psscorePanel-1" name="psscorePanel" type="radio" value="1">
+                                                <label  class="govuk-label govuk-radios__label" for="psscorePanel-1">
+                                                  <strong>1</strong> - not demonstrated
+                                                </label>
+                                              </div>
+                                              <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input" id="psscorePanel-2" name="psscorePanel" type="radio" value="2">
+                                                <label class="govuk-label govuk-radios__label" for="psscorePanel-2">
+                                                  <strong>2</strong> - minimal demonstration
+                                                </label>
+                                              </div>
+                                              <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input" id="psscorePanel-3" name="psscorePanel" type="radio" value="3">
+                                                <label class="govuk-label govuk-radios__label" for="psscorePanel-3">
+                                                  <strong>3</strong> - moderate demonstration
+                                                </label>
+                                              </div>
+                                              <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input" id="psscorePanel-4" name="psscorePanel" type="radio" value="4">
+                                                <label class="govuk-label govuk-radios__label" for="psscorePanel-4">
+                                                  <strong>4</strong> - acceptable demonstration
+                                                </label>
+                                              </div>
+                                              <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input" id="psscorePanel-5" name="psscorePanel" type="radio" value="5">
+                                                <label class="govuk-label govuk-radios__label" for="psscorePanel-5">
+                                                  <strong>5</strong> - good demonstration
+                                                </label>
+                                              </div>
+                                              <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input" id="psscorePanel-6" name="psscorePanel" type="radio" value="6">
+                                                <label class="govuk-label govuk-radios__label" for="psscorePanel-6">
+                                                  <strong>6</strong> - strong demonstration
+                                                </label>
+                                              </div>
+                                              <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input" id="psscorePanel-7" name="psscorePanel" type="radio" value="7">
+                                                <label class="govuk-label govuk-radios__label" for="psscorePanel-7">
+                                                  <strong>7</strong> - outstanding demonstration
+                                                </label>
+                                              </div>
+                                            </div>
+                                          </fieldset>
+                                        </div>
+
+                                        <div class="govuk-form-group" style="margin-top:5px">
+                                          <label style="font-size:20px;margin-bottom:20px" class="govuk-label" for="reason">
+                                            <strong>Optional feedback for candidates</strong>
+                                          </label>
+                                          <select style="width:50%;border:2px solid #1d70b8;" class="govuk-select" id="reason" name="reason">
+                                            <option selected disabled value="--">Select from the list (optional)</option>
+                                            <option id="newreason" value="Add a new reason to the list">Add a new reason to the list</option>
+                                            <option disabled value="--">-</option>
+                                            <option value="Not enough experience">Not enough experience</option>
+                                            <option value="High level of experience">High level of experience</option>
+                                            <option value="Strong example given">Strong example given</option>
+                                            <option value="No or poor example given">No or poor example given</option>
+                                            <option value="Very relevant to role">Very relevant to role</option>
+                                            <option value="Not relevant to role">Not relevant to role</option>
+                                          </select>
+                                        </div>
+
+                                        <div id="addReasonPanel" style="display:none">
+                                          <div  class="govuk-form-group">
+                                            <label class="govuk-label" for="addReason">Your new reason</label>
+                                            <input style="width:50%;background:white;border:1px solid #1d70b8;" class="govuk-input" id="addReason" name="addReason" type="text">
+
+                                            <button onclick="addToReasonSelector(addReason.value)" class="govuk-button govuk-button--secondary" data-module="govuk-button">Add to list</button>
+
+
+                                          </div>
+
+                                        </div>
+
+
+
+                                        <div style="margin-top:20px">
+                                          <form class="form" action="task-list?ps=done" method="post">
+
+                                            {{ govukButton({
+                                              classes: "govuk-!-margin-right-1 govuk-!-margin-top-6",
+                                              text: "Save and return to task list"
+                                            }) }}
+                                          </form>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div id="tryagain"></div>
+
+                                  <div class="sidebar" style="margin-top: 20px">
+                                    <span>
+                                      <svg
+                                      style="float: left; padding-right: 5px; padding-left: 5px"
+                                      width="30px"
+                                      height="30px"
+                                      viewBox="0 0 106 106"
+                                      version="1.1"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                                      >
+                                      <title>Group 3</title>
+                                      <defs>
+                                        <circle id="path-1" cx="53" cy="53" r="53"></circle>
+                                      </defs>
+                                      <g
+                                      id="Page-1"
+                                      stroke="none"
+                                      stroke-width="1"
+                                      fill="none"
+                                      fill-rule="evenodd"
+                                      >
+                                      <g
+                                      id="Artboard"
+                                      transform="translate(-2368.000000, -1498.000000)"
+                                      >
+                                      <g id="Group-3" transform="translate(2368.000000, 1498.000000)">
+                                        <g id="Group" transform="translate(0.000000, 0.000000)">
+                                          <mask id="mask-2" fill="white">
+                                            <use xlink:href="#path-1"></use>
+                                          </mask>
+                                          <circle
+                                          stroke="#1E70B8"
+                                          stroke-width="6.21"
+                                          cx="53"
+                                          cy="53"
+                                          r="49.895"
+                                          ></circle>
+                                          <g mask="url(#mask-2)">
+                                            <g transform="translate(16.000000, -95.000000)">
+                                              <path
+                                              d="M35.0181189,47.604672 L176.323115,55.6976696 C184.003177,56.1375318 190.095753,62.3338226 190.405927,70.0202149 L191.254348,91.0448803 C191.587259,99.2947081 185.169329,106.252392 176.919501,106.585302 C176.891334,106.586439 176.863163,106.587496 176.83499,106.588473 L39.4098263,111.355566 C35.1590128,111.503021 31.5935118,108.176592 31.4460568,103.925778 C31.4425934,103.825936 31.4410731,103.726036 31.4414967,103.626135 L31.6656534,50.7572066 C31.673079,49.0058346 33.0988661,47.5920867 34.8502381,47.5995122 C34.9062341,47.5997497 34.962214,47.6014702 35.0181189,47.604672 Z"
+                                              id="Rectangle"
+                                              fill="#FFEF00"
+                                              transform="translate(111.634052, 79.523316) rotate(-45.000000) translate(-111.634052, -79.523316) "
+                                              ></path>
+                                              <polygon
+                                              id="Rectangle"
+                                              fill="#FFEF00"
+                                              transform="translate(16.682372, 171.703645) rotate(-46.000000) translate(-16.682372, -171.703645) "
+                                              points="7.69290282 165.424758 12.5113481 163.914635 24.7734842 164.443724 25.6718409 179.492655 12.6011261 177.657118"
+                                              ></polygon>
+                                              <path
+                                              d="M66.1440403,173.92525 L66.1416911,177.120271 L9.27032652,177.162087 L9.9121497,173.327593 C18.6494343,167.570134 24.2989039,160.856441 26.8605585,153.186513 C29.422213,145.516584 30.0627833,143.386101 28.7822692,146.795062 C28.9963669,145.303896 29.2109344,143.173726 29.4259718,140.404551 C29.5651847,138.611818 28.1620379,131.856575 30.7124373,128.901538 C31.6385142,127.828533 34.3014228,127.294064 38.7011631,127.298131 C43.0296766,127.814882 45.6916455,128.558437 46.6870698,129.528796 C47.9106414,130.721557 48.2501302,133.264085 47.9608494,135.278893 C47.3185563,139.752391 47.5284254,144.012262 48.5904565,148.058505 C50.1430886,154.072883 51.7373882,158.438236 53.3733553,161.154565 C56.4180178,166.209865 60.6749128,170.46676 66.1440403,173.92525 Z"
+                                              id="Triangle"
+                                              fill="#1E70B8"
+                                              transform="translate(37.707183, 152.230109) rotate(-135.000000) translate(-37.707183, -152.230109) "
+                                              ></path>
+                                            </g>
+                                          </g>
+                                        </g>
+                                        <circle
+                                        id="Oval"
+                                        stroke="#1E70B8"
+                                        stroke-width="7"
+                                        cx="53"
+                                        cy="53"
+                                        r="49.5"
+                                        ></circle>
+                                      </g>
+                                    </g>
+                                  </g>
+                                </svg>
+
+                                <h2 class="govuk-heading-s" style="text-align:left;border-bottom: 1px solid #1d70b8; ">
+                                  Highlighted content
+                                </h2>
+                                <p class="govuk-body-m">You can highlight key content when marking the personal statement.</p>
+                              </span>
+                              <div class="move">
+                                <ul style="" class="govuk-list govuk-list--number" id="pane">
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+<script>
+var dragging = null;
+document.addEventListener('dragstart', function(event) {
+  var target = getLI( event.target );
+  dragging = target;
+  event.dataTransfer.setData('text/plain', null);
+  event.dataTransfer.setDragImage(self.dragging,0,0);
+});
+
+document.addEventListener('dragover', function(event) {
+  event.preventDefault();
+  var target = getLI( event.target );
+  var bounding = target.getBoundingClientRect()
+  var offset = bounding.y + (bounding.height/2);
+  if ( event.clientY - offset > 0 ) {
+    target.style['border-top'] = '5px dotted #1d70b8';
+    target.style['border-bottom'] = '';
+  } else {
+    target.style['border-top'] = '';
+    target.style['border-bottom'] = '5px dotted #1d70b8';
+    target.style['padding-bottom'] = '20px';
+
+  }
+});
+
+document.addEventListener('dragleave', function(event) {
+  var target = getLI( event.target );
+  target.style['border-bottom'] = '';
+  target.style['border-top'] = '';
+});
+
+document.addEventListener('drop', function(event) {
+  event.preventDefault();
+  var target = getLI( event.target );
+  if ( target.style['border-bottom'] !== '' ) {
+    target.style['border-bottom'] = '';
+    target.parentNode.insertBefore(dragging, event.target.nextSibling);
+  } else {
+    target.style['border-top'] = '';
+    target.parentNode.insertBefore(dragging, event.target);
+  }
+});
+
+function getLI( target ) {
+  while ( target.nodeName.toLowerCase() != 'li' && target.nodeName.toLowerCase() != 'body' ) {
+    target = target.parentNode;
+  }
+  if ( target.nodeName.toLowerCase() == 'body' ) {
+    return false;
+  } else {
+    return target;
+  }
+}
+
+const resurrectList = [];
+let selector = document.getElementById("reason");
+selector.addEventListener("keyup", () => {
+  selector.addEventListener("change", () => {
+    switch (selector.value) {
+      case "Add a new reason to the list":
+      showDiv('addReasonPanel');
+      break;
+      case "remove":
+      break;
+    }
+  }, { once: true });
+});
+
+selector.addEventListener("click", () => {
+  selector.addEventListener("change", () => {
+
+    switch (selector.value) {
+      case "Add a new reason to the list":
+      showDiv('addReasonPanel');
+      break;
+      case "remove":
+      break;
+    }
+  }, { once: true });
+});
+
+function addToReasonSelector(adder) {
+  var newOption = document.createElement("option")
+  newOption.innerHTML = adder;
+  selector.appendChild(newOption).selected = "true";
+  selector.focus();
+  hideDiv('addReasonPanel');
+  document.getElementById('addReason').value = '';
+}
+
+function showDiv(div1) {
+  document.getElementById(div1).style.display = 'block';
+  if (div1 == "notesPanel"){
+    const textA = document.getElementById("textA");
+    textA.focus();
+  } else if (div1 == "addReasonPanel") {
+    document.getElementById(div1).style.display = 'block';
+    const reaBox = document.getElementById("addReason");
+    reaBox.focus();
+  }
+}
+
+function hideDiv(div1) {
+document.getElementById(div1).style.display = 'none';
+}
+
+
+const newReason = document.getElementById("newreason");
+newReason.addEventListener("focus", (event) => {
+});
+
+selector.addEventListener("click", () => {
+  selector.addEventListener("change", () => {
+    switch (selector.value) {
+      case "add":
+      result.innerHTML = selector.value;
+      break;
+      case "remove":
+      result.innerHTML = selector.value;
+      break;
+    }
+  });
+});
+
+const myHL = [];
+
+const selectContent = document.getElementById("contentps");
+const selectContent2 = document.getElementById("contentcv");
+selectContent.addEventListener("mouseup", (event) => {
+  getSelectedParagraphText();
+});
+
+selectContent2.addEventListener("mouseup", (event) => {
+  getSelectedParagraphText();
+});
+
+
+let screenLog = document.querySelector("#screen-log");
+document.addEventListener("mousemove", logKey);
+
+function logKey(e) {
+  screenLog.innerText = `
+  Screen X/Y: ${e.screenX}, ${e.screenY}
+  Client X/Y: ${e.clientX}, ${e.clientY}`;
+}
+
+
+function getSelectedParagraphText() {
+  const selectContent = document.getElementById("pane");
+  var x = window.getSelection();
+  var z = x.anchorNode.parentNode;
+  if (x != "") {
+    var rand = Math.floor(Math.random()*(999-100+1)+100);
+    var deed = document.createElement("li");
+    var lnk = document.createElement("a");
+    deed.style.cssText = ";padding-top:10px;font-size:18px;background:white";
+    deed.setAttribute("id",rand);
+    lnk.setAttribute("href","#");
+    lnk.setAttribute("class","govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state");
+    lnk.setAttribute("onclick","kill('"+deed.id+"')");
+    lnk.setAttribute("id","dl"+rand);
+    lnk.innerHTML = "Delete";
+    deed.setAttribute("draggable","true")
+    deed.setAttribute("oncontextmenu","RightClickFunction('"+deed.id+"')");
+    var newDel = "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' onClick='kill("+deed.id+","+lnk.id+")' href='#'> Delete</a>";
+    lnk.innerHTML = "Delete";
+    deed.innerHTML = x+"<a style='float:right;color:#1d70b8;font-weight:600;font-size:18px' class='del govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' onclick='kill("+deed.id+")'> Delete</a>";
+    myHL.push(deed.innerText);
+    selectContent.appendChild(deed);
+    stylizeHighlightedString();
+    window.sessionStorage.setItem("highlights", JSON.stringify(myHL));
+  }
+}
+
+
+
+
+
+
+
+
+function stylizeHighlightedString() {
+  var text = window.getSelection();
+  var start = text.anchorOffset;
+  var end = text.focusOffset - text.anchorOffset;
+  range = window.getSelection().getRangeAt(0);
+  var selectionContents = range.extractContents();
+  var span = document.createElement("span");
+  var tally = document.createElement("div");
+  span.appendChild(selectionContents);
+  span.style.backgroundColor = "yellow";
+  span.style.color = "black";
+  range.insertNode(span);
+}
+
+function RightClickFunction(div){
+  var panelDiv = document.getElementById("pane");
+  const parentDiv = document.getElementById(div);
+  panelDiv.addEventListener("contextmenu",function(event){
+    event.preventDefault();
+    const newNodeDiv = document.createElement("div");
+    newNodeDiv.style.cssText = "height:90px;width:90%;padding-bottom:10px;";
+    newNodeDiv.setAttribute("id","div"+div);
+    const newNodeInput = document.createElement("input");
+    newNodeInput.type = "text";
+    newNodeDiv.style.cssText = "margin-top:20px;margin-bottom:20px;";
+    newNodeInput.setAttribute("class","govuk-input govuk-input--width-20 govuk-!-margin-bottom-3");
+    newNodeInput.setAttribute("id","input"+div);
+    const newNodeActionOK = document.createElement("button");
+    newNodeActionOK.setAttribute("id","ok"+div);
+    newNodeActionOK.setAttribute("class","govuk-button govuk-button--secondary")
+    newNodeActionOK.setAttribute("onClick","annotate('"+newNodeInput.id+"','"+div+"')");
+    newNodeActionOK.style.cssText = ";font-size:18px;;padding-bottom:10px";
+    newNodeActionOK.innerHTML = "Add";
+    const newNodeActionCancel = document.createElement("button");
+    newNodeActionCancel.setAttribute("id","cancel"+div);
+    newNodeActionCancel.setAttribute("class","govuk-button govuk-button--secondary")
+    newNodeActionCancel.setAttribute("onclick","kill('"+newNodeDiv.id+"','"+newNodeActionCancel.id+"')");
+    newNodeActionCancel.style.cssText = ";margin-left:15px;font-size:18px;padding-bottom:10px";
+    newNodeActionCancel.innerHTML = "Cancel";
+    newNodeDiv.appendChild(newNodeInput);
+    newNodeDiv.appendChild(newNodeActionOK);
+    newNodeDiv.appendChild(newNodeActionCancel);
+    parentDiv.appendChild(newNodeDiv)
+    newNodeInput.focus();
+    return true;
+  }, { once: true });
+}
+
+
+function annotate(item,div){
+  const index = document.getElementById(div)
+  const cont = document.getElementById(item)
+
+
+
+console.log(div)
+
+  // cont.style.cssText = "width:auto;font-size:14px;background:black;color:white;padding:5px"
+
+
+  var sliced = index.innerText.replace('Delete','');
+  sliced = sliced.replace('AddCancel','');
+
+
+  // const newItemContent = sliced + "<a style='color:#1d70b8;font-weight:600;font-size:18px' class='del govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' onclick='kill("+index.id+")'> Delete</a>" + "<br><HR><span style='margin-bottom:5px;font-weight:800;font-size:16px;border-radius:5px;border:1px solid lightgrey;padding:2px;background:lightgrey'>"+cont.value+"</span>";
+
+
+    const newItemContent =  sliced + "<a style='float:right;color:#1d70b8;font-weight:600;font-size:18px' class='del govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' onclick='kill("+index.id+")'> Delete</a>" + "<BR><span style=''> ["+cont.value+"] </span>";
+
+
+    index.innerHTML = newItemContent;
+
+  return;
+}
+
+function kill(index,del){
+  let node = document.getElementById(index);
+  let ddel = document.getElementById(del);
+  if (node.parentNode) {
+    node.parentNode.removeChild(node);
+  }
+  ddel.innerHTML = "";
+}
+
+function showHideDiv(div1, div2) {
+  document.getElementById(div1).style.display = "block";
+  document.getElementById(div2).style.display = "none";
+}
+
+</script>
+{% endblock %}
