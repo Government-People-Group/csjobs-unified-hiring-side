@@ -1,0 +1,490 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+{% block header %}
+{% include '/csu71/includes/pheader.html' %}
+{% endblock %}
+
+
+
+
+
+
+{% block beforeContent %}
+
+<style>
+  .govuk-back-link {
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.1428571429;
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: underline;
+    text-decoration-thickness: max(1px, .0625rem);
+    text-underline-offset: 0.1578em;
+    display: inline-block;
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-left: 0.875em;
+  }
+  @media (min-width: 40.0625em) {
+    .govuk-back-link {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+  }
+  @media print {
+    .govuk-back-link {
+      font-size: 14pt;
+      line-height: 1.2;
+    }
+  }
+  @media print {
+    .govuk-back-link {
+      font-family: sans-serif;
+    }
+  }
+  .govuk-back-link:hover {
+    text-decoration-thickness: max(3px, .1875rem, .12em);
+    -webkit-text-decoration-skip-ink: none;
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    text-decoration-skip: none;
+  }
+  .govuk-back-link:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #ffdd00;
+    box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+    text-decoration: none;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+  .govuk-back-link:link, .govuk-back-link:visited {
+    color: #0b0c0c;
+  }
+  @media print {
+    .govuk-back-link:link, .govuk-back-link:visited {
+      color: #000000;
+    }
+  }
+  .govuk-back-link:hover {
+    color: rgba(11, 12, 12, 0.99);
+  }
+  .govuk-back-link:active, .govuk-back-link:focus {
+    color: #0b0c0c;
+  }
+  @media print {
+    .govuk-back-link:active, .govuk-back-link:focus {
+      color: #000000;
+    }
+  }
+
+  .govuk-back-link:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0.1875em;
+    width: 0.4375em;
+    height: 0.4375em;
+    margin: auto 0;
+    -webkit-transform: rotate(225deg);
+    -ms-transform: rotate(225deg);
+    transform: rotate(225deg);
+    border: solid;
+    border-width: 1px 1px 0 0;
+    border-color: #ffffff;
+  }
+  @supports (border-width: max(0px)) {
+    .govuk-back-link:before {
+      border-width: max(1px, 0.0625em) max(1px, 0.0625em) 0 0;
+      font-size: max(16px, 1em);
+    }
+  }
+
+  .govuk-back-link:focus:before {
+    border-color: #0b0c0c;
+  }
+
+  .govuk-back-link:after {
+    content: "";
+    position: absolute;
+    top: -14px;
+    right: 0;
+    bottom: -14px;
+    left: 0;
+  }
+
+  .sticky1 {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+
+  .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0%;
+  }
+
+  .fixture {
+    position: fixed;
+    top: 13.5%;
+  }
+
+</style>
+<!-- <div  class="sticky1" style="width:100%;background:#1d70b8;height:185px;border-bottom:0.5px solid #1d70b8;">
+  <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list-interview-first-alt"><strong>Save and return to task-list</strong></a></span>
+  </div>
+  <a style="color:white;margin-left:20px" href="#" class="govuk-back-link govuk-back-link--inverse">Back</a>
+
+  <H1 style="color:white;font-weight:normal;padding-top:0px;margin-left:30px; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-1"><strong>Interview</strong> {{ data['candidate']|default("Mei Chen")}}</h1>
+    <HR style="width:93%;border:0.25px solid #F4FAFF">
+      <span style="font-size:22px;text-align:left;float:left;width:270px;margin-left:30px;color:white;border-right:0px solid white" class="govuk-!-margin-bottom-3 govuk-caption-m">Role <strong>Policy Adviser</strong></span>
+      <span style="font-size:22px;text-align:left;float:left;width:250px;margin-left:30px;color:white;border-right:0px solid white" class="govuk-!-margin-bottom-3 govuk-caption-m">Date <strong id="date"></strong></span>
+      <span style="font-size:22px;text-align:left;float:left;width:200px;margin-left:40px;color:white;" class="govuk-!-margin-bottom-3 govuk-caption-m">Time <strong>{{data['interviewEvent']}}</strong></span>
+
+
+    </div> -->
+
+    {% from "key-details-bar/macro.njk" import dwpKeyDetailsBar %}
+<div class="sticky">
+    {{ dwpKeyDetailsBar({
+    primaryIdentifier: {
+    text: 'Name:',
+    value: data['candidate']|default("Mei Chen")
+    },
+    secondaryIdentifier: {
+    text: 'Role:',
+    value: 'Policy Adviser'
+    },
+
+    additionalData: [
+    {
+    value: "Monday 25 Sep 2023",
+    text: "Interview date:"
+    },
+    {
+    value: "07777 900 900",
+    text: "Mobile number:"
+    },
+    {
+    value: "Welsh speaker",
+    text: "Language:"
+    }
+    ]
+    }) }}
+    </div>
+
+    {% endblock %}
+
+
+    {% block content %}
+
+    {{ data['score']}}
+    {% set questPack = [
+      ["Question 1","50","6-8 mins | Experience","Can you tell me about your experience of building a trusted advisor-style relationship with a stakeholder? Can you give me examples of how you were able to achieve this?","Building engaging and effective relationships with stakeholders (Experience)"],
+      ["Question 2","160","6-8 mins | Behaviours","Can you describe a time when you have had to bring together different viewpoints into one way forward? What was the situation? What did you do? What was the outcome?","Seeing the big picture (Behaviours)"],
+      ["Question 3","210","6-8 mins | Behaviours","Can you describe a time when you have received a reaction to a piece of work or project that you weren't expecting? How did you manage the situation?","Changing and improving (Behaviours)"],
+      ["Question 4","260","2 mins | Strengths","How does it make you feel when people shift the goalposts on a task?","Analytical (Strengths)"],
+      ["Question 5","350","2 mins | Strengths","What does a successful day look like?","Challenger (Strengths)"],
+      ["Question 6","470","2 mins | Strengths","What aspect of problem solving do you least enjoy?","Problem solver (Strengths)"],
+      ["Question 7","590","10 mins | Activity","Give a 10 minute presentation on the what interests you about working for the Civil Service in a policy role?","Presentation"]
+      ] %}
+
+
+
+
+      <form class="form" action="task-list-interview-first-alt?{{data['candidate']}}=done" method="post">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <input type="hidden" id="candidate" name="candidate" value="{{ data['candidate']}}">
+
+            <!-- background:#F1FAFF -->
+
+
+
+
+
+
+            {% for number, pos, time, question, criteria in questPack %}
+
+
+            <div  style=" ;;border:1px solid #1d70b8;;background:white;padding:0px">
+              <span class="{{ posVariable }} govuk-caption-m" id="{{number}}" style=";margin-left:{{pos|int}}px;background:#1d70b8;;color:white;font-weight:bold;;font-size:18px;width:105px;;padding:5px;text-align:center">{{number}}</span>
+              <span class="govuk-caption-m" style=";position:absolute;top:0;right:50px;font-size:16px;font-weight:normal;;padding:10px">{{time}}</span>
+              <div class="govuk-!-margin-top-1" style="border-radius:5px;background:white;padding:20px">
+
+                <h2 class="govuk-heading-m govuk-!-margin-top-9" style="padding-left:10px;;margin-left:0px;font-size:30px;line-height:1.4;font-weight:normal;;">{{question}}</h2>
+              </div>
+              <div class="govuk-!-margin-top-4" style="border:0px solid #1d70b8;border-radius:5px;padding:30px;background:#f3f2f1">
+                <span class="govuk-caption-m" style=";;;color:black;font-weight:normal;font-size:22px;;;padding:5px;">{{criteria}}</span>
+
+</div>
+</div>
+  {% endfor %}
+
+
+
+
+
+
+        </div>
+      </div>
+
+
+
+
+
+  <button type="submit" onclick="grabScores('{{data['candidate']}}')" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Save and return to task-list</button>
+
+
+  <input type="hidden" id="storedScores" name="storedScores" value="{{ data['score']}}">
+
+
+  <form>
+
+    <script>
+      const todayDate = document.getElementById('date');
+      const stamp = new Date();
+      const tick = stamp.toLocaleDateString('en-uk', { weekday:"short", day:"numeric", month:"short", year:"numeric" }) ;
+      todayDate.innerHTML = tick;
+
+
+      const meiScoreArr = [];
+      const ameliaScoreArr = [];
+      const javierScoreArr = [];
+
+      const candidate = document.getElementById('candidate').value;
+      function grabScores(candidate){
+
+        candidate = candidate;
+
+        if (candidate == "Mei Chen") {
+          const meiS1 = document.getElementById("Mei Chen score 1");
+          meiScoreArr.push(meiS1.value)
+          const meiS2 = document.getElementById("Mei Chen score 2");
+          meiScoreArr.push(meiS2.value)
+          const meiS3 = document.getElementById("Mei Chen score 3");
+          meiScoreArr.push(meiS3.value)
+          const meiS4 = document.getElementById("Mei Chen score 4");
+          meiScoreArr.push(meiS4.value)
+          const meiS5 = document.getElementById("Mei Chen score 5");
+          meiScoreArr.push(meiS5.value)
+          const meiS6 = document.getElementById("Mei Chen score 6");
+          meiScoreArr.push(meiS6.value)
+          const meiS7 = document.getElementById("Mei Chen score 7");
+          meiScoreArr.push(meiS7.value)
+
+          console.log(meiScoreArr)
+          window.sessionStorage.setItem("meiScores", JSON.stringify(meiScoreArr));
+        } else if (candidate == "Amelia Lawson"){
+          const ameliaS1 = document.getElementById("Amelia Lawson score 1");
+          ameliaScoreArr.push(ameliaS1.value)
+          const ameliaS2 = document.getElementById("Amelia Lawson score 2");
+          ameliaScoreArr.push(ameliaS2.value)
+          const ameliaS3 = document.getElementById("Amelia Lawson score 3");
+          ameliaScoreArr.push(ameliaS3.value)
+          const ameliaS4 = document.getElementById("Amelia Lawson score 4");
+          ameliaScoreArr.push(ameliaS4.value)
+          const ameliaS5 = document.getElementById("Amelia Lawson score 5");
+          ameliaScoreArr.push(ameliaS5.value)
+          const ameliaS6 = document.getElementById("Amelia Lawson score 6");
+          ameliaScoreArr.push(ameliaS6.value)
+          const ameliaS7 = document.getElementById("Amelia Lawson score 7");
+          ameliaScoreArr.push(ameliaS7.value)
+
+          console.log(ameliaScoreArr)
+          window.sessionStorage.setItem("ameliaScores", JSON.stringify(ameliaScoreArr));
+
+        } else if (candidate == "Javier Santos"){
+          const javierS1 = document.getElementById("Javier Santos score 1");
+          javierScoreArr.push(javierS1.value)
+          const javierS2 = document.getElementById("Javier Santos score 2");
+          javierScoreArr.push(javierS2.value)
+          const javierS3 = document.getElementById("Javier Santos score 3");
+          javierScoreArr.push(javierS3.value)
+          const javierS4 = document.getElementById("Javier Santos score 4");
+          javierScoreArr.push(javierS4.value)
+          const javierS5 = document.getElementById("Javier Santos score 5");
+          javierScoreArr.push(javierS5.value)
+          const javierS6 = document.getElementById("Javier Santos score 6");
+          javierScoreArr.push(javierS6.value)
+          const javierS7 = document.getElementById("Javier Santos score 7");
+          javierScoreArr.push(javierS7.value)
+
+          console.log(javierScoreArr)
+          window.sessionStorage.setItem("javierScores", JSON.stringify(javierScoreArr));
+
+        }
+
+
+
+
+      }
+
+
+      console.log(candidate )
+        if (candidate == "Mei Chen") {
+
+          const meiScoresBack = JSON.parse(window.sessionStorage.getItem("meiScores"));
+          const meiS1B = document.getElementById("Mei Chen score 1");
+
+          const meiS2B = document.getElementById("Mei Chen score 2");
+          const meiS3B = document.getElementById("Mei Chen score 3");
+          const meiS4B = document.getElementById("Mei Chen score 4");
+          const meiS5B = document.getElementById("Mei Chen score 5");
+          const meiS6B = document.getElementById("Mei Chen score 6");
+          const meiS7B = document.getElementById("Mei Chen score 7");
+
+
+
+
+          if (meiScoresBack.length > 0){
+            meiS1B.value = meiScoresBack[0]
+            meiS2B.value = meiScoresBack[1]
+            meiS3B.value = meiScoresBack[2]
+            meiS4B.value = meiScoresBack[3]
+            meiS5B.value = meiScoresBack[4]
+            meiS6B.value = meiScoresBack[5]
+            meiS7B.value = meiScoresBack[6]
+          }
+
+        } else if (candidate == "Amelia Lawson") {
+
+          const ameliaScoresBack = JSON.parse(window.sessionStorage.getItem("ameliaScores"));
+          const ameliaS1B = document.getElementById("Amelia Lawson score 1");
+          const ameliaS2B = document.getElementById("Amelia Lawson score 2");
+          const ameliaS3B = document.getElementById("Amelia Lawson score 3");
+          const ameliaS4B = document.getElementById("Amelia Lawson score 4");
+          const ameliaS5B = document.getElementById("Amelia Lawson score 5");
+          const ameliaS6B = document.getElementById("Amelia Lawson score 6");
+          const ameliaS7B = document.getElementById("Amelia Lawson score 7");
+
+
+          if (ameliaScoresBack.length > 0){
+            ameliaS1B.value = ameliaScoresBack[0]
+            ameliaS2B.value = ameliaScoresBack[1]
+            ameliaS3B.value = ameliaScoresBack[2]
+            ameliaS4B.value = ameliaScoresBack[3]
+            ameliaS5B.value = ameliaScoresBack[4]
+            ameliaS6B.value = ameliaScoresBack[5]
+            ameliaS7B.value = ameliaScoresBack[6]
+
+          }
+
+        } else if (candidate == "Javier Santos") {
+
+          const javierScoresBack = JSON.parse(window.sessionStorage.getItem("javierScores"));
+          const javierS1B = document.getElementById("Javier Santos score 1");
+
+          const javierS2B = document.getElementById("Javier Santos score 2");
+          const javierS3B = document.getElementById("Javier Santos score 3");
+          const javierS4B = document.getElementById("Javier Santos score 4");
+          const javierS5B = document.getElementById("Javier Santos score 5");
+          const javierS6B = document.getElementById("Javier Santos score 6");
+          const javierS7B = document.getElementById("Javier Santos   score 7");
+
+
+
+
+          if (javierScoresBack.length > 0){
+            javierS1B.value = javierScoresBack[0]
+            javierS2B.value = javierScoresBack[1]
+            javierS3B.value = javierScoresBack[2]
+            javierS4B.value = javierScoresBack[3]
+            javierS5B.value = javierScoresBack[4]
+            javierS6B.value = javierScoresBack[5]
+            javierS7B.value = javierScoresBack[6]
+          }
+
+        }
+
+
+
+
+
+
+
+
+
+
+      // if (getVals.length > 0) {
+      //   for (var as = 0; as < getVals.length; as++){
+      //     getVals[as]
+      //
+      //     var val = scores+[as];
+      //     val.value = getVals[as]
+      //   }
+      // }
+
+      //   // var thigg = document.getElementById("ddatSkills")
+      //   // const object = JSON.parse(window.sessionStorage.getItem("ddatskills"));
+      //   // var obj = Object.values(object);
+      //   //
+      //   // for (var t=0;t<obj.length;t++) {
+
+
+
+
+      // var scoreArray = []
+      // // var reasonArray = []
+      //
+      // function grabScores(){
+      //
+      //
+      //   const storedScores = document.getElementById("storedScores");
+      //   window.sessionStorage.setItem("storedS", JSON.stringify(storedScores.value));
+
+
+
+
+      // var scoreQuestion1 = new questionScore(scoreArray, reasonArray);
+      // window.sessionStorage.setItem(scoreQuestion1, JSON.stringify(scoreQuestion1));
+      //
+      //
+      // function questionScore(score, reason) {
+      //   this.score = score;
+      //   this.reason = reason;
+      // }
+
+
+      //
+      //
+      // var scoreQuestion1 = new questionScore(scoreVal, reasonVal, notesVal);
+      //
+      //
+      //
+      // scoringData.questionNumber = 1;
+      // scoringData.questionNumber.score =
+      // scoringData.questionNumber.reason =
+      // scoringData.questionNumber.notes  =
+
+
+      function checkCheckBoxes() {
+        var sCheck = [];
+
+
+        var checks = document.getElementByid('score');
+
+        for (i = 0; i < checks.length; i++) {
+          if (checks[i].type == 'select') {
+            sCheck.push(checks[i].value, checks[i].name);
+          }
+
+        }
+        console.log(sCheck)
+      }
+
+    </script>
+
+
+
+
+    {% endblock %}

@@ -88,6 +88,20 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
   <style>
 
 
+    .custom {
+
+      cursor: url(/public/images/uparrow.png), auto;
+      cursor: url(/public/images/hlcur.svg) 15 15, move;
+    }
+
+    .move {
+
+      cursor: move;}
+
+      .del {
+        cursor:pointer;
+      }
+
     .topbar {
       width: 96%;
       height: auto;
@@ -145,7 +159,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
     <div class="wrapper">
       <div class="main">
 
-        <span id="content">
+        <span id="content" class="custom">
           <p id="content" style="padding:6px">
             I understand that Weltanschauung can be a complex and abstract concept to grasp. It encompasses an individual's worldview, beliefs, and values that shape their perception of the world. It can be challenging to reconcile differing Weltanschauungen, but it's important to approach these differences with empathy and an open mind. We all come from different backgrounds and experiences that shape our Weltanschauung, and it's crucial to respect and understand each other's perspectives. Let's strive to create a world where we can appreciate and learn from our differences, rather than letting them divide us.<BR><BR>
 
@@ -372,7 +386,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
 
-                              <div>
+                              <div class="move">
                               <ul
                               style=""
                               class="govuk-list govuk-list--number"
@@ -396,390 +410,444 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
                     </div>
 
-<!-- <style>
-
-  #ctxmenu {
-    position: fixed;
-    background: ghostwhite;
-    color: black;
-    cursor: pointer;
-    border: 1px black solid
-  }
-
-  #ctxmenu > p {
-    padding: 0 1rem;
-    margin: 0
-  }
-
-  #ctxmenu > p:hover {
-    background: black;
-    color: ghostwhite
-  }
-
-
-</style> -->
 
                     <script>
 
 
-                      // window.onscroll = function() {scrollFunction()};
-                      //
-                      // function scrollFunction() {
-                      //   document.getElementById('topBalt').display = "block";
-                      //
-                      // }
-
-
-                      // oncontextmenu = (e) => {
-                      //   e.preventDefault()
-                      //   let menu = document.createElement("div")
-                      //   menu.id = "ctxmenu"
-                      //   menu.style = `top:${e.pageY-0}px;left:${e.pageX-5}px`
-                      //   menu.onmouseleave = () => ctxmenu.outerHTML = ''
-                      //   menu.innerHTML = "<p>Add a note</p>"
-                      //   document.body.appendChild(menu)
-                      // }
-
-
-
-
-                      // var panel = document.getElementById("pane");
-                      // panel.addEventListener("contextmenu",function(event){
-                      //   event.preventDefault();
-                      //   console.log("trigger")
-                      //   var ctxMenu = document.getElementById("rightClickMenu");
-                      //   ctxMenu.style.display = "block";
-                      //   ctxMenu.style.left = (event.pageX - 10)+"px";
-                      //   ctxMenu.style.top = (event.pageY - 10)+"px";
-                      // },false);
-                      //
-                      // panel.addEventListener("click",function(event){
-                      //     var ctxMenu = document.getElementById("rightClickMenu");
-                      //     ctxMenu.style.display = "";
-                      //     ctxMenu.style.left = "";
-                      //     ctxMenu.style.top = "";
-                      // },false);
-
-                      var dragging = null;
-
-                      document.addEventListener('dragstart', function(event) {
-                        var target = getLI( event.target );
-                        dragging = target;
-                        event.dataTransfer.setData('text/plain', null);
-                        event.dataTransfer.setDragImage(self.dragging,0,0);
-                      });
-
-                      document.addEventListener('dragover', function(event) {
-                        event.preventDefault();
-                        var target = getLI( event.target );
-                        var bounding = target.getBoundingClientRect()
-                        var offset = bounding.y + (bounding.height/2);
-                        if ( event.clientY - offset > 0 ) {
-                          target.style['border-top'] = '1px solid lightgrey';
-                          target.style['border-bottom'] = '';
-                          // target.style['border-bottom'] = '';
-                        } else {
-                          target.style['border-top'] = '';
-                          target.style['border-bottom'] = '1px solid lightgrey';
-                          // target.style['border-bottom'] = '1px solid #0b0c0c';
-                        }
-                      });
-
-                      document.addEventListener('dragleave', function(event) {
-                        var target = getLI( event.target );
-                        target.style['border-bottom'] = '';
-                        target.style['border-top'] = '';
-                      });
-
-                      document.addEventListener('drop', function(event) {
-                        event.preventDefault();
-                        var target = getLI( event.target );
-                        if ( target.style['border-bottom'] !== '' ) {
-                          target.style['border-bottom'] = '';
-                          target.parentNode.insertBefore(dragging, event.target.nextSibling);
-                        } else {
-                          target.style['border-top'] = '';
-                          target.parentNode.insertBefore(dragging, event.target);
-                        }
-                      });
-
-                      function getLI( target ) {
-                        while ( target.nodeName.toLowerCase() != 'li' && target.nodeName.toLowerCase() != 'body' ) {
-                          target = target.parentNode;
-                        }
-                        if ( target.nodeName.toLowerCase() == 'body' ) {
-                          return false;
-                        } else {
-                          return target;
-                        }
-                      }
-
-
-
-
-
-
-
-
-                      // function allowDrop(ev) {
-                      //   ev.preventDefault();
-                      // }
-                      //
-                      // function drag(ev) {
-                      //   ev.dataTransfer.setData("text", ev.target.id);
-                      // }
-                      //
-                      // function drop(ev) {
-                      //   ev.preventDefault();
-                      //   var data = ev.dataTransfer.getData("text");
-                      //   ev.target.appendChild(document.getElementById(data));
-                      // }
-
-                      const resurrectList = [];
-
-                      let selector = document.getElementById("reason");
-
-                      selector.addEventListener("keyup", () => {
-                        console.log("keypress")
-
-
-                        selector.addEventListener("change", () => {
-
-                          switch (selector.value) {
-                            case "Add a new reason to the list":
-                            showDiv('addReasonPanel');
-                            break;
-                            case "remove":
-                            break;
-                          }
-                        }, { once: true });
-                      });
-
-                      selector.addEventListener("click", () => {
-                        console.log("keypress")
-
+                                        // window.onscroll = function() {scrollFunction()};
+                                        //
+                                        // function scrollFunction() {
+                                        //   document.getElementById('topBalt').display = "block";
+                                        //
+                                        // }
+
+
+                                        // oncontextmenu = (e) => {
+                                        //   e.preventDefault()
+                                        //   let menu = document.createElement("div")
+                                        //   menu.id = "ctxmenu"
+                                        //   menu.style = `screenX/Y: ${e.screenX}, ${e.screenY}`
+                                        //   menu.onmouseleave = () => ctxmenu.outerHTML = ''
+                                        //   menu.innerHTML = "<p>Add a note</p>"
+                                        //   document.body.appendChild(menu)
+                                        // }
+
+                                        // menu.style = `
+                                        // Screen X/Y: ${e.screenX}, ${e.screenY}
+                                        // Client X/Y: ${e.clientX}, ${e.clientY}`;
+
+
+                                        // var panel = document.getElementById("pane");
+                                        // panel.addEventListener("contextmenu",function(event){
+                                        //   event.preventDefault();
+                                        //   console.log("trigger")
+                                        //   var ctxMenu = document.getElementById("rightClickMenu");
+                                        //   ctxMenu.style.display = "block";
+                                        //   ctxMenu.style.left = (event.pageX - 10)+"px";
+                                        //   ctxMenu.style.top = (event.pageY - 10)+"px";
+                                        // },false);
+                                        //
+                                        // panel.addEventListener("click",function(event){
+                                        //     var ctxMenu = document.getElementById("rightClickMenu");
+                                        //     ctxMenu.style.display = "";
+                                        //     ctxMenu.style.left = "";
+                                        //     ctxMenu.style.top = "";
+                                        // },false);
+
+                                        var dragging = null;
+
+                                        document.addEventListener('dragstart', function(event) {
+                                          var target = getLI( event.target );
+                                          dragging = target;
+                                          event.dataTransfer.setData('text/plain', null);
+                                          event.dataTransfer.setDragImage(self.dragging,0,0);
+                                        });
+
+                                        document.addEventListener('dragover', function(event) {
+                                          event.preventDefault();
+                                          var target = getLI( event.target );
+                                          var bounding = target.getBoundingClientRect()
+                                          var offset = bounding.y + (bounding.height/2);
+                                          if ( event.clientY - offset > 0 ) {
+                                            target.style['border-top'] = '5px dotted #1d70b8';
+                                            target.style['border-bottom'] = '';
+                                            // target.style['border-bottom'] = '';
+                                          } else {
+                                            target.style['border-top'] = '';
+                                            target.style['border-bottom'] = '5px dotted #1d70b8';
+                                            target.style['padding-bottom'] = '20px';
+
+                                            // target.style['border-bottom'] = '1px solid #0b0c0c';
+                                          }
+                                        });
+
+                                        document.addEventListener('dragleave', function(event) {
+                                          var target = getLI( event.target );
+                                          target.style['border-bottom'] = '';
+                                          target.style['border-top'] = '';
+                                        });
+
+                                        document.addEventListener('drop', function(event) {
+                                          event.preventDefault();
+                                          var target = getLI( event.target );
+                                          if ( target.style['border-bottom'] !== '' ) {
+                                            target.style['border-bottom'] = '';
+                                            target.parentNode.insertBefore(dragging, event.target.nextSibling);
+                                          } else {
+                                            target.style['border-top'] = '';
+                                            target.parentNode.insertBefore(dragging, event.target);
+                                          }
+                                        });
+
+                                        function getLI( target ) {
+                                          while ( target.nodeName.toLowerCase() != 'li' && target.nodeName.toLowerCase() != 'body' ) {
+                                            target = target.parentNode;
+                                          }
+                                          if ( target.nodeName.toLowerCase() == 'body' ) {
+                                            return false;
+                                          } else {
+                                            return target;
+                                          }
+                                        }
+
+
+
+
+
+
 
-                        selector.addEventListener("change", () => {
 
-                          switch (selector.value) {
-                            case "Add a new reason to the list":
-                            showDiv('addReasonPanel');
-                            break;
-                            case "remove":
-                            break;
-                          }
-                        }, { once: true });
-                      });
+                                        // function allowDrop(ev) {
+                                        //   ev.preventDefault();
+                                        // }
+                                        //
+                                        // function drag(ev) {
+                                        //   ev.dataTransfer.setData("text", ev.target.id);
+                                        // }
+                                        //
+                                        // function drop(ev) {
+                                        //   ev.preventDefault();
+                                        //   var data = ev.dataTransfer.getData("text");
+                                        //   ev.target.appendChild(document.getElementById(data));
+                                        // }
+
+                                        const resurrectList = [];
+
+                                        let selector = document.getElementById("reason");
 
-                      function addToReasonSelector(adder) {
-                        console.log(adder)
-                        var newOption = document.createElement("option")
-                        newOption.innerHTML = adder;
-                        selector.appendChild(newOption).selected = "true";
-                        selector.focus();
-                        hideDiv('addReasonPanel');
-                        document.getElementById('addReason').value = '';
-                      }
+                                        selector.addEventListener("keyup", () => {
+                                          // console.log("keypress")
 
 
+                                          selector.addEventListener("change", () => {
 
-                      function showDiv(div1) {
-                        document.getElementById(div1).style.display = 'block';
-                        if (div1 == "notesPanel"){
-                          const textA = document.getElementById("textA");
-                          textA.focus();
-                        } else if (div1 == "addReasonPanel") {
-                          document.getElementById(div1).style.display = 'block';
-                          const reaBox = document.getElementById("addReason");
-                          reaBox.focus();
-                        }
-                      }
+                                            switch (selector.value) {
+                                              case "Add a new reason to the list":
+                                              showDiv('addReasonPanel');
+                                              break;
+                                              case "remove":
+                                              break;
+                                            }
+                                          }, { once: true });
+                                        });
 
-                      function hideDiv(div1) {
-                        document.getElementById(div1).style.display = 'none';
-                      }
+                                        selector.addEventListener("click", () => {
+                                          // console.log("keypress")
 
 
-                      const newReason = document.getElementById("newreason");
+                                          selector.addEventListener("change", () => {
 
-                      newReason.addEventListener("focus", (event) => {
-                        console.log(newReason.value)
-                      });
+                                            switch (selector.value) {
+                                              case "Add a new reason to the list":
+                                              showDiv('addReasonPanel');
+                                              break;
+                                              case "remove":
+                                              break;
+                                            }
+                                          }, { once: true });
+                                        });
 
+                                        function addToReasonSelector(adder) {
+                                          // console.log(adder)
+                                          var newOption = document.createElement("option")
+                                          newOption.innerHTML = adder;
+                                          selector.appendChild(newOption).selected = "true";
+                                          selector.focus();
+                                          hideDiv('addReasonPanel');
+                                          document.getElementById('addReason').value = '';
+                                        }
 
-                      selector.addEventListener("click", () => {
-                        // if default value is changed
-                        selector.addEventListener("change", () => {
-                          // if value switched by client
-                          switch (selector.value) {
-                            case "add":
-                            //do somthing with  , "add" value
-                            result.innerHTML = selector.value;
-                            break;  // then take break
-                            case "remove":
-                            //do somthing with  , "remove" value
-                            result.innerHTML = selector.value;
-                            break; // then take break
-                          }
-                        });
-                      });
 
-                      const myHL = [];
-                      function getSelectedParagraphText() {
-                        const selectContent = document.getElementById("pane");
 
-                        var x = window.getSelection();
-                        var z = x.anchorNode.parentNode;
+                                        function showDiv(div1) {
+                                          document.getElementById(div1).style.display = 'block';
+                                          if (div1 == "notesPanel"){
+                                            const textA = document.getElementById("textA");
+                                            textA.focus();
+                                          } else if (div1 == "addReasonPanel") {
+                                            document.getElementById(div1).style.display = 'block';
+                                            const reaBox = document.getElementById("addReason");
+                                            reaBox.focus();
+                                          }
+                                        }
 
-                        if (x != "") {
-                          var rand = Math.floor(Math.random()*(999-100+1)+100);
+                                        function hideDiv(div1) {
+                                          document.getElementById(div1).style.display = 'none';
+                                        }
 
 
+                                        const newReason = document.getElementById("newreason");
 
+                                        newReason.addEventListener("focus", (event) => {
+                                          // console.log(newReason.value)
+                                        });
 
 
+                                        selector.addEventListener("click", () => {
+                                          // if default value is changed
+                                          selector.addEventListener("change", () => {
+                                            // if value switched by client
+                                            switch (selector.value) {
+                                              case "add":
+                                              //do somthing with  , "add" value
+                                              result.innerHTML = selector.value;
+                                              break;  // then take break
+                                              case "remove":
+                                              //do somthing with  , "remove" value
+                                              result.innerHTML = selector.value;
+                                              break; // then take break
+                                            }
+                                          });
+                                        });
 
-                          var deed = document.createElement("li");
-                          var lnk = document.createElement("a");
-                          deed.style.cssText = ";padding-top:10px;font-size:18px;background:white";
-                          deed.setAttribute("id",rand);
-                          lnk.setAttribute("href","#");
-                          lnk.setAttribute("class","govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state");
-                          lnk.setAttribute("onclick","kill('"+deed.id+"')");
-                          lnk.setAttribute("id","dl"+rand);
-                          lnk.innerHTML = "Delete";
-                          deed.setAttribute("draggable","true")
-                          // console.log(deed.id)
-                          var newDel = "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' onClick='kill("+deed.id+","+lnk.id+")' href='#'> Delete</a>";
+                                        const myHL = [];
+                                        function getSelectedParagraphText() {
+                                          const selectContent = document.getElementById("pane");
 
+                                          var x = window.getSelection();
+                                          var z = x.anchorNode.parentNode;
 
-                          // "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' onClick='kill('dfd')' href='#'> Delete</a>"
+                                          if (x != "") {
+                                            var rand = Math.floor(Math.random()*(999-100+1)+100);
 
-                          // onclick='kill("+deed.id+"')' href='#'> Delete</a>";
 
 
-                          // ("+deed.id+"')' href='#'> Delete</a>";
 
 
 
-                          lnk.innerHTML = "Delete";
-                          deed.innerHTML = x+"<a style='color:#1d70b8;font-weight:600;font-size:18px' class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' onclick='kill("+deed.id+")'> Delete</a>";
+                                            var deed = document.createElement("li");
+                                            var lnk = document.createElement("a");
+                                            deed.style.cssText = ";padding-top:10px;font-size:18px;background:white";
+                                            deed.setAttribute("id",rand);
+                                            lnk.setAttribute("href","#");
+                                            lnk.setAttribute("class","govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state");
+                                            lnk.setAttribute("onclick","kill('"+deed.id+"')");
+                                            lnk.setAttribute("id","dl"+rand);
+                                            lnk.innerHTML = "Delete";
+                                            deed.setAttribute("draggable","true")
+                                            deed.setAttribute("oncontextmenu","RightClickFunction('"+deed.id+"')");
+                                            // console.log(deed.id)
+                                            var newDel = "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' onClick='kill("+deed.id+","+lnk.id+")' href='#'> Delete</a>";
 
-                          myHL.push(deed.innerText);
 
-                          selectContent.appendChild(deed);
-                          // selectContent.appendChild(lnk);
+                                            // "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' onClick='kill('dfd')' href='#'> Delete</a>"
 
-                          // pane.innerText = x;
-                          stylizeHighlightedString();
+                                            // onclick='kill("+deed.id+"')' href='#'> Delete</a>";
 
-                          window.sessionStorage.setItem("highlights", JSON.stringify(myHL));
 
+                                            // ("+deed.id+"')' href='#'> Delete</a>";
 
-                        }
-                        // var deed = document.createElement("li");
-                        // deed.innerText = x;
-                        // selectContent.appendChild(deed);
-                        // // pane.innerText = x;
-                        // stylizeHighlightedString();
-                      }
 
 
+                                            lnk.innerHTML = "Delete";
+                                            deed.innerHTML = x+"<a style='color:#1d70b8;font-weight:600;font-size:18px' class='del govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' onclick='kill("+deed.id+")'> Delete</a>";
 
+                                            myHL.push(deed.innerText);
 
-                      function stylizeHighlightedString() {
-                        var text = window.getSelection();
-                        var start = text.anchorOffset;
-                        var end = text.focusOffset - text.anchorOffset;
+                                            selectContent.appendChild(deed);
+                                            // selectContent.appendChild(lnk);
 
-                        range = window.getSelection().getRangeAt(0);
+                                            // pane.innerText = x;
+                                            stylizeHighlightedString();
 
-                        var selectionContents = range.extractContents();
-                        var span = document.createElement("span");
-                        var tally = document.createElement("div");
-                        span.appendChild(selectionContents);
+                                            window.sessionStorage.setItem("highlights", JSON.stringify(myHL));
 
-                        span.style.backgroundColor = "yellow";
-                        span.style.color = "black";
 
-                        range.insertNode(span);
-                      }
+                                          }
+                                          // var deed = document.createElement("li");
+                                          // deed.innerText = x;
+                                          // selectContent.appendChild(deed);
+                                          // // pane.innerText = x;
+                                          // stylizeHighlightedString();
+                                        }
 
-                      const selectContent = document.getElementById("content");
 
-                      selectContent.addEventListener("mouseup", (event) => {
-                        getSelectedParagraphText();
 
-                        // selectContent.innerText = val;
-                      });
 
-                      let screenLog = document.querySelector("#screen-log");
-                      document.addEventListener("mousemove", logKey);
+                                        function stylizeHighlightedString() {
+                                          var text = window.getSelection();
+                                          var start = text.anchorOffset;
+                                          var end = text.focusOffset - text.anchorOffset;
 
-                      function logKey(e) {
-                        screenLog.innerText = `
-                        Screen X/Y: ${e.screenX}, ${e.screenY}
-                        Client X/Y: ${e.clientX}, ${e.clientY}`;
-                      }
+                                          range = window.getSelection().getRangeAt(0);
 
+                                          var selectionContents = range.extractContents();
+                                          var span = document.createElement("span");
+                                          var tally = document.createElement("div");
+                                          span.appendChild(selectionContents);
 
-                      // function deleteThis(idVal){
-                      //   console.log(idVal)
-                      //   document.getElementById(idVal).innerHTML = "";
-                      // }
+                                          span.style.backgroundColor = "yellow";
+                                          span.style.color = "black";
 
-                      function showHideDiv(div1, div2) {
-                        document.getElementById(div1).style.display = "block";
-                        document.getElementById(div2).style.display = "none";
-                      }
+                                          range.insertNode(span);
+                                        }
 
-                      function hideDiv(div1) {
-                        document.getElementById(div1).style.display = "none";
-                      }
+                                        const selectContent = document.getElementById("content");
 
-                      function showDiv(div1) {
-                        document.getElementById(div1).style.display = "block";
-                      }
+                                        selectContent.addEventListener("mouseup", (event) => {
+                                          getSelectedParagraphText();
 
+                                          // selectContent.innerText = val;
+                                        });
 
+                                        let screenLog = document.querySelector("#screen-log");
+                                        document.addEventListener("mousemove", logKey);
 
-                      //   if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 11110) {
-                      //     document.getElementById("topB").style.display = "none";
-                      //     document.getElementById("topBalt").style.display = "block";
-                      //
-                      //     document.getElementById("topBalt").style.display = "none";
-                      //   } else {
-                      //     document.getElementById("topB").style.display = "block";
-                      //
-                      //   }
-                      // }
+                                        function logKey(e) {
+                                          screenLog.innerText = `
+                                          Screen X/Y: ${e.screenX}, ${e.screenY}
+                                          Client X/Y: ${e.clientX}, ${e.clientY}`;
+                                        }
 
 
+                                        // function deleteThis(idVal){
+                                        //   console.log(idVal)
+                                        //   document.getElementById(idVal).innerHTML = "";
+                                        // }
 
-                      function kill(index,del){
-                        console.log(index)
+                                        function showHideDiv(div1, div2) {
+                                          document.getElementById(div1).style.display = "block";
+                                          document.getElementById(div2).style.display = "none";
+                                        }
 
-                        let node = document.getElementById(index);
-                        let ddel = document.getElementById(del);
-                        if (node.parentNode) {
-                          node.parentNode.removeChild(node);
-                        }
-                        ddel.innerHTML = "";
+                                        function hideDiv(div1) {
+                                          document.getElementById(div1).style.display = "none";
+                                        }
 
+                                        function showDiv(div1) {
+                                          document.getElementById(div1).style.display = "block";
+                                        }
 
-                        //
-                        //
-                        //
-                        // document.getElementById(index).innerText = "";
-                        // console.log(index)
-                      }
 
 
 
-                    </script>
+
+
+
+
+
+                                        function RightClickFunction(div){
+
+
+
+
+
+
+
+                                          var panelDiv = document.getElementById("pane");
+
+                                          // const inputField = document.createElement("input")
+                                          // inputField.setAttribute("id","input"+div);
+                                          // inputField.type = "text";
+                                          // inputField.style.cssText = "";
+                                          // panelDiv.appendChild(inputField)
+                                          //
+                                          // const parentItem = document.getElementById(div).parentNode;
+
+
+
+                                          panelDiv.addEventListener("contextmenu",function(event){
+                                            event.preventDefault();
+
+
+
+                                            const newNode = document.createElement("input");
+                                            newNode.setAttribute("id","input"+div);
+                                            newNode.setAttribute("class","govuk-input govuk-input--width-20");
+                                            newNode.type = "text";
+                                            newNode.focus();
+                                            newNode.style.cssText = "margin-top:10px;margin-bottom:10px;";
+
+                                              // Get a reference to the parent node
+                                              const parentDiv = document.getElementById(div).parentNode;
+                                              // parentDiv.style.cssText = "border:1px solid lightgrey"
+
+
+                                              // Begin test case [ 1 ] : Existing childElement (all works correctly)
+                                              let sp2 = document.getElementById(div);
+                                                sp2.style.cssText = "border:2px solid yellow"
+                                              parentDiv.insertBefore(newNode, sp2);
+                                              newNode.focus();
+
+                                              newNode.innerText = "test content"
+
+
+                                          // const divDiv = document.getElementById(inputField.id);
+                                          // console.log(divDiv)
+                                          //
+                                          // parentItem.insertBefore(divDiv, div);
+
+
+
+
+
+                                          // window.alert("wooohooi")
+                                          return false;
+                                        });
+                                      }
+
+
+                                        // deed.style.cssText = ";padding-top:10px;font-size:18px;background:white";
+                                        // deed.setAttribute("id",rand);
+                                        // lnk.setAttribute("href","#");
+                                        // lnk.setAttribute("class","govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state");
+                                        // lnk.setAttribute("onclick","kill('"+deed.id+"')");
+
+
+
+                                        //   if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 11110) {
+                                        //     document.getElementById("topB").style.display = "none";
+                                        //     document.getElementById("topBalt").style.display = "block";
+                                        //
+                                        //     document.getElementById("topBalt").style.display = "none";
+                                        //   } else {
+                                        //     document.getElementById("topB").style.display = "block";
+                                        //
+                                        //   }
+                                        // }
+
+
+
+                                        function kill(index,del){
+                                          // console.log(index)
+
+                                          let node = document.getElementById(index);
+                                          let ddel = document.getElementById(del);
+                                          if (node.parentNode) {
+                                            node.parentNode.removeChild(node);
+                                          }
+                                          ddel.innerHTML = "";
+
+
+                                          //
+                                          //
+                                          //
+                                          // document.getElementById(index).innerText = "";
+                                          // console.log(index)
+                                        }
+
+
+
+                                      </script>
 
                     {% endblock %}
-                    // linkItem.setAttribute("id","delete"+tt);
-                    linkItem.innerHTML = "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' id='1' onclick='kill(this.id)' href='#'> Delete</a>";
-                    loc.appendChild(contentItem);
-                    link.appendChild(linkItem);

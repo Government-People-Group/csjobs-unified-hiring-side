@@ -68,7 +68,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
       font-weight:normal;
       line-height: 1;
       vertical-align: text-top;
-      padding-top:40px;
+      padding-top:10px;
     }
 
     hint {
@@ -296,7 +296,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
             for (var log=0; log < beLong; log++) {
               var outputB = document.getElementById('behave');
               var contentB = document.createElement("p");
-              contentB.style.cssText = "font-size:24px;border-bottom:1px solid #1d70b8;padding-bottom:10px";
+              contentB.style.cssText = "font-size:24px;border-bottom:1px solid #1d70b8;padding-bottom:10px;padding-top:20px";
               contentB.innerHTML = "For the behaviour <strong>"+behaviours[log]+"</strong>";
               outputB.appendChild(contentB)
 
@@ -351,7 +351,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
                     }
 
 
-                    hint.style.cssText = "font-size:20px;display: block;padding-bottom: 35px;";
+                    hint.style.cssText = "font-size:20px;display: block;padding-bottom: 20px;";
                     hint.value = hinter[i];
                     checkBox.setAttribute("id","strengths"+behaviours[log]+i);
                     checkBox.setAttribute("name","strengths");
