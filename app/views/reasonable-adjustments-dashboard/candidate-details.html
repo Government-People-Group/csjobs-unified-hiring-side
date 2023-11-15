@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+
+
+{% block header %}
+{% include '/csu71/includes/pheader.html' %}
+  {% endblock %}
+
+
+
+
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <H1 style="padding-top:0px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-6">Muhammed KHAN</H1>
+
+    
+
+
+
+  </div>
+</div>
+
+{% endblock %}

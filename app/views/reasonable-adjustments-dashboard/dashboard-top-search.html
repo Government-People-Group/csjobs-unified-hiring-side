@@ -1,0 +1,391 @@
+{% extends "layouts/main.html" %}
+
+
+
+{% block header %}
+{% include '/csu71/includes/pheader.html' %}
+  {% endblock %}
+
+
+
+
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <H1 style="padding-top:0px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-6">Reasonable adjustment cases</H1>
+
+
+
+
+
+  </div>
+</div>
+
+
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-full">
+
+<style>
+.govuk-accordion__controls {
+  display:none;
+}
+
+.js-enabled .govuk-accordion__section-button, .js-enabled .govuk-accordion {
+  border-width:0px;
+}
+
+.js-enabled .govuk-accordion__section--expanded .govuk-accordion__section-button {
+  padding-bottom:0px;
+}
+
+.js-enabled .govuk-accordion__section-heading {
+  padding-top:0px;
+}
+
+.js-enabled .govuk-accordion__section--expanded .govuk-accordion__section-content {
+  padding-top:0px;
+}
+
+.moj-filter__selected {
+  padding-left:10px;
+  padding-right:10px;
+}
+</style>
+
+  {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+  {{ govukAccordion({
+    id: "accordion-default",
+    items: [
+
+      {
+        heading: {
+          text: "Search and filters"
+        },
+        content: {
+          html: '  <div class="moj-filter">
+
+
+
+              <div class="moj-filter__content">
+
+                <div class="moj-filter__selected">
+
+                  <div class="moj-filter__selected-heading">
+
+                    <div class="moj-filter__heading-title">
+                      <h2 class="govuk-heading-s" style="margin-bottom:10px">Search</h2>
+                      <input class="govuk-input" id="keywords" name="keywords" type="text" style="margin-bottom:20px">
+                      <button class="govuk-button" data-module="govuk-button" data-test-id="submit-button" >
+                        Search
+                      </button>
+                    </div>
+
+
+
+                  </div>
+
+
+
+                </div>
+
+                <div class="moj-filter__options">
+
+
+
+
+
+                  <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset">
+
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+                        Filters
+
+                      </legend>
+
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                          <label class="govuk-label govuk-checkboxes__label" for="type">
+                            My cases (3)
+                          </label>
+
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+                          <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                            Closes in next week (2)
+                          </label>
+
+                        </div>
+
+
+
+                      </div>
+
+                    </fieldset>
+
+                  </div>
+
+                  <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset">
+
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+                        Status
+
+                      </legend>
+
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete" checked>
+                          <label class="govuk-label govuk-checkboxes__label" for="status">
+                            Urgent (1)
+                          </label>
+
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete">
+                          <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                            In progress (2)
+                          </label>
+
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
+                          <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                            Not started (1)
+                          </label>
+
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
+                          <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                            Completed (3)
+                          </label>
+
+                        </div>
+
+                      </div>
+
+                    </fieldset>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>'
+        }
+      }
+    ]
+  }) }}
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+  <div class="govuk-grid-column-three-quarters" style="padding-left:0px">
+
+    <table class="govuk-table" data-module="moj-sortable-table">
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="none">Job ref</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Closing date</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="none">Case opened</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="none">Case status</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="none">Assigned to</th>
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell"><a href="candidate-details" class="govuk-link govuk-link--no-visited-state">SMITH, Jane</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=am9ibGlzdF92aWV3X3ZhYz0xODcxODU1Jm93bmVydHlwZT1mYWlyJnNlYXJjaHNvcnQ9Y2xvc2luZyZ1c2Vyc2VhcmNoY29udGV4dD01NzI4NTQ4NiZwYWdlYWN0aW9uPXZpZXd2YWNieWpvYmxpc3Qmc2VhcmNocGFnZT04NSZvd25lcj01MDcwMDAwJnBhZ2VjbGFzcz1Kb2JzJnJlcXNpZz0xNjk5NTM5NzMwLTUyMzUzMGM5MGY1MjRmY2RlMDVmOWFkMGUzY2UyYTAyM2JjZmU3NDA=" target="_blank" class="govuk-link govuk-link--no-visited-state">300103</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="240205">5/2/24</td>
+
+      <td class="govuk-table__cell" data-sort-value="231105">5/11/23</td>
+
+      <td class="govuk-table__cell" data-sort-value="3"><strong class="govuk-tag">Completed</strong></td>
+
+      <td class="govuk-table__cell">LUKE, L</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell"><a href="candidate-details" class="govuk-link govuk-link--no-visited-state">AKRAM, Faeem</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=am9ibGlzdF92aWV3X3ZhYz0xODcxODU1Jm93bmVydHlwZT1mYWlyJnNlYXJjaHNvcnQ9Y2xvc2luZyZ1c2Vyc2VhcmNoY29udGV4dD01NzI4NTQ4NiZwYWdlYWN0aW9uPXZpZXd2YWNieWpvYmxpc3Qmc2VhcmNocGFnZT04NSZvd25lcj01MDcwMDAwJnBhZ2VjbGFzcz1Kb2JzJnJlcXNpZz0xNjk5NTM5NzMwLTUyMzUzMGM5MGY1MjRmY2RlMDVmOWFkMGUzY2UyYTAyM2JjZmU3NDA=" target="_blank" class="govuk-link govuk-link--no-visited-state">398712</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="240124">24/1/24</td>
+
+      <td class="govuk-table__cell" data-sort-value="231019">19/10/23</td>
+
+      <td class="govuk-table__cell" data-sort-value="3"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
+
+      <td class="govuk-table__cell">LUKE, L</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell"><a href="candidate-details" class="govuk-link govuk-link--no-visited-state">SMITH, Jane</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=am9ibGlzdF92aWV3X3ZhYz0xODcxODU1Jm93bmVydHlwZT1mYWlyJnNlYXJjaHNvcnQ9Y2xvc2luZyZ1c2Vyc2VhcmNoY29udGV4dD01NzI4NTQ4NiZwYWdlYWN0aW9uPXZpZXd2YWNieWpvYmxpc3Qmc2VhcmNocGFnZT04NSZvd25lcj01MDcwMDAwJnBhZ2VjbGFzcz1Kb2JzJnJlcXNpZz0xNjk5NTM5NzMwLTUyMzUzMGM5MGY1MjRmY2RlMDVmOWFkMGUzY2UyYTAyM2JjZmU3NDA=" target="_blank" class="govuk-link govuk-link--no-visited-state">355723</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="240204">2/2/24</td>
+
+      <td class="govuk-table__cell" data-sort-value="231117">17/11/23</td>
+
+      <td class="govuk-table__cell" data-sort-value="3"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
+
+      <td class="govuk-table__cell">LOUISE, G</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell"><a href="candidate-details" class="govuk-link govuk-link--no-visited-state">EVANS, David</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=am9ibGlzdF92aWV3X3ZhYz0xODcxODU1Jm93bmVydHlwZT1mYWlyJnNlYXJjaHNvcnQ9Y2xvc2luZyZ1c2Vyc2VhcmNoY29udGV4dD01NzI4NTQ4NiZwYWdlYWN0aW9uPXZpZXd2YWNieWpvYmxpc3Qmc2VhcmNocGFnZT04NSZvd25lcj01MDcwMDAwJnBhZ2VjbGFzcz1Kb2JzJnJlcXNpZz0xNjk5NTM5NzMwLTUyMzUzMGM5MGY1MjRmY2RlMDVmOWFkMGUzY2UyYTAyM2JjZmU3NDA=" target="_blank" class="govuk-link govuk-link--no-visited-state">312394</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="240310">10/3/24</td>
+
+      <td class="govuk-table__cell" data-sort-value="1897">5/11/23</td>
+
+      <td class="govuk-table__cell" data-sort-value="3"><strong class="govuk-tag">Completed</strong></td>
+
+      <td class="govuk-table__cell">LUKE, L</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell"><a href="candidate-details" class="govuk-link govuk-link--no-visited-state">MCCONNELL, Ewan</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=am9ibGlzdF92aWV3X3ZhYz0xODcxODU1Jm93bmVydHlwZT1mYWlyJnNlYXJjaHNvcnQ9Y2xvc2luZyZ1c2Vyc2VhcmNoY29udGV4dD01NzI4NTQ4NiZwYWdlYWN0aW9uPXZpZXd2YWNieWpvYmxpc3Qmc2VhcmNocGFnZT04NSZvd25lcj01MDcwMDAwJnBhZ2VjbGFzcz1Kb2JzJnJlcXNpZz0xNjk5NTM5NzMwLTUyMzUzMGM5MGY1MjRmY2RlMDVmOWFkMGUzY2UyYTAyM2JjZmU3NDA=" target="_blank" class="govuk-link govuk-link--no-visited-state">300103</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="240205">5/2/24</td>
+
+      <td class="govuk-table__cell" data-sort-value="231222">22/12/23</td>
+
+      <td class="govuk-table__cell" data-sort-value="2"> <strong class="govuk-tag govuk-tag--grey">Not started</strong></td>
+
+      <td class="govuk-table__cell"></td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell"><a href="candidate-details" class="govuk-link govuk-link--no-visited-state">KHAN, Muhammed</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=am9ibGlzdF92aWV3X3ZhYz0xODcxODU1Jm93bmVydHlwZT1mYWlyJnNlYXJjaHNvcnQ9Y2xvc2luZyZ1c2Vyc2VhcmNoY29udGV4dD01NzI4NTQ4NiZwYWdlYWN0aW9uPXZpZXd2YWNieWpvYmxpc3Qmc2VhcmNocGFnZT04NSZvd25lcj01MDcwMDAwJnBhZ2VjbGFzcz1Kb2JzJnJlcXNpZz0xNjk5NTM5NzMwLTUyMzUzMGM5MGY1MjRmY2RlMDVmOWFkMGUzY2UyYTAyM2JjZmU3NDA=" target="_blank" class="govuk-link govuk-link--no-visited-state">308988</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="240102">2/1/24</td>
+
+      <td class="govuk-table__cell" data-sort-value="231030">30/10/23</td>
+
+      <td class="govuk-table__cell" data-sort-value="1"><strong class="govuk-tag govuk-tag--red">Urgent</strong></td>
+
+      <td class="govuk-table__cell">LOUISE, G</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell"><a href="candidate-details" class="govuk-link govuk-link--no-visited-state">ELCARIO, Jennifer</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=am9ibGlzdF92aWV3X3ZhYz0xODcxODU1Jm93bmVydHlwZT1mYWlyJnNlYXJjaHNvcnQ9Y2xvc2luZyZ1c2Vyc2VhcmNoY29udGV4dD01NzI4NTQ4NiZwYWdlYWN0aW9uPXZpZXd2YWNieWpvYmxpc3Qmc2VhcmNocGFnZT04NSZvd25lcj01MDcwMDAwJnBhZ2VjbGFzcz1Kb2JzJnJlcXNpZz0xNjk5NTM5NzMwLTUyMzUzMGM5MGY1MjRmY2RlMDVmOWFkMGUzY2UyYTAyM2JjZmU3NDA=" target="_blank" class="govuk-link govuk-link--no-visited-state">387424</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="240221">21/2/24</td>
+
+      <td class="govuk-table__cell" data-sort-value="231107">7/11/23</td>
+
+      <td class="govuk-table__cell" data-sort-value="3"><strong class="govuk-tag">Completed</strong></td>
+
+      <td class="govuk-table__cell">STROUD, P</td>
+
+    </tr>
+
+  </tbody>
+</table><br>
+
+<nav class="moj-pagination" aria-label="Pagination navigation">
+
+  <ul class="moj-pagination__list">
+    <li class="moj-pagination__item  moj-pagination__item--prev">
+      <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> page</span></a>
+    </li>
+
+    <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=1" aria-label="Page 1 of 30">1</a></li>
+
+    <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 2 of 30" aria-current="page">2</li>
+
+    <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3" aria-label="Page 3 of 30">3</a></li>
+
+    <li class="moj-pagination__item moj-pagination__item--dots">…</li>
+
+    <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=5" aria-label="Page 5 of 30">5</a></li>
+
+    <li class="moj-pagination__item  moj-pagination__item--next">
+      <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> page</span></a>
+    </li>
+  </ul>
+  <p class="moj-pagination__results">Showing <b>8</b> to <b>14</b> of <b>36</b> cases</p>
+</nav>
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,185 @@
+{% extends "layouts/main.html" %}
+
+
+
+{% block header %}
+{% include '/csu71/includes/pheader.html' %}
+  {% endblock %}
+
+
+
+
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <H1 style="padding-top:0px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-6">Reasonable adjustment cases</H1>
+
+
+
+
+
+  </div>
+</div>
+
+
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-full">
+
+
+
+    <table class="govuk-table" data-module="moj-sortable-table">
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="none">Job ref</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Closing date</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="none">Case opened</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="none">Case status</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="none">Assigned to</th>
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell"><a href="candidate-details" class="govuk-link govuk-link--no-visited-state">SMITH, Jane</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=am9ibGlzdF92aWV3X3ZhYz0xODcxODU1Jm93bmVydHlwZT1mYWlyJnNlYXJjaHNvcnQ9Y2xvc2luZyZ1c2Vyc2VhcmNoY29udGV4dD01NzI4NTQ4NiZwYWdlYWN0aW9uPXZpZXd2YWNieWpvYmxpc3Qmc2VhcmNocGFnZT04NSZvd25lcj01MDcwMDAwJnBhZ2VjbGFzcz1Kb2JzJnJlcXNpZz0xNjk5NTM5NzMwLTUyMzUzMGM5MGY1MjRmY2RlMDVmOWFkMGUzY2UyYTAyM2JjZmU3NDA=" target="_blank" class="govuk-link govuk-link--no-visited-state">300103</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="240205">5/2/24</td>
+
+      <td class="govuk-table__cell" data-sort-value="231105">5/11/23</td>
+
+      <td class="govuk-table__cell" data-sort-value="3"><strong class="govuk-tag">Completed</strong></td>
+
+      <td class="govuk-table__cell">LUKE, L</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell"><a href="candidate-details" class="govuk-link govuk-link--no-visited-state">AKRAM, Faeem</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=am9ibGlzdF92aWV3X3ZhYz0xODcxODU1Jm93bmVydHlwZT1mYWlyJnNlYXJjaHNvcnQ9Y2xvc2luZyZ1c2Vyc2VhcmNoY29udGV4dD01NzI4NTQ4NiZwYWdlYWN0aW9uPXZpZXd2YWNieWpvYmxpc3Qmc2VhcmNocGFnZT04NSZvd25lcj01MDcwMDAwJnBhZ2VjbGFzcz1Kb2JzJnJlcXNpZz0xNjk5NTM5NzMwLTUyMzUzMGM5MGY1MjRmY2RlMDVmOWFkMGUzY2UyYTAyM2JjZmU3NDA=" target="_blank" class="govuk-link govuk-link--no-visited-state">398712</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="240124">24/1/24</td>
+
+      <td class="govuk-table__cell" data-sort-value="231019">19/10/23</td>
+
+      <td class="govuk-table__cell" data-sort-value="3"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
+
+      <td class="govuk-table__cell">LUKE, L</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell"><a href="candidate-details" class="govuk-link govuk-link--no-visited-state">SMITH, Jane</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=am9ibGlzdF92aWV3X3ZhYz0xODcxODU1Jm93bmVydHlwZT1mYWlyJnNlYXJjaHNvcnQ9Y2xvc2luZyZ1c2Vyc2VhcmNoY29udGV4dD01NzI4NTQ4NiZwYWdlYWN0aW9uPXZpZXd2YWNieWpvYmxpc3Qmc2VhcmNocGFnZT04NSZvd25lcj01MDcwMDAwJnBhZ2VjbGFzcz1Kb2JzJnJlcXNpZz0xNjk5NTM5NzMwLTUyMzUzMGM5MGY1MjRmY2RlMDVmOWFkMGUzY2UyYTAyM2JjZmU3NDA=" target="_blank" class="govuk-link govuk-link--no-visited-state">355723</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="240204">2/2/24</td>
+
+      <td class="govuk-table__cell" data-sort-value="231117">17/11/23</td>
+
+      <td class="govuk-table__cell" data-sort-value="3"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
+
+      <td class="govuk-table__cell">LOUISE, G</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell"><a href="candidate-details" class="govuk-link govuk-link--no-visited-state">EVANS, David</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=am9ibGlzdF92aWV3X3ZhYz0xODcxODU1Jm93bmVydHlwZT1mYWlyJnNlYXJjaHNvcnQ9Y2xvc2luZyZ1c2Vyc2VhcmNoY29udGV4dD01NzI4NTQ4NiZwYWdlYWN0aW9uPXZpZXd2YWNieWpvYmxpc3Qmc2VhcmNocGFnZT04NSZvd25lcj01MDcwMDAwJnBhZ2VjbGFzcz1Kb2JzJnJlcXNpZz0xNjk5NTM5NzMwLTUyMzUzMGM5MGY1MjRmY2RlMDVmOWFkMGUzY2UyYTAyM2JjZmU3NDA=" target="_blank" class="govuk-link govuk-link--no-visited-state">312394</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="240310">10/3/24</td>
+
+      <td class="govuk-table__cell" data-sort-value="1897">5/11/23</td>
+
+      <td class="govuk-table__cell" data-sort-value="3"><strong class="govuk-tag">Completed</strong></td>
+
+      <td class="govuk-table__cell">LUKE, L</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell"><a href="candidate-details" class="govuk-link govuk-link--no-visited-state">MCCONNELL, Ewan</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=am9ibGlzdF92aWV3X3ZhYz0xODcxODU1Jm93bmVydHlwZT1mYWlyJnNlYXJjaHNvcnQ9Y2xvc2luZyZ1c2Vyc2VhcmNoY29udGV4dD01NzI4NTQ4NiZwYWdlYWN0aW9uPXZpZXd2YWNieWpvYmxpc3Qmc2VhcmNocGFnZT04NSZvd25lcj01MDcwMDAwJnBhZ2VjbGFzcz1Kb2JzJnJlcXNpZz0xNjk5NTM5NzMwLTUyMzUzMGM5MGY1MjRmY2RlMDVmOWFkMGUzY2UyYTAyM2JjZmU3NDA=" target="_blank" class="govuk-link govuk-link--no-visited-state">300103</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="240205">5/2/24</td>
+
+      <td class="govuk-table__cell" data-sort-value="231222">22/12/23</td>
+
+      <td class="govuk-table__cell" data-sort-value="2"> <strong class="govuk-tag govuk-tag--grey">Not started</strong></td>
+
+      <td class="govuk-table__cell"></td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell"><a href="candidate-details" class="govuk-link govuk-link--no-visited-state">KHAN, Muhammed</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=am9ibGlzdF92aWV3X3ZhYz0xODcxODU1Jm93bmVydHlwZT1mYWlyJnNlYXJjaHNvcnQ9Y2xvc2luZyZ1c2Vyc2VhcmNoY29udGV4dD01NzI4NTQ4NiZwYWdlYWN0aW9uPXZpZXd2YWNieWpvYmxpc3Qmc2VhcmNocGFnZT04NSZvd25lcj01MDcwMDAwJnBhZ2VjbGFzcz1Kb2JzJnJlcXNpZz0xNjk5NTM5NzMwLTUyMzUzMGM5MGY1MjRmY2RlMDVmOWFkMGUzY2UyYTAyM2JjZmU3NDA=" target="_blank" class="govuk-link govuk-link--no-visited-state">308988</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="240102">2/1/24</td>
+
+      <td class="govuk-table__cell" data-sort-value="231030">30/10/23</td>
+
+      <td class="govuk-table__cell" data-sort-value="1"><strong class="govuk-tag govuk-tag--red">Urgent</strong></td>
+
+      <td class="govuk-table__cell">LOUISE, G</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell"><a href="candidate-details" class="govuk-link govuk-link--no-visited-state">ELCARIO, Jennifer</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=am9ibGlzdF92aWV3X3ZhYz0xODcxODU1Jm93bmVydHlwZT1mYWlyJnNlYXJjaHNvcnQ9Y2xvc2luZyZ1c2Vyc2VhcmNoY29udGV4dD01NzI4NTQ4NiZwYWdlYWN0aW9uPXZpZXd2YWNieWpvYmxpc3Qmc2VhcmNocGFnZT04NSZvd25lcj01MDcwMDAwJnBhZ2VjbGFzcz1Kb2JzJnJlcXNpZz0xNjk5NTM5NzMwLTUyMzUzMGM5MGY1MjRmY2RlMDVmOWFkMGUzY2UyYTAyM2JjZmU3NDA=" target="_blank" class="govuk-link govuk-link--no-visited-state">387424</a></td>
+
+      <td class="govuk-table__cell" data-sort-value="240221">21/2/24</td>
+
+      <td class="govuk-table__cell" data-sort-value="231107">7/11/23</td>
+
+      <td class="govuk-table__cell" data-sort-value="3"><strong class="govuk-tag">Completed</strong></td>
+
+      <td class="govuk-table__cell">STROUD, P</td>
+
+    </tr>
+
+  </tbody>
+</table><br>
+
+
+  </div>
+</div>
+
+{% endblock %}
