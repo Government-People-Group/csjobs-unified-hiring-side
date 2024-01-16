@@ -1,0 +1,97 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Interview</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+<style>
+
+
+p {
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
+
+
+}
+</style>
+
+
+  <div class="govuk-grid-row govuk-!-margin-top-0">
+  <div class="govuk-grid-column-full">
+
+
+
+  <h1 class="govuk-heading-xl">Send candidate provisional offer</h1>
+  <p class="govuk-body-l">The candidate will be sent a provisional offer email.</p>
+
+<p class="govuk-body-l"><a class="govuk-link" href="merit-list-view-provisional-offer">Preview the provisional offer</a></p>
+
+
+  <textarea style="font-size:22px" class="govuk-textarea" id="offerContent" name="offerContent" rows="16" aria-describedby="offerContent-hint">
+Dear Mei Chen,
+
+Congratulations you have been successful in your interview.
+We would like to make you a provisional offer.
+
+Salary	£32,450 per annum
+Location	Remote with 2 days in the London office
+Grade	Senior Executive Officer (SEO)
+Working pattern
+Full-time with flexible working available
+
+Your benefits include:
+
+25 days leave, increasing by 1 day every year to a maximum of 30 days after five years' service
+joining the highly competitive Civil Service Pension Scheme
+flexible working arrangements, such as job sharing, term-time working, flexi-time and compressed hours
+
+What is a provisional job offer?
+The civil service must carry out pre-employment checks before formally offering a job. You will receive a formal offer when your pre-employment checks are complete.
+
+Please note that pre-employment checks can take up to 10 weeks
+
+What would you like to do about your provisional offer for Policy Adviser?
+You can speak to the hiring manager before making your decision.
+</textarea>
+
+  <!-- <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" style="font-weight:bold;font-size:20px" href="provisional-offer">Preview the provisional offer</a> -->
+
+    </div>
+
+      </div>
+
+  <a href="merit-list-provisional-offer-confirm" type="button" class="govuk-button govuk-!-margin-top-9">Send this email</a>
+  <a href="merit-list-provisional-offer-confirm" type="button" class="govuk-button govuk-button--secondary govuk-!-margin-top-9">Cancel and return to task list</a>
+
+
+
+
+
+{% endblock %}

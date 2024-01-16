@@ -1,0 +1,189 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% set sectionref = "About the vacancy" %}
+{% include '/csu71/includes/blue-subhead.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form class="form" action="/csu71/new-campaign-set-up/summary-section-1" method="post">
+
+      <h1 class="govuk-heading-xl">Approval</h1>
+
+
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "approval-status",
+        name: "approval-status",
+        fieldset: {
+          legend: {
+            text: "Has there been financial approval for this vacancy?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "The advert can only go live once approval has been confirmed"
+        },
+        items: [
+        {
+          id: "approved",
+          value: "Yes - approved",
+          text: "Yes - approved",
+          checked: checked("approval-status","Yes - approved")
+        },
+        {
+          id: "notapproved",
+          value: "No",
+          text: "No",
+          checked: checked("approval-status","No")
+        }
+        ]
+      }) }}
+
+      <div id="appro"></div>
+
+
+      {% if data['approval-status'] == "Yes - approved" %}
+
+      {% endif %}
+
+
+      <div id="upload" style="display:none" class=" govuk-!-margin-top-9">
+
+        <h2 class="govuk-heading-l">Upload the approval document</h2>
+
+        <p class="govuk-body-m">Please upload your proof of financial approval to recruit this role. You can do this anytime before you finish setting up your vacancy.</p>
+
+        {{ govukFileUpload({
+          id: "file-upload-1",
+          name: "file-upload-1",
+          value: data['file-upload-1'],
+          label: {
+            text: "Upload a file"
+          }
+        }) }}
+
+        <div id="lastMod"></div>
+
+      </div>
+
+      <button class="govuk-button govuk-!-margin-top-9" data-module="govuk-button">Continue</button>
+      {{ govukButton({
+        text: "Preview advert",
+        classes: "govuk-button--secondary govuk-!-margin-top-9",
+        href: "preview-advert"
+      }) }}
+    </form>
+  </div>
+</div>
+
+{% include '/csu71/includes/footerarea.html' %}
+
+<script>
+
+
+  try {
+    var approval = JSON.parse(window.sessionStorage.getItem("approval-proof"));
+    console.log(approval)
+
+    if (approval[0] == "Yes") {
+      console.log("Yes")
+
+      var lm = document.getElementById('appro');
+      lm.style.cssText = "font-size:20px;font-weight:bold";
+      lm.innerText = "Approval: "+ approval[1] +" "+ approval[2];
+
+
+
+    }
+  } catch (error) {
+    console.error(error);
+  }
+
+  // var approval = JSON.parse(window.sessionStorage.getItem("approval-proof"));
+  // console.log(approval)
+  //
+  // if (approval[0] == "Yes") {
+  //   console.log("Yes")
+  //
+  //   var lm = document.getElementById('appro');
+  //   lm.style.cssText = "font-size:20px;font-weight:bold";
+  //   lm.innerText = "Approval: "+ approval[1] +" "+ approval[2];
+  //
+  //
+  //
+  // }
+
+  var appArray = [];
+  const approved = document.getElementById('approved');
+  const notapproved = document.getElementById('notapproved');
+  var divv = document.getElementById('upload').style.display;
+  approved.addEventListener('change', (event) => {
+    if (approved.checked) {
+      showDiv("upload");
+      appArray.push("Yes");
+      // window.sessionStorage.setItem("approved", JSON.stringify("Yes"));
+
+    }
+
+  });
+
+
+  const fileUpload = document.getElementById('file-upload-1');
+  var stamp = new Date();
+  var localStamp = stamp.toLocaleDateString('en-us', { day:"numeric", month:"short", year:"numeric" }) ;
+
+  fileUpload.addEventListener('change', (event) => {
+    const files = event.target.files;
+    for (const file of files) {
+      const name = file.name;
+      const lastModified = file.lastModified;
+      const lmElement = document.getElementById('lastMod');
+
+      var fileName = `${name}`;
+      var lastM = `uploaded on ${new Date(lastModified).toLocaleDateString('en-uk')}`;
+      lmElement.innerHTML = fileName+": "+lastM;
+      appArray.push(fileName,lastM)
+      window.sessionStorage.setItem("approval-proof", JSON.stringify(appArray));
+    }
+  });
+
+  notapproved.addEventListener('change', (event) => {
+    if (notapproved.checked) {
+      hideDiv("upload");
+    }
+
+  });
+
+
+
+
+  function hideDiv(div1) {
+    document.getElementById(div1).style.display = 'none';
+
+  }
+
+  function showDiv(div1) {
+    document.getElementById(div1).style.display = 'block';
+
+  }
+
+
+
+</script>
+
+
+
+{% endblock %}

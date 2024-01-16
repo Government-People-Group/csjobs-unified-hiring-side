@@ -1,0 +1,174 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+  {% block beforeContent %}
+  <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+    <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+  </div> -->
+  <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">View and submit my scores</span>
+
+  <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
+
+  </div>
+
+  </div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-l">Consensus meeting</span>
+<h1 class="govuk-heading-xl">Javier Santos</h1>
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <p class="govuk-body-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">Review the scores and make your decision.</p>
+
+
+    <table class="govuk-table govuk-!-margin-top-9" style="">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th style="" scope="col" class="govuk-table__header">Panel member</th>
+          <th style=";text-align:left;" scope="col" class="govuk-table__header govuk-table__header--numeric">Q1</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Q2</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Q3</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Q4</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Q5</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Q6</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Q7</th>
+          <th style=";text-align:center" scope="col" class="govuk-table__header govuk-table__header--numeric">Total</th>
+          <!-- <th style=";text-align:center" scope="col" class="govuk-table__header govuk-table__header--numeric">Status</th> -->
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+
+
+
+
+          <th scope="row" class="govuk-table__header">
+
+            <a style="" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="#">Panel member 1</a>
+
+          </th>
+          <td style=";text-align:left;" class="govuk-table__cell govuk-table__cell--numeric">{{data['Mei Chen1']|default("4")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{data['Mei Chen2']|default("4")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{data['Mei Chen3']|default("4")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{data['Mei Chen4']|default("4")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{data['Mei Chen5']|default("4")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{data['Mei Chen6']|default("4")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{data['Mei Chen7']|default("4")|int}}</td>
+          <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric"><strong>{{ meiTotal |default("28")}}</strong></td>
+          <!-- <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric"> -->
+
+            <!-- <strong class="govuk-tag govuk-tag"  id="contact-details-status">completed</strong>
+
+
+
+          </td> -->
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+
+            <a style="" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="#">Panel member 2</a>
+
+          </th>
+          <td style=";text-align:left;" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawsonscore1']|default("3")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawsonscore2']|default("3")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawsonscore3']|default("3")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawsonscore4']|default("3")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawsonscore5']|default("3")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawsonscore6']|default("3")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawsonscore7']|default("3")|int}}</td>
+          <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric"><strong>{{ ameliaTotal |default("21")}}</strong></td>
+          <!-- <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric">
+
+            <strong class="govuk-tag govuk-tag"  id="contact-details-status">completed</strong>
+
+
+
+          </td> -->
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+
+            <a style="" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="#">Panel member 3</a>
+
+          </th>
+          <td style=";text-align:left;" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santosscore1']|default("5")|int}}</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos2']|default("5")|int}}</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos3']|default("5")|int}}</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos4']|default("5")|int}}</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos5']|default("5")|int}}</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos6']|default("5")|int}}</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos7']|default("5")|int}}</td>
+          <td style="font-size:24px;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric"><strong>{{ javierTotal|default("35") }}</strong></td>
+
+          <!-- <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric">
+
+            <strong class="govuk-tag govuk-tag"  id="contact-details-status">completed</strong>
+
+
+
+          </td> -->
+
+        </tr>
+      </tbody>
+    </table>
+
+
+
+                {{ govukRadios({
+                  idPrefix: "app3Decided",
+                  name: "app3Decided",
+                  id: "app3Decided",
+                  classes: "govuk-!-margin-bottom-6",
+                  fieldset: {
+                    legend: {
+                      text: "What is your decision on Javier Santos?",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  items: [
+                  {
+                    value: "Progress",
+                    checked: checked("app3Decided","Progress"),
+                    text: "Progress"
+                  },
+                  {
+                    value: "Reserve",
+                    checked: checked("app3Decided","Reserve"),
+                    text: "Reserve"
+                  },
+                  {
+                    value: "Unsuccessfulh",
+                    checked: checked("app3Decided","Unsuccessful"),
+                    text: "Unsuccessful"
+                  }
+                  ]
+                }) }}
+
+
+
+{{ govukButton({
+  text: "Submit your decision",
+  classes:"govuk-!-margin-top-3",
+  href: "/csu71/sift/task-list?hide=banner"
+}) }}
+
+{% endblock %}

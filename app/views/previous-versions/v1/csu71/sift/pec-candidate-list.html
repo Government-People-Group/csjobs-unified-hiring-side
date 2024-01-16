@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+  {% block beforeContent %}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+
+    {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">1001334</span>
+    <h1 class="govuk-heading-xl">Policy Adviser</h1>
+
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">Candidate pre-employment check status
+        </h2>
+        <div class="govuk-inset-text">
+          Once started, you can see more details on check progress by clicking the candidate's name.
+        </div>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="https://csjobs-pec.herokuapp.com/hub/candidate/tab-pec-list" aria-describedby="eligibility-status">
+                Steve Evans
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__tag govuk-tag--blue" id="contact-details-status">in progress</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+                Christina Bokavic
+            </span>
+            <strong class="govuk-tag app-task-list__tag govuk-tag--grey" id="contact-details-status">not started</strong>
+          </li>
+        </ul>
+        </li>
+</ol>
+  </div>
+</div>
+
+{% endblock %}

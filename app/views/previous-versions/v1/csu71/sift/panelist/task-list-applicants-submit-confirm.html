@@ -1,0 +1,253 @@
+{% extends "layouts/main.html" %}
+
+
+
+{% block header %}
+{% include '/csu71/includes/pheader.html' %}
+  {% endblock %}
+
+
+
+
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Sift</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="#"><strong>Message panel chair</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+{% if (data['c1score1'].length) and (data['c1score2'].length) and (data['c1score3'].length) and (data['c1score4'].length) %}
+{% set cand1 = "true" %}
+{% endif %}
+
+{% if (data['c2score1'].length) and (data['c2score2'].length) and (data['c2score3'].length) and (data['c2score4'].length) %}
+{% set cand2 = "true" %}
+{% endif %}
+
+{% if (data['c3score1'].length) and (data['c1score2'].length) and (data['c1score3'].length) and (data['c1score4'].length) %}
+{% set cand3 = "true" %}
+{% endif %}
+
+{% if (data['c4score1'].length) and (data['c4score2'].length) and (data['c4score3'].length) and (data['c4score4'].length) %}
+{% set cand4 = "true" %}
+{% endif %}
+
+{% if (data['c5score1'].length) and (data['c5score2'].length) and (data['c5score3'].length) and (data['c5score4'].length) %}
+{% set cand5 = "true" %}
+{% endif %}
+
+
+<span class="govuk-caption-l">1001334</span>
+<h2 class="govuk-heading-l">Policy Adviser</h2>
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    <div style="width:75%" class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+      aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          Your sift scores have been submitted successfully.
+        </h3>
+        <!-- <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there’s a problem.</p> -->
+      </div>
+    </div>
+
+
+
+    <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Review and submit sifting scores</H1>
+    <p class="govuk-body-l">Review and submit your scores for the Policy Adviser application.</p>
+    <table class="govuk-table" style="">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header app-custom-class"></th>
+          <th scope="col" class="govuk-table__header app-custom-class">Behaviour 1</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Behaviour 2</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Behaviour 3</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Skills</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="app-task-list__task-name">
+              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-1" aria-describedby="eligibility-status">
+                Candidate 1
+              </a>
+            </span>
+          </th>
+
+
+
+
+          <td class="govuk-table__cell">{{ data['c1score1']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c1score2']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c1score3']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c1score4']|default("")}}</td>
+          <td class="govuk-table__cell">
+
+            {% if data['c1score1'].length > 0 %}
+            <strong class="govuk-tag govuk-tag"  id="contact-details-status">completed</strong>
+            {% else %}
+          <strong class="govuk-tag govuk-tag--grey"  id="contact-details-status">NOT SCORED YET</strong>
+          {% endif %}
+
+
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="app-task-list__task-name">
+              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-2" aria-describedby="eligibility-status">
+                Candidate 2
+              </a>
+            </span>
+          </th>
+          <td class="govuk-table__cell">{{ data['c2score1']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c2score2']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c2score3']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c2score4']|default("")}}</td>
+          <td class="govuk-table__cell">
+
+
+
+
+
+            {% if data['c2score1'].length > 0 %}
+            <strong class="govuk-tag govuk-tag"  id="contact-details-status">completed</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey"  id="contact-details-status">NOT SCORED YET</strong>
+            {% endif %}
+
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="app-task-list__task-name">
+              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-3" aria-describedby="eligibility-status">
+                Candidate 3
+              </a>
+            </span>
+          </th>
+          <td class="govuk-table__cell">{{ data['c3score1']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c3score2']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c3score3']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c3score4']|default("")}}</td>
+          <td class="govuk-table__cell">
+
+            {% if data['c3score1'].length > 0 %}
+            <strong class="govuk-tag govuk-tag"  id="contact-details-status">completed</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey"  id="contact-details-status">NOT SCORED YET</strong>
+            {% endif %}
+
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+
+            <span class="app-task-list__task-name">
+              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-4" aria-describedby="eligibility-status">
+                Candidate 4
+              </a>
+            </span>
+          </th>
+          <td class="govuk-table__cell">{{ data['c4score1']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c4score2']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c4score3']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c4score4']|default("")}}</td>
+          <td class="govuk-table__cell">
+
+
+            {% if data['c4score1'].length > 0 %}
+            <strong class="govuk-tag govuk-tag"  id="contact-details-status">completed</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey"  id="contact-details-status">NOT SCORED YET</strong>
+            {% endif %}
+
+
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <span class="app-task-list__task-name">
+              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="1001334-applicant-5" aria-describedby="eligibility-status">
+                Candidate 5
+              </a>
+            </span>
+          </th>
+          <td class="govuk-table__cell">{{ data['c5score1']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c5score2']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c5score3']|default("")}}</td>
+          <td class="govuk-table__cell">{{ data['c5score4']|default("")}}</td>
+          <td class="govuk-table__cell">
+            {% if data['c5score1'].length > 0 %}
+            <strong class="govuk-tag govuk-tag"  id="contact-details-status">completed</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey"  id="contact-details-status">NOT SCORED YET</strong>
+            {% endif %}
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+<!-- {% if (cand1 === "true") and (cand2 === "true") and (cand3 === "true") and (cand4 === "true") and (cand5 === "true") %}
+<button type="submit" class="govuk-button" data-module="govuk-button">Submit my scores to panel</button>
+{% else %}
+{% endif %} -->
+
+
+  </div>
+</div>
+<script>
+
+  var dat =  document.getElementsByTagName("tr")
+  console.log(dat)
+
+  for (var t=0;t<dat.length;t++){
+    // if (dat.textContent[t]) {
+      console.log(dat.length)
+
+    // }
+
+
+  }
+
+
+
+
+</script>
+{% endblock %}

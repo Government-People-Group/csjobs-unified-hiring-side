@@ -1,0 +1,219 @@
+{% extends "layouts/main.html" %}
+
+
+
+{% block header %}
+{% include '/csu71/includes/pheader.html' %}
+{% endblock %}
+
+
+
+
+
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Score interview</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list-interview-first"><strong>Save and return to task-list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+{% set questPack = [
+  ["Question 1","6-8 mins | Experience","Can you tell me about your experience of building a trusted advisor-style relationship with a stakeholder? Can you give me examples of how you were able to achieve this?","Building engaging and effective relationships with stakeholders (Experience)"],
+  ["Question 2","6-8 mins | Behaviours","Can you describe a time when you have had to bring together different viewpoints into one way forward? What was the situation? What did you do? What was the outcome?","Seeing the big picture (Behaviours)"],
+  ["Question 3","6-8 mins | Behaviours","Can you describe a time when you have received a reaction to a piece of work or project that you weren't expecting? How did you manage the situation?","Changing and improving (Behaviours)"],
+  ["Question 4","2 mins | Strengths","How does it make you feel when people shift the goalposts on a task?","Analytical (Strengths)"],
+  ["Question 5","2 mins | Strengths","What does a successful day look like?","Challenger (Strengths)"],
+  ["Question 6","2 mins | Strengths","What aspect of problem solving do you least enjoy?","Problem solver (Strengths)"],
+  ["Question 7","10 mins | Activity","Give a 10 minute presentation on the what interests you about working for the Civil Service in a policy role?","Presentation"]
+  ] %}
+
+
+<span class="govuk-caption-l">1001334</span>
+<h2 class="govuk-heading-l">Policy Adviser</h2>
+<H1 style="font-weight:normal;;; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6"><strong>Interview</strong> {{ data['candidate']|default("Mei Chen")}}</h1>
+
+
+<form class="form" action="task-list-interview-first?mei=done" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <!-- background:#F1FAFF -->
+            {% for number, time, question, criteria in questPack %}
+
+
+      <div class="govuk-!-margin-bottom-6" style=" position:relative;;border:1px solid #1d70b8;;background:white;padding:20px">
+        <span class="govuk-caption-m" id="{{number}}" style="position:absolute;top:0;left:50px;background:#1d70b8;;color:white;font-weight:bold;;font-size:18px;width:105px;;padding:5px;text-align:center">{{number}}</span>
+        <span class="govuk-caption-m" style=";position:absolute;top:0;right:50px;font-size:16px;font-weight:normal;;padding:10px">{{time}}</span>
+        <div class="govuk-!-margin-top-1" style="border-radius:5px;background:white;padding:20px">
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-3" style="padding-left:10px;;margin-left:0px;font-size:28px;line-height:1.4;font-weight:normal;;">{{question}}</h2>
+        </div>
+        <div class="govuk-!-margin-top-4" style="border:0px solid #1d70b8;border-radius:5px;padding:20px;background:#f3f2f1">
+          <span class="govuk-caption-m" style=";;;color:black;font-weight:normal;font-size:22px;;;padding:5px;">{{criteria}}</span>
+
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <div class="govuk-form-group govuk-!-margin-top-0" style="float:left;">
+                <label class="govuk-label govuk-label--s" for="score">
+                  Score
+                </label>
+                <select style="width:100%;;border:1px solid grey" class="govuk-select" id="score" name="score">
+                  <option value="">---</option>
+                  <option value="1">1 <strong>Not Demonstrated</strong> No positive evidence provided</option>
+                  <option value="2">2 <strong>Minimal Demonstration</strong> Limited positive evidence provided</option>
+                  <option value="3">3 <strong>Moderate Demonstration</strong> Moderate positive evidence provided</option>
+                  <option value="4">4 <strong>Acceptable Demonstration</strong> Adequate positive evidence provided</option>
+                  <option value="5">5 <strong>Good Demonstration</strong> Substantial positive evidence provided</option>
+                  <option value="6">6 <strong>Strong Demonstration</strong> Substantial, positive evidence provided including some evidence of exceeding expectations</option>
+                  <option value="7">7 <strong>Outstanding Demonstration</strong> Evidence provided wholly exceeds expectation at this level</option>
+                </select>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-half">
+              <div class="govuk-form-group govuk-!-margin-top-0" style=";">
+                <label class="govuk-label govuk-label--s" for="reason">
+                  Reason
+                </label>
+                <select style="width:100%;;border:1px solid grey" class="govuk-select" id="reason" name="reason">
+                  <option value="">---</option>
+                  <option value="Not enough experience">Not enough experience</option>
+                  <option value="High level of experience">High level of experience</option>
+                  <option value="Not relevant to role">Not relevant to role</option>
+                  <option value="Very relevant to role">Very relevant to role</option>
+                  <option value="No or poor example given">No or poor example given</option>
+                  <option value="Strong example given">Strong example given</option>
+                </select>
+              </div>
+            </div>
+            <div class="govuk-grid-column-full">
+              <div class="govuk-form-group" style=";">
+                <h1 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--s" for="notes">
+                    Notes
+                  </label>
+                </h1>
+                <textarea style="width:100%;;border:1px solid grey" class="govuk-textarea" id="notes" value="" name="notes" rows="2" aria-describedby="notesInt-1"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endfor %}
+    </div>
+  </div>
+
+
+
+  <button type="submit" onclick="grabScores()" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Continue</button>
+
+<form>
+
+<script>
+
+
+var scoreArray = []
+// var reasonArray = []
+
+function grabScores(){
+
+  // const scoringData = {}
+  const allInput = document.getElementsByTagName("input");
+  // const scores = document.getElementsByClassName("govuk-select");
+  // const reason = document.getElementsByClassName("govuk-select");
+  // const notes = document.getElementsByClassName("govuk-textarea");
+  console.log(allInput.name)
+
+
+  }
+
+  // var scoreQuestion1 = new questionScore(scoreArray, reasonArray);
+  // window.sessionStorage.setItem(scoreQuestion1, JSON.stringify(scoreQuestion1));
+  //
+  //
+  // function questionScore(score, reason) {
+  //   this.score = score;
+  //   this.reason = reason;
+  // }
+
+
+//
+//
+// var scoreQuestion1 = new questionScore(scoreVal, reasonVal, notesVal);
+//
+//
+//
+// scoringData.questionNumber = 1;
+// scoringData.questionNumber.score =
+// scoringData.questionNumber.reason =
+// scoringData.questionNumber.notes  =
+
+</script>
+
+{% endblock %}
+
+const keyDetails = {};
+const title = document.getElementById("title").value;
+const grade = document.getElementById("newgrade").value
+const profession = document.getElementById("grabProf").value;
+const department = document.getElementById("dept").value;
+
+console.log(title, grade, profession, department)
+
+keyDetails.jobTitle = title;
+keyDetails.grade = grade;
+keyDetails.profession = profession;
+keyDetails.department = department;
+keyDetails.elements = ['behaviours','experience','strengths','skills'];
+keyDetails.behaviours = ['Seeing the Big Picture','Problem Solver'];
+keyDetails.skills = ['Challenge assumptions and explore diferent scales of impact','Use evaluation throughout the policy process to generate evidence and learning that informs decisions'];
+keyDetails.experience = ['Building engaging and effective relationships with stakeholders'];
+keyDetails.sift = [['Behaviours','Working Together'],['Behaviours','Making Effective Decisions'],['Skills','Challenge assumptions and explore diferent scales of impact'],['Skills','Use evaluation throughout the policy process to generate evidence and learning that informs decisions']];
+keyDetails.interview = [['Experience','Building engaging and effective relationships with stakeholders'],['Behaviours','Seeing the Big Picture'],['Behaviours','Changing and Improving'],['Strengths','Analytical'],['Strengths','Challenger'],['Strengths','Problem Solver']];
+
+window.sessionStorage.setItem("keyDetails", JSON.stringify(keyDetails));
+
+
+console.log(keyDetails);
+
+
+
+
+
+
+const skill2 = new skill(textA2.value, levelA2.value);
+
+
+
+const skill3 = new skill(textA3.value, levelA3.value);
+
+
+const skill4 = new skill(textA4.value, levelA4.value);
+const skill5 = new skill(textA5.value, levelA5.value);
+const skill6 = new skill(textA6.value, levelA6.value);
+
+
+
+const skills = {
+
+  skill1, skill2, skill3, skill4, skill5, skill6
+}

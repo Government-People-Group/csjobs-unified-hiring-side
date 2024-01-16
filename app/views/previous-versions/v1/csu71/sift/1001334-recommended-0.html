@@ -1,0 +1,203 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+  {% block beforeContent %}
+  <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+    <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+  </div> -->
+  <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Sift</span>
+
+  <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
+
+  </div>
+
+  </div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+<span class="govuk-caption-l">1001334</span>
+<h1 class="govuk-heading-l">Lead delivery manager</h1>
+
+{% set interviewHTML %}
+{{govukTag({
+  text: "Interview",
+  classes: "govuk-tag--green"
+})}}
+{% endset %}
+{% set holdHTML %}
+{{govukTag({
+  text: "On hold",
+  classes: "govuk-tag--blue"
+})}}
+{% endset %}
+{% set scoreHTML %}
+{{govukTag({
+  text: "Missing score",
+  classes: "govuk-tag--grey"
+})}}
+{% endset %}
+{% set rejectHTML %}
+{{govukTag({
+  text: "Reject",
+  classes: "govuk-tag--red"
+})}}
+{% endset %}
+{% set checkboxHTML %}
+{{ govukCheckboxes({
+  idPrefix: "proceed",
+  name: "proceed",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "confirm",
+      text: "Confirm recommendation"
+    }
+  ]
+}) }}
+{% endset %}
+
+{% set confirmHTML %}
+{{ govukCheckboxes({
+  idPrefix: "proceed",
+  name: "proceed",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "confirm",
+      text: "Confirm all",
+      classes: "govuk-heading-s"
+    }
+  ]
+}) }}
+{% endset %}
+
+{{ govukTable({
+  caption: "Applications",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Score",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Recommendation",
+      classes: 'app-custom-class',
+      style: hidden
+    },
+    {
+      html: confirmHTML,
+      classes: 'app-custom-class'
+    }
+  ],
+  rows: [
+    [
+      {
+        html: "<a href='1001334-applicant-1'>Applicant 1</a>"
+      },
+      {
+        text: "0"
+      },
+      {
+        html: scoreHTML
+      },
+      {
+        html: checkboxHTML
+      }
+    ],
+    [
+      {
+        html: "<a href=''>Applicant 2</a>"
+      },
+      {
+        text: "0"
+      },
+      {
+        html: scoreHTML
+      },
+      {
+        html: checkboxHTML
+      }
+    ],[
+      {
+        html: "<a href=''>Applicant 3</a>"
+      },
+      {
+        text: "0"
+      },
+      {
+        html: scoreHTML
+      },
+      {
+        html: checkboxHTML
+      }
+    ],[
+      {
+        html: "<a href=''>Applicant 4</a>"
+      },
+      {
+        text: "0"
+      },
+      {
+        html: scoreHTML
+      },
+      {
+        html: checkboxHTML
+      }
+    ],
+    [
+      {
+        html: "<a href=''>Applicant 5</a>"
+      },
+      {
+        text: "0"
+      },
+      {
+        html: scoreHTML
+      },
+      {
+        html: checkboxHTML
+      }
+    ]
+  ]
+}) }}
+
+{{ govukButton({
+  text: "1001334-Submit recommendations",
+  href: "panel-results"
+}) }}
+<p><a href="task-list.html">Save and return to task-list</a></p>
+            </div>
+            </div>
+{% endblock %}

@@ -1,0 +1,238 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+  {% block beforeContent %}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+
+    {% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+   <div class="govuk-grid-column-full" style="position:relative">
+<p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">Vacancy <strong>1001334</strong></p>
+
+<p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">Grade <strong>{{ data['grade'] | default("Grade 7") }}</strong></p>
+
+
+     <h1 style="border-bottom:1px solid #1d70b8;;padding-bottom:10px;" class="govuk-heading-xl">{{ data['title'] | default("Lead delivery manager") }}</h1>
+     <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+
+
+
+
+<p>You can save and return at any point to complete an action.</p>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Advert closed 23 September 2022.</h2>
+    <p class="govuk-body govuk-!-margin-bottom-7">You have completed 4 of 15 sections.</p>
+
+
+    <div id="bann" style="width:100%" class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+      aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          The sift stage has been completed.
+        </h3>
+        <p class="govuk-body">You can still view the sift task list by clicking on the sift headers below.</p>
+
+      </div>
+    </div>
+    <ol class="app-task-list">
+      <li>
+        <!-- <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1. </span> Review job role
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="review-advert" aria-describedby="eligibility-status">
+                View job advert
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Optional</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="pre-sift-questions" aria-describedby="eligibility-status">
+                Check pre-sift answers
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Optional</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="online-tests" aria-describedby="eligibility-status">
+                Check online test results
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Optional</strong>
+          </li>
+
+          </ul>
+          </li> -->
+          <li>
+            <div style=";position:relative">
+            <h2 style=";width:100%;padding:10px;border-bottom:1px solid #1d70b8"  class="app-task-list__section">
+              <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" style="font-weight:bold" href="task-list">1. Sift applications</a>
+            </h2>
+            <strong style="position:absolute;right:0px;top:12px;font-size:18px" class="govuk-tag" id="financial-evidence-status">completed</strong>
+
+            </div>
+
+            <ul class="app-task-list__items">
+
+                </ul>
+                </li>
+                <div style="position:relative;margin-top:-40px">
+                <h2 style=";width:100%;;padding:10px;border-bottom:1px solid #1d70b8"  class="app-task-list__section">
+                  <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" style="font-weight:bold" href="task-list">2. View and submit my scores</a>
+                </h2>
+                <strong style="position:absolute;right:0px;top:12px;font-size:18px" class="govuk-tag" id="financial-evidence-status">completed</strong>
+                </div>
+
+            <ul class="app-task-list__items">
+
+              </ul>
+
+  <li>
+    <h2 class="app-task-list__section">
+      <span class="app-task-list__section-number">3. </span> Setup interview
+    </h2>
+    <ul class="app-task-list__items">
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="setup-interview/setup-interview-ph2" aria-describedby="company-information-status">
+                Schedule
+              </a>
+            </span>
+
+    {% if data['confirm'] == "true" %}
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+    {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Cannot start yet</strong>
+            {% endif %}
+          </li>
+
+          <li style ="display:none" class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="setup-interview/setup-interview-ph2?act=finalise" aria-describedby="contact-details-status">
+                Finalise schedule
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Cannot start yet</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="setup-interview/setup-interview-ph1" aria-describedby="contact-details-status">
+                Interview approach
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Cannot start yet</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="setup-interview/setup-interview-ph3" aria-describedby="contact-details-status">
+                Assessments
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Cannot start yet</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="setup-interview/setup-interview-ph4-1" aria-describedby="contact-details-status">
+                Interview questions
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Cannot start yet</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="setup-interview/setup-interview-ph5" aria-describedby="contact-details-status">
+                Review and send invites
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Cannot start yet</strong>
+          </li>
+
+          </ul>
+          </li>
+
+
+          <ol class="app-task-list">
+            <li>
+              <h2 class="app-task-list__section">4. Track candidates
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <!-- <a href="#" aria-describedby="eligibility-status"> -->
+                      Firstname Surname
+                    <!-- </a> -->
+                  </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <!-- <a href="#" aria-describedby="eligibility-status"> -->
+                      Firstname Surname
+                    <!-- </a> -->
+                  </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <!-- <a href="#" aria-describedby="eligibility-status"> -->
+                      Firstname Surname
+                    <!-- </a> -->
+                  </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+                </li>
+
+
+              </ul>
+              </li>
+          </ol>
+
+
+
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Score interviews
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="score-interview" aria-describedby="eligibility-status">
+                  Score interviews
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="submit-interview" aria-describedby="eligibility-status">
+                  Review and submit interview scores
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+            </li>
+        </ul>
+
+</ol>
+  </div>
+</div>
+
+{% endblock %}

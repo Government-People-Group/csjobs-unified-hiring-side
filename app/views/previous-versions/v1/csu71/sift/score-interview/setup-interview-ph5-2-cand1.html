@@ -1,0 +1,163 @@
+    {% extends "layouts/main.html" %}
+    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+    {% block header %}
+    {% include '/csu71/includes/header.html' %}
+    {% endblock %}
+
+    {% block beforeContent %}
+    <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+      <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+    </div> -->
+    <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Interview</span>
+
+    <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+      <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
+
+    </div>
+
+    </div>
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+    {% endblock %}
+
+    {% block content %}
+
+
+
+
+
+
+      <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Review sift feedback before sending to candidates</H1>
+
+
+      <div class="govuk-grid-row">
+
+        <div style="" class="govuk-!-margin-top-6 govuk-grid-column-full">
+
+
+          <p class="govuk-body-m"><strong>Review and edit candidate feedback for quality and accuracy before it is shared with them.</strong></p>
+
+
+            <h2 style="" class="govuk-heading-l">Mei Chen</h2>
+
+
+          <div style="">
+          <p style=";text-align:left;font-size:20px;font-weiGHT:BOLD" class="govuk-body-m">Total score 35</p>
+              <table class="govuk-table">
+                <caption style="float:right" class="govuk-table__caption govuk-table__caption--m"></caption>
+
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+
+                    <th style="border-bottom:1px solid #f3f2f1;width:35%;background:#f3f2f1" scope="col" class="govuk-table__header app-custom-class">Assessed item</th>
+                    <th style="border:0px;;width:15%;background:#f3f2f1" scope="col" class="govuk-table__header app-custom-class">Avg score</th>
+                    <th style="border:0px;;width:15%;background:#f3f2f1" scope="col" class="govuk-table__header app-custom-class">Reason</th>
+                    <th style="border:0px;;width:35%;background:#f3f2f1" scope="col" class="govuk-table__header app-custom-class">Feedback</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th style="border:0px;font-size:18px;height:15px;background:#F4FAFF"  scope="row" class="govuk-table__header">Written behaviours</th>
+                    <td style="border:0px;background:#F4FAFF;font-weight:normal" class="govuk-table__cell"></td>
+                    <td style="border:0px;background:#F4FAFF;font-weight:normal" class="govuk-table__cell"></td>
+                    <td style="border:0px;background:#F4FAFF;font-weight:normal" class="govuk-table__cell"><a style="font-weight:bold;float:right;padding-right:20px" href="#">Edit</a></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th style="font-weight:normal"  scope="row" class="govuk-table__header">Seeing the big picture</th>
+                    <td style="font-weight:normal" class="govuk-table__cell">6</td>
+                    <td style="font-weight:normal" class="govuk-table__cell">High level of experience</td>
+                    <td style="font-weight:normal" class="govuk-table__cell">Sed haec quis possit intrepidus. Prima luce, cum quibus mons aliud.</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th style="font-weight:normal" scope="row" class="govuk-table__header">Changing and improving</th>
+                    <td class="govuk-table__cell">6</td>
+                    <td style="font-weight:normal" class="govuk-table__cell">High level of experience</td>
+                    <td class="govuk-table__cell">Lorem ipsum dolor sit amet, incidunt ut labore et dolore magna aliqua.</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th style="font-weight:normal" scope="row" class="govuk-table__header">Making effective decisions</th>
+                    <td class="govuk-table__cell">5</td>
+                    <td style="font-weight:normal" class="govuk-table__cell">High level of experience</td>
+
+                    <td class="govuk-table__cell">Prima luce, cum quibus mons aliud consensu ab eo.</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <th style="border:0px;background:#F4FAFF;;font-weight:bold"  scope="row" class="govuk-table__header">CV, personal statement</th>
+                    <td style="border:0px;font-weight:normal;background:#F4FAFF;" class="govuk-table__cell"></td>
+                    <td style="border:0px;background:#F4FAFF;;font-weight:normal" class="govuk-table__cell"></td>
+                    <td style="border:0px;background:#F4FAFF;font-weight:normal" class="govuk-table__cell"><a style="font-weight:bold;float:right;padding-right:20px" href="#">Edit</a></td>
+                  </tr>
+
+
+                  <tr class="govuk-table__row">
+                    <th style="font-weight:normal" scope="row" class="govuk-table__header">High standard and experience of drafting policy papers and briefings</th>
+                    <td class="govuk-table__cell">5</td>
+                    <td style="font-weight:normal" class="govuk-table__cell">High level of experience</td>
+
+                    <td class="govuk-table__cell">Prima luce, cum quibus mons aliud intrepidus aestimare tellus consensu ab eo.</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th style="font-weight:normal" scope="row" class="govuk-table__header">Experience of analysing a range of evidence and making clear recommendations</th>
+                    <td class="govuk-table__cell">6</td>
+                                  <td class="govuk-table__cell">High level of experience</td>
+                    <td class="govuk-table__cell">Prima luce, telluscum quibus mons aliud consensu ab eo.</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th style="font-weight:normal" scope="row" class="govuk-table__header">Demonstrable ability to grasp complex policy areas</th>
+                    <td class="govuk-table__cell">7</td>
+                                  <td class="govuk-table__cell">High level of experience</td>
+                    <td class="govuk-table__cell">Prima luce, cum quibus mons aliud consensu intrepidus aestimare tellus ab eo.</td>
+                  </tr>
+
+                </tbody>
+              </table>
+          </div>
+
+          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+          {{ govukCheckboxes({
+            name: "organisation",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                text: "",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+            {
+              id: "savelist",
+              value: "yes",
+              text: "Review complete"
+            }
+            ]
+          }) }}
+
+
+          {{ govukButton({
+            text: "Review next candidate",
+            href: "setup-interview-ph5-2-cand12?reviewFB=done"
+          }) }}
+
+
+        </div>
+
+
+      </div>
+
+      <span id='local-variable' style="display:none">{{ data['templateName'] }}</span>
+
+      <input type="hidden" name="source" value="behaviours">
+
+    {% endblock %}

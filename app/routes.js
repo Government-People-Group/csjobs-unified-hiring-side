@@ -8,6 +8,19 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
+// Logging session data
+
+  router.use((req, res, next) => {
+      const log = {
+        method: req.method,
+        url: req.originalUrl,
+        data: req.session.data
+      }
+      console.log(JSON.stringify(log, null, 2))
+
+    next()
+  })  
+
 router.use('/csu71', require('./views/csu71/_routes'));
 // router.use('/reserve-list-01', require('./views/reserve-list-01/_routes'));
 

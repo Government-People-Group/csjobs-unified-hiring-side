@@ -1,0 +1,703 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+
+<style>
+  #container
+  {
+    position:relative;
+    display: inline;
+    padding-left: 30px
+    top:20px;
+  }
+
+  #image
+  {
+    position:absolute;
+    padding-left: 0px;
+    left:-50px;
+    top:-20px;
+    height:40px;
+  }
+
+  #text
+  {
+    z-index:100;
+    position:absolute;
+    color:white;
+    font-size:15px;
+    font-weight:bold;
+    left: -10px;
+    top:50px;
+  }
+
+  #textly
+  {
+    z-index:100;
+    position:absolute;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    left:33px;
+    top:9px;
+  }
+</style>
+
+
+
+<header class="govuk-header govuk-!-padding-top-6" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="#" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <!--[if gt IE 8]><!-->
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            class="govuk-header__logotype-crown"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 132 97"
+            height="30"
+            width="36">
+            <path
+              fill="currentColor" fill-rule="evenodd"
+              d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"></path>
+          </svg>
+          <!--<![endif]-->
+          <!--[if IE 8]>
+          <img src="/assets/images/govuk-logotype-crown.png" class="govuk-header__logotype-crown-fallback-image" width="36" height="32" alt="">
+          <![endif]-->
+          <span class="govuk-header__logotype-text">
+            GOV.UK
+          </span>
+        </span>
+      </a>
+    </div>
+    <div class="govuk-header__content govuk-!-margin-bottom-6">
+      <a href="/csu71/sift/panelist/task-list-applicants-not-started-yet.html" class="govuk-header__link govuk-header__service-name">
+        Civil Service Jobs
+      </a>
+      <div style="position:absolute;top:-10px; right:30px">
+
+        <a href="/csu71/sift/panelist/my-profile">
+          <li style="float:right" id="container"  style="">
+            <svg width="35px" height="35px" viewBox="0 0 479 479" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Combined Shape</title>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <path d="M239.5,0 C371.772198,0 479,107.227802 479,239.5 C479,371.772198 371.772198,479 239.5,479 C107.227802,479 0,371.772198 0,239.5 C0,107.227802 107.227802,0 239.5,0 Z M239.5,235.645202 C187.282765,235.645202 147.752268,264.197048 120.908508,321.300739 L120.098261,323.039579 C116.572639,330.689718 117.53085,339.657725 122.593228,346.390256 C148.971807,381.4633 187.940573,399 239.5,399 C291.059427,399 330.028193,381.4633 356.4063,346.389901 L356.406772,346.390256 C361.46915,339.657725 362.427361,330.689718 358.901739,323.039579 C332.045033,264.776766 292.244681,235.645202 239.5,235.645202 Z M239.614723,81 C201.408915,81 170.436988,111.991605 170.436988,150.221687 C170.436988,188.451769 201.408915,219.443373 239.614723,219.443373 C277.82053,219.443373 308.792457,188.451769 308.792457,150.221687 C308.792457,111.991605 277.82053,81 239.614723,81 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+    </g>
+</svg>
+
+
+            <strong id="text">Account</strong>
+          </li>
+        </a>
+
+
+
+  </div>
+    </div>
+  </div>
+</header>
+
+
+
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Sift</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/panelist/task-list-applicants-not-started-yet"><strong>Return to sift list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<form action="/csu71/sift/panelist/task-list-applicants-not-started-yet?panelReview=true" method="post">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+<span class="govuk-caption-l">100334</span>
+<h1 class="govuk-heading-xl">Score candidate 5</h1>
+<p class="govuk-body-m">View CV</p>
+<h2 class="govuk-heading-m">Seeing the Big Picture</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    </div>
+
+    <p class="govuk-body-m">The candidate will see the score and feedback</p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+
+          {{ govukSelect({
+          id: "c5score1",
+          name: "c5score1",
+          label: {
+          text: "Score",
+          classes: "govuk-label--m"
+          },
+          items: [
+          {
+            value: "1",
+            text: "1 Not Demonstrated - No positive evidence provided"
+          },
+          {
+            value: "2",
+            text: "2 Minimal Demonstration - Limited positive evidence provided"
+          },
+          {
+            value: "3",
+            text: "3 Moderate Demonstration - Moderate positive evidence provided"
+          },
+          {
+            value: "4",
+            text: "4 Acceptable Demonstration - Adequate positive evidence provided"
+          },
+          {
+            value: "5",
+            text: "5 Good Demonstration - Substantial positive evidence provided"
+          },
+          {
+            value: "6",
+            text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
+          },
+          {
+            value: "7",
+            text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
+          },
+          {
+            value: "---",
+            text: "---",
+            selected: true
+          }
+          ]
+          }) }}
+
+    </div>
+      <div class="govuk-grid-column-two-thirds">
+    {{ govukSelect({
+    id: "c5reason1",
+    name: "c5reason1",
+    label: {
+    text: "Reason",
+    classes: "govuk-label--m"
+    },
+    items: [
+    {
+      value: "experienceLow",
+      text: "Not enough experience"
+    },
+    {
+      value: "experienceHigh",
+      text: "High level of experience"
+    },
+    {
+      value: "relevanceLow",
+      text: "Not relevant to role"
+    },
+    {
+      value: "relevanceHigh",
+      text: "Very relevant to role"
+    },
+    {
+      value: "exampleLow",
+      text: "No or poor example given"
+    },
+    {
+      value: "exampleHigh",
+      text: "Strong example given"
+    },
+    {
+      value: "---",
+      text: "---",
+      selected: true
+    }
+    ]
+    }) }}
+    </div>
+    </div>
+    {{ govukInput({
+    label: {
+    text: "Additional feedback for candidates (optional)"
+    },
+    classes: "govuk-input--width-50",
+    id: "feedback",
+    name: "feedback"
+    }) }}
+
+    {{ govukInput({
+    label: {
+    text: "Notes for the panel, not seen by candidate (optional)"
+    },
+    classes: "govuk-input--width-50",
+    id: "feedback",
+    name: "feedback"
+    }) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<h2 class="govuk-heading-m">Changing and improving</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    </div>
+    <p class="govuk-body-m">The candidate will see the score and feedback</p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+
+          {{ govukSelect({
+          id: "c5score2",
+          name: "c5score2",
+          label: {
+          text: "Score",
+          classes: "govuk-label--m"
+          },
+          items: [
+          {
+            value: "1",
+            text: "1 Not Demonstrated - No positive evidence provided"
+          },
+          {
+            value: "2",
+            text: "2 Minimal Demonstration - Limited positive evidence provided"
+          },
+          {
+            value: "3",
+            text: "3 Moderate Demonstration - Moderate positive evidence provided"
+          },
+          {
+            value: "4",
+            text: "4 Acceptable Demonstration - Adequate positive evidence provided"
+          },
+          {
+            value: "5",
+            text: "5 Good Demonstration - Substantial positive evidence provided"
+          },
+          {
+            value: "6",
+            text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
+          },
+          {
+            value: "7",
+            text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
+          },
+          {
+            value: "---",
+            text: "---",
+            selected: true
+          }
+          ]
+          }) }}
+
+    </div>
+      <div class="govuk-grid-column-two-thirds">
+    {{ govukSelect({
+    id: "c5reason2",
+    name: "c5reason2",
+    label: {
+    text: "Reason",
+    classes: "govuk-label--m"
+    },
+    items: [
+    {
+      value: "experienceLow",
+      text: "Not enough experience"
+    },
+    {
+      value: "experienceHigh",
+      text: "High level of experience"
+    },
+    {
+      value: "relevanceLow",
+      text: "Not relevant to role"
+    },
+    {
+      value: "relevanceHigh",
+      text: "Very relevant to role"
+    },
+    {
+      value: "exampleLow",
+      text: "No or poor example given"
+    },
+    {
+      value: "exampleHigh",
+      text: "Strong example given"
+    },
+    {
+      value: "---",
+      text: "---",
+      selected: true
+    }
+    ]
+    }) }}
+    </div>
+    </div>
+    {{ govukInput({
+    label: {
+    text: "Additional feedback for candidates (optional)"
+    },
+    classes: "govuk-input--width-50",
+    id: "feedback",
+    name: "feedback"
+    }) }}
+
+    {{ govukInput({
+    label: {
+    text: "Notes for the panel, not seen by candidate (optional)"
+    },
+    classes: "govuk-input--width-50",
+    id: "feedback",
+    name: "feedback"
+    }) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <h2 class="govuk-heading-m">Making effective decisions</h2>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    </div>
+    </div>
+
+    <p class="govuk-body-m">The candidate will see the score and feedback</p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+
+          {{ govukSelect({
+          id: "c5score3",
+          name: "c5score3",
+          label: {
+          text: "Score",
+          classes: "govuk-label--m"
+          },
+          items: [
+          {
+            value: "1",
+            text: "1 Not Demonstrated - No positive evidence provided"
+          },
+          {
+            value: "2",
+            text: "2 Minimal Demonstration - Limited positive evidence provided"
+          },
+          {
+            value: "3",
+            text: "3 Moderate Demonstration - Moderate positive evidence provided"
+          },
+          {
+            value: "4",
+            text: "4 Acceptable Demonstration - Adequate positive evidence provided"
+          },
+          {
+            value: "5",
+            text: "5 Good Demonstration - Substantial positive evidence provided"
+          },
+          {
+            value: "6",
+            text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
+          },
+          {
+            value: "7",
+            text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
+          },
+          {
+            value: "---",
+            text: "---",
+            selected: true
+          }
+          ]
+          }) }}
+
+    </div>
+      <div class="govuk-grid-column-two-thirds">
+    {{ govukSelect({
+    id: "c5reason3",
+    name: "c5reason3",
+    label: {
+    text: "Reason",
+    classes: "govuk-label--m"
+    },
+    items: [
+    {
+      value: "experienceLow",
+      text: "Not enough experience"
+    },
+    {
+      value: "experienceHigh",
+      text: "High level of experience"
+    },
+    {
+      value: "relevanceLow",
+      text: "Not relevant to role"
+    },
+    {
+      value: "relevanceHigh",
+      text: "Very relevant to role"
+    },
+    {
+      value: "exampleLow",
+      text: "No or poor example given"
+    },
+    {
+      value: "exampleHigh",
+      text: "Strong example given"
+    },
+    {
+      value: "---",
+      text: "---",
+      selected: true
+    }
+    ]
+    }) }}
+    </div>
+    </div>
+    {{ govukInput({
+    label: {
+    text: "Additional feedback for candidates (optional)"
+    },
+    classes: "govuk-input--width-50",
+    id: "feedback",
+    name: "feedback"
+    }) }}
+
+    {{ govukInput({
+    label: {
+    text: "Notes for the panel, not seen by candidate (optional)"
+    },
+    classes: "govuk-input--width-50",
+    id: "feedback",
+    name: "feedback"
+    }) }}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<h2 class="govuk-heading-m">Essential criteria and skills</h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Experience working in user-centered design</li>
+  <li>Knowledge of design principals</li>
+  <li>Experience creating GOV.UK prototypes</li>
+  <li>Qualification in web accessibility</li>
+  </ul>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<h2 class="govuk-heading-m">
+CV</h2>
+<p>
+Company Name / Job Title</p>
+<p>MONTH 20XX - PRESENT,  LOCATION</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac interdum nisi. Sed in consequat mi. Sed in consequat mi, sed pulvinar lacinia felis eu finibus.</p>
+<br></br>
+<p>
+Company Name / Job Title</p>
+<p>MONTH 20XX - PRESENT,  LOCATION</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac interdum nisi. Sed in consequat mi. Sed in consequat mi, sed pulvinar lacinia felis eu finibus.</p>
+<br></br>
+<p>
+Company Name / Job Title</p>
+<p>MONTH 20XX - PRESENT,  LOCATION</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac interdum nisi. Sed in consequat mi. Sed in consequat mi, sed pulvinar lacinia felis eu finibus.</p>
+<br></br>
+<h2 class="govuk-heading-m">Education</h2>
+
+<p>School Name / Degree</p>
+<p>MONTH 20XX - MONTH 20XX,  LOCATION</p>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+<br></br>
+<p>School Name / Degree</p>
+<p>MONTH 20XX - MONTH 20XX,  LOCATION</p>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+<br></br>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<h2 class="govuk-heading-m">Supporting statement</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut enim et nisi pretium elementum vitae sed risus. Aliquam quis mauris at arcu tincidunt condimentum a a nunc. Suspendisse ultrices, massa vel facilisis tempor, lorem purus viverra nisi, mattis varius velit tellus vel tellus. Nulla sem massa, porttitor vel quam eget, elementum commodo mauris. In id tincidunt nisl. Maecenas eget semper tortor, in faucibus nibh. Maecenas fringilla sodales purus, et finibus quam vulputate in. Praesent vel erat quis dolor cursus accumsan. Phasellus finibus lacus eget elit semper, quis congue ipsum dapibus. Vestibulum tristique lorem eu lorem viverra lobortis.
+</p><p>
+Donec sed velit sit amet magna blandit malesuada. Phasellus fringilla mi nisl, quis pharetra augue porttitor ac. Cras auctor est non rhoncus blandit. Vestibulum facilisis, lectus ultricies vehicula tempor, orci elit semper nisi, nec finibus leo dui nec eros. Nunc imperdiet quis tellus at facilisis. Maecenas egestas mauris erat, a fringilla dui sodales et. Pellentesque vel ullamcorper mauris. Sed tempus vel erat sit amet auctor. Aenean interdum consequat est, ac fringilla odio viverra eget. Suspendisse mollis congue ipsum vel dapibus. Mauris volutpat orci in sollicitudin ornare. Vivamus eget lorem dictum, congue enim imperdiet, tristique nisl. Nunc ac arcu vitae est sodales luctus. Proin auctor dictum tellus ac tincidunt.
+</p><p>
+In sagittis feugiat malesuada. Pellentesque aliquet metus id porttitor vehicula. Sed euismod nisi ex, in fringilla ligula rutrum vitae. Ut sed condimentum libero. Sed non sem non nibh lobortis ultrices vitae in augue. Aliquam nisl urna, vulputate vel leo quis, tempus sollicitudin erat. Praesent imperdiet, massa eget facilisis bibendum, justo libero varius erat, in tristique magna quam ac sapien. Integer in nisl molestie, ullamcorper diam non, fermentum ligula. Suspendisse aliquet ullamcorper lorem, at molestie lectus porta in.
+</p><p>
+Proin at mollis nibh. Vivamus ultricies lobortis purus id maximus. Integer porttitor, sapien non congue iaculis, est orci vulputate est, ac ornare massa nulla vitae augue. Suspendisse potenti. Vestibulum consequat turpis nec congue lacinia. Vivamus pellentesque, urna id luctus malesuada, dui arcu sodales leo, vitae faucibus nibh enim non nisl. Proin nibh nibh, dapibus eget ultrices dignissim, sagittis ac libero. Vestibulum ipsum eros, placerat ut ultrices et, egestas porttitor tortor. Sed porttitor porttitor finibus. Ut nec rhoncus velit, condimentum dictum felis. Aenean placerat massa quis quam laoreet pharetra. Cras at tincidunt neque.
+</p><p>
+Vivamus aliquam sodales orci ac lacinia. Nulla hendrerit gravida orci at aliquet. Vestibulum et urna eu magna fermentum placerat faucibus iaculis purus. Phasellus fringilla tempor velit sed fermentum. Aliquam vel orci tempor, vulputate nisi nec, tincidunt mauris. Phasellus nisl ex, interdum consectetur tellus eu, semper efficitur nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a nibh eu ex sollicitudin luctus ut et orci. Vestibulum elementum commodo nulla et posuere. Donec velit turpis, tempus non aliquam ut, sodales sit amet turpis. Sed at orci lacinia sem mattis imperdiet in sit amet sem. Quisque condimentum lacinia arcu pulvinar posuere.
+</p><p>
+Donec ac lacinia quam. Pellentesque volutpat dapibus semper. Mauris in luctus lectus. Mauris nec lorem a odio dignissim aliquet quis quis dui. Morbi vitae ante id nunc laoreet malesuada non id sem. Vestibulum mattis nulla eu nibh ultricies tincidunt. Sed sit amet ullamcorper elit, nec feugiat enim. Mauris metus mauris, dictum id leo sit amet, faucibus accumsan tellus. Ut egestas at lectus vel varius.
+</p><p>
+Integer eu nibh enim. Sed dictum porttitor tincidunt. Duis id finibus nunc, sed efficitur mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam ligula metus, imperdiet at sem imperdiet, eleifend dapibus felis. Cras ultrices malesuada tempus. Suspendisse nunc velit, fermentum eu vulputate sit amet, condimentum sit amet erat. Nulla fringilla sed nisi vel maximus. Integer fringilla dolor sem, at vulputate felis sagittis eu. Donec sed porta ante. Nullam molestie congue augue, in hendrerit sem sodales non.
+</p><p>
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sit amet sem massa. Donec orci odio, blandit sit amet velit et, tincidunt mattis ligula. Curabitur id aliquam quam. Aenean finibus augue a turpis porttitor blandit. Aliquam vel blandit dolor, at semper ligula. Aenean at eros in dui malesuada suscipit et dignissim neque.
+</p><p>
+Fusce id luctus magna, non lacinia lectus. Praesent eget blandit turpis, et ullamcorper enim. Sed accumsan dictum quam. In hac habitasse platea dictumst. Aliquam in lorem eu arcu malesuada scelerisque eget eu libero. Maecenas ac elit et nisi mattis bibendum eu in leo. Cras commodo, nunc id posuere mollis, metus erat tincidunt augue, at porttitor velit magna vel metus.
+</p><p>
+Suspendisse consequat nisi sit amet cursus iaculis. Proin interdum quam vel felis fermentum, a scelerisque diam suscipit. Duis a leo erat. Sed quis mauris dui. Nam non urna accumsan urna eleifend convallis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ac velit risus. Sed pharetra interdum porta. Donec quis tempor diam, sit amet semper dolor.
+</p><p>
+Fusce malesuada tortor at odio scelerisque dapibus. Integer volutpat sem sem, non blandit dui rhoncus eget. Praesent ultrices ante et eros fermentum, eu tristique mi sollicitudin. Duis sed porta magna, quis viverra orci. Nullam ut elit urna. In libero lacus, commodo at eros at, porttitor dapibus dui. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+</p><p>
+Fusce tristique ultricies justo, eget elementum ipsum pellentesque ut. Cras lacinia risus eu erat blandit consectetur sit amet eu elit. Nullam faucibus convallis eleifend. Morbi sit amet lorem et dolor elementum consectetur sit amet quis erat. Proin non lobortis neque, sit amet sodales tellus. In lobortis purus eget mollis fermentum. Nam ut nisl sit amet neque gravida ultricies. Maecenas orci tortor, sollicitudin vel mollis quis, venenatis non dolor. Pellentesque vehicula sed lacus vel porttitor. Etiam elementum tincidunt molestie.
+</p><p>
+Vestibulum pellentesque pulvinar ornare. Nulla venenatis vel felis quis volutpat. Nullam tempor velit magna, id commodo justo accumsan at. Mauris in felis vitae diam pulvinar laoreet non et neque. Cras diam turpis, finibus et sagittis sed, porta vel nisi. Phasellus vel sapien urna. Curabitur eros risus, rutrum et condimentum accumsan, luctus vitae nisl. Nam non pharetra est. Vestibulum in risus nulla. Morbi leo risus, molestie in odio eget, euismod blandit urna.
+</p><p>
+Proin iaculis congue tellus eget euismod. Donec ut mattis sem. Quisque eget purus eu velit volutpat dignissim placerat ac justo. Praesent pharetra nulla sed ligula convallis commodo. Fusce accumsan consectetur nunc id varius. Nam diam justo, mollis sed leo quis, ultricies gravida nulla. Maecenas a massa porta, aliquam elit vel, porttitor est. Donec aliquam lectus a fermentum laoreet. Morbi sed urna tincidunt, viverra nisl id, faucibus elit. Pellentesque ac enim mi. Maecenas feugiat rhoncus diam eu elementum. Ut nec nisi auctor, ultricies dui nec, ultricies neque. Pellentesque placerat nisl id vulputate imperdiet. Integer ante est, consectetur eget purus in, pulvinar pulvinar neque. Etiam mattis nisl in nibh feugiat consectetur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+</p><p>
+Integer luctus nunc in libero luctus facilisis. Integer maximus dapibus dui sollicitudin fermentum. Curabitur sit amet vestibulum lacus. Aliquam pulvinar, ex in porta ultrices, purus lacus malesuada justo, et imperdiet urna lorem et nisl. Nullam ac rutrum eros, id mattis ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean nisl felis, faucibus id turpis et, suscipit cursus lorem. Etiam vel varius felis. Vivamus maximus sit amet urna a fermentum. Sed.
+</p>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<h3 class="govuk-heading-m">Score essential criteria</h3>
+
+{% set scoreHTML %}
+  <h3 class="govuk-heading-s">1 - Not demonstrated</h3>
+  <p>No positive evidence and/or substantial negative evidence demonstrated.</p>
+<h3 class="govuk-heading-s">2 - Minimal demonstration</h3>
+<p>Limited positive evidence and/or mainly negative evidence demonstrated.</p>
+<h3 class="govuk-heading-s">3 - Moderate demonstration</h3>
+<p>Moderate positive evidence but some negative evidence demonstrated.</p>
+<h3 class="govuk-heading-s">4 - Acceptable demonstration</h3>
+<p>Adequate positive evidence and any negative evidence would not cause concern.</p>
+<h3 class="govuk-heading-s">5 - Good demonstration</h3>
+<p>Substantial positive evidence of the behaviour.</p>
+<h3 class="govuk-heading-s">6 - Strong demonstration</h3>
+<p>Substantial positive evidence; includes some evidence of exceeding expectations at this level.</p>
+<h3 class="govuk-heading-s">7 - Outstanding demonstration</h3>
+<p>The evidence provided wholly exceeds expectation at this level.</p>
+{% endset %}
+{{ govukDetails({
+  summaryText: "Help with scoring",
+  html: scoreHTML
+}) }}
+
+<p>The candidate will see the score and feedback.</p>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+
+      {{ govukSelect({
+      id: "c5score4",
+      name: "c5score4",
+      label: {
+      text: "Score",
+      classes: "govuk-label--m"
+      },
+      items: [
+      {
+        value: "1",
+        text: "1"
+      },
+      {
+        value: "2",
+        text: "2"
+      },
+      {
+        value: "3",
+        text: "3"
+      },
+      {
+        value: "4",
+        text: "4"
+      },
+      {
+        value: "5",
+        text: "5"
+      },
+      {
+        value: "6",
+        text: "6"
+      },
+      {
+        value: "7",
+        text: "7"
+      },
+      {
+        value: "---",
+        text: "---",
+        selected: true
+      }
+      ]
+      }) }}
+
+</div>
+  <div class="govuk-grid-column-two-thirds">
+{{ govukSelect({
+id: "c5reason4",
+name: "c5reason4",
+label: {
+text: "Reason",
+classes: "govuk-label--m"
+},
+items: [
+{
+  value: "experienceLow",
+  text: "Not enough experience"
+},
+{
+  value: "experienceHigh",
+  text: "High level of experience"
+},
+{
+  value: "relevanceLow",
+  text: "Not relevant to role"
+},
+{
+  value: "relevanceHigh",
+  text: "Very relevant to role"
+},
+{
+  value: "exampleLow",
+  text: "No or poor example given"
+},
+{
+  value: "exampleHigh",
+  text: "Strong example given"
+},
+{
+  value: "---",
+  text: "---",
+  selected: true
+}
+]
+}) }}
+</div>
+</div>
+{{ govukInput({
+label: {
+text: "Additional feedback for candidates (optional)"
+},
+classes: "govuk-input--width-50",
+id: "feedback",
+name: "feedback"
+}) }}
+
+{{ govukInput({
+label: {
+text: "Notes for the panel, not seen by candidate (optional)"
+},
+classes: "govuk-input--width-50",
+id: "feedback",
+name: "feedback"
+}) }}
+
+{{ govukButton({
+  text: "Continue",
+  classes: "govuk-!-margin-top-6"
+}) }}
+
+{{ govukButton({
+  text: "Submit scores",
+  classes: "govuk-button--secondary govuk-!-margin-top-6",
+  href: ""
+}) }}
+
+</form>
+{% endblock %}

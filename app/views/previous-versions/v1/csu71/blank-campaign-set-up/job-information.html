@@ -1,0 +1,269 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">About the vacancy</span>
+<h1 class="govuk-heading-l">Job information</h1>
+
+<form class="form" action="summary-section-1" method="post">
+
+
+
+{{ govukInput({
+  label: {
+    text: "What is the business area?",
+    classes: "govuk-label--m"
+  },
+  classes: "govuk-input--width-20",
+  id: "business-area",
+  name: "business-area",
+  value: data['business-area']
+}) }}
+
+<!-- {{ govukSelect({
+  id: "proff",
+  name: "proff",
+  label: {
+    text: "",
+    classes: "govuk-label--m"
+  },
+  items: [
+  {
+    value: "none",
+    selected: "true",
+    disabled: "true",
+    text: "Select profession"
+  },
+  {
+    value: "Analysis",
+    text: "Analysis",
+    selected: checked("proff","Analysis")
+  },
+  {
+    value: "Commercial and Procurement",
+    text: "Commercial and Procurement",
+    selected: checked("proff","Commercial and Procurement")
+  },
+  {
+    value: "Corporate Finance",
+    text: "Corporate Finance",
+    selected: checked("proff","Corporate Finance")
+  },
+  {
+    value: "Communications",
+    text: "Communications",
+    selected: checked("proff","Communications")
+  },
+  {
+    value: "Counter Fraud",
+    text: "Counter Fraud",
+    selected: checked("proff","Counter Fraud")
+  },
+  {
+    value: "Digital, Data and Technology",
+    text: "Digital, Data and Technology",
+    selected: checked("proff","Digital, Data and Technology")
+  },
+  {
+    value: "Government Economic Service",
+    text: "Government Economic Service",
+    selected: checked("proff","Government Economic Service")
+  },
+  {
+    value: "Government Social Research",
+    text: "Government Social Research",
+    selected: checked("proff","Government Social Research")
+  },
+  {
+    value: "Finance",
+    text: "Finance",
+    selected: checked("proff","Finance")
+  },
+  {
+    value: "Human Resources",
+    text: "Human Resources",
+    selected: checked("proff","Human Resources")
+  },
+  {
+    value: "Intelligence Analysis",
+    text: "Intelligence Analysis",
+    selected: checked("proff","Intelligence Analysis")
+  },
+  {
+    value: "Internal Audit",
+    text: "Internal Audit",
+    selected: checked("proff","Internal Audit")
+  },
+  {
+    value: "International Trade and Negotiation",
+    text: "International Trade and Negotiation",
+    selected: checked("proff","International Trade and Negotiation")
+  },
+  {
+    value: "Knowledge &amp; Information Management",
+    text: "Knowledge &amp; Information Management",
+    selected: checked("proff","Knowledge &amp; Information Management")
+  },
+  {
+    value: "Legal",
+    text: "Legal",
+    selected: checked("proff","Legal")
+  },
+  {
+    value: "Medical",
+    text: "Medical",
+    selected: checked("proff","Medical")
+  },
+  {
+    value: "Occupational Psychology",
+    text: "Occupational Psychology",
+    selected: checked("proff","Occupational Psychology")
+  },
+  {
+    value: "Operational Delivery",
+    text: "Operational Delivery",
+    selected: checked("proff","Operational Delivery")
+  },
+  {
+    value: "Operational Research",
+    text: "Operational Research",
+    selected: checked("proff","Operational Research")
+  },
+  {
+    value: "Policy",
+    text: "Policy",
+    selected: checked("proff","Policy")
+  },
+  {
+    value: "Project Management and Delivery",
+    text: "Project Management and Delivery",
+    selected: checked("proff","Project Management and Delivery")
+  },
+  {
+    value: "Property",
+    text: "Property",
+    selected: checked("proff","Property")
+  },
+  {
+    value: "Science and Engineering",
+    text: "Science and Engineering",
+    selected: checked("proff","Science and Engineering")
+  },
+  {
+    value: "Security",
+    text: "Security",
+    selected: checked("proff","Security")
+  },
+  {
+    value: "Tax",
+    text: "Tax",
+    selected: checked("proff","Tax")
+  },
+  {
+    value: "Veterinary",
+    text: "Veterinary",
+    selected: checked("proff","Veterinary")
+  },
+  {
+    value: "Other",
+    text: "Other",
+    selected: checked("proff","Other")
+  }
+  ]
+}) }} -->
+
+
+
+<div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--m" for="team-detail">
+      What does the team do?
+    </label>
+  </h1>
+  <div id="more-detail-hint" class="govuk-hint">
+    Explain how the role would fit in.
+  </div>
+  <textarea onkeyup="handleInput(event)" class="govuk-textarea" id="team-detail" name="team-detail" value="{{ data['team-detail']}}" rows="5" aria-describedby="team-detail-hint"></textarea>
+</div>
+
+
+
+
+
+      <!-- {{ govukTextarea({
+      name: "team-detail",
+      id: "team-detail",
+      label: {
+      text: "What does the team do?",
+      classes: "govuk-label--m",
+      isPageHeading: false
+      },
+      hint: {
+      text: "Explain how the role would fit in."
+      },
+        value: data['team-detail']
+      }) }} -->
+
+<input type="hidden" name="seenFlag" value="{{ data['business-area']}}">
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+  {{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "preview-advert"
+  }) }}
+  </form>
+
+  </div>
+  </div>
+
+  <script>
+
+
+
+    const bullet = "\u25CF";
+    const bulletWithSpace = `${bullet} `;
+    const enter = 13;
+
+
+    const handleInput = (event) => {
+      const { keyCode, target } = event;
+      const { selectionStart, value } = target;
+
+      if (keyCode === enter) {
+        console.log('a');
+        target.value = [...value]
+          .map((c, i) => i === selectionStart - 1
+            ? `\n${bulletWithSpace}`
+            : c
+          )
+          .join('');
+          console.log(target.value);
+
+        target.selectionStart = selectionStart+bulletWithSpace.length;
+        target.selectionEnd = selectionStart+bulletWithSpace.length;
+      }
+
+      if (value[0] !== bullet) {
+        target.value = `${bulletWithSpace}${value}`;
+      }
+    }
+  </script>
+  {% endblock %}

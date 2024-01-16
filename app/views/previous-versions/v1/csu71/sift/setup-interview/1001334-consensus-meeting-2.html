@@ -1,0 +1,606 @@
+
+
+
+              {% extends "layouts/main.html" %}
+
+              {% block header %}
+              {% include '/csu71/includes/header.html' %}
+              {% endblock %}
+              {% block beforeContent %}
+              <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+                <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+              </div> -->
+              <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">View and submit my scores</span>
+
+              <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+                <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
+
+              </div>
+
+              </div>
+              {{ govukBackLink({
+                text: "Back",
+                href: "javascript:window.history.back()"
+              }) }}
+              {% endblock %}
+
+
+              {% block content %}
+              <form class="form" action="1001334-panel-results-postcon" method="post">
+                    <span class="govuk-caption-l">Consensus meeting</span>
+                    <h1 class="govuk-heading-xl">Candidate 4</h1>
+
+                    <ul class="govuk-list govuk-list--bullet-">
+                      <li>
+                        <details class="govuk-details" data-module="govuk-details">
+                          <summary class="govuk-details__summary">
+                            <span style="font-size:20px;font-weight:bold" class="govuk-details__summary-text">
+                              CV
+                            </span>
+                          </summary>
+                          <div style="background:white;size:24px" class="govuk-details__text">
+                            <p>
+                              Company Name / Job Title</p>
+                              <p>MONTH 20XX - PRESENT,  LOCATION</p>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac interdum nisi. Sed in consequat mi. Sed in consequat mi, sed pulvinar lacinia felis eu finibus.</p>
+                              <br></br>
+                              <p>
+                                Company Name / Job Title</p>
+                                <p>MONTH 20XX - PRESENT,  LOCATION</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac interdum nisi. Sed in consequat mi. Sed in consequat mi, sed pulvinar lacinia felis eu finibus.</p>
+                                <br></br>
+                                <p>
+                                  Company Name / Job Title</p>
+                                  <p>MONTH 20XX - PRESENT,  LOCATION</p>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac interdum nisi. Sed in consequat mi. Sed in consequat mi, sed pulvinar lacinia felis eu finibus.</p>
+                                  <br></br>
+                                  <h2 class="govuk-heading-m">Education</h2>
+
+                                  <p>School Name / Degree</p>
+                                  <p>MONTH 20XX - MONTH 20XX,  LOCATION</p>
+                                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+                                  <br></br>
+                                  <p>School Name / Degree</p>
+                                  <p>MONTH 20XX - MONTH 20XX,  LOCATION</p>
+                                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+                                  <br></br>
+                                </div>
+                              </details></li>
+                              <li>
+                                <details class="govuk-details" data-module="govuk-details govuk-link  govuk-link--no-underline govuk-link--no-visited-state">
+                                  <summary class="govuk-details__summary">
+                                    <span style="font-size:20px;font-weight:bold" class="govuk-details__summary-text">
+                                      Supporting statement
+                                    </span>
+                                  </summary>
+                                  <div class="govuk-details__text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut enim et nisi pretium elementum vitae sed risus. Aliquam quis mauris at arcu tincidunt condimentum a a nunc. Suspendisse ultrices, massa vel facilisis tempor, lorem purus viverra nisi, mattis varius velit tellus vel tellus. Nulla sem massa, porttitor vel quam eget, elementum commodo mauris. In id tincidunt nisl. Maecenas eget semper tortor, in faucibus nibh. Maecenas fringilla sodales purus, et finibus quam vulputate in. Praesent vel erat quis dolor cursus accumsan. Phasellus finibus lacus eget elit semper, quis congue ipsum dapibus. Vestibulum tristique lorem eu lorem viverra lobortis.
+                                    </p><p>
+                                      Donec sed velit sit amet magna blandit malesuada. Phasellus fringilla mi nisl, quis pharetra augue porttitor ac. Cras auctor est non rhoncus blandit. Vestibulum facilisis, lectus ultricies vehicula tempor, orci elit semper nisi, nec finibus leo dui nec eros. Nunc imperdiet quis tellus at facilisis. Maecenas egestas mauris erat, a fringilla dui sodales et. Pellentesque vel ullamcorper mauris. Sed tempus vel erat sit amet auctor. Aenean interdum consequat est, ac fringilla odio viverra eget. Suspendisse mollis congue ipsum vel dapibus. Mauris volutpat orci in sollicitudin ornare. Vivamus eget lorem dictum, congue enim imperdiet, tristique nisl. Nunc ac arcu vitae est sodales luctus. Proin auctor dictum tellus ac tincidunt.
+                                    </p><p>
+                                      In sagittis feugiat malesuada. Pellentesque aliquet metus id porttitor vehicula. Sed euismod nisi ex, in fringilla ligula rutrum vitae. Ut sed condimentum libero. Sed non sem non nibh lobortis ultrices vitae in augue. Aliquam nisl urna, vulputate vel leo quis, tempus sollicitudin erat. Praesent imperdiet, massa eget facilisis bibendum, justo libero varius erat, in tristique magna quam ac sapien. Integer in nisl molestie, ullamcorper diam non, fermentum ligula. Suspendisse aliquet ullamcorper lorem, at molestie lectus porta in.
+                                    </p><p>
+                                      Proin at mollis nibh. Vivamus ultricies lobortis purus id maximus. Integer porttitor, sapien non congue iaculis, est orci vulputate est, ac ornare massa nulla vitae augue. Suspendisse potenti. Vestibulum consequat turpis nec congue lacinia. Vivamus pellentesque, urna id luctus malesuada, dui arcu sodales leo, vitae faucibus nibh enim non nisl. Proin nibh nibh, dapibus eget ultrices dignissim, sagittis ac libero. Vestibulum ipsum eros, placerat ut ultrices et, egestas porttitor tortor. Sed porttitor porttitor finibus. Ut nec rhoncus velit, condimentum dictum felis. Aenean placerat massa quis quam laoreet pharetra. Cras at tincidunt neque.
+                                    </p><p>
+                                      Vivamus aliquam sodales orci ac lacinia. Nulla hendrerit gravida orci at aliquet. Vestibulum et urna eu magna fermentum placerat faucibus iaculis purus. Phasellus fringilla tempor velit sed fermentum. Aliquam vel orci tempor, vulputate nisi nec, tincidunt mauris. Phasellus nisl ex, interdum consectetur tellus eu, semper efficitur nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a nibh eu ex sollicitudin luctus ut et orci. Vestibulum elementum commodo nulla et posuere. Donec velit turpis, tempus non aliquam ut, sodales sit amet turpis. Sed at orci lacinia sem mattis imperdiet in sit amet sem. Quisque condimentum lacinia arcu pulvinar posuere.
+                                    </p><p>
+                                      Donec ac lacinia quam. Pellentesque volutpat dapibus semper. Mauris in luctus lectus. Mauris nec lorem a odio dignissim aliquet quis quis dui. Morbi vitae ante id nunc laoreet malesuada non id sem. Vestibulum mattis nulla eu nibh ultricies tincidunt. Sed sit amet ullamcorper elit, nec feugiat enim. Mauris metus mauris, dictum id leo sit amet, faucibus accumsan tellus. Ut egestas at lectus vel varius.
+                                    </p><p>
+                                      Integer eu nibh enim. Sed dictum porttitor tincidunt. Duis id finibus nunc, sed efficitur mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam ligula metus, imperdiet at sem imperdiet, eleifend dapibus felis. Cras ultrices malesuada tempus. Suspendisse nunc velit, fermentum eu vulputate sit amet, condimentum sit amet erat. Nulla fringilla sed nisi vel maximus. Integer fringilla dolor sem, at vulputate felis sagittis eu. Donec sed porta ante. Nullam molestie congue augue, in hendrerit sem sodales non.
+                                    </p><p>
+                                      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sit amet sem massa. Donec orci odio, blandit sit amet velit et, tincidunt mattis ligula. Curabitur id aliquam quam. Aenean finibus augue a turpis porttitor blandit. Aliquam vel blandit dolor, at semper ligula. Aenean at eros in dui malesuada suscipit et dignissim neque.
+                                    </p><p>
+                                      Fusce id luctus magna, non lacinia lectus. Praesent eget blandit turpis, et ullamcorper enim. Sed accumsan dictum quam. In hac habitasse platea dictumst. Aliquam in lorem eu arcu malesuada scelerisque eget eu libero. Maecenas ac elit et nisi mattis bibendum eu in leo. Cras commodo, nunc id posuere mollis, metus erat tincidunt augue, at porttitor velit magna vel metus.
+                                    </p><p>
+                                      Suspendisse consequat nisi sit amet cursus iaculis. Proin interdum quam vel felis fermentum, a scelerisque diam suscipit. Duis a leo erat. Sed quis mauris dui. Nam non urna accumsan urna eleifend convallis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ac velit risus. Sed pharetra interdum porta. Donec quis tempor diam, sit amet semper dolor.
+                                    </p><p>
+                                      Fusce malesuada tortor at odio scelerisque dapibus. Integer volutpat sem sem, non blandit dui rhoncus eget. Praesent ultrices ante et eros fermentum, eu tristique mi sollicitudin. Duis sed porta magna, quis viverra orci. Nullam ut elit urna. In libero lacus, commodo at eros at, porttitor dapibus dui. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                    </p><p>
+                                      Fusce tristique ultricies justo, eget elementum ipsum pellentesque ut. Cras lacinia risus eu erat blandit consectetur sit amet eu elit. Nullam faucibus convallis eleifend. Morbi sit amet lorem et dolor elementum consectetur sit amet quis erat. Proin non lobortis neque, sit amet sodales tellus. In lobortis purus eget mollis fermentum. Nam ut nisl sit amet neque gravida ultricies. Maecenas orci tortor, sollicitudin vel mollis quis, venenatis non dolor. Pellentesque vehicula sed lacus vel porttitor. Etiam elementum tincidunt molestie.
+                                    </p><p>
+                                      Vestibulum pellentesque pulvinar ornare. Nulla venenatis vel felis quis volutpat. Nullam tempor velit magna, id commodo justo accumsan at. Mauris in felis vitae diam pulvinar laoreet non et neque. Cras diam turpis, finibus et sagittis sed, porta vel nisi. Phasellus vel sapien urna. Curabitur eros risus, rutrum et condimentum accumsan, luctus vitae nisl. Nam non pharetra est. Vestibulum in risus nulla. Morbi leo risus, molestie in odio eget, euismod blandit urna.
+                                    </p><p>
+                                      Proin iaculis congue tellus eget euismod. Donec ut mattis sem. Quisque eget purus eu velit volutpat dignissim placerat ac justo. Praesent pharetra nulla sed ligula convallis commodo. Fusce accumsan consectetur nunc id varius. Nam diam justo, mollis sed leo quis, ultricies gravida nulla. Maecenas a massa porta, aliquam elit vel, porttitor est. Donec aliquam lectus a fermentum laoreet. Morbi sed urna tincidunt, viverra nisl id, faucibus elit. Pellentesque ac enim mi. Maecenas feugiat rhoncus diam eu elementum. Ut nec nisi auctor, ultricies dui nec, ultricies neque. Pellentesque placerat nisl id vulputate imperdiet. Integer ante est, consectetur eget purus in, pulvinar pulvinar neque. Etiam mattis nisl in nibh feugiat consectetur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                                    </p><p>
+                                      Integer luctus nunc in libero luctus facilisis. Integer maximus dapibus dui sollicitudin fermentum. Curabitur sit amet vestibulum lacus. Aliquam pulvinar, ex in porta ultrices, purus lacus malesuada justo, et imperdiet urna lorem et nisl. Nullam ac rutrum eros, id mattis ex. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean nisl felis, faucibus id turpis et, suscipit cursus lorem. Etiam vel varius felis. Vivamus maximus sit amet urna a fermentum. Sed.
+                                    </p>
+
+                                  </div>
+                                </details></li>
+                              </ul>
+
+
+
+                              <h2 class="govuk-heading-l govuk-!-margin-top-9">Criteria</h2>
+                              <ul class="govuk-list govuk-list--number">
+                                <li><a style="font-size:20px;font-weight:bold" class="govuk-link govuk-details govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#crit1">Building engaging and effective relationships with stakeholders</a></li>
+                                <li><a style="font-size:20px;font-weight:bold" class="govuk-link govuk-details govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#crit2">Experience of operating in a fast-paced and ever-changing environment to provide policy advice and briefing to seniors and stakeholders</a></li>
+                                <!-- <li>Evidence of understanding the current national policy challenges for the population impacted by this area</li>
+                                <li>Knowledge of how to deliver oral and written information effectively</li> -->
+                              </ul>
+
+
+
+
+
+                              <div id="crit1" class="govuk-!-margin-bottom-0 govuk-!-margin-top-6" style=";border-bottom:1px solid #1d70b8;padding:10px">
+                                <span class="govuk-!-margin-bottom-0 govuk-!-margin-top-3 govuk-caption-l" style=";font-weight:bold;text-align: left;">Criteria 1</span>
+                                <h3 class="govuk-!-margin-bottom-3 govuk-!-margin-top-0 govuk-heading-m" style=";font-weight:normal;text-align: left;"><strong>Building engaging and effective relationships with stakeholders</strong></h3>
+                              </div>
+                              <div class="govuk-!-margin-bottom-0" style="border:0px solid lightgrey;background:#f3f2f1;padding:20px">
+                                <h4 class="govuk-heading-m" style="background:white;padding-left:20px;padding-top:20px;padding-bottom:20px;padding-left:20px;max-height:800px;">Jane Smith (Panel chair)</h4>
+                                <div class="govuk-!-margin-top-4" style="padding-right:20px;">
+
+
+
+                                </div>
+
+
+
+                                <div>
+                                <div class="govuk-grid-row">
+
+                                  <div class="govuk-grid-column-one-half">
+                                    <div class="govuk-form-group govuk-!-margin-top-0" style="float:left">
+                                      <label class="govuk-label govuk-label--s" for="score">
+                                        Score
+                                      </label>
+                                      <select style="width:100%;;border:2px solid black" class="govuk-select" id="score" name="score">
+                                        <option value="">---</option>
+                                        <option value="1">1 <strong>Not Demonstrated</strong> No positive evidence provided</option>
+                                        <option value="2">2 <strong>Minimal Demonstration</strong> Limited positive evidence provided</option>
+                                        <option value="3" selected>3 <strong>Moderate Demonstration</strong> Moderate positive evidence provided</option>
+                                        <option value="4">4 <strong>Acceptable Demonstration</strong> Adequate positive evidence provided</option>
+                                        <option value="5">5 <strong>Good Demonstration</strong> Substantial positive evidence provided</option>
+                                        <option value="6">6 <strong>Strong Demonstration</strong> Substantial, positive evidence provided including some evidence of exceeding expectations</option>
+                                        <option value="7">7 <strong>Outstanding Demonstration</strong> Evidence provided wholly exceeds expectation at this level</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="govuk-grid-column-one-half">
+                                    <div class="govuk-form-group govuk-!-margin-top-0" style=";">
+                                      <label class="govuk-label govuk-label--s" for="reason">
+                                        Reason
+                                      </label>
+                                      <select style="width:100%;;border:2px solid black" class="govuk-select" id="reason" name="reason">
+                                        <option value="">---</option>
+                                        <option selected value="Not enough experience">Not enough experience</option>
+                                        <option value="High level of experience">High level of experience</option>
+                                        <option value="Not relevant to role">Not relevant to role</option>
+                                        <option value="Very relevant to role">Very relevant to role</option>
+                                        <option value="No or poor example given">No or poor example given</option>
+                                        <option value="Strong example given">Strong example given</option>
+                                      </select>
+                                    </div>
+                                  </div>
+
+                                  <div class="govuk-grid-column-full">
+                                    <div class="govuk-form-group" style=";">
+                                      <h1 class="govuk-label-wrapper">
+                                        <label class="govuk-label govuk-label--xs" for="notes">
+                                          Additional feedback for candidates (optional)
+                                        </label>
+                                      </h1>
+                                      <textarea style="width:100%;;" class="govuk-textarea" id="notes" value="" name="notes" rows="1" aria-describedby="notesInt-1">Would expect at least 2 years experience for this role</textarea>
+                                    </div>
+                                    <div class="govuk-form-group" style=";">
+                                      <h1 class="govuk-label-wrapper">
+                                        <label class="govuk-label govuk-label--xs" for="notes">
+                                          Notes for the panel, not seen by candidate (optional)
+                                        </label>
+                                      </h1>
+                                      <textarea style="width:100%;;" class="govuk-textarea" id="notes" value="" name="notes" rows="1" aria-describedby="notesInt-1">Less than 1 year experience</textarea>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+
+
+
+                            </div>
+
+                            <div class="govuk-!-margin-top-3" style="border:0px solid lightgrey;background:#f3f2f1;padding:20px">
+                              <h4 class="govuk-heading-m" style="background:white;padding-left:20px;padding-top:20px;padding-bottom:20px;padding-left:20px;max-height:800px;">Sam (Panel member)</h4>
+                              <div class="govuk-!-margin-top-4" style="padding-right:20px;">
+
+
+
+                              </div>
+
+
+                              <div>
+                              <div class="govuk-grid-row">
+
+                                <div class="govuk-grid-column-one-half">
+                                  <div class="govuk-form-group govuk-!-margin-top-0" style="float:left">
+                                    <label class="govuk-label govuk-label--s" for="score">
+                                      Score
+                                    </label>
+                                    <select style="width:100%;;border:2px solid black" class="govuk-select" id="score" name="score">
+                                      <option value="">---</option>
+                                      <option value="1">1 <strong>Not Demonstrated</strong> No positive evidence provided</option>
+                                      <option value="2">2 <strong>Minimal Demonstration</strong> Limited positive evidence provided</option>
+                                      <option value="3" selected>3 <strong>Moderate Demonstration</strong> Moderate positive evidence provided</option>
+                                      <option value="4">4 <strong>Acceptable Demonstration</strong> Adequate positive evidence provided</option>
+                                      <option selected value="5">5 <strong>Good Demonstration</strong> Substantial positive evidence provided</option>
+                                      <option value="6">6 <strong>Strong Demonstration</strong> Substantial, positive evidence provided including some evidence of exceeding expectations</option>
+                                      <option value="7">7 <strong>Outstanding Demonstration</strong> Evidence provided wholly exceeds expectation at this level</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="govuk-grid-column-one-half">
+                                  <div class="govuk-form-group govuk-!-margin-top-0" style=";">
+                                    <label class="govuk-label govuk-label--s" for="reason">
+                                      Reason
+                                    </label>
+                                    <select style="width:100%;;border:2px solid black" class="govuk-select" id="reason" name="reason">
+                                      <option value="">---</option>
+                                      <option selected value="Not enough experience">Not enough experience</option>
+                                      <option value="High level of experience">High level of experience</option>
+                                      <option value="Not relevant to role">Not relevant to role</option>
+                                      <option selected value="Very relevant to role">Very relevant to role</option>
+                                      <option value="No or poor example given">No or poor example given</option>
+                                      <option value="Strong example given">Strong example given</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <div class="govuk-grid-column-full">
+                                  <div class="govuk-form-group" style=";">
+                                    <h1 class="govuk-label-wrapper">
+                                      <label class="govuk-label govuk-label--xs" for="notes">
+                                        Additional feedback for candidates (optional)
+                                      </label>
+                                    </h1>
+                                    <textarea style="width:100%;;" class="govuk-textarea" id="notes" value="" name="notes" rows="1" aria-describedby="notesInt-1">Well written example in STAR format</textarea>
+                                  </div>
+                                  <div class="govuk-form-group" style=";">
+                                    <h1 class="govuk-label-wrapper">
+                                      <label class="govuk-label govuk-label--xs" for="notes">
+                                        Notes for the panel, not seen by candidate (optional)
+                                      </label>
+                                    </h1>
+                                    <textarea style="width:100%;;" class="govuk-textarea" id="notes" value="" name="notes" rows="1" aria-describedby="notesInt-1">Strong example where criteria was addressed</textarea>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+
+
+
+                          </div>
+
+                          <div class="govuk-!-margin-top-3" style="border:0px solid lightgrey;background:#f3f2f1;padding:20px;border-bottom:1px solid #1d70b8">
+                            <h4 class="govuk-heading-m" style="background:white;padding-left:20px;padding-top:20px;padding-bottom:20px;padding-left:20px;max-height:800px;">Annie (Panel member)</h4>
+                            <div class="govuk-!-margin-top-4" style="padding-right:20px;">
+
+
+
+                            </div>
+
+
+
+                            <div>
+                            <div class="govuk-grid-row">
+
+                              <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group govuk-!-margin-top-0" style="float:left">
+                                  <label class="govuk-label govuk-label--s" for="score">
+                                    Score
+                                  </label>
+                                  <select style="width:100%;;border:2px solid black" class="govuk-select" id="score" name="score">
+                                    <option value="">---</option>
+                                    <option value="1">1 <strong>Not Demonstrated</strong> No positive evidence provided</option>
+                                    <option value="2">2 <strong>Minimal Demonstration</strong> Limited positive evidence provided</option>
+                                    <option value="3">3 <strong>Moderate Demonstration</strong> Moderate positive evidence provided</option>
+                                    <option value="4">4 <strong>Acceptable Demonstration</strong> Adequate positive evidence provided</option>
+                                    <option selected value="5">5 <strong>Good Demonstration</strong> Substantial positive evidence provided</option>
+                                    <option value="6">6 <strong>Strong Demonstration</strong> Substantial, positive evidence provided including some evidence of exceeding expectations</option>
+                                    <option value="7">7 <strong>Outstanding Demonstration</strong> Evidence provided wholly exceeds expectation at this level</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group govuk-!-margin-top-0" style=";">
+                                  <label class="govuk-label govuk-label--s" for="reason">
+                                    Reason
+                                  </label>
+                                  <select style="width:100%;;border:2px solid black" class="govuk-select" id="reason" name="reason">
+                                    <option value="">---</option>
+                                    <option selected value="Not enough experience">Not enough experience</option>
+                                    <option value="High level of experience">High level of experience</option>
+                                    <option value="Not relevant to role">Not relevant to role</option>
+                                    <option selected value="Very relevant to role">Very relevant to role</option>
+                                    <option value="No or poor example given">No or poor example given</option>
+                                    <option value="Strong example given">Strong example given</option>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <div class="govuk-grid-column-full">
+                                <div class="govuk-form-group" style=";">
+                                  <h1 class="govuk-label-wrapper">
+                                    <label class="govuk-label govuk-label--xs" for="notes">
+                                      Additional feedback for candidates (optional)
+                                    </label>
+                                  </h1>
+                                  <textarea style="width:100%;;" class="govuk-textarea" id="notes" value="" name="notes" rows="1" aria-describedby="notesInt-1">Well written example in STAR format</textarea>
+                                </div>
+                                <div class="govuk-form-group" style=";">
+                                  <h1 class="govuk-label-wrapper">
+                                    <label class="govuk-label govuk-label--xs" for="notes">
+                                      Notes for the panel, not seen by candidate (optional)
+                                    </label>
+                                  </h1>
+                                  <textarea style="width:100%;;" class="govuk-textarea" id="notes" value="" name="notes" rows="1" aria-describedby="notesInt-1">Strong example where criteria was addressed</textarea>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+
+
+
+                        </div>
+                        <div  id="crit2" class="govuk-!-margin-bottom-0 govuk-!-margin-top-3" style=";border-bottom:1px solid #1d70b8;padding:10px">
+                          <span class="govuk-!-margin-bottom-0 govuk-!-margin-top-3 govuk-caption-l" style=";font-weight:bold;text-align: left;">Criteria 2</span>
+                          <h3 class="govuk-!-margin-bottom-3 govuk-!-margin-top-0 govuk-heading-m" style=";font-weight:normal;text-align: left;"><strong>Experience of operating in a fast-paced and ever-changing environment to provide policy advice and briefing to seniors and stakeholders</strong></h3>
+                        </div>
+                        <div class="govuk-!-margin-bottom-0" style="border:0px solid lightgrey;background:#f3f2f1;padding:20px">
+                          <h4 class="govuk-heading-m" style="background:white;padding-left:20px;padding-top:20px;padding-bottom:20px;padding-left:20px;max-height:800px;">Jane Smith (Panel chair)</h4>
+                          <div class="govuk-!-margin-top-4" style="padding-right:20px;">
+
+
+
+                          </div>
+
+
+
+                          <div>
+                          <div class="govuk-grid-row">
+
+                            <div class="govuk-grid-column-one-half">
+                              <div class="govuk-form-group govuk-!-margin-top-0" style="float:left">
+                                <label class="govuk-label govuk-label--s" for="score">
+                                  Score
+                                </label>
+                                <select style="width:100%;;border:2px solid black" class="govuk-select" id="score" name="score">
+                                  <option value="">---</option>
+                                  <option value="1">1 <strong>Not Demonstrated</strong> No positive evidence provided</option>
+                                  <option value="2">2 <strong>Minimal Demonstration</strong> Limited positive evidence provided</option>
+                                  <option value="3" selected>3 <strong>Moderate Demonstration</strong> Moderate positive evidence provided</option>
+                                  <option value="4">4 <strong>Acceptable Demonstration</strong> Adequate positive evidence provided</option>
+                                  <option value="5">5 <strong>Good Demonstration</strong> Substantial positive evidence provided</option>
+                                  <option value="6">6 <strong>Strong Demonstration</strong> Substantial, positive evidence provided including some evidence of exceeding expectations</option>
+                                  <option value="7">7 <strong>Outstanding Demonstration</strong> Evidence provided wholly exceeds expectation at this level</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="govuk-grid-column-one-half">
+                              <div class="govuk-form-group govuk-!-margin-top-0" style=";">
+                                <label class="govuk-label govuk-label--s" for="reason">
+                                  Reason
+                                </label>
+                                <select style="width:100%;;border:2px solid black" class="govuk-select" id="reason" name="reason">
+                                  <option value="">---</option>
+                                  <option selected value="Not enough experience">Not enough experience</option>
+                                  <option value="High level of experience">High level of experience</option>
+                                  <option value="Not relevant to role">Not relevant to role</option>
+                                  <option value="Very relevant to role">Very relevant to role</option>
+                                  <option value="No or poor example given">No or poor example given</option>
+                                  <option value="Strong example given">Strong example given</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="govuk-grid-column-full">
+                              <div class="govuk-form-group" style=";">
+                                <h1 class="govuk-label-wrapper">
+                                  <label class="govuk-label govuk-label--xs" for="notes">
+                                    Additional feedback for candidates (optional)
+                                  </label>
+                                </h1>
+                                <textarea style="width:100%;;" class="govuk-textarea" id="notes" value="" name="notes" rows="1" aria-describedby="notesInt-1">Would expect at least 2 years experience for this role</textarea>
+                              </div>
+                              <div class="govuk-form-group" style=";">
+                                <h1 class="govuk-label-wrapper">
+                                  <label class="govuk-label govuk-label--xs" for="notes">
+                                    Notes for the panel, not seen by candidate (optional)
+                                  </label>
+                                </h1>
+                                <textarea style="width:100%;;" class="govuk-textarea" id="notes" value="" name="notes" rows="1" aria-describedby="notesInt-1">Less than 1 year experience</textarea>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+
+
+
+                        </div>
+
+                        <div class="govuk-!-margin-top-3" style="border:0px solid lightgrey;background:#f3f2f1;padding:20px">
+                        <h4 class="govuk-heading-m" style="background:white;padding-left:20px;padding-top:20px;padding-bottom:20px;padding-left:20px;max-height:800px;">Sam (Panel member)</h4>
+                        <div class="govuk-!-margin-top-4" style="padding-right:20px;">
+
+
+
+                        </div>
+
+
+                        <div>
+                        <div class="govuk-grid-row">
+
+                          <div class="govuk-grid-column-one-half">
+                            <div class="govuk-form-group govuk-!-margin-top-0" style="float:left">
+                              <label class="govuk-label govuk-label--s" for="score">
+                                Score
+                              </label>
+                              <select style="width:100%;;border:2px solid black" class="govuk-select" id="score" name="score">
+                                <option value="">---</option>
+                                <option value="1">1 <strong>Not Demonstrated</strong> No positive evidence provided</option>
+                                <option value="2">2 <strong>Minimal Demonstration</strong> Limited positive evidence provided</option>
+                                <option value="3" selected>3 <strong>Moderate Demonstration</strong> Moderate positive evidence provided</option>
+                                <option value="4">4 <strong>Acceptable Demonstration</strong> Adequate positive evidence provided</option>
+                                <option selected value="5">5 <strong>Good Demonstration</strong> Substantial positive evidence provided</option>
+                                <option value="6">6 <strong>Strong Demonstration</strong> Substantial, positive evidence provided including some evidence of exceeding expectations</option>
+                                <option value="7">7 <strong>Outstanding Demonstration</strong> Evidence provided wholly exceeds expectation at this level</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="govuk-grid-column-one-half">
+                            <div class="govuk-form-group govuk-!-margin-top-0" style=";">
+                              <label class="govuk-label govuk-label--s" for="reason">
+                                Reason
+                              </label>
+                              <select style="width:100%;;border:2px solid black" class="govuk-select" id="reason" name="reason">
+                                <option value="">---</option>
+                                <option selected value="Not enough experience">Not enough experience</option>
+                                <option value="High level of experience">High level of experience</option>
+                                <option value="Not relevant to role">Not relevant to role</option>
+                                <option selected value="Very relevant to role">Very relevant to role</option>
+                                <option value="No or poor example given">No or poor example given</option>
+                                <option value="Strong example given">Strong example given</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="govuk-grid-column-full">
+                            <div class="govuk-form-group" style=";">
+                              <h1 class="govuk-label-wrapper">
+                                <label class="govuk-label govuk-label--xs" for="notes">
+                                  Additional feedback for candidates (optional)
+                                </label>
+                              </h1>
+                              <textarea style="width:100%;;" class="govuk-textarea" id="notes" value="" name="notes" rows="1" aria-describedby="notesInt-1">Well written example in STAR format</textarea>
+                            </div>
+                            <div class="govuk-form-group" style=";">
+                              <h1 class="govuk-label-wrapper">
+                                <label class="govuk-label govuk-label--xs" for="notes">
+                                  Notes for the panel, not seen by candidate (optional)
+                                </label>
+                              </h1>
+                              <textarea style="width:100%;;" class="govuk-textarea" id="notes" value="" name="notes" rows="1" aria-describedby="notesInt-1">Strong example where criteria was addressed</textarea>
+                            </div>
+
+                          </div>
+                        </div>
+                        </div>
+
+
+
+                        </div>
+
+                        <div class="govuk-!-margin-top-3" style="border:0px solid lightgrey;background:#f3f2f1;padding:20px">
+                        <h4 class="govuk-heading-m" style="background:white;padding-left:20px;padding-top:20px;padding-bottom:20px;padding-left:20px;max-height:800px;">Annie (Panel member)</h4>
+                        <div class="govuk-!-margin-top-4" style="padding-right:20px;">
+
+
+
+                        </div>
+
+
+
+                        <div>
+                        <div class="govuk-grid-row">
+
+                        <div class="govuk-grid-column-one-half">
+                          <div class="govuk-form-group govuk-!-margin-top-0" style="float:left">
+                            <label class="govuk-label govuk-label--s" for="score">
+                              Score
+                            </label>
+                            <select style="width:100%;;border:2px solid black" class="govuk-select" id="score" name="score">
+                              <option value="">---</option>
+                              <option value="1">1 <strong>Not Demonstrated</strong> No positive evidence provided</option>
+                              <option value="2">2 <strong>Minimal Demonstration</strong> Limited positive evidence provided</option>
+                              <option value="3">3 <strong>Moderate Demonstration</strong> Moderate positive evidence provided</option>
+                              <option value="4">4 <strong>Acceptable Demonstration</strong> Adequate positive evidence provided</option>
+                              <option selected value="5">5 <strong>Good Demonstration</strong> Substantial positive evidence provided</option>
+                              <option value="6">6 <strong>Strong Demonstration</strong> Substantial, positive evidence provided including some evidence of exceeding expectations</option>
+                              <option value="7">7 <strong>Outstanding Demonstration</strong> Evidence provided wholly exceeds expectation at this level</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          <div class="govuk-form-group govuk-!-margin-top-0" style=";">
+                            <label class="govuk-label govuk-label--s" for="reason">
+                              Reason
+                            </label>
+                            <select style="width:100%;;border:2px solid black" class="govuk-select" id="reason" name="reason">
+                              <option value="">---</option>
+                              <option selected value="Not enough experience">Not enough experience</option>
+                              <option value="High level of experience">High level of experience</option>
+                              <option value="Not relevant to role">Not relevant to role</option>
+                              <option selected value="Very relevant to role">Very relevant to role</option>
+                              <option value="No or poor example given">No or poor example given</option>
+                              <option value="Strong example given">Strong example given</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="govuk-grid-column-full">
+                          <div class="govuk-form-group" style=";">
+                            <h1 class="govuk-label-wrapper">
+                              <label class="govuk-label govuk-label--xs" for="notes">
+                                Additional feedback for candidates (optional)
+                              </label>
+                            </h1>
+                            <textarea style="width:100%;;" class="govuk-textarea" id="notes" value="" name="notes" rows="1" aria-describedby="notesInt-1">Well written example in STAR format</textarea>
+                          </div>
+                          <div class="govuk-form-group" style=";">
+                            <h1 class="govuk-label-wrapper">
+                              <label class="govuk-label govuk-label--xs" for="notes">
+                                Notes for the panel, not seen by candidate (optional)
+                              </label>
+                            </h1>
+                            <textarea style="width:100%;;" class="govuk-textarea" id="notes" value="" name="notes" rows="1" aria-describedby="notesInt-1">Strong example where criteria was addressed</textarea>
+                          </div>
+
+                        </div>
+                        </div>
+                        </div></div>
+                        <div class="govuk-!-margin-top-6">
+                        {{ govukRadios({
+                          idPrefix: "app3Decided",
+                          name: "app3Decided",
+                          id: "app3Decided",
+                          classes: "govuk-!-margin-bottom-9",
+                          fieldset: {
+                            legend: {
+                              text: "What is your decision on Candidate 4?",
+                              isPageHeading: false,
+                              classes: "govuk-fieldset__legend--l"
+                            }
+                          },
+                          items: [
+                          {
+                            value: "interview",
+                            checked: checked("app3Decided","interview"),
+                            text: "Invite to interview"
+                          },
+                          {
+                            value: "reject",
+                            checked: checked("app3Decided","reject"),
+                            text: "Reject"
+                          },
+                          {
+                            value: "hold",
+                            checked: checked("app3Decided","hold"),
+                            text: "Place on hold"
+                          }
+                          ]
+                        }) }}
+
+                        {{ govukButton({
+                          text: "Submit your decision"
+                        }) }}
+                        </div>
+                          </form>
+
+
+                          {% endblock %}

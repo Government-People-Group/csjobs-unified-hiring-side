@@ -1,0 +1,107 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+  {% block pageTitle %}
+  Home – {{ serviceName }} – GOV.UK Prototype Kit
+  {% endblock %}
+
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">All vacancies</h1>
+
+
+
+
+    {% set vhHTML %}
+    {{govukTag({
+      text: "in progress",
+      classes: "govuk-tag--blue"
+    })}}
+    {% endset %}
+
+
+    {% set leadHTML %}
+    {{govukTag({
+      text: "Lead to complete",
+      classes: "govuk-tag--blue"
+    })}}
+    {% endset %}
+    {% set panelHTML %}
+    {{govukTag({
+      text: "Panel to complete",
+      classes: "govuk-tag--grey"
+    })}}
+    {% endset %}
+    {% set recruiterHTML %}
+    {{govukTag({
+      text: "Recruiter to complete",
+      classes: "govuk-tag--yellow"
+    })}}
+
+
+
+
+    {% endset %}
+
+
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {{ govukTable({
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Ref",
+          classes: 'app-custom-class'
+        },
+        {
+          text: "Job title",
+          classes: 'app-custom-class'
+        },
+        {
+          text: "Last modified",
+          classes: 'app-custom-class'
+        },
+        {
+          text: "Action needed",
+          classes: 'app-custom-class'
+        }
+      ],
+      rows: [
+        [
+          {
+            html: '<a href="task-list-new-campaign">226174</a>'
+          },
+          {
+            text: data['temp-copy-input-autocomplete']
+          },
+          {
+            text: "19 September 2022"
+          },
+          {
+            html: vhHTML
+          }
+        ],
+        [
+
+        ],
+        [
+
+        ]
+      ]
+    }) }}
+
+
+    {% endblock %}

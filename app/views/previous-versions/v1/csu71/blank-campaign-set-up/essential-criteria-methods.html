@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+<form class="form" action="sift-or-interview" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Sifting and selection methods</span>
+      <h1 class="govuk-heading-l">What essential criteria will you assess?</h1>
+
+
+
+      {% set expNappy = [] %}
+      {% set e1 = data['experience1'].length %}
+      {% set e2 = data['experience2'].length %}
+      {% set e3 = data['experience3'].length %}
+      {% set e4 = data['experience4'].length %}
+
+      {% if e1 >= 1 %}
+      {% set expNappy = (expNappy.push(data['experience1']), expNappy)  %}
+      {% endif %}
+
+      {% if e2 >= 1 %}
+      {% set expNappy = (expNappy.push(data['experience2']), expNappy)  %}
+      {% endif %}
+
+      {% if e3 >= 1 %}
+      {% set expNappy = (expNappy.push(data['experience3']), expNappy)  %}
+
+      {% if e4 >= 1 %}
+      {% set expNappy = (expNappy.push(data['experience3']), expNappy)  %}
+      {% endif %}
+
+       <h2 class="govuk-heading-m">At sift?</h2>
+      <div class="govuk-form-group">
+        {%- for items in expNappy | slice(1) %}
+        <div class="govuk-checkboxes-{{ loop.index }}" data-module="govuk-checkboxes" name="siftexperience">
+          {%- for item in items %}
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="siftexperience" name="siftexperience" type="checkbox">
+            <label class="govuk-label govuk-checkboxes__label" for="siftexperience"> {{ item }}</label></div>
+            {%- endfor %}
+          </div>
+          {%- endfor %}
+        </div>
+
+     <h2 class="govuk-heading-m">At interview?</h2>
+        <div class="govuk-form-group">
+          {%- for items in expNappy | slice(1) %}
+          <div class="govuk-checkboxes-{{ loop.index }}" data-module="govuk-checkboxes" name="interviewexperience">
+            {%- for item in items %}
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="interviewexperience" name="interviewexperience" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="interviewexperience"> {{ item }}</label></div>
+              {%- endfor %}
+            </div>
+            {%- endfor %}
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">Continue</button>
+          {{ govukButton({
+            text: "Preview advert",
+            classes: "govuk-button--secondary",
+            href: "preview-advert"
+          }) }}
+      </div>
+    </div>
+    </form>
+    {% endblock %}

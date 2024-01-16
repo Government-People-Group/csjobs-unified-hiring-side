@@ -1,0 +1,152 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Interview</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+<span class="govuk-caption-l">Policy Adviser (1001334)</span>
+<h1 class="govuk-heading-xl">Confirm the interview results</h1>
+
+<p class="govuk-body-l"><strong>The interview scores from all panelists have been confirmed.<BR>You should check and confirm the successful candidate.</strong></p>
+
+
+  {% set offerHTML %}
+  {{govukTag({
+    text: "Passed - offer job role",
+    classes: "govuk-tag--green"
+  })}}
+  {% endset %}
+
+
+
+  {% set reserveHTML %}
+    <div style="margin-bottom:-25px;margin-top:5px"><strong style="padding:5px;font-size:17px" class='govuk-tag--blue'>PASSED - OFFER RESERVE LIST</strong>
+    <BR><BR><details  class='govuk-details' data-module='govuk-details'><summary class='govuk-details__summary'><span class='govuk-details__summary-text' style='width:25%'>What is this?</span></summary><div class='govuk-details__text'>This candidate passed the interview and can be offered a place on the department's reserve list. Hiring a candidate from the reserve list will save time and resources.</div></details></div>
+  {% endset %}
+
+
+
+
+
+  {% set rejectHTML %}
+  {{govukTag({
+    text: "Did not pass - reject",
+    classes: "govuk-tag--red"
+  })}}
+  {% endset %}
+
+<style>
+
+th {
+  width:25%
+}
+
+</style>
+
+
+
+  {{ govukTable({
+    caption: "",
+    captionClasses: "govuk-table__caption--m",
+    firstCellIsHeader: false,
+    head: [
+      {
+        text: "Candidate",
+        classes: 'app-custom-class'
+
+      },
+      {
+        text: "Average score",
+        classes: 'app-custom-class'
+      },
+      {
+        text: "Recommendation",
+        classes: 'app-custom-class',
+        style: hidden
+      }
+    ],
+    rows: [
+      [
+        {
+          html: "<strong style='font-size:22px'>Mei Chen</strong>"
+        },
+        {
+          html: "<strong style='font-size:22px'>35</strong>"
+        },
+        {
+          html: offerHTML
+        }
+      ],
+      [
+          {
+            html: "<span style='font-size:22px'>Amelia Lawson</span>"
+          },
+          {
+            html: "<span style='font-size:22px'>33</span>"
+          },
+          {
+            html: reserveHTML
+          }
+        ],
+    [
+        {
+          html: "<span style='font-size:22px'>Javier Santos</span>"
+        },
+        {
+          html: "<span style='font-size:22px'>28</span>"
+        },
+        {
+          html: rejectHTML
+        }
+      ]
+
+    ]
+  }) }}
+
+
+
+<!--
+  "<strong class='govuk-tag--blue'>passed - offer reserve list</strong><details class='govuk-details' data-module='govuk-details'><summary class='govuk-details__summary'><span class='govuk-details__summary-text'>What is this?</span></summary><div class='govuk-details__text'>This candidate passed the interview and can be offered a place on the department's reserve list. Hiring a candidate from the reserve list will save time and resources.</div></details>"
+
+
+<p class="govuk-body-l"><STRONG>‡</STRONG> This candidate passed the interview and can be offered a place on the department's reserve list. Hiring a candidate from the reserve list will save time and resources.</p> -->
+
+  {{ govukButton({
+    text: "Confirm my decision",
+    href: "/csu71/sift/task-list-merit-offer?merit=confirmed"
+  }) }}
+
+              </div>
+              </div>
+
+
+  {% endblock %}

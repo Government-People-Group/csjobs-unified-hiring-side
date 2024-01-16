@@ -1,0 +1,503 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Interview</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<form class="form" action="setup-interview-ph4-1" method="post">
+
+  <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Assessment</H1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter" style="">
+
+
+      <ul class="govuk-!-margin-top-6 govuk-list govuk-list--bullet-">
+        <!-- <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph2"><strong>Schedule</a></p></strong></li> -->
+        <!-- <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview"><strong>Setup interview</a></p></strong></li> -->
+
+        <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph3"><strong>Assessment</a></p></strong></li>
+        <!-- <li><strong><p style ="MARGIN-left:26px;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph3-1">Interview presentation</a></p></li> -->
+
+
+
+        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph4-1"><strong>Questions</a></p></strong></li>
+        <li><strong><p style ="border-left:5px solid white;;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph1"><strong>Type of interview</a></p></strong></li>
+
+        <!-- <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-check-answers"><strong>Review interview setup</a></p></strong></li> -->
+      </ul>
+    </div>
+    <div class="govuk-!-margin-top-6 govuk-grid-column-three-quarters">
+
+
+
+      <form class="form" action="review-crit-methods-questions" method="post">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+            <h2 class="govuk-heading-l">
+              Interview review
+            </h2>
+            <p class="govuk-body-m govuk-!-margin-bottom-1">Please check the details for your interview are correct, including the:</p>
+            <ul class="govuk-list govuk-list--bullet">
+            <li>time for each section</li>
+            <li>order of interview</li></ul>
+
+            <p class="govuk-body-m">Next, you'll be able to draft the interview questions that can be used to test the criteria with candidates.</p>
+
+            <!-- <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Allotted time
+                </dt>
+                <dd class="govuk-summary-list__value">
+
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="weight">
+                    </label>
+                    <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-2" id="weight" name="weight" type="text" spellcheck="false">
+                      <div class="govuk-input__suffix" aria-hidden="true">mins</div>
+                    </div>
+                  </div>
+
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Order
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  1
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> date of birth</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Assessment method
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  General questions
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> address</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Element
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <p class="govuk-body">Experience</p>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> contact details</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Selection criteria
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <p class="govuk-body">Experience to date, track record</p>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> contact details</span>
+                  </a>
+                </dd>
+              </div>
+            </dl> -->
+
+
+
+
+
+
+
+                  <!-- <h2 style="" class="govuk-heading-l">Running order, BLENDING AND BENCHMARKING!</h2> -->
+
+
+
+
+
+          <div class="govuk-summary-card govuk-summary-list--no-border" style="border:0px">
+            <div style="height:30px; background: white" class="govuk-summary-card__title-wrapper">
+
+            </div>
+            <!-- <div class="govuk-summary-card__content"> -->
+              <dl class="govuk-summary-list">
+
+                <div class="govuk-summary-list__row" style="background:#f3f2f1;border-bottom:1px solid #1d70b8;padding-bottom:10px">
+                  <dt style="width:15%;padding-left:5px;;font-weight:normal" class="govuk-summary-list__key">
+                    <strong>Time</strong>
+                  </dt>
+                  <!-- <dt style="width:10%;padding-left:5px;;font-weight:normal" class="govuk-summary-list__key">
+                    <strong>Order</strong>
+                  </dt> -->
+                  <dt style="width:40%;padding-left:5px;;font-weight:normal" class="govuk-summary-list__key">
+<strong>Stage</strong>
+                  </dt>
+                  <!-- <dt style="width:15%;padding-left:5px;;font-weight:normal" class="govuk-summary-list__key">
+                    <strong>Element</strong>
+                  </dt> -->
+                  <dt style="width:45%;padding-left:5px;;font-weight:normal" class="govuk-summary-list__key"><strong>Criteria</strong>
+
+
+                  </dt>
+                </div>
+
+
+                <div class="govuk-summary-list__row" style=";border-bottom:1px solid #1d70b8;padding-bottom:10px">
+
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">5 mins
+
+                    <!-- <div class="govuk-form-group">
+                      <div class="govuk-input__wrapper"><input style="" class="govuk-input govuk-input--width-2" id="weight" value="2" name="weight" type="text" spellcheck="false">
+                        <div class="govuk-input__suffix" aria-hidden="true">mins</div>
+                      </div>
+                    </div> -->
+                  </dd>
+                  <!-- <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                    1
+                  </dd> -->
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                    <ul class="govuk-list govuk-list--bullet">
+                    <li>Welcome candidate</li>
+                    <li>Intro to interview</li>
+                    <li>Warm up questions</li>
+                  </dd>
+                  <!-- <dd style="padding-left:5px;;font-weight:normal" class="govuk-summary-list__value">
+      Interview intro
+                  </dd> -->
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+
+                  </dd>
+                </div>
+
+
+
+                <!-- <div class="govuk-summary-list__row" style="border-bottom:0.5px solid #1d70b8;padding-bottom:10px">
+
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+
+                    <div class="govuk-form-group">
+                      <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-2" id="weight" value="10" name="weight" type="text" spellcheck="false">
+                        <div class="govuk-input__suffix" aria-hidden="true">mins</div>
+                      </div>
+                    </div>
+                  </dd>
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                    1
+                  </dd>
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                    General questions
+                  </dd>
+                  <dd style="padding-left:5px;;font-weight:normal" class="govuk-summary-list__value">
+      Experience
+                  </dd>
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+      Experience to date, track record
+                  </dd>
+                </div> -->
+
+
+                <div class="govuk-summary-list__row" style="background:#F4FAFF;border-bottom:1px solid #1d70b8;padding-bottom:10px">
+
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">6 mins
+
+                    <!-- <div class="govuk-form-group">
+                      <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-2" id="a1" value="21" name="a1" type="text" spellcheck="false">
+                        <div class="govuk-input__suffix" aria-hidden="true">mins</div>
+                      </div>
+                    </div> -->
+                  </dd>
+                  <!-- <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                    3
+                  </dd> -->
+                  <dd style="padding-left:5px;;font-weight:NORMAL"  class="govuk-summary-list__value">
+                    <!-- <a style="font-weight:bold" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph4-1">Experience questions</a> -->
+                    1 x Experience questions
+                  </dd>
+                  <!-- <dd style="padding-left:5px;;font-weight:normal" class="govuk-summary-list__value">
+                    Behaviours
+                  </dd> -->
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                    <ul class="govuk-list govuk-list--bullet">
+                    <li>Building engaging and effective relationships with stakeholders</li>
+                    </ul>
+                  </dd>
+                </div>
+
+                <div class="govuk-summary-list__row" style="background:#F4FAFF;border-bottom:1px solid #1d70b8;padding-bottom:10px">
+
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">12 mins
+
+                    <!-- <div class="govuk-form-group">
+                      <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-2" id="a1" value="21" name="a1" type="text" spellcheck="false">
+                        <div class="govuk-input__suffix" aria-hidden="true">mins</div>
+                      </div>
+                    </div> -->
+                  </dd>
+                  <!-- <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                    3
+                  </dd> -->
+                  <dd style="padding-left:5px;;font-weight:NORMAL"  class="govuk-summary-list__value">
+                    2 x Behaviours questions
+                    <!-- <a style="font-weight:bold" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph4-2">Behaviours questions</a> -->
+                  </dd>
+                  <!-- <dd style="padding-left:5px;;font-weight:normal" class="govuk-summary-list__value">
+                    Behaviours
+                  </dd> -->
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                    <ul class="govuk-list govuk-list--bullet">
+                    <li>Seeing the Big Picture</li>
+                    <li>Changing and Improving</li>
+                    </ul>
+                  </dd>
+                </div>
+
+                <div class="govuk-summary-list__row" style="background:#F4FAFF;border-bottom:1px solid #1d70b8;padding-bottom:10px">
+
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">6 mins
+
+                    <!-- <div class="govuk-form-group">
+                      <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-2" id="a2" name="weight" type="a2" value="6" spellcheck="false">
+                        <div class="govuk-input__suffix" aria-hidden="true">mins</div>
+                      </div>
+                    </div> -->
+                  </dd>
+                  <!-- <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                    4
+                  </dd> -->
+                  <dd style="padding-left:5px;;font-weight:NORMAL"  class="govuk-summary-list__value">
+                      <!-- <a style="font-weight:bold" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph4-3">Strengths questions</a> -->
+                      3 x   Strengths questions
+                  </dd>
+                  <!-- <dd style="padding-left:5px;;font-weight:normal" class="govuk-summary-list__value">
+                    Strengths
+                  </dd> -->
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                      <ul class="govuk-list govuk-list--bullet">
+                    <li>Analytical</li>
+                    <li>Challenger</li>
+                    <li>Problem solver</li>
+                      </ul>
+                  </dd>
+                </div>
+
+                <!-- <div class="govuk-summary-list__row" style="border-bottom:1px solid #1d70b8;padding-bottom:10px">
+
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+
+                    <div class="govuk-form-group">
+                      <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-2" id="a3" value="15" name="a3" type="text" spellcheck="false">
+                        <div class="govuk-input__suffix" aria-hidden="true">mins</div>
+                      </div>
+                    </div>
+                  </dd>
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                    4
+                  </dd>
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                    15-minute presentation
+                  </dd>
+                  <dd style="padding-left:5px;;font-weight:normal" class="govuk-summary-list__value">
+                    Experience
+                  </dd>
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                    Past projects: the good, the bad and the ugly
+                  </dd>
+                </div> -->
+                <div class="govuk-summary-list__row" style="background:#F4FAFF;border-bottom:1px solid #1d70b8;padding-bottom:10px">
+
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">10 mins
+                    <!-- <div class="govuk-form-group">
+                      <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-2" id="a4" value="5" name="a4" type="text" spellcheck="false">
+                        <div class="govuk-input__suffix" aria-hidden="true">mins</div>
+                      </div>
+                    </div> -->
+                  </dd>
+                  <!-- <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                    5
+                  </dd> -->
+
+                  <!-- <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value"><a href="setup-interview-ph3-1" style="font-weight:bold" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state">Interview presentation</a></dd> -->
+                  <dd style="padding-left:5px;;font-weight:NORMAL"  class="govuk-summary-list__value">1 x                                                                 Interview presentation</dd>
+                  <!-- <dd style="padding-left:5px;;font-weight:normal" class="govuk-summary-list__value">General
+
+                  </dd> -->
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                  </dd>
+                </div>
+
+                <div class="govuk-summary-list__row" style=";border-bottom:1px solid #1d70b8;padding-bottom:10px">
+
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">3 mins
+                    <!-- <div class="govuk-form-group">
+                      <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-2" id="a4" value="5" name="a4" type="text" spellcheck="false">
+                        <div class="govuk-input__suffix" aria-hidden="true">mins</div>
+                      </div>
+                    </div> -->
+                  </dd>
+                  <!-- <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                    5
+                  </dd> -->
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">Follow-up questions
+
+                  </dd>
+                  <!-- <dd style="padding-left:5px;;font-weight:normal" class="govuk-summary-list__value">General
+
+                  </dd> -->
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                  </dd>
+                </div>
+
+                <div class="govuk-summary-list__row" style=";border-bottom:1px solid #1d70b8;padding-bottom:10px">
+
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">5 mins
+                    <!-- <div class="govuk-form-group">
+                      <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-2" id="a4" value="5" name="a4" type="text" spellcheck="false">
+                        <div class="govuk-input__suffix" aria-hidden="true">mins</div>
+                      </div>
+                    </div> -->
+                  </dd>
+                  <!-- <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                    5
+                  </dd> -->
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                    <ul class="govuk-list govuk-list--bullet">
+                  <li>Closing the interview</li>
+                  <li>Candidate questions</li>
+                  <li>Next steps</li>
+                    </ul>
+
+                  </dd>
+
+                  <!-- <dd style="padding-left:5px;;font-weight:normal" class="govuk-summary-list__value">General
+
+                  </dd> -->
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row" style="background:#f3f2f1;;border-bottom:1px solid #1d70b8;padding-bottom:10px">
+
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value"><strong>47 mins</strong>
+                    <!-- <div class="govuk-form-group">
+                      <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-2" id="a4" value="5" name="a4" type="text" spellcheck="false">
+                        <div class="govuk-input__suffix" aria-hidden="true">mins</div>
+                      </div>
+                    </div> -->
+                  </dd>
+                  <!-- <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                    5
+                  </dd> -->
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+
+                  </dd>
+
+                  <!-- <dd style="padding-left:5px;;font-weight:normal" class="govuk-summary-list__value">General
+
+                  </dd> -->
+                  <dd style="padding-left:5px;;font-weight:normal"  class="govuk-summary-list__value">
+                    <strong style="float:right;padding-right:20px"><a href="#">Change</a></strong>
+
+                  </dd>
+                </div>
+
+
+
+              </dl>
+</div>
+
+<button  class="govuk-button govuk-!-margin-top-9" data-module="govuk-button">Continue</button>
+
+</div>
+
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!-- <p class="govuk-body-m" style="font-size:20px;line-height:1.6"><strong>77% of online jobsite users typically have a 'first look' at a job ad using their phone, and on average, spend just 11 seconds on the page.</strong></p>
+          <p class="govuk-body-s ">Source: Civil Service Jobs (2023), Cabinet Office.</p> -->
+
+
+
+
+
+
+
+
+    </div>
+
+
+  </div>
+
+  <span id='local-variable' style="display:none">{{ data['templateName'] }}</span>
+
+  <input type="hidden" name="source" value="behaviours">
+</FORM>
+
+
+
+{% endblock %}

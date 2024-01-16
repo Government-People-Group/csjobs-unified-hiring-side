@@ -1,0 +1,70 @@
+<div class="govuk-!-margin-bottom-3" style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+
+</div>
+<span style="margin-left:20px;color:white;font-weight:bold" class="govuk-caption-l">{{ sectionref }}</span>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+<div class="govuk-!-margin-top-6" style=";">
+<h2 class="app-task-list__section govuk-!-margin-top-1" style="font-weight:bold;font-size:22px">Monitor candidate responses</h2>
+<ol class="app-task-list govuk-!-margin-top-">
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+    <!-- <a href="#" aria-describedby="eligibility-status"> -->
+    <strong>Mei Chen</strong>
+    <!-- </a> -->
+  </span>
+  {% if data['invites'] == 'sent'%}
+  <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="contact-details-status">interview invite sent</strong>
+  {% else %}
+  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+  {% endif %}
+</li>
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+    <!-- <a href="#" aria-describedby="eligibility-status"> -->
+    <strong>Amelia Lawson</strong>
+    <!-- </a> -->
+  </span>
+
+  {% if data['invites'] == 'sent'%}
+  <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="contact-details-status">interview invite sent</strong>
+  {% else %}
+  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+  {% endif %}
+
+</li>
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+    <!-- <a href="#" aria-describedby="eligibility-status"> -->
+    <strong>Javier Santos</strong>
+    <!-- </a> -->
+  </span>
+
+
+          {% if data['invites'] == 'sent'%}
+          <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="contact-details-status">interview invite sent</strong>
+          {% else %}
+          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+          {% endif %}
+
+
+        </li>
+</div>
+
+</ul>
+</ol>
+</div>

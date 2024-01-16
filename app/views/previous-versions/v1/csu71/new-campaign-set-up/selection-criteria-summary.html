@@ -1,0 +1,247 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Selection criteria and assessment methods</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<style>
+  /* Example page specific styling. */
+  p, div {
+    font-family: "GDS Transport", arial, sans-serif;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+
+
+  h1, h2, h3, h4, h5, h6, p {
+    line-height: 1.2;
+    vertical-align: text-top;
+    font-size:20px;
+
+  }
+
+
+  checkbox {}
+  label {
+
+  }
+</style>
+
+
+
+
+
+<form action="select-methods-sift" method="post" novalidate>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full" style="">
+
+      <h1 class="govuk-heading-xl">Review your assessment criteria</h1>
+      <!-- <p class="govuk-body-l govuk-!-margin-bottom-6 govuk-!-margin-top-3"><strong>Review what elements you have selected to assess at sift and interview.<BR><BR>When you are happy, you can continue to select how you will assess within each element.</strong></p> -->
+
+      <div>
+
+
+        <div class="govuk-summary-card" style="border:0;">
+          <div class="govuk-summary-card__title-wrapper" style="background:#F4FAFF;border-bottom:1px solid #1d70b8">
+            <h2 style="font-size:32px" class="govuk-summary-card__title">Your sift criteria</h2>
+          </div>
+          <div class="govuk-summary-card__content" >
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt style="width:25%" id="test" class="govuk-summary-list__key">
+
+                </dt>
+                <dd style="width:75%" id="test2" class="govuk-summary-list__value">
+
+                </dd>
+                <dd  class="govuk-summary-list__actions">
+                  <a  id="actung1" class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"> age</span>
+                  </a>
+                </dd>
+              </div>
+
+
+            </dl>
+          </div>
+        </div>
+
+        <div class="govuk-summary-card" style="border:0;">
+          <div class="govuk-summary-card__title-wrapper" style="background:#F4FAFF;border-bottom:1px solid #1d70b8">
+            <h2 style="font-size:32px" class="govuk-summary-card__title">Your interview criteria</h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt style="width:25%" id="test3" class="govuk-summary-list__key">
+
+                </dt>
+                <dd style="width:75%" id="test4" class="govuk-summary-list__value">
+
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a id="actung2" class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"> age</span>
+                  </a>
+                </dd>
+              </div>
+
+
+            </dl>
+          </div>
+        </div>
+
+
+
+        <ul class="govuk-!-margin-top-9 govuk-list govuk-list--bullet-">
+
+
+          <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="select-{{items }}"><strong>{{ items | capitalize }}</a></p></strong></li>
+
+
+          <li><strong><p style ="border-left:2px solid white;padding-left:20px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="select-{{items }}"><strong>{{ items | capitalize }}</a></p></strong></li>
+
+
+        </ul>
+
+        <!-- <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div id="d1" class="govuk-summary-list__row">
+        <dt style="width:100%" id="test" class="govuk-summary-list__key">
+      </dt>
+      <dd style="width:30%" class="govuk-summary-list__actions">
+
+      <a class="govuk-link" href="#"> edit
+      <span class="govuk-visually-hidden"> name</span>
+    </a>
+  </dd>
+</div>
+</dl> -->
+
+
+
+
+
+</div>
+
+<script>
+
+
+  var aa = document.getElementById("test");
+  var bb = document.getElementById("test2");
+  var actionSift = document.getElementById("actung1");
+  var actionInt = document.getElementById("actung2");
+
+  // var cc = document.getElementById("test2");
+  // var dd = document.getElementById("intcrit");
+  const siftStage = JSON.parse(window.sessionStorage.getItem("siftStage"));
+  // const intStage = JSON.parse(window.sessionStorage.getItem("intStage"));
+
+  for (const [key, value] of Object.entries(siftStage)) {
+    var aaa = document.createElement("p");
+    var bbb = document.createElement("p");
+    var echo = document.createElement("p");
+    aaa.innerHTML = `${value}`;
+    aa.appendChild(aaa);
+
+    bbb.innerHTML = `${key}`;
+    bbb.style.cssText  = "font-weight:normal";
+    bb.appendChild(bbb);
+
+    echo.style.cssText  = "font-weight:normal;";
+
+    echo.innerHTML = '<a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="#" id="edit">Edit</a> | <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state"  href="#" id="delete">Delete </a>';
+    actionSift.appendChild(echo);
+  }
+
+  var cc = document.getElementById("test3");
+  var dd = document.getElementById("test4");
+
+  // var cc = document.getElementById("test2");
+  // var dd = document.getElementById("intcrit");
+  const intStage = JSON.parse(window.sessionStorage.getItem("intStage"));
+  // const intStage = JSON.parse(window.sessionStorage.getItem("intStage"));
+
+  for (const [key, value] of Object.entries(intStage)) {
+    var ccc = document.createElement("p");
+    var ddd = document.createElement("p");
+    var echo2 = document.createElement("p");
+
+    ddd.style.cssText  = "font-weight:normal;";
+
+
+    ccc.innerHTML = `${value}`;
+    cc.appendChild(ccc);
+
+    ddd.innerHTML = `${key}`;
+    dd.appendChild(ddd);
+    echo2.style.cssText  = "font-weight:normal;";
+    echo2.innerHTML = '<a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="#" id="edit">Edit</a> | <a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state"  href="#" id="delete">Delete </a>';
+    actionInt.appendChild(echo2);
+  }
+
+
+
+
+  // for (const [value, key] of Object.entries(siftStage)) {
+  //   console.log(`${value}: ${value}`);
+  //   var headSift = document.createElement("p");
+  //   headSift.innerHTML = `${value}: ${key}`;
+  //   siftOutput.appendChild(headSift);
+  // }
+
+  // for (const [key, value] of Object.entries(intStage)) {
+  //   console.log(`${value}: ${key}`);
+  //   var headInt = document.createElement("p");
+  //   headInt.innerHTML = `${value}: ${key}`;
+  //   intOutput.appendChild(headInt);
+  // }
+
+
+
+
+</script>
+
+</div>
+
+
+</div>
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+{{ govukButton({
+  text: "Add another element",
+  href: "pick-criteria-type",
+  classes: "govuk-button--secondary"
+}) }}
+</form>
+
+
+
+{% endblock %}

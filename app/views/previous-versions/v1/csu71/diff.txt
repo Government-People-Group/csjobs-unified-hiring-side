@@ -1,0 +1,214 @@
+18,22d17
+< 
+< 
+< 
+< 
+< 
+25,28d19
+<       <!-- <label style="float:left;color:white;margin-right:0;margin-top:0px;font-size:20px;;" class="govuk-label-s" for="width-20">Search</label> -->
+< 
+<       <!-- <input onClick="this.value=''" onFocusOut="this.value='Search'" style="width:35%;height:40px;margin-left:20px;float:right;;font-size:16px;background:white ;border:1px solid #1d70b8;border-radius:5px;" class="govuk-input govuk-input--width-10" value="Search" id="width-20" name="width-20"  type="text"> -->
+< 
+31,32d21
+< 
+< 
+47d35
+< 
+50c38
+< <div class="govuk-grid-row" >
+---
+> <div class="govuk-grid-row">
+55a44,48
+> <!-- {% set data['createVacancy'] = "false" %}
+> {% set data['firstNot'] = "notseen" %}
+> {% set data['grade'] = "Grade 7" %}
+> {% set data['invites'] = "notsent" %}
+> {% set data['candconf'] = "no" %} -->
+57,58d49
+<         <!-- <div class="govuk-!-margin-top-7" style="position:absolute;float:left;width:20%;margin-left:250px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="#"><strong>Sift</strong></a></span>
+<       </div>
+60,61c51,54
+<       <div class="govuk-!-margin-top-7" style="position:absolute;float:left;width:20%;margin-left:310px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="#"><strong>Interview</strong></a></span>
+<     </div> -->
+---
+> <!--
+> {% if data['createVacancy'] == "true" %}
+> {% set vacNum = "4" %}
+> {% endif %} -->
+63,75c56,64
+< 
+< 
+< 
+<     <!-- <div class="govuk-grid-column-one-quarter govuk-!-padding-top-1 govuk-!-margin-left-3" style="background:#f3f2f1;padding:10px;width:20%;height:600px;">
+<     <div class="govuk-!-margin-top-3" style="background:white;padding:10px;border:1px solid #B1B4B6">
+<     <ul class=" govuk-!-margin-top-0 govuk-list govuk-list--bullet-" >
+<     <li style="padding-left:5px;padding-right:5px;" ><strong><p style="line-height:1.5;font-weight:bold;" class="govuk-body-s"><a style=";" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="">Create a vacancy</a></p></li>
+<     <li style=";padding-left:5px;padding-right:5px;"><strong><p style ="line-height:1.5;font-weight:bold" class="govuk-body-s"><a style=";" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="">View vacancies</a></p></li>
+<     <li style=";padding-left:5px;padding-right:5px;"><strong><p style ="line-height:1.5;font-weight:bold" class="govuk-body-s"><a style=";" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="">Help</a></p></li>
+<   </ul>
+< </div>
+< </div> -->
+< 
+---
+> <!-- {% if data['grade'] | first =="S" %}
+> {% set gradeS = "SEO" %}
+> {% elif data['grade'] | first =="H" %}
+> {% set gradeS = "HEO" %}
+> {% elif data['grade'] | last =="7" %}
+> {% set gradeS = "G7" %}
+> {% elif data['grade'] | last =="6" %}
+> {% set gradeS = "G6" %}
+> {% endif %} -->
+77d65
+< <!-- <H1 style="float:right;padding-bottom:25px; padding-right:30px" class="govuk-heading-m govuk-!-margin-top-3 govuk-!-margin-bottom-6">Coming up milestone X</H1> -->
+97c85
+< {% if data['firstNot'] !="seen" %}
+---
+> <!-- {% if data['firstNot'] !="seen" %}
+105c93
+< {% endif %}
+---
+> {% endif %} -->
+132c120
+<               {% if data['invites'] == "sent" %}
+---
+>               <!-- {% if data['invites'] == "sent" %}
+145c133
+<                 </div>{% endif %}
+---
+>                 </div>{% endif %} -->
+228c216
+<     <td class="govuk-table__cell" style="border-top:2px solid #1d70b8;border-bottom:1px solid #1d70b8;width:30%;background: #f3f2f1;;"><strong>{{ data['grade']|default("Grade 7") }}</strong></td>
+---
+>     <td class="govuk-table__cell" style="border-top:2px solid #1d70b8;border-bottom:1px solid #1d70b8;width:30%;background: #f3f2f1;;"><strong>{{ gradeS }}</strong></td>
+365,375d352
+<   <!-- <div class="govuk-tabs"  data-module="govuk-tabs">
+<     <h2  class="govuk-tabs__title">
+<       Contents
+<     </h2>
+<     <ul class="govuk-tabs__list">
+<       <li style=";font-weight:bold;text-align:left" class="govuk-tabs__list-item">
+<         <a style="color:#1d70b8;font-size:20px;font-weight:bold;" class="govuk-tabs__tab" href="#past-month" >
+<           1001334<BR>Policy adviser
+<           </a>
+<         </li>
+<         <li style="horizontal-align:bottom;;font-weight:bold;text-align:left" class="govuk-tabs__list-item" >
+377,429d353
+<           <a style="margin-top:27px;;color:#1d70b8;font-size:20px" class="govuk-tabs__tab" href="#past-week">
+<             Current vacancies
+<           </a>
+< 
+<         </li>
+<         <li style="color:#1d70b8;font-size:20px" class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+<           <a style="margin-top:27px;font-weight:bold;color:#1d70b8;font-size:20px" class="govuk-tabs__tab" href="#past-day">
+<             Messages
+<           </a>
+<         </li>
+< 
+< 
+< 
+<       </ul> -->
+< 
+< 
+<       <!-- <div class="govuk-tabs__panel" style="height:725px;background:white" id="past-day">
+<         <table class="govuk-table" >
+<           <thead class="govuk-table__head" >
+<             <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8">
+<               <th style="padding-left:10px;background: #F4FAFF;color:#1d70b8;width:20%;" scope="col" class="govuk-table__header">Date⇕</th>
+<               <th scope="col" class="govuk-table__header" style="width:20%;background: #F4FAFF;color:#1d70b8;">Job⇕</th>
+< 
+<               <th scope="col" class="govuk-table__header" style="width:40%;background: #F4FAFF;color:#1d70b8;">Message⇕</th>
+<             </tr>
+<           </thead>
+<           <tbody class="govuk-table__body" >
+<             <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8;">
+<               <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><strong>Wed 26 Apr</strong></td>
+<               <td class="govuk-table__cell" style="background: white;;"><strong><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="home?cta=none">Product manager</a></strong></td>
+< 
+<               <td class="govuk-table__cell" style="background: white;;"><strong><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="home?cta=none">Request for reasonable adjustment received.</a></strong></td>
+<             </tr>
+<             <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8;">
+<               <td class="govuk-table__cell" style="padding-left:10px;background: white;">Mon 24 Apr</td>
+<               <td class="govuk-table__cell" style="background: white;;"><a href="#" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state">Product manager</a></td>
+< 
+<               <td class="govuk-table__cell" style="background: white;;"><a href="#" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state">Candidate would like to discuss role.</a></td>
+<             </tr>
+<             <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8;">
+<               <td class="govuk-table__cell" style="padding-left:10px;background: white;;">Fri 21 Apr</td>
+<               <td class="govuk-table__cell" style="background: white;;"><a href="#" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state">Product manager</a></td>
+<               <td class="govuk-table__cell" style="background: white;"><a href="#" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state">Published to live.</td>
+< 
+<               </tr>
+<               <!-- <tr class="govuk-table__row">
+<               <td class="govuk-table__cell">Fri 19 Apr</td>
+<               <td class="govuk-table__cell"><a href="#">Delivery manager (10219)</a> closes today at 00:01.</td></td>
+<               <td class="govuk-table__cell"><a href="#">Share</a></td>
+<             </tr> -->
+< 
+<           <!-- </tbody>
+<         </table> -->
+479,483d402
+<             <!-- <tr class="govuk-table__row">
+<             <td class="govuk-table__cell">Fri 19 Apr</td>
+<             <td class="govuk-table__cell"><a href="#">Delivery manager (10219)</a> closes today at 00:01.</td></td>
+<             <td class="govuk-table__cell"><a href="#">Share</a></td>
+<           </tr> -->
+509,510d427
+<               <!-- <h3 style="font-size:24px;text-align:center;vertical-align:top;margin-top:10px;padding:5px" class="govuk-heading-s">TODAY</h3>
+<               <p id="consensusTrigger" style="font-weight:bold;font-size:24px;text-align:center;padding-left:5px;margin-bottom:20px" class="govuk-body-l">It's time...</p>
+512,513d428
+<               <p class="govuk-body-m" style="width:60%;text-align:center;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/sift/setup-interview/setup-interview">Setup interviews</a></p>
+<             -->
+515d429
+< 
+571d484
+<           <!-- <div class="govuk-grid-column-one-third" style="width:30%;height:200px;border:2px dashed lightgrey;margin-left:20px">
+573,576d485
+<           <h3 style="margin-top:10px;padding:5px" class="govuk-heading-s">Up next</h3>
+<           <p class="govuk-body-m"></p>
+< 
+<         </div> -->
+588,590c497
+<           <!-- <th style="border:0px" scope="col" class="govuk-table__header"></th>
+<           <th style="border:0px" scope="col" class="govuk-table__header"></th>
+<           <th style="border:0px" scope="col" class="govuk-table__header"></th> -->
+---
+> 
+595,597c502
+<           <!-- <td style="border:0px" class="govuk-table__cell"></td>
+<           <td style="border:0px" class="govuk-table__cell"></td>
+<           <td style="border:0px" class="govuk-table__cell"></td> -->
+---
+> 
+600d504
+<     </table>
+602d505
+<   <!-- <strong style="font-size:10px;" class="govuk-!-margin-bottom-1 govuk-!-margin-top-6 govuk-!-margin-left-0 govuk-tag">beta</strong><p  style="display:inline;padding-left:10px;font-size:12px;"><strong><a href"">Feedback</a></strong></p> -->
+605d507
+< <!-- <div class="govuk-!-margin-left-0" style="height:90px;width:36%;background:white ;border:0.5px solid grey;border-radius:2px">
+607d508
+< <img class="govuk-!-margin-left-3 govuk-!-margin-top-6" src="/public/images/dash1.png" style="height:50px;;padding-left:0px;padding-right:0px;margin-right:5px;"> -->
+609,612d509
+< 
+< 
+< 
+< 
+616,617d512
+< </div>
+< </div>
+618a514
+> 
+626,627d521
+< 
+< 
+636d529
+< 
+639,646d531
+< 
+< 
+< 
+< 
+< 
+< 
+< 
+< 

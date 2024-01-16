@@ -1,0 +1,132 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header-panelist-view.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Sift</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list-applicants-not-started-yet"><strong>Return to sift list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+{% set trainingHTML %}
+<p>Check <a href="">Civil Service Learning</a> to see if you are up to date with recruitment training.</p>
+{% endset %}
+<img class="govuk-!-margin-top-0" src="/public/images/profblue.png" style="height:44px;float:left;;padding-right:10px;margin-right:0px;">
+
+<h1 class="govuk-heading-l govuk-!-margin-bottom-9">Profile</h1>
+
+{{ govukInput({
+  label: {
+    text: "Name"
+  },
+  id: "contact-name",
+  name: "contact-name",
+  value: "Alexia Cohen"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Email address"
+  },
+  id: "contact-email",
+  name: "contact-email",
+  value: "alexia.cohen@cabinetoffice.gov.uk"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Phone number (optional)"
+  },
+  id: "phone",
+  name: "phone",
+  value: ""
+}) }}
+
+
+  <!-- {{ govukRadios({
+    classes: "govuk-radios--inline",
+    idPrefix: "training",
+    name: "training",
+    fieldset: {
+      legend: {
+        text: "Have you completed recruitment training?"
+      }
+    },
+    hint: {
+      html: trainingHTML
+    },
+    items: [
+      {
+        value: "yes",
+        text: "Yes",
+        checked: true
+      },
+      {
+        value: "no",
+        text: "No"
+      }
+    ]
+  }) }}
+
+  {{ govukRadios({
+    classes: "govuk-radios--inline",
+    idPrefix: "panel",
+    name: "panel",
+    fieldset: {
+      legend: {
+        text: "Would you like to be on the panel for other vacancies in your department?"
+      }
+    },
+    hint: {
+      text: "Your availability will be checked before you are added to a panel."
+    },
+    items: [
+      {
+        value: "yes",
+        text: "Yes"
+      },
+      {
+      value: "no",
+      text: "No",
+      checked: true
+    }
+  ]
+}) }} -->
+
+
+<div >
+{{ govukButton({
+  classes: "govuk-!-margin-top-6",
+  text: "Save changes",
+  href: "task-list-applicants-not-started-yet"
+}) }}
+</div>
+</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Selection criteria and assessment methods</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-co"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl">Essential criteria</h1>
+<p class="govuk-body-m">Which of the selection criteria that follows do you think is essential for this role?</p>
+<p class="govuk-body-m">The essential criteria will be visible to candidates on the job advert.</p>
+    <form class="form" action="/csu71/new-campaign-set-up/pre-sift-questions" method="post">
+
+        <div id="pair"></div>
+
+
+
+
+
+<button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Continue</button>
+
+</form>
+
+
+</div>
+</div>
+<script>
+
+
+  console.log("render")
+  var hea1 = document.getElementById("pair");
+
+
+  const object = JSON.parse(window.sessionStorage.getItem("siftCriteria"));
+  const object2 = JSON.parse(window.sessionStorage.getItem("interviewCriteria"));
+
+
+  var obj = Object.values(object);
+
+  var heading = document.createElement("h2");
+  heading.style.cssText = "font-size:32px;border-bottom:1px solid #1d70b8";
+  heading.innerHTML = "Sift criteria";
+
+  pair.appendChild(heading)
+
+
+  for (items in obj) {
+
+    var row = document.createElement("div");
+    row.style.cssText = "margin-bottom:-9px;height:90px;size:20px"
+    row.innerHTML = "<div class='govuk-form-group'><fieldset class='govuk-fieldset'><div class='govuk-checkboxes govuk-checkboxes--small' data-module='govuk-checkboxes'><div class='govuk-checkboxes__item'><input class='govuk-checkboxes__input' id='essCritSift"+[items+1]+"' name='essCritSift' type='checkbox' value='"+obj[items].criteria+"'><label style='font-size:20px;' class='govuk-label govuk-checkboxes__label' for='essCritSift"+[items+1]+"'>"+obj[items].element+":<BR>"+obj[items].criteria+"</strong></label></div></div></fieldset></div>";
+    pair.appendChild(row);
+  }
+
+  // row.innerHTML = "<dl class='govuk-summary-list' style='font-size:20px;width:100%'><div class='govuk-summary-list__row'><dt class='govuk-summary-list__key'>"+obj[items].element+"</dt><dd class='govuk-summary-list__value'>"+obj[items].criteria+"</dd></div></dl>";
+
+
+  var obj2 = Object.values(object2);
+  var heading2 = document.createElement("h2");
+  heading2.style.cssText = "font-size:32px;border-bottom:1px solid #1d70b8";
+  heading2.innerHTML = "Interview criteria";
+  heading2.setAttribute("class","govuk-!-margin-top-6");
+  pair.appendChild(heading2)
+
+  for (things in obj2) {
+    var row2 = document.createElement("div");
+    row2.style.cssText = "margin-bottom:-9px;height:90px;size:20px"
+    row2.innerHTML = "<div class='govuk-form-group'><fieldset class='govuk-fieldset'><div class='govuk-checkboxes govuk-checkboxes--small' data-module='govuk-checkboxes'><div class='govuk-checkboxes__item'><input class='govuk-checkboxes__input' id='essCritInterview"+[things+1]+"' name='essCritInterview' type='checkbox' value='"+obj2[things].criteria+"'><label style='font-size:20px;' class='govuk-label govuk-checkboxes__label' for='essCritInterview"+[things+1]+"'>"+obj2[things].element+":<BR>"+obj2[things].criteria+"</label></div></div></fieldset></div>";
+      pair.appendChild(row2);
+    }
+
+
+  </script>
+
+  {% endblock %}

@@ -1,0 +1,298 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+
+  {% block pageTitle %}
+  Home – {{ serviceName }} – GOV.UK Prototype Kit
+  {% endblock %}
+
+  {% block beforeContent %}
+  <div id="bluePanel" style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+    <!-- <div style="position:absolute;top:4px; right:62px"> -->
+
+    <a href="#"><img src="/public/images/search.png" style="float:right;margin-right:30px;padding:10px;;width:20px"></a>
+
+
+
+
+
+
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="40" height="40"><path d="M25.7 24.8L21.9 21c.7-1 1.1-2.2 1.1-3.5 0-3.6-2.9-6.5-6.5-6.5S10 13.9 10 17.5s2.9 6.5 6.5 6.5c1.6 0 3-.6 4.1-1.5l3.7 3.7 1.4-1.4zM12 17.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5-4.5-2-4.5-4.5z" fill="#ffffff"/></svg> -->
+    <!-- </div> -->
+    <div  style="position:relative;float:right;width:40%;margin-right:30px;margin-top:-3px">
+      <div class="govuk-form-group">
+        <!-- <label style="float:left;color:white;margin-right:0;margin-top:0px;font-size:20px;;" class="govuk-label-s" for="width-20">Search</label> -->
+
+        <!-- <input onClick="this.value=''" onFocusOut="this.value='Search'" style="width:35%;height:40px;margin-left:20px;float:right;;font-size:16px;background:white ;border:1px solid #1d70b8;border-radius:5px;" class="govuk-input govuk-input--width-10" value="Search" id="width-20" name="width-20"  type="text"> -->
+
+      </div>
+
+
+
+    </div>
+
+      <div class="" style="position:relative;left:right;margin-right:20px;margin-top:4px">
+
+  <span class="govuk-body-m" style="margin-left:30px;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/job-library"><strong>Create a vacancy</strong></a></span>
+
+      </div>
+
+  </div>
+
+
+
+
+
+
+  {% endblock %}
+  {% block content %}
+  <div class="govuk-grid-row" >
+    <div style="width:100%;height:80px">
+      <div>
+        <div class="govuk-grid-column-full">
+
+
+
+              <!-- <div class="govuk-!-margin-top-7" style="position:absolute;float:left;width:20%;margin-left:250px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="#"><strong>Sift</strong></a></span>
+</div>
+
+<div class="govuk-!-margin-top-7" style="position:absolute;float:left;width:20%;margin-left:310px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="#"><strong>Interview</strong></a></span>
+</div> -->
+
+
+
+
+            <!-- <div class="govuk-grid-column-one-quarter govuk-!-padding-top-1 govuk-!-margin-left-3" style="background:#f3f2f1;padding:10px;width:20%;height:600px;">
+              <div class="govuk-!-margin-top-3" style="background:white;padding:10px;border:1px solid #B1B4B6">
+                <ul class=" govuk-!-margin-top-0 govuk-list govuk-list--bullet-" >
+                  <li style="padding-left:5px;padding-right:5px;" ><strong><p style="line-height:1.5;font-weight:bold;" class="govuk-body-s"><a style=";" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="">Create a vacancy</a></p></li>
+                  <li style=";padding-left:5px;padding-right:5px;"><strong><p style ="line-height:1.5;font-weight:bold" class="govuk-body-s"><a style=";" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="">View vacancies</a></p></li>
+                  <li style=";padding-left:5px;padding-right:5px;"><strong><p style ="line-height:1.5;font-weight:bold" class="govuk-body-s"><a style=";" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="">Help</a></p></li>
+               </ul>
+              </div>
+            </div> -->
+
+
+            <!-- <H1 style="float:right;padding-bottom:25px; padding-right:30px" class="govuk-heading-l govuk-!-margin-top-3 govuk-!-margin-bottom-6">Welcome back, Jane Smith</H1> -->
+
+
+            <div class="govuk-!-padding-top-9" style="background:white;padding:30px;height:850px;;;border:1px solid lightgrey">
+                    <div style="" class="govuk-tabs govuk-!-margin-top-3 "  data-module="govuk-tabs">
+                      <h2  class="govuk-tabs__title">
+
+                        Contents
+                      </h2>
+                      <ul class="govuk-tabs__list"  >
+                        <li class="govuk-tabs__list-item" >
+                          <a class="govuk-tabs__tab" href="#past-month" >
+                            <p style="color:#1d70b8;font-size:20px;font-weight:bold;height:0px" id="timestop"></p>
+                          </a>
+                        </li>
+                        <li style="font-weight:bold;" class="govuk-tabs__list-item" >
+                          <a style="color:#1d70b8;font-size:20px" class="govuk-tabs__tab" href="#past-week">
+                            My vacancies
+                          </a>
+                        </li>
+                        <li style=";;font-weight:bold;" class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                          <a style="color:#1d70b8;font-size:20px" class="govuk-tabs__tab" href="#past-day">
+                            Messages
+                          </a>
+                        </li>
+
+
+
+                      </ul>
+
+
+                      <div class="govuk-tabs__panel" style="height:725px;background:white" id="past-day">
+                        <table class="govuk-table" >
+                          <thead class="govuk-table__head" >
+                            <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8">
+                              <th style="padding-left:10px;background: #F4FAFF;color:#1d70b8;width:20%;" scope="col" class="govuk-table__header">Date⇕</th>
+                              <th scope="col" class="govuk-table__header" style="width:20%;background: #F4FAFF;color:#1d70b8;">Job⇕</th>
+
+                              <th scope="col" class="govuk-table__header" style="width:40%;background: #F4FAFF;color:#1d70b8;">Message⇕</th>
+                            </tr>
+                          </thead>
+                          <tbody class="govuk-table__body" >
+                            <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8;">
+                              <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><strong>Wed 26 Apr</strong></td>
+                              <td class="govuk-table__cell" style="background: white;;"><strong><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="home?cta=none">Product manager</a></strong></td>
+
+                              <td class="govuk-table__cell" style="background: white;;"><strong><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="home?cta=none">Request for reasonable adjustment received.</a></strong></td>
+                            </tr>
+                            <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8;">
+                              <td class="govuk-table__cell" style="padding-left:10px;background: white;">Mon 24 Apr</td>
+                              <td class="govuk-table__cell" style="background: white;;"><a href="#" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state">Product manager</a></td>
+
+                              <td class="govuk-table__cell" style="background: white;;"><a href="#" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state">Candidate would like to discuss role.</a></td>
+                            </tr>
+                            <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8;">
+                              <td class="govuk-table__cell" style="padding-left:10px;background: white;;">Fri 21 Apr</td>
+                              <td class="govuk-table__cell" style="background: white;;"><a href="#" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state">Product manager</a></td>
+                              <td class="govuk-table__cell" style="background: white;"><a href="#" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state">Published to live.</td>
+
+                            </tr>
+                            <!-- <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">Fri 19 Apr</td>
+                              <td class="govuk-table__cell"><a href="#">Delivery manager (10219)</a> closes today at 00:01.</td></td>
+                              <td class="govuk-table__cell"><a href="#">Share</a></td>
+                            </tr> -->
+
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" style="height:725px;background:white" id="past-week">
+
+                        <table class="govuk-table">
+
+                          <thead class="govuk-table__head">
+                            <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8">
+                              <th scope="col" class="govuk-table__header" style="width:20%;background: #F4FAFF;color:#1d70b8;">Last mod.</th>
+                              <th style=";background: #F4FAFF;padding-left:10px;;color:#1d70b8;width:15%;" scope="col" class="govuk-table__header">Ref.</th>
+                              <th style=";background: #F4FAFF;padding-left:10px;;color:#1d70b8;width:35%;" scope="col" class="govuk-table__header">Job⇕</th>
+                              <th scope="col" class="govuk-table__header" style="width:15%;background: #F4FAFF;color:#1d70b8;">Grade⇕</th>
+
+
+                              <th scope="col" class="govuk-table__header" style="width:15%;background: #F4FAFF;color:#1d70b8;">Status⇕</th>
+                            </tr>
+                          </thead>
+
+
+
+                          <tbody class="govuk-table__body">
+
+
+                            {% if data['temp-copy-input-autocomplete'].length > 1 %}
+
+                            <tr id="newJob" class="govuk-table__row" style=";border-bottom:0.5px solid #1d70b8;">
+                              <td class="govuk-table__cell" style="background: white;;"><strong id="dated">tmp</strong></td>
+
+                              <td class="govuk-table__cell" style=";padding-left:10px; background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="task-list-exp-co"><strong>224220</strong></a></td>
+                              <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="task-list-exp-co"><strong>{{ data['temp-copy-input-autocomplete']}}</strong></a></td>
+                              <td class="govuk-table__cell" style="width:30%;background: white;;"><strong>{{data['grade']}}</strong></td>
+
+                              <td class="govuk-table__cell" style="background: white;"><strong style="font-size:16px;" class="govuk-tag govuk-tag--green">set-up</strong></td>
+                            </tr>
+                            {% endif %}
+                            <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8;">
+                              <td class="govuk-table__cell" style="background: white;;">14 Sep 2022</td>
+
+                              <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="home?cta=none">210220</a></td>
+                              <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="home?cta=none">Product manager</a></td>
+                              <td class="govuk-table__cell" style="width:30%;background: white;;">Grade 7</td>
+
+                              <td class="govuk-table__cell" style="background: white;"><strong style="font-size:16px;" class="govuk-tag govuk-tag--grey">CLOSED</strong></td>
+                            </tr>
+
+                            <!-- <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">Fri 19 Apr</td>
+                              <td class="govuk-table__cell"><a href="#">Delivery manager (10219)</a> closes today at 00:01.</td></td>
+                              <td class="govuk-table__cell"><a href="#">Share</a></td>
+                            </tr> -->
+
+                          </tbody>
+
+
+
+
+
+                        </table>
+                      </div>
+                      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" style="height:725px;background:white" id="past-month">
+                        <h2 class="govuk-heading-l"></h2>
+                        <table class="govuk-table">
+
+                          <div class="govuk-grid-row">
+                          <div class="govuk-grid-column-one-third" style="width:30%;height:200px;border:5px dotted lightgrey;margin-left:20px">
+
+
+
+                          </div>
+                          <div class="govuk-grid-column-one-third" style="width:30%;height:200px;border:2px dashed lightgrey;margin-left:20px">
+
+
+                          </div>
+                          <div class="govuk-grid-column-one-third" style="width:30%;height:200px;border:2px dashed lightgrey;margin-left:20px">
+
+
+
+
+                          </div>
+                          </div>
+
+                          <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                              <!-- <th style="border:0px" scope="col" class="govuk-table__header"></th>
+                              <th style="border:0px" scope="col" class="govuk-table__header"></th>
+                              <th style="border:0px" scope="col" class="govuk-table__header"></th> -->
+                            </tr>
+                          </thead>
+                          <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                              <!-- <td style="border:0px" class="govuk-table__cell"></td>
+                              <td style="border:0px" class="govuk-table__cell"></td>
+                              <td style="border:0px" class="govuk-table__cell"></td> -->
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- <strong style="font-size:10px;" class="govuk-!-margin-bottom-1 govuk-!-margin-top-6 govuk-!-margin-left-0 govuk-tag">beta</strong><p  style="display:inline;padding-left:10px;font-size:12px;"><strong><a href"">Feedback</a></strong></p> -->
+
+                    </div>
+                    <!-- <div class="govuk-!-margin-left-0" style="height:90px;width:36%;background:white ;border:0.5px solid grey;border-radius:2px">
+
+                      <img class="govuk-!-margin-left-3 govuk-!-margin-top-6" src="/public/images/dash1.png" style="height:50px;;padding-left:0px;padding-right:0px;margin-right:5px;"> -->
+
+                    <!-- </div>
+                    <div class="govuk-!-margin-left-0" style="height:90px;width:36%;background:white ;border:0.5px solid grey;border-radius:2px">
+
+                  </div>
+
+
+                  </div> -->
+
+
+
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <script>
+const todayDay = document.getElementById('timestop');
+            const todaystamp = new Date();
+            const tickTock = todaystamp.toLocaleDateString('en-uk', { weekday:"long", day:"numeric", month:"long" }) ;
+            todayDay.innerHTML = tickTock;
+
+
+
+
+  const dateField = document.getElementById('dated');
+  console.log(dateField)
+
+
+            if (dateField.outerText == "tmp"){
+              const stamp = new Date();
+              const localStamp = stamp.toLocaleDateString('en-uk', { day:"numeric", month:"short", year:"numeric" }) ;
+              dateField.innerHTML = localStamp;
+
+            }
+
+
+
+
+
+
+
+
+
+          </script>
+
+        {% endblock %}

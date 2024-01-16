@@ -1,0 +1,229 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Score interviews</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+<form class="form" action="#" method="post">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-Full" style="">
+    <span class="govuk-caption-l">Score interview</span>
+
+    <h1 class="govuk-heading-xl">Candidate 3</h1>
+
+
+
+
+
+
+
+            </div>
+
+
+            <div class="govuk-!-margin-bottom-0 govuk-!-margin-top-6" style=";border-bottom:1px solid #1d70b8;padding:10px">
+              <!-- <span class="govuk-!-margin-bottom-0 govuk-!-margin-top-3 govuk-caption-xl" style=";font-weight:bold;text-align: left;">Criteria 1</span>
+              <h3 class="govuk-!-margin-bottom-3 govuk-!-margin-top-0 govuk-heading-l" style=";font-weight:normal;text-align: left;"><strong>Lorem ipsum</strong></h3> -->
+            </div>
+            <div class="govuk-!-margin-bottom-0" style="border:0px solid lightgrey;background:#f3f2f1;padding:20px">
+                <div class="govuk-!-margin-top-4" style="padding-right:20px;">
+
+                <div class="govuk-!-margin-top-4" style="padding-right:20px;">
+                  <!-- <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                      <span style="font-size:22px;font-weight:bold" class="govuk-details__summary-text">
+                        Scoring - marking scheme
+                      </span>
+                    </summary>
+                    <div style="width:99.5%;background:white" class="govuk-details__text">
+                      <ul style="font-size:18px;line-height:1.9;" class="govuk-list govuk-list--number">
+                        <li><strong>Not Demonstrated</strong> No positive evidence provided</li>
+                        <li><strong>Minimal Demonstration</strong> Limited positive evidence provided</li>
+                        <li><strong>Moderate Demonstration</strong> Moderate positive evidence provided</li>
+                        <li><strong>Acceptable Demonstration</strong> Adequate positive evidence provided</li>
+                        <li><strong>Good Demonstration</strong> Substantial positive evidence provided</li>
+                        <li><strong>Strong Demonstration</strong> Substantial, positive evidence provided including some evidence of exceeding expectations</li>
+                        <li><strong>Outstanding Demonstration</strong> - Evidence provided wholly exceeds expectation at this level</li>
+                      </ul>
+
+                    </div>
+                  </details> -->
+                </div>
+
+              </div>
+
+
+
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                  {{ govukSelect({
+                    id: "score",
+                    name: "score",
+                    label: {
+                      text: "Score",
+                      classes: "govuk-label--s"
+                    },
+                    items: [
+                    {
+                      value: "1",
+                      text: "1"
+                    },
+                    {
+                      value: "2",
+                      text: "2"
+                    },
+                    {
+                      value: "3",
+                      text: "3",
+                      selected: true
+                    },
+                    {
+                      value: "4",
+                      text: "4"
+                    },
+                    {
+                      value: "5",
+                      text: "5"
+                    },
+                    {
+                      value: "6",
+                      text: "6"
+                    },
+                    {
+                      value: "7",
+                      text: "7"
+                    },
+                    {
+                      value: "---",
+                      text: "---"
+                    }
+                    ]
+                  }) }}
+
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                  {{ govukSelect({
+                    id: "reason",
+                    name: "reason",
+                    label: {
+                      text: "Reason",
+                      classes: "govuk-label--s"
+                    },
+                    items: [
+                    {
+                      value: "experienceLow",
+                      text: "Not enough experience",
+                      selected: true
+                    },
+                    {
+                      value: "experienceHigh",
+                      text: "High level of experience"
+                    },
+                    {
+                      value: "relevanceLow",
+                      text: "Not relevant to role"
+                    },
+                    {
+                      value: "relevanceHigh",
+                      text: "Very relevant to role"
+                    },
+                    {
+                      value: "exampleLow",
+                      text: "No or poor example given"
+                    },
+                    {
+                      value: "exampleHigh",
+                      text: "Strong example given"
+                    },
+                    {
+                      value: "---",
+                      text: "---"
+                    }
+                    ]
+                  }) }}
+                </div>
+              </div>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                  {{ govukInput({
+                    label: {
+                      text: "Additional feedback for candidates (optional)"
+                    },
+                    classes: "govuk-input--width-50",
+                    id: "feedback",
+                    name: "feedback",
+                    value: "Would expect at least 2 years experience for this role"
+                  }) }}
+
+                  {{ govukInput({
+                    label: {
+                      text: "Notes for the panel, not seen by candidate (optional)"
+                    },
+                    classes: "govuk-input--width-50",
+                    id: "feedback",
+                    name: "feedback",
+                    value: "Less than 1 year experience"
+                  }) }}
+                </div>
+              </div>
+            </div>
+
+            <div class="govuk-!-margin-top-6" style="border:0px solid lightgrey;background:#f3f2f1;padding:20px">
+              <h4 class="govuk-heading-m" style="background:white;padding-left:20px;padding-top:20px;padding-bottom:20px;padding-left:20px;max-height:800px;">Smith Clark (Panel)</h4>
+              <div class="govuk-!-margin-top-4" style="padding-right:20px;">
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span style="font-size:22px;font-weight:bold" class="govuk-details__summary-text">
+                      Scoring - marking scheme
+                    </span>
+                  </summary>
+                  <div style="width:99.5%;background:white" class="govuk-details__text">
+                    <ul style="font-size:18px;line-height:1.9;" class="govuk-list govuk-list--number">
+                      <li><strong>Not Demonstrated</strong> No positive evidence provided</li>
+                      <li><strong>Minimal Demonstration</strong> Limited positive evidence provided</li>
+                      <li><strong>Moderate Demonstration</strong> Moderate positive evidence provided</li>
+                      <li><strong>Acceptable Demonstration</strong> Adequate positive evidence provided</li>
+                      <li><strong>Good Demonstration</strong> Substantial positive evidence provided</li>
+                      <li><strong>Strong Demonstration</strong> Substantial, positive evidence provided including some evidence of exceeding expectations</li>
+                      <li><strong>Outstanding Demonstration</strong> - Evidence provided wholly exceeds expectation at this level</li>
+                    </ul>
+
+                  </div>
+                </details>
+              </div>
+
+
+
+
+
+
+            {{ govukButton({
+              text: "Next candidate"
+            }) }}
+
+</form>
+
+
+              {% endblock %}

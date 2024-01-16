@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+  {% block beforeContent %}
+  <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+    <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+  </div> -->
+  <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">View and submit my scores</span>
+
+  <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
+
+  </div>
+
+  </div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <span class="govuk-caption-l">Policy Adviser (1001334)</span>
+<h1 class="govuk-heading-xl">Consensus meeting for sift results</h1>
+<p class="gov-body-m"><strong>Arrange a panel consensus meeting to make sure the average score for candidates are correct before confirming the sift results:</strong></p>
+
+<div style="width:70%">
+{{ govukTable({
+  caption: "",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Candidate",
+      classes: 'app-custom-class'
+
+    },
+    {
+      text: "Average score",
+      classes: 'app-custom-class'
+    }
+  ],
+  rows: [
+    [
+      {
+        html: "<a class='govuk-body-m govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' style='font-weight:bold' href='/csu71/sift/1001334-applicant-4'>Firstname Surname</a>"
+
+
+      },
+      {
+        text: "33"
+      }
+    ],
+    [
+      {
+                html: "<a class='govuk-body-m govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' style='font-weight:bold' href='/csu71/sift/1001334-applicant-3.html'>Firstname Surname</a>"
+      },
+      {
+        text: "31"
+      }
+    ]
+
+  ]
+}) }}
+</div>
+
+
+    <h2 class="govuk-heading-l govuk-!-margin-top-9">Next steps</h2>
+
+    <ol class="govuk-list govuk-list--number">
+      <li><a class="govuk-body-m govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" style="margin-bottom:30px;margin-top:30px;font-weight:bold" href="">Email the panel</a> to arrange a consensus meeting.</li>
+
+
+  <li style="margin-top:30px;">At the meeting, you should:
+    <ul class="govuk-list govuk-list--bullet">
+      <li>review selected applicants</li>
+      <li>decide if you will interview, reject, or place the applicant on hold (to interview at a later date)</li>
+      </ul>
+      <li>Once you have confirmed the sift results, interview preparations can commence with the finalised interview list.</li>
+</ol>
+
+{{ govukButton({
+  text: "Return to the task list",
+  classes:"govuk-!-margin-top-6",
+  href: "/csu71/sift/task-list"
+}) }}
+
+{% endblock %}
