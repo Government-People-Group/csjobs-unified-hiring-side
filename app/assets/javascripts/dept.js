@@ -94,6 +94,7 @@ var department = [
 "Higher Education Funding Council for Wales",
 "His Majesty's Inspectorate of Constabulary and Fire &amp; Rescue Services",
 "Historic Environment Scotland",
+"HMRC",
 "HM Courts and Tribunals Service",
 "HM Crown Prosecution Service Inspectorate",
 "HM Land Registry",
