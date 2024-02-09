@@ -1,0 +1,260 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Interview</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+  p, div {
+    font-family: "GDS Transport", arial, sans-serif;
+    line-height: 1.2;
+  }
+
+</style>
+
+
+<div class=""style="position:relative">
+
+  <div class=""style="position:absolute; right:0px;bottom:-0px">
+
+
+    <div class="govuk-form-group" style="position:absolute; left:70px;bottom:-140px">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+  <div class="govuk-form-group" style="position:absolute; left:120px;bottom:-160px">
+
+    <select class="govuk-select" id="sort" name="sort">
+      <option value="published">Recently published</option>
+      <option value="updated" selected>Recently updated</option>
+      <option value="views">Most views</option>
+      <option value="comments">Most comments</option>
+    </select>
+  </div>
+
+  <div class="govuk-form-group" style="position:absolute; left:350px;bottom:-160px">
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--s" for="event-name">
+  From    </label>
+    </h1>
+    <input class="govuk-input govuk-input govuk-input--width-5" id="event-name" name="event-name" type="text">
+  </div>
+
+  <div class="govuk-form-group" style="position:absolute; left:470px;bottom:-160px;">
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--s" for="event-name">
+        To
+      </label>
+    </h1>
+    <input class="govuk-input govuk-input govuk-input--width-5" id="event-name" name="event-name" type="text">
+  </div>
+  </div>
+
+</div>
+
+
+<form class="form" action="/csu71/sift/task-list" method="post">
+
+  <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Schedule</H1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter" style="">
+
+
+      <ul class="govuk-!-margin-top-6 govuk-list govuk-list--bullet-">
+        <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph2"><strong>Schedule</a></p></strong></li>
+        <!-- <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview"><strong>Setup interview</a></p></strong></li> -->
+
+        <!-- <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph3"><strong>Assessment</a></p></strong></li>
+        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph4-1"><strong>Questions</a></p></strong></li>
+        <li><strong><p style ="border-left:5px solid white;;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph1"><strong>Type of interview</a></p></strong></li>
+
+        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-check-answers"><strong>Review interview setup</a></p></strong></li> -->
+      </ul>
+    </div>
+    <div class="govuk-!-margin-top-6 govuk-grid-column-three-quarters">
+
+<H2 style="" class="govuk-heading-l govuk-!-padding-bottom-6">Your availability</h2>
+
+
+
+
+
+  </div>
+
+  <input type="hidden" id="densityCheck" name="source" value="{{ data['density']}}">
+
+
+
+
+  <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Continue</button>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+</FORM>
+
+
+<script>
+  var densityCheck = document.getElementById('densityCheck').value;
+
+  var from = JSON.parse(window.sessionStorage.getItem("fromDate"));
+  var to = JSON.parse(window.sessionStorage.getItem("toDate"));
+
+  // console.log(from)
+  // console.log(to)
+
+  var dDay = new Date(from)
+  var tDay = new Date(to)
+  const tickTock = dDay.toLocaleDateString('en-uk', { day:"numeric"}) ;
+
+  const tickTock2 = tDay.toLocaleDateString('en-uk', { day:"numeric"}) ;
+
+  var tweenDays = tickTock2 - tickTock;
+
+  const dateArray = [];
+  dateArray.push(dDay.toLocaleDateString('en-uk', { weekday:"short", day:"numeric", month:"short"}));
+
+    for (var d=0; d<=tweenDays-1;d++){
+
+
+      dDay.setDate(dDay.getDate() + 1 );
+      console.log(dDay)
+
+      const checkDay = dDay.toLocaleDateString('en-uk', { weekday:"short"}) ;
+      if (checkDay === "Sat" || checkDay === "Sun") {
+      } else {
+        dateArray.push(dDay.toLocaleDateString('en-uk', { weekday:"short", day:"numeric", month:"short", month:"short"}));
+      }
+
+    }
+  // console.log(dateArray)
+  console.log(dateArray)
+
+  for (var k = 0; k < dateArray.length; k++) {
+    var wrapper = document.createElement("div");
+    wrapper.id = "divWrapID";
+
+    //
+    // if (densityCheck == "6"){
+    //   wrapper.style.cssText = "margin-bottom:20px;width:400px;min-height:330px;background:white;border:1px solid #1d70b8;";
+    // } else if (densityCheck = "4"){
+    //   wrapper.style.cssText = "margin-bottom:20px;width:400px;min-height:290px;background:white;border:1px solid #1d70b8;";
+    // } else if (densityCheck = "2"){
+    //   wrapper.style.cssText = "margin-bottom:20px;width:400px;min-height:130px;background:white;border:1px solid #1d70b8;";
+    // }
+
+    wrapper.style.cssText = "position:relative;margin-bottom:20px;width:300px;min-height:330px;background:white;border:1px solid #1d70b8;";
+    wrapper.setAttribute("id","div"+k);
+    var date = document.createElement("h3");
+    date.innerHTML = dateArray[k];
+    date.style.cssText = "font-size:20px;text-indent:10px;width:100%;background:#f3f2f1;;margin-top:-0px;height:45px;margin-top:0px;padding-top:5px;";
+    date.setAttribute("id","date"+k);
+    wrapper.appendChild(date);
+
+
+//
+//
+//
+//
+//  for (var y=1;y<densityCheck;y++){
+//
+//
+//
+//     var checkBox = document.createElement("input");
+//     var checkBox1 = document.createElement("input");
+//
+//
+//     checkBox.type = "checkbox";
+//     checkBox.innerHTML = "";
+//
+//     checkBox1.type = "checkbox";
+//     checkBox1.innerHTML = "";
+//
+//     checkBox1.setAttribute("id","chk"+k+y);
+//     checkBox1.style.cssText = "position:absolute;top:155px;left:10px;height:35px;width:35px";
+//
+//     checkBox.setAttribute("id","chk"+k+y);
+//     checkBox.style.cssText = "position:absolute;top:77px;left:10px;height:32px;width:32px";
+//     var tteexx1 = document.createElement("input")
+//     var tteexx2 = document.createElement("input")
+//     var tteexx3 = document.createElement("input")
+//     var tteexx4 = document.createElement("input")
+//
+//     tteexx1.type = "text";
+//     tteexx2.type = "text";
+//     tteexx1.value = "09:00"
+//     tteexx2.value = "17:00"
+//     tteexx1.style.cssText = "text-align:center;border:1px solid grey;border-radius:5px;font-size:26px;position:absolute;top:75px;left:65px;height:40px;width:90px";
+//     tteexx2.style.cssText = "text-align:center;border:1px solid grey;border-radius:5px;font-size:26px;position:absolute;top:75px;right:30px;height:40px;width:90px";
+//     tteexx1.setAttribute("id","date"+k+y);
+//     tteexx2.setAttribute("id","date2"+k+y);
+//     tteexx3.type = "text";
+//     tteexx4.type = "text";
+//     tteexx3.value = ""
+//     tteexx4.value = ""
+//     tteexx3.style.cssText = "text-align:center;border:1px solid grey;border-radius:5px;font-size:26px;position:absolute;top:155px;left:65px;height:40px;width:90px";
+//     tteexx4.style.cssText = "text-align:center;border:1px solid grey;border-radius:5px;font-size:26px;position:absolute;top:155px;right:30px;height:40px;width:90px";
+//     tteexx3.setAttribute("id","date"+k+y);
+//     tteexx4.setAttribute("id","date2"+k+y);
+//     wrapper.appendChild(checkBox);
+//     wrapper.appendChild(checkBox1);
+//     wrapper.appendChild(tteexx1)
+//     wrapper.appendChild(tteexx2)
+//     wrapper.appendChild(tteexx3)
+//     wrapper.appendChild(tteexx4)
+//     list1.appendChild(wrapper);
+// }
+// }
+
+</script>
+
+
+{% endblock %}

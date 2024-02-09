@@ -1,0 +1,351 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Interview</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="/csu71/task-list-exp-co" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl" >
+Draft interview questions
+      </h1>
+      <!-- <p class="govuk-body-m govuk-!-margin-bottom-1">How will the criteria and methods be configured to fit into 45 minutes etc lorem ipsum - order tc.</p> -->
+      <span class="govuk-body-l" style="">Behaviours</span>
+
+
+  <h2 class="govuk-heading-l">Seeing the Big Picture</h2>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+              Seeing the Big Picture example 1
+            </h1>
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+
+                <div class="govuk-form-group">
+                  <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--s" for="{{item}}">
+                      {{item}}
+                    </label>
+                  </h1>
+
+                  <textarea style="position:absolute;top:0;width:750px;height:80px" class="govuk-textarea govuk-!-padding-bottom-9" id="{{item}}" value="" name="{{item}}" rows="2" aria-describedby="more-detail-hint">Can you describe a time when you have had to bring together different viewpoints into one way forward? What was the situation? What did you do? What was the outcome?</textarea>
+                </div>
+
+
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group govuk-!-padding-top-9">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+            Seeing the Big Picture example 2
+            </h1>
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+
+                <div class="govuk-form-group">
+                  <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--s" for="{{item}}">
+                      {{item}}
+                    </label>
+                  </h1>
+
+                  <textarea style="position:absolute;top:0;width:750px;height:80px" class="govuk-textarea govuk-!-padding-bottom-9" id="{{item}}" value="" name="{{item}}" rows="2" aria-describedby="more-detail-hint">Can you tell me about a situation where you have used your understanding of departmental/organisation priorities in order to carry out an activity?</textarea>
+                </div>
+
+
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group govuk-!-padding-top-9">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+              Seeing the Big Picture example 3
+            </h1>
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+
+                <div class="govuk-form-group">
+                  <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--s" for="{{item}}">
+                      {{item}}
+                    </label>
+                  </h1>
+
+                  <textarea style="position:absolute;top:0;width:750px;height:80px" class="govuk-textarea govuk-!-padding-bottom-9" id="{{item}}" value="" name="{{item}}" rows="2" aria-describedby="more-detail-hint">Can you tell us about a time when you've had to solve a problem where the solution was not obvious?</textarea>
+                </div>
+
+
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+      <h2 class="govuk-heading-l govuk-!-padding-top-9">Changing and Improving</h2>
+
+
+        <div class="govuk-form-group ">
+          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h1 class="govuk-fieldset__heading">
+                Changing and Improving example 1
+              </h1>
+            </legend>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste">
+
+                  <div class="govuk-form-group">
+                    <h1 class="govuk-label-wrapper">
+                      <label class="govuk-label govuk-label--s" for="{{item}}">
+                        {{item}}
+                      </label>
+                    </h1>
+
+                    <textarea style="position:absolute;top:0;width:750px;height:80px" class="govuk-textarea govuk-!-padding-bottom-9" id="{{item}}" value="" name="{{item}}" rows="2" aria-describedby="more-detail-hint">Can you give me an example of when you had to deal with a difficult or complex change and had to encourage and support others to do the same?</textarea>
+                  </div>
+
+
+                </label>
+              </div>
+
+            </div>
+          </fieldset>
+        </div>
+
+
+
+          <div class="govuk-form-group  govuk-!-padding-top-9">
+            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h1 class="govuk-fieldset__heading">
+                  Changing and Improving example 2
+                </h1>
+              </legend>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                  <label class="govuk-label govuk-checkboxes__label" for="waste">
+
+                    <div class="govuk-form-group">
+                      <h1 class="govuk-label-wrapper">
+                        <label class="govuk-label govuk-label--s" for="{{item}}">
+                          {{item}}
+                        </label>
+                      </h1>
+
+                      <textarea style="position:absolute;top:0;width:750px;height:80px" class="govuk-textarea govuk-!-padding-bottom-9" id="{{item}}" value="" name="{{item}}" rows="2" aria-describedby="more-detail-hint">Can you describe a time when you have received a reaction to a piece of work or project that you were not expecting? How did you manage the situation?</textarea>
+                    </div>
+
+
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+
+
+
+
+                    <div class="govuk-form-group govuk-!-padding-top-9">
+                      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          <h1 class="govuk-fieldset__heading">
+                            Changing and Improving example 3
+                          </h1>
+                        </legend>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                            <label class="govuk-label govuk-checkboxes__label" for="waste">
+
+                              <div class="govuk-form-group">
+                                <h1 class="govuk-label-wrapper">
+                                  <label class="govuk-label govuk-label--s" for="{{item}}">
+                                    {{item}}
+                                  </label>
+                                </h1>
+
+                                <textarea style="position:absolute;top:0;width:750px;height:80px" class="govuk-textarea govuk-!-padding-bottom-9" id="{{item}}" value="" name="{{item}}" rows="2" aria-describedby="more-detail-hint">Can you tell us about a time when you've had to address an issue of diversity?</textarea>
+                              </div>
+
+
+                            </label>
+                          </div>
+
+                        </div>
+                      </fieldset>
+                    </div>
+
+
+                    <h2 class="govuk-heading-l govuk-!-padding-top-9">Leadership</h2>
+
+
+                      <div class="govuk-form-group ">
+                        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            <h1 class="govuk-fieldset__heading">
+                              Leadership example 1
+                            </h1>
+                          </legend>
+                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                              <label class="govuk-label govuk-checkboxes__label" for="waste">
+
+                                <div class="govuk-form-group">
+                                  <h1 class="govuk-label-wrapper">
+                                    <label class="govuk-label govuk-label--s" for="{{item}}">
+                                      {{item}}
+                                    </label>
+                                  </h1>
+
+                                  <textarea style="position:absolute;top:0;width:750px;height:80px" class="govuk-textarea govuk-!-padding-bottom-9" id="{{item}}" value="" name="{{item}}" rows="2" aria-describedby="more-detail-hint">Can you give me an example of when you had to deal with a difficult or complex change and had to encourage and support others to do the same?</textarea>
+                                </div>
+
+
+                              </label>
+                            </div>
+
+                          </div>
+                        </fieldset>
+                      </div>
+
+
+
+                        <div class="govuk-form-group  govuk-!-padding-top-9">
+                          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                              <h1 class="govuk-fieldset__heading">
+                                Leadership example 2
+                              </h1>
+                            </legend>
+                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                                <label class="govuk-label govuk-checkboxes__label" for="waste">
+
+                                  <div class="govuk-form-group">
+                                    <h1 class="govuk-label-wrapper">
+                                      <label class="govuk-label govuk-label--s" for="{{item}}">
+                                        {{item}}
+                                      </label>
+                                    </h1>
+
+                                    <textarea style="position:absolute;top:0;width:750px;height:80px" class="govuk-textarea govuk-!-padding-bottom-9" id="{{item}}" value="" name="{{item}}" rows="2" aria-describedby="more-detail-hint">Can you describe a time when you have received a reaction to a piece of work or project that you were not expecting? How did you manage the situation?</textarea>
+                                  </div>
+
+
+                                </label>
+                              </div>
+
+                            </div>
+                          </fieldset>
+                        </div>
+
+
+
+
+                                  <div class="govuk-form-group govuk-!-padding-top-9">
+                                    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                        <h1 class="govuk-fieldset__heading">
+                                          Leadership example 3
+                                        </h1>
+                                      </legend>
+                                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                                          <label class="govuk-label govuk-checkboxes__label" for="waste">
+
+                                            <div class="govuk-form-group">
+                                              <h1 class="govuk-label-wrapper">
+                                                <label class="govuk-label govuk-label--s" for="{{item}}">
+                                                  {{item}}
+                                                </label>
+                                              </h1>
+
+                                              <textarea style="position:absolute;top:0;width:750px;height:80px" class="govuk-textarea govuk-!-padding-bottom-9" id="{{item}}" value="" name="{{item}}" rows="2" aria-describedby="more-detail-hint">Can you tell us about a time when you've had to address an issue of diversity?</textarea>
+                                            </div>
+
+
+                                          </label>
+                                        </div>
+
+                                      </div>
+                                    </fieldset>
+                                  </div>
+
+
+    <!-- <p class="govuk-body-m" style="font-size:20px;line-height:1.6"><strong>77% of online jobsite users typically have a 'first look' at a job ad using their phone, and on average, spend just 11 seconds on the page.</strong></p>
+    <p class="govuk-body-s ">Source: Civil Service Jobs (2023), Cabinet Office.</p> -->
+
+    {{ govukButton({
+      classes:"govuk-!-margin-top-9",
+      text: "Continue"
+    }) }}
+
+
+
+  </div>
+  </div>
+
+  {% include '/csu71/includes/footerarea.html' %}
+
+
+      {% endblock %}

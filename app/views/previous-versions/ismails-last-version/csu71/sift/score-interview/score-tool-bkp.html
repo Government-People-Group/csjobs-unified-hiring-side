@@ -1,0 +1,163 @@
+  {% extends "layouts/main.html" %}
+  {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+  {% block header %}
+  {% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+  {% block beforeContent %}
+
+  <!-- <div  style="width:100%;background:#f3f2f1;height:125px;border-bottom:0.5px solid #1d70b8;float:left">
+    <span class="govuk-body-m" style="float:right;margin-right:20px;margin-top:20px;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
+
+    <div  style=";width:100;">
+    <h2 style="border-top:0px solid #1d70b8;;background:#f3f2f1;padding-top:20px;padding-bottom:20px" class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-padding-left-3"><span style="">Mei Chen
+    <strong style="margin-right:20px;float:right;font-size:20px;" class="govuk-tag govuk-tag" id="contact-details-status">14:32</strong>
+    </span></h2>
+    </div> -->
+    <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+  </div> -->
+  <!-- <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Score Interview</span> -->
+
+  <!-- <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+
+  </div> -->
+
+  <!-- </div> -->
+  <!-- <div style="position:absolute;top:50;left:370px;">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  </div>
+  {% endblock %}
+
+  {% block content %}
+  <style>
+  #content, html, body {
+      height: 98%;
+  }
+  #left {
+      float: left;
+      width: 110%;
+      height: 100%;
+      overflow: scroll;
+  }
+
+  #right {
+      float: left;
+      width: 100%;
+      height: 100%;
+      overflow: scroll;
+  }
+
+  div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+
+
+
+  </style> -->
+
+
+
+  <div class="govuk-width-container app-container">
+    <a href="#" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl">Page title</h1>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+
+  <!-- <div class="govuk-grid-row">
+    <div  class="govuk-grid-column-full"> -->
+
+
+  <!-- <div class="govuk-grid-column-one-half govuk-!-margin-top-3" style=";height:600px;">
+
+
+  <div id="content">
+
+    <div id="left">
+
+  <ul class="govuk-list govuk-list--number">
+
+
+
+
+  <div class="sticky" style="font-weight:bold;background:#f3f2f1;padding:10px;height:25px;;width:89%;">
+  Seeing the Big Picture</div>
+  <li style="width:80%;border:4px solid lightgrey;border-radius:5px;margin-top:10px;"><a class="padding-top:0px;govuk-link  govuk-link--no-underline govuk-link--no-visited-state"><div style="border-radius:0px;padding:10px;height:auto;;width:100%;background:white">
+  <p class="govuk-body-m">Can you describe a time when you have had to bring together different viewpoints into one way forward? What was the situation? What did you do? What was the outcome?
+  </p></div></a></li>
+
+
+  <div class="sticky" style="font-weight:bold;background:#f3f2f1;padding:10px;height:25px;;width:89%;">
+  Building engaging and effective relationships with stakeholders</div>
+  <li><a class="padding-top:0px;govuk-link  govuk-link--no-underline govuk-link--no-visited-state"><div style="border-radius:0px;padding:10px;height:auto;;width:90%;background:white">
+  <p class="govuk-body-m">Can you tell me about your experience of building a trusted advisor-style relationship with a stakeholder? Can you give me examples of how you were able to achieve this?</p></div></a></li>
+
+
+
+
+  <li style="padding-top:0px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#"><div style="padding:10px;;height:auto;;width:90%;background:white">
+  <p class="govuk-body-m">Praeterea iter est quasdam res quas ex communi. Paullum deliquit, ponderibus modulisque suis ratio utitur.
+  </p></div></a></li>
+
+  <li style="padding-top:0px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#"><div style="padding:10px;height:auto;;width:90%;background:white">
+  <p class="govuk-body-m">Praeterea iter est quasdam res quas ex communi. Paullum deliquit, ponderibus modulisque suis ratio utitur.
+  </p></div></a></li>
+  <div class="sticky" style="background:#f3f2f1;padding:10px;height:25px;;width:89%;font-weight:bold;">
+  Analytical</div>
+
+  <li style="padding-top:0px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#"><div style="padding:10px;;height:auto;;width:90%;background:white">
+  <p class="govuk-body-m">How does it make you feel when people shift the goalposts on a task?
+  </p></div></a></li>
+  <div class="sticky" style="background:#f3f2f1;padding:10px;height:25px;;width:89%;font-weight:bold;">
+  Challenger</div>
+  <li style="padding-top:0px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#"><div style="padding:10px;;height:auto;;width:90%;background:white">
+  What does a successful day look like?</div></a></li>
+  <div class="sticky" style="font-weight:bold;background:#f3f2f1;;padding:10px;height:25px;;width:89%;">
+  Problem solver</div>
+  <li style="padding-top:0px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#"><div style="padding:10px;;height:auto;;width:90%;background:white">
+  What aspect of problem solving do you least enjoy?</div></a></li>
+  <div class="sticky" style="background:#f3f2f1;;padding:10px;height:25px;;width:89%;font-weight:bold;">
+  Seeing the Big Picture</div>
+  <li style="padding-top:0px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#"><div style="padding:10px;;height:auto;;width:90%;background:white">
+  <p class="govuk-body-m">Praeterea iter est quasdam res quas ex communi. Paullum deliquit, ponderibus modulisque suis ratio utitur.
+  </p></div></a></li>
+  </ul>
+
+
+  </div>
+
+  </div></div>
+
+  <div class="govuk-grid-column-one-half  govuk-!-margin-top-3" style="background:#DEE0E2;height:600px;">
+    <div id="right">
+      <div class="sticky" style="font-weight:bold;background:#f3f2f1;padding:10px;height:25px;;width:99%;">
+      Seeing the Big Picture</div>
+    </div>
+  <div class="govuk-!-margin-top-0" style="width:100%; background:white;height:180px">
+
+
+
+  </div> -->
+
+
+
+
+
+  {% endblock %}

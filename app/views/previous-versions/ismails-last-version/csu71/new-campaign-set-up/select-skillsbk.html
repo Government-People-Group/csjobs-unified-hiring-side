@@ -1,0 +1,758 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Selection criteria and assessment methods</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<style>
+  .experiment {
+    background:#F4FAFF;
+    border-bottom:1px solid #1d70b8;
+    margin-top:5px;
+    margin-bottom:-20px;
+    padding-top:20px;
+    padding-left:20px;
+    padding-bottom:15px;
+    font-weight:bold;
+  }
+
+  p, div {
+    font-family: "GDS Transport", arial, sans-serif;
+    line-height: 1.2;
+    margin: 0.8
+  }
+  p, li {
+    font-size: 22px; line-height: 1.2;
+    vertical-align: text-top;
+  }
+
+
+  h2 {
+    font-size: 30px; line-height: 0.5;
+    vertical-align: text-top;
+  }
+
+  h3 {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: 22px;
+    font-weight:normal;
+    line-height: 1;
+    vertical-align: text-top;
+    padding-top:40px;
+  }
+
+  hint {
+    font-size: 18px;
+    font-weight:normal;
+    line-height: 1.2;
+    vertical-align: text-top;
+  }
+
+
+  input[type="checkbox"]:checked  {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    background: white;
+    height: 40px;
+    width: 40px;
+    border: 2px solid black;
+    color: black;
+  }
+
+  input[type="checkbox"]:after {
+    content:"";
+    position: absolute;
+    left: 40%;
+    top: 20%;
+    width: 15%;
+    height: 40%;
+    border: 5px solid #000000;
+    border-width: 0 4px 4px 0;
+    transform: rotate(45deg);
+    display: none;
+  }
+
+  input[type="checkbox"]:checked:after {
+    display: block;
+  }
+</style>
+<input id="templateName" type="hidden" name="templateName" value="ddat">
+
+<form class="form" action="/csu71/check-next-stepV5" method="post">
+  <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8;" class="govuk-heading-xl govuk-!-margin-top-1 govuk-!-margin-bottom-6">Technical skills</H1>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+
+      {% for items in data['selected'] %}
+      <ul class="govuk-!-margin-top-4 govuk-list govuk-list--bullet-">
+        {% if items == "skills" %}
+        <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="select-{{items }}"><strong>{{ items | capitalize }}</a></p></strong></li>
+        {% else %}
+        <li><strong><p style ="border-left:2px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="select-{{items }}"><strong>{{ items | capitalize }}</a></p></strong></li>
+      </ul>
+      {% endif %}
+      {% endfor %}
+
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      <div style=";position:relative">
+        <div style="width:65%;position:absolute:top:0;left:0">
+          {{ govukTextarea({
+            name: "skills-1",
+            id: "skills-1",
+            rows:3,
+            value: data['skills-1'],
+            label: {
+              text: "Technical skills 1",
+              classes: "govuk-label govuk-label--s"
+            }
+          }) }}
+        </div>
+
+        <div style=";width:25%;position:absolute;top:0;right:50px">
+          {{ govukSelect({
+            id: "skills-comp-1",
+            name: "skills-comp-1",
+            label: {
+              text: "Competence level",
+              classes: "govuk-label--s"
+            },
+            items: [
+            {
+              value: "none",
+              text: "Select level"
+            },
+            {
+              value: "Awareness",
+              selected: checked("skills-comp-1","Awareness"),
+              text: "Awareness"
+            },
+            {
+              value: "Working",
+              selected: checked("skills-comp-1","Working"),
+              text: "Working"
+            },
+            {
+              value: "Practitioner",
+              selected: checked("skills-comp-1","Practitioner"),
+              text: "Practitioner"
+            },
+            {
+              value: "Expert",
+              selected: checked("skills-comp-1" ,"Expert"),
+              text: "Expert"
+            }
+            ]
+          }) }}
+
+        </div>
+      </div>
+
+      <div style=";position:relative">
+        <div style="width:65%;position:absolute:top:0;left:0">
+          {{ govukTextarea({
+            name: "skills-2",
+            id: "skills-2",
+            rows:3,
+            value: data['skills-2'],
+            label: {
+              text: "Technical skills 2",
+              classes: "govuk-label govuk-label--s"
+            }
+          }) }}
+        </div>
+        <div style=";width:25%;position:absolute;top:0;right:50px">
+
+          {{ govukSelect({
+            id: "skills-comp-2",
+            name: "skills-comp-2",
+            label: {
+              text: "Competence level",
+              classes: "govuk-label--s"
+            },
+            items: [
+            {
+              value: "none",
+              text: "Select level"
+            },
+            {
+              value: "Awareness",
+              selected: checked("skills-comp-2","Awareness"),
+              text: "Awareness"
+            },
+            {
+              value: "Working",
+              selected: checked("skills-comp-2","Working"),
+              text: "Working"
+            },
+            {
+              value: "Practitioner",
+              selected: checked("skills-comp-2","Practitioner"),
+              text: "Practitioner"
+            },
+            {
+              value: "Expert",
+              selected: checked("skills-comp-2" ,"Expert"),
+              text: "Expert"
+            }
+            ]
+          }) }}
+
+        </div>
+      </div>
+
+
+      <div style=";position:relative">
+        <div style="width:65%;position:absolute:top:0;left:0">
+
+          {{ govukTextarea({
+            name: "skills-3",
+            id: "skills-3",
+            rows:3,
+            value: data['skills-3'],
+            label: {
+              text: "Technical skills 3",
+              classes: "govuk-label govuk-label--s"
+            }
+          }) }}
+        </div>
+        <div style=";width:25%;position:absolute;top:0;right:50px">
+          {{ govukSelect({
+            id: "skills-comp-3",
+            name: "skills-comp-3",
+            label: {
+              text: "Competence level",
+              classes: "govuk-label--s"
+            },
+            items: [
+            {
+              value: "none",
+              text: "Select level"
+            },
+            {
+              value: "Awareness",
+              selected: checked("skills-comp-3","Awareness"),
+              text: "Awareness"
+            },
+            {
+              value: "Working",
+              selected: checked("skills-comp-3","Working"),
+              text: "Working"
+            },
+            {
+              value: "Practitioner",
+              selected: checked("skills-comp-3","Practitioner"),
+              text: "Practitioner"
+            },
+            {
+              value: "Expert",
+              selected: checked("skills-comp-3" ,"Expert"),
+              text: "Expert"
+            }
+            ]
+          }) }}
+
+        </div>
+      </div>
+      <div id="skl3links" style="position:relative">
+      <a id="" style=";position:absolute;left:0px;top:-10px;color:#1d70b8" onclick="showHideDiv('s4','skl4links','skl3links')">Add another skill</a>
+      </div>
+
+
+      <div id="s4" style="display:none;position:relative">
+      <div  style=";width:65%;position:absolute:top:0;left:0">
+      {{ govukTextarea({
+        name: "skills-4",
+        id: "skills-4",
+        rows:3,
+        value: data['skills-4'],
+        label: {
+          text: "Technical skills 4",
+          classes: "govuk-label govuk-label--s"
+        }
+      }) }}
+      </div>
+
+    <div style=";;width:25%;position:absolute;top:0;right:50px">
+        {{ govukSelect({
+          id: "skills-comp-4",
+          name: "skills-comp-4",
+          label: {
+            text: "Competence level",
+            classes: "govuk-label--s"
+          },
+          items: [
+          {
+            value: "none",
+            text: "Select level"
+          },
+          {
+            value: "Awareness",
+            selected: checked("skills-comp-4","Awareness"),
+            text: "Awareness"
+          },
+          {
+            value: "Working",
+            selected: checked("skills-comp-4","Working"),
+            text: "Working"
+          },
+          {
+            value: "Practitioner",
+            selected: checked("skills-comp-4","Practitioner"),
+            text: "Practitioner"
+          },
+          {
+            value: "Expert",
+            selected: checked("skills-comp-4" ,"Expert"),
+            text: "Expert"
+          }
+          ]
+        }) }}
+
+      </div>
+    </div>
+
+    <div id="skl4links" style="display:none;position:relative">
+    <a  id="" style=";position:absolute;left:0px;top:-10px;color:#1d70b8" onclick="showDiv('s5');showDiv('skl5links');hideDiv('skl4links')">Add another skill</a>
+    <a  id="" style=";position:absolute;left:410px;;top:0px;color:#1d70b8" onclick="showDiv('skl3links');;hideDiv('s4');hideDiv('skl4links')">Delete</a>
+    </div>
+
+    <div id="s5" style="display:none;;position:relative">
+      <div  style="width:65%;position:absolute:top:0;left:0">
+        {{ govukTextarea({
+          name: "skills-5",
+          id: "skills-5",
+          rows:3,
+          value: data['skills-5'],
+          label: {
+            text: "Technical skills 5",
+            classes: "govuk-label govuk-label--s"
+          }
+        }) }}
+      </div>
+
+<div style=";;width:25%;position:absolute;top:0;right:50px">
+  {{ govukSelect({
+    id: "skills-comp-5",
+    name: "skills-comp-5",
+    label: {
+      text: "Competence level",
+      classes: "govuk-label--s"
+    },
+    items: [
+    {
+      value: "none",
+      text: "Select level"
+    },
+    {
+      value: "Awareness",
+      selected: checked("skills-comp-5","Awareness"),
+      text: "Awareness"
+    },
+    {
+      value: "Working",
+      selected: checked("skills-comp-5","Working"),
+      text: "Working"
+    },
+    {
+      value: "Practitioner",
+      selected: checked("skills-comp-5","Practitioner"),
+      text: "Practitioner"
+    },
+    {
+      value: "Expert",
+      selected: checked("skills-comp-5" ,"Expert"),
+      text: "Expert"
+    }
+    ]
+  }) }}
+
+      </div>
+      <div id="skl5links" style="display:none;position:relative">
+      <a  id="" style=";position:absolute;left:0px;top:-10px;color:#1d70b8" onclick="showDiv('s6');showDiv('skl6links');;hideDiv('skl5links')">Add another skill</a>
+      <a  id="" style=";position:absolute;left:410px;;top:0px;color:#1d70b8" onclick="showDiv('skl4links');;hideDiv('s5');hideDiv('skl5links')">Delete</a>
+      </div>
+    </div>
+
+
+    <div id="s6" style="display:none;;position:relative">
+      <div  style="width:65%;position:absolute:top:0;left:0">
+        {{ govukTextarea({
+          name: "skills-6",
+          id: "skills-6",
+          rows:3,
+          value: data['skills-6'],
+          label: {
+            text: "Technical skills 6",
+            classes: "govuk-label govuk-label--s"
+          }
+        }) }}
+      </div>
+
+    <div style=";;width:25%;position:absolute;top:0;right:50px">
+      {{ govukSelect({
+        id: "skills-comp-6",
+        name: "skills-comp-6",
+        label: {
+          text: "Competence level",
+          classes: "govuk-label--s"
+        },
+        items: [
+        {
+          value: "none",
+          text: "Select level"
+        },
+        {
+          value: "Awareness",
+          selected: checked("skills-comp-6","Awareness"),
+          text: "Awareness"
+        },
+        {
+          value: "Working",
+          selected: checked("skills-comp-6","Working"),
+          text: "Working"
+        },
+        {
+          value: "Practitioner",
+          selected: checked("skills-comp-6","Practitioner"),
+          text: "Practitioner"
+        },
+        {
+          value: "Expert",
+          selected: checked("skills-comp-6" ,"Expert"),
+          text: "Expert"
+        }
+        ]
+      }) }}
+
+      </div>
+
+
+    <div id="skl6links" style="display:none;position:relative">
+    <a  id="" style=";position:absolute;left:410px;top:0px;color:#1d70b8" onclick="showDiv('skl5links');;hideDiv('s6');hideDiv('skl6links')">Delete</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<span id='local-variable' style="display:none">{{ data['templateName'] }}</span>
+
+<input type="hidden" name="source" value="skills">
+
+
+
+<button class="govuk-button govuk-!-margin-top-9" onclick="checkCheckBoxes()" data-module="govuk-button">Continue</button>
+
+
+
+
+
+
+</FORM>
+
+<script>
+
+var picked = document.getElementById("templateName");
+console.log(picked)
+
+
+
+// renderDDaTSkills();
+
+  function checkCheckBoxes() {
+    var skillsCheck = [];
+
+    var checkboxS = document.getElementsByTagName('input');
+
+    for (i = 0; i < checkboxS.length; i++) {
+      if (checkboxS[i].type == 'checkbox' && checkboxS[i].checked ) {
+        skillsCheck.push(checkboxS[i].value);
+        window.sessionStorage.setItem("SkillsSelected", JSON.stringify(skillsCheck));
+      }
+    }
+  }
+
+
+
+
+
+  const myObjectName = document.getElementById('local-variable');
+
+  if (myObjectName.value == "ddat"){
+    // console.log(myObjectName.value)
+    // console.log(object)
+    document.getElementById("skillsFrame").style.display = 'none';
+
+  }
+
+  // console.log(businessAnalystDDaT)
+
+
+  function renderDDaTSkills(){
+    console.log("render")
+    var hea1 = document.getElementById("ddatSkills");
+
+
+    const object = JSON.parse(window.sessionStorage.getItem("ddatskills"));
+    console.log(object)
+    var obj0 = Object.values(object);
+    var level = obj0;
+
+    for (var t=0;t<=2;t++) {
+      console.log("loop")
+      // var label = document.createElement("label");
+      var checkBox = document.createElement("input");
+      var hint = document.createElement("hint");
+      var lev = document.createElement("p");
+      checkBox.type = "checkbox";
+      checkBox.style.cssText = "width: 30px;height: 30px;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -85px;";
+      // label.style.cssText = "display: block;padding-left: 15px;padding-top:25px;text-indent: 40px;";
+      lev.style.cssText = "display: block;padding-left: 15px;padding-top:10px;text-indent: 40px;";
+      hint.style.cssText = ";padding-top:10px;display: block;padding-left: 55px;";
+      // label.value = level[t].title;
+      console.log(level[t].description)
+      checkBox.value = level[t].title;
+      lev.value = level[t].level;
+      hint.value = level[t].description;
+
+      console.log(level[t].title)
+
+
+      checkBox.setAttribute("id","technicalskills-"+t);
+      checkBox.setAttribute("name","technicalskills");
+      label.appendChild(document.createTextNode(level[t].title));
+
+
+      lev.appendChild(document.createTextNode("Skill level: "+level[t].level));
+
+      hea1.appendChild(lev);
+      console.log(level[t].level)
+
+
+      hea1.appendChild(checkBox);
+      hint.appendChild(document.createTextNode(level[t].description));
+      hea1.appendChild(hint);
+
+
+
+      if (level[t].title == "Agile working" || level[t].title == "Business analysis" || level[t].title == "Stakeholder relationship management (business analysis)" || level[t].title == "Business process improvement" || level[t].title == "Systems analysis"){
+        label.setAttribute("class","experiment");
+        checkBox.checked = "true";
+      }
+      hea1.appendChild(label);
+
+    }
+  }
+
+
+
+  function showHideDiv(div1,div2,div3) {
+    document.getElementById(div1).style.display = 'block';
+    document.getElementById(div2).style.display = 'block';
+    document.getElementById(div3).style.display = 'none';
+
+  }
+
+
+
+
+
+
+        function showDiv(div1) {
+          document.getElementById(div1).style.display = 'block';
+
+        }
+
+        function hideDiv(div1) {
+          document.getElementById(div1).style.display = 'none';
+
+        }
+
+
+  function deleteDiv(data1, data2){
+    document.getElementById(data1).style.display = "none";
+    document.getElementById(data2).style.display = "block";
+  }
+
+  function getSkillsValues() {
+
+    var textA1 = document.getElementById('Technical skills 1');
+    var levelA1 = document.getElementById('Technical skills 1level');
+
+    var textA2 = document.getElementById('Technical skills 2');
+    var levelA2 = document.getElementById('Technical skills 2level');
+
+    var textA3 = document.getElementById('Technical skills 3');
+    var levelA3 = document.getElementById('Technical skills 3level');
+
+
+    var textA4 = document.getElementById('Technical skills 4');
+    var levelA4 = document.getElementById('Technical skills 4level');
+
+    var textA5 = document.getElementById('Technical skills 5');
+    var levelA5 = document.getElementById('Technical skills 5level');
+
+    var textA6 = document.getElementById('Technical skills 6');
+    var levelA6 = document.getElementById('Technical skills 6level');
+
+
+    // const object = JSON.parse(window.sessionStorage.getItem("behaviours"));
+    // var obj0 = Object.values(object.level0);
+    // var level = obj0;
+
+
+
+
+    // const skills = {}
+
+
+
+    // "skill6": {
+    //   "title": "",
+    //   "level": ""
+
+
+    function skill(title, level) {
+      this.title = title;
+      this.level = level;
+    }
+
+
+    const skill1 = new skill(textA1.value, levelA1.value);
+
+
+
+    const skill2 = new skill(textA2.value, levelA2.value);
+
+
+
+    const skill3 = new skill(textA3.value, levelA3.value);
+
+
+    const skill4 = new skill(textA4.value, levelA4.value);
+    const skill5 = new skill(textA5.value, levelA5.value);
+    const skill6 = new skill(textA6.value, levelA6.value);
+
+
+
+
+    const skills = {
+
+      skill1, skill2, skill3, skill4, skill5, skill6
+    }
+
+
+    window.sessionStorage.setItem("skills", JSON.stringify(skills));
+
+  }
+
+
+
+
+
+
+
+
+
+
+  const businessAnalystDDaT = {
+    "1": {
+      "title": "Agile working",
+      "description": "You can identify and compare the best processes or delivery methods to use, including measuring and evaluating outcomes. You can help the team to decide the best approach. You can help teams to manage and visualise outcomes, prioritise work and adhere to agreed minimum viable product (MVP), priorities and scope.",
+      "level": "practitioner"
+    },
+    "2": {
+      "title": "Business analysis",
+      "description": "You can advise on the approach to identify, investigate, analyse and communicate complex business problems and opportunities within a project or programme of work. You can inform tactical decision making and help to define longer-term strategic plans. You can recommend the approach to options analysis, feasibility assessment and operations, and can quantify potential business benefits. You can ensure the proposed solution aligns with business goals and objectives, and business and user needs, and achieves the required outcomes and expected benefits.",
+      "level": "practitioner"
+    },
+    "3": {
+      "title": "Business modelling",
+      "description": "You can lead on the modelling of processes, systems and data at varying levels of detail or complexity across a project or programme. You can manage the effects of proposed changes.",
+      "level": "practitioner"
+    },
+    "4": {
+      "title": "Business process improvement",
+      "description": "You can identify opportunities to improve business performance, within a project or programme. You can lead the analysis, identification, design, prioritisation and implementation of process and business changes to improve business operations and services. You can assess the feasibility of changes and recommend new approaches. You can support the implementation of proposed business improvements.",
+      "level": "practitioner"
+    },
+    "5": {
+      "title": "Business process testing",
+      "description": "You can lead on the application of business analysis and evaluation skills to support the design, execution and assessment of business process tests and usability evaluations within a project or programme of work.",
+      "level": "practitioner"
+    },
+    "6": {
+      "title": "Methods and tools",
+      "description": "You can build capability in methods and tools, ensuring they are adopted consistently and used effectively.",
+      "level": "practitioner"
+    },
+    "7": {
+      "title": "Requirements definition and management",
+      "description": "You can advise on the approach to requirements management within a project or programme. You can define the most appropriate requirements management life cycle methods and ensure the requirement can be traced in the design, build, test, tender and evaluation phases. You can co-ordinate and review the prioritisation of requirements and engage in the negotiation of solutions to help meet programme objectives.",
+      "level": "practitioner"
+    },
+    "8": {
+      "title": "Stakeholder relationship management (business analysis)",
+      "description": "You can lead on communicating with stakeholders, clarifying needs and commitments through consultation and consideration of consequences while focusing on user and business needs. You can develop or apply communication strategies to build relationships, using informal and formal channels to engage with stakeholders at all levels and resolving conflict where required.",
+      "level": "practitioner"
+    },
+    "9": {
+      "title": "Systems analysis",
+      "description": "You can lead the identification and analysis of IT system capabilities, developing models and system requirements. You can use systems analysis to support a deeper understanding of how processes and systems work, and to identify gaps. You can work with other digital professionals to design and develop system and user interfaces, identify gaps in functionality and assess the effect of proposed software changes on users or the organisation.",
+      "level": "practitioner"
+    },
+    "10": {
+      "title": "Testing (business analysis)",
+      "description": "You can advise on the approach to identify, investigate, analyse and communicate complex business problems and opportunities within a project or programme of work. You can inform tactical decision making and help to define longer-term strategic plans. You can recommend the approach to options analysis, feasibility assessment and operations, and can quantify potential business benefits. You can ensure the proposed solution aligns with business goals and objectives, and business and user needs, and achieves the required outcomes and expected benefits.",
+      "level": "practitioner"
+    },
+    "11": {
+      "title": "User experience analysis",
+      "description": "You can recommend the value of testing and apply the relevant tools and techniques to ensure test validity. You can advise on business scenarios and develop acceptance criteria to ensure requirements can be traced to develop functionality. You can review prototypes, test plans and test outcome reporting.",
+      "level": "practitioner"
+    },
+  }
+
+
+  window.sessionStorage.setItem("ddatskills", JSON.stringify(businessAnalystDDaT));
+
+
+</script>
+{% endblock %}

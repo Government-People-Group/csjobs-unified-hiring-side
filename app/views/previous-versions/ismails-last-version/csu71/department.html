@@ -1,0 +1,198 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Basic details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+  {% endblock %}
+
+
+{% block content %}
+<form class="form" action="templates-alt" method="post">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+  <h1 class="govuk-heading-xl">Create a new vacancy</h1>
+
+
+      <div class="govuk-form-group govuk-input--width-30">
+        <label for="autocomplete-default" class="govuk-label--m">Which department?</label>
+        <div id="department" class="autocomplete-wrapper"></div>
+      </div>
+
+
+        {{ govukSelect({
+          id: "proff",
+          name: "proff",
+          label: {
+            text: "",
+            classes: "govuk-label--m"
+          },
+          items: [
+          {
+            value: "none",
+            selected: "true",
+            disabled: "true",
+            text: "Select profession"
+          },
+          {
+            value: "Analysis",
+            text: "Analysis",
+            selected: checked("proff","Analysis")
+          },
+          {
+            value: "Commercial and Procurement",
+            text: "Commercial and Procurement",
+            selected: checked("proff","Commercial and Procurement")
+          },
+          {
+            value: "Corporate Finance",
+            text: "Corporate Finance",
+            selected: checked("proff","Corporate Finance")
+          },
+          {
+            value: "Communications",
+            text: "Communications",
+            selected: checked("proff","Communications")
+          },
+          {
+            value: "Counter Fraud",
+            text: "Counter Fraud",
+            selected: checked("proff","Counter Fraud")
+          },
+          {
+            value: "Digital, Data and Technology",
+            text: "Digital, Data and Technology",
+            selected: checked("proff","Digital, Data and Technology")
+          },
+          {
+            value: "Government Economic Service",
+            text: "Government Economic Service",
+            selected: checked("proff","Government Economic Service")
+          },
+          {
+            value: "Government Social Research",
+            text: "Government Social Research",
+            selected: checked("proff","Government Social Research")
+          },
+          {
+            value: "Finance",
+            text: "Finance",
+            selected: checked("proff","Finance")
+          },
+          {
+            value: "Human Resources",
+            text: "Human Resources",
+            selected: checked("proff","Human Resources")
+          },
+          {
+            value: "Intelligence Analysis",
+            text: "Intelligence Analysis",
+            selected: checked("proff","Intelligence Analysis")
+          },
+          {
+            value: "Internal Audit",
+            text: "Internal Audit",
+            selected: checked("proff","Internal Audit")
+          },
+          {
+            value: "International Trade and Negotiation",
+            text: "International Trade and Negotiation",
+            selected: checked("proff","International Trade and Negotiation")
+          },
+          {
+            value: "Knowledge &amp; Information Management",
+            text: "Knowledge &amp; Information Management",
+            selected: checked("proff","Knowledge &amp; Information Management")
+          },
+          {
+            value: "Legal",
+            text: "Legal",
+            selected: checked("proff","Legal")
+          },
+          {
+            value: "Medical",
+            text: "Medical",
+            selected: checked("proff","Medical")
+          },
+          {
+            value: "Occupational Psychology",
+            text: "Occupational Psychology",
+            selected: checked("proff","Occupational Psychology")
+          },
+          {
+            value: "Operational Delivery",
+            text: "Operational Delivery",
+            selected: checked("proff","Operational Delivery")
+          },
+          {
+            value: "Operational Research",
+            text: "Operational Research",
+            selected: checked("proff","Operational Research")
+          },
+          {
+            value: "Policy",
+            text: "Policy",
+            selected: checked("proff","Policy")
+          },
+          {
+            value: "Project Management and Delivery",
+            text: "Project Management and Delivery",
+            selected: checked("proff","Project Management and Delivery")
+          },
+          {
+            value: "Property",
+            text: "Property",
+            selected: checked("proff","Property")
+          },
+          {
+            value: "Science and Engineering",
+            text: "Science and Engineering",
+            selected: checked("proff","Science and Engineering")
+          },
+          {
+            value: "Security",
+            text: "Security",
+            selected: checked("proff","Security")
+          },
+          {
+            value: "Tax",
+            text: "Tax",
+            selected: checked("proff","Tax")
+          },
+          {
+            value: "Veterinary",
+            text: "Veterinary",
+            selected: checked("proff","Veterinary")
+          },
+          {
+            value: "Other",
+            text: "Other",
+            selected: checked("proff","Other")
+          }
+          ]
+        }) }}
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <p><a href="../sign-in">Save and sign out</a></p>
+        <script src="/public/javascripts/temp-copyd.js"></script>
+        <script src="/public/javascripts/dept.js"></script>
+        <script src="/public/javascripts/tmp.js"></script>
+
+
+
+
+
+    </FORM>
+    {% endblock %}

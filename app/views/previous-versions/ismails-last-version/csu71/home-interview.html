@@ -1,0 +1,455 @@
+{% extends "layouts/main.html" %}
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Home – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+
+<div id="bluePanel" style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <a href="#"><img src="/public/images/search.png" style="float:right;margin-right:30px;padding:10px;;width:20px"></a>
+
+
+  <div  style="position:relative;float:right;width:40%;margin-right:30px;margin-top:-3px">
+    <div class="govuk-form-group">
+    </div>
+
+  </div>
+
+  <div  style="position:relative;left:right;margin-right:20px;margin-top:4px">
+
+    <span class="govuk-body-m" style="margin-left:30px;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/job-library?firstNot=seen"><strong>Create a vacancy</strong></a></span>
+
+  </div>
+
+</div>
+
+
+{% endblock %}
+{% block content %}
+
+
+
+
+
+
+
+<div class="govuk-grid-row">
+  <div style="width:100%;height:80px">
+    <div>
+      <div class="govuk-grid-column-full">
+
+<div class="govuk-!-padding-top-6" style="background:white;padding:30px;height:850px;;;border:1px solid lightgrey">
+
+  <div class="govuk-tabs"  data-module="govuk-tabs">
+    <h2  class="govuk-tabs__title">
+      Contents
+    </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-day">
+  <strong style="color:#1d70b8">Policy Adviser (1001334)</strong>
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a style="font-weight:bold;font-size:20px" class="govuk-tabs__tab" href="#past-week">
+        <strong style="color:#1d70b8">Current vacancies [{{vacNum | default("3")}}]</strong>
+      </a>
+
+
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-month">
+          <strong style="font-weight:bold;font-size:20px;color:#1d70b8">Messages [1]</strong>
+      </a>
+      {% if data['firstNot'] !="seen" %}
+            <div style="margin-top:-7px;margin-left:14px;float:right;height:15px; width:15px;border-radius:20px; text-align:center;font-size:19px;background:red;color:white;font-weight:bold">
+            </div>
+
+      {% elif data['createVacancy'] == "true" %}
+      <div style="margin-top:-7px;margin-left:14px;float:right;height:15px; width:15px;border-radius:20px; text-align:center;font-size:19px;background:red;color:white;font-weight:bold">
+      </div>
+      {% set vacNum = "4" %}
+      {% endif %}
+    </li>
+  </ul>
+
+
+  <div class="govuk-tabs__panel" id="past-day">
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+
+
+            <div>
+              <h2 style="margin-left:10px;" class="govuk-heading-xl">Policy Adviser</h2>
+            </div>
+
+
+            <div class="govuk-grid-row">
+              {% if data['invites'] == "sent" %}
+              {% else %}
+
+              <div class="govuk-grid-column-one-third" style="background:#f3f2f1;padding:5px;width:30%;height:200px;border:1px dashed #1d70b8;margin-left:20px;margin-bottom:20px;;margin-top:60px">
+
+
+                <div id="reminder" style="display:none">
+
+
+
+                  <a href="/csu71/sift/task-list"><p class="govuk-body-m" style="color:#1d70b8;margin-top:30px;text-align:center;font-size:32px"><strong id="timestop">Sift complete</strong><br>now, time to...</p>
+                    <!-- <span class="govuk-body-m" style="width:120px;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px">Setup interviews</span> -->
+                    <p class="govuk-body-m" style="width:90%;background:WHITE;color:#1d70b8;height:26px;font-weight:bold;padding:10px;text-align:center;font-size:20px;border:2px solid #1d70b8;border-radius:7px">Setup interviews</p><a/>
+                </div>{% endif %}
+
+                <div id="interview-active">
+
+                  <a href="/csu71/sift/task-list"><p class="govuk-body-m" style="color:#1d70b8;margin-top:30px;text-align:center;font-size:32px"><strong>TODAY</strong><br>Mei Chen @14:00...</p>
+                    <!-- <span class="govuk-body-m" style="width:120px;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px">Setup interviews</span> -->
+                    <p class="govuk-body-m" style="width:90%;background:WHITE;color:#1d70b8;height:26px;font-weight:bold;padding:10px;text-align:center;font-size:20px;border:2px solid #1d70b8;border-radius:7px">Score interview</p><a/>
+                </div>
+
+
+              </div>
+
+              <div class="govuk-grid-column-two-thirds" style="background:WHITE;padding:5px;width:60%;height:200px;border:1px dashed #1d70b8;margin-left:20px;margin-bottom:20px;;margin-top:60px">
+                <h3 style="margin-top:10px;padding:5px;FONT-SIZE:32PX;" class="govuk-heading-m"><a href="/csu71/sift/task-list?leadConfirms=true" style="COLOR:#1d70b8">Track interview candidates</a></h3>
+
+              <div style="border-bottom:1px dashed #1d70b8" class="govuk-!-margin-top-3">
+                <strong style=";padding:5px;font-size:22px;font-weight:normal">Mei Chan</strong>
+
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="meiInterview"></strong>
+
+
+                {% if data['invites'] == "sent" %}
+                <strong style="font-size:16px;" class="govuk-tag govuk-tag--green app-task-list__tag">invites sent</strong></td>
+
+                {% else %}
+                <strong class="govuk-tag  app-task-list__tag" id="meiInterview">interview</strong>
+                {% endif %}
+              </div>
+              <div style="border-bottom:1px dashed #1d70b8" class="govuk-!-margin-top-3">
+                <strong style="padding:5px;font-size:22px;font-weight:normal">Amelia Lawson</strong>
+                {% if data['invites'] == "sent" %}
+                <strong style="font-size:16px;" class="govuk-tag govuk-tag--green app-task-list__tag">invites sent</strong></td>
+
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+                {% endif %}
+              </div>
+              <div style="border-bottom:1px dashed #1d70b8" class="govuk-!-margin-top-3">
+                <strong style="padding:5px;font-size:22px;font-weight:normal">Javier Santos</strong>
+                {% if data['invites'] == "sent" %}
+                <strong style="font-size:16px;" class="govuk-tag govuk-tag--green app-task-list__tag">invites sent</strong></td>
+
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+                {% endif %}
+              </div>
+
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+        <h2 class="govuk-heading-l">Current vacancies [{{vacNum | default("3")}}]</h2>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+
+              <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8;;">
+                <th scope="col" class="govuk-table__header" style=";background: #F4FAFF;color:#1d70b8;">Last mod.</th>
+                <th style=";background: #F4FAFF;padding-left:10px;;color:#1d70b8;;;" scope="col" class="govuk-table__header">Job⇕</th>
+                <th scope="col" class="govuk-table__header" style=";;background: #F4FAFF;color:#1d70b8;">Grade⇕</th>
+                <th scope="col" class="govuk-table__header" style="background: #F4FAFF;color:#1d70b8;">Status⇕</th>
+              </tr>
+
+          </thead>
+<tbody class="govuk-table__body">
+
+{% if data['createVacancy'] == "true" %}
+{% set vacNum = "4" %}
+  <tr id="d" class="govuk-table__row" style=";border-bottom:0.5px solid #1d70b8;">
+    <td class="govuk-table__cell" style="width:20%;border-top:2px solid #1d70b8;border-bottom:1px solid #1d70b8;background:white;;"><span style=";" id="dated">tmp</span></td>
+    <td class="govuk-table__cell" style="border-top:2px solid #1d70b8;padding-left:10px;border-bottom:1px solid #1d70b8;background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="/csu71/whichTaskList"><span style="">{{ data['temp-copy-input-autocomplete']|default("Policy adviser")}} (1001891)</span></a></td>
+    <td class="govuk-table__cell" style="border-top:2px solid #1d70b8;border-bottom:1px solid #1d70b8;width:30%;background: white;"><span style=";">{{ abbrevGrade }}</span></td>
+    <td class="govuk-table__cell" style="border-top:2px solid #1d70b8;border-bottom:1px solid #1d70b8;;background: white;"><strong style="font-size:16px;" class="govuk-tag govuk-tag--green">campaign set-up</strong></td>
+
+
+    </tr>
+
+{% endif %}
+
+            {% if data['firstNot'] !="seen" %}
+          <tr id="inter" class="govuk-table__row" style=";border-bottom:0.5px solid #1d70b8;">
+            <td class="govuk-table__cell" style="border-top:2px solid #1d70b8;border-bottom:1px solid #1d70b8;background: white;;"><strong id="dated">14 Jul 2023</strong></td>
+            <td class="govuk-table__cell" style="border-top:2px solid #1d70b8;padding-left:10px;border-bottom:1px solid #1d70b8;background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="/csu71/sift/task-list?confirm=true"><strong>Policy Adviser (1001334)</strong></a></td>
+            <td class="govuk-table__cell" style="border-top:2px solid #1d70b8;border-bottom:1px solid #1d70b8;width:30%;background: white;;"><strong>SEO</strong></td>
+            {% if data['invites'] == "sent" %}
+            <td class="govuk-table__cell" style="border-top:2px solid #1d70b8;border-bottom:1px solid #1d70b8;;background: white;"><strong style="font-size:16px;" class="govuk-tag govuk-tag--green">invites sent</strong></td>
+            {% elif data['candconf'] == "yes" %}
+            <td class="govuk-table__cell" style="border-top:2px solid #1d70b8;border-bottom:1px solid #1d70b8;;background: white;"><strong style="font-size:16px;" class="govuk-tag govuk-tag">confirmation received</strong></td>
+            {% else %}
+            <td class="govuk-table__cell" style="border-top:2px solid #1d70b8;border-bottom:1px solid #1d70b8;;background: white;"><strong style="font-size:16px;" class="govuk-tag govuk-tag--blue">set up interviews</strong></td>
+            </tr>
+            {% endif %}
+{% else %}
+<tr id="newJob" class="govuk-table__row" style=";border-bottom:0.5px solid #1d70b8;">
+  <td class="govuk-table__cell" style="background: white;; id="dated">13 Jul 2023</td>
+
+      <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="/csu71/sift/task-list?confirm=true">Policy Adviser (1001334)</a></td>
+      <td class="govuk-table__cell" style=";background: white;;">SEO</td>
+
+      {% if data['invites'] == "sent" %}
+      <td class="govuk-table__cell" style=";background: white;"><strong style="font-size:16px;;"><strong style="font-size:16px;" class="govuk-tag govuk-tag--green">invites sent</strong></td>
+      {% elif data['candconf'] == "yes" %}
+      <td class="govuk-table__cell" style=";background: white;"><strong style="font-size:16px;;"><strong style="font-size:16px;" class="govuk-tag govuk-tag">confirmation received</strong></td>
+      {% else %}
+    <td class="govuk-table__cell" style=";background: white;"><strong style="font-size:16px;;"><strong style="font-size:16px;" class="govuk-tag govuk-tag--blue">set up interviews</strong></td>
+      {% endif %}
+
+</tr>
+{% endif %}
+
+          <tr id="newJob" class="govuk-table__row" style=";border-bottom:0.5px solid #1d70b8;">
+            <td class="govuk-table__cell" style="background: white;;">01 Jul 2023</td>
+
+                <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="#">Data Analyst (1000054)</a></td>
+                <td class="govuk-table__cell" style=";background: white;;">SEO</td>
+
+            <td class="govuk-table__cell" style=";background: white;"><strong style="font-size:16px;;" class="govuk-tag govuk-tag--yellow">applications open</strong></td>
+          </tr>
+
+          <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8;">
+            <td class="govuk-table__cell" style="background: white;;">14 Apr 2023</td>
+
+            <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="home?cta=none">Product Manager (1000067)</a></td>
+            <td class="govuk-table__cell" style="background: white;;">G7</td>
+
+            <td class="govuk-table__cell" style="background: white;"><strong style="font-size:16px;" class="govuk-tag govuk-tag--grey">applications closed</strong></td>
+          </tr>
+
+
+
+        </tbody>
+
+
+
+
+
+        </table>
+        </div>
+
+
+
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+        <h2 class="govuk-heading-l">Messages</h2>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Date</th>
+              <th scope="col" class="govuk-table__header">Job</th>
+              <th scope="col" class="govuk-table__header">Message</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><strong>20 Jul 2023</strong></td>
+              <td class="govuk-table__cell"><strong>Policy Adviser</strong></td>
+              <td class="govuk-table__cell"><strong>Request for reasonable adjustment received</strong></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">24 Apr 2023</td>
+              <td class="govuk-table__cell">Data Analyst</td>
+              <td class="govuk-table__cell">Candidate would like to discuss role</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">21 Apr 2023</td>
+              <td class="govuk-table__cell">Data Analyst</td>
+              <td class="govuk-table__cell">Published to live</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" style="height:725px;background:white" id="past-week">
+
+        <table class="govuk-table">
+
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8;width:19%;">
+              <th scope="col" class="govuk-table__header" style="width:25%;background: #F4FAFF;color:#1d70b8;">Last mod.</th>
+              <th style=";background: #F4FAFF;padding-left:10px;;color:#1d70b8;width:32%;;" scope="col" class="govuk-table__header">Job⇕</th>
+              <th scope="col" class="govuk-table__header" style="width:15%;;background: #F4FAFF;color:#1d70b8;">Grade⇕</th>
+              <th scope="col" class="govuk-table__header" style="width:38%;background: #F4FAFF;color:#1d70b8;">Status⇕</th>
+            </tr>
+          </thead>
+
+          <tbody class="govuk-table__body">
+
+            <tr id="inter" class="govuk-table__row" style=";border-bottom:0.5px solid #1d70b8;">
+              <td class="govuk-table__cell" style="background: white;;"><strong id="dated">tmp</strong></td>
+
+              <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><strong><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="/csu71/sift/task-list?confirm=true">Policy adviser (1001334)</a></strong></td>
+              <td class="govuk-table__cell" style="width:30%;background: white;;"><strong>SEO</strong></td>
+
+              <td class="govuk-table__cell" style=";background: white;"><strong style="font-size:16px;" class="govuk-tag govuk-tag--purple">set up interviews</strong></td>
+            </tr>
+
+            <tr id="newJob" class="govuk-table__row" style=";border-bottom:0.5px solid #1d70b8;">
+              <td class="govuk-table__cell" style="background: white;;">01 Jul 2023</td>
+
+              <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="#">Data Analyst (1000054)</a></td>
+              <td class="govuk-table__cell" style=";background: white;;">SEO</td>
+
+              <td class="govuk-table__cell" style=";background: white;"><strong style="font-size:16px;;" class="govuk-tag govuk-tag--yellow">applications open</strong></td>
+            </tr>
+
+            <tr class="govuk-table__row" style="border-bottom:0.5px solid #1d70b8;">
+              <td class="govuk-table__cell" style="background: white;;">14 Apr 2023</td>
+
+              <td class="govuk-table__cell" style="padding-left:10px;background: white;;"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="home?cta=none">Product manager (1000067)</a></td>
+              <td class="govuk-table__cell" style="background: white;;">G7</td>
+
+              <td class="govuk-table__cell" style="background: white;"><strong style="font-size:16px;" class="govuk-tag govuk-tag--grey">applications closed</strong></td>
+            </tr>
+
+        </tbody>
+
+
+
+
+
+      </table>
+    </div>
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden"  style="height:725px;background:white" id="past-month">
+
+      <div>
+        <span class="govuk-body-l " style="font-size:24x;;">Campaign mission control</span>
+        <h2 class="govuk-heading-l">Policy Adviser (1001334)</h2>
+      </div>
+
+
+      <div class="govuk-grid-row">
+        <di v class="govuk-grid-column-one-third" style="background:#f3f2f1;padding:5px;width:30%;height:200px;border:1px dashed #1d70b8;margin-left:20px;margin-bottom:20px;;margin-top:60px">
+
+          <div id="reminder">
+
+            <a href="/csu71/sift/task-list"><p class="govuk-body-m" style="color:#1d70b8;margin-top:30px;text-align:center;font-size:32px"><strong id="timestop">Sift complete</strong><br>now, time to...</p>
+              <p class="govuk-body-m" style="width:80%;background:WHITE;color:#1d70b8;height:22px;font-weight:bold;padding:10px;text-align:center;font-size:180px;border:2px solid #1d70b8;border-radius:5px">Setup interviews</p><a/>
+
+          </div>
+          <div style="display:none" id="scoresAreIn">
+
+            <h3 style=";margin-top:10px;padding:5px" class="govuk-heading-s">Now</h3>
+            <p id="consensusTrigger" class="govuk-body-m">No consensus on sift scores</p>
+              <a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state"  style="text-align: center;font-size:22px;font-weight:bold" href="/csu71/sift/1001334-panel-results">View panel results and recommendations</a>
+          </div>
+
+          <div style="display:none;" id="addConsensusOutcome">
+
+            <h3 style=";margin-top:10px;padding:5px" class="govuk-heading-s">Now</h3>
+            <p id="consensusTrigger" class="govuk-body-m">No consensus on sift scores</p>
+            <a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state"  style="text-align: center;font-size:22px;font-weight:bold" href="/csu71/sift/1001334-panel-results">View panel results and recommendations</a>
+          </div>
+
+        </div>
+        <div class="govuk-grid-column-one-third" style="width:30%;height:200px;border:1px dashed #1d70b8;margin-left:20px;margin-bottom:20px;margin-top:60px">
+
+          <a href="/csu71/sift/setup-interview/1001334-panel-results-postcon"><p class="govuk-body-m" style="margin-top:34px;text-align:center;font-size:32px"><strong id="timestop">Sift complete</strong><br>now, time to...</p>
+            <p class="govuk-body-m" style="width:90%;background:#1d70b8;color:white;height:26px;font-weight:bold;padding:10px;text-align:center;font-size:20px;border:2px solid #1d70b8;border-radius:7px">Confirm interview list</p><a/>
+        </div>
+        <div class="govuk-grid-column-one-third " style="width:30%;height:200px;border:1px dashed #1d70b8;margin-left:20px;margin-bottom:20px;margin-top:60px">
+
+
+          <h3 style="margin-top:10px;padding:5px" class="govuk-heading-s">Campaign schedule</h3>
+          <p class="govuk-body-m">Dates, milestones etc<BR>Event information</p>
+            <p class="govuk-body-m">Mini-tracker</p>
+
+          </div>
+          <div class="govuk-grid-column-two-thirds" style="width:62%;height:200px;border:1px dashed #1d70b8;margin-left:20px">
+
+
+            <h3 style="margin-top:10px;padding:5px" class="govuk-heading-m"><a href="/csu71/sift/task-list?leadConfirms=true">Track candidates</a></h3>
+            <div class="govuk-!-margin-top-3">
+              <strong style=";padding:5px;font-size:20px;font-weight:normal">Firstname Surname</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+            </div>
+            <div class="govuk-!-margin-top-3">
+              <strong style="padding:5px;font-size:20px;font-weight:normal">Firstname Surname</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+            </div>
+            <div class="govuk-!-margin-top-3">
+              <strong style="padding:5px;font-size:20px;font-weight:normal">Firstname Surname</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+            </div>
+          </div>
+        <div class="govuk-grid-column-one-third" style="width:30%;height:200px;border:1px dashed #1d70b8;margin-left:20px">
+
+
+          <h3 style="margin-top:10px;padding:5px" class="govuk-heading-s">Compliance</h3>
+          <p class="govuk-body-m">Checklist and tracker</p>
+
+        </div>
+      </div>
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+        </tr>
+      </tbody>
+  </div>
+</div>
+
+</div>
+
+</div>
+<script>
+  const todayDay = document.getElementById('timestop');
+  const todaystamp = new Date();
+  const tickTock = todaystamp.toLocaleDateString('en-uk', { weekday:"short", day:"numeric", month:"long" }) ;
+  todayDay.innerHTML = tickTock;
+
+
+
+
+  const dateField = document.getElementById('dated');
+
+  const interviewDay = document.getElementById('meiInterview');
+
+
+  // if (dateField.outerText == ""){
+
+    const stamp = new Date();
+    const localStamp = stamp.toLocaleDateString('en-uk', { day:"numeric", month:"short", year:"numeric" }) ;
+
+    interviewDay.cssText = "background:red; font-color:white; font-weight:bold"
+    interviewDay.innerHTML = localStamp;
+console.log(localStamp)
+
+
+
+
+
+</script>
+
+{% endblock %}

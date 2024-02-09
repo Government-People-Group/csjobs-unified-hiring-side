@@ -537,9 +537,9 @@ router.post("/pre-submit-reviewer-handler", function (req, res) {
 router.post("/submit", function (req, res) {
 	var reserve = req.session.data['reserve']
 	if (reserve == "yes") {
-		res.redirect('new-campaign-set-up/reserve-candidates')
+		res.redirect('blank-campaign-set-up/reserve-candidates')
 	} else {
-		res.redirect('new-campaign-set-up/summary-section-6')
+		res.redirect('blank-campaign-set-up/summary-section-6')
 	}
 })
 

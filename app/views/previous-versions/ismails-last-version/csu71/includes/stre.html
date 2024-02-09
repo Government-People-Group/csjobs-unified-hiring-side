@@ -1,0 +1,41 @@
+{%- for items in array| slice(1) %}
+<div name="interviewbehaviours">
+ {%- for item in items %}
+ <h2 class="govuk-heading-m">{{ item }}</h2>
+ {{ govukCheckboxes({
+   name: "strengths",
+   items: [
+     {
+       hint: {
+         text: "You can bring a fresh perspective whatever the situation or context.
+You see other people’s views and can appreciate there are many
+different angles to consider."
+       },
+
+       value: "Challenger",
+       checked: checked(item,"Challenger"),
+       text: "Challenger"
+     },
+     {
+       hint: {
+         text: "You pursue things which give you a sense of meaning and purpose,
+working towards a longer term goal."
+       },
+       value: "Mission",
+       checked: checked(item,"Mission"),
+       text: "Mission"
+     },
+     {
+       hint: {
+         text: "You are positive and inspirational in leading and supporting others
+through change."
+       },
+       value: "Change agent",
+       checked: checked(item,"Change agent"),
+       text: "Change agent"
+     }
+   ]
+ }) }}
+ {%- endfor %}
+ </div>
+ {%- endfor %}

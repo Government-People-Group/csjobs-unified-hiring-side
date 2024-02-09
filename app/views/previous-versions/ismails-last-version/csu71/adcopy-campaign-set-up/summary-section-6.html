@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Summary</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-copy-ad"><strong>Return to task list</strong></a></span>
+
+  </div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl">Review and submit</h1>
+
+
+    <h2 class="govuk-heading-m">Campaign dates</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Preferred launch (TBC)</dt>
+        <dd class="govuk-summary-list__value">{{ data['day']}}/{{ data['month']}}/{{ data['year']}}</dd>
+        <dd class="govuk-summary-list__actions"><a href="campaign-dates?edit26=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Duration</dt>
+        <dd class="govuk-summary-list__value">{{ data['advert-time']}}</dd>
+        <dd class="govuk-summary-list__actions"><a href="campaign-dates?edit26=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+      </div>
+    </dl>
+
+
+
+
+          <input type="hidden" name="summary6" value="true">
+          <input type="hidden" name="submitted" value="true">
+          <div style="background:#f3f2f1;padding:20px">
+
+
+    <div class="govuk-!-margin-top-3" >
+      <h2 class="govuk-heading-l ">What happens next</h2>
+
+    <p class="govuk-body-l">Review and submit your vacancy.</p>
+
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+Your job campaign will be sent to Government Recruitment Service (GRS). GRS wull perform an audit to make sure the campaign is compliant with the Civil Service Commission's principes.
+      </strong>
+    </div>
+
+
+<hr style="margin-bottom:40px;border-bottom:1px solid #1d70b8" style="border-top:1px solid black"">
+<form action="confirmation" method="post" novalidate>
+
+    <button type="submit" class="govuk-button" data-module="govuk-button">Submit for approval</button>
+    </form>
+    </div>
+
+
+</div>
+  </div>
+</div>
+
+
+{% endblock %}

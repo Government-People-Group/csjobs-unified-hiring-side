@@ -1,0 +1,229 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Interview</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Review interview setup
+      </h1>
+
+
+
+
+
+      <h2 class="govuk-heading-l">Finalised schedule</h2>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Available slots
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <li style="margin-top:20px;font-weight:bold">Mon, 7 August 2023</li>
+      10:00-11:00, 12:00-13:00, 14:00-15:00, 16:00-17:00
+      <li  style="margin-top:20px;font-weight:bold">Tue, 8 August 2023</li>
+      10:00-11:00, 12:00-13:00, 14:00-15:00, 16:00-17:00
+      <li style="margin-top:20px;font-weight:bold">Wed, 9 August 2023</li>
+      10:00-11:00, 12:00-13:00, 14:00-15:00, 16:00-17:00
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> date of birth</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Type of interview
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <li>{{ data['interviewDetails']}}</li>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> date of birth</span>
+      </a>
+    </dd>
+  </div>
+  </dl>
+
+
+<h2 class="govuk-heading-l">Assessments</h2>
+
+
+
+
+      <h3 class="govuk-heading-m">Experience interview questions (6 mins)</h3>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Building engaging and effective relationships with stakeholders
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['experience-question-1']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        </dl>
+
+
+
+      <h3 class="govuk-heading-m">Behaviours interview questions (12 mins)</h3>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Seeing the Big Picture
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['behaviour-question-1']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Changing and improving
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{data['behaviour-question-2']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> address</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h3 class="govuk-heading-m">Strengths interview questions (6 mins)</h3>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Analytical
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['strength-question-1']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Challenger
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['strength-question-2']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Problem solver
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['strength-question-3']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+</DL>
+
+
+
+
+        <h3 class="govuk-heading-m">Interview presentation (10 mins)</h3>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Presentation topic / brief
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <li>{{data['presentation-brief']}}</li>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Supporting links
+            </dt>
+            <dd class="govuk-summary-list__value">
+            <li>{{data['sinfo1']}}</li>
+              <li>{{data['sinfo2']}}</li>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> address</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+
+
+
+
+      <form action="/csu71/sift/task-list?interview=done" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Accept and continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

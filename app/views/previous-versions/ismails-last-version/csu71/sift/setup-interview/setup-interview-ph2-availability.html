@@ -1,0 +1,402 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Interview</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+  p, div {
+    font-family: "GDS Transport", arial, sans-serif;
+    line-height: 1.2;
+  }
+
+</style>
+
+
+
+<form class="form" action="setup-interview-ph2-availability2" method="post">
+
+  <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Schedule</H1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter" style="">
+
+
+      <ul class="govuk-!-margin-top-6 govuk-list govuk-list--bullet-">
+        <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph2"><strong>Schedule</a></p></strong></li>
+        <!-- <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview"><strong>Setup interview</a></p></strong></li> -->
+
+        <!-- <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph3"><strong>Assessment</a></p></strong></li>
+        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph4-1"><strong>Questions</a></p></strong></li>
+        <li><strong><p style ="border-left:5px solid white;;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph1"><strong>Type of interview</a></p></strong></li>
+
+        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-check-answers"><strong>Review interview setup</a></p></strong></li> -->
+      </ul>
+    </div>
+    <div class="govuk-!-margin-top-6 govuk-grid-column-three-quarters">
+
+
+
+
+
+
+<div style="display:none" class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--l" for="event-name">
+
+    </label>
+  </h1>
+  <input style="border:0px" class="govuk-input" id="event-name" name="event-name" type="text" value="{{data['event-name']}}">
+</div>
+<H2 style="" class="govuk-heading-l">Schedule dates</h2>
+
+<p class="govuk-body-m">The schedule should be large enough to accommodate your availability, the panel members and the candidate.</p>
+
+<!-- Select the dates using the date picker, make a list of dates. -->
+  <div >
+    <!-- <label class="govuk-label govuk-!-margin-bottom-3" style="font-weight:normal;font-size:22px" for="intDate">Select the dates using the date picker, make a list of dates.</label> -->
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half" style=";">
+
+    <div>
+        <label class="govuk-label govuk-label--s" style="" for="fromDate">Schedule from:</label>
+        <input datetimeformat="dd/mm/yyyy" style="border:1px solid lightgrey;width:240px;height:40px;font-size:24px;background:white;margin-top:10px"  value="{{ data['fromDate']}}" type="date" placeholder="dd-mm-yyyy" id="fromDate" name="fromDate">
+        <div class="govuk-form-group">
+    </div>
+
+</div>
+</div>
+<div class="govuk-grid-column-one-half" style=";">
+
+    <div>
+      <label class="govuk-label govuk-label--s" style="" for="toDate">To:</label>
+        <input datetimeformat="dd/mm/yyyy" style="border:1px solid lightgrey;width:240px;height:40px;font-size:24px;background:white;margin-top:10px"  value="{{ data['toDate']}}" type="date" placeholder="dd-mm-yyyy" id="toDate" name="toDate">
+        <div class="govuk-form-group">
+    </div>
+</div>
+</div>
+</div>
+
+
+      <!-- <label class="govuk-label govuk-!-margin-bottom-3" style="font-weight:normal;font-size:22px" for="wkDate"></label>
+      <input datetimeformat="dd" style="border:1px solid lightgrey;width:200px;height:40px;font-size:24px;background:white;margin-top:10px"  value="{{ data['wkDate']}}" type="week" placeholder="dd-mm-yyyy" id="wkDate" name="wkDate">
+      <div class="govuk-form-group"> -->
+
+
+        <h1 class="govuk-label-wrapper">
+          <!-- <label class="govuk-label govuk-label--l" for="event-name">
+
+        </label>
+      </h1>
+      <input  class="govuk-input" id="event-name" name="event-name" type="text">
+    </div> -->
+
+
+    <!-- <div class=" govuk-!-margin-top-6" style="" id="list1"></div>
+    <div class=" govuk-!-margin-top-6" style="" id="list1"></div>
+
+    <ul class="govuk-!-margin-top-3 govuk-list govuk-list--bullet" id="output"></ul>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border" style=";width:70%;">
+
+      <div class="govuk-summary-list__row"  style=";">
+        <dt class="govuk-summary-list__key">
+        </dt>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            <div style="margin-right:100px" id="list2"></div>
+            <span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+  </div> -->
+
+  </div>
+
+  <H2 style="" class="govuk-heading-l govuk-!-padding-bottom-3 govuk-!-padding-top-6">Schedule preferences</h2>
+
+
+  {{ govukSelect({
+            id: "density",
+            name: "density",
+            label: {
+              text: "How many interviews would you like to do in 1 day?",
+              classes: "govuk-label--s "
+            },
+            items: [
+            {
+              value: "none",
+              selected: "true",
+              disabled: "true",
+              text: "Select number"
+            },
+            {
+              value: "1",
+              text: "1",
+              selected: checked("density","1")
+            },
+            {
+              value: "2",
+              text: "2",
+              selected: checked("density","2")
+            },
+            {
+              value: "3",
+              text: "3",
+              selected: checked("density","3")
+            },
+            {
+              value: "4",
+              text: "4",
+              selected: checked("density","4")
+            },
+            {
+              value: "5",
+              text: "5",
+              selected: checked("density","5")
+            },
+            {
+              value: "6",
+              text: "6",
+              selected: checked("density","6")
+            },
+            {
+              value: "7",
+              text: "7",
+              selected: checked("density","7")
+            },
+            {
+              value: "8",
+              text: "8",
+              selected: checked("density","8")
+            },
+            {
+              value: "9",
+              text: "9",
+              selected: checked("density","9")
+            },
+            {
+              value: "10",
+              text: "10",
+              selected: checked("density","10")
+            }
+          ]
+        }) }}
+
+
+    <div class="govuk-form-group govuk-!-padding-top-6" style="padding-top:35px;">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+        <h1 class="govuk-fieldset__heading">
+          Would you like to include an extra 15 minutes before and after each interview for set-up and review time with the panel?
+        </h1>
+      </legend>
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="washup-yes" name="washup" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="density-2">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="washup-no" name="washup" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="density-4">
+            No
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+<div id="foreAft" style="display:none">
+  <div class="govuk-form-group">
+    <label class="govuk-label govuk-label--s" for="a1">Set-up before the interview</label>
+    <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-2" id="extraTimeBe" value="15" name="extraTimeBe" type="text" spellcheck="false">
+      <div class="govuk-input__suffix" aria-hidden="true">mins</div>
+    </div>
+  </div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label govuk-label--s" for="a1">Review after the interview</label>
+    <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-2" id="extraTimeAf" value="15" name="extraTimeAf" type="text" spellcheck="false">
+      <div class="govuk-input__suffix" aria-hidden="true">mins</div>
+    </div>
+  </div>
+</div>
+
+  <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Continue</button>
+
+
+  <input type="hidden" id="densityCheck" name="source" value="{{ data['density']}}">
+
+
+
+
+</div>
+
+
+
+</div>
+
+</FORM>
+
+
+<script>
+
+
+
+  var washYes = document.getElementById("washup-yes");
+  var washNo = document.getElementById("washup-no");
+
+
+
+  washYes.addEventListener('change', (event) => {
+    if (washYes.checked && washYes.value == "yes")
+    showDiv("foreAft");
+
+    });
+
+    washNo.addEventListener('change', (event) => {
+      if (washNo.checked && washNo.value == "no")
+      hideDiv("foreAft");
+
+      });
+
+
+  const timeList = [];
+  var fromDate = document.getElementById("fromDate");
+  var toDate = document.getElementById("toDate");
+
+  var fday = fromDate.value.substring(8, 10);
+  var fmon = fromDate.value.substring(5, 7);
+  var fyea = fromDate.value.substring(0, 4);
+
+  var tday = toDate.value.substring(8, 10);
+  var tmon = toDate.value.substring(5, 7);
+  var tyea = toDate.value.substring(0, 4);
+
+
+
+// const fd = fday+"/"+fmon+"/"+fyea;
+const fd = fday+"/"+fmon+"/"+fyea;
+
+// const td = tday+"/"+tmon+"/"+tyea;
+const td =tyea+"/"+tmon+"/"+tday;
+
+
+var dDay = new Date(fromDate.value)
+var tDay = new Date(toDate.value)
+
+
+  console.log(fromDate)
+
+    fromDate.addEventListener('change', (event) => {
+
+
+    });
+
+    toDate.addEventListener('change', (event) => {
+
+
+
+    });
+
+    window.sessionStorage.setItem("fromDate", JSON.stringify(dDay));
+  window.sessionStorage.setItem("toDate", JSON.stringify(tDay));
+console.log(dDay, tDay)
+
+
+// const tickTock = dDay.toLocaleDateString('en-uk', { day:"numeric"}) ;
+//
+// const tickTock2 = tDay.toLocaleDateString('en-uk', { day:"numeric"}) ;
+// console.log(tickTock, tickTock2)
+
+
+
+
+  // startDate.setDate(startDate.getDate() + 1 );
+  // console.log(startDate)
+  // console.log(d)
+  // const tickTock = startDate.toLocaleDateString('en-uk', { weekday:"short"}) ;
+  // if (tickTock === "Sat" || tickTock === "Sun") {
+  // } else {
+  //   dateArray.push(startDate.toLocaleDateString('en-uk', { weekday:"short", day:"numeric", month:"long", year:"numeric"}));
+  // }
+
+
+
+
+
+
+
+  //   var fday = fromDate.value.substring(8, 10);
+  //   var fmon = fromDate.value.substring(5, 7);
+  //   var fyea = fromDate.value.substring(0, 4);
+  //
+  //   var tday = toDate.value.substring(8, 10);
+  //   var tmon = toDate.value.substring(5, 7);
+  //   var tyea = toDate.value.substring(0, 4);
+  //
+  //
+  //
+  // const fd = fday+"/"+fmon+"/"+fyea;
+  //
+  // const td = tday+"/"+tmon+"/"+tyea;
+
+  // window.sessionStorage.setItem("fromDate", JSON.stringify(fromDate));
+  // window.sessionStorage.setItem("toDate", JSON.stringify(toDate));
+
+
+
+  function hideDiv(div1) {
+    document.getElementById(div1).style.display = 'none';
+
+  }
+
+  function showDiv(div1) {
+    document.getElementById(div1).style.display = 'block';
+
+  }
+
+
+
+
+
+
+
+</script>
+
+
+{% endblock %}

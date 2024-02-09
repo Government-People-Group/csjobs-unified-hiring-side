@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% set sectionref = "About the vacancy" %}
+{% include '/csu71/includes/blue-subhead.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+<h1 class="govuk-heading-xl">Reserved status</h1>
+<form class="form" action="approval" method="post">
+
+
+  <p class="govuk-body-m">In addition to the rules that all candidates must satisfy to be eligible to join the Civil Service, there are some roles that can only be filled by UK nationals.</p>
+
+  <p class="govuk-body-m">These roles are <strong>reserved</strong> because of the sensitive nature of the work carried out. For example, all individuals working in any of the security and intelligence services will be employed into a post with a reserved status.</p>
+
+<h2 class="govuk-heading-m">Has this role been reserved for UK nationals only?</h2>
+
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary" style="color:#5d6062">
+      <span class="govuk-details__summary-text" style="font-size:0.9em">
+        What's this?
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+Some roles may only be filled by UK nationals because of the sensitive work the role includes. <BR><BR>For example: only UK nationals may work in security and intelligence services.
+    </div>
+  </details>
+
+
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+  {{ govukRadios({
+    name: "reserved-status",
+    fieldset: {
+      legend: {
+        text: "",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    items: [
+      {
+        value: "yes",
+        checked: checked("reserved-status","yes"),
+        text: "Yes, this vacancy is reserved"
+      },
+      {
+        value: "no",
+        checked: checked("reserved-status","no"),
+        text: "No, this vacancy is not reserved"
+      },
+      {
+        value: "dont-know",
+        checked: checked("reserved-status","dont-know"),
+        text: "I'm not sure"
+      }
+    ]
+  }) }}
+
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+          </form>
+
+
+</div>
+</div>
+{% include '/csu71/includes/footerarea.html' %}
+
+{% endblock %}

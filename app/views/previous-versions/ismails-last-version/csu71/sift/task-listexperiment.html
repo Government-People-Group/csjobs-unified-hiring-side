@@ -1,0 +1,525 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+
+{% block beforeContent %}
+
+<style>
+.govuk-back-link {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.1428571429;
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: underline;
+  text-decoration-thickness: max(1px, .0625rem);
+  text-underline-offset: 0.1578em;
+  display: inline-block;
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-left: 0.875em;
+}
+@media (min-width: 40.0625em) {
+  .govuk-back-link {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+}
+@media print {
+  .govuk-back-link {
+    font-size: 14pt;
+    line-height: 1.2;
+  }
+}
+@media print {
+  .govuk-back-link {
+    font-family: sans-serif;
+  }
+}
+.govuk-back-link:hover {
+  text-decoration-thickness: max(3px, .1875rem, .12em);
+  -webkit-text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
+  -webkit-text-decoration-skip: none;
+  text-decoration-skip: none;
+}
+.govuk-back-link:focus {
+  outline: 3px solid transparent;
+  color: #0b0c0c;
+  background-color: #ffdd00;
+  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  text-decoration: none;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.govuk-back-link:link, .govuk-back-link:visited {
+  color: #0b0c0c;
+}
+@media print {
+  .govuk-back-link:link, .govuk-back-link:visited {
+    color: #000000;
+  }
+}
+.govuk-back-link:hover {
+  color: rgba(11, 12, 12, 0.99);
+}
+.govuk-back-link:active, .govuk-back-link:focus {
+  color: #0b0c0c;
+}
+@media print {
+  .govuk-back-link:active, .govuk-back-link:focus {
+    color: #000000;
+  }
+}
+
+.govuk-back-link:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.1875em;
+  width: 0.4375em;
+  height: 0.4375em;
+  margin: auto 0;
+  -webkit-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  transform: rotate(225deg);
+  border: solid;
+  border-width: 1px 1px 0 0;
+  border-color: #ffffff;
+}
+@supports (border-width: max(0px)) {
+  .govuk-back-link:before {
+    border-width: max(1px, 0.0625em) max(1px, 0.0625em) 0 0;
+    font-size: max(16px, 1em);
+  }
+}
+
+.govuk-back-link:focus:before {
+  border-color: #0b0c0c;
+}
+
+.govuk-back-link:after {
+  content: "";
+  position: absolute;
+  top: -14px;
+  right: 0;
+  bottom: -14px;
+  left: 0;
+}
+</style>
+
+<div  style="width:100%;background:#1d70b8;height:5px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<!-- <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Advert set up</span> -->
+
+
+  <a style="color:white;margin-left:30px" href="javascript:window.history.back()" class="govuk-back-link govuk-back-link--inverse">Back</a>
+
+
+</div>
+  <!-- <p style="font-size:24px;color:white;margin-left:10px" class="govuk-body-l govuk-!-margin-bottom-1">Vacancy <strong>1001334</strong></p>
+  <p style="font-size:24px;color:white;margin-left:10px" class="govuk-body-l govuk-!-margin-bottom-1">Grade <strong>{{ data['grade'] | default("SEO") }}</strong></p> -->
+
+
+
+
+<section class="dwp-key-details-bar govuk-!-padding-top-6" aria-label="Key details">
+<div class="dwp-key-details-bar__key-details">
+<dl class="dwp-key-details-bar__top-block">
+    <dt class="govuk-visually-hidden">Name:</dt>
+    <dd style="padding-bottom:20px;font-size:48px; font-weight:normal;font-family:'GDS Transport', arial, sans-serif" class="dwp-key-details-bar__primary">{{ data['title'] | default("Policy adviser") }}</dd>
+    <dt class="govuk-visually-hidden">Grade:</dt>
+    <dd style="font-size:28px; margin-top:20px;font-weight:normal;font-family:'GDS Transport', arial, sans-serif" class="dwp-key-details-bar__secondary">{{ data['grade'] | default("SEO") }}</dd>
+</dl>
+<dl class="dwp-key-details-bar__bottom-block">
+    <dt>Vacancy:</dt>
+    <dd>1001334</dd>
+    <dt>Applications closed:</dt>
+    <dd>09 Jul 2023</dd>
+    <dt>Completion:</dt>
+    <dd>50%</dd>
+</dl>
+</div>
+</section>
+<div  style="width:100%;background:#0B0C0C;height:65px;border-bottom:0.5px solid #1d70b8;">
+<span class="govuk-body-m" style="float:right;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="#"><strong>Manage panel</strong></a></span>
+</div>
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full" style="position:relative">
+
+
+
+
+
+    <!-- <h1 style="border-bottom:1px solid #1d70b8;;padding-bottom:10px;" class="govuk-heading-xl">{{ data['title'] | default("Policy adviser") }}</h1> -->
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+
+
+        <p>You can save and return at any point to complete an action.</p>
+
+        <p class="govuk-body govuk-!-margin-bottom-7">You have completed 4 of 15 sections.</p>
+
+        {% set bannerCount = 0 %}
+
+
+        {% if data['interview'] != "done"  %}
+        <div id="bann" style="width:100%" class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+        aria-labelledby="govuk-notification-banner-title"
+        data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            Sift has been completed
+            <p class="govuk-body  govuk-!-margin-top-3">The sift results have been confirmed and the interview list is avaiable.</p>
+            <p class="govuk-body  govuk-!-margin-top-3">You can now <a style="font-weight:bold" href="#intset">setup the interview stage</a>.</p>
+          </h3>
+
+
+
+        </div>
+      </div>
+      {% endif %}
+
+
+
+
+<ol class="app-task-list">
+  <li>
+
+<li>
+  <h2 class="app-task-list__section">
+    <span class="app-task-list__section-number">1. </span> Sift applications
+  </h2>
+  <ul class="app-task-list__items">
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        <a href="task-list-applicants" aria-describedby="list-convictions-status">
+          View candidates (5)</a>
+        </span>
+        <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+      </li>
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <a href="1001334-score-bigger-picture" aria-describedby="list-convictions-status">
+            Behaviour 1: Seeing the big picture (5 of 5 sifted)</a>
+          </span>
+          <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+        </li>
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a href="1001334-score-changing" aria-describedby="list-convictions-status">
+              Behaviour 2: Changing and improving (5 of 5 sifted)</a>
+            </span>
+            <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="1001334-score-decisions" aria-describedby="list-convictions-status">
+                Behaviour 3: Managing a quality service (5 of 5 sifted)</a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="cv-statement-v2" aria-describedby="list-convictions-status">
+                  CV and personal statements (5 of 5 sifted)</a>
+                </span>
+                <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+              </li>
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="1001334-table" aria-describedby="read-declaration-status">
+                    Review and submit sifting scores
+                  </a>
+                </span>
+                <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+              </li>
+            </ul>
+          </li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> View and submit my scores
+          </h2>
+          <ul class="app-task-list__items">
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="setup-interview/1001334-panel-results-alt" aria-describedby="read-declaration-status">
+                  View panel results and recommendations
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+            </li>
+
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <a href="setup-interview/consensus" aria-describedby="read-declaration-status">
+            Arrange a consensus meeting
+          </a>
+        </span>
+        <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+      </li>
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <a href="setup-interview/1001334-consensus-meeting" aria-describedby="read-declaration-status">
+            Review consensus meeting results
+          </a>
+        </span>
+        <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+      </li>
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <a href="setup-interview/1001334-panel-results-postcon?blue=moon" aria-describedby="company-information-status">
+            Confirm the sift results
+          </a>
+        </span>
+
+        {% if data['leadConfirms']|default("true") == "true" %}
+        <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+        {% else %}
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+        {% endif %}
+      </li>
+
+</ul>
+
+
+<li>
+  <h2 id="intset" class="app-task-list__section">
+    <span class="app-task-list__section-number">3. </span> Setup interview
+  </h2>
+  <ul class="app-task-list__items">
+
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        <a href="setup-interview/setup-interview-ph2?confirm=false" aria-describedby="company-information-status">
+          Schedule
+        </a>
+      </span>
+
+
+      {% if data['interview'] == 'done' %}
+      <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+      {% else %}
+      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+      {% endif %}
+
+
+
+
+    </li>
+
+
+
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+    <a href="setup-interview/setup-interview-ph3" aria-describedby="contact-details-status">
+      Assessment
+    </a>
+  </span>
+
+  {% if data['interview'] == 'done' %}
+  <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+  {% else %}
+  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+  {% endif %}
+
+
+
+</li>
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+    <a href="setup-interview/setup-interview-ph4-1" aria-describedby="contact-details-status">
+      Interview questions
+    </a>
+  </span>
+
+  {% if data['interview'] == 'done' %}
+  <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+  {% else %}
+  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+  {% endif %}
+
+
+</li>
+
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+    <a href="setup-interview/setup-interview-ph1" aria-describedby="contact-details-status">
+      Type of interview
+    </a>
+  </span>
+
+
+  {% if data['interview'] == 'done'  %}
+  <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+  {% else %}
+  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+  {% endif %}
+
+
+</li>
+
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+    <a href="setup-interview/setup-interview-check-answers" aria-describedby="contact-details-status">
+      Review interview setup
+    </a>
+  </span>
+
+  {% if data['interview'] == 'done' %}
+  <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+  {% else %}
+  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+  {% endif %}
+
+</li>
+
+</ul>
+</li>
+
+<li>
+  <h2 class="app-task-list__section">
+    <span class="app-task-list__section-number">4. </span> Invite candidates to interview
+  </h2>
+  <ul class="app-task-list__items">
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        <a href="setup-interview/setup-interview-ph5-2-candAlltogether" aria-describedby="contact-details-status">
+          Review sift feedback before sending to candidates
+        </a>
+
+      </span>
+
+      {% if data['review'] == "ok" %}
+      <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+      {% else %}
+      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+      {% endif %}
+    </li>
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        <a href="setup-interview/send-invites-to-candidates" aria-describedby="contact-details-status">
+          Send interview invites to candidates</a>
+          <!-- </a> -->
+        </span>
+        {% if data['invites'] == 'sent'%}
+        <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+        {% else %}
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+        {% endif%}
+      </li>
+
+
+
+
+
+
+      <h2 class="app-task-list__section govuk-!-margin-top-6" style="font-weight:normal;font-size:22px">Monitor candidate responses</h2>
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <!-- <a href="#" aria-describedby="eligibility-status"> -->
+          Mei Chen
+          <!-- </a> -->
+        </span>
+        {% if data['invites'] == 'sent'%}
+        <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="contact-details-status">interview invite sent</strong>
+        {% else %}
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+        {% endif %}
+      </li>
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <!-- <a href="#" aria-describedby="eligibility-status"> -->
+          Amelia Lawson
+          <!-- </a> -->
+        </span>
+
+        {% if data['invites'] == 'sent'%}
+        <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="contact-details-status">interview invite sent</strong>
+        {% else %}
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+        {% endif %}
+
+      </li>
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          <!-- <a href="#" aria-describedby="eligibility-status"> -->
+          Javier Santos
+          <!-- </a> -->
+        </span>
+
+
+                {% if data['invites'] == 'sent'%}
+                <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="contact-details-status">interview invite sent</strong>
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">INVITE NOT SENT</strong>
+                {% endif %}
+
+
+              </li>
+
+
+    </ul>
+
+
+
+
+    <ol class="app-task-list">
+      <li>
+
+        <div style=";position:relative">
+
+          <h2 class="app-task-list__section">
+            <span style="" class="app-task-list__section-number">5. </span>Score interviews</h2>
+            <strong style="position:absolute;right:0px;top:12px;font-size:16px" class="govuk-tag govuk-tag govuk-tag--grey" id="financial-evidence-status">cannot start yet</strong>
+          </div>
+
+        </LI>
+      </ol>
+
+
+
+<ol class="app-task-list">
+  <li>
+
+    <div style=";position:relative">
+
+      <h2 class="app-task-list__section">
+        <span style="" class="app-task-list__section-number">6. </span>Make a provisional offer</h2>
+        <strong style="position:absolute;right:0px;top:12px;font-size:16px" class="govuk-tag govuk-tag govuk-tag--grey" id="financial-evidence-status">cannot start yet</strong>
+      </div>
+
+    </LI>
+  </ol>
+
+
+
+
+
+</ol>
+</div>
+</div>
+
+{% endblock %}

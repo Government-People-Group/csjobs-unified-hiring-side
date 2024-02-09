@@ -6,6 +6,9 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
+const radioButtonRedirect = require('radio-button-redirect')
+router.use(radioButtonRedirect)
+
 // Add your routes here
 
 // Logging session data
@@ -19,7 +22,7 @@ const router = govukPrototypeKit.requests.setupRouter()
       console.log(JSON.stringify(log, null, 2))
 
     next()
-  })  
+  })
 
 router.use('/csu71', require('./views/csu71/_routes'));
 // router.use('/reserve-list-01', require('./views/reserve-list-01/_routes'));
@@ -30,6 +33,16 @@ router.post("/reservist1-handler", function (req, res) {
 	} else {
 		res.redirect('/reserve-list-01/task-list')
 	}
+})
+
+router.post('/csu71/blank-campaign-set-up/how-many-posts', function(request, response) {
+
+    var howManyPosts = request.session.data['how-many-posts']
+    if (howManyPosts == "20"){
+        response.redirect("/csu71/blank-campaign-set-up/post-variations")
+    } else {
+        response.redirect("/csu71/blank-campaign-set-up/basic-details-shorter")
+    }
 })
 
 router.post("/reservist2-handler", function (req, res) {

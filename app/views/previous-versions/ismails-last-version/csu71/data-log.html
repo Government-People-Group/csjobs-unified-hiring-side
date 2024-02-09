@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<input id="templateName" type="hidden" name="templateName" value="{{ data['org']}}">
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-3">
+  <div class="govuk-grid-column-full">
+
+<h1 class="govuk-heading-l">Data log</h1>
+{{ data | dump }}
+
+
+
+
+  </div>
+
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Advert set up</span>
+    <form class="form" action="/csu71/essential-criteria-handler" method="post">
+
+      {% call govukFieldset({
+        legend: {
+          text: "What is the essential criteria needed for this role?",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+      <p>For example, can touch type at 50 words/min. This will be visible on the advert.</p>
+      {{ govukTextarea({
+        label: {
+          text: "Essential criteria 1"
+        },
+        id: "experience1",
+        name: "experience1",
+        value: data['experience1'] | truncate(150)
+      }) }}
+
+      {{ govukTextarea({
+        label: {
+          text: "Essential criteria 2"
+        },
+        id: "experience2 (optional)",
+        name: "experience2",
+        value: data['experience2'] | truncate(150)
+      }) }}
+
+      {{ govukTextarea({
+        label: {
+          text: "Essential criteria 3 (optional)"
+        },
+        id: "experience3",
+        name: "experience3",
+        value: data['experience3'] | truncate(150)
+      }) }}
+
+      {{ govukTextarea({
+        label: {
+          text: "Essential criteria 4 (optional)"
+        },
+        id: "experience4",
+        name: "experience4",
+        value: data['experience4'] | truncate(150)
+      }) }}
+
+
+      {% endcall %}
+      <p><a href="#">Add another experience</a></p>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      {{ govukButton({
+        text: "Preview advert",
+        classes: "govuk-button--secondary",
+        href: "preview-advert"
+      }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

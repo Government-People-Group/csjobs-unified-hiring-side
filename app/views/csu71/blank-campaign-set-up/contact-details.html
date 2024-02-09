@@ -59,16 +59,23 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
           checked: checked("spoc", "Me")
         },
         {
+          id: "poly",
+          value: "Someone else",
+          text: "Someone else",
+          checked: checked("spoc", "Someone else")
+        },
+        {
           id: "mono2",
           value: "me-and-another",
           text: "Me and another person share this responsibility",
           checked: checked("spoc", "me-and-another")
         },
+
         {
-          id: "poly",
-          value: "Someone else",
-          text: "Someone else",
-          checked: checked("spoc", "Someone else")
+          id: "poly2",
+          value: "Team-mailbox",
+          text: "We use a team mailbox",
+          checked: checked("spoc", "Team-mailbox")
         }
       ]
     }) }}
@@ -99,6 +106,23 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
         name: "another-email",
         value: data['another-email']
       }) }}
+</div>
+
+<div id="team-mailbox" style="display:none">
+
+
+
+  {{ govukInput({
+    label: {
+      text: "What is the team mailbox's email address?",
+      classes: "govuk-label--s",
+      isPageHeading: false
+    },
+    classes: "govuk-input--width-20",
+    id: "team-email",
+    name: "team-email",
+    value: data['team-email']
+  }) }}
 </div>
 
 
@@ -197,10 +221,14 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 const mono = document.getElementById('mono');
 const mono2 = document.getElementById('mono2');
 const poly = document.getElementById('poly');
+const poly2 = document.getElementById('poly2');
 
 var shared = document.getElementById('another').style.display;
 if (mono2.checked && mono2.value =="me-and-another") {
   showDiv("another");
+}
+if (poly2.checked && poly2.value =="team-mailbox") {
+  showDiv("team-mailbox");
 }
 
 
@@ -233,6 +261,14 @@ mono.addEventListener('change', (event) => {
   if (mono.checked) {
     hideDiv("question2");
     hideDiv("another");
+  }
+
+});
+
+poly2.addEventListener('change', (event) => {
+  if (poly2.checked) {
+    showDiv("team-mailbox");
+    hideDiv("question2")
   }
 
 });

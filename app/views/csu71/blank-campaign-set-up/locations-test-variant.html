@@ -1,0 +1,936 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Contract information</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-new-campaign"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content%}
+<div class="govuk-grid-row govuk-!-margin-top-3">
+  <div class="govuk-grid-column-full">
+
+
+
+    <div style="float:right">
+      <div>
+        <!-- <h2 class="govuk-heading-m" style="border-bottom:1px solid #1d70b8;">Role location pattern</h2> -->
+          {% if data['uk'] == "A hybrid of both remote and onsite" %}
+          <span class="govuk-caption-m" style="margin-right:20px;">Hybrid: remote and onsite<BR><a href="/csu71/new-campaign-set-up/locations">Change preference</a></span>
+            {% elif data['uk'] == "Onsite at a government-managed location" %}
+              <span class="govuk-caption-m" style="margin-right:20px;">Onsite: at a location<BR><a href="/csu71/new-campaign-set-up/locations">Change preference</a></span>
+{% endif %}
+      </div>
+    </div>
+
+
+
+
+
+    <h1 style="border-bottom:1px solid #1d70b8;padding-bottom:20px" class="govuk-heading-xl">Add locations for this role</h1>
+    <form class="form" action="/csu71/blank-campaign-set-up/review-sp-table-alt-variant" method="post">
+
+
+
+
+      {{ data['loc-copy-input-autocomplete']}}
+
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <div class="govuk-grid-row">
+
+
+            <div class="govuk-grid-column-three-quarters" >
+
+              <a style="float:right;margin-right:100px" class="govuk-button govuk-button--secondary govuk-!-margin-top-5"  href="#">Add to list</a>
+
+
+              <div id="fir" style="margin-bottom:0px" class="govuk-form-group govuk-input--width-30">
+                <label for="autocomplete-default" class="govuk-label">Search for a town, city or region</label>
+                <div id="locations" class="autocomplete-wrapper"></div>
+              </div>
+
+              <p id="or" class="govuk-body" style="padding-left:12px">or</p>
+
+
+              <div id="stored" class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+                  <div class="govuk-radios" data-module="govuk-radios">
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                      <label class="govuk-label govuk-radios__label" for="contact-2">
+                        Use a list of stored DWP locations
+                      </label>
+                      <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                        Use a list of locations that has been used on other DWP vacancies.
+                      </div>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                      <div class="govuk-form-group" style="margin-top:30px">
+                        <fieldset class="govuk-fieldset">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            <h1 class="govuk-fieldset__heading">
+                              North East
+                            </h1>
+                          </legend>
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                All
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                              <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                                Newcastle
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
+                              <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+                                Washington
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                              <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                                Ashington
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                              <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                                Darlington
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                      <div class="govuk-form-group" style="margin-top:30px">
+                        <fieldset class="govuk-fieldset">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            <h1 class="govuk-fieldset__heading">
+                              North West
+                            </h1>
+                          </legend>
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                All
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                              <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                                Manchester
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
+                              <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+                                Wider Merseyside
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                              <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                                Liverpool
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                              <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                                Stockport
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <div class="govuk-radios__divider">or</div>
+                    <div id="upload" class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
+                      <label class="govuk-label govuk-radios__label" for="contact-3">
+                        Upload a list of locations
+                      </label>
+                      <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                        Use a CSV list of locations stored elsewhere.
+                      </div>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+                      <p class="govuk-body-m" style="margin-top:30px">Your list of locations must be in a CSV file and be in a certain order.<br><a href="#">See how to order your CSV file correctly</a>.</p>
+
+                      {{ govukFileUpload({
+                        id: "file-upload-1",
+                        name: "file-upload-1",
+                        value: data['file-upload-1'],
+                        label: {
+                          text: "Upload a file"
+                        }
+                      }) }}
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+
+
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item" style="margin-left:20px">
+                        <input class="govuk-checkboxes__input" id="location-specific" name="location-specific" type="checkbox" value="yes" aria-describedby="nationality-item-hint">
+                        <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                          Some locations have specific requirements
+                        </label>
+                        <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                          For example, the job may require a driving license in some locations but not in others.
+                        </div>
+                      </div>
+
+
+                    </div>
+                  </fieldset>
+                </div>
+
+
+              <div id="head" style="display:none"><h3  class="govuk-heading-m"><span style="border-bottom:1px solid #1d70b8">Vacancy locations</span></h3>
+              </div>
+              <dl class="govuk-summary-list govuk-summary-list--no-border" style="">
+
+                <div class="govuk-summary-list__row"  style=";">
+                  <dt class="govuk-summary-list__key" style="height:90px;">
+                    <div id="list1"></div>
+                  </dt>
+                  <dd class="govuk-summary-list__actions" style="height:90px;">
+                    <a class="govuk-link" href="#">
+                      <div style="margin-right:100px" id="list2"></div>
+                      <span class="govuk-visually-hidden"> name</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+
+
+            </div>
+
+
+            <div class="govuk-grid-column-one-quarter">
+
+
+            <h2 class="govuk-heading-m">Your progress</h2>
+              <div data-module="appstepnav"id="step-by-step-navigation" >
+                <h2 class="govuk-heading-s" >First job type</h2>
+                <ol class="app-step-nav__steps">
+                  <li class="app-step-nav__step js-step app-step-nav__step" aria-current="step" id="check-you-re-allowed-to-drive">
+                    <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none">
+                      <h3 class="app-step-nav__title">
+                        <span class="app-step-nav__circle app-step-nav__circle--number">
+                          <span class="app-step-nav__circle-inner">
+                            <span class="app-step-nav__circle-background">
+                              <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><img src="/public/images/green-tick.png" style="max-width:50%;"><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                            </span>
+                          </span>
+                        </span>
+
+                        <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                          About the vacancy
+                        </span>
+                      <br><br>
+                      </h3>
+                    </div>
+
+
+
+                  </li>
+                  <li class="app-step-nav__step" id="get-a-provisional-licence">
+                    <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+                      <h3 class="app-step-nav__title">
+                        <span class="app-step-nav__circle app-step-nav__circle--number" style="border:solid 3px">
+                          <span class="app-step-nav__circle-inner">
+                            <span class="app-step-nav__circle-background">
+                              <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                            </span>
+                          </span>
+                        </span>
+
+                        <span class="js-step-title" style="color:#505a5f;">
+                          Contract information
+                        </span>
+                      <br><br>
+                      </h3>
+                    </div>
+                  </li>
+                  <li class="app-step-nav__step" id="get-a-provisional-licence">
+                    <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+                      <h3 class="app-step-nav__title">
+                        <span class="app-step-nav__circle app-step-nav__circle--number">
+                          <span class="app-step-nav__circle-inner">
+                            <span class="app-step-nav__circle-background">
+                              <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                            </span>
+                          </span>
+                        </span>
+
+                        <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                          Advert set up
+                        </span>
+                        <br><br>
+                      </h3>
+                    </div>
+                  </li>
+                  <li class="app-step-nav__step" id="get-a-provisional-licence">
+                    <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+                      <h3 class="app-step-nav__title">
+                        <span class="app-step-nav__circle app-step-nav__circle--number">
+                          <span class="app-step-nav__circle-inner">
+                            <span class="app-step-nav__circle-background">
+                              <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                            </span>
+                          </span>
+                        </span>
+
+                        <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                          Selection criteria and assessment methods
+                        </span>
+                        <br><br>
+                      </h3>
+                    </div>
+                  </li>
+
+
+                </ol>
+              </div><br>
+
+              <div data-module="appstepnav"id="step-by-step-navigation" >
+                <h2 class="govuk-heading-s" style="font-weight:normal">Second job type</h2>
+                <ol class="app-step-nav__steps">
+                  <li class="app-step-nav__step js-step app-step-nav__step" aria-current="step" id="check-you-re-allowed-to-drive">
+                    <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none">
+                      <h3 class="app-step-nav__title">
+                        <span class="app-step-nav__circle app-step-nav__circle--number">
+                          <span class="app-step-nav__circle-inner">
+                            <span class="app-step-nav__circle-background">
+                              <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                            </span>
+                          </span>
+                        </span>
+
+                        <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                          About the vacancy
+                        </span>
+                      <br><br>
+                      </h3>
+                    </div>
+
+
+
+                  </li>
+                  <li class="app-step-nav__step" id="get-a-provisional-licence">
+                    <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+                      <h3 class="app-step-nav__title">
+                        <span class="app-step-nav__circle app-step-nav__circle--number">
+                          <span class="app-step-nav__circle-inner">
+                            <span class="app-step-nav__circle-background">
+                              <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                            </span>
+                          </span>
+                        </span>
+
+                        <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                          Contract information
+                        </span>
+                      <br><br>
+                      </h3>
+                    </div>
+                  </li>
+                  <li class="app-step-nav__step" id="get-a-provisional-licence">
+                    <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+                      <h3 class="app-step-nav__title">
+                        <span class="app-step-nav__circle app-step-nav__circle--number">
+                          <span class="app-step-nav__circle-inner">
+                            <span class="app-step-nav__circle-background">
+                              <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                            </span>
+                          </span>
+                        </span>
+
+                        <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                          Advert set up
+                        </span>
+                        <br><br>
+                      </h3>
+                    </div>
+                  </li>
+                  <li class="app-step-nav__step" id="get-a-provisional-licence">
+                    <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+                      <h3 class="app-step-nav__title">
+                        <span class="app-step-nav__circle app-step-nav__circle--number">
+                          <span class="app-step-nav__circle-inner">
+                            <span class="app-step-nav__circle-background">
+                              <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                            </span>
+                          </span>
+                        </span>
+
+                        <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                          Selection criteria and assessment methods
+                        </span>
+                        <br><br>
+                      </h3>
+                    </div>
+                  </li>
+
+
+                </ol>
+              </div><br>
+
+
+            </div>
+
+
+          </div>
+          <div id="bulk" style="display:none;">
+
+
+            {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+            {{ govukCheckboxes({
+              name: "organisation",
+              classes: "govuk-checkboxes--small",
+              fieldset: {
+                legend: {
+                  text: "",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+              {
+                id: "savelist",
+                value: "yes",
+                text: "Save this list for your next vacancy set-up?"
+              }
+              ]
+            }) }}
+
+          </div>
+          <div id="buttons" style="display:none">
+            {{ govukButton({
+              text: "Continue",
+              classes: "govuk-button govuk-!-margin-top-6"
+            }) }}
+
+            {{ govukButton({
+              text: "Preview advert",
+              classes: "govuk-button--secondary govuk-!-margin-top-6",
+              href: "preview-advert"
+            }) }}
+          </div>
+        </div>
+
+
+        <button class="govuk-button govuk-!-margin-top-9" data-module="govuk-button">Continue</button>
+        {{ govukButton({
+          text: "Preview advert",
+          classes: "govuk-button--secondary govuk-!-margin-top-9",
+          href: "preview-advert"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+
+
+  <script src="/public/javascripts/temp-copyloc.js"></script>
+  <script src="/public/javascripts/locations.js"></script>
+
+
+
+
+
+
+  <script>
+
+
+    function loadList(){
+
+      var loadListArray = JSON.parse(window.sessionStorage.getItem("locations"));
+      console.log(loadListArray)
+      showDiv('head');
+      hideDiv('stored');
+      hideDiv('or')
+      hideDiv('upload');
+      for (var tt=0;tt<loadListArray.length;tt++){
+        var contentItem = document.createElement("p");
+        var linkItem = document.createElement("p");
+
+        contentItem.innerHTML = loadListArray[tt];
+
+        if (contentItem.innerHTML.length > 45){
+          contentItem.style.cssText = "margin-top:10px;height:60px;font-size:20px;width:100%";
+          linkItem.style.cssText = "margin-top:10px;;height:60px;;font-size:20px;font-weight:bold";
+
+        } else {
+          contentItem.style.cssText = "margin-top:10px;height:20px;font-size:20px;width:100%";
+          linkItem.style.cssText = "margin-top:10px;;height:20px;;font-size:20px;font-weight:bold";
+
+        }
+
+
+
+        console.log(contentItem.innerHTML.length)
+
+        // linkItem.setAttribute("id","delete"+tt);
+        linkItem.innerHTML = "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' id='1' onclick='kill(this.id)' href='#'> Delete</a>";
+        loc.appendChild(contentItem);
+        link.appendChild(linkItem);
+      }
+
+
+
+    }
+
+
+
+
+
+
+
+    var bulk = document.getElementById("bulk");
+    var loc = document.getElementById('list1');
+    var link = document.getElementById('list2');
+
+
+    var locArray = [];
+    function cannedSearch(searchTerm){
+
+      if (searchTerm == "Bristol, Glasgow, York") {
+
+        var dloccontent1 = document.createElement("p");
+        var dloccontent2 = document.createElement("p");
+        var dloccontent3 = document.createElement("p");
+        var dlinkconten1 = document.createElement("p");
+        var dlinkconten2 = document.createElement("p");
+        var dlinkconten3 = document.createElement("p");
+
+        dloccontent1.style.cssText = "margin-top:10px;height:20px;font-size:20px;";
+        dloccontent2.style.cssText = "margin-top:10px;height:20px;font-size:20px;";
+        dloccontent3.style.cssText = "margin-top:10px;height:20px;font-size:20px;";
+        dloccontent1.innerHTML = "Bristol";
+        dloccontent2.innerHTML = "Glasgow";
+        dloccontent3.innerHTML = "York";
+        dlinkconten1.style.cssText = "margin-top:10px;;height:20px;;font-size:20px;font-weight:bold";
+        dlinkconten2.style.cssText = "margin-top:10px;;height:20px;;font-size:20px;font-weight:bold";
+        dlinkconten3.style.cssText = "margin-top:10px;;height:20px;;font-size:20px;font-weight:bold";
+        dlinkconten1.innerHTML = "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' id='1' onclick='kill(this.id)' href='#'> Delete</a>";
+        dlinkconten2.innerHTML = "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' id='2' onclick='kill(this.id)' href='#'> Delete</a>";
+        dlinkconten3.innerHTML = "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' id='3' onclick='kill(this.id)' href='#'> Delete</a>";
+
+        showDiv('head');
+        hideDiv('stored');
+        hideDiv('or')
+        hideDiv('upload');
+
+        loc.appendChild(dloccontent1);
+        link.appendChild(dlinkconten1);
+        // locArray.push("Bristol")
+
+        loc.appendChild(dloccontent2);
+        link.appendChild(dlinkconten2);
+        // locArray.push("Glasgow")
+        loc.appendChild(dloccontent3);
+        link.appendChild(dlinkconten3);
+
+        // locArray.push("York")
+        // window.sessionStorage.setItem("locations", JSON.stringify(locArray));
+      }
+    }
+
+    function focusSearch(place){
+      showDiv('head');
+      hideDiv('stored');
+      hideDiv('or')
+      hideDiv('upload');
+
+      var searchBox = document.getElementById("autocomplete-default");
+      searchBox.value = place;
+      const pointer = document.getElementById("autocomplete-default");
+      pointer.addEventListener('blur', (event) => {
+        var thing = event.target.value;
+        var ploccontent = document.createElement("p");
+        var plinkconten = document.createElement("p");
+        ploccontent.innerHTML = thing;
+
+
+        if (ploccontent.innerHTML.length > 45){
+          ploccontent.style.cssText = "margin-top:10px;height:60px;font-size:20px;width:100%";
+          plinkconten.style.cssText = "margin-top:10px;;height:60px;;font-size:20px;font-weight:bold";
+
+        } else {
+          ploccontent.style.cssText = "margin-top:10px;height:20px;font-size:20px;width:100%";
+          plinkconten.style.cssText = "margin-top:10px;;height:20px;;font-size:20px;font-weight:bold";
+        }
+
+        plinkconten.innerHTML = "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' id='1' onclick='kill(this.id)' href='#'> Delete</a>";
+        loc.appendChild(ploccontent);
+        link.appendChild(plinkconten);
+        // locArray.push(thing)
+        // console.log(thing)
+        // window.sessionStorage.setItem("locations", JSON.stringify(locArray));
+      }, { once: true });
+
+    }
+
+
+
+
+
+
+
+    function hideDiv(div1) {
+      document.getElementById(div1).style.display = 'none';
+
+    }
+
+
+
+
+
+    try {
+      reloaded(); // may throw three types of exceptions
+    } catch (e) {
+      if (e instanceof TypeError) {
+        // statements to handle TypeError exceptions
+      } else if (e instanceof RangeError) {
+        // statements to handle RangeError exceptions
+      } else if (e instanceof EvalError) {
+        // statements to handle EvalError exceptions
+      } else {
+        // statements to handle any unspecified exceptions
+        logMyErrors(e); // pass exception object to error handler
+      }
+    }
+
+
+
+
+    const entry = document.getElementById("autocomplete-default");
+    var count = 0;
+
+
+    function reloaded() {
+
+      locArray = JSON.parse(window.sessionStorage.getItem("locations"));
+
+      if (locArray !=""){
+        console.log(locArray)
+        for (var j=0;j<locArray.length;j++){
+          count = count+1;
+          showDiv('head');
+          hideDiv('stored');
+          hideDiv('or')
+          hideDiv('upload');
+
+          var PREloccontent = document.createElement("p");
+          var PRElinkcontent = document.createElement("p");
+
+          PREloccontent.innerHTML =  locArray[j];
+          if (PREloccontent.innerHTML.length > 45){
+            PREloccontent.style.cssText = "margin-top:10px;height:60px;font-size:20px;width:100%";
+            PRElinkcontent.style.cssText = "margin-top:10px;;height:60px;;font-size:20px;font-weight:bold";
+
+          } else {
+            PREloccontent.style.cssText = "margin-top:10px;height:20px;font-size:20px;width:100%";
+            PRElinkcontent.style.cssText = "margin-top:10px;;height:20px;;font-size:20px;font-weight:bold";
+          }
+
+
+          PRElinkcontent.innerHTML = "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' id='"+count+"' onclick='kill(this.id)' href='#'> Delete</a>";
+          loc.appendChild(PREloccontent);
+          link.appendChild(PRElinkcontent);
+        }
+      }
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+    entry.addEventListener('change', (event) => {
+
+      var location = event.target.value;
+
+      var loccontent = document.createElement("p");
+      var linkcontent = document.createElement("p");
+      console.log(location.length)
+      // showDiv('default');
+      // numcontent.innerHTML = location;
+      count = count+1;
+
+      loccontent.innerHTML = location;
+      if (loccontent.innerHTML.length > 45){
+        loccontent.style.cssText = "margin-top:10px;height:60px;font-size:20px;width:100%";
+        linkcontent.style.cssText = "margin-top:10px;;height:60px;;font-size:20px;font-weight:bold";
+
+      } else {
+        loccontent.style.cssText = "margin-top:10px;height:20px;font-size:20px;width:100%";
+        linkcontent.style.cssText = "margin-top:10px;;height:20px;;font-size:20px;font-weight:bold";
+      }
+
+
+
+      linkcontent.innerHTML = "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' id='"+count+"' onclick='kill(this.id)' href='#'> Delete</a>";
+
+      loc.appendChild(loccontent);
+      link.appendChild(linkcontent);
+      showDiv('head');
+      hideDiv('stored');
+      hideDiv('or')
+      hideDiv('upload');
+
+
+      // content.innerHTML = "<span style='font-weight:regular;font-size:18px;line-height:1.5;'>"+location+"</span>"+""+"<a id='del"+item+"' onclick='' href='#'> delete</a>";
+      // item.appendChild(content);
+
+
+      try {
+        saveList(); // may throw three types of exceptions
+      } catch (e) {
+        if (e instanceof TypeError) {
+          // statements to handle TypeError exceptions
+        } else if (e instanceof RangeError) {
+          // statements to handle RangeError exceptions
+        } else if (e instanceof EvalError) {
+          // statements to handle EvalError exceptions
+        } else {
+          // statements to handle any unspecified exceptions
+          logMyErrors(e); // pass exception object to error handler
+        }
+      }
+
+
+
+function saveList(){
+
+  // locArray.push(location)
+  // var longish = locArray.length;
+  // console.log(longish+"longish")
+  //
+  //
+  //
+  // // console.log(locArray)
+  // window.sessionStorage.setItem("locations", JSON.stringify(locArray));
+  //
+  // if (longish>10){
+  //   console.log("longer than 10")
+  //   showDiv('bulk');
+  // }
+
+}
+
+
+
+
+    });
+
+
+    function showDiv(div1) {
+      console.log(div1)
+      document.getElementById(div1).style.display = 'block';
+
+    }
+
+
+    // const checker = document.getElementById('savelist');
+    //
+    //
+    // checker.addEventListener("change", showDiv('reveal'));
+
+
+
+    const saved = document.getElementById('listadded');
+
+    const dateField = document.getElementById('bulk');
+    var stamp = new Date();
+    var localStamp = stamp.toLocaleDateString('en-us', { day:"numeric", month:"short", year:"numeric", hour:"numeric",minute:"numeric" }) ;
+    saved.innerHTML = "list-"+localStamp;
+
+
+    // console.log(locArray)
+
+    function kill(index){
+      count = 0;
+
+      console.log(index)
+      locArray.splice(index-1, 1);
+      document.getElementById('list1').innerHTML="";
+      document.getElementById('list2').innerHTML="";
+
+      // document.getElementById('list2').innerHTML=locArray;
+      console.log(locArray)
+      // locArray = JSON.parse(window.sessionStorage.getItem("locations"));
+
+      for (var j=0;j<locArray.length;j++){
+
+        var PREloccontent = document.createElement("p");
+        var PRElinkcontent = document.createElement("p");
+
+
+        PREloccontent.innerHTML =  locArray[j];
+        if (PREloccontent.innerHTML.length > 50){
+          PREloccontent.style.cssText = "margin-top:10px;height:60px;font-size:20px;width:100%";
+          PRElinkcontent.style.cssText = "margin-top:10px;;height:60px;;font-size:20px;font-weight:bold";
+
+        } else {
+          PREloccontent.style.cssText = "margin-top:10px;height:20px;font-size:20px;width:100%";
+          PRElinkcontent.style.cssText = "margin-top:10px;;height:20px;;font-size:20px;font-weight:bold";
+        }
+
+
+        PRElinkcontent.innerHTML = "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' id='"+count+"' onclick='kill(this.value)' href='#'> delete</a>";
+        loc.appendChild(PREloccontent);
+        link.appendChild(PRElinkcontent);
+        count++;
+      }
+
+
+
+    }
+
+
+
+
+
+      try {
+        var approval = JSON.parse(window.sessionStorage.getItem("approval-proof"));
+        console.log(approval)
+
+        if (approval[0] == "Yes") {
+          console.log("Yes")
+
+          var lm = document.getElementById('appro');
+          lm.style.cssText = "font-size:20px;font-weight:bold";
+          lm.innerText = "Approval: "+ approval[1] +" "+ approval[2];
+
+
+
+        }
+      } catch (error) {
+        console.error(error);
+      }
+
+      // var approval = JSON.parse(window.sessionStorage.getItem("approval-proof"));
+      // console.log(approval)
+      //
+      // if (approval[0] == "Yes") {
+      //   console.log("Yes")
+      //
+      //   var lm = document.getElementById('appro');
+      //   lm.style.cssText = "font-size:20px;font-weight:bold";
+      //   lm.innerText = "Approval: "+ approval[1] +" "+ approval[2];
+      //
+      //
+      //
+      // }
+
+      var appArray = [];
+      const approved = document.getElementById('approved');
+      const notapproved = document.getElementById('notapproved');
+      var divv = document.getElementById('upload').style.display;
+      approved.addEventListener('change', (event) => {
+        if (approved.checked) {
+          showDiv("upload");
+          appArray.push("Yes");
+          // window.sessionStorage.setItem("approved", JSON.stringify("Yes"));
+
+        }
+
+      });
+
+
+      const fileUpload = document.getElementById('file-upload-1');
+      var stamp = new Date();
+      var localStamp = stamp.toLocaleDateString('en-us', { day:"numeric", month:"short", year:"numeric" }) ;
+
+      fileUpload.addEventListener('change', (event) => {
+        const files = event.target.files;
+        for (const file of files) {
+          const name = file.name;
+          const lastModified = file.lastModified;
+          const lmElement = document.getElementById('lastMod');
+
+          var fileName = `${name}`;
+          var lastM = `uploaded on ${new Date(lastModified).toLocaleDateString('en-uk')}`;
+          lmElement.innerHTML = fileName+": "+lastM;
+          appArray.push(fileName,lastM)
+          window.sessionStorage.setItem("approval-proof", JSON.stringify(appArray));
+        }
+      });
+
+      notapproved.addEventListener('change', (event) => {
+        if (notapproved.checked) {
+          hideDiv("upload");
+        }
+
+      });
+
+
+
+
+      function hideDiv(div1) {
+        document.getElementById(div1).style.display = 'none';
+
+      }
+
+      function showDiv(div1) {
+        document.getElementById(div1).style.display = 'block';
+
+      }
+
+
+
+    </script>
+
+  {% endblock %}

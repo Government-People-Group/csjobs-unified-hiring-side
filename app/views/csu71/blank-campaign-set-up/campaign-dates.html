@@ -64,50 +64,9 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
     ]
   }) }}
 
-
-
-{% if data['rolling-recruitment'] != "yes" %}
-
-      <h2 class="govuk-heading-m govuk-!-margin-top-9">How long should the campaign be live for?</h2>
-      {{ govukRadios({
-        idPrefix: "advert-time",
-        name: "advert-time",
-        value: data['advert-time'],
-        fieldset: {
-          legend: {
-            text: "",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: "Most vacancies are live for 2 weeks"
-        },
-        items: [
-        {
-          value: "2 weeks",
-          text: "2 weeks",
-          checked: true,
-          checked: checked ("advert-time","2 weeks")
-        },
-        {
-          value: "3 weeks",
-          checked: checked ("advert-time","3 weeks"),
-          text: "3 weeks"
-        },
-        {
-          value: "4 weeks",
-          checked: checked ("advert-time","4 weeks"),
-          text: "4 weeks"
-        }
-        ]
-      }) }}
-
-      {% else %}
-
       <br><br>
 
-      <h2 class="govuk-heading-m">When does your rolling campaign end?</h2>
+      <h2 class="govuk-heading-m">When does your campaign end?</h2>
 
             {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
             {{ govukDateInput({
@@ -132,7 +91,7 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
           ]
         }) }}
 
-      {% endif %}
+
 
 
 

@@ -1,0 +1,186 @@
+{% extends "layouts/main.html" %}
+
+
+
+{% block header %}
+{% include '/csu71/includes/pheader.html' %}
+  {% endblock %}
+
+
+
+
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Interview</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="#"><strong>Message panel chair</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+
+
+<span class="govuk-caption-l">1001334</span>
+<h2 class="govuk-heading-l">Policy Adviser</h2>
+
+
+
+
+
+{% set meiTotal = data['Mei Chen score'][0]|int + data['Mei Chen score'][1]|int + data['Mei Chen score'][2]|int + data['Mei Chen score'][3]|int + data['Mei Chen score'][4]|int + data['Mei Chen score'][5]|int + data['Mei Chen score'][6]|int %}
+{% set ameliaTotal = data['Amelia Lawson score'][0]|int + data['Amelia Lawson score'][1]|int + data['Amelia Lawson score'][2]|int + data['Amelia Lawson score'][3]|int + data['Amelia Lawson score'][4]|int + data['Amelia Lawson score'][5]|int + data['Amelia Lawson score'][6]|int %}
+{% set javierTotal = data['Javier Santos score'][0]|int + data['Javier Santos score'][1]|int + data['Javier Santos score'][2]|int + data['Javier Santos score'][3]|int + data['Javier Santos score'][4]|int + data['Javier Santos score'][5]|int + data['Javier Santos score'][6]|int %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-3">Review and submit interview scores</H1>
+    <p class="govuk-body-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">Review and submit your interview scores to the panel.</p>
+
+
+    <table class="govuk-table govuk-!-margin-top-9" style="">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th style="" scope="col" class="govuk-table__header">Candidate</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Date Time</th>
+          <th style=";text-align:left;" scope="col" class="govuk-table__header govuk-table__header--numeric">Q1</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Q2</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Q3</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Q4</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Q5</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Q6</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Q7</th>
+          <th style=";text-align:center" scope="col" class="govuk-table__header govuk-table__header--numeric">Total</th>
+          <th style=";text-align:center" scope="col" class="govuk-table__header govuk-table__header--numeric">Status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+
+
+
+
+          <th scope="row" class="govuk-table__header">
+
+            <a style="" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="score-candidate-interview?candidate=Mei Chen&interviewEvent=10:00-10:45">Mei Chen</a>
+
+          </th>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">10:00-10:45<BR><span id="intDate1"></span></td>
+            <td style=";text-align:left;" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Mei Chen score'][0]|default("7")|int}}</td>
+            <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Mei Chen score'][1]|default("7")|int}}</td>
+            <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Mei Chen score'][2]|default("7")|int}}</td>
+            <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Mei Chen score'][3]|default("7")|int}}</td>
+            <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Mei Chen score'][4]|default("7")|int}}</td>
+            <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Mei Chen score'][5]|default("7")|int}}</td>
+            <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Mei Chen score'][6]|default("7")|int}}</td>
+          <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric"><strong>49</strong></td>
+          <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric">
+
+            <strong class="govuk-tag govuk-tag"  id="contact-details-status">completed</strong>
+
+
+
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+
+            <a style="" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="score-candidate-interview?candidate=Amelia Lawson&interviewEvent=13:00-13:45">Amelia Lawson</a>
+
+          </th>
+          <td style=";text-align:left;" class="govuk-table__cell govuk-table__cell--numeric">13:00-13:45<BR><span id="intDate2"></span></td>
+          <td style=";text-align:left;" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawson score'][0]|default("6")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawson score'][1]|default("6")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawson score'][2]|default("6")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawson score'][3]|default("6")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawson score'][4]|default("6")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawson score'][5]|default("6")|int}}</td>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Amelia Lawson score'][6]|default("6")|int}}</td>
+          <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric"><strong>42</strong></td>
+          <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric">
+
+            <strong class="govuk-tag govuk-tag"  id="contact-details-status">completed</strong>
+
+
+
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+
+            <a style="" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="score-candidate-interview?candidate=Javier Santos&interviewEvent=16:00-16:45">Javier Santos</a>
+
+          </th>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">16:00-16:45<BR><span id="intDate3"></span></td>
+          <td style=";text-align:left;" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos score'][0]|default("5")|int}}</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos score'][1]|default("5")|int}}</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos score'][2]|default("5")|int}}</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos score'][3]|default("5")|int}}</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos score'][4]|default("5")|int}}</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos score'][5]|default("5")|int}}</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">{{ data['Javier Santos score'][6]|default("5")|int}}</td>
+          <td style="font-size:24px;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric"><strong>35</strong></td>
+
+          <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric">
+
+            <strong class="govuk-tag govuk-tag"  id="contact-details-status">completed</strong>
+
+
+
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+
+
+    {{ govukButton({
+      text: "Submit my scores to panel",
+      href: "task-list-interview2"
+    }) }}
+
+
+  </div>
+</div>
+<script>
+
+  var dat =  document.getElementsByTagName("tr")
+  console.log(dat)
+
+  for (var t=0;t<dat.length;t++){
+    // if (dat.textContent[t]) {
+      console.log(dat.length)
+
+    // }
+
+
+  }
+
+  const todayDay1 = document.getElementById('intDate1');
+  const todayDay2 = document.getElementById('intDate2');
+  const todayDay3 = document.getElementById('intDate3');
+  const todaystamp = new Date();
+  const tickTock = todaystamp.toLocaleDateString('en-uk', { weekday:"short", day:"numeric", month:"long" }) ;
+  todayDay1.innerHTML = tickTock;
+  todayDay2.innerHTML = tickTock;
+  todayDay3.innerHTML = tickTock;
+
+
+
+</script>
+{% endblock %}
