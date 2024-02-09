@@ -63,17 +63,42 @@ Basic details – {{ serviceName }} – GOV.UK Prototype Kit
 
 
   {% from "govuk/components/input/macro.njk" import govukInput %}
-  {{ govukInput({
-  label: {
-  text: "Department",
-  classes: "govuk-label--m",
-  isPageHeading: false
-  },
-  classes: "govuk-input--width-20",
-  id: "dept",
-  name: "dept2",
-  value: data['dept']
-  }) }}
+
+  {{ govukSelect({
+            id: "dept",
+            name: "dept",
+            label: {
+              text: "Department",
+              classes: "govuk-label--m"
+            },
+            items: [
+            {
+              value: "none",
+              selected: "true",
+              disabled: "true",
+              text: "Select grade"
+            },
+            {
+              value: "HMRC",
+              text: "HMRC",
+              selected: "true"
+            },
+            {
+              value: "DWP",
+              text: "DWP"
+            },
+            {
+              value: "Cabinet Office",
+              text: "Cabinet Office"
+            },
+            {
+              value: "Defra",
+              text: "Defra"
+            }
+            ]
+          }) }}
+
+  
 
   {% from "govuk/components/input/macro.njk" import govukInput %}
   {{ govukInput({
@@ -94,12 +119,12 @@ Basic details – {{ serviceName }} – GOV.UK Prototype Kit
 
   {{ govukInput({
   label: {
-  text: "Sub title",
+  text: "Business area",
   classes: "govuk-label--s",
   isPageHeading: false
   },
   hint: {
-    text: "(Optional) Use this to help a candidate see which business area the job is in. For example, 'Immigration and Borders'."
+    text: "(Optional) max 20 words. Use this to tell candidates which part of your department the job is in. For example, ‘Immigration and borders’ or ‘Child Maintenance Service’."
   },
   classes: "govuk-input--width-20",
   id: "subtitle",
