@@ -36,21 +36,18 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-three-quarters">
     <h1 class="govuk-heading-xl">Contacts</h1>
 <!-- <p class="govuk-body-m">For those responsible, this will mean receiving and responding to candidate queries lorem ipsum dolor sit amet blah blah.</p> -->
+  <h2 class="govuk-heading-m">Who is the main contact for the first job type?</h2>
 
+  {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+  {{ govukWarningText({
+    text: "The main contact’s email address will be visible on the job advert. This means they may receive queries from candidates and others involved in the campaign they will need to reply to.",
+    iconFallbackText: "Warning"
+  }) }}
 
     {{ govukRadios({
       idPrefix: "spoc",
       name: "spoc",
-      fieldset: {
-        legend: {
-          text: "Who is the main point of contact for this campaign?",
-          isPageHeading: false,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      hint: {
-        text: "For those responsible, this will mean receiving and responding to queries from candidates and others involved in the campaign. WARNING - email(s) entered on this page will be shown on the actual job ad."
-      },
       items: [
         {
           id: "mono",

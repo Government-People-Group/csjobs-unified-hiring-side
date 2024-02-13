@@ -41,7 +41,7 @@ Basic details – {{ serviceName }} – GOV.UK Prototype Kit
   <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
   <strong class="govuk-warning-text__text">
     <span class="govuk-visually-hidden">Warning</span>
-    Your second job type has been prefilled with answers from the first job type. You should edit anything you want to change on each page.
+    This job type is pre-populated with details you added for the first job type. You just need to edit the details that make the second job type different. For example, the second job type may be a different grade, or have a shorter or longer contract.
   </strong>
 </div><br>
 
@@ -50,7 +50,7 @@ Basic details – {{ serviceName }} – GOV.UK Prototype Kit
 
   <h2 class="govuk-label-wrapper">
     <label class="govuk-label govuk-label--m" for="event-name">
-      Number of posts
+      Number of posts for second job type
     </label>
   </h2>
 
@@ -98,7 +98,7 @@ Basic details – {{ serviceName }} – GOV.UK Prototype Kit
             ]
           }) }}
 
-  
+
 
   {% from "govuk/components/input/macro.njk" import govukInput %}
   {{ govukInput({
@@ -124,7 +124,7 @@ Basic details – {{ serviceName }} – GOV.UK Prototype Kit
   isPageHeading: false
   },
   hint: {
-    text: "(Optional) max 20 words. Use this to tell candidates which part of your department the job is in. For example, ‘Immigration and borders’ or ‘Child Maintenance Service’."
+    text: "(Optional) Use this to tell candidates which part of your department the job is in. For example, ‘Immigration and borders’ or ‘Child Maintenance Service’. Max 20 words."
   },
   classes: "govuk-input--width-20",
   id: "subtitle",
@@ -140,7 +140,7 @@ Basic details – {{ serviceName }} – GOV.UK Prototype Kit
             id: "newgrade",
             name: "newgrade2",
             label: {
-              text: "What grade is the job role?",
+              text: "What grade is this job role?",
               classes: "govuk-label--m"
             },
             items: [
