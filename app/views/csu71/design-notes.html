@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+
+
+
+{% block pageTitle %}
+Basic details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Design notes</h1>
+
+<a href="#bulkv2" class="govuk-link govuk-link--no-visited-state" style="display:block">Bulk recruitment - v2</a><br><a href="#bulkv1" class="govuk-link govuk-link--no-visited-state" style="display:block">Bulk recruitment - v1</a><br><br>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m" style="margin-bottom:5px" id="bulkv2">Bulk recruitment</h3>
+    <h3 class="govuk-heading-s" style="margin-bottom:5px">V2</h3><br>
+      <p class="govuk-body"><strong>Aim</strong></p>
+      <p class="govuk-body">V2 was an iteration of the initial V1 prototype. Based on adding multi-grade / contract functionality and some improvements based on user feedback from V1, our aim was to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>allow a user to build a single ad with multiple job types e.g. different grades or contract types</li>
+        <li>increase contact options by offering a 'team mailbox' option</li>
+        <li>amending content where issues had been raised during V1 testing</li>
+      </ul><br>
+
+      <p class="govuk-body"><strong>What we did</strong></p>
+      <p class="govuk-body">We made the above changes to create a <a href="https://csjobs-hiring-side-a6b074da6857.herokuapp.com/csu71/task-list-new-campaign" target="_blank">V2 version of 'create a vacancy'</a>.</p>
+
+      <p class="govuk-body"><strong>User research</strong></p>
+      <p class="govuk-body"><a href="https://app.mural.co/t/civilservicerecruitment8943/m/civilservicerecruitment8943/1707816914282/b5652f188dfb06bf0a5ecc6a07de3b6f322d0121?sender=u2d124d966bc212bd1d414842" target="_blank">Mural board with testing notes</a></p><br>
+      <p class="govuk-body"><strong>What we found</strong></p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+        <br>
+        <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"><br>
+
+
+    <h3 class="govuk-heading-s" style="margin-bottom:5px" id="bulkv1">V1</h3><br>
+      <p class="govuk-body"><strong>Aim</strong></p>
+      <p class="govuk-body">Our aim was to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>offer a user the ability to create a bulk campaign within the new service</li>
+        <li>allow a user to create a rolling or tranche campaign</li>
+
+      </ul><br>
+
+      <p class="govuk-body"><strong>What we did</strong></p>
+      <p class="govuk-body">We amended the existing 'create a vacancy' prototype and added in functionality for a bulk or rolling campaign, including capturing number of posts, what type of bulk campaign it is etc. </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="https://csjobs-hiring-side-a6b074da6857.herokuapp.com/previous-versions/V1/csu71/task-list-new-campaign" target="_blank">V1 'create a vacancy' for bulk campaigns</li>
+      </ul><br>
+
+      <p class="govuk-body"><strong>User research</strong></p>
+      <p class="govuk-body"><a href="https://app.mural.co/t/civilservicerecruitment8943/m/civilservicerecruitment8943/1705598154349/f77ee9bccbe186c3e24e58907a52e8e24e44bfac?sender=u21f36a9fedce292b06138582" target="_blank">Mural board with testing notes</a></p><br>
+      <p class="govuk-body"><strong>What we found</strong></p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>some users need to create bulk campaigns with more than one 'job type' in the ad: for example, multiple grades or different contract lengths / types</li>
+        <li>choosing a campaign duration (e.g. 2, 3 or 4 weeks) did not work for many users - they preferred the ability to add a campaign end date instead</li>
+        <li>many users would not want to choose a single person or two people as contacts - instead they wanted the option to use a team / generic email address to capture queries</li>
+        <li>adding more questions related to vacancy numbers did not make the 'Basic details' page overwhelming for users</li>
+        <li>online tests needed more promotion / explanation of benefits to encourage users to opt for them as a sift method</li>
+      </ul><br><br>
+
+
+
+
+
+
+
+
+
+
+        </div>
+        </div><br><br><br>
+
+
+
+
+{% endblock %}
