@@ -1,0 +1,175 @@
+{% extends "layouts/main.html" %}
+{% block header %}
+{% include '/csu71/includes/vm-header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Home – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .app-header--full-width-border {
+    border-bottom: 10px solid #1f70b8;
+  }
+  .govuk-main-wrapper {
+    padding-top:0px
+  }
+
+  .notification-wrapper-good {
+    padding:0px
+  }
+
+  .notification-wrapper-warning {
+    padding:45px 0px 30px 0px
+  }
+
+  .notification-good {
+    margin:20px;
+    color:#0b0c0c;
+    padding:15px;
+    background-color:#e8e6e5;
+    border-left:10px solid #0ba25c;
+    position:relative;
+  }
+
+  .notification-warning {
+    margin:20px;
+    color:#0b0c0c;
+    padding:15px;
+    background-color:#e8e6e5;
+    border-left:10px solid #e52d10;
+    position:relative;
+  }
+
+  .moj-notification-badge {
+    padding:1px 3px;
+    margin-left:8px
+  }
+
+  .govuk-accordion__section-toggle-focus {
+    margin-left:40px
+  }
+
+  .govuk-accordion__section-content {
+    margin-left:40px
+  }
+</style>
+
+<nav class="x-govuk-primary-navigation" aria-labelledby="primary-navigation-heading">
+  <div class="govuk-width-container">
+    <h2 class="govuk-visually-hidden" id="primary-navigation-heading">Navigation</h2>
+    <ul class="x-govuk-primary-navigation__list">
+      <li class="x-govuk-primary-navigation__item">
+        <a class="x-govuk-primary-navigation__link" aria-current=page href="campaigns">Campaigns</a>
+      </li>
+      <li class="x-govuk-primary-navigation__item x-govuk-primary-navigation__item--current">
+        <a class="x-govuk-primary-navigation__link" aria-current=page href="messages">Messages (2)</a>
+
+      </li>
+      <li class="x-govuk-primary-navigation__item ">
+        <a class="x-govuk-primary-navigation__link" href="#">User management</a>
+      </li>
+      <li class="x-govuk-primary-navigation__item ">
+        <a class="x-govuk-primary-navigation__link" href="#">Dept and team info</a>
+      </li>
+      <li class="x-govuk-primary-navigation__item ">
+        <a class="x-govuk-primary-navigation__link" href="#">Guidance</a>
+      </li>
+    </ul>
+  </div>
+</nav><br><br><br>
+
+<nav class="x-govuk-secondary-navigation" aria-label="Secondary menu">
+  <ul class="x-govuk-secondary-navigation__list">
+    <li class="x-govuk-secondary-navigation__list-item x-govuk-secondary-navigation__list-item--current">
+      <a class="x-govuk-secondary-navigation__link" href="#" aria-current=page>
+        Date received (newest first)
+      </a>
+    </li>
+    <li class="x-govuk-secondary-navigation__list-item ">
+      <a class="x-govuk-secondary-navigation__link" href="#">
+        Campaign number (ascending)
+      </a>
+    </li>
+    <li class="x-govuk-secondary-navigation__list-item ">
+      <a class="x-govuk-secondary-navigation__link" href="#">
+        Hide system messages
+      </a>
+    </li>
+    <li class="x-govuk-secondary-navigation__list-item ">
+      <a class="x-govuk-secondary-navigation__link" href="#">
+        Hide emails
+      </a>
+    </li>
+  </ul>
+</nav><br><br>
+
+
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+{{ govukAccordion({
+  id: "accordion-default",
+  showAllSectionsText: "Show all message content",
+  hideAllSectionsText: "Hide all message content",
+  items: [
+    {
+      heading: {
+        html: '<section class="notification-wrapper-warning" style="padding:25px 0px 0px 0px">
+        <p class="govuk-body">
+          <span style="margin:0px;background-color:#ffffff"><span id="notifications" class="moj-notification-badge" style="margin:0px 20px 0px 0px">!</span><span style="padding-right:30px">25 Feb 2024 3:37pm</span><strong>338507 - Policy Advisor - unread Reasonable Adjustment request</strong></span>
+        </p>
+      </section>'
+      },
+      content: {
+        html: '<p class="govuk-body"><a href="#">Candidate 57</a> requested a reasonable adjustment on <strong>6 Feb 2024</strong>.<br><br>The request has not been read. You should <a href="#">read the request</a> as soon as possible as the candidate may not be able to proceed without further action.</p>'
+      }
+    },
+    {
+      heading: {
+        html: '<section class="notification-wrapper-warning" style="padding:25px 0px 0px 0px">
+        <p class="govuk-body">
+          <span style="margin:0px;background-color:#ffffff"><span id="notifications" class="moj-notification-badge" style="background-color:#336c9e;margin:0px 20px 0px 0px">i</span><span style="padding-right:30px">24 Feb 2024 8:06am</span><strong>337933 - Strategy Administrator - large number of applications received</strong></span>
+        </p>
+      </section>'
+      },
+      content: {
+        html: '<p class="govuk-body">There is already a large number of applications for this post. You may need to set up multiple sift panels and assign panel members to them to deal with the large volumes.<br><br> You should <a href="#">set up your sift panel(s)</a> as soon as possible.</p>'
+      }
+    },
+    {
+      heading: {
+        html: '<section class="notification-wrapper-warning" style="padding:25px 0px 0px 0px">
+        <p class="govuk-body">
+          <span style="margin:0px;background-color:#ffffff"><span id="notifications" class="moj-notification-badge" style="background-color:#ffffff;margin:0px 20px 0px 0px"> </span><span style="padding-right:30px">24 Feb 2024 6:56am</span>337933 - Strategy Administrator - Email from Candidate 177</span>
+        </p>
+      </section>'
+      },
+      content: {
+        html: '<p class="govuk-body">Blah blah blah.</p>'
+      }
+    },
+    {
+      heading: {
+        html: '<section class="notification-wrapper-warning" style="padding:25px 0px 0px 0px">
+        <p class="govuk-body">
+          <span style="margin:0px;background-color:#ffffff"><span id="notifications" class="moj-notification-badge" style="background-color:#ffffff;margin:0px 20px 0px 0px"> </span><span style="padding-right:30px">20 Feb 2024 2:29pm</span>337933 - Strategy Administrator - Email from Candidate 536</span>
+        </p>
+      </section>'
+      },
+      content: {
+        html: '<p class="govuk-body">Blah blah blah.</p>'
+      }
+    }
+  ]
+}) }}
+
+
+
+
+
+
+
+{% endblock %}
