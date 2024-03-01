@@ -54,7 +54,16 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
   }
 
   .govuk-accordion__section-content {
-    margin-left:40px
+    margin-left:50px
+  }
+
+  .govuk-accordion__section {
+    background-color:#f4f5f6;
+    margin-bottom:20px
+  }
+
+  .govuk-frontend-supported .govuk-accordion {
+    border-bottom:none
   }
 </style>
 
@@ -70,13 +79,13 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
       </li>
       <li class="x-govuk-primary-navigation__item ">
-        <a class="x-govuk-primary-navigation__link" href="#">User management</a>
+        <a class="x-govuk-primary-navigation__link" href="user-management">User management</a>
       </li>
       <li class="x-govuk-primary-navigation__item ">
-        <a class="x-govuk-primary-navigation__link" href="#">Dept and team info</a>
+        <a class="x-govuk-primary-navigation__link" href="dept-team-info">Dept and team info</a>
       </li>
       <li class="x-govuk-primary-navigation__item ">
-        <a class="x-govuk-primary-navigation__link" href="#">Guidance</a>
+        <a class="x-govuk-primary-navigation__link" href="guidance">Guidance</a>
       </li>
     </ul>
   </div>
@@ -112,38 +121,40 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
 {{ govukAccordion({
   id: "accordion-default",
+  showSectionText:"Show message",
   showAllSectionsText: "Show all message content",
+  hideSectionText:"Hide message",
   hideAllSectionsText: "Hide all message content",
   items: [
     {
       heading: {
         html: '<section class="notification-wrapper-warning" style="padding:25px 0px 0px 0px">
         <p class="govuk-body">
-          <span style="margin:0px;background-color:#ffffff"><span id="notifications" class="moj-notification-badge" style="margin:0px 20px 0px 0px">!</span><span style="padding-right:30px">25 Feb 2024 3:37pm</span><strong>338507 - Policy Advisor - unread Reasonable Adjustment request</strong></span>
+          <span style="margin:0px;background-color:#f4f5f6"><span id="notifications" class="moj-notification-badge" style="margin:0px 20px 0px 10px">!</span><span style="padding-right:30px">25 Feb 2024 3:37pm</span><strong>Unread Reasonable Adjustment request: 338507 - Policy Advisor</strong></span>
         </p>
       </section>'
       },
       content: {
-        html: '<p class="govuk-body"><a href="#">Candidate 57</a> requested a reasonable adjustment on <strong>6 Feb 2024</strong>.<br><br>The request has not been read. You should <a href="#">read the request</a> as soon as possible as the candidate may not be able to proceed without further action.</p>'
+        html: '<p class="govuk-body"><a href="#">Candidate 57</a> made a reasonable adjustment request on <strong>6 Feb 2024</strong>.<br><br><a href="#">Read the request</a> as soon as possible. You may need to take action so the candidate&#39;s application can continue.</p>'
       }
     },
     {
       heading: {
         html: '<section class="notification-wrapper-warning" style="padding:25px 0px 0px 0px">
         <p class="govuk-body">
-          <span style="margin:0px;background-color:#ffffff"><span id="notifications" class="moj-notification-badge" style="background-color:#336c9e;margin:0px 20px 0px 0px">i</span><span style="padding-right:30px">24 Feb 2024 8:06am</span><strong>337933 - Strategy Administrator - large number of applications received</strong></span>
+          <span style="margin:0px;background-color:#f4f5f6"><span id="notifications" class="moj-notification-badge" style="background-color:#336c9e;margin:0px 20px 0px 10px">i</span><span style="padding-right:30px">24 Feb 2024 8:06am</span><strong>Large number of applications received: 337933 - Strategy Administrator</strong></span>
         </p>
       </section>'
       },
       content: {
-        html: '<p class="govuk-body">There is already a large number of applications for this post. You may need to set up multiple sift panels and assign panel members to them to deal with the large volumes.<br><br> You should <a href="#">set up your sift panel(s)</a> as soon as possible.</p>'
+        html: '<p class="govuk-body">A large number of candidates have applied for this vacancy. You should <a href="#">set up your sift panel(s)</a> as soon as possible.<br><br>You may need to assign members to multiple panels so they can sift the high number of applications.</p>'
       }
     },
     {
       heading: {
-        html: '<section class="notification-wrapper-warning" style="padding:25px 0px 0px 0px">
+        html: '<section class="notification-wrapper-warning" style="padding:25px 0px 0px 10px">
         <p class="govuk-body">
-          <span style="margin:0px;background-color:#ffffff"><span id="notifications" class="moj-notification-badge" style="background-color:#ffffff;margin:0px 20px 0px 0px"> </span><span style="padding-right:30px">24 Feb 2024 6:56am</span>337933 - Strategy Administrator - Email from Candidate 177</span>
+          <span style="margin:0px;background-color:#f4f5f6"><span id="notifications" class="moj-notification-badge" style="background-color:#ffffff;margin:0px 20px 0px 0px"> </span><span style="padding-right:30px">24 Feb 2024 6:56am</span>337933 - Strategy Administrator - Email from Candidate 177</span>
         </p>
       </section>'
       },
@@ -153,9 +164,9 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
     },
     {
       heading: {
-        html: '<section class="notification-wrapper-warning" style="padding:25px 0px 0px 0px">
+        html: '<section class="notification-wrapper-warning" style="padding:25px 0px 0px 10px">
         <p class="govuk-body">
-          <span style="margin:0px;background-color:#ffffff"><span id="notifications" class="moj-notification-badge" style="background-color:#ffffff;margin:0px 20px 0px 0px"> </span><span style="padding-right:30px">20 Feb 2024 2:29pm</span>337933 - Strategy Administrator - Email from Candidate 536</span>
+          <span style="margin:0px;background-color:#f4f5f6"><span id="notifications" class="moj-notification-badge" style="background-color:#ffffff;margin:0px 20px 0px 0px"> </span><span style="padding-right:30px">20 Feb 2024 2:29pm</span>337933 - Strategy Administrator - Email from Candidate 536</span>
         </p>
       </section>'
       },
