@@ -1,0 +1,262 @@
+{% extends "layouts/main.html" %}
+{% block header %}
+{% include '/csu71/includes/vm-header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Home – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .app-header--full-width-border {
+    border-bottom: 10px solid #1f70b8;
+  }
+  .govuk-main-wrapper {
+    padding-top:0px
+  }
+
+  .notification-wrapper-good {
+    padding:0px
+  }
+
+  .notification-wrapper-warning {
+    padding:45px 0px 30px 0px
+  }
+
+  .notification-good {
+    margin:20px;
+    color:#0b0c0c;
+    padding:15px;
+    background-color:#e8e6e5;
+    border-left:10px solid #0ba25c;
+    position:relative;
+  }
+
+  .notification-warning {
+    margin:20px;
+    color:#0b0c0c;
+    padding:15px;
+    background-color:#e8e6e5;
+    border-left:10px solid #e52d10;
+    position:relative;
+  }
+
+  .moj-notification-badge {
+    padding:1px 3px;
+    margin-left:8px
+  }
+</style>
+
+<nav class="x-govuk-primary-navigation" aria-labelledby="primary-navigation-heading">
+  <div class="govuk-width-container">
+    <h2 class="govuk-visually-hidden" id="primary-navigation-heading">Navigation</h2>
+    <ul class="x-govuk-primary-navigation__list">
+      <li class="x-govuk-primary-navigation__item">
+        <a class="x-govuk-primary-navigation__link" aria-current=page href="campaigns">Campaigns</a>
+      </li>
+      <li class="x-govuk-primary-navigation__item">
+        <a class="x-govuk-primary-navigation__link" aria-current=page href="messages">Messages (2)</a>
+
+      </li>
+      <li class="x-govuk-primary-navigation__item">
+        <a class="x-govuk-primary-navigation__link" href="user-management">User management</a>
+      </li>
+      <li class="x-govuk-primary-navigation__item">
+        <a class="x-govuk-primary-navigation__link" href="dept-team-info">Dept and team info</a>
+      </li>
+      <li class="x-govuk-primary-navigation__item x-govuk-primary-navigation__item--current">
+        <a class="x-govuk-primary-navigation__link" href="guidance">Guidance</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div class="govuk-tabs" data-module="govuk-tabs" style="padding-top:70px">
+  <h2>Writing a job advert</h2>
+  <p class="govuk-body-l">This guidance provides some tips on how to write and present job adverts consistently.</p>
+  <p class="govuk-body">You can use this guidance alongside the <a href="#" class="https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style">Government Digital Service style guide</a> and <a href="#" class=" https://www.gov.uk/guidance/content-design/writing-for-gov-uk">Writing for GOV.UK</a>.</p>
+  <p class="govuk-body">These are the rules on how we write for GOV.UK. They explain everything from how we write dates and times to how we capitalise the Civil Service but not civil servants. There’s also a list of words to avoid in the style guide.</p>
+  <h2 class="govuk-heading-m"> Getting started</h2>
+  <p class="govuk-body">Your job advert will appear on Civil Service Jobs as a webpage, not a Word document. So think of it as a web content from the start. This includes making sure it is accessible to everyone who reads it.</p>
+  <h2 class="govuk-heading-m">User needs</h2>
+  <p class="govuk-body">For a job advert, you want to attract the right candidates to apply. Think about what might help them decide to apply for the role when they read your advert.</p>
+  <p class="govuk-body">Think about your needs as a user of Civil Service Jobs:</p>
+  <p class="govuk-body">As a: vacancy holder</p>
+  <p class="govuk-body">I want to: attract the best candidates</p>
+  <p class="govuk-body">So I can: hire the right person for the job</p>
+  <p class="govuk-body">and those of potential candidates:</p>
+  <p class="govuk-body">As a: prospective civil servant, or an existing civil servant looking to move roles</p>
+  <p class="govuk-body">I want to: find and apply for Civil Service vacancies</p>
+  <p class="govuk-body">So I can: get the right job</p>
+  <p class="govuk-body">Its not a good idea to type your content directly into the Applicant Tracking System (ATS). Use Word or Google Docs. If your computer has Notepad, you can copy and paste from it to strip formatting.</p>
+  <h2 class="govuk-heading-m">User Put your important messages first</h2>
+  <p class="govuk-body">People do not read webpages the way they listen to jokes. The “punchline” should be at the start. If they’ve not found what they are interested in or looking for quickly, they may not read on.</p>
+  <h2 class="govuk-heading-m">Use language candidates will understand</h2>
+  <p class="govuk-body">Avoid acronyms, jargon or phrases and assumptions about what your users might already know or understand.</p>
+
+  <p class="govuk-body">If a reader is unfamiliar with the Civil Service they will not understand Civil Service jargon. Leave it out or explain it in full. </p>
+
+  <p class="govuk-body">For example, external candidates may not know about things like the Civil Service Code. You can help them to understand what you mean by <a href="#" class="https://www.gov.uk/government/publications/civil-service-code">adding a link to the code</a>.</p>
+
+  <p class="govuk-body">Consider the selling points of the role you are advertising. Highlight them in your job description, rather than lots of department-speak.</p>
+  <p class="govuk-body">Consider who you want to apply - be clear about what you are looking for in candidates.</p>
+  <p class="govuk-body">Abbreviations come after the first use of the phrase not before, so write:</p>
+  <p class="govuk-body">Control Salmonella Poultry Order (CSPO)</p>
+  <p class="govuk-body">not</p>
+  <p class="govuk-body">CSPO (Control Salmonella Poultry Order)</p>
+  <p class="govuk-body">then CSPO. Using the same example, if your advert only mentions a Control Salmonella Poultry Order once, there’s no need to write (CSPO) after it.</p>
+  <h2 class="govuk-heading-m">Keep your job advert simple</h2>
+  <p class="govuk-body">There are parts of a job advert where you will need to write about what:</p>
+  <ul class="govuk-list govuk-list--bullet">
+  <li>you are looking for in a candidate</li>
+  <li>the responsibilities of the role are</li>
+  <li>what the team does</li>
+  </ul>
+  <p class="govuk-body">Your job advert should be written in plain English.</p>
+  <p class="govuk-body">Keep your sentences short (25 words or less). Look at how many commas and uses of ‘and’ you’re using in a sentence. Does it still make sense if you break it up?</p>
+  <p class="govuk-body">If a sentence is complicated, try pasting it into <a href="https://hemingwayapp.com/">Hemingway</a>.
+  <p class="govuk-body">Hemingway will tell you the reading age of the text - aim for Grade 8 or lower.</p>
+  <p class="govuk-body">You can edit the text in Hemingway to make it easier to read. Text highlighted in yellow is “hard to read” and text highlighted in red is “very hard to read”. As you improve the text, you will see the reading age reduce.</p>
+  <p class="govuk-body">Keep paragraphs short too. White space between paragraphs breaks up large chunks of text. </p>
+  <p class="govuk-body">Instead of dense blocks of text, use headings to keep your text in manageable chunks to read. Remember, that headings should follow in sequence so that screen readers can follow them.</p>
+
+  <p class="govuk-body">Use a simpler word, or words to say things. For example:</p>
+
+  <ul class="govuk-list govuk-list--bullet">
+  <li>need is easier to read than require</li>
+  <li>work with is easier than collaborate or co-produce</li>
+  <li>Help is easier than facilitate</li>
+  <li>about is easier than regarding or in regard to</li>
+  <li>to is easier than in order to</li>
+  </ul>
+  <p class="govuk-body">Use white space to break up long blocks of text. You can do this by keeping paragraphs short.</p>
+  <h2 class="govuk-heading-m">How it sounds</h2>
+  <p class="govuk-body">You will want to attract candidates, so your advert’s tone of voice should be friendly and welcoming.</p>
+  <p class="govuk-body">How does your advert sound when you read it out loud? Is it too formal? If it is, think about the tone of voice and if the text would make someone reading it become a candidate.</p>
+  <p class="govuk-body">Would your advert help candidates decide to apply for the job? Does it explain how to apply? If not, keep iterating.</p>
+  <p class="govuk-body">Do a peer review - ask a colleague to check how your advert reads.</p>
+  <p class="govuk-body">Address the reader as ‘you’ rather than the candidate, applicant or employee.</p>
+  <p class="govuk-body">Use gender-neutral language, so rather than “him” and “her” use “they”, “their”, “them” etc.</p>
+  <p class="govuk-body">Use If you are writing about disability, use the <a href="#" class="https://www.gov.uk/government/publications/inclusive-communication">inclusive communication guidance</a> on GOV.UK. This will help you with words to use and avoid when writing about disability.<p>
+  <h2 class="govuk-heading-m">Headings</h2>
+  <p class="govuk-body">Use You can give structure to your job advert using headings and sub headings. This helps to break up blocks of text and navigate between topics.</p>
+  <p class="govuk-body">Use Your job advert will start with Heading level 1 (H1). If you add headings to your advert, start with Heading level 2 (H2). Do not use Heading 1 in your text.</p>
+  <p class="govuk-body">You can add sub headings Heading 3 (H3) and Heading 4 (H4). Remember to use Heading 2 (H2) again if you start a new topic. Missed heading levels are confusing, so do not jump from Heading 2 (H2) to Heading 4 (H4).<p>
+  <p class="govuk-body">Do not use bold text instead of headings. This is an accessibility fail because screen readers will not read bold text as a heading.</p>
+
+  <p class="govuk-body">Avoid using questions as headings. So instead of “”What will you be doing in this job?” say “What you will do in this job”.</p>
+
+  <p class="govuk-body">Write your headings in sentence case. For example, write Reasonable adjustments instead of Reasonable Adjustments.</p>
+
+  <h2 class="govuk-heading-m">Bulleted and numbered lists</h2>
+
+  <p class="govuk-body">You can use bulleted lists to break up dense blocks of text, or make lists easier to read. For example when writing criteria as part of a job advert.</p>
+  <p class="govuk-body">Use a lead-in line for bulleted or numbered lists so they:</p>
+  <ul class="govuk-list govuk-list--bullet">
+  <li>make sense</li>
+  <li>continue from the lead in-line to make a sentence</li>
+  </ul>
+  <p class="govuk-body">Bulleted and numbered lists should: </p>
+  <ul class="govuk-list govuk-list--bullet">
+  <li>start with a lower case letter</li>
+  <li>contain one sentence - use a comma or dash if you need to expand on it</li>
+  <li>not have a semicolon at the end of each line</li>
+  <li>not have a full stop at the end</li>
+  </ul>
+  <p class="govuk-body">For more guidance on using bulleted lists, visit the <a href="#" class="https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style">GOV.UK style guide</a>.</p>
+
+
+  <h2 class="govuk-heading-m">Do not shout<h2>
+  <p class="govuk-body">Avoid using BLOCK CAPS because they can be thought of as shouting. Bold text, and even worse, <strong>BOLD CAPITALS</strong> can also be considered shouting.</p>
+  <p class="govuk-body">While bold text can be useful to highlight things, the more you use it, the harder it will be for anyone reading to work out what the important stuff is.</p>
+  <p class="govuk-body">You should not use bold text as headings because screen readers will not recognise it as a heading. </p>
+  <h2 class="govuk-heading-m">Department names</h2>
+  <p class="govuk-body">Follow the naming departments use on GOV.UK page "<a href="#" class="https://www.gov.uk/government/organisations">Departments, agencies and public bodies</a>.</p>
+
+  <p class="govuk-body">For example, Department for Work and Pensions (DWP) use an ampersand ‘&’ in their logo. Ampersands can be mistaken for the number 8, so do not use them unless they are part of a name. When writing their name DWP uses the word ‘and’ instead of ‘&’.</p>
+
+  <p class="govuk-body">If the department has a well known and widely used acronym, spell out the department name first, followed by the acronym in brackets. Then you can use the acronym in the rest of your text. For example, Department for Health and Social Care (DHSC) first, then use DHSC.</p>
+  <p class="govuk-body">Stick to the use of capitals departments themselves use in their full titles, such as Department for Levelling Up, Housing and Communities.</p>
+  <p class="govuk-body">If you mention a department, as it appears in this sentence, use a lower case d.</p>
+  <h2 class="govuk-heading-m">Job titles<h2>
+  <p class="govuk-body">Job titles should be meaningful and tell readers what the role is.</p>
+  <p class="govuk-body">Capitalise specific job titles. For example, Content Designer or Policy Officer.</p>
+  <p class="govuk-body">Do not capitalise civil servant or civil servants (not job titles) or general titles like director (unless its a specific job title, for example Deputy Director).</p>
+  <p class="govuk-body">Seniority sometimes features in job titles. This should be capitalised if it's part of the job title, like Senior User Researcher.</p>
+  <p class="govuk-body">Job titles do not include:</p>
+  <ul class="govuk-list govuk-list--bullet">
+  <li>department</li>
+  <li>grade</li>
+  <li>salary or benefits</li>
+  <li>acronyms</li>
+  <li>full stops</li>
+  <li>special characters such as **</li>
+  </ul>
+  <p class="govuk-body">For example, HEO - Performance and improvement lead. Performance and Improvement Lead is the job title. HEO is the grade, which is a different thing. </li>
+  <h2 class="govuk-heading-m">Salary and grade</h2>
+  <p class="govuk-body">Display salaries as (pound sign) thousands (comma) hundreds, So £32,560 is the right format.</p>
+  <p class="govuk-body">If the job has a salary range use ‘to’ rather than a hyphen. So £25,250 to £31,950.</p>
+  <p class="govuk-body">Standard Civil Service pay grades are:</p>
+
+  <ul class="govuk-list govuk-list--bullet">
+  <li>Senior Civil Service - Permanent Secretary<li>
+  <li>Senior Civil Service - Director General (PB3)</li>
+  <li>Senior Civil Service - Director (PB2)</li>
+  <li>Senior Civil Service - Deputy Director (PB1/1A)</li>
+  <li>Grade 6 (G6)</li>
+  <li>Grade 7 (G7)</li>
+  <li>Senior Executive Officer (SEO)</li>
+  <li>Higher Executive Officer (HEO)</li>
+  <li>Executive Officer (EO)</li>
+  <li>Administrative Officer (AO)</li>
+  <li>Administrative Assistant (AA) </li>
+  <li>No Civil Service equivalent grade</li>
+  </ul>
+  <h2 class="govuk-heading-m">Security vetting<h2>
+  -<p class="govuk-body">The different categories of securing vetting are named and capitalised following:</p>
+  <ul class="govuk-list govuk-list--bullet">
+  <li>Baseline Personnel Security Standard (BPSS)</li>
+  <li>Accreditation Check (AC) </li>
+  <li>Counter Terrorist Check (CTC)/Level 1B</li>
+  <li>Security Check (SC) </li>
+  <li>Enhanced Security Check (eSC)</li>
+  <li>Developed Vetting (DV) </li>
+  <li>Developed Vetting (DV) renewal</li>
+  <li>Enhanced Developed Vetting (eDV)</li>
+  </ul>
+  <p class="govuk-body">You can find out what each of them mean on GOV.UK page <a href="#" class="URL"https://www.gov.uk/government/publications/united-kingdom-security-vetting-clearance-levels/national-security-vetting-clearance-levels">National security vetting: clearance levels</a>.</p>
+
+  <h2 class="govuk-heading-m">Locations</h2>
+
+  <p class="govuk-body">Use this to tell candidates where the job is based. You can specify:</p>
+  <ul class="govuk-list govuk-list--bullet">
+  <li>remote - this includes fieldwork and working from home</li>
+  <li>onsite at a government-managed location - for example in a Job Centre</li>
+  <li>hybrid of both remote and onsite - for example at home and in a government office like Atlantic Square in Glasgow</li>
+  </ul>
+  <p class="govuk-body">You can list several locations in one job advert. For example, if you have roles in Bristol, Cardiff and Darlington. Add one location at a time to the ATS as you build your job advert.</p>
+  <h3 class="govuk-heading-s">Homeworking vs homeworker</h3>
+  <p class="govuk-body">Homeworking is where an employee works at home, but their contract of employment will name a location other than where they live. For example, an employee may be working from home some days a week, but their location (office) is Quarry House in Leeds.</p>
+  <p class="govuk-body">A homeworker is an employee whose contracted place of employment is their home. They may also be referred to as a contracted homeworker. Use lowercase because homeworker is not a job title.</p>
+  <h2 class="govuk-heading-m">Professions</h2>
+  <p class="govuk-body">Professions are capitalised. For example Operational Delivery or Government Digital and Data.</p>
+  <h2 class="govuk-heading-m">Closing date and time</h2>
+  <p class="govuk-body">If the text of your job advert mentions the closing time and date, write it as the time, day, then date. For example 11:55pm on Sunday 18 March 2024.</p>
+  <p class="govuk-body">Do not use a 24 hour clock (23:55). Do not add th, st, or nd after the date. So 18 March. 1 April and 2 May are the right format, not 18th March, 1st April or 2nd May.</p>
+  <p class="govuk-body">If the advert closes at a set time of day or night, write the time before the date.</p>
+  <h2 class="govuk-heading-m">Adding links</h2>
+  <p class="govuk-body">You should follow the guidance about links in <a href="#" class="https://www.gov.uk/guidance/content-design/links">writing and managing content</a> on GOV.UK</p>
+  <p class="govuk-body">Make sure links are meaningful, so avoid using terms like ‘click here’’. Its better to explain what and where you are directing your reader to. For example learn more about <a href="#" class="https://www.civil-service-careers.gov.uk/professions/working-in-operational-delivery/">working in Operational Delivery</a> on the Civil Service Careers website.</p>
+  <p class="govuk-body">Avoid linking to documents such as PDFs. If really you need to link to a document, link to the page the document sits on, not the document itself.</p>
+  <h2 class="govuk-heading-m">Using colour</h2>
+  <p class="govuk-body">Do not use different colours to convey meanings. If your advert is for multiple roles, do not use colour to distinguish between the roles. For example by making the job titles or headings red. They might stand out to you, but if a candidate is colourblind, this will be lost on them.</p>
+  <p class="govuk-body">Use clear headings instead.</p>
+  <h2 class="govuk-heading-m">Other resources</h2>
+  <p class="govuk-body">Consider the free guides from the <a href="#" class="https://www.plainenglish.co.uk/free-guides.html">Campaign for Plain English</a>.</p>
+
+{% endblock %}
