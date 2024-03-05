@@ -1,0 +1,120 @@
+{% extends "layouts/main.html" %}
+{% block header %}
+{% include '/csu71/includes/vm-header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Home – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .app-header--full-width-border {
+    border-bottom: 10px solid #1f70b8;
+  }
+  .govuk-main-wrapper {
+    padding-top:0px
+  }
+
+  .notification-wrapper-good {
+    padding:0px
+  }
+
+  .notification-wrapper-warning {
+    padding:45px 0px 30px 0px
+  }
+
+  .notification-good {
+    margin:20px;
+    color:#0b0c0c;
+    padding:15px;
+    background-color:#e8e6e5;
+    border-left:10px solid #0ba25c;
+    position:relative;
+  }
+
+  .notification-warning {
+    margin:20px;
+    color:#0b0c0c;
+    padding:15px;
+    background-color:#e8e6e5;
+    border-left:10px solid #e52d10;
+    position:relative;
+  }
+
+  .moj-notification-badge {
+    padding:1px 3px;
+    margin-left:8px
+  }
+</style>
+
+<nav class="x-govuk-primary-navigation" aria-labelledby="primary-navigation-heading">
+  <div class="govuk-width-container">
+    <h2 class="govuk-visually-hidden" id="primary-navigation-heading">Navigation</h2>
+    <ul class="x-govuk-primary-navigation__list">
+      <li class="x-govuk-primary-navigation__item">
+        <a class="x-govuk-primary-navigation__link" aria-current=page href="campaigns">Campaigns</a>
+      </li>
+      <li class="x-govuk-primary-navigation__item">
+        <a class="x-govuk-primary-navigation__link" aria-current=page href="messages">Messages (2)</a>
+
+      </li>
+      <li class="x-govuk-primary-navigation__item">
+        <a class="x-govuk-primary-navigation__link" href="user-management">User management</a>
+      </li>
+      <li class="x-govuk-primary-navigation__item x-govuk-primary-navigation__item--current">
+        <a class="x-govuk-primary-navigation__link" href="dept-team-info">Dept and team info</a>
+      </li>
+      <li class="x-govuk-primary-navigation__item">
+        <a class="x-govuk-primary-navigation__link" href="guidance">Guidance</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+
+  <h2 class="govuk-heading-l" style="padding-top:70px">Department and team information</h2>
+
+  <p class="govuk-body">You can use this info to describe blah blah.</p>
+
+  <h2 class="govuk-heading-m" id="1.2"> Department information</h2>
+  <p class="govuk-body">This information has been pulled from <a href="https://www.gov.uk/government/organisations/department-for-work-pensions/about">the DWP information page on GOV.UK</a>.</p>
+  {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{{ govukTextarea({
+  name: "moreDetail",
+  id: "more-detail",
+  value: 'The Department for Work and Pensions (DWP) is responsible for welfare, pensions and child maintenance policy. As the UK’s biggest public service department it administers the State Pension and a range of working age, disability and ill health benefits to around 20 million claimants and customers.',
+  hint: {
+    text: "You can edit it if you want blah blah."
+  }
+}) }}
+
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Save department information
+</button>
+
+<br><br>
+  <h2 class="govuk-heading-m id="1.3">Team information</h2>
+  <p class="govuk-body">For a job advert, you want to attract the right candidates to apply. Think about what might help them decide to apply for the role when they read your advert.</p>
+
+  {{ govukTextarea({
+    name: "moreDetail",
+    id: "more-detail",
+    hint: {
+      text: "You can edit it if you want blah blah."
+    }
+  }) }}
+
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Save team information
+</button>
+
+
+{% endblock %}
