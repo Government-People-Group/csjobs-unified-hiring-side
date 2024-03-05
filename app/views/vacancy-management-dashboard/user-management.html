@@ -83,17 +83,17 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 <ul class="govuk-tabs__list">
   <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
     <a class="govuk-tabs__tab" href="#current">
-      ?
+      Panel members
     </a>
   </li>
   <li class="govuk-tabs__list-item">
     <a class="govuk-tabs__tab" href="#completed">
-      ?
+      Support staff
     </a>
   </li>
   <li class="govuk-tabs__list-item">
     <a class="govuk-tabs__tab" href="#campaigns-helping-with">
-      ?
+      Others
     </a>
   </li>
 
@@ -111,7 +111,9 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
         <th scope="col" class="govuk-table__header" aria-sort="none">Dept</th>
 
-        <th scope="col" class="govuk-table__header" aria-sort="none">Already allocated</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Allocated</th>
+
+        <th scope="col" class="govuk-table__header" aria-sort="none">Role</th>
 
         <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
 
@@ -123,7 +125,8 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
         <td class="govuk-table__cell" style="border-bottom:none;padding-left:20px; font-weight:bold" data-sort-value="Johnson"><a class="govuk-link--no-visited-state" href="#">Johnson</a></td>
         <td class="govuk-table__cell" style="border-bottom:none"><a class="govuk-link--no-visited-state" href="#">Jane</a></td>
         <td class="govuk-table__cell" style="border-bottom:none" data-sort-value="DWP">DWP</td>
-        <td class="govuk-table__cell" style="border-bottom:none" data-sort-value="337933">337933 - sift panel 1</td>
+        <td class="govuk-table__cell" style="border-bottom:none" data-sort-value="337933">337933</td>
+        <td class="govuk-table__cell" style="border-bottom:none" data-sort-value="sift1">Chair - sift panel 1</td>
         <td class="govuk-table__cell" style="border-bottom:none;" data-sort-value="Available">Available</td>
       </tr>
 
@@ -131,6 +134,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
         <td class="govuk-table__cell" style="border-bottom:none;padding-left:20px; font-weight:bold" data-sort-value="Allan"><a class="govuk-link--no-visited-state" href="#">Allan</a></td>
         <td class="govuk-table__cell" style="border-bottom:none"><a class="govuk-link--no-visited-state" href="#">David</a></td>
         <td class="govuk-table__cell" style="border-bottom:none" data-sort-value="DWP">DWP</td>
+        <td class="govuk-table__cell" style="border-bottom:none" data-sort-value=""></td>
         <td class="govuk-table__cell" style="border-bottom:none" data-sort-value=""></td>
         <td class="govuk-table__cell" style="border-bottom:none;" data-sort-value="Available">Available</td>
       </tr>
@@ -140,25 +144,30 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
           <td class="govuk-table__cell" style="border-bottom:none"><a class="govuk-link--no-visited-state" href="#">Faieem</a></td>
           <td class="govuk-table__cell" style="border-bottom:none" data-sort-value="DWP">Cabinet Office</td>
           <td class="govuk-table__cell" style="border-bottom:none" data-sort-value=""></td>
+          <td class="govuk-table__cell" style="border-bottom:none" data-sort-value=""></td>
           <td class="govuk-table__cell" style="border-bottom:none;" data-sort-value="Unavailable">Unavailable</td>
         </tr>
   </tbody>
   </table>
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Add someone else
+  </button>
 </div>
 <div class="govuk-tabs__panel" id="completed">
-
   <table class="govuk-table" data-module="moj-sortable-table" style="border-collapse:separate;border-spacing:0px 30px">
 
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
 
-        <th scope="col" class="govuk-table__header" aria-sort="none">Ref no.</th>
+        <th scope="col" class="govuk-table__header" aria-sort="ascending">Last name</th>
 
-        <th scope="col" class="govuk-table__header" aria-sort="none">Job title</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">First name</th>
 
-        <th scope="col" class="govuk-table__header" aria-sort="descending">Closing date</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Dept</th>
 
-        <th scope="col" class="govuk-table__header" aria-sort="none">Applications</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Allocated</th>
+
+        <th scope="col" class="govuk-table__header" aria-sort="none">Role</th>
 
         <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
 
@@ -166,25 +175,28 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
     </thead>
 
     <tbody class="govuk-table__body">
-
-
-      <tr class="govuk-table__row" style="background-color:#545556;color:#ffffff" id="337933">
-        <td class="govuk-table__cell" style="border-bottom:none;padding-left:20px" data-sort-value="337933"><a class="govuk-link--no-visited-state" href="#" style="color:#ffffff">337933</a></td>
-        <td class="govuk-table__cell" style="font-weight:bold;border-bottom:none"><a class="govuk-link--no-visited-state" href="#" style="color:#ffffff">Strategy Administrator</a></td>
-        <td class="govuk-table__cell" style="border-bottom:none" data-sort-value="20230405">5 April 2023</td>
-        <td class="govuk-table__cell" style="border-bottom:none" data-sort-value="48">641</td>
-        <td class="govuk-table__cell" style="border-bottom:none; font-weight:bold" data-sort-value="LIVE">CLOSED</td>
+      <tr class="govuk-table__row" style="background-color:#daeaf7">
+        <td class="govuk-table__cell" style="border-bottom:none;padding-left:20px; font-weight:bold" data-sort-value="Johnson"><a class="govuk-link--no-visited-state" href="#">Vargo</a></td>
+        <td class="govuk-table__cell" style="border-bottom:none"><a class="govuk-link--no-visited-state" href="#">Mandy</a></td>
+        <td class="govuk-table__cell" style="border-bottom:none" data-sort-value="DWP">DWP</td>
+        <td class="govuk-table__cell" style="border-bottom:none" data-sort-value="337933">337933</td>
+        <td class="govuk-table__cell" style="border-bottom:none" data-sort-value="sift1">Candidate contact</td>
+        <td class="govuk-table__cell" style="border-bottom:none;" data-sort-value="Available">Available</td>
       </tr>
 
-      <tr class="govuk-table__row" style="background-color:#545556; color:#ffffff" id="337933">
-        <td class="govuk-table__cell" style="border-bottom:none;padding-left:20px" data-sort-value="341988"><a class="govuk-link--no-visited-state" href="#" style="color:#ffffff">341988</a></td>
-        <td class="govuk-table__cell" style="font-weight:bold;border-bottom:none"><a class="govuk-link--no-visited-state" href="#" style="color:#ffffff">Governance and Compliance Officer</a></td>
-        <td class="govuk-table__cell" style="border-bottom:none" data-sort-value="20231118">18 November 2023</td>
-        <td class="govuk-table__cell" style="border-bottom:none" data-sort-value="0">98</td>
-        <td class="govuk-table__cell" style="border-bottom:none; font-weight:bold" data-sort-value="LIVE">CLOSED</td>
+      <tr class="govuk-table__row" style="background-color:#daeaf7">
+        <td class="govuk-table__cell" style="border-bottom:none;padding-left:20px; font-weight:bold" data-sort-value="Allan"><a class="govuk-link--no-visited-state" href="#">Walankov</a></td>
+        <td class="govuk-table__cell" style="border-bottom:none"><a class="govuk-link--no-visited-state" href="#">Sergei</a></td>
+        <td class="govuk-table__cell" style="border-bottom:none" data-sort-value="DWP">DWP</td>
+        <td class="govuk-table__cell" style="border-bottom:none" data-sort-value="">---</td>
+        <td class="govuk-table__cell" style="border-bottom:none" data-sort-value="">---</td>
+        <td class="govuk-table__cell" style="border-bottom:none;" data-sort-value="Available">Available</td>
       </tr>
   </tbody>
   </table>
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Add someone else
+  </button>
 </div>
 
 <div class="govuk-tabs__panel" id="campaigns-helping-with">
@@ -205,19 +217,10 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
       </tr>
     </thead>
-
-    <tbody class="govuk-table__body">
-      <tr class="govuk-table__row" style="background-color:#eaf7da">
-        <td class="govuk-table__cell" style="border-bottom:none;padding-left:20px" data-sort-value="338507"><a class="govuk-link--no-visited-state" href="#">338507</a></td>
-        <td class="govuk-table__cell" style="font-weight:bold;border-bottom:none">Direction Policy Executive</td>
-        <td class="govuk-table__cell" style="border-bottom:none" data-sort-value="20240615">15 June 2024</td>
-        <td class="govuk-table__cell" style="border-bottom:none" data-sort-value="48">Sift panel member,<br>Interview panel member</td>
-        <td class="govuk-table__cell" style="border-bottom:none; font-weight:bold" data-sort-value="LIVE">READY TO SIFT</td>
-      </tr>
-
-
-  </tbody>
   </table>
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Add someone
+  </button>
 </div>
 
 
