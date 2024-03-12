@@ -89,7 +89,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
 {{ govukInput({
   label: {
-    text: "Panel name",
+    text: "(1) Choose panel name",
     classes: "govuk-label--m",
     isPageHeading: true
   },
@@ -115,8 +115,12 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
           items: [
             {
               value: "published",
-              text: "ALLAN, David",
+              text: "---",
               selected: true
+            },
+            {
+              value: "published",
+              text: "ALLAN, David"
             },
             {
               value: "updated",
@@ -153,7 +157,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
   name: "contact",
   fieldset: {
     legend: {
-      text: "Panel chair",
+      text: "(2) Select panel chair",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -175,7 +179,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
   ]
 }) }}<br><br>
 
-<h2 class="govuk-heading-m">Panel members</h2>
+<h2 class="govuk-heading-m">(3) Select panel members</h2>
 <br>
 
 
