@@ -161,31 +161,6 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block content %}
 
-{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
-
-{{ govukAccordion({
-  id: "accordion-default",
-  showSectionText:"Show message",
-  showAllSectionsText: " ",
-  hideSectionText:"Hide message",
-  hideAllSectionsText: " ",
-  classes:"accordion-border",
-  items: [
-
-    {
-      heading: {
-        html: '<section class="notification-wrapper-warning" style="padding:25px 0px 0px 0px">
-        <p class="govuk-body">
-          <span style="margin:0px;"><span id="notifications" class="moj-notification-badge" style="background-color:#336c9e;margin:0px 20px 0px 10px"><img src="/public/images/email-icon.png" style="padding:0px;color:#ffffff"></span><span style="padding-right:30px">24 Feb 2024 8:06am</span><strong>Large number of applications received: 337933 - Strategy Administrator</strong></span>
-        </p>
-      </section>'
-      },
-      content: {
-        html: '<p class="govuk-body">A large number of candidates have applied for this vacancy. You should <a href="sift-panel">set up your sift panel(s)</a> as soon as possible.<br><br>You may need to assign members to multiple panels so they can sift the high number of applications.</p>'
-      }
-    }
-  ]
-}) }}
 
 
 <div class="govuk-grid-row govuk-!-margin-top-9">
@@ -245,14 +220,23 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
             <h2 class="govuk-prototype-kit-task-list__section">
               <span class="govuk-prototype-kit-task-list__section-number">1. </span> Set up sift panels
             </h2>
+
             <ul class="govuk-prototype-kit-task-list__items">
               <li class="govuk-prototype-kit-task-list__item">
                 <span class="govuk-prototype-kit-task-list__task-name">
-                  <a href="sift-panel" aria-describedby="eligibility-status">
-                    Add sift panel (no panels added)
+                  <a href="sift-panel1-manage" aria-describedby="eligibility-status">
+                    Manage sift panel 1
                   </a>
                 </span>
-                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Optional</strong>
+              </li>
+              <li class="govuk-prototype-kit-task-list__item">
+                <span class="govuk-prototype-kit-task-list__task-name">
+                  <a href="sift-panel2" aria-describedby="eligibility-status">
+                      Add another sift panel
+                  </a>
+                </span>
+                <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Optional</strong>
               </li>
             </ul>
           </li>

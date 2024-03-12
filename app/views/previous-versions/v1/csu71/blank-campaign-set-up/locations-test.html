@@ -39,9 +39,9 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
       <div>
         <!-- <h2 class="govuk-heading-m" style="border-bottom:1px solid #1d70b8;">Role location pattern</h2> -->
           {% if data['uk'] == "A hybrid of both remote and onsite" %}
-          <span class="govuk-caption-m" style="margin-right:20px;">Hybrid: remote and onsite<BR><a href="/csu71/new-campaign-set-up/locations">Change preference</a></span>
+          <span class="govuk-caption-m" style="margin-right:20px;">Hybrid: remote and onsite<BR><a href="locations">Change preference</a></span>
             {% elif data['uk'] == "Onsite at a government-managed location" %}
-              <span class="govuk-caption-m" style="margin-right:20px;">Onsite: at a location<BR><a href="/csu71/new-campaign-set-up/locations">Change preference</a></span>
+              <span class="govuk-caption-m" style="margin-right:20px;">Onsite: at a location<BR><a href="locations">Change preference</a></span>
 {% endif %}
       </div>
     </div>
@@ -51,7 +51,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 
     <h1 style="border-bottom:1px solid #1d70b8;padding-bottom:20px" class="govuk-heading-xl">Add locations for this role</h1>
-    <form class="form" action="/csu71/blank-campaign-set-up/location-specific" method="post">
+    <form class="form" action="location-specific" method="post">
 
 
 

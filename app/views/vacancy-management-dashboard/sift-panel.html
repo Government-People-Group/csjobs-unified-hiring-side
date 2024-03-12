@@ -1,0 +1,295 @@
+{% extends "layouts/main.html" %}
+{% block header %}
+{% include '/csu71/includes/vm-header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Home – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .app-header--full-width-border {
+    border-bottom: 10px solid #1f70b8;
+  }
+  .govuk-main-wrapper {
+    padding-top:0px
+  }
+
+  .notification-wrapper-good {
+    padding:0px
+  }
+
+  .notification-wrapper-warning {
+    padding:45px 0px 30px 0px
+  }
+
+  .notification-good {
+    margin:20px;
+    color:#0b0c0c;
+    padding:15px;
+    background-color:#e8e6e5;
+    border-left:10px solid #0ba25c;
+    position:relative;
+  }
+
+  .notification-warning {
+    margin:20px;
+    color:#0b0c0c;
+    padding:15px;
+    background-color:#e8e6e5;
+    border-left:10px solid #e52d10;
+    position:relative;
+  }
+
+  .moj-notification-badge {
+    padding:1px 3px;
+    margin-left:8px
+  }
+
+</style>
+
+
+
+<div class="govuk-grid-row">
+
+
+
+  <div class="govuk-grid-column-one-quarter"><br><br><br>
+
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+      <h4 class="moj-side-navigation__title">Sift panel(s)</h4>
+      <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+          <a href="#1.2">Sift panel 1</a>
+        </li>
+      </ul>
+
+    </nav>
+
+  </div>
+
+<div class="govuk-grid-column-three-quarters">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+  <br><br><br>
+
+
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-heading-l">Sift panel 1</h2>
+<br><br>
+
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Panel name",
+    classes: "govuk-label--m",
+    isPageHeading: true
+  },
+  hint: {
+    text: "You can use the default name or edit it to something else"
+  },
+  id: "event-name",
+  name: "eventName",
+  value: "Sift panel 1"
+}) }}<br><br>
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set someoneElseHtml %}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+        {{ govukSelect({
+          id: "sort",
+          name: "sort",
+          label: {
+            text: "Choose panel chair:"
+          },
+          items: [
+            {
+              value: "published",
+              text: "ALLAN, David",
+              selected: true
+            },
+            {
+              value: "updated",
+              text: "BURTIN, James"
+            },
+            {
+              value: "updated",
+              text: "JOHNSON, Jane"
+            },
+            {
+              value: "updated",
+              text: "MOODY, Joanne"
+            },
+            {
+              value: "updated",
+              text: "PANSAL, Johinder"
+            },
+            {
+              value: "updated",
+              text: "VERAMOV, Alexandra"
+            }
+          ]
+        }) }}<br>
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Add someone else",
+            href:"user-management",
+            classes: "govuk-button--secondary"
+          }) }}
+{% endset -%}
+
+{{ govukRadios({
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Select panel chair",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+
+  items: [
+    {
+      value: "me",
+      text: "Me"
+    },
+    {
+      value: "someone-else",
+      text: "Someone else",
+      conditional: {
+        html: someoneElseHtml
+      }
+    }
+  ]
+}) }}<br><br>
+
+<h2 class="govuk-heading-m">Select panel members</h2>
+<div id="account-number-hint" class="govuk-hint">
+    Scroll down to see the rest of the list.
+  </div><br>
+
+<div style="height:300px;overflow:auto">
+
+<table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all" style="width:60%;">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col" id="select-all"></th>
+      <th class="govuk-table__header" scope="col">Last name</th>
+      <th class="govuk-table__header" scope="col">First name</th>
+      <th class="govuk-table__header" scope="col">Dept</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row govuk-table__row--selected">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+            <span class="govuk-visually-hidden">Select Aconcagua</span>
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell">ALLAN</td>
+      <td class="govuk-table__cell">David</td>
+      <td class="govuk-table__cell">DWP</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-denali" value="denali">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-denali">
+            <span class="govuk-visually-hidden">Select Denali</span>
+          </label>
+        </div>
+      </td>
+
+      <td class="govuk-table__cell">BURTIN</td>
+      <td class="govuk-table__cell">James</td>
+      <td class="govuk-table__cell">DWP</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-elbrus" value="elbrus">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-elbrus">
+            <span class="govuk-visually-hidden">Select Elbrus</span>
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell">JOHNSON</td>
+      <td class="govuk-table__cell">Jane</td>
+      <td class="govuk-table__cell">DWP</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-everest" value="everest">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-everest">
+            <span class="govuk-visually-hidden">Select Everest</span>
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell">MOODY</td>
+      <td class="govuk-table__cell">Joanne</td>
+      <td class="govuk-table__cell">DWP</td>
+
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-kilimanjaro" value="kilimanjaro">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-kilimanjaro">
+            <span class="govuk-visually-hidden">Select Kilimanjaro</span>
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell">PANSAL</td>
+      <td class="govuk-table__cell">Johinder</td>
+      <td class="govuk-table__cell">DWP</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+            <span class="govuk-visually-hidden">Select Puncak Jaya</span>
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell">VERAMOV</td>
+      <td class="govuk-table__cell">Alexandra</td>
+      <td class="govuk-table__cell">DWP</td>
+    </tr>
+
+  </tbody>
+</table>
+</div><br><br>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Add someone else",
+  href: "user-management",
+  classes: "govuk-button--secondary"
+}) }}<br><br>
+
+
+{{ govukButton({
+  text: "Save this panel",
+  href: "strategy-admin-tasklist-sift1"
+}) }}
+
+  </div></div>
+
+{% endblock %}
