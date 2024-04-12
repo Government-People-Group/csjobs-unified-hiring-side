@@ -1,0 +1,247 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+  {% block beforeContent %}
+  <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+    <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+  </div> -->
+  <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Contract information</span>
+
+  <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-co"><strong>Return to task list</strong></a></span>
+
+  </div>
+
+  </div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
+
+{% block content %}
+
+<form class="form" action="/csu71/check-next-stepV5" method="post">
+
+  <!-- <H2 class="govuk-heading-l govuk-!-margin-top-3 govuk-!-margin-bottom-3">What will you assess within each element at sift and interview?</h2>
+  <p class="govuk-body-l govuk-!-margin-bottom-6 govuk-!-margin-top-3">You have selected which elements are important to assess for this job role. You should now select what you will assess within each element at sift and interview.</p> -->
+
+  <H1 style="padding-top:0px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Location list</H1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter" style="width:20%">
+
+
+      <ul class="govuk-!-margin-top-6 govuk-list govuk-list--bullet-">
+
+        <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="location-details"><strong>Location details</a></p></strong></li>
+        <li><strong><p style ="border-left:2px solid white;padding-left:20px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="list-locations"><strong>Location list</a></p></strong></li>
+
+
+      </ul>
+
+
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+
+
+
+<div class="govuk-!-margin-top-1" style="display:block">
+  <h1 class="govuk-heading-l">Location search</h1>
+  <p class="govuk-body">Quam temere in vitiis, legem sancimus haerentia. Curabitur blandit tempus ardua ridiculus sed magna. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.</p>
+  <a style="float:right;margin-right:100px" class="govuk-button govuk-button--secondary govuk-!-margin-top-5"  href="#">Add to list</a>
+
+  <div id="fir" style="width:500px" class="govuk-form-group govuk-input--width-30">
+    <label for="autocomplete-default" class="govuk-label--s">Search for a town, city or region</label>
+    <div id="locations" class="autocomplete-wrapper"></div>
+
+  </div>
+
+  <div>
+    <ol class="govuk-list govuk-list--number-" id="list"></ol>
+
+    <p id="reload"></p>
+
+
+    <dl class="govuk-summary-list" style="width:85%">
+      <div class="govuk-summary-list__row" >
+        <dt class="govuk-summary-list__key" style="width:15%">
+          Location
+        </dt>
+        <dd class="govuk-summary-list__value" style="width:65%;font-weight:bold;font-size:28px">
+      <ol id="list1"></ol>
+        </dd>
+        <dd class="govuk-summary-list__actions" style="width:20%;">
+          <a class="govuk-link" href="#">
+              <ol id="list2" class="govuk-list govuk-list--number-"></ol>
+              <span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+      </dl>
+
+
+  </div>
+
+</div>
+
+
+
+
+<button class="govuk-button govuk-!-margin-top-9" data-module="govuk-button">Continue</button>
+
+
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary govuk-!-margin-top-9",
+  href: "preview-advert"
+}) }}
+</form>
+
+</div>
+</div>
+</body>
+<script src="/public/javascripts/temp-copyloc.js"></script>
+<script src="/public/javascripts/locations.js"></script>
+
+<script>
+
+
+
+
+
+
+
+  const ukbased = document.getElementById('ukbased');
+  const ukbasedno = document.getElementById('ukbasedno');
+
+  const off = document.getElementById('off');
+  const hyb = document.getElementById('hyb');
+  const rem = document.getElementById('rem');
+
+  if (ukbased.checked && ukbased.value == "Yes") {
+    showDiv("mroe");
+  }
+
+
+  if (off.checked && off.value == "Onsite") {
+    showDiv("loc");
+  }
+
+  if (hyb.checked && hyb.value != "") {
+    showDiv("loc");
+  }
+
+  if (rem.checked && rem.value != "") {
+    hideDiv("loc");
+  }
+
+
+  var divv = document.getElementById('mroe').style.display;
+  ukbased.addEventListener('change', (event) => {
+    if (ukbased.checked && ukbased.value == "Yes") {
+      showDiv("mroe");
+    }
+
+  });
+
+  ukbasedno.addEventListener('change', (event) => {
+    if (ukbasedno.checked) {
+      hideDiv("mroe");
+    }
+
+  });
+
+
+
+
+  var divv = document.getElementById('loc').style.display;
+  off.addEventListener('change', (event) => {
+
+    if (off.checked) {
+      showDiv("loc");
+    }
+
+  });
+
+  hyb.addEventListener('change', (event) => {
+
+    if (hyb.checked) {
+      showDiv("loc");
+    }
+
+  });
+
+  rem.addEventListener('change', (event) => {
+
+    if (rem.checked) {
+      hideDiv("loc");
+    }
+
+  });
+
+  function hideDiv(div1) {
+    document.getElementById(div1).style.display = 'none';
+
+  }
+
+  function showDiv(div1) {
+    document.getElementById(div1).style.display = 'block';
+
+  }
+
+
+
+
+  var locArray = [];
+  locArray = JSON.parse(window.sessionStorage.getItem("locations"));
+  console.log(locArray)
+  const entry = document.getElementById("autocomplete-default");
+
+  var loc = document.getElementById('list1');
+  var link = document.getElementById('list2');
+
+  var item = document.getElementById('list');
+  entry.addEventListener('change', (event) => {
+
+    var location = event.target.value;
+
+    var loccontent = document.createElement("li");
+    var linkcontent = document.createElement("li");
+
+    // numcontent.innerHTML = location;
+    loccontent.style.cssText = "";
+    loccontent.innerHTML = location;
+    linkcontent.innerHTML = "<a id='del"+link+"' onclick='' href='#'> delete</a>";
+
+    loc.appendChild(loccontent);
+    link.appendChild(linkcontent);
+
+    // content.innerHTML = "<span style='font-weight:regular;font-size:18px;line-height:1.5;'>"+location+"</span>"+""+"<a id='del"+item+"' onclick='' href='#'> delete</a>";
+    // item.appendChild(content);
+
+    locArray.push(location)
+
+    console.log(locArray)
+    window.sessionStorage.setItem("locations", JSON.stringify(locArray));
+  });
+
+  console.log(locArray)
+
+
+
+
+
+</script>
+{% endblock %}

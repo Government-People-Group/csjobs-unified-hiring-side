@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+      text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+{% include 'includes/user-header.html' %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<!-- {% set status = "Not started" %} -->
+{% set count =0 %}
+{% if data['status'] != 0 %}
+{% set count = count+1 %}
+{% elif status == 0 %}
+{% set count = count+2 %}
+{% endif %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l"></span>
+    <h1 class                                                                                                                             ="govuk-heading-xl">
+      Tag experiment
+    </h1>
+    "Status"{{ data['status'] }}
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Vacancy incomplete</h2>
+    <p class="govuk-body govuk-!-margin-bottom-7">You have completed {{ count }} of 17 sections.</p>
+
+    <ol class="app-task-list">
+
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1. </span> About the vacancy
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="/new-campaign-set-up/basic-details" aria-describedby="eligibility-status">
+                Basic details
+              </a>
+            </span>
+
+            {% if data['status'] == 'Completed' %}
+
+              <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+            {% elif data['status'] == 'In progress' %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+            {% else %}
+
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+            {% endif %}
+
+
+
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="/new-campaign-set-up/basic-details" aria-describedby="eligibility-status">
+                      Job information
+                    </a>
+                  </span>
+
+                  {% if status == 'Government Legal Department' %}
+                    <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">completed</strong>
+                  {% elif status == 'In progress' %}
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+                  {% else %}
+
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+                  {% endif %}
+
+
+
+
+
+                  </li>
+                  </ul>
+
+            </ol>
+            </div>
+            </div>
+            {% endblock %}

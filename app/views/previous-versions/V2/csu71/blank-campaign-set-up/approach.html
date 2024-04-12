@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Recruitment channels</span>
+    <form class="form" action="/csu71/approach-handler" method="post">
+
+      {{ govukRadios({
+        idPrefix: "who-can-apply",
+        name: "who-can-apply",
+        fieldset: {
+          legend: {
+            text: "Who can apply?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+        {
+          value: "External",
+          text: "External",
+          checked: checked("who-can-apply","External"),
+          hint: {
+            text: "Everyone will be able to see and apply for this vacancy."
+          }
+        },
+        {
+          value: "Across Government",
+          text: "Across Government",
+          checked: checked("who-can-apply","Across Government"),
+          hint: {
+            text: "Only civil servants will be able to see and apply for this vacancy."
+          }
+        },
+        {
+          value: "Internal, to your department",
+          text: "Internal, to your department",
+          checked: checked("who-can-apply","Internal, to your department"),
+          hint: {
+            text: "Only employees in your departmental group can see and apply for this vacancy."
+          }
+        },
+        {
+          value: "Managed moves",
+          text: "Managed moves",
+          checked: checked("who-can-apply","Managed moves"),
+          hint: {
+            text: "This is for managed moves, such as redeployment."
+          }
+        }
+        ]
+      }) }}
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      {{ govukButton({
+        text: "Preview advert",
+        classes: "govuk-button--secondary",
+        href: "preview-advert"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}

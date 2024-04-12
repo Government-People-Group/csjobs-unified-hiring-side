@@ -1,0 +1,175 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Interview scores</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="#"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+<span class="govuk-caption-l">Policy Adviser (1001334)</span>
+<h1 class="govuk-heading-xl">Confirm the interview results</h1>
+
+<p class="govuk-body-l"><strong>The interview scores from all panelists have been confirmed.<BR>You should check and confirm the successful candidate.</strong></p>
+
+{% set checkboxHTML %}
+{{ govukCheckboxes({
+  idPrefix: "proceed",
+  name: "proceed",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "confirm",
+      text: "Confirm decision"
+    }
+  ]
+}) }}
+{% endset %}
+
+  {% set offerHTML %}
+  {{govukTag({
+    text: "Passed - offer job role",
+    classes: "govuk-tag--green"
+  })}}
+  {% endset %}
+  {% set reserveHTML %}
+  {{govukTag({
+    text: "Passed - offer reserve list",
+    classes: "govuk-tag--blue"
+  })}}
+  {% endset %}
+
+  {% set rejectHTML %}
+  {{govukTag({
+    text: "Did not pass - reject",
+    classes: "govuk-tag--red"
+  })}}
+  {% endset %}
+
+  {% set confirmHTML %}
+  {{ govukCheckboxes({
+    idPrefix: "proceed",
+    name: "proceed",
+    classes: "govuk-checkboxes--small",
+    fieldset: {
+      legend: {
+        text: "",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    items: [
+      {
+        value: "confirm",
+        id:"confirmall",
+        text: "Confirm all",
+        classes: "govuk-heading-s"
+      }
+    ]
+  }) }}
+  {% endset %}
+
+
+
+
+  {{ govukTable({
+    caption: "",
+    captionClasses: "govuk-table__caption--m",
+    firstCellIsHeader: false,
+    head: [
+      {
+        text: "Candidate",
+        classes: 'app-custom-class'
+
+      },
+      {
+        text: "Average score",
+        classes: 'app-custom-class'
+      },
+      {
+        text: "Recommendation",
+        classes: 'app-custom-class',
+        style: hidden
+      }
+    ],
+    rows: [
+      [
+        {
+          html: "<strong style='font-size:22px'>Mei Chen</strong>"
+        },
+        {
+          html: "<strong style='font-size:22px'>35</strong>"
+        },
+        {
+          html: offerHTML
+        }
+      ],
+      [
+          {
+            html: "<span style='font-size:22px'>Amelia Lawson <STRONG>‡</STRONG></span>"
+          },
+          {
+            html: "<span style='font-size:22px'>33</span>"
+          },
+          {
+            html: reserveHTML
+          }
+        ],
+    [
+        {
+          html: "<span style='font-size:22px'>Javier Santos</span>"
+        },
+        {
+          html: "<span style='font-size:22px'>28</span>"
+        },
+        {
+          html: rejectHTML
+        }
+      ]
+
+    ]
+  }) }}
+
+<p class="govuk-body-l"><STRONG>‡</STRONG> This candidate passed the interview and can be offered a place on the department's reserve list. Hiring a candidate from the reserve list will save time and resources.</p>
+  {{ govukButton({
+    text: "Confirm my decision",
+    href: "#"
+  }) }}
+
+              </div>
+              </div>
+
+
+  {% endblock %}

@@ -1,0 +1,128 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Recruitment channels</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-copy-ad"><strong>Return to task list</strong></a></span>
+
+    <!-- {% if data['org'] == "ddat" %}
+    <div id ="ddattag"  style="position:absolute;right:10px;top:60px;;">
+      <a href="/csu71/template-csofficial"><img src="/public/images/ddat1.png" alt="Template by Digital, Data and Technology Profession" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
+
+    </div>
+    {% elif data['org'] == "co" %}
+    <div id ="cotag"  style="position:absolute;right:10px;top:60px;;">
+      <a  href="/csu71/template-csofficial"> <img src="/public/images/co-logo.png" alt="Template by Cabinet Office" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
+    </div>
+    {% elif data['org'] == "ho" %}
+    <div id ="hotag"  style="position:absolute;right:10px;top:60px;;">
+      <a href="/csu71/template-csofficial"><img src="/public/images/ho-logo.png" alt="Template by Home Office" style="border:1px solid black;padding:10px;border-radius:5px;width:80px"></a>
+    </div>
+    {% endif %} -->
+  </div>
+
+
+  </div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+
+  {% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Where do you want to advertise the vacancy?</h1>
+    <form class="form" action="reserve-list" method="post">
+
+
+      {% set otherHTML %}
+      {{ govukTextarea({
+        name: "other",
+        id: "other",
+        value: data['other'],
+        label: {
+          text: "Tell us where else you'd like to advertise the role",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        hint: {
+          text: "You may be contacted to provide more details, including approval."
+        }
+      }) }}
+      {% endset %}
+<div>
+      {{ govukCheckboxes({
+        idPrefix: "attraction",
+        name: "attraction",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Select all that apply."
+        },
+        items: [
+        {
+          value: "Civil Service Jobs",
+          text: "Civil Service Jobs",
+          checked: checked("attraction","Civil Service Jobs")
+        },
+        {
+          value: "LinkedIn",
+          text: "LinkedIn",
+          checked: checked("attraction","LinkedIn")
+        },
+        {
+          value: "Indeed",
+          text: "Indeed",
+          checked: checked("attraction","Indeed")
+        },
+        {
+          value: "Monster Jobs",
+          text: "Monster Jobs",
+          checked: checked("attraction","Monster Jobs")
+        },
+        {
+          value: "Other",
+          text: "Other",
+          checked: checked("attraction","Other"),
+          conditional: {
+            html: otherHTML
+          }
+        }
+        ]
+      }) }}
+</div>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      {{ govukButton({
+        text: "Preview advert",
+        classes: "govuk-button--secondary",
+        href: "preview-advert"
+      }) }}
+    </form>
+
+  </div>
+</div>
+{% endblock %}

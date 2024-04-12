@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Finalise and submit</span>
+    <h1 class="govuk-heading-l">Share with internal reviewers, approvers</h1>
+    <form class="form" action="/csu71/pre-submit-reviewer-handler" method="post">
+
+      {{ govukInput({
+        label: {
+          text: "Who will review the job advert?",
+          isPageHeading: false,
+          classes: "govuk-label--m"
+        },
+        classes: "govuk-input--width-20",
+        id: "reviewer",
+        value: data['reviewer'],
+        name: "reviewer"
+      }) }}
+      {{ govukCheckboxes({
+        idPrefix: "negotiable",
+        name: "negotiable",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+        {
+          value: "approval1",
+          text: "This person needs to approve the advert"
+        }
+        ]
+      }) }}
+
+
+
+
+
+
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      {{ govukButton({
+        text: "Preview advert",
+        classes: "govuk-button--secondary",
+        href: "preview-advert"
+      }) }}
+
+    </form>
+
+
+  </div>
+</div>
+{% endblock %}

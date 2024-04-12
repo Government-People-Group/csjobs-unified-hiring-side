@@ -1,0 +1,343 @@
+{% extends "layouts/main.html" %}
+
+
+
+{% block header %}
+{% include '/csu71/includes/pheader.html' %}
+{% endblock %}
+
+
+
+
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Score interview</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="#"><strong>Message panel chair</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<form class="form" action="#" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">{{ data['candidate']|default("Mei Chen")}}</h1>
+
+
+
+<style>
+
+ .vert {
+   transform: rotate(270deg);
+   padding:50px
+ }
+
+</style>
+
+
+
+       <p class="question">Can you tell me about your experience of building a trusted advisor-style relationship with a stakeholder? Can you give me examples of how you were able to achieve this?<p>
+
+
+
+
+
+         <div class="govuk-form-group">
+           <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+               <!-- <h1 class="govuk-fieldset__heading">
+                 Have you changed your name?
+               </h1> -->
+             </legend>
+
+             <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+               <div class="govuk-radios__item" style="">
+                 <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                 <label class="govuk-label govuk-radios__label" for="changed-name">
+                   <strong>Not Demonstrated</strong><BR>No positive evidence provided
+                 </label>
+               </div>
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                 <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                   <strong>Minimal Demonstration</strong><BR>Limited positive evidence provided
+                 </label>
+               </div>
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                 <label  class="govuk-label govuk-radios__label" for="changed-name-2">
+                   <strong>Moderate Demonstration</strong><BR>Moderate positive evidence provided
+                 </label>
+               </div>
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                 <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                   <strong>Acceptable Demonstration</strong><BR>Adequate positive evidence provided
+                 </label>
+               </div>
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                 <label  class="govuk-label govuk-radios__label" for="changed-name-2">
+                   <strong>Good Demonstration</strong><BR>Substantial positive evidence provided
+                 </label>
+               </div>
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                 <label  class="govuk-label govuk-radios__label" for="changed-name-2">
+                   <strong>Strong Demonstration</strong><BR>Substantial, positive evidence provided<BR>including some evidence of exceeding<BR>expectations
+                 </label>
+               </div>
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                 <label  class="govuk-label govuk-radios__label" for="changed-name-2">
+                   <strong>Outstanding Demonstration</strong><BR>Evidence provided wholly exceeds<BR>expectation at this level
+                 </label>
+               </div>
+             </div>
+           </fieldset>
+         </div>
+
+
+
+           <!-- <div class="govuk-form-group" style="float:left;padding-right:50px">
+             <label class="govuk-label govuk-label--s" for="scoreInt-1">
+               Score
+             </label>
+             <select style="width:25%" class="govuk-select" id="scoreInt-1" name="scoreInt-1">
+               <option value="">---</option>
+               <option value="1">1 <strong>Not Demonstrated</strong> No positive evidence provided</option>
+               <option value="2">2 <strong>Minimal Demonstration</strong> Limited positive evidence provided</option>
+               <option value="3">3 <strong>Moderate Demonstration</strong> Moderate positive evidence provided</option>
+               <option value="4">4 <strong>Acceptable Demonstration</strong> Adequate positive evidence provided</option>
+               <option value="5">5 Good Demonstration</strong> Substantial positive evidence provided</option>
+               <option value="6">6 Strong Demonstration</strong> Substantial, positive evidence provided including some evidence of exceeding expectations</option>
+               <option value="7">7 <strong>Outstanding Demonstration</strong> Evidence provided wholly exceeds expectation at this level</option>
+             </select>
+           </div>
+
+
+           <div class="govuk-form-group" style=";padding-top:5px">
+             <label class="govuk-label govuk-label--s" for="reasonInt-1">
+               Reason
+             </label>
+             <select style="width:40%" class="govuk-select" id="reasonInt-1" name="reasonInt-1">
+               <option value="">---</option>
+               <option value="{{data['reasonInt1']}}">Not enough experience</option>
+               <option value="{{data['reasonInt1']}}">High level of experience</option>
+               <option value="{{data['reasonInt1']}}">Not relevant to role</option>
+               <option value="{{data['reasonInt1']}}">Very relevant to role</option>
+               <option value="{{data['reasonInt1']}}">No or poor example given</option>
+               <option value="{{data['reasonInt1']}}">Strong example given</option>
+             </select>
+           </div>
+           <div class="govuk-form-group" style="margin-top:-30px">
+             <h1 class="govuk-label-wrapper">
+               <label class="govuk-label govuk-label--s" for="notesInt-1">
+                 Notes
+               </label>
+             </h1>
+
+             <textarea style="width:70%" class="govuk-textarea" id="notesInt-1" value="{{ data['notesInt-1']}}" name="notesInt-1" rows="2" aria-describedby="notesInt-1"></textarea>
+           </div
+</div> -->
+
+
+<!--
+
+<p class="headerContent">blash<p>
+<p class="headerContent">blash<p>
+<p class="question">Can you tell me about your experience of building a trusted advisor-style relationship with a stakeholder? Can you give me examples of how you were able to achieve this?<p>
+ -->
+
+
+      <!-- <ul class="govuk-list">
+
+      <li>Can you describe a time when you have had to bring together different viewpoints into one way forward? What was the situation? What did you do? What was the outcome?</li>
+      <li>Can you describe a time when you have received a reaction to a piece of work or project that you weren't expecting? How did you manage the situation?</li>
+      <li>How does it make you feel when people shift the goalposts on a task?</li>
+      <li>What does a successful day look like?</li>
+      <li>What aspect of problem solving do you least enjoy?</li>
+      <li>Candidate presentation</li>
+      </ul> -->
+<!--
+      <strong>Not Demonstrated</strong> No positive evidence provided
+      <strong>Minimal Demonstration</strong> Limited positive evidence provided
+      <strong>Moderate Demonstration</strong> Moderate positive evidence provided
+      <strong>Acceptable Demonstration</strong> Adequate positive evidence provided
+      <strong>Good Demonstration</strong> Substantial positive evidence provided
+      <strong>Strong Demonstration</strong> Substantial, positive evidence provided including some evidence of exceeding expectations
+      <strong>Outstanding Demonstration</strong> - Evidence provided wholly exceeds expectation at this level
+
+
+<div>
+</div>
+
+
+          </div> -->
+</form>
+
+
+      <!-- <div class="govuk-!-margin-bottom-0" style="position:relative;border:0px solid lightgrey;background:#f3f2f1;height:550px;padding:20px">
+
+
+      <div class="govuk-grid-row">
+
+
+
+    </div>
+    <div class="govuk-grid-column-three-quarters" style="width:95%">
+    <h4 class="govuk-heading-m" style="font-size:1.3em;font-weight:normal;background:white;padding:25px;;line-height:1.4;height:75px;">
+    Can you tell me about your experience of building a trusted advisor-style relationship with a stakeholder? Can you give me examples of how you were able to achieve this?</h4>
+  </div>
+
+  <div class="govuk-grid-column-three-quarters" style="width:85%">
+  <h4 class="govuk-heading-m" style="font-weight:normal;background:white;padding:45px;;line-height:1.4;height:125px;">  <a href="#"></a>
+  Can you tell me about your experience of building a trusted advisor-style relationship with a stakeholder? Can you give me examples of how you were able to achieve this?</h4>
+</div>
+
+<div class="govuk-grid-column-three-quarters" style="width:85%">
+<h4 class="govuk-heading-m" style="font-weight:normal;background:white;padding:45px;;line-height:1.4;height:125px;">
+Can you tell me about your experience of building a trusted advisor-style relationship with a stakeholder? Can you give me examples of how you were able to achieve this?</h4>
+</div>
+
+
+
+
+
+
+</div>
+<div class="govuk-!-margin-top-4" style="padding-right:20px;">
+
+<div class="govuk-!-margin-top-4" style="padding-right:20px;">
+
+</div>
+
+</div> -->
+
+
+<!--
+<div>
+<h4 class="govuk-heading-m" style="font-size:1.3em;font-weight:normal;background:white;padding:25px;;line-height:1.4;height:75px;">
+Can you tell me about your experience of building a trusted advisor-style relationship with a stakeholder? Can you give me examples of how you were able to achieve this?</h4>
+</div>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-half" style="">
+<div class="govuk-grid-column-one-half" style="">
+
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="scoreInt-1">
+      Score
+    </label>
+    <select style="width:25 px" class="govuk-select" id="scoreInt-1" name="scoreInt-1">
+      <option value="">---</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+    </select>
+  </div>
+</div>
+
+<div class="govuk-grid-column-one-half" style="">
+
+  <div class="govuk-form-group">
+    <label  class="govuk-label" for="reasonInt-1">
+      Reason
+    </label>
+    <select style="width:100px" class="govuk-select" id="reasonInt-1" name="reasonInt-1">
+      <option value="">---</option>
+      <option value="{{data['reasonInt1']}}">Not enough experience</option>
+      <option value="{{data['reasonInt1']}}">High level of experience</option>
+      <option value="{{data['reasonInt1']}}">Not relevant to role</option>
+      <option value="{{data['reasonInt1']}}">Very relevant to role</option>
+      <option value="{{data['reasonInt1']}}">No or poor example given</option>
+      <option value="{{data['reasonInt1']}}">Strong example given</option>
+    </select>
+  </div>
+</div>
+</div>
+<div class="govuk-grid-column-one-half" style="">
+  <div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--s" for="notesInt-1">
+        Notes
+      </label>
+    </h1>
+
+    <textarea style="width:80%" class="govuk-textarea" id="notesInt-1" value="{{ data['notesInt-1']}}" name="notesInt-1" rows="2" aria-describedby="notesInt-1"></textarea>
+  </div>
+
+
+</div> -->
+
+
+
+
+<!-- {{ govukInput({
+  label: {
+    text: "Additional feedback for candidates (optional)"
+  },
+  classes: "govuk-input--width-50",
+  id: "feedback",
+  name: "feedback",
+  value: "Well written example in STAR format"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Notes for the panel, not seen by candidate (optional)"
+  },
+  classes: "govuk-input--width-50",
+  id: "feedback",
+  name: "feedback",
+  value: "Strong example where criteria was addressed"
+}) }} -->
+<!-- <details class="govuk-details" style="float:right;width:" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span style="font-size:18px;font-weight:bold" class="govuk-details__summary-text">
+      Scoring - marking scheme
+    </span>
+  </summary>
+  <div style="99.5%;background:white" class="govuk-details__text">
+    <ul style="font-size:18px;line-height:1.9;" class="govuk-list govuk-list--number">
+      <li><strong>Not Demonstrated</strong> No positive evidence provided</li>
+      <li><strong>Minimal Demonstration</strong> Limited positive evidence provided</li>
+      <li><strong>Moderate Demonstration</strong> Moderate positive evidence provided</li>
+      <li><strong>Acceptable Demonstration</strong> Adequate positive evidence provided</li>
+      <li><strong>Good Demonstration</strong> Substantial positive evidence provided</li>
+      <li><strong>Strong Demonstration</strong> Substantial, positive evidence provided including some evidence of exceeding expectations</li>
+      <li><strong>Outstanding Demonstration</strong> - Evidence provided wholly exceeds expectation at this level</li>
+    </ul>
+
+  </div>
+</details> -->
+
+
+
+
+
+{% endblock %}

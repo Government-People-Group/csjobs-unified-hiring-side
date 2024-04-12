@@ -1,0 +1,536 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/reserve-list-01/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Selection criteria and assessment methods</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-copy-ad?firstNot=noshow"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<!-- {% for items in data['behaviours'] %}
+
+
+
+{% for items in data['skills'] %}
+
+
+
+{{ govukSummaryList({
+  classes: '￼',
+  name: 'test',
+  id: 'test01',
+  rows: [
+  { key: { html: 'Experience' }, value: { html: items } },￼
+  ]
+}) }}￼
+
+{% endfor %}
+
+
+
+
+{{ govukSummaryList({
+  classes: '￼',
+  name: 'test',
+  id: 'test01',
+  rows: [
+  { key: { html: 'Behaviour' }, value: { html: items } },￼
+  ]
+}) }}￼
+
+{% endfor %}
+
+
+
+{% for items in data['strengths'] %}
+
+
+
+{{ govukSummaryList({
+  classes: '￼',
+  name: 'test',
+  id: 'test01',
+  rows: [
+  { key: { html: 'Strength' }, value: { html: items } },￼
+  ]
+}) }}￼
+
+{% endfor %} -->
+
+
+
+<form class="form" action="/csu71/adcopy-campaign-set-up/pre-sift-questions" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl" >
+        Review your assessment methods
+      </h1>
+      <p class="govuk-body-l govuk-!-margin-bottom-3">Review how you will assess candidates at sift and interview.</p>
+
+
+
+
+      <!-- <div class="govuk-summary-card govuk-summary-list--no-border" style="margin-left:-20px;border:0px;">
+        <div style="height:30px; background: white" class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-heading-l govuk-!-margin-bottom-0">Stage 1: sift</h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row" style="background:#f3f2f1;border-bottom:1px solid #1d70b8;padding-bottom:10px">
+
+
+
+
+
+              <dd style="width:30%" class="govuk-summary-list__value">
+                <strong>Assessment method</strong>
+              </dd>
+              <dd style="width:15%" class="govuk-summary-list__value">
+                  <strong>Element</strong>
+              </dd>
+              <dd style="width:45%" class="govuk-summary-list__value">
+                <strong>Selection criteria</strong>
+              </dd>
+            </div>
+
+
+
+
+
+
+            <div class="govuk-summary-list__row"><ul id="siftRow1"></ul>
+            </div>
+            <div id="siftRow2" class="govuk-summary-list__row">
+            </div>
+            <div id="siftRow3" class="govuk-summary-list__row">
+            </div>
+          </dl>
+        </div>
+      </div>
+
+    <div class="govuk-summary-card govuk-summary-list--no-border" style="margin-left:-20px;border:0px">
+      <div style="height:30px; background: white" class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-0">Stage 2: interview</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row" style="background:#f3f2f1;border-bottom:1px solid #1d70b8;padding-bottom:10px">
+            <dd style="width:30%" class="govuk-summary-list__value">
+              <strong>Assessment method</strong>
+            </dd>
+            <dd style="width:15%" class="govuk-summary-list__value">
+                <strong>Element</strong>
+            </dd>
+            <dd style="width:45%" class="govuk-summary-list__value">
+              <strong>Selection criteria</strong>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+
+            <dt id="intRow1" style="width:10%" class="govuk-summary-list__key">
+            </dt>
+            <dd id="intRow2" style="width:30%" class="govuk-summary-list__value">
+            </dd>
+            <dd id="intRow3" style="width:30%" class="govuk-summary-list__value">
+            </dd>
+
+
+          </div>
+          <div id="intRow2" class="govuk-summary-list__row">
+          </div>
+          <div id="intRow3" class="govuk-summary-list__row">
+          </div>
+        </dl>
+
+    <div class="govuk-!-margin-bottom-4 govuk-!-margin-top-4" style=""> -->
+
+  <h2 style="font-size:1.8em" class="govuk-heading-l govuk-!-margin-bottom-0">Stage 1: Sift</h2>
+  <table class="govuk-table" id="siftRow1">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th style="width:30%" scope="col" class="govuk-table__header">Assessment method</th>
+        <th style="width:20%" scope="col" class="govuk-table__header">Element</th>
+        <th style="width:50%" scope="col" class="govuk-table__header">Criteria</th>
+      </tr>
+    </thead>
+  </table>
+
+
+  <h2 style="font-size:1.8em" class="govuk-heading-l govuk-!-margin-bottom-0">Stage 2: Interview</h2>
+<table class="govuk-table" id="intRow1">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th style="width:30%" scope="col" class="govuk-table__header">Assessment method</th>
+      <th style="width:20%" scope="col" class="govuk-table__header">Element</th>
+      <th style="width:50%" scope="col" class="govuk-table__header">Criteria</th>
+    </tr>
+  </thead>
+</table>
+
+
+    <!-- <p class="govuk-body-m" style="font-size:20px;line-height:1.6"><strong>77% of online jobsite users typically have a 'first look' at a job ad using their phone, and on average, spend just 11 seconds on the page.</strong></p>
+    <p class="govuk-body-s ">Source: Civil Service Jobs (2023), Cabinet Office.</p> -->
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+
+
+
+  </div>
+  </div>
+
+<script>
+
+
+
+
+
+
+
+  const sift1 = document.getElementById("siftRow1");
+  const sift2 = document.getElementById("siftRow2");
+  const sift3 = document.getElementById("siftRow3");
+
+  var int1 = document.getElementById("intRow1");
+  const int2 = document.getElementById("intRow2");
+  const int3 = document.getElementById("intRow3");
+
+
+  var siftDetails1 = JSON.parse(window.sessionStorage.getItem("Sift-New1"));
+  var siftDetails2 = JSON.parse(window.sessionStorage.getItem("Sift-New2"));
+  var siftDetails3 = JSON.parse(window.sessionStorage.getItem("Sift-New3"));
+
+
+console.log(siftDetails1)
+
+
+  var slabel1 = document.createElement("label");
+  var slabel2 = document.createElement("p");
+  var slabel3 = document.createElement("p");
+
+
+  // for (var tt=0;tt<siftDetails3.length;tt++) {
+
+
+  var srow = document.createElement("tr");
+
+
+
+      slabel1.appendChild(document.createTextNode(siftDetails1));
+
+      srow.setAttribute("class","govuk-table__row")
+
+      slabel1.style.cssText = "line-height:1.1;";
+
+
+    srow.innerHTML = "<td class='govuk-table__cell'>"+siftDetails1.join("</p><p>") + "</p>"+"</td><td class='govuk-table__cell'>"+siftDetails2.join("</p><p>") + "</p>"+"</td><td class='govuk-table__cell'>"+siftDetails3.join("</p><p>") + "</p>"+"</td></tr>";
+      sift1.appendChild(srow)
+
+
+
+
+
+
+
+        var intDetails1 = JSON.parse(window.sessionStorage.getItem("Int-New1"));
+        var intDetails2 = JSON.parse(window.sessionStorage.getItem("Int-New2"));
+        var intDetails3 = JSON.parse(window.sessionStorage.getItem("Int-New3"));
+
+
+
+
+  // var interviewDetails = JSON.parse(window.sessionStorage.getItem("Interview-Newde"));
+
+  var label1 = document.createElement("label");
+  var label2 = document.createElement("p");
+  var label3 = document.createElement("p");
+console.log()
+
+  // for (var t=0;t<interviewDetails.length;t+=3) {
+
+
+var row = document.createElement("tr");
+
+    // if (interviewDetails[t] == "Interview question(s)"){
+    //   label3.appendChild(document.createTextNode(interviewDetails[t+2]));
+    // }
+
+
+      // label1.appendChild(document.createTextNode(interviewDetails[t]));
+      // label2.appendChild(document.createTextNode(interviewDetails[t+1]));
+      // label3.appendChild(document.createTextNode(interviewDetails[t+2]));
+
+    //
+    //   row.setAttribute("class","govuk-table__row")
+    //
+    //   label1.style.cssText = "line-height:1.1;";
+    //
+    // row.innerHTML = "<td class='govuk-table__cell'>"+interviewDetails[t]+"</td><td class='govuk-table__cell'>"+interviewDetails[t + 1]+"</td><td class='govuk-table__cell'>"+interviewDetails[t + 2]+"</td></tr>";
+
+
+      int1.appendChild(row)
+
+
+
+      var row = document.createElement("tr");
+
+
+
+          label1.appendChild(document.createTextNode(intDetails1));
+
+          row.setAttribute("class","govuk-table__row")
+
+          label1.style.cssText = "line-height:1.1;";
+
+
+        row.innerHTML = "<td class='govuk-table__cell'>"+intDetails1.join("</p><p>") + "</p>"+"</td><td class='govuk-table__cell'>"+intDetails2.join("</p><p>") + "</p>"+"</td><td class='govuk-table__cell'>"+intDetails3.join("</p><p>") + "</p>"+"</td></tr>";
+          int1.appendChild(row)
+
+
+
+
+  //     int2.appendChild(label2)
+  // int3.appendChild(label3)
+
+
+
+
+    // if (interviewDetails[t+1] == "Strengths"){
+    //   label3.appendChild(document.createTextNode(interviewDetails[t+2]));
+    //   int3.appendChild(label3)
+    // }
+
+
+    // label1.appendChild(document.createTextNode(interviewDetails[t]));
+    // label2.appendChild(document.createTextNode(interviewDetails[t+1]));
+    // label3.appendChild(document.createTextNode(interviewDetails[t+2]));
+    // int1.appendChild(label1)
+    // int2.appendChild(label2)
+    // int3.appendChild(label3)
+
+
+  //   checkBox.style.cssText = "width: 30px;height: 30px;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
+  //   label.style.cssText = "display: block;padding-left: 15px;padding-top:30px;text-indent: 40px;";
+  //   hint.style.cssText = "display: block;padding-left: 55px;";
+  //   checkBox.value = level[t].title;
+  //
+  //
+  //   hint.value = level[t].description;
+  //   checkBox.setAttribute("id","behaviours-"+t);
+  //   checkBox.setAttribute("name","behaviours");
+  //   hint.setAttribute("id",level[t].title);
+  //   hint.setAttribute("name",grade);
+  //   label.appendChild(document.createTextNode(level[t].title));
+  //
+  //   hea1.appendChild(label);
+  //
+  //
+  //   hea1.appendChild(checkBox);
+  //   hint.appendChild(document.createTextNode(level[t].description));
+  //   hea1.appendChild(hint);
+  //
+  //
+  //     if (level[t].title == "Seeing the big picture" || level[t].title == "Changing and improving" || level[t].title == "Delivering at Pace" || level[t].title == "Communicating and Influencing"){
+  //
+  //
+  //       checkBox.checked = "true";
+  //     }
+  //
+  //
+  //
+  // }
+
+
+
+
+
+
+
+//   for(var i = 0; i < interviewDetails.length; i += 3) {
+//     ontent.innerHTML = "<dd style='width:10%' class='govuk-summary-list__value'>"+interviewDetails[i]+"</dd><dd style='width:5%' class='govuk-summary-list__value'>"+interviewDetails[i + 1]+"</dd><dd style='width:85%' class='govuk-summary-list__value'>"+interviewDetails[i + 2]+"</dd>";
+//     int1.appendChild(ontent)
+// }
+
+
+
+
+
+// for(var i = 0; i < interviewDetails.length; i += 3){
+//   var content = document.createElement("li")
+//
+//   content.value = interviewDetails[i]+interviewDetails[i + 1]+interviewDetails[i + 2]
+//   content.appendChild(document.createTextNode(interviewDetails[i]+interviewDetails[i + 1]+interviewDetails[i + 2]));
+//
+// console.log(interviewDetails[i])
+// console.log(interviewDetails[i + 1])
+// console.log(interviewDetails[i + 2])
+// }
+//   int1.appendChild(content)
+// var html = [];//like a string builder
+//
+//
+// for(let i = 0; i < interviewDetails.length; i += 3){
+//
+//   "<div class='govuk-summary-list__row' style='background:#f3f2f1;border-bottom:1px solid #1d70b8;padding-bottom:10px'><dd style='width:30%' class='govuk-summary-list__value'><strong>Assessment method</strong></dd><dd style='width:15%' class='govuk-summary-list__value'><strong>Element</strong></dd><dd style='width:45%' class='govuk-summary-list__value'><strong>Selection criteria</strong></dd></div><div class='govuk-summary-list__row'><dd style='width:10%' class='govuk-summary-list__value'>"+interviewDetails[i]+"</dd><dd style='width:5%' class='govuk-summary-list__value'>"+interviewDetails[i + 1]+"</dd><dd style='width:85%' class='govuk-summary-list__value'>"+interviewDetails[i + 2]+"</dd></div>"
+// }
+
+
+
+
+// siftContent.innerHTML = "<dd style='width:10%' class='govuk-summary-list__value'>"+interviewDetails[i]+"</dd><dd style='width:5%' class='govuk-summary-list__value'>"+interviewDetails[i + 1]+"</dd><dd style='width:85%' class='govuk-summary-list__value'>"+interviewDetails[i + 2]+"</dd>";
+
+//    html.push('<tr>');
+//
+//    html.push('<td>', interviewDetails[i] ,'</td>');
+//
+//    html.push('<td>', interviewDetails[i + 1], '</td>');
+//
+//    html.push('<td>', interviewDetails[i + 2], '</td>');
+//
+//    html.push('</tr>');
+//   }
+//
+//   html.push('</table>');
+//
+//   int1.innerHTML = document.write(html.join(''));
+// console.log(html)
+
+  // for(let i = 0; i < interviewDetails.length; i += 3){
+  //  html.push('<tr>');
+  //
+  //  dat.innerHTML = interviewDetails[i];
+  //  dat2.innerHTML = interviewDetails[i + 1];
+  //  dat3.innerHTML = interviewDetails[i + 2];
+  //  int1.appendChild(dat)
+  //  int1.appendChild(dat2)
+  //  int1.appendChild(dat3)
+  //
+  // }
+
+
+
+
+//   for(var i=0;i<interviewDetails.length;i+=3){
+//   	var row = [];
+//   	row.push(interviewDetails[i] || '' );
+//   	dat.innerHTML = row.push(interviewDetails[i+1] || '' );
+//   	row.push(interviewDetails[i+2] || '' );
+//       row.push("<br>");
+//   	document.write(row.join(" "))
+//     dat.innerHTML = row.join(" ")
+//     int1.appendChild(dat)
+//
+//   }
+// console.log(row)
+
+
+
+
+
+//   const reviewSiftStage = {
+//       "CV, Personal statement": {
+//         "Experience": ["Experience of building relationships with busy stakeholders to achieve change.","Experience of operating in a fast-paced and ever-changing environment to provide policy advice and briefing to seniors and stakeholders."],
+//         "Skills": ["Evidence of understanding the current national policy challenges for the population impacted by this area.","Knowledge of how to deliver oral and written information effectively."]
+//       }
+//     }
+//
+//
+//     window.sessionStorage.setItem("reviewSiftStage", JSON.stringify(reviewSiftStage));
+//
+//
+//
+//   const reviewCriteria = {
+//     "Behaviours": ["Seeing the big picture", "Changing and improving", "Communicating and Influencing", "Delivering at Pace"],
+//     "Experience": ["Experience of building relationships with busy stakeholders to achieve change.","Experience of operating in a fast-paced and ever-changing environment to provide policy advice and briefing to seniors and stakeholders."],
+//     "Strengths": ["Challenger", "Mission", "Adaptable", "Courageous", "Authentic", "Emotionally Intelligent", "Disciplined", "Focussed"],
+//     "Skills": {
+//       "1": {
+//         "Title": "Evidence of understanding the current national policy challenges for the population impacted by this area.",
+//         "Level": "Practitioner"
+//       },
+//       "2": {
+//         "Title": "Evidence of understanding the current national policy challenges for the population impacted by this area.",
+//         "Level": "Practitioner"
+//       }
+//     }
+//   }
+//
+// window.sessionStorage.setItem("reviewCriteria", JSON.stringify(reviewCriteria));
+//
+//
+//     const reviewInterviewStage = {
+//       "Interview questions": {
+//         "Behaviours": ["Seeing the big picture", "Changing and improving", "Communicating and Influencing", "Delivering at Pace"],
+//         "Strengths": ["Challenger", "Mission", "Adaptable", "Courageous", "Authentic", "Emotionally Intelligent", "Disciplined", "Focussed"]
+//       }
+//     }
+//     window.sessionStorage.setItem("reviewInterviewStage", JSON.stringify(reviewInterviewStage));
+//
+//
+//
+//     const siftContent = document.createElement("li");
+
+
+
+    // for(var i in reviewSiftStage.Experience){
+    //     reviewSiftStage[i] = Object.keys(reviewSiftStage[i].Experience);
+        // reviewSiftStage[i] = Object.values(reviewSiftStage[i]);
+
+        // siftContent.innerHTML = "<dd style='width:10%' class='govuk-summary-list__value'>"+"test"+"</dd><dd style='width:5%' class='govuk-summary-list__value'>"+"test"+"</dd><dd style='width:85%' class='govuk-summary-list__value'>"+reviewSiftStage[i]+"</dd>";
+
+
+
+
+    //     siftRow1.appendChild(document.createTextNode(reviewSiftStage[i].Experience));
+    //       siftRow1.appendChild(siftContent);
+    // }
+
+
+
+    // var keysE = Object.values(reviewSiftStage)
+// console.log(reviewSiftStage[i])
+//     for (const [key, value] of Object.keys(reviewSiftStage)) {
+//
+//     siftContent.innerHTML = "<dd style='width:30%' class='govuk-summary-list__value'>"+keysE+"</dd><dd style='width:15%' class='govuk-summary-list__value'>"+"test"+"</dd><dd style='width:45%' class='govuk-summary-list__value'>"+"test"+"</dd>";
+//     siftRow1.appendChild(siftContent);
+// //
+//
+//
+//
+// }
+
+
+
+
+
+
+
+
+</script>
+{% endblock %}

@@ -1,0 +1,498 @@
+  {% extends "layouts/main.html" %}
+  {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+  {% block header %}
+  {% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+  {% block beforeContent %}
+
+  <div  style="width:100%;;height:55px;;float:left">
+    <span class="govuk-body-m" style="float:right;margin-right:23px;margin-top:10px;background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/panelist/task-listi"><strong>Return to task list</strong></a></span>
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+    <div  style=";width:100;">
+
+
+
+</div>
+
+
+    <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+  </div> -->
+  <!-- <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Score Interview</span> -->
+
+  <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+
+  </div>
+
+  </div>
+  <div style=";">
+
+  </div>
+  {% endblock %}
+
+  {% block content %}
+  <style>
+  #content, html, body {
+      height: 98%;
+  }
+
+
+  #card {
+      height: 400px;
+  }
+
+
+  #left {
+      float: left;
+      width: 110%;
+      height: 100%;
+      overflow: scroll;
+      border-bottom:1px solid black;
+      margin-top:5px;
+      margin-bottom:5px;
+  }
+
+  #right {
+      float: left;
+      width: 100%;
+      height: 100%;
+      overflow: scroll;
+        border-bottom:1px solid black;
+  }
+
+  div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+
+
+    #card {
+      background: lightgrey;
+
+    }
+  }
+
+
+
+  </style>
+
+  <form class="form" action="task-list-interview" method="post">
+  <div class="govuk-grid-row" >
+    <div  class="govuk-grid-column-full">
+      <div  style="width:96%;;height:170px;border-bottom:1px solid #1d70b8;float:left;margin-left:20px">
+
+        <h1 style="font-weight:normal;font-size:40px" class="govuk-heading-xl govuk-!-padding-top-3 govuk-!-padding-bottom-1"><strong>Score interview</strong> {{ data['candidate']|default("Johnathan Doe")}}</h1>
+      <div style="margin-top:-35px">
+
+            <span style="font-size:20px;" class="govuk-caption-m">Policy Adviser 1001334</span>
+
+            <span style="font-size:20px;float:left;margin-left:0px" id="timestop" class="govuk-caption-m"></span>
+            <span style="font-size:20px;float:left;margin-left:10px" class="govuk-caption-m">{{ data['interviewEvent']|default("14:00-14:45")}}</span>
+      </div>
+      </div>
+
+
+  <div class="govuk-grid-column-one-half govuk-!-margin-top-0" style="margin-left:0px;height:600px;">
+
+
+  <div id="content">
+
+    <div id="left">
+
+  <ul class="govuk-list govuk-list--number">
+  <div class="sticky" style="font-weight:bold;background:#f3f2f1;padding:10px;height:25px;;width:89%;">
+  Building engaging and effective relationships...</div>
+  <li id="fir"><a onclick="showDiv('panelPanel1');hideDiv('panelPanel2');activateDiv('blu','blu2')" class="padding-top:0px;govuk-link  govuk-link--no-underline govuk-link--no-visited-state"><div id="blu" style="border-radius:0px;padding:10px;;width:90%;height:auto;background:white">
+  <p class="govuk-body-m">Can you tell me about your experience of building a trusted advisor-style relationship with a stakeholder? Can you give me examples of how you were able to achieve this?</p></div></a></li>
+
+
+  <div class="sticky" style="font-weight:bold;background:#f3f2f1;padding:10px;height:25px;;width:89%;">
+  Seeing the Big Picture</div>
+  <li><a onclick="showDiv('panelPanel2');hideDiv('panelPanel1');;activateDiv('blu2','blu')"  class="padding-top:0px;govuk-link  govuk-link--no-underline govuk-link--no-visited-state"><div id="blu2" style="border-radius:0px;padding:10px;height:auto;;width:90%;background:white">
+  <p class="govuk-body-m">Can you describe a time when you have had to bring together different viewpoints into one way forward? What was the situation? What did you do? What was the outcome?</p></div></a></li>
+
+  <div class="sticky" style="font-weight:bold;background:#f3f2f1;padding:10px;height:25px;;width:89%;">
+  Changing and Improving</div>
+  <li style="padding-top:0px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" onClick=";activateDiv('blu3','blu2')"" href="#"><div  id="blu3" style="padding:10px;;height:auto;;width:90%;background:white">
+  <p class="govuk-body-m">Can you describe a time when you have received a reaction to a piece of work or project that you weren't expecting? How did you manage the situation?
+  </p></div></a></li>
+
+  <div class="sticky" style="background:#f3f2f1;padding:10px;height:25px;;width:89%;font-weight:bold;">
+  Analytical</div>
+
+  <li style="padding-top:0px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" onclick=";activateDiv('blu4','blu3')" href="#"><div   id="blu4" style="padding:10px;;height:auto;;width:90%;background:white">
+  <p class="govuk-body-m">How does it make you feel when people shift the goalposts on a task?
+  </p></div></a></li>
+
+  <div class="sticky" style="background:#f3f2f1;padding:10px;height:25px;;width:89%;font-weight:bold;">
+  Challenger</div>
+
+  <li style="padding-top:0px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#"><div   id="blu5" style="padding:10px;;height:auto;;width:90%;background:white">
+  <p class="govuk-body-m">What does a successful day look like?
+  </p></div></a></li>
+
+
+  <div class="sticky" style="background:#f3f2f1;padding:10px;height:25px;;width:89%;font-weight:bold;">
+  Problem Solver</div>
+
+  <li style="padding-top:0px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#"><div   id="blu6" style="padding:10px;;height:auto;;width:90%;background:white">
+  <p class="govuk-body-m">What aspect of problem solving do you least enjoy?
+  </p></div></a></li>
+
+
+
+  <div class="sticky" style="background:#f3f2f1;;padding:10px;height:25px;;width:89%;font-weight:bold;">
+  Candidate presentation</div>
+  <li style="padding-top:0px;"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" href="#"><div   id="blu7" style="padding:10px;;height:auto;;width:90%;background:white">
+  <p class="govuk-body-m">Praeterea iter est quasdam res quas ex communi. Paullum deliquit, ponderibus modulisque suis ratio utitur.
+  </p></div></a></li>
+
+
+  <div  style="background:white;;padding:10px;height:379px;;width:89%;font-weight:bold;">
+  </div>
+
+
+  </ul>
+
+
+  </div>
+</div>
+
+
+
+  </div>
+
+
+  <div class="govuk-grid-column-one-half govuk-!-margin-top-1" style="border-left:1px solid #1d70b8;background:#F1FAFF;margin-left:0px;height:600px;">
+
+    <div id="content">
+<div id="right">
+
+<div id="panelPanel1" style="">
+<div class="govuk-!-margin-top-0" style="height:340px;">
+
+<div class="sticky">
+
+  <h3 style="background:#f3f2f1;;font-size:20px;padding:10px;height:25px;;width:97%;font-weight:bold" class="govuk-heading-m">Experience question 1 of 1</h3></div>
+  <p class="govuk-body-m">Criteria:<BR><strong>Building engaging and effective relationships with stakeholders</strong>
+</p>
+
+  <!-- <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+  <span style=";margin-left:-10px;font-size:20px;font-weight:bold;" class="govuk-details__summary-text">
+  Chair's notes
+  </span>
+  </summary>
+  <div style="width:99.5%;background:white" class="govuk-details__text">
+    <ul class="govuk-list govuk-list--number">
+  <li id="" style="margin-bottom:20px;font-weight:bold">What I'm looking for is lorem ipsum dolor sit amet...</li>
+  </ul>
+  </div>
+  </details> -->
+<div style="padding:20px;background:#F1FAFF;">
+
+  <!-- {{ data['score1']}}
+  {{ data['score2']}}
+  {{ data['score3']}}
+  {{ data['score4']}}
+  {{ data['score5']}}
+  {{ data['score6']}}
+  {{ data['score7']}} -->
+
+
+
+        {{ govukSelect({
+        id: data['candidate']+"score1",
+        name: data['candidate']+"score1",
+        label: {
+        text: "Score",
+        classes: "govuk-label--xs"
+        },
+        items: [
+        {
+          value: "1",
+          selected: checked(data['candidate']+"score1","1"),
+          text: "1 Not Demonstrated - No positive evidence provided"
+        },
+        {
+          value: "2",
+          selected: checked(data['candidate']+"score1","2"),
+          text: "2 Minimal Demonstration - Limited positive evidence provided"
+        },
+        {
+          value: "3",
+          selected: checked(data['candidate']+"score1","3"),
+          text: "3 Moderate Demonstration - Moderate positive evidence provided"
+        },
+        {
+          value: "4",
+          selected: checked(data['candidate']+"score1","4"),
+          text: "4 Acceptable Demonstration - Adequate positive evidence provided"
+        },
+        {
+          value: "5",
+          selected: checked(data['candidate']+"score1","5"),
+          text: "5 Good Demonstration - Substantial positive evidence provided"
+        },
+        {
+          value: "6",
+          selected: checked(data['candidate']+"score1","6"),
+          text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
+        },
+        {
+          value: "7",
+          selected: checked(data['candidate']+"score1","7"),
+          text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
+        },
+        {
+          value: "---",
+          text: "---",
+          selected: true
+        }
+        ]
+        }) }}
+
+
+
+  {{ govukSelect({
+  id: "reason",
+  name: "reason",
+  label: {
+  text: "Reason",
+  classes: "govuk-label--xs"
+  },
+  items: [
+  {
+    value: "experienceLow",
+    text: "Not enough experience"
+  },
+  {
+    value: "experienceHigh",
+    text: "High level of experience"
+  },
+  {
+    value: "relevanceLow",
+    text: "Not relevant to role"
+  },
+  {
+    value: "relevanceHigh",
+    text: "Very relevant to role"
+  },
+  {
+    value: "exampleLow",
+    text: "No or poor example given"
+  },
+  {
+    value: "exampleHigh",
+    text: "Strong example given"
+  },
+  {
+    value: "---",
+    text: "---",
+    selected: true
+  }
+  ]
+  }) }}
+
+
+  <div class="govuk-form-group" style="">
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--xs" for="more-detail">
+          Comments (not visible to candidates)
+      </label>
+    </h1>
+    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="3" aria-describedby="more-detail-hint"></textarea>
+  </div>
+</div>
+</div>
+</div>
+
+<div id="panelPanel2" style="display:none">
+<div class="govuk-!-margin-top-0" style="height:340px;">
+
+  <h3 style="background:#f3f2f1;;font-size:20px;padding:10px;height:25px;;width:97%;font-weight:bold" class="govuk-heading-m">Behaviours question 1 of 2</h3>
+  <p class="govuk-body-m">Criteria:<BR><strong>Seeing the Big Picture</strong>
+</p>
+
+  <!-- <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+  <span style=";margin-left:-10px;font-size:20px;font-weight:bold;" class="govuk-details__summary-text">
+  Chair's notes
+  </span>
+  </summary>
+  <div style="width:99.5%;background:white" class="govuk-details__text">
+    <ul class="govuk-list govuk-list--number">
+  <li id="" style="margin-bottom:0px;font-weight:bold">What I'm looking for is lorem ipsum dolor sit amet...</li>
+  </ul>
+  </div>
+  </details> -->
+<div style="padding:20px;background:#F1FAFF;">
+
+
+        {{ govukSelect({
+        id: "score",
+        name: "score",
+        label: {
+        text: "Score",
+        classes: "govuk-label--xs"
+        },
+        items: [
+        {
+          value: "1",
+          text: "1 Not Demonstrated - No positive evidence provided"
+        },
+        {
+          value: "2",
+          text: "2 Minimal Demonstration - Limited positive evidence provided"
+        },
+        {
+          value: "3",
+          text: "3 Moderate Demonstration - Moderate positive evidence provided"
+        },
+        {
+          value: "4",
+          text: "4 Acceptable Demonstration - Adequate positive evidence provided"
+        },
+        {
+          value: "5",
+          text: "5 Good Demonstration - Substantial positive evidence provided"
+        },
+        {
+          value: "6",
+          text: "6 Strong Demonstration - Substantial, positive evidence provided including some evidence of exceeding expectations"
+        },
+        {
+          value: "7",
+          text: "7 Outstanding Demonstration - Evidence provided wholly exceeds expectation at this level"
+        },
+        {
+          value: "---",
+          text: "---",
+          selected: true
+        }
+        ]
+        }) }}
+
+
+
+  {{ govukSelect({
+  id: "reason",
+  name: "reason",
+  label: {
+  text: "Reason",
+  classes: "govuk-label--xs"
+  },
+  items: [
+  {
+    value: "experienceLow",
+    text: "Not enough experience"
+  },
+  {
+    value: "experienceHigh",
+    text: "High level of experience"
+  },
+  {
+    value: "relevanceLow",
+    text: "Not relevant to role"
+  },
+  {
+    value: "relevanceHigh",
+    text: "Very relevant to role"
+  },
+  {
+    value: "exampleLow",
+    text: "No or poor example given"
+  },
+  {
+    value: "exampleHigh",
+    text: "Strong example given"
+  },
+  {
+    value: "---",
+    text: "---",
+    selected: true
+  }
+  ]
+  }) }}
+
+  <div class="govuk-form-group" style="">
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--xs" for="more-detail">
+          Comments (not visible to candidates)
+      </label>
+    </h1>
+    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="3" aria-describedby="more-detail-hint"></textarea>
+  </div>
+</div></div>
+</div>
+</div>
+</div>
+
+
+  </div>
+  {{ govukButton({
+    text: "Save and return",
+    classes: "govuk-!-margin-top-5"
+  }) }}
+  </div>
+
+  </div>
+</form>
+
+<script>
+
+      activateDiv('blu','blu2');
+
+      function hideDiv(div1) {
+        document.getElementById(div1).style.display = 'none';
+
+      }
+
+      function activateDiv(div1, div2) {
+        document.getElementById(div1).style.background = '#F1FAFF';
+        document.getElementById(div2).style.background = '#FFFFFF';
+      }
+
+      function showDiv(div1) {
+        document.getElementById(div1).style.display = 'block';
+
+      }
+
+
+
+
+      const todayDay = document.getElementById('timestop');
+      const todaystamp = new Date();
+      const tickTock = todaystamp.toLocaleDateString('en-uk', { weekday:"short", day:"numeric", month:"short", year:"numeric" }) ;
+      todayDay.innerHTML = tickTock;
+
+
+
+
+      const dateField = document.getElementById('dated');
+
+
+
+
+      // if (dateField.outerText == ""){
+
+        const stamp = new Date();
+        const localStamp = stamp.toLocaleDateString('en-uk', { day:"numeric", month:"short", year:"numeric" }) ;
+        dateField.outerText = localStamp;
+    console.log(localStamp)
+
+
+
+
+
+</script>
+  {% endblock %}

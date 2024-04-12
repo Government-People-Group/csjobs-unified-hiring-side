@@ -1,0 +1,324 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Finalise and submit</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        13 results found matching "{{ data['temp-copy-input-autocomplete']|default("Policy Adviser")}}"
+      </h1>
+
+        <p class="govuk-!-margin-top-3">You should look through the candidate's application to see if they are a match. Candidates shown on the reserve list match details of your job advert:</p>
+        <ul class="govuk-list govuk-list--bullet">
+<li>Similar job title</li>
+<li>Grade</li>
+          </ul>
+
+<hr style="margin-bottom:30px;margin-top:30px;border-bottom:1px solid #1d70b8;">
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-one-third csr-side-search-panel govuk-!-margin-0" style="padding-right: 0px;">
+
+<h2 class="govuk-heading-s">Filter search</h2>
+
+<div class="govuk-grid-column-full">
+{{ govukSelect({
+  id: "department",
+  name: "department",
+  label: {
+    text: "Department"
+  },
+  items: [
+  {
+    value: "all",
+    text: "All departments",
+    selected: true
+  },
+  {
+    value: "cabinetoffice",
+    text: "Cabinet office"
+  },
+  {
+    value: "dwp",
+    text: "Department for work and pensions"
+  },
+  {
+      value: "homeoffice",
+      text: "Home office"
+    }
+  ]
+}) }}
+</div>
+<div class="govuk-grid-column-full">
+{{ govukSelect({
+id: "location",
+name: "location",
+label: {
+text: "Preferred location",
+classes: govuk-heading-s
+},
+items: [
+{
+value: "cardiff",
+text: "Cardiff"
+},
+{
+value: "edingburgh",
+text: "Edinburgh"
+},
+{
+value: "leeds",
+text: "Leeds"
+},
+{
+value: "london",
+text: "London",
+selected: true
+}
+]
+}) }}
+
+{{ govukSelect({
+id: "behaviour",
+name: "behaviour",
+label: {
+text: "Behaviour",
+classes: govuk-heading-s
+},
+items: [
+{
+value: "bigger-picture",
+text: "Seeing the bigger picture"
+},
+{
+value: "changing",
+text: "Changing and improving"
+},
+{
+value: "leadership",
+text: "Leadership"
+}
+]
+}) }}
+
+
+{{ govukSelect({
+id: "work-pattern",
+name: "work-pattern",
+label: {
+text: "Working pattern",
+classes: govuk-heading-s
+},
+items: [
+{
+value: "full-time",
+text: "Full-time",
+selected: true
+},
+{
+value: "part-time",
+text: "Part-time"
+}
+]
+}) }}
+
+{{ govukButton({
+  text: "Update results"
+}) }}
+</div>
+
+</div>
+<div class="govuk-grid-column-two-thirds" style="padding-left: 40px;">
+
+
+       {{ govukSelect({
+         id: "sort",
+         name: "sort",
+         label: {
+           text: "Order by"
+         },
+         items: [
+           {
+             value: "score",
+             text: "Overall score"
+           },
+           {
+             value: "location",
+             text: "Location"
+           },
+           {
+             value: "time",
+             text: "Time on reserve list",
+             selected: true
+           }
+         ]
+       }) }}
+
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 1</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 2</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 3</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 4</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 5</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 6</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 7</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 8</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 9</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 10</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       <p> <a href="#" class="govuk-link" style="font-size: 30px;">Candidate 11</a></p>
+
+       <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 0px; ">Department list: HM Revenue and Customs</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Preferred location: Cardiff</p>
+
+       <p class="govuk-body" style="margin-top: 0px;">Behaviours: Seeing the bigger picture (5), Changing and improving (4), Leadership (5)<br>
+       Distance : within 0.1 miles<br>
+       Applied : 7th July 2022<br>
+       Expires : 6th July 2023</p>
+
+
+
+</div>
+</div>
+</div>
+
+{% endblock %}

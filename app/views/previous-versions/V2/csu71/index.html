@@ -1,0 +1,27 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        CS Jobs prototype
+        <span class="govuk-caption-xl">{{releaseVersion}}</span>
+      </h1>{{releaseVersion | log }}
+      <h2 class="govuk-heading-l">Campaign-set-up v71</h2>
+
+      {{ govukButton({
+        text: "Launch prototype",
+        href: "start"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

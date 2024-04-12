@@ -1,0 +1,141 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Basic details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+  {% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+  <h1 class="govuk-heading-xl">Create a new vacancy</h1>
+    <form class="form" action="department" method="post">
+
+<div>
+      {{ govukSelect({
+                id: "grade",
+                name: "grade",
+                label: {
+                  text: "What grade is the job role?",
+                  classes: "govuk-label--m"
+                },
+                items: [
+                {
+                  value: "none",
+                  selected: "true",
+                  disabled: "true",
+                  text: "Select grade"
+                },
+
+                {
+                  value: "Administrative Assistant",
+                  text: "Administrative Assistant (AA)",
+                  selected: checked("grade","Administrative Assistant")
+                },
+                {
+                  value: "Administrative Officer",
+                  text: "Administrative Officer (AO)",
+                  selected: checked("grade","Administrative Officer")
+                },
+                {
+                  value: "Executive Officer",
+                  text: "Executive Officer (EO)",
+                  selected: checked("grade","Executive Officer")
+                },
+                {
+                  value: "Higher Executive Officer",
+                  text: "Higher Executive Officer (HEO)",
+                  selected: checked("grade","Higher Executive Officer")
+                },
+                {
+                  value: "Senior Executive Officer",
+                  text: "Senior Executive Officer (SEO)",
+                  selected: checked("grade","Senior Executive Officer")
+                },
+                {
+                  value: "Grade 7",
+                  text: "Grade 7",
+                  selected: checked("grade","Grade 7")
+                },
+                {
+                  value: "Grade 6",
+                  text: "Grade 6",
+                  selected: checked("grade","Grade 6")
+                }
+                ]
+              }) }}
+            </div>
+
+
+      <!-- {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {{ govukRadios({
+        name: "grade",
+        fieldset: {
+          legend: {
+            text: "Select the grade of the role",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+        {
+          value: "Administrative Assistant (AA)",
+          text: "Administrative Assistant (AA)",
+          checked: checked("grade","Administrative Assistant (AA)")
+        },
+        {
+          value: "Administrative Officer (AO)",
+          text: "Administrative Officer (AO)",
+          checked: checked("grade","Administrative Officer (AO)")
+
+        },
+        {
+          value: "Executive Officer (EO)",
+          text: "Executive Officer (EO)",
+          checked: checked("grade","Executive Officer  (EO)")
+        },
+        {
+          value: "Higher Executive Officer (HEO)",
+          text: "Higher Executive Officer (HEO)",
+          checked: checked("grade","Higher Executive Officer (HEO)")
+        },
+        {
+          value: "Senior Executive Officer (SEO)",
+          text: "Senior Executive Officer (SEO)",
+          checked: checked("grade","Senior Executive Officer (SEO)")
+        },
+        {
+          value: "Grade 7",
+          text: "Grade 7",
+          checked: checked("grade","Grade 7")
+        },
+        {
+          value: "Grade 6",
+          text: "Grade 6",
+          checked: checked("grade","Grade 6")
+        }
+        ]
+      }) }} -->
+
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

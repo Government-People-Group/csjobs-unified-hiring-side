@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+{% include 'includes/user-header.html' %}
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Welcome back, Jane Smith</h1>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h2 class="govuk-heading-m"><a href="job-library">Create a vacancy</a></h2>
+    <h2 class="govuk-heading-m"><a href="all-vacancies-fresh">View all vacancies</a></h2>
+    <h2 class="govuk-heading-m"><a href="#">View sift candidates</a></h2>
+    <h2 class="govuk-heading-m"><a href="">Check upcoming interviews</a></h2>
+    <h2 class="govuk-heading-m"><a href="my-profile">My profile</a></h2>
+    <h2 class="govuk-heading-m"><a href="department-profile">Department profile</a></h2>
+    <h2 class="govuk-heading-m"><a href="campaign-set-up/step-by-step">Read guidance</a></h2>
+  </div>
+
+<div class="govuk-grid-column-two-thirds">
+  <h2 class="govuk-heading-m">Notifications</h2>
+  <p class="govuk-body govuk-!-margin-bottom-3">Panel members have completed their <a href="sift/1001334-panel-results">scores for Lead Delivery Manager - vacancy 1001334</a>.</p>
+  <p class="govuk-body-s">3 September 2022</p>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <p class="govuk-body govuk-!-margin-bottom-3"><a href="sift/1001334">Lead Delivery Manager - vacancy 1001334</a> is now live.</p>
+  <p class="govuk-body govuk-!-margin-bottom-3">23 August 2022</p>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <p class="govuk-body govuk-!-margin-bottom-3">Approval for <a href="sift/1001334">Lead Delivery Manager - vacancy 1001334</a> has been confirmed.</p>
+  <p class="govuk-body govuk-!-margin-bottom-2">22 August 2022</p>
+</div>
+
+</div>
+
+
+{% endblock %}

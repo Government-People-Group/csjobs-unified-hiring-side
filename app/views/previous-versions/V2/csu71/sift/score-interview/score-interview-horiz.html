@@ -1,0 +1,84 @@
+
+
+
+
+{% extends "layouts/main.html" %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="position:STICKY;width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Score Interview</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row" >
+  <div  class="govuk-grid-column-full" >
+
+<div style="width:99.8%;border:1px solid lightgrey;height:65px">
+</div>
+
+<div style="">
+
+<div class="govuk-grid-column-full" style="position:relative;height:600px;border:1px solid lightgrey">
+
+<div style="position:absolute;left:0px;top:0;;height:160px;;width:800px;border:1px solid lightgrey">
+<p class="govuk-body-m">Can you describe a time when you have had to bring together different viewpoints into one way forward? What was the situation? What did you do? What was the outcome?</p>
+</div>
+<div style="position:absolute;left:850px;top:0;;height:160px;;width:800px;;border:1px solid lightgrey">
+<p class="govuk-body-m">Praetereddddda iter est quasdam res quas ex communi. Paullum deliquit, ponderibus modulisque suis ratio utitur.</p>
+</div>
+<!-- <div style="position:absolute;left:500px;top:0;;height:160px;;width:1500px;border:1px solid lightgrey">
+<p class="govuk-body-m">Praeterea iter est quasdam res quas ex communi. Paullum deliquit, ponderibus modulisque suis ratio utitur.</p>
+</div>
+<div style="position:absolute;left:500px;top:0;;height:160px;;width:2000px;border:1px solid lightgrey">
+<p class="govuk-body-m">Praeterea iter est quasdam res quas ex communi. Paullum deliquit, ponderibus modulisque suis ratio utitur.</p>
+</div> -->
+
+
+</div>
+<div class="govuk-grid-column-full" style="padding:10px;height:600px;border:1px solid lightgrey">
+2/3
+
+
+
+</div>
+
+fwefewfwef
+
+</div>
+<div class="govuk-grid-column-one-half" style="height:200px;border:1px solid grey">
+
+fwefewfwef
+
+</div>
+
+</div>
+
+
+
+
+
+{% endblock %}

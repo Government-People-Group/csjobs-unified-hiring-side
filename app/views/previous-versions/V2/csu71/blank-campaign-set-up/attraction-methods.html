@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Recruitment channels</span>
+    <h1 class="govuk-heading-l">Where do you want to advertise the vacancy?</h1>
+    <form class="form" action="summary-section-5" method="post">
+
+
+      {% set otherHTML %}
+      {{ govukTextarea({
+        name: "other",
+        id: "other",
+        value: data['other'],
+        label: {
+          text: "Tell us where else you'd like to advertise the role",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        hint: {
+          text: "You may be contacted to provide more details, including approval."
+        }
+      }) }}
+      {% endset %}
+<div>
+      {{ govukCheckboxes({
+        idPrefix: "attraction",
+        name: "attraction",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Select all that apply."
+        },
+        items: [
+        {
+          value: "Civil Service Jobs",
+          text: "Civil Service Jobs",
+          checked: checked("attraction","Civil Service Jobs")
+        },
+        {
+          value: "LinkedIn",
+          text: "LinkedIn",
+          checked: checked("attraction","LinkedIn")
+        },
+        {
+          value: "Indeed",
+          text: "Indeed",
+          checked: checked("attraction","Indeed")
+        },
+        {
+          value: "Monster Jobs",
+          text: "Monster Jobs",
+          checked: checked("attraction","Monster Jobs")
+        },
+        {
+          value: "Other",
+          text: "Other",
+          checked: checked("attraction","Other"),
+          conditional: {
+            html: otherHTML
+          }
+        }
+        ]
+      }) }}
+</div>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      {{ govukButton({
+        text: "Preview advert",
+        classes: "govuk-button--secondary",
+        href: "preview-advert"
+      }) }}
+    </form>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,165 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+    </div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Advert set up</span>
+
+    <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+<span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-copy-ad?firstNot=noshow"><strong>Return to task list</strong></a></span>
+
+    </div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<form class="form" action="/csu71/adcopy-campaign-set-up/about-the-team" method="post">
+
+<div class="govuk-grid-row  govuk-!-margin-top-3">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl">About the role</h1>
+
+            <p class='govuk-body-m'>This information will be shown on the advert.</p>
+
+<div class="govuk-!-margin-bottom-9">
+
+
+    {{ govukCharacterCount({
+  name: "person-spec",
+  id: "person-spec",
+  rows:6,
+  maxwords: 150,
+  label: {
+    text: "What are you looking for in a candidate?",
+    classes: "govuk-label--m",
+    isPageHeading: false
+  },
+  value: '' or data['person-spec']
+}) }}
+
+
+</div>
+  <!-- <p class="govuk-body-m">A senior business analyst has a good understanding of strategic arenas and leads large or complex projects.</p>
+
+  <p class="govuk-body-m">At this role level, you will:</p>
+  <ul class="govuk-!-margin-top-3 govuk-list govuk-list--number">
+  <li>have functional or people management responsibilities, or a combination of both</li>
+  <li>mentor others</li>
+  <li>develop best practice</li>
+  <li>own stakeholder relationships</li>
+  <li>manage community of practice activities within a business area</li>
+</ul> -->
+
+
+<!--
+{{ govukTextarea({
+  name: "responsibility",
+  id: "responsibility",
+
+  value: data['respon'],
+  label: {
+    text: "  Make a list of the day-to-day responsibilities of the role"
+  }
+}) }} -->
+
+
+<div class="govuk-form-group">
+  <h2 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--m" for="respon">
+      Make a list of the day-to-day responsibilities of the role
+    </label>
+  </h2>
+  <div id="more-detail-hint" class="govuk-hint">
+    Include common tasks to be carried out by the successful candidate.
+  </div>
+  <textarea class="govuk-textarea" id="respon" name="respon" value="{{ data['respon']}}" rows="6" aria-describedby="respon-hint">Lead or support the development of policy and related projects which align with the Department and wider government’s priorities.
+
+Work collaboratively with colleagues in Programme Delivery, other policy professionals, analysts and service delivery colleagues across the department.
+
+Establish collaborative relationships with key stakeholders from across the government within the policy focus area.
+
+Produce high-quality written and oral briefings for senior officials and Ministers, distilling complex ideas into clear and concise advice.</textarea>
+</div>
+
+
+
+
+
+
+        <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">Continue</button>
+
+        {{ govukButton({
+          text: "Preview advert",
+          classes: "govuk-button--secondary govuk-!-margin-top-6",
+          href: "preview-advert"
+        }) }}
+
+
+
+</form>
+</div>
+</div>
+
+
+<script>
+
+
+
+
+
+
+
+var fill = document.getElementById("person-spec");
+const candidate = "Policy professionals support ministers to shape and deliver policy that delivers the government’s objectives. We do this by bringing together a wide range of people and evidence to design, test and deliver solutions to often complex policy problems. It is our aim to improve policy making and ensure better use of evidence, better understanding of the political and democratic context and better planning and clarity, from the outset, as to how policies will be delivered."
+fill.innerHTML = candidate;
+
+  const bullet = "–";
+  const bulletWithSpace = `${bullet} `;
+  const enter = 13;
+
+
+  const handleInput = (event) => {
+    const { keyCode, target } = event;
+    const { selectionStart, value } = target;
+
+    if (keyCode === enter) {
+      console.log('a');
+      target.value = [...value]
+        .map((c, i) => i === selectionStart - 1
+          ? `\n${bulletWithSpace}`
+          : c
+        )
+        .join('');
+        console.log(target.value);
+
+      target.selectionStart = selectionStart+bulletWithSpace.length;
+      target.selectionEnd = selectionStart+bulletWithSpace.length;
+    }
+
+    if (value[0] !== bullet) {
+      target.value = `${bulletWithSpace}${value}`;
+    }
+  }
+</script>
+
+
+
+
+{% endblock %}

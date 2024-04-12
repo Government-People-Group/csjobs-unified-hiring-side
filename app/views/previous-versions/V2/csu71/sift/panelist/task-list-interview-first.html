@@ -1,0 +1,221 @@
+{% extends "layouts/main.html" %}
+
+
+
+{% block header %}
+{% include '/csu71/includes/pheader.html' %}
+  {% endblock %}
+
+
+
+
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Interview</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="#"><strong>Message panel chair</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+
+{% if (data['c1score1'].length) and (data['c1score2'].length) and (data['c1score3'].length) and (data['c1score4'].length) %}
+{% set cand1 = "true" %}
+{% endif %}
+
+{% if (data['c2score1'].length) and (data['c2score2'].length) and (data['c2score3'].length) and (data['c2score4'].length) %}
+{% set cand2 = "true" %}
+{% endif %}
+
+{% if (data['c3score1'].length) and (data['c1score2'].length) and (data['c1score3'].length) and (data['c1score4'].length) %}
+{% set cand3 = "true" %}
+{% endif %}
+
+{% if (data['c4score1'].length) and (data['c4score2'].length) and (data['c4score3'].length) and (data['c4score4'].length) %}
+{% set cand4 = "true" %}
+{% endif %}
+
+{% if (data['c5score1'].length) and (data['c5score2'].length) and (data['c5score3'].length) and (data['c5score4'].length) %}
+{% set cand5 = "true" %}
+{% endif %}
+
+
+<span class="govuk-caption-l">1001334</span>
+<h2 class="govuk-heading-l">Policy Adviser</h2>
+
+
+
+
+<!-- {% set ameliaTotal =  data['Amelia Lawsonscore1']|default("5")|int +
+                      data['Amelia Lawsonscore2']|default("6")|int +
+                      data['Amelia Lawsonscore3']|default("6")|int +
+                      data['Amelia Lawsonscore4']|default("5")|int +
+                      data['Amelia Lawsonscore5']|default("6")|int +
+                      data['Amelia Lawsonscore6']|default("6")|int +
+                      data['Amelia Lawsonscore7']|default("7")|int %}
+
+
+{% set meiTotal =  data['Mei Chen1']|default("6")|int +
+                      data['Mei Chen2']|default("-")|int +
+                      data['Mei Chen3']|default("-")|int +
+                      data['Mei Chen4']|default("-")|int +
+                      data['Mei Chen5']|default("-")|int +
+                      data['Mei Chen6']|default("-")|int +
+                      data['Mei Chen7']|default("-")|int %}
+
+{% set javierTotal =  data['Javier Santos1']|default("6")|int +
+                      data['Javier Santos2']|default("5")|int +
+                      data['Javier Santos3']|default("5")|int +
+                      data['Javier Santos4']|default("5")|int +
+                      data['Javier Santos5']|default("5")|int +
+                      data['Javier Santos6']|default("5")|int +
+                      data['Javier Santos7']|default("4")|int %} -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-3">Score candidate interviews</H1>
+    <!-- <p class="govuk-body-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">Review and submit your interview scores to the panel.</p> -->
+
+
+    <table class="govuk-table govuk-!-margin-top-9" style="">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th style="" scope="col" class="govuk-table__header">Candidate</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Date Time</th>
+          <th style=";text-align:left;" scope="col" class="govuk-table__header govuk-table__header--numeric">Q1</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Q2</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Q3</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Q4</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Q5</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Q6</th>
+          <th style=";text-align:left" scope="col" class="govuk-table__header govuk-table__header--numeric">Q7</th>
+          <th style=";text-align:center" scope="col" class="govuk-table__header govuk-table__header--numeric">Total</th>
+          <th style=";text-align:center" scope="col" class="govuk-table__header govuk-table__header--numeric">Status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+
+
+
+
+          <th scope="row" class="govuk-table__header">
+
+            <a style="" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="score-candidate-interview?candidate=Mei Chen&interviewEvent=10:00-10:45">Mei Chen</a>
+
+          </th>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric"><a style="font-weight:bold" class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="score-candidate-interview?candidate=Mei Chen&interviewEvent=10:00-10:45">
+            10:00-10:45<BR><span id="intDate1"></span></a></td>
+              <td style=";text-align:left;" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+              <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+              <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+              <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+              <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+              <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+              <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+          <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric"><strong>-</strong></td>
+          <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric">
+
+            <strong class="govuk-tag--grey govuk-tag"  id="contact-details-status">not started</strong>
+
+
+
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+
+            <span>Amelia Lawson</span>
+
+          </th>
+          <td style=";text-align:left;" class="govuk-table__cell govuk-table__cell--numeric">13:00-13:45<BR><span id="intDate2"></span></td>
+            <td style=";text-align:left;" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+            <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+            <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+            <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+            <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+            <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+            <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+          <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric"><strong>-</strong></td>
+          <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric">
+
+            <strong class="govuk-tag--grey govuk-tag"  id="contact-details-status">cannot start yet</strong>
+
+
+
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+
+            <span>Javier Santos</span>
+
+          </th>
+          <td style=";text-align:left" class="govuk-table__cell govuk-table__cell--numeric">16:00-16:45<BR><span id="intDate3"></span></td>
+          <td style=";text-align:left;" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+          <td style="text-align:left" class="govuk-table__cell govuk-table__cell--numeric">-</td>
+          <td style="font-size:24px;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric"><strong>-</strong></td>
+
+          <td style="font-size:24px;;text-align:center;" class="govuk-table__cell govuk-table__cell--numeric">
+
+            <strong class="govuk-tag--grey govuk-tag"  id="contact-details-status">cannot start yet</strong>
+
+
+
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+
+
+
+  </div>
+</div>
+<script>
+
+  var dat =  document.getElementsByTagName("tr")
+  console.log(dat)
+
+  for (var t=0;t<dat.length;t++){
+    // if (dat.textContent[t]) {
+      console.log(dat.length)
+
+    // }
+
+
+  }
+
+  const todayDay1 = document.getElementById('intDate1');
+  const todayDay2 = document.getElementById('intDate2');
+  const todayDay3 = document.getElementById('intDate3');
+  const todaystamp = new Date();
+  const tickTock = todaystamp.toLocaleDateString('en-uk', { weekday:"short", day:"numeric", month:"long" }) ;
+  todayDay1.innerHTML = tickTock;
+  todayDay2.innerHTML = tickTock;
+  todayDay3.innerHTML = tickTock;
+
+
+
+</script>
+{% endblock %}

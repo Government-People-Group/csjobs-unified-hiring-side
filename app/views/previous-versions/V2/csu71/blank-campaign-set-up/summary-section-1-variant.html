@@ -1,0 +1,292 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters" style="padding-right:80px">
+      <span class="govuk-caption-xl">Summary</span>
+      <h1 class="govuk-heading-xl">About the vacancy - first job type</h1>
+
+      <h2 class="govuk-heading-m">Basic details</h2>
+      <dl class="govuk-summary-list" style="margin-right:20px">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Number of posts</dt>
+          <dd class="govuk-summary-list__value">{{ data['num-posts'] }}</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Job title</dt>
+          <dd class="govuk-summary-list__value">{{ data['title'] }}</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+        </div>
+        {% if data['subtitle']%}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Subtitle</dt>
+          <dd class="govuk-summary-list__value">{{ data['subtitle'] }}</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> subtitle</span></a></dd>
+        </div>
+        {% endif %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Grade</dt>
+          <dd class="govuk-summary-list__value">{{ data['newgrade']}}</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> grade</span></a></dd>
+        </div>
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Cabinet Office role?</dt>
+          <dd class="govuk-summary-list__value">{{ data['cabinet-office-role']}}</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details">Change<span class="govuk-visually-hidden"> cabinet office role?</span></a></dd>
+        </div> -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Department</dt>
+          <dd class="govuk-summary-list__value">{{ data['dept']}} </dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> department</span></a></dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Reserved status</dt>
+          <dd class="govuk-summary-list__value">{{ data['reserved-status']|default("No, this vacancy is not reserved")}}</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> number of posts availables</span></a></dd>
+        </div>
+
+
+      </dl><br><br>
+
+      <h2 class="govuk-heading-m">Campaign dates</h2>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Preferred launch (TBC)</dt>
+          <dd class="govuk-summary-list__value">{{ data['s-day']|default("19")}}/{{ data['s-month']|default("Sept")}}/{{ data['s-year']|default("2023")}}</dd>
+          <dd class="govuk-summary-list__actions"><a href="#">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">End date</dt>
+          <dd class="govuk-summary-list__value">{{ data['e-day']|default("19")}}/{{ data['e-month']|default("Sept")}}/{{ data['e-year']|default("2023")}}</dd>
+          <dd class="govuk-summary-list__actions"><a href="#">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+        </div>
+      </dl><br><br>
+
+      <h2 class="govuk-heading-m">Contacts</h2>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Main contact for vacancy</dt>
+              <dd class="govuk-summary-list__value">Me</dd>
+              <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+            </div>
+          </dl><br><br>
+
+          <h2 class="govuk-heading-m">Approval</h2>
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Financial approval</dt>
+                  <dd class="govuk-summary-list__value">Yes - approved</dd>
+                  <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+                </div>
+              </dl><br><br>
+
+
+
+
+
+
+      <form action="locations-variant" method="post" novalidate>
+      <input type="hidden" name="answers-checked" value="true">
+      <span class="govuk-caption-l">Next section</span>
+      <h2 class="govuk-heading-l">Contract information</h2>
+      <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+    </div>
+
+    <div class="govuk-grid-column-one-quarter">
+
+
+    <h2 class="govuk-heading-m">Your progress</h2>
+      <div data-module="appstepnav"id="step-by-step-navigation" >
+        <h2 class="govuk-heading-s" >First job type</h2>
+        <ol class="app-step-nav__steps">
+          <li class="app-step-nav__step js-step app-step-nav__step" aria-current="step" id="check-you-re-allowed-to-drive">
+            <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none">
+              <h3 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number" style="border:solid 3px">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title" style="color:#505a5f;">
+                  About the vacancy
+                </span>
+              <br><br>
+              </h3>
+            </div>
+
+
+
+          </li>
+          <li class="app-step-nav__step" id="get-a-provisional-licence">
+            <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+              <h3 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                  Contract information
+                </span>
+              <br><br>
+              </h3>
+            </div>
+          </li>
+          <li class="app-step-nav__step" id="get-a-provisional-licence">
+            <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+              <h3 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                  Advert set up
+                </span>
+                <br><br>
+              </h3>
+            </div>
+          </li>
+          <li class="app-step-nav__step" id="get-a-provisional-licence">
+            <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+              <h3 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                  Selection criteria and assessment methods
+                </span>
+                <br><br>
+              </h3>
+            </div>
+          </li>
+
+
+        </ol>
+      </div><br>
+
+      <div data-module="appstepnav"id="step-by-step-navigation" >
+        <h2 class="govuk-heading-s" style="font-weight:normal">Second job type</h2>
+        <ol class="app-step-nav__steps">
+          <li class="app-step-nav__step js-step app-step-nav__step" aria-current="step" id="check-you-re-allowed-to-drive">
+            <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none">
+              <h3 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                  About the vacancy
+                </span>
+              <br><br>
+              </h3>
+            </div>
+
+
+
+          </li>
+          <li class="app-step-nav__step" id="get-a-provisional-licence">
+            <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+              <h3 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                  Contract information
+                </span>
+              <br><br>
+              </h3>
+            </div>
+          </li>
+          <li class="app-step-nav__step" id="get-a-provisional-licence">
+            <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+              <h3 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                  Advert set up
+                </span>
+                <br><br>
+              </h3>
+            </div>
+          </li>
+          <li class="app-step-nav__step" id="get-a-provisional-licence">
+            <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+              <h3 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                  Selection criteria and assessment methods
+                </span>
+                <br><br>
+              </h3>
+            </div>
+          </li>
+
+
+        </ol>
+      </div><br>
+
+
+    </div>
+
+    </div>
+    {% endblock %}

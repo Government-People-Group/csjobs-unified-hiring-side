@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Recruitment channels</span>
+<form class="form" action="/reserve-list-handler" method="post">
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      idPrefix: "reserve-list-required",
+      name: "reserve-list-required",
+      fieldset: {
+        legend: {
+          text: "Is a reserve list required?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "A reserve list is a pool of candidates that can be held for 12 months."
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: checked("reserve-list-required","Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: checked("reserve-list-required","No")
+        }
+      ]
+    }) }}
+
+    <button class="govuk-button" data-module="govuk-button">Continue</button>
+    {{ govukButton({
+      text: "Preview advert",
+      classes: "govuk-button--secondary",
+      href: "preview-advert"
+    }) }}
+
+  </form>
+
+
+</div>
+</div>
+{% endblock %}

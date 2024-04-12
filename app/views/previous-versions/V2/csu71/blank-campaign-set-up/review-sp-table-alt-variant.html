@@ -1,0 +1,448 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="/csu71/blank-campaign-set-up/basic-details-variant2" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters" style="padding-right:80px">
+
+      <h1 class="govuk-heading-xl" >
+        Review your assessment methods
+      </h1>
+      <p class="govuk-body-l govuk-!-margin-bottom-3">Review how you will assess candidates at sift and interview.</p>
+
+
+
+
+      <div class="govuk-summary-card govuk-summary-list--no-border" style="border:0px;">
+        <div style="height:30px; background: white" class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-heading-l govuk-!-margin-bottom-0" ">Sift</h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row" style="background:#f3f2f1;border-bottom:1px solid #1d70b8;padding-bottom:10px">
+              <dt style="padding-left:5px;width:10%;font-weight:normal" class="govuk-summary-list__key">
+                <strong>Plan</strong>
+              </dt>
+              <dd style="width:25%" class="govuk-summary-list__value">
+                <strong>Assessment method</strong>
+              </dd>
+              <dd style="width:20%" class="govuk-summary-list__value">
+                  <strong>Element</strong>
+              </dd>
+              <dd style="width:45%" class="govuk-summary-list__value">
+                <strong>Selection criteria</strong>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt style="padding-left:5px;width:10%;font-weight:normal" class="govuk-summary-list__key">
+                Stage 1
+              </dt>
+              <dd style="width:30%" class="govuk-summary-list__value">
+                Civil Service Judgement Test
+              </dd>
+              <dd style="width:15%" class="govuk-summary-list__value">
+                Behaviours
+              </dd>
+              <dd style="width:45%" class="govuk-summary-list__value">
+                Managing a quality service
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt style="width:10%" class="govuk-summary-list__key">
+              </dt>
+              <dd style="width:30%" class="govuk-summary-list__value">
+              </dd>
+              <dd style="width:15%" class="govuk-summary-list__value">
+              </dd>
+              <dd style="width:45%" class="govuk-summary-list__value">
+                Changing and improving
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row" style="border-bottom:1px solid #1d70b8;padding-bottom:10px">
+              <dt style="width:10%" class="govuk-summary-list__key">
+              </dt>
+              <dd style="width:30%" class="govuk-summary-list__value">
+              </dd>
+              <dd style="width:15%" class="govuk-summary-list__value">
+              </dd>
+              <dd style="width:45%" class="govuk-summary-list__value">
+                Communicating and Influencing
+              </dd>
+            </div>
+
+
+
+            <div class="govuk-summary-list__row">
+              <dt style="padding-left:5px;width:10%;font-weight:normal" class="govuk-summary-list__key">
+                Stage 2
+              </dt>
+              <dd style="width:30%" class="govuk-summary-list__value">
+                CV
+              </dd>
+              <dd style="width:15%" class="govuk-summary-list__value">
+                Experience
+              </dd>
+              <dd style="width:45%" class="govuk-summary-list__value">
+                Using complex mathematical modelling tools to design and scale data science tools.
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt style="width:10%" class="govuk-summary-list__key">
+              </dt>
+              <dd style="width:30%" class="govuk-summary-list__value">
+                Personal statement
+              </dd>
+              <dd style="width:15%" class="govuk-summary-list__value">
+                Experience
+              </dd>
+              <dd style="width:45%" class="govuk-summary-list__value">
+                Building professional relationships with stakeholders across the organisation.
+              </dd>
+            </div>
+
+
+
+            <div class="govuk-summary-list__row" style="border-bottom:1px solid #1d70b8;padding-bottom:10px">
+              <dt style="width:10%" class="govuk-summary-list__key">
+              </dt>
+              <dd style="width:30%" class="govuk-summary-list__value">
+                Application form
+              </dd>
+              <dd style="width:15%" class="govuk-summary-list__value">
+                Skills
+              </dd>
+              <dd style="width:45%" class="govuk-summary-list__value">
+                Active membership with the Engineering Council as a Chartered Engineer CEng.
+              </dd>
+            </div>
+
+
+          </dl>
+        </div>
+      </div>
+
+    <div class="govuk-summary-card govuk-summary-list--no-border" style="border:0px">
+      <div style="height:30px; background: white" class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-0" ">Remote interview</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row" style="background:#f3f2f1;border-bottom:1px solid #1d70b8;padding-bottom:10px">
+            <dt style="padding-left:5px;width:10%;font-weight:normal" class="govuk-summary-list__key">
+              <strong>Plan</strong>
+            </dt>
+            <dd style="width:25%" class="govuk-summary-list__value">
+              <strong>Assessment method</strong>
+            </dd>
+            <dd style="width:20%" class="govuk-summary-list__value">
+                <strong>Element</strong>
+            </dd>
+            <dd style="width:45%" class="govuk-summary-list__value">
+              <strong>Selection criteria</strong>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt style="padding-left:5px;width:10%;font-weight:normal" class="govuk-summary-list__key">
+              Stage 3
+            </dt>
+            <dd style="width:30%" class="govuk-summary-list__value">
+              Behavioural based questions
+            </dd>
+            <dd style="width:15%" class="govuk-summary-list__value">
+              Behaviours
+            </dd>
+            <dd style="width:45%" class="govuk-summary-list__value">
+              Managing a quality service
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt style="width:10%" class="govuk-summary-list__key">
+            </dt>
+            <dd style="width:30%" class="govuk-summary-list__value">
+            </dd>
+            <dd style="width:15%" class="govuk-summary-list__value">
+            </dd>
+            <dd style="width:45%" class="govuk-summary-list__value">
+              Changing and improving
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row" style="padding-bottom:10px">
+            <dt style="width:10%" class="govuk-summary-list__key">
+            </dt>
+            <dd style="width:30%" class="govuk-summary-list__value">
+            </dd>
+            <dd style="width:15%" class="govuk-summary-list__value">
+            </dd>
+            <dd style="width:45%" class="govuk-summary-list__value">
+              Communicating and Influencing
+            </dd>
+          </div>
+
+
+
+          <div class="govuk-summary-list__row">
+            <dt style="padding-left:5px;width:10%;font-weight:normal" class="govuk-summary-list__key">
+            </dt>
+            <dd style="width:30%" class="govuk-summary-list__value">
+              Strengths interview questions
+            </dd>
+            <dd style="width:15%" class="govuk-summary-list__value">
+              Strengths
+            </dd>
+            <dd style="width:45%" class="govuk-summary-list__value">
+Problem solver
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt style="width:10%" class="govuk-summary-list__key">
+            </dt>
+            <dd style="width:30%" class="govuk-summary-list__value">
+            </dd>
+            <dd style="width:15%" class="govuk-summary-list__value">
+            </dd>
+            Disciplined
+            <dd style="width:45%" class="govuk-summary-list__value">
+            </dd>
+          </div>
+
+
+
+          <div class="govuk-summary-list__row" style="border-bottom:1px solid #1d70b8;padding-bottom:0px">
+            <dt style="padding-left:5px;width:10%;font-weight:normal" class="govuk-summary-list__key">
+            </dt>
+            <dd style="width:30%" class="govuk-summary-list__value">
+            </dd>
+            <dd style="width:15%" class="govuk-summary-list__value">
+            </dd>
+
+          <dd style="width:45%" class="govuk-summary-list__value">
+ Mission
+            </dd>
+          </div>
+
+
+        </dl>
+
+
+
+
+    <div class="govuk-!-margin-bottom-4 govuk-!-margin-top-4" style="">
+
+<br><br>
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          You have completed the first job type. Continue the advert by adding the details for the second job type.
+        </strong>
+      </div>
+
+    {{ govukButton({
+      text: "Save first job type and begin second job type"
+    }) }}
+
+
+
+  </div>
+
+  </div>
+  </div>
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+
+
+  <h2 class="govuk-heading-m">Your progress</h2>
+    <div data-module="appstepnav"id="step-by-step-navigation" >
+      <h2 class="govuk-heading-s" >First job type</h2>
+      <ol class="app-step-nav__steps">
+        <li class="app-step-nav__step js-step app-step-nav__step" aria-current="step" id="check-you-re-allowed-to-drive">
+          <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><img src="/public/images/green-tick.png" style="max-width:50%;"><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                About the vacancy
+              </span>
+            <br><br>
+            </h3>
+          </div>
+
+
+
+        </li>
+        <li class="app-step-nav__step" id="get-a-provisional-licence">
+          <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><img src="/public/images/green-tick.png" style="max-width:50%;"><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                Contract information
+              </span>
+            <br><br>
+            </h3>
+          </div>
+        </li>
+        <li class="app-step-nav__step" id="get-a-provisional-licence">
+          <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><img src="/public/images/green-tick.png" style="max-width:50%;"><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                Advert set up
+              </span>
+              <br><br>
+            </h3>
+          </div>
+        </li>
+        <li class="app-step-nav__step" id="get-a-provisional-licence">
+          <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number" style="border:solid 3px">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title" style="color:#505a5f;">
+                Selection criteria and assessment methods
+              </span>
+              <br><br>
+            </h3>
+          </div>
+        </li>
+
+
+      </ol>
+    </div><br>
+
+    <div data-module="appstepnav"id="step-by-step-navigation" >
+      <h2 class="govuk-heading-s" style="font-weight:normal">Second job type</h2>
+      <ol class="app-step-nav__steps">
+        <li class="app-step-nav__step js-step app-step-nav__step" aria-current="step" id="check-you-re-allowed-to-drive">
+          <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                About the vacancy
+              </span>
+            <br><br>
+            </h3>
+          </div>
+
+
+
+        </li>
+        <li class="app-step-nav__step" id="get-a-provisional-licence">
+          <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                Contract information
+              </span>
+            <br><br>
+            </h3>
+          </div>
+        </li>
+        <li class="app-step-nav__step" id="get-a-provisional-licence">
+          <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                Advert set up
+              </span>
+              <br><br>
+            </h3>
+          </div>
+        </li>
+        <li class="app-step-nav__step" id="get-a-provisional-licence">
+          <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+            <h3 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+                Selection criteria and assessment methods
+              </span>
+              <br><br>
+            </h3>
+          </div>
+        </li>
+
+
+      </ol>
+    </div><br>
+
+
+  </div>
+
+  </div>
+
+
+
+
+
+
+      {% endblock %}

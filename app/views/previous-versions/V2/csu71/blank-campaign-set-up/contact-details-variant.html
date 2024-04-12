@@ -1,0 +1,470 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+    </div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">About the vacancy</span>
+
+    <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+      <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-new-campaign"><strong>Return to task list</strong></a></span>
+
+    </div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<form class="form" action="approval-variant" method="post">
+
+<div class="govuk-grid-row  govuk-!-margin-top-3">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl">Contacts</h1>
+<!-- <p class="govuk-body-m">For those responsible, this will mean receiving and responding to candidate queries lorem ipsum dolor sit amet blah blah.</p> -->
+  <h2 class="govuk-heading-m">Who is the main contact for the first job type?</h2>
+
+  {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+  {{ govukWarningText({
+    text: "The main contact’s email address will be visible on the job advert. This means they may receive queries from candidates and others involved in the campaign they will need to reply to.",
+    iconFallbackText: "Warning"
+  }) }}
+
+    {{ govukRadios({
+      idPrefix: "spoc",
+      name: "spoc",
+      items: [
+        {
+          id: "mono",
+          value: "Me",
+          text: "Me",
+          checked: checked("spoc", "Me")
+        },
+        {
+          id: "poly",
+          value: "Someone else",
+          text: "Someone else",
+          checked: checked("spoc", "Someone else")
+        },
+        {
+          id: "mono2",
+          value: "me-and-another",
+          text: "Me and another person share this responsibility",
+          checked: checked("spoc", "me-and-another")
+        },
+
+        {
+          id: "poly2",
+          value: "Team-mailbox",
+          text: "We use a team mailbox",
+          checked: checked("spoc", "Team-mailbox")
+        }
+      ]
+    }) }}
+
+
+    <div id="another" style="display:none">
+
+      {{ govukInput({
+        label: {
+          text: "What is the other person's name?",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        classes: "govuk-input--width-20",
+        id: "another-name",
+        name: "another-name",
+        value: data['another-name']
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "What is the other person's email address?",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        classes: "govuk-input--width-20",
+        id: "another-email",
+        name: "another-email",
+        value: data['another-email']
+      }) }}
+</div>
+
+<div id="team-mailbox" style="display:none">
+
+
+
+  {{ govukInput({
+    label: {
+      text: "What is the team mailbox's email address?",
+      classes: "govuk-label--s",
+      isPageHeading: false
+    },
+    classes: "govuk-input--width-20",
+    id: "team-email",
+    name: "team-email",
+    value: data['team-email']
+  }) }}
+</div>
+
+
+
+
+
+<div id="question2" style="display:none">
+
+        {{ govukInput({
+          label: {
+            text: "What's the name of the Single Point of Contact?",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-20",
+          id: "else-name",
+          name: "else-name",
+          value: data['else-name']
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What's the email address of the Single Point of Contact?",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-20",
+          id: "else-email",
+          name: "else-email",
+          value: data['else-email']
+        }) }}
+</div>
+
+
+<div  style="float:right;display:none">
+  {{ govukSelect({
+    attributes: {
+      "tabindex": "4"
+    },
+    id: "person2-involvement",
+    name: "person2-involvement",
+    label: {
+      text: "How are they involved?",
+      classes: "govuk-label--s"
+    },
+    items: [
+    {
+      value: "none",
+      text: "Select involvement"
+    },
+    {
+      value: "Point of contact",
+      selected: checked("person2-involvement","Point of contact"),
+      text: "Point of contact"
+
+    },
+    {
+      value: "Content contributor",
+      selected: checked("person2-involvement","Content contributor"),
+      text: "Content contributor"
+    },
+    {
+      value: "Reviewer",
+      selected: checked("person2-involvement","Reviewer"),
+      text: "Reviewer"
+    },
+    {
+      value: "Approver",
+      selected: checked("person2-involvement","Approver"),
+      text: "Approver"
+    },
+    {
+      value: "Panelist",
+      selected: checked("person2-involvement","Panelist"),
+      text: "Panelist"
+    }
+    ]
+  }) }}
+
+</div>
+
+<button class="govuk-button govuk-!-margin-top-9" data-module="govuk-button">Continue</button>
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary govuk-!-margin-top-9",
+  href: "preview-advert"
+}) }}
+</div>
+
+
+<div class="govuk-grid-column-one-quarter">
+
+
+<h2 class="govuk-heading-m">Your progress</h2>
+  <div data-module="appstepnav"id="step-by-step-navigation" >
+    <h2 class="govuk-heading-s" >First job type</h2>
+    <ol class="app-step-nav__steps">
+      <li class="app-step-nav__step js-step app-step-nav__step" aria-current="step" id="check-you-re-allowed-to-drive">
+        <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none">
+          <h3 class="app-step-nav__title">
+            <span class="app-step-nav__circle app-step-nav__circle--number" style="border:solid 3px">
+              <span class="app-step-nav__circle-inner">
+                <span class="app-step-nav__circle-background">
+                  <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                </span>
+              </span>
+            </span>
+
+            <span class="js-step-title" style="color:#505a5f;">
+              About the vacancy
+            </span>
+          <br><br>
+          </h3>
+        </div>
+
+
+
+      </li>
+      <li class="app-step-nav__step" id="get-a-provisional-licence">
+        <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+          <h3 class="app-step-nav__title">
+            <span class="app-step-nav__circle app-step-nav__circle--number">
+              <span class="app-step-nav__circle-inner">
+                <span class="app-step-nav__circle-background">
+                  <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                </span>
+              </span>
+            </span>
+
+            <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+              Contract information
+            </span>
+          <br><br>
+          </h3>
+        </div>
+      </li>
+      <li class="app-step-nav__step" id="get-a-provisional-licence">
+        <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+          <h3 class="app-step-nav__title">
+            <span class="app-step-nav__circle app-step-nav__circle--number">
+              <span class="app-step-nav__circle-inner">
+                <span class="app-step-nav__circle-background">
+                  <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                </span>
+              </span>
+            </span>
+
+            <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+              Advert set up
+            </span>
+            <br><br>
+          </h3>
+        </div>
+      </li>
+      <li class="app-step-nav__step" id="get-a-provisional-licence">
+        <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+          <h3 class="app-step-nav__title">
+            <span class="app-step-nav__circle app-step-nav__circle--number">
+              <span class="app-step-nav__circle-inner">
+                <span class="app-step-nav__circle-background">
+                  <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                </span>
+              </span>
+            </span>
+
+            <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+              Selection criteria and assessment methods
+            </span>
+            <br><br>
+          </h3>
+        </div>
+      </li>
+
+
+    </ol>
+  </div><br>
+
+  <div data-module="appstepnav"id="step-by-step-navigation" >
+    <h2 class="govuk-heading-s"style="font-weight:normal">Second job type</h2>
+    <ol class="app-step-nav__steps">
+      <li class="app-step-nav__step js-step app-step-nav__step" aria-current="step" id="check-you-re-allowed-to-drive">
+        <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none">
+          <h3 class="app-step-nav__title">
+            <span class="app-step-nav__circle app-step-nav__circle--number">
+              <span class="app-step-nav__circle-inner">
+                <span class="app-step-nav__circle-background">
+                  <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                </span>
+              </span>
+            </span>
+
+            <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+              About the vacancy
+            </span>
+          <br><br>
+          </h3>
+        </div>
+
+
+
+      </li>
+      <li class="app-step-nav__step" id="get-a-provisional-licence">
+        <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+          <h3 class="app-step-nav__title">
+            <span class="app-step-nav__circle app-step-nav__circle--number">
+              <span class="app-step-nav__circle-inner">
+                <span class="app-step-nav__circle-background">
+                  <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                </span>
+              </span>
+            </span>
+
+            <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+              Contract information
+            </span>
+          <br><br>
+          </h3>
+        </div>
+      </li>
+      <li class="app-step-nav__step" id="get-a-provisional-licence">
+        <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+          <h3 class="app-step-nav__title">
+            <span class="app-step-nav__circle app-step-nav__circle--number">
+              <span class="app-step-nav__circle-inner">
+                <span class="app-step-nav__circle-background">
+                  <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                </span>
+              </span>
+            </span>
+
+            <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+              Advert set up
+            </span>
+            <br><br>
+          </h3>
+        </div>
+      </li>
+      <li class="app-step-nav__step" id="get-a-provisional-licence">
+        <div class="app-step-nav__header js-toggle-panel" data-position="1" style="border-top:none;">
+          <h3 class="app-step-nav__title">
+            <span class="app-step-nav__circle app-step-nav__circle--number">
+              <span class="app-step-nav__circle-inner">
+                <span class="app-step-nav__circle-background">
+                  <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                </span>
+              </span>
+            </span>
+
+            <span class="js-step-title" style="color:#505a5f;font-weight:normal">
+              Selection criteria and assessment methods
+            </span>
+            <br><br>
+          </h3>
+        </div>
+      </li>
+
+
+    </ol>
+  </div><br>
+
+
+</div>
+      </form>
+
+
+<script>
+
+
+
+const mono = document.getElementById('mono');
+const mono2 = document.getElementById('mono2');
+const poly = document.getElementById('poly');
+const poly2 = document.getElementById('poly2');
+
+var shared = document.getElementById('another').style.display;
+if (mono2.checked && mono2.value =="me-and-another") {
+  showDiv("another");
+}
+if (poly2.checked && poly2.value =="team-mailbox") {
+  showDiv("team-mailbox");
+}
+
+
+// const off = document.getElementById('off');
+// const hyb = document.getElementById('hyb');
+// const rem = document.getElementById('rem');
+
+// if (ukbased.checked && ukbased.value == "Yes") {
+//   showDiv("mroe");
+// }
+
+
+mono2.addEventListener('change', (event) => {
+  if (mono2.checked) {
+    showDiv("another");
+    hideDiv("question2")
+  }
+
+});
+
+
+poly.addEventListener('change', (event) => {
+  if (poly.checked) {
+    hideDiv("another");
+  }
+
+});
+
+mono.addEventListener('change', (event) => {
+  if (mono.checked) {
+    hideDiv("question2");
+    hideDiv("another");
+  }
+
+});
+
+poly2.addEventListener('change', (event) => {
+  if (poly2.checked) {
+    showDiv("team-mailbox");
+    hideDiv("question2")
+  }
+
+});
+
+
+
+
+
+
+
+
+function hideDiv(div1) {
+  document.getElementById(div1).style.display = 'none';
+
+}
+
+function showDiv(div1) {
+  document.getElementById(div1).style.display = 'block';
+
+}
+</script>
+
+
+
+
+
+
+{% endblock %}

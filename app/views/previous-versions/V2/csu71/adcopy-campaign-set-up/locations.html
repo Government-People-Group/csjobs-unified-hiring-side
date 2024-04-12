@@ -1,0 +1,198 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Contract information</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="/csu71/task-list-exp-copy-ad?firstNot=noshow"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="/csu71/location-handlerAdCopy" method="post">
+
+<div class="govuk-grid-row govuk-!-margin-top-3">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl">Location</h1>
+
+
+
+
+      <!-- {% macro taskListItem(title="'title'", link='#', completed='', cantStart='' ) %}
+      <li class="app-task-list__item"><span class="app-task-list__task-name">
+      {% if not (cantStart or completed)  %}
+      <a href="{{link}}" aria-describedby="eligibility-completed"> {% endif %}      {{title}}
+      {% if not (cantStart or completed)  %}
+    </a>{% endif %}  </span>{% if completed %}<strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+    {% else %}
+    {% endif %}
+  </li>
+  {% endmacro %}
+
+  <ol class="app-task-list"><li>
+  <h2 class="app-task-list__section">Check and approve</h2>
+  <ul class="app-task-list__items" style="padding-left: 0">
+  {{taskListItem(title="Find applicant on Searchlight", link="1-check/1", completed=(data['searchlight'] == "yes" or data['ni-number'] ), cantStart="")}}
+  {{taskListItem(title="Add National Insurance number", link="1-check/1-ni-number", completed=(data['ni-number'] ), cantStart=(not (data['searchlight'] == "yes") ))}}
+  {{taskListItem(title="Check for appointee", link="1-check/2", completed=(data['appointee'] ), cantStart=(not data['ni-number'] ) )}}
+  {{taskListItem(title="Check application", link="1-check/3", completed=((data['interview'] == 'yes' and data['company'] == 'yes' and data['personal'] == 'yes' ) ), cantStart=(not data['appointee'] ) )}}
+</ul></li></ol> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="mroe" style="">
+  {{ govukRadios({
+    id: "uk",
+    name: "uk",
+    classes: "",
+    fieldset: {
+      legend: {
+        text: "Where will the role be located?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+    {
+      id: "rem",
+      value: "Remote",
+      text: "Remote",
+      checked: checked("uk","Remote")
+    },
+    {
+      id: "off",
+      value: "Onsite at a government-managed location",
+      text: "Onsite at a government-managed location",
+      checked: checked("uk","Onsite at a government-managed location")
+    },
+    {
+      id: "hyb",
+      value: "A hybrid of both remote and onsite",
+      text: "A hybrid of both remote and onsite",
+      checked: checked("uk","A hybrid of both remote and onsite")
+    }
+
+
+    ]
+  }) }}
+</div>
+
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+{{ govukButton({
+  text: "Continue",
+  classes: "govuk-button govuk-!-margin-top-9"
+}) }}
+
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary govuk-!-margin-top-9",
+  href: "preview-advert"
+}) }}
+</form>
+<script src="/public/javascripts/temp-copyloc.js"></script>
+<script src="/public/javascripts/locations.js"></script>
+
+<script>
+
+
+
+
+
+  const ukbased = document.getElementById('ukbased');
+  const ukbasedno = document.getElementById('ukbasedno');
+
+  const off = document.getElementById('off');
+  const hyb = document.getElementById('hyb');
+  const rem = document.getElementById('rem');
+
+  if (ukbased.checked && ukbased.value == "Yes") {
+    showDiv("mroe");
+  }
+
+
+
+
+  var divv = document.getElementById('mroe').style.display;
+  ukbased.addEventListener('change', (event) => {
+    if (ukbased.checked && ukbased.value == "Yes") {
+      showDiv("mroe");
+    }
+
+  });
+
+  ukbasedno.addEventListener('change', (event) => {
+    if (ukbasedno.checked) {
+      hideDiv("mroe");
+    }
+
+  });
+
+
+
+
+
+
+  function hideDiv(div1) {
+    document.getElementById(div1).style.display = 'none';
+
+  }
+
+  function showDiv(div1) {
+    document.getElementById(div1).style.display = 'block';
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+{% endblock %}

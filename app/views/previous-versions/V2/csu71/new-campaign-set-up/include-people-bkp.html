@@ -1,0 +1,685 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Finalise and submit</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/task-list-exp-co?banner=noshow"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+<form class="form" action="/csu71/new-campaign-set-up/include-people-2" method="post">
+
+    <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Add people to the campaign</H1>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter" style="">
+
+
+        <ul class="govuk-!-margin-top-6 govuk-list govuk-list--bullet-">
+            <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="contact-details"><strong>Main point of<BR>contact</a></p></strong></li>
+
+          <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="include-people"><strong>Panel members</a></p></strong></li>
+
+          <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="include-people-2"><strong>Other people</a></p></strong></li>
+        </ul>
+      </div>
+      <div class="govuk-!-margin-top-6 govuk-grid-column-three-quarters">
+
+        <h2 class="govuk-heading-l">Panel members</h2>
+
+
+
+    {% if data['spoc'] == "Me" %}
+    <div>
+      <div>
+        <h3 class="govuk-heading-m"><span style="">Panel chair</span></h3>
+        <p class="govuk-body-m">Are you also the panel chair?</p>
+
+      <!-- <p class="govuk-body-m">You, <strong>Jane Smith</strong>, jane.smith@cabinetoffice.gov.uk</p> -->
+
+      <!-- <h2 class="govuk-heading-l govuk-!-margin-top-9"><span style="font-size:30px;border-bottom:1px solid #1d70b8;padding-bottom:5px">Who else is involved in the campaign?</span></h2> -->
+      </div>
+    </div>
+    {% elif data['spoc'] == "me-and-another" %}
+    <div>
+      <h3 class="govuk-heading-m"><span style="">Joint panel chairs</span></h3>
+      <p class="govuk-body-m">Do <strong>you</strong> and <strong>{{ data['another-name']}}</strong> also share responsibility for chairing the panel?</p>
+
+    <!-- <h2 class="govuk-heading-l govuk-!-margin-top-9"><span style="font-size:30px;border-bottom:1px solid #1d70b8;padding-bottom:5px">Who else is involved in the campaign?</span></h2> -->
+    </div>
+    {% elif data['spoc'] == "Someone else" %}
+    <h2 class="govuk-heading-l govuk-!-margin-top-9"><span style="font-size:30px;border-bottom:1px solid #1d70b8;padding-bottom:5px">Who is involved in the campaign?</span></h2>
+    {% endif %}
+
+
+        {{ govukRadios({
+          idPrefix: "panelChair",
+          name: "panelChair",
+          fieldset: {
+            legend: {
+              text: "",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          items: [
+            {
+              id: "spocChair",
+              value: "yes",
+              text: "Yes",
+              checked: checked("panelChair", "Me")
+            },
+            {
+              id: "spocNotChair",
+              value: "no",
+              text: "No, someone else will chair the panel",
+              checked: checked("panelChair", "no")
+            }
+          ]
+        }) }}
+
+
+
+
+
+
+
+
+        <div id="another" style="display:none">
+
+          {{ govukInput({
+            label: {
+              text: "What is the other person's name?",
+              classes: "govuk-label--s",
+              isPageHeading: false
+            },
+            classes: "govuk-input--width-20",
+            id: "elseChair",
+            name: "elseChair",
+            value: data['elseChair']
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "What is the other person's email address?",
+              classes: "govuk-label--s",
+              isPageHeading: false
+            },
+            classes: "govuk-input--width-20",
+            id: "elseChair-email",
+            name: "elseChair-email",
+            value: data['elseChair-email']
+          }) }}
+        </div>
+
+
+
+
+
+
+
+
+
+            <!-- <div  style="float:right;">
+              {{ govukSelect({
+                attributes: {
+                  "tabindex": "2"
+                },
+                id: "person1-involvement",
+                name: "person1-involvement",
+                label: {
+                  text: "How are they involved?",
+                  classes: "govuk-label--s"
+                },
+                items: [
+                {
+                  value: "none",
+                  text: "Select involvement"
+                },
+                {
+                  value: "Point of contact",
+                  selected: checked("person1-involvement","Point of contact"),
+                  text: "Point of contact"
+
+                },
+                {
+                  value: "Content contributor",
+                  selected: checked("person1-involvement","Content contributor"),
+                  text: "Content contributor"
+                },
+                {
+                  value: "Reviewer",
+                  selected: checked("person1-involvement","Reviewer"),
+                  text: "Reviewer"
+                },
+                {
+                  value: "Approver",
+                  selected: checked("person1-involvement","Approver"),
+                  text: "Approver"
+                },
+                {
+                  value: "Panelist",
+                  selected: checked("person1-involvement","Panelist"),
+                  text: "Panelist"
+                }
+                ]
+              }) }}
+
+            </div> -->
+
+            <!-- <div class="govuk-form-group" style="width:65%">
+              <h2 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--s" for="person1">
+                  Person 1's email address
+                </label>
+              </h2>
+              <input tabindex="1" class="govuk-input" id="person1" name="person1" type="text">
+            </div>
+
+            <div  style="float:right;">
+              {{ govukSelect({
+                attributes: {
+                  "tabindex": "4"
+                },
+                id: "person2-involvement",
+                name: "person2-involvement",
+                label: {
+                  text: "How are they involved?",
+                  classes: "govuk-label--s"
+                },
+                items: [
+                {
+                  value: "none",
+                  text: "Select involvement"
+                },
+                {
+                  value: "Point of contact",
+                  selected: checked("person2-involvement","Point of contact"),
+                  text: "Point of contact"
+
+                },
+                {
+                  value: "Content contributor",
+                  selected: checked("person2-involvement","Content contributor"),
+                  text: "Content contributor"
+                },
+                {
+                  value: "Reviewer",
+                  selected: checked("person2-involvement","Reviewer"),
+                  text: "Reviewer"
+                },
+                {
+                  value: "Approver",
+                  selected: checked("person2-involvement","Approver"),
+                  text: "Approver"
+                },
+                {
+                  value: "Panelist",
+                  selected: checked("person2-involvement","Panelist"),
+                  text: "Panelist"
+                }
+                ]
+              }) }}
+
+            </div>
+
+            <div  class="govuk-form-group" style="width:65%">
+              <h2 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--s" for="person2">
+                  Person 2's email address
+                </label>
+              </h2>
+              <input tabindex="3" class="govuk-input" id="person2" name="person2" type="text">
+            </div>
+
+
+            <div  style="float:right;">
+              {{ govukSelect({
+                attributes: {
+                  "tabindex": "6"
+                },
+                id: "person3-involvement",
+                name: "person3-involvement",
+                label: {
+                  text: "How are they involved?",
+                  classes: "govuk-label--s"
+                },
+                items: [
+                {
+                  value: "none",
+                  text: "Select involvement"
+                },
+                {
+                  value: "Point of contact",
+                  selected: checked("person3-involvement","Point of contact"),
+                  text: "Point of contact"
+
+                },
+                {
+                  value: "Content contributor",
+                  selected: checked("person3-involvement","Content contributor"),
+                  text: "Content contributor"
+                },
+                {
+                  value: "Reviewer",
+                  selected: checked("person3-involvement","Reviewer"),
+                  text: "Reviewer"
+                },
+                {
+                  value: "Approver",
+                  selected: checked("person3-involvement","Approver"),
+                  text: "Approver"
+                },
+                {
+                  value: "Panelist",
+                  selected: checked("person3-involvement","Panelist"),
+                  text: "Panelist"
+                }
+                ]
+              }) }}
+
+            </div>
+
+            <div class="govuk-form-group" style="width:65%">
+              <h2 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--s" for="person3">
+                  Person 3's email address
+                </label>
+              </h2>
+              <input tabindex="5" class="govuk-input" id="person3" name="person3" type="text">
+            </div>
+
+            <div id="peepcta1" style="display:{{ nosee }}" class="govuk-body-m ">
+
+              <p class="govuk-body-m"><a style="color:#1d70b8" onclick="showHideDiv('more','peepcta1')"><strong>Add more people</strong></a></p>
+            </div>
+
+<div style="display:none" id="more">
+
+
+
+
+
+
+
+  <div  style="float:right;">
+    {{ govukSelect({
+      attributes: {
+        "tabindex": "8"
+      },
+      id: "person4-involvement",
+      name: "person4-involvement",
+      label: {
+        text: "How are they involved?",
+        classes: "govuk-label--s"
+      },
+      items: [
+      {
+        value: "none",
+        text: "Select involvement"
+      },
+      {
+        value: "Point of contact",
+        selected: checked("person4-involvement","Point of contact"),
+        text: "Point of contact"
+
+      },
+      {
+        value: "Content contributor",
+        selected: checked("person4-involvement","Content contributor"),
+        text: "Content contributor"
+      },
+      {
+        value: "Reviewer",
+        selected: checked("person4-involvement","Reviewer"),
+        text: "Reviewer"
+      },
+      {
+        value: "Approver",
+      selected: checked("person4-involvement","Approver"),
+      text: "Approver"
+    },
+    {
+      value: "Panelist",
+      selected: checked("person4-involvement","Panelist"),
+      text: "Panelist"
+    }
+    ]
+  }) }}
+  </div>
+
+
+
+  <div class="govuk-form-group" style="width:65%">
+    <h2 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--s" for="person4">
+        Person 4's email address
+      </label>
+    </h2>
+    <input tabindex="7" class="govuk-input" id="person4" name="person4" type="text">
+  </div>
+
+
+  <div  style="float:right;">
+    {{ govukSelect({
+      attributes: {
+        "tabindex": "10"
+      },
+      id: "person5-involvement",
+      name: "person5-involvement",
+      label: {
+        text: "How are they involved?",
+        classes: "govuk-label--s"
+      },
+      items: [
+      {
+        value: "none",
+        text: "Select involvement"
+      },
+      {
+        value: "Point of contact",
+        selected: checked("person5-involvement","Point of contact"),
+        text: "Point of contact"
+
+      },
+      {
+        value: "Content contributor",
+        selected: checked("person5-involvement","Content contributor"),
+        text: "Content contributor"
+      },
+      {
+        value: "Reviewer",
+        selected: checked("person5-involvement","Reviewer"),
+        text: "Reviewer"
+      },
+      {
+        value: "Approver",
+        selected: checked("person5-involvement","Approver"),
+        text: "Approver"
+      },
+      {
+        value: "Panelist",
+        selected: checked("person5-involvement","Panelist"),
+        text: "Panelist"
+      }
+      ]
+    }) }}
+
+
+  </div>
+
+  <div class="govuk-form-group" style="width:65%">
+    <h2 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--s" for="person5">
+        Person 5's email address
+      </label>
+    </h2>
+    <input tabindex="9" class="govuk-input" id="person5" name="person5" type="text">
+  </div>
+
+
+  <div  style="float:right;">
+    {{ govukSelect({
+      attributes: {
+        "tabindex": "12"
+      },
+      id: "person6-involvement",
+      name: "person6-involvement",
+      label: {
+        text: "How are they involved?",
+        classes: "govuk-label--s"
+      },
+      items: [
+      {
+        value: "none",
+        text: "Select involvement"
+      },
+      {
+        value: "Point of contact",
+        selected: checked("person6-involvement","Point of contact"),
+        text: "Point of contact"
+
+      },
+      {
+        value: "Content contributor",
+        selected: checked("person6-involvement","Content contributor"),
+        text: "Content contributor"
+      },
+      {
+        value: "Reviewer",
+        selected: checked("person6-involvement","Reviewer"),
+        text: "Reviewer"
+      },
+      {
+        value: "Approver",
+        selected: checked("person6-involvement","Approver"),
+        text: "Approver"
+      },
+      {
+        value: "Panelist",
+        selected: checked("person6-involvement","Panelist"),
+        text: "Panelist"
+      }
+      ]
+    }) }}
+
+
+  </div>
+
+  <div class="govuk-form-group" style="width:65%">
+    <h2 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--s" for="person6">
+        Person 6's email address
+      </label>
+    </h2>
+    <input tabindex="11" class="govuk-input" id="person6" name="person6" type="text">
+  </div>
+
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+<button class="govuk-button govuk-!-margin-top-9"  data-module="govuk-button">Continue</button>
+
+
+
+
+<input type="hidden" name="source" value="skills">
+
+
+<script>
+
+
+
+  const otherChair = document.getElementById('spocNotChair');
+
+
+  otherChair.addEventListener('change', (event) => {
+    if (otherChair.checked) {
+      showDiv("another");
+      // hideDiv("question2")
+    }
+
+  });
+
+  const mono = document.getElementById('mono');
+  const mono2 = document.getElementById('mono2');
+  const poly = document.getElementById('poly');
+
+  var shared = document.getElementById('another').style.display;
+  if (mono2.checked && mono2.value =="me-and-another") {
+    showDiv("another");
+  }
+
+
+
+
+  const peopleIncluded = {};
+
+
+    const p1 = document.getElementById("person1").value;
+    const p1Role = document.getElementById("person1-involvement");
+    const p2 = document.getElementById("person2").value;
+    const p2Role = document.getElementById("person2-involvement");
+    const p3 = document.getElementById("person3").value;
+    const p3Role = document.getElementById("person3-involvement");
+    const p4 = document.getElementById("person4").value;
+    const p4Role = document.getElementById("person4-involvement");
+    const p5 = document.getElementById("person5").value;
+    const p5Role = document.getElementById("person5-involvement");
+    const p6 = document.getElementById("person6").value;
+    const p6Role = document.getElementById("person6-involvement");
+
+
+
+  var p1Name = p1.split('@')[0];
+
+  // p1Name = p1Name.split(".")[0]+" "+[1];
+console.log(p1)
+
+  // const keyDetails = {};
+  // const title = document.getElementById("title").value;
+  // const grade = document.getElementById("newgrade").value
+  // const profession = document.getElementById("grabProf").value;
+  // const department = document.getElementById("dept").value;
+  //
+  // console.log(title, grade, profession, department)
+  //
+  // keyDetails.jobTitle = title;
+  // keyDetails.grade = grade;
+  // keyDetails.profession = profession;
+  // keyDetails.department = department;
+  //
+  // window.sessionStorage.setItem("keyDetails", JSON.stringify(keyDetails));
+  //
+  //
+  // console.log(keyDetails);
+
+
+  function showHideDiv(div1,div2) {
+    document.getElementById(div1).style.display = 'block';
+    document.getElementById(div2).style.display = 'none';
+
+  }
+
+
+
+
+
+
+
+
+  const bullet = "\u29BF";
+  const bulletWithSpace = `${bullet} `;
+  const enter = 13;
+
+
+  const handleInput = (event) => {
+    const { keyCode, target } = event;
+    const { selectionStart, value } = target;
+
+    if (keyCode === enter) {
+      console.log('a');
+      target.value = [...value]
+        .map((c, i) => i === selectionStart - 1
+          ? `\n${bulletWithSpace}`
+          : c
+        )
+        .join('');
+        console.log(target.value);
+
+      target.selectionStart = selectionStart+bulletWithSpace.length;
+      target.selectionEnd = selectionStart+bulletWithSpace.length;
+    }
+
+    if (value[0] !== bullet) {
+      target.value = `${bulletWithSpace}${value}`;
+    }
+  }
+
+
+
+
+  function focusSearch(place){
+    showDiv('head');
+    showDiv('buttons');
+    var searchBox = document.getElementById("autocomplete-default");
+    searchBox.value = place;
+    const pointer = document.getElementById("autocomplete-default");
+    pointer.addEventListener('blur', (event) => {
+      var thing = event.target.value;
+      var ploccontent = document.createElement("p");
+      var plinkconten = document.createElement("p");
+      ploccontent.innerHTML = thing;
+
+
+      if (ploccontent.innerHTML.length > 45){
+        ploccontent.style.cssText = "margin-top:10px;height:60px;font-size:20px;width:100%";
+        plinkconten.style.cssText = "margin-top:10px;;height:60px;;font-size:20px;font-weight:bold";
+
+      } else {
+        ploccontent.style.cssText = "margin-top:10px;height:20px;font-size:20px;width:100%";
+        plinkconten.style.cssText = "margin-top:10px;;height:20px;;font-size:20px;font-weight:bold";
+      }
+
+      plinkconten.innerHTML = "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' id='1' onclick='kill(this.id)' href='#'> Delete</a>";
+      loc.appendChild(ploccontent);
+      link.appendChild(plinkconten);
+      // locArray.push(thing)
+      // console.log(thing)
+      // window.sessionStorage.setItem("locations", JSON.stringify(locArray));
+    }, { once: true });
+
+  }
+
+
+
+
+
+</script>
+{% endblock %}

@@ -1,0 +1,299 @@
+  {% extends "layouts/main.html" %}
+  {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+  {% block header %}
+  {% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+  {% block beforeContent %}
+  <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+    <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+  </div> -->
+  <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Interview</span>
+
+  <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
+
+  </div>
+
+  </div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
+  {% block content %}
+
+
+<script>
+
+for (let i = 1; i <= 3; i++) {
+  const row = document.getElementById(`row-${i}`);
+  row.addEventListener("click", () => {
+    window.location.href = `/row-${i}`;
+  });
+}
+
+
+</script>
+
+<!-- <style>
+  body {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  table {
+    border: 2px solid blueviolet;
+    border-collapse: collapse;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    color: #37559d;
+  }
+  a {
+    color: #5165ff;
+  }
+  .tableRow {
+    position: relative;
+    display: grid;
+    text-decoration: none;
+    color: inherit;
+    grid-template-columns: repeat(5, 70px);
+    place-items: center;
+    border: 2px solid #ccd2ff;
+    border-bottom: none;
+    &:hover,
+    &:focus {
+      background: #f2f3ff;
+      outline: none;
+    }
+    &:last-child {
+      border-bottom: 2px solid #ccd2ff;
+    }
+    & a:not(.tableRowLink) {
+      position: relative;
+      z-index: 1;
+    }
+  }
+  .tableCell {
+    padding: 18px;
+    border-right: 2px solid #ccd2ff;
+    &:last-of-type {
+      border-right: none;
+    }
+  }
+  .tableRowLink {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+</style> -->
+
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Two-thirds column</h1>
+        <p class="govuk-body">This is a paragraph inside a two-thirds wide column</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+<main class="govuk-main-wrapper" style="background:white;border:1px solid grey">
+  <div   class="govuk-grid-row">
+  <!-- <div class="govuk-grid-column-full" >sadasd
+    <div style="background:white;height:60px;border:1px solid grey" class="govuk-grid-column-one-quarter">One</div>
+    <div style="height:60px;border:1px solid grey" class="govuk-grid-column-one-quarter">Two</div>
+    <div style="height:60px;border:1px solid grey" class="govuk-grid-column-one-quarter">Three</div>
+    <div style="height:60px;border:1px solid grey" class="govuk-grid-column-one-quarter">Four</div>
+  </div> -->
+</div>
+<a href="#"><div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+  <div style="height:60px;border:1px solid grey" class="govuk-grid-column-one-quarter">One</div>
+  <div style="height:60px;border:1px solid grey" class="govuk-grid-column-one-quarter">Two</div>
+  <div style="height:60px;border:1px solid grey" class="govuk-grid-column-one-quarter">Three</div>
+  <div style="height:60px;border:1px solid grey" class="govuk-grid-column-one-quarter">Four</div>
+</div>
+</div></a>
+<a href="#"> <div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+  <div style="height:60px;border:1px solid grey" class="govuk-grid-column-one-quarter">One</div>
+  <div style="height:60px;border:1px solid grey" class="govuk-grid-column-one-quarter">Two</div>
+  <div style="height:60px;border:1px solid grey" class="govuk-grid-column-one-quarter">Three</div>
+  <div style="height:60px;border:1px solid grey" class="govuk-grid-column-one-quarter">Four</div>
+</div>
+</div></a>
+<a href="#"><div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+  <div style="height:60px;border:1px solid grey" class="govuk-grid-column-one-quarter">One</div>
+  <div style="height:60px;border:1px solid grey" class="govuk-grid-column-one-quarter">Two</div>
+  <div style="height:60px;border:1px solid grey" class="govuk-grid-column-one-quarter">Three</div>
+  <div style="height:60px;border:1px solid grey" class="govuk-grid-column-one-quarter">Four</div>
+</div>
+</div></a>
+</main>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+
+      <table class="govuk-table" data-module="moj-sortable-table">
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Name</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="none">Elevation</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="none">Continent</th>
+
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">First summit</th>
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+<div>
+  <a href"#"">  <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Aconcagua</td>
+
+      <td class="govuk-table__cell" data-sort-value="6961">6,961 meters</td>
+
+      <td class="govuk-table__cell">South America</td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">1897</td>
+
+    </tr></a>
+    </div>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Denali</td>
+
+      <td class="govuk-table__cell" data-sort-value="6194">6,194 meters</td>
+
+      <td class="govuk-table__cell">North America</td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1913">1913</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Elbrus</td>
+
+      <td class="govuk-table__cell" data-sort-value="5642">5,642 meters</td>
+
+      <td class="govuk-table__cell">Europe</td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1874">1874</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Everest</td>
+
+      <td class="govuk-table__cell" data-sort-value="8850">8,850 meters</td>
+
+      <td class="govuk-table__cell">Asia</td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1953">1953</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Kilimanjaro</td>
+
+      <td class="govuk-table__cell" data-sort-value="5895">5,895 meters</td>
+
+      <td class="govuk-table__cell">Africa</td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1889">1889</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Puncak Jaya</td>
+
+      <td class="govuk-table__cell" data-sort-value="4884">4,884 meters</td>
+
+      <td class="govuk-table__cell">Australia</td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1962">1962</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Vinson</td>
+
+      <td class="govuk-table__cell" data-sort-value="4897">4,897 meters</td>
+
+      <td class="govuk-table__cell">Antarctica</td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1966">1966</td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {% endblock %}

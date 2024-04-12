@@ -1,0 +1,501 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Interview</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="/csu71/sift/task-list?hide=banner"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+  p, div {
+    font-family: "GDS Transport", arial, sans-serif;
+    line-height: 1.2;
+  }
+
+</style>
+
+<!-- {{ govukCharacterCount({
+name: "outputt",
+id: "outputt",
+maxwords: 50,
+rows: 3,
+label: {
+text: "",
+classes: "govuk-label--s",
+isPageHeading: false
+},
+value: data['outputt']
+}) }} -->
+
+
+
+
+<form class="form" action="setup-interview-ph2-2-try" method="post">
+
+  <H1 style=";padding-top:20px;padding-bottom:5px;border-bottom:1px solid #1d70b8; " class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-6">Schedule</H1>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter" style="">
+
+
+      <ul class="govuk-!-margin-top-6 govuk-list govuk-list--bullet-">
+        <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph2"><strong>Schedule</a></p></strong></li>
+        <!-- <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview"><strong>Setup interview</a></p></strong></li> -->
+
+        <!-- <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph3"><strong>Assessment</a></p></strong></li>
+        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph4-1"><strong>Questions</a></p></strong></li>
+        <li><strong><p style ="border-left:5px solid white;;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-ph1"><strong>Type of interview</a></p></strong></li>
+
+        <li><strong><p style ="border-left:5px solid white;padding-left:10px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="setup-interview-check-answers"><strong>Review interview setup</a></p></strong></li> -->
+      </ul>
+    </div>
+    <div class="govuk-!-margin-top-6 govuk-grid-column-three-quarters">
+
+
+
+
+
+      <!-- {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+      name: "changedDates",
+      classes: " govuk-radios--inline",
+      fieldset: {
+      legend: {
+      text: "Will you be interviewing starting on 07 Aug 2023?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+  {
+  id: "nochange",
+  value: "Yes",
+  checked: checked("changedDates","Yes"),
+  text: "Yes"
+},
+{
+id: "newdates",
+value: "No, the dates have changed",
+checked: checked("changedDates","No, the dates have changed"),
+text: "No, the dates have changed"
+}
+]
+}) }} -->
+
+<div style="display:none">
+  <!-- {% from "govuk/components/input/macro.njk" import govukInput %}
+
+  {{ govukInput({
+  label: {
+  text: "",
+  classes: "govuk-label--l",
+  isPageHeading: false
+},
+id: "event-name",
+value: data['event-name'],
+name: "event-name"
+}) }} -->
+
+
+</div>
+
+<div style="display:none" class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--l" for="event-name">
+
+    </label>
+  </h1>
+  <input style="border:0px" class="govuk-input" id="event-name" name="event-name" type="text" value="{{data['event-name']}}">
+</div>
+
+
+<p class="govuk-body-m"><strong>The schedule should be large enough to accommodate your availability, the panel members and the candidate.</strong><p>
+
+<!-- Select the dates using the date picker, make a list of dates. -->
+  <div >
+    <!-- <label class="govuk-label govuk-!-margin-bottom-3" style="font-weight:normal;font-size:22px" for="intDate">Select the dates using the date picker, make a list of dates.</label> -->
+
+
+
+
+<div>
+    <!-- <label class="govuk-label govuk-!-margin-bottom-3" style="font-weight:normal;font-size:22px" for="intDate">Select the dates using the date picker, make a list of dates.</label> -->
+      <input datetimeformat="dd/mm/yyyy" style="border:1px solid lightgrey;width:400px;height:40px;font-size:24px;background:white;margin-top:10px"  value="{{ data['intDate']}}" type="datetime-local" placeholder="dd-mm-yyyy" id="intDate" name="intDate">
+    <div class="govuk-form-group">
+</div>
+
+
+
+      <!-- <label class="govuk-label govuk-!-margin-bottom-3" style="font-weight:normal;font-size:22px" for="wkDate"></label>
+      <input datetimeformat="dd" style="border:1px solid lightgrey;width:200px;height:40px;font-size:24px;background:white;margin-top:10px"  value="{{ data['wkDate']}}" type="week" placeholder="dd-mm-yyyy" id="wkDate" name="wkDate">
+      <div class="govuk-form-group"> -->
+
+
+        <h1 class="govuk-label-wrapper">
+          <!-- <label class="govuk-label govuk-label--l" for="event-name">
+
+        </label>
+      </h1>
+      <input  class="govuk-input" id="event-name" name="event-name" type="text">
+    </div> -->
+
+
+    <div class=" govuk-!-margin-top-6" style="" id="list1"></div>
+    <div class=" govuk-!-margin-top-6" style="" id="list1"></div>
+
+    <ul class="govuk-!-margin-top-3 govuk-list govuk-list--bullet" id="output"></ul>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border" style=";width:70%;">
+
+      <div class="govuk-summary-list__row"  style=";">
+        <dt class="govuk-summary-list__key">
+        </dt>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            <div style="margin-right:100px" id="list2"></div>
+            <span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+
+
+  <div style="display:none">
+
+    {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+    {{ govukDateInput({
+      id: "launch",
+      namePrefix: "",
+      items: [
+      {
+        classes: "govuk-input--width-2",
+        name: "day",
+        value: "7" or data['day'] | default("7")
+      },
+      {
+        classes: "govuk-input--width-2",
+        name: "month",
+        value: "Aug" or data['month']  | default("Aug")
+      },
+      {
+        classes: "govuk-input--width-4",
+        name: "year",
+        value: "2023" or data['year']  | default("2023")
+      }
+      ]
+    }) }}
+
+    <!-- <p class="govuk-body-m">How many working days (Mon-Fri) will the interview schedule last for?</p> -->
+
+
+
+
+
+    <div class="govuk-form-group" style="padding-top:35px;border-top:1px solid lightgrey">
+      <label class="govuk-label" for="width-2">
+        <strong>How many working days would you like to interview for?</strong>
+      </label>
+      <input class="govuk-input govuk-input--width-2" value="{{ data['duration']|int | default("3")}}" id="duration" name="duration" type="text">
+    </div>
+
+  </div>
+  <div class="govuk-form-group" style="padding-top:35px;border-top:1px solid lightgrey">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+        <h3 class="govuk-fieldset__heading">
+          How many interviews would you like to do in 1 day?
+        </h3>
+      </legend>
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="density-2" name="density" type="radio" value="2">
+          <label class="govuk-label govuk-radios__label" for="density-2">
+            2
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="density-4" name="density" type="radio" value="4">
+          <label class="govuk-label govuk-radios__label" for="density-4">
+            4
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="density-6" name="density" type="radio" value="6">
+          <label class="govuk-label govuk-radios__label" for="density-6">
+            6
+          </label>
+        </div>
+
+
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="govuk-form-group" style="padding-top:35px;border-top:1px solid lightgrey">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+        <h1 class="govuk-fieldset__heading">
+          Would you like to include an extra 15 minutes after each interview for the panel to have a review?
+        </h1>
+      </legend>
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="washup-yes" name="washup" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="density-2">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="washup-no" name="washup" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="density-4">
+            No
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+
+
+
+
+  <button class="govuk-button govuk-!-margin-top-9" data-module="govuk-button">Build interview schedule</button>
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+<span id='local-variable' style="display:none">{{ data['templateName'] }}</span>
+
+<input type="hidden" name="source" value="behaviours">
+</FORM>
+
+
+<script>
+
+      const dateControl = document.querySelector('input[type="datetime-local"]');
+
+  const timeList = [];
+
+  var entry = document.getElementById("intDate");
+  var wkentry = document.getElementById("wkDate");
+
+
+  var txtbox = document.getElementById("event-name");
+
+  // txtbox.value = location;
+  //
+  //   // var tmp = String(tmp.split("-").reverse());
+  // txtbox.value = txtbox.value.replaceAll(",","/");
+  // // loc.innerHTML = txtbox.value;
+  //
+  // // gggr.push(txtbox.value)
+
+  var count = 0;
+  var loc = document.getElementById('list1');
+
+  var prt = document.getElementById('output');
+
+  dateControl.addEventListener('change', (event) => {
+
+
+    // dateControl.value = "2017-06-01T21:30";
+
+var day = dateControl.value.substring(8, 10);
+var mon = dateControl.value.substring(5, 7);
+var yea = dateControl.value.substring(0, 4);
+
+txtbox.value = day+"/"+mon+"/"+yea;
+console.log(txtbox.value+"txt")
+timeList.push(day+"/"+mon+"/"+yea);
+
+
+  window.sessionStorage.setItem("dates1", JSON.stringify(timeList));
+
+// txtbox.value = dateControl.value.match("\d{4}\-\d{2}-\d{2}");
+// txtbox.value = dateControl.value.match("");
+// txtbox.value = dateControl.value.match("\[0-9].\:[0-9].");
+
+    var location = event.target.value;
+    var strrr = location.toLocaleDateString;
+
+    var prtThing = document.createElement("li");
+
+    // txtbox.value = location.split(":").reverse();
+    // txtbox.value = location.split("\T[0-9].\:[0-9].").reverse();
+    // txtbox.value = txtbox.value.replaceAll(",","/");
+    let herein = txtbox.value;
+    // herein = herein.replaceAll(",",".");
+    // herein.style.cssText = "margin-top:10px;height:60px;font-size:20px;width:100%";
+    prtThing.style.cssText = "font-size:26px"
+    prtThing.innerHTML = txtbox.value;
+    loc.appendChild(prtThing)
+    // timeList.push(prtThing.innerHTML)
+    // loc.appendChild(prtThing)
+
+    // timeList.push(location)
+
+    // window.sessionStorage.setItem("dates", JSON.stringify(timeList));
+
+
+
+    // prtThing.innerHTML = herein;
+    // loc.appendChild(prt.value)
+    // txtbox = txtbox.replaceAll(",","/");
+    // text = text.replaceAll("Cats","Dogs");
+
+    // let thisone = String(txtbox.value);
+    // txtbox.value = thisone;
+    //
+    // thisone.split("")
+
+    console.log(timeList)
+
+    // console.log(gggr.slice("/").reverse())
+
+    // var drop = document.createElement("pre");
+    // drop.value = location;
+
+    var loccontent = document.createElement("li");
+    var linkcontent = document.createElement("p");
+    // showDiv('default');
+    // numcontent.innerHTML = location;
+    count = count+1;
+
+
+
+    loccontent.innerText = prt.innerHTML;
+    if (loccontent.innerHTML.length > 45){
+      loccontent.style.cssText = "margin-top:10px;height:60px;font-size:20px;width:100%";
+      linkcontent.style.cssText = "margin-top:10px;;height:60px;;font-size:20px;font-weight:bold";
+
+    } else {
+      loccontent.style.cssText = "margin-top:10px;height:20px;font-size:20px;width:100%";
+      linkcontent.style.cssText = "margin-top:10px;;height:20px;;font-size:20px;font-weight:bold";
+    }
+    // gggr.push(loccontent.innerHTML)
+
+  });
+
+
+  // wkentry.addEventListener('blur', (event) => {
+  //
+  //   var week = event.target.value;
+  //   var strrr = week.toLocaleDateString;
+  //
+  // // var dayRay = [];
+  //
+  // const output = document.getElementById("list1");
+  // const va = document.createElement("li");
+
+
+
+      // txtbox.value = week;
+      // txtbox.value = txtbox.value.replaceAll(",","/");
+      // let herein = txtbox.value;
+      // // herein = herein.replaceAll(",",".");
+      // // herein.style.cssText = "margin-top:10px;height:60px;font-size:20px;width:100%";
+      // prtThing.style.cssText = "font-size:26px"
+      // prtThing.innerHTML = prt.innerHTML+herein;
+//       timeList.push(txtbox.value)
+//       output.appendChild(txtbox.value)
+//
+//       timeList.push(week)
+//
+//
+//
+// });
+
+
+
+
+
+
+
+  // const newD = document.getElementById("newdates");
+  //
+  // newD.addEventListener('change', (event) => {
+  //
+  //   if (newD.checked) {
+  //     showDiv("conditional");
+  //   }
+  // });
+  //
+  // const noC = document.getElementById("nochange");
+  // noC.addEventListener('change', (event) => {
+  //   if (noC.checked) {
+  //     hideDiv("conditional");
+  //   }
+  // });
+
+
+
+  function hideDiv(div1) {
+    document.getElementById(div1).style.display = 'none';
+
+  }
+
+  function showDiv(div1) {
+    document.getElementById(div1).style.display = 'block';
+
+  }
+
+  // console.log(String(location));
+  //
+  // const dateControl = document.querySelector('input[type="datetime-local"]');
+  // dateControl.value = "2017-06-01T08:30";
+  // console.log(dateControl.value)
+  //
+  // console.log(gggr)
+  // console.log(testvar.split("/").reverse())
+  // const todaystamp = new Date(todayDay);
+  // const tickTock = todaystamp.toLocaleDateString({ year:"numeric", month:"numeric", day:"numeric" }) ;
+  // // todayDay.innerHTML = tickTock;
+  // console.log(tickTock)
+  // console.log(location)
+  //
+
+
+
+
+
+</script>
+
+
+{% endblock %}
