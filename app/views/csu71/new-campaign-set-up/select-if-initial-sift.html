@@ -110,15 +110,22 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
               name: "ra-needed",
               fieldset: {
               legend: {
-              text: "Do you want to add the option of an initial sift to this campaign?",
+              text: "Doing an initial sift of applications",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
               }
               },
               hint: {
-                html: '<div class="govuk-inset-text">
-                You will be unable to set up an initial sift unless you do it at this stage. You cannot set one up once your job advert is published.
-              </div>',
+                html: '<br><p class="govuk-body">If you expect lots of applications for this job, you may want to do an initial sift based on a lead assessment method. For example, you might carry out an initial sift on a candidate’s personal statement or their CV. Candidates who are successful at this stage would then progress to a full sift.</p><div class="govuk-inset-text">
+                The assessment methods you decide to use will appear in your job advert.
+              </div><br><div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                  <span class="govuk-visually-hidden">Warning</span>
+                  You cannot set up an initial sift at a later date or once your job advert is live.
+                </strong>
+              </div><br>
+              <h2 class="govuk-heading-m">Do you want to set up an initial sift?</h2>',
                 classes:"hint-text-black"
               },
               items: [
