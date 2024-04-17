@@ -197,6 +197,62 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
       </script>
 
+      <br>
+
+        <p style="font-size: 24px; font-weight: bold;">Experience: {{data['exp1']}}</p>
+
+        {{ govukCheckboxes({
+          name: "exp-1",
+          classes: "govuk-checkboxes--small",
+          items: [
+            {
+              value: "exp1IQ",
+              text: "Interview question(s)"
+            },
+            {
+              value: "exp1Pr",
+              text: "Presentation"
+            }
+          ]
+        }) }}<br><br>
+
+        <p style="font-size: 24px; font-weight: bold;">Experience: {{data['exp2']}}</p>
+
+        {{ govukCheckboxes({
+          name: "exp-2",
+classes: "govuk-checkboxes--small",
+          items: [
+          {
+            value: "exp2IQ",
+            text: "Interview question(s)"
+          },
+          {
+            value: "exp2Pr",
+            text: "Presentation"
+          }
+          ]
+        }) }}<br>
+
+        <p style="font-size: 24px; font-weight: bold;">Experience: {{data['exp3']}}</p>
+
+        {{ govukCheckboxes({
+          name: "exp-3",
+classes: "govuk-checkboxes--small",
+          items: [
+          {
+            value: "exp3IQ",
+            text: "Interview question(s)"
+          },
+          {
+            value: "exp3Pr",
+            text: "Presentation"
+          }
+          ]
+        }) }}
+
+
+
+
 
                       <button class="govuk-button govuk-!-margin-top-9" onclick="checkCheckboxesInt()" data-module="govuk-button">Continue</button>
 

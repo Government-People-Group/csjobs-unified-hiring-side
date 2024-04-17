@@ -93,55 +93,47 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
   }
 
 
-.checkboxStyle {
-    width: 30px; height: 30px; padding: 0px; margin: 0px; vertical-align: bottom; position: relative; top: -30px;
-}
+
 
 </style>
 
-<form class="form" action="select-if-initial-sift" method="post">
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <h1 class="govuk-heading-xl">How will you assess at sift?</h1>
-      <!-- <p class="govuk-body-l"><strong>Select how you will assess each element at sift.</strong></p> -->
+      <form action="" method="post" novalidate>
+          <span class="govuk-caption-l">
+            <strong style="padding-right:20px">{{Job}}</strong> {{Dept}}</span>
+            {{ govukRadios({
+              classes: "govuk-radios",
+              idPrefix: "nationality",
+              name: "full-sift-needed",
+              fieldset: {
+              legend: {
+              text: "Do you plan to put successful pre-sift applications through a full sift?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+              }
+              },
+              hint: {
+                html: '<div class="govuk-inset-text">
+                Explain that this will be shown on the job ad.
+              </div>',
+                classes:"hint-text-black"
+              },
+              items: [
+              {
+              value: "yes~review-sp-table-alt",
+              text: "Yes - they will be sifted further"
+              },
+              {
+              value: "no~review-sp-table-alt",
+              text: "No - they will go straight to interview stage"
+              }
+              ]
+              }) }}
 
-      <details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text" style="font-size:20px">
-      If you receive lots of applications and need to set up an initial sift
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-
-<p class="govuk-body">You can set up an initial sift on the next page, choosing a lead method to assess applications.</p>
-
-<p class="govuk-body">When you have sifted using this initial method, the remaining candidates then progress to full sift.</p>
-
-<p class="govuk-body">If you do this, the assessment methods for both sifts must be shown in your job advert.</p>
-
-<div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-visually-hidden">Warning</span>
-    Once the advert is live, you cannot set up an initial sift.
-  </strong>
-</div>
-
-  </div>
-</details><br>
-
-
-
-  <h2 class="govuk-heading-m">Personal statement & CV</h2>
-<p class="govuk-body-l">All criteria you select will be assessed on 1 personal statement (1250 word limit) and 1 CV.</p>
-  <p class="govuk-body-l govuk-!-margin-top-9">At sift, you have selected to assess:</p>
-
-      <ul id="counter" style="" class="govuk-body-m govuk-list govuk-list--bullet"></ul>
-
-      <div  class="govuk-!-margin-top-9" id="header1"></div>
-      <div id="test"></div>
-      <p id="lShip" class="govuk-body-m govuk-!-margin-bottom-3"></p>
+            <button class="govuk-button govuk-!-margin-top-6" style="max-width:100%;min-width:25%" data-module="govuk-button">Continue</button>
 
 
       <script>
@@ -297,81 +289,12 @@ console.log(sCheck)
 
         </script>
 
-      <br>
-
-        <p style="font-size: 24px; font-weight: bold;">Experience: {{data['exp1']}}</p>
-
-        {{ govukCheckboxes({
-          name: "exp-1",
-          classes: "govuk-checkboxes--small",
-          items: [
-            {
-              value: "exp1PS",
-              text: "Personal statement (1250 word limit)"
-            },
-            {
-              value: "exp1CV",
-              text: "CV"
-            },
-            {
-              value: "exp1WE",
-              text: "Written example (250 word limit)"
-            }
-          ]
-        }) }}<br><br>
-
-        <p style="font-size: 24px; font-weight: bold;">Experience: {{data['exp2']}}</p>
-
-        {{ govukCheckboxes({
-          name: "exp-2",
-classes: "govuk-checkboxes--small",
-          items: [
-            {
-              value: "exp2PS",
-              text: "Personal statement (1250 word limit)"
-            },
-            {
-              value: "exp2CV",
-              text: "CV"
-            },
-            {
-              value: "exp2WE",
-              text: "Written example (250 word limit)"
-            }
-          ]
-        }) }}<br>
-
-        <p style="font-size: 24px; font-weight: bold;">Experience: {{data['exp3']}}</p>
-
-        {{ govukCheckboxes({
-          name: "exp-3",
-classes: "govuk-checkboxes--small",
-          items: [
-            {
-              value: "exp3PS",
-              text: "Personal statement (1250 word limit)"
-            },
-            {
-              value: "exp3CV",
-              text: "CV"
-            },
-            {
-              value: "exp3WE",
-              text: "Written example (250 word limit)"
-            }
-          ]
-        }) }}
-
-
-          </div>
-
 
 
 
 
       </div>
-        <button class="govuk-button govuk-!-margin-top-9" onclick="checkCheckBoxes()" data-module="govuk-button">Continue</button>
-
+    </div>
 
 
 

@@ -51,7 +51,7 @@
 
 
 
-<form class="form" action="/csu71/check-next-step" method="post">
+<form class="form" action="select-criteria-stage" method="post">
   <!-- <H2 class="govuk-heading-l govuk-!-margin-top-3 govuk-!-margin-bottom-3">What will you assess within each element at sift and interview?</h2>
     <p class="govuk-body-l govuk-!-margin-bottom-6 govuk-!-margin-top-3">You have selected which elements are important to assess for this job role. You should now select what you will assess within each element at sift and interview.</p> -->
 
@@ -124,18 +124,37 @@
               <!-- <p class="govuk-body-m" style="font-size:20px;line-height:1.6"><strong>77% of users typically look at a job ad for the first time on a mobile phone, and only spend 11 seconds on the page.</strong></p>
               <p class="govuk-body-s ">Source: Civil Service Jobs (2023), Cabinet Office.</p> -->
 
-              {% for items in expArray | slice(1) %}
-              {% for item in items  %}
+
 
 
               <div class="govuk-form-group">
                 <h1 class="govuk-label-wrapper">
-                  <label class="govuk-label govuk-label--s" for="{{item}}">
-                    {{item}}
+                  <label class="govuk-label govuk-label--s">
+                    Experience 1
                   </label>
                 </h1>
 
-                <textarea class="govuk-textarea" id="{{item}}" value="{{ data['item']}}" name="{{item}}" rows="2" aria-describedby="more-detail-hint"></textarea>
+                <textarea class="govuk-textarea" id="exp1" name="exp1" rows="2" aria-describedby="more-detail-hint"></textarea>
+              </div>
+
+              <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--s">
+                    Experience 2
+                  </label>
+                </h1>
+
+                <textarea class="govuk-textarea" id="exp2" name="exp2" rows="2" aria-describedby="more-detail-hint"></textarea>
+              </div>
+
+              <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--s">
+                    Experience 3
+                  </label>
+                </h1>
+
+                <textarea class="govuk-textarea" id="exp3" name="exp3" rows="2" aria-describedby="more-detail-hint"></textarea>
               </div>
 
 
@@ -171,7 +190,7 @@
 
 
 
-{% endfor %}{% endfor %}
+
 
 
 <div id="expcta1" style="display:{{ nosee }}" class="govuk-body-m ">

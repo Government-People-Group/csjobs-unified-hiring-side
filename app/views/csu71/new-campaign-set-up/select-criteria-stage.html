@@ -124,171 +124,73 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
       </h1>
       <p class="govuk-body-l govuk-!-margin-bottom-3">You must choose when to assess all elements you have selected.</p>
 
-      {% if "behaviours" in data['selected'] %}
+
       <h2 id="bheader" class="govuk-heading-l govuk-!-margin-top-3" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Behaviours</h2>
-      {% endif %}
+
 
       <!-- <p id="lShip" class="govuk-body-m govuk-!-margin-bottom-3"></p> -->
 
       <div id="behDiv"></div>
 
-{% if "strengths" in data['selected'] %}
-      <h2 id="stheader" class="govuk-heading-l govuk-!-margin-top-9" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Strengths</h2>
-{% endif %}
-      <div id="strDiv"></div>
 
 
 
-      {% if "experience" in data['selected'] %}
+
+
       <h2 id="eheader" class="govuk-heading-l govuk-!-margin-top-9" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Experience</h2>
-{% endif %}
-      {% set criteriaExpArr = [] %}
 
-      {% if data['Experience 1'].length > 0 %}
-      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 1']|truncate(250)), criteriaExpArr) %}
-      {% else %}{% endif %}
-
-      {% if data['Experience 2'].length > 0 %}
-      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 2']|truncate(250)), criteriaExpArr) %}
-      {% else %}{% endif %}
-
-      {% if data['Experience 3'].length > 0 %}
-      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 3']|truncate(250)), criteriaExpArr) %}
-      {% else %}{% endif %}
-
-      {% if data['Experience 4'].length > 0 %}
-      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 4']|truncate(250)), criteriaExpArr) %}
-      {% else %}{% endif %}
-
-      {% if data['Experience 5'].length > 0 %}
-      {% set criteriaExpArr = (criteriaExpArr.push(data['Skills 5']|truncate(250)), criteriaExpArr) %}
-      {% else %}{% endif %}
-
-      {% if data['Experience 6'].length > 0 %}
-      {% set criteriaExpArr = (criteriaExpArr.push(data['Experience 6']|truncate(250)), criteriaExpArr) %}
-      {% else %}{% endif %}
-
-
-
-
-
-      {% for eons in criteriaExpArr | slice(1) %}
-      {% for eon in eons %}
-
-
+      <p style="font-size: 24px; font-weight: bold;">{{data['exp1']}}</p>
 
       {{ govukCheckboxes({
-        name: "experience-stage",
-        fieldset: {
-          legend: {
-            text: eon,
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
+        name: "exp-1",
+
         items: [
-        {
-          name: eon,
-          id: "Experience",
-          checked: checked('experience-stage',"Sift"),
-          value: "Sift",
-          classes: "govuk-label-l",
-          text: "Sift"
-        },
-        {
-          name: eon,
-          id: "Experience",
-          checked: checked('experience-stage',"Interview"),
-          value: "Interview",
-          classes: "govuk-label-l",
-          text: "Interview"
-        }
+          {
+            value: "exp1Sift",
+            text: "Sift"
+          },
+          {
+            value: "exp1Int",
+            text: "Interview"
+          }
         ]
-      }) }}
+      }) }}<br>
 
-      {%endfor%}{%endfor%}
+      <p style="font-size: 24px; font-weight: bold;">{{data['exp2']}}</p>
 
+      {{ govukCheckboxes({
+        name: "exp-2",
 
+        items: [
+          {
+            value: "exp2Sift",
+            text: "Sift"
+          },
+          {
+            value: "exp2Int",
+            text: "Interview"
+          }
+        ]
+      }) }}<br>
 
+      <p style="font-size: 24px; font-weight: bold;">{{data['exp3']}}</p>
 
-      <div>
-            {% if "skills" in data['selected'] %}
-        <h2 id="skheader" class="govuk-heading-l govuk-!-margin-top-9" style="border-bottom:1px solid #1d70b8;padding-bottom:10px;">Technical skills</h2>
-        {% endif %}
-        <div id="skillsDDAT"></DIV>
+      {{ govukCheckboxes({
+        name: "exp-3",
 
-
-          {% set criteriaSkillsArr = [] %}
-
-
-
-
-
-          {% if data['Technical skills 1'].length > 0 %}
-          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 1']|truncate(250)), criteriaSkillsArr) %}
-          {% else %}{% endif %}
-
-          {% if data['Technical skills 2'].length > 0 %}
-          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 2']|truncate(250)), criteriaSkillsArr) %}
-          {% else %}{% endif %}
-
-          {% if data['Technical skills 3'].length > 0 %}
-          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 3']|truncate(250)), criteriaSkillsArr) %}
-          {% else %}{% endif %}
-
-          {% if data['Technical skills 4'].length > 0 %}
-          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 4']|truncate(250)), criteriaSkillsArr) %}
-          {% else %}{% endif %}
-
-          {% if data['Technical skills 5'].length > 0 %}
-          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 5']|truncate(250)), criteriaSkillsArr) %}
-          {% else %}{% endif %}
-
-          {% if data['Technical skills 6'].length > 0 %}
-          {% set criteriaSkillsArr = (criteriaSkillsArr.push(data['Technical skills 6']|truncate(250)), criteriaSkillsArr) %}
-          {% else %}{% endif %}
+        items: [
+          {
+            value: "exp3Sift",
+            text: "Sift"
+          },
+          {
+            value: "exp3Int",
+            text: "Interview"
+          }
+        ]
+      }) }}<br><br>
 
 
-
-
-
-
-          {% for es in criteriaSkillsArr | slice(1) %}
-          {% for e in es %}
-
-
-          {{ govukCheckboxes({
-            name: "skills-stage",
-            fieldset: {
-              legend: {
-                text: e,
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-            items: [
-            {
-              name: e,
-              id: "Technical skills",
-              checked: checked('skills-stage',"Sift"),
-              value: "Sift",
-              classes: "govuk-label-l",
-              text: "Sift"
-            },
-            {
-              name: e,
-              id: "Technical skills",
-              checked: checked('skills-stage',"Interview"),
-              value: "Interview",
-              classes: "govuk-label-l",
-              text: "Interview"
-            }
-            ]
-          }) }}
-
-
-          {%endfor%}
-          {% endfor %}
         </div>
 
 
@@ -297,10 +199,11 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
 
 
 
-        <button class="govuk-button" onclick="checkCheckBoxes()" data-module="govuk-button">Continue</button>
 
 
-      </div></div>
+
+      </div><button class="govuk-button govuk-!-margin-top-9" onclick="getExpValues()" data-module="govuk-button">Continue</button>
+      
     </form>
 
     <script>
