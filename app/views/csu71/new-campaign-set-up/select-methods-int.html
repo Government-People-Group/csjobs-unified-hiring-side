@@ -113,93 +113,80 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
       <div id="header4"></div>
       <div id="header5"></div>
 
-      <script>
 
-
-
-      var chkList = ['Interview question(s)','Presentation']
-      var strengthsChkList = ['Interview question(s)'];
-
-    const intStage = JSON.parse(window.sessionStorage.getItem("intStage"));
-
-  var intOutput = document.getElementById("test");
-
-  for (const [key, value] of Object.entries(intStage)) {
-    // console.log(`${value}: ${key}`);
-    var headint = document.createElement("h3");
-    headint.innerHTML = `${value}: ${key}`;
-    intOutput.appendChild(headint);
-
-
-
-
-    if (`${value}` == "Strengths") {
-
-      for (var i = 0; i < strengthsChkList.length; i++) {
-        var label = document.createElement("label");
-        var checkBox = document.createElement("input");
-        checkBox.type = "checkbox";
-        checkBox.style.cssText = "width: 30px;height: 30px;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
-        label.style.cssText = "display: block;padding-left: 15px;text-indent: 40px;";
-        checkBox.value = strengthsChkList[i];
-        checkBox.setAttribute("id","int-"+i)
-        checkBox.setAttribute("name",+"-"+intStage)
-        label.appendChild(document.createTextNode(strengthsChkList[i]));
-        intOutput.appendChild(label);
-        intOutput.appendChild(checkBox);
-      }
-    } else {
-
-        for (var i = 0; i < chkList.length; i++) {
-          var label = document.createElement("label");
-          var checkBox = document.createElement("input");
-          checkBox.type = "checkbox";
-          checkBox.style.cssText = "width: 30px;height: 30px;padding: 0;margin: 0;vertical-align: bottom;position: relative;top: -30px;";
-          label.style.cssText = "display: block;padding-left: 15px;text-indent: 40px;";
-          checkBox.value = chkList[i];
-          checkBox.setAttribute("id","sift-"+i)
-          checkBox.setAttribute("name",+"-"+intStage)
-          label.appendChild(document.createTextNode(chkList[i]));
-          intOutput.appendChild(label);
-          intOutput.appendChild(checkBox);
-        }
-
-      }
-
-
-
-
-
-
-
-
-
-
-      }
-
-
-
-
-
-        function checkCheckboxesInt() {
-          var interviewCheck = [];
-
-          var checkboxInt = document.getElementsByTagName('input');
-          console.log(checkboxInt)
-          for (i = 0; i < checkboxInt.length; i++) {
-            if (checkboxInt[i].type == 'checkbox' && checkboxInt[i].checked ) {
-              interviewCheck.push(checkboxInt[i].id,checkboxInt[i].name,checkboxInt[i].value);
-              window.sessionStorage.setItem("interviewCheck", JSON.stringify(interviewCheck));
-            }
-          }
-        }
-
-
-      </script>
 
       <br>
 
-        <p style="font-size: 24px; font-weight: bold;">Experience: {{data['exp1']}}</p>
+      <p style="font-size: 24px; font-weight: bold;">Behaviour: Seeing the big picture</p>
+
+      {{ govukCheckboxes({
+        name: "exp-1",
+        classes: "govuk-checkboxes--small",
+        items: [
+          {
+            value: "exp1IQ",
+            text: "Interview question(s)"
+          },
+          {
+            value: "exp1Pr",
+            text: "Presentation"
+          }
+        ]
+      }) }}
+
+      <p style="font-size: 24px; font-weight: bold;">Behaviour: Changing and improving</p>
+
+      {{ govukCheckboxes({
+        name: "exp-1",
+        classes: "govuk-checkboxes--small",
+        items: [
+          {
+            value: "exp1IQ",
+            text: "Interview question(s)"
+          },
+          {
+            value: "exp1Pr",
+            text: "Presentation"
+          }
+        ]
+      }) }}
+
+      <p style="font-size: 24px; font-weight: bold;">Behaviour: Communicating and influencing</p>
+
+      {{ govukCheckboxes({
+        name: "exp-1",
+        classes: "govuk-checkboxes--small",
+        items: [
+          {
+            value: "exp1IQ",
+            text: "Interview question(s)"
+          },
+          {
+            value: "exp1Pr",
+            text: "Presentation"
+          }
+        ]
+      }) }}
+
+      <p style="font-size: 24px; font-weight: bold;">Behaviour: Delivering at pace</p>
+
+      {{ govukCheckboxes({
+        name: "exp-1",
+        classes: "govuk-checkboxes--small",
+        items: [
+          {
+            value: "exp1IQ",
+            text: "Interview question(s)"
+          },
+          {
+            value: "exp1Pr",
+            text: "Presentation"
+          }
+        ]
+      }) }}<br><br>
+
+
+        <p style="font-size: 24px; font-weight: bold;">Experience: Helping staff development and career progression</p>
 
         {{ govukCheckboxes({
           name: "exp-1",
@@ -214,9 +201,9 @@ Create a job advert – Civil service jobs – GOV.UK Prototype Kit
               text: "Presentation"
             }
           ]
-        }) }}<br><br>
+        }) }}
 
-        <p style="font-size: 24px; font-weight: bold;">Experience: {{data['exp2']}}</p>
+        <p style="font-size: 24px; font-weight: bold;">Experience: Implementing complex policy decisions</p>
 
         {{ govukCheckboxes({
           name: "exp-2",
@@ -231,9 +218,9 @@ classes: "govuk-checkboxes--small",
             text: "Presentation"
           }
           ]
-        }) }}<br>
+        }) }}
 
-        <p style="font-size: 24px; font-weight: bold;">Experience: {{data['exp3']}}</p>
+        <p style="font-size: 24px; font-weight: bold;">Experience: Overseeing policy reviews against tight deadlines</p>
 
         {{ govukCheckboxes({
           name: "exp-3",
