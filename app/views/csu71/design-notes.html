@@ -13,12 +13,33 @@ Basic details – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">Design notes</h1>
 
-<a href="#bulkv3" class="govuk-link govuk-link--no-visited-state" style="display:block">Bulk recruitment - v3 (vacancy dash and multiple sift panels)</a><br><a href="#bulkv2" class="govuk-link govuk-link--no-visited-state" style="display:block">Bulk recruitment - v2</a><br><a href="#bulkv1" class="govuk-link govuk-link--no-visited-state" style="display:block">Bulk recruitment - v1</a><br><br>
+<a href="#bulkv4" class="govuk-link govuk-link--no-visited-state" style="display:block">Bulk recruitment - v4 (pre-sift)</a><br><a href="#bulkv3" class="govuk-link govuk-link--no-visited-state" style="display:block">Bulk recruitment - v3 (vacancy dash and multiple sift panels)</a><br><a href="#bulkv2" class="govuk-link govuk-link--no-visited-state" style="display:block">Bulk recruitment - v2</a><br><a href="#bulkv1" class="govuk-link govuk-link--no-visited-state" style="display:block">Bulk recruitment - v1</a><br><br>
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h3 class="govuk-heading-m" style="margin-bottom:5px" id="bulkv3">Bulk recruitment</h3>
+    <h3 class="govuk-heading-m" style="margin-bottom:5px" id="bulkv4">Bulk recruitment</h3>
+
+    <h3 class="govuk-heading-s" style="margin-bottom:5px">V4</h3><br>
+      <p class="govuk-body"><strong>Aim</strong></p>
+      <p class="govuk-body">V4 looked at how a campaign might use a pre-sift (otherwise known as an 'initial sift') and how we could capture it's requirements in the 'create a vacancy' journey. Our aim was to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>give an option to allow a pre-sift if necessary</li>
+        <li>capture what and how the pre-sift should be</li>
+        <li>capture what should happen to successful pre-sifted applications</li>
+        <li>show the pre-sift info replicated in the actual job ad</li>
+        <li>show the new pre-sift tasks created when managing the vacancy</li>
+      </ul><br>
+
+      <p class="govuk-body"><strong>What we did</strong></p>
+      <p class="govuk-body">We added a pre-sift option to the existing <a href="https://csjobs-hiring-side-a6b074da6857.herokuapp.com/csu71/task-list-new-campaign-initial-sift" target="_blank">'create a vacancy' journey</a>, accessed by clicking on 'Select assessment methods for sift'. We also added an  <a href="https://csjobs-hiring-side-a6b074da6857.herokuapp.com/vacancy-management-dashboard/strategy-admin-tasklist-presift" target="_blank">updated task list</a> where new pre-sift tasks could be seen (although they didn't function and weren't tested). Lastly, we added <a href="https://csjobs-hiring-side-a6b074da6857.herokuapp.com/vacancy-management-dashboard/job-ad#process" target="_blank">a relevant version of the job ad</a> so the user could see a pre-sift message within the application process section.</p>
+
+      <p class="govuk-body"><strong>User research</strong></p>
+      <p class="govuk-body"><a href="https://app.mural.co/t/civilservicerecruitment8943/m/civilservicerecruitment8943/1713520920183/a7be96e0c29a969911fe6b7aad5e2843056ca418?sender=u21f36a9fedce292b06138582" target="_blank">Mural board with testing notes</a></p><br>
+      <p class="govuk-body"><strong>What we found</strong><br><br>
+      <a href="https://docs.google.com/presentation/d/1ql2tOsZCGr2sHL8voLZR9XqTpLOwkd1THyKW-YZuhGE/edit#slide=id.g2a0535539b8_0_42" target="_blank">Playback document</a>
+        <br><br><br></p>
+        <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"><br>
 
     <h3 class="govuk-heading-s" style="margin-bottom:5px">V3</h3><br>
       <p class="govuk-body"><strong>Aim</strong></p>
@@ -34,18 +55,11 @@ Basic details – {{ serviceName }} – GOV.UK Prototype Kit
 
       <p class="govuk-body"><strong>User research</strong></p>
       <p class="govuk-body"><a href="https://app.mural.co/t/civilservicerecruitment8943/m/civilservicerecruitment8943/1710423737417/a203945067f75e72c367a0a006c7620ff748349b?sender=u2d124d966bc212bd1d414842" target="_blank">Mural board with testing notes</a></p><br>
-      <p class="govuk-body"><strong>What we found</strong></p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>the dashboard showing current campaigns was universally liked</li>
-        <li>most users liked the idea of being able to sift online</li>
-        <li>setting up multiple sift panels proved easy for users</li>
-        <li>using red for urgent messages did not register well</li>
-        <li>content for proactive messages (e.g. setting up sift panels due to high application numbers) would need to be punchy and to the point, so message was not lost</li>
-        <li>user management would need refining to make it useful outside of the sift panel setup</li>
-
-      </ul>
-        <br>
+      <p class="govuk-body"><strong>What we found</strong><br><br>
+      <a href="https://docs.google.com/presentation/d/1dQ9kuMae3VPhHXjxBDgOG_-s95nDeiFD3sZBwML5MuE/edit#slide=id.g24bfa14f556_0_7" target="_blank">Playback document</a>
+        <br><br><br></p>
         <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"><br>
+
     <h3 class="govuk-heading-s" style="margin-bottom:5px" id="bulkv2">V2</h3><br>
       <p class="govuk-body"><strong>Aim</strong></p>
       <p class="govuk-body">V2 was an iteration of the initial V1 prototype. Based on adding multi-grade / contract functionality and some improvements based on user feedback from V1, our aim was to:</p>
@@ -60,15 +74,9 @@ Basic details – {{ serviceName }} – GOV.UK Prototype Kit
 
       <p class="govuk-body"><strong>User research</strong></p>
       <p class="govuk-body"><a href="https://app.mural.co/t/civilservicerecruitment8943/m/civilservicerecruitment8943/1707816914282/b5652f188dfb06bf0a5ecc6a07de3b6f322d0121?sender=u2d124d966bc212bd1d414842" target="_blank">Mural board with testing notes</a></p><br>
-      <p class="govuk-body"><strong>What we found</strong></p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>having an advert close date rather than a duration worked well</li>
-        <li>the team mailbox option was well received</li>
-        <li>rather than clicking through the role 2 pages and changing where necessary, some users would prefer to see a role 2 CYA-style page where they could see and change what they needed immediately</li>
-        <li>there was some confusion over the 'are all job types the same?' question</li>
-        <li>warning or important messages were largely ignored or missed</li>
-      </ul>
-        <br>
+      <p class="govuk-body"><strong>What we found</strong><br><br>
+      <a href="https://docs.google.com/presentation/d/1mz9W3u6nYVdgcPG5TS_NC7fXQn-EL0UihFDc22R9grI/edit#slide=id.g24b2cd2ee72_0_0" target="_blank">Playback document</a>
+        <br><br><br></p>
         <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"><br>
 
 
@@ -89,14 +97,10 @@ Basic details – {{ serviceName }} – GOV.UK Prototype Kit
 
       <p class="govuk-body"><strong>User research</strong></p>
       <p class="govuk-body"><a href="https://app.mural.co/t/civilservicerecruitment8943/m/civilservicerecruitment8943/1705598154349/f77ee9bccbe186c3e24e58907a52e8e24e44bfac?sender=u21f36a9fedce292b06138582" target="_blank">Mural board with testing notes</a></p><br>
-      <p class="govuk-body"><strong>What we found</strong></p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>some users need to create bulk campaigns with more than one 'job type' in the ad: for example, multiple grades or different contract lengths / types</li>
-        <li>choosing a campaign duration (e.g. 2, 3 or 4 weeks) did not work for many users - they preferred the ability to add a campaign end date instead</li>
-        <li>many users would not want to choose a single person or two people as contacts - instead they wanted the option to use a team / generic email address to capture queries</li>
-        <li>adding more questions related to vacancy numbers did not make the 'Basic details' page overwhelming for users</li>
-        <li>online tests needed more promotion / explanation of benefits to encourage users to opt for them as a sift method</li>
-      </ul><br><br>
+      <p class="govuk-body"><strong>What we found</strong><br><br>
+      <a href="https://docs.google.com/presentation/d/1tP1SBWEaIgWE29uBIaHUvZk2YOXcvf95GVl2ddAiPYo/edit#slide=id.g2a0535539b8_0_52" target="_blank">Playback document</a>
+        <br><br><br></p>
+
 
 
 
