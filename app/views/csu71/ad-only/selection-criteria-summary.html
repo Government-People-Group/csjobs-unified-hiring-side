@@ -1,0 +1,176 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Selection criteria and assessment methods</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="task-list-ad-only"><strong>Return to task list</strong></a></span>
+
+</div>
+
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<style>
+  /* Example page specific styling. */
+  p, div {
+    font-family: "GDS Transport", arial, sans-serif;
+    line-height: 1.1;
+    margin: 1;
+  }
+
+
+  h1, h2, h3, h4, h5, h6, p {
+    line-height: 1.2;
+    vertical-align: text-top;
+    font-size:22px;
+
+  }
+
+
+  checkbox {}
+  label {
+
+  }
+</style>
+
+
+
+
+
+<form action="select-methods-sift" method="post" novalidate>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds" style="">
+
+      <h1 class="govuk-heading-xl">Review your assessment criteria</h1>
+      <p class="govuk-body-l govuk-!-margin-bottom-6 govuk-!-margin-top-3"><strong>Review what elements you have selected to assess at sift and interview.<BR><BR>When you are happy, you can continue to select how you will assess within each element.</strong></p>
+
+      <div>
+      <h2 class="govuk-heading-l" style="padding-bottom:10px;border-bottom:1px solid #1d70b8;">Your sift criteria</h2>
+
+
+      <ul class="govuk-!-margin-top-0 govuk-list govuk-list--bullet-">
+
+
+        <li><strong><p style ="border-left:5px solid #1d70b8;padding-left:30px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="select-{{items }}"><strong>{{ items | capitalize }}</a></p></strong></li>
+
+
+        <li><strong><p style ="border-left:2px solid white;padding-left:20px" class="govuk-body-m"><a class="govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state" href="select-{{items }}"><strong>{{ items | capitalize }}</a></p></strong></li>
+
+
+      </ul>
+
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div id="d1" class="govuk-summary-list__row">
+          <dt style="width:100%" id="test" class="govuk-summary-list__key">
+          </dt>
+          <dd style="width:30%" class="govuk-summary-list__actions">
+
+            <a class="govuk-link" href="#"> edit
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+</dl>
+
+      <h2 style="border-bottom:1px solid #1d70b8;padding-bottom:10px;" class="govuk-heading-l govuk-!-margin-top-0">Your interview criteria</h2>
+
+
+
+
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div id="d6" class="govuk-summary-list__row">
+          <dt  style="width:100%" id="test2" class="govuk-summary-list__key">
+          </dt>
+          <dd style="width:30%" class="govuk-summary-list__actions">
+
+            <a class="govuk-link" href="#"> edit
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+</div>
+      <script>
+
+
+        var siftOutput = document.getElementById("test");
+        var intOutput = document.getElementById("test2");
+
+        var siftCrit = document.getElementById("siftCrit");
+        var intCrit = document.getElementById("intcrit");
+        const siftStage = JSON.parse(window.sessionStorage.getItem("siftStage"));
+        const intStage = JSON.parse(window.sessionStorage.getItem("intStage"));
+
+
+
+
+
+
+        var criteriaInt = document.createElement("li");
+
+
+
+
+
+
+        for (const [key, value] of Object.entries(siftStage)) {
+          console.log(`${value}: ${key}`);
+          var headSift = document.createElement("p");
+          headSift.innerHTML = `${value}: ${key}`;
+          siftOutput.appendChild(headSift);
+        }
+
+        for (const [key, value] of Object.entries(intStage)) {
+          console.log(`${value}: ${key}`);
+          var headInt = document.createElement("p");
+          headInt.innerHTML = `${value}: ${key}`;
+          intOutput.appendChild(headInt);
+        }
+
+
+
+      </script>
+
+    </div>
+
+
+
+    </div>
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+
+    {{ govukButton({
+      text: "Add another element",
+      href: "pick-criteria-type",
+      classes: "govuk-button--secondary"
+    }) }}
+
+
+
+  </form>
+
+  {% endblock %}

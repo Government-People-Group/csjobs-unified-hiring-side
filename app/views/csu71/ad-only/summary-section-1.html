@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-xl">Summary</span>
+      <h1 class="govuk-heading-xl">About the vacancy</h1>
+
+      <h2 class="govuk-heading-m">Basic details</h2>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Job title</dt>
+          <dd class="govuk-summary-list__value">Administrative Officer</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+        </div>
+        {% if data['subtitle']%}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Subtitle</dt>
+          <dd class="govuk-summary-list__value">{{ data['subtitle'] }}</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> subtitle</span></a></dd>
+        </div>
+        {% endif %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Grade</dt>
+          <dd class="govuk-summary-list__value">Executive Officer (EO)</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> grade</span></a></dd>
+        </div>
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Cabinet Office role?</dt>
+          <dd class="govuk-summary-list__value">{{ data['cabinet-office-role']}}</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details">Change<span class="govuk-visually-hidden"> cabinet office role?</span></a></dd>
+        </div> -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Department</dt>
+          <dd class="govuk-summary-list__value">DWP </dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> department</span></a></dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Reserved status</dt>
+          <dd class="govuk-summary-list__value">{{ data['reserved-status']|default("No, this vacancy is not reserved")}}</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> number of posts availables</span></a></dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Number of posts availables</dt>
+          <dd class="govuk-summary-list__value">{{ data['num-posts']|default("1") }}</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> number of posts availables</span></a></dd>
+        </div>
+      </dl><br><br>
+
+
+
+
+
+      <form action="task-list-ad-only" method="post" novalidate>
+      <input type="hidden" name="about-vacancy-complete" value="true">
+      <input type="hidden" name="show-banner" value="true">
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+    </form>
+    {% endblock %}

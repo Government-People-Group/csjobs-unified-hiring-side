@@ -41,7 +41,7 @@ var department = [
 "Department for Levelling Up, Housing and Communities",
 "Department for the Economy (Northern Ireland)",
 "Department for Transport",
-"Department for Work and Pensions",
+"Department for Work and Pensions (DWP)",
 "Department of Agriculture, Environment &amp; Rural Affairs (Northern Ireland)",
 "Department of Education (Northern Ireland)",
 "Department of Finance (Northern Ireland)",

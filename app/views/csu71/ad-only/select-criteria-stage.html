@@ -1,0 +1,135 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+
+  {% block beforeContent %}
+  <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Selection criteria and assessment methods</span>
+
+  <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+    <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="task-list-ad-only"><strong>Return to task list</strong></a></span>
+
+  </div>
+
+
+  </div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
+{% block content %}
+
+
+<style>
+  p, div {
+    font-family: "GDS Transport", arial, sans-serif;
+    line-height: 1.2;
+    margin: 0.8
+  }
+  p, li {
+    font-size: 18px; line-height: 1.2;
+    vertical-align: text-top;
+
+  }
+
+
+  h2 {
+    font-size: 30px; line-height: 0.5;
+    vertical-align: text-top;
+
+  }
+
+  hint {
+
+
+    font-size: 18px;
+    font-weight:normal;
+    line-height: 1.3;
+    vertical-align: text-top;
+  }
+
+
+  h3 {
+    font-size: 20px;
+    line-height: 1.5;
+
+  }
+
+  label {
+    font-size: 18px;
+    line-height: 1;
+    vertical-align: text-top;
+  }
+
+
+  input[type="checkbox"]:checked  {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    background: white;
+    height: 40px;
+    width: 40px;
+    border: 2px solid black;
+    color: black;
+  }
+
+
+
+
+  input[type="checkbox"]:after {
+    content:"";
+    position: absolute;
+    left: 40%;
+    top: 20%;
+    width: 15%;
+    height: 40%;
+    border: 4px solid #000000;
+    border-width: 0 4px 4px 0;
+    transform: rotate(45deg);
+    display: none;
+  }
+
+  input[type="checkbox"]:checked:after {
+    display: block;
+  }
+</style>
+
+
+
+
+
+<form class="form" action="selection-criteria-summary" method="post">
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl">
+        When will you assess each element?
+      </h1>
+      <p class="govuk-body-l govuk-!-margin-bottom-3">You must choose when to assess all elements you have selected.</p>
+
+
+    
+
+
+
+
+
+      <button class="govuk-button" onclick="checkCheckBoxes()" data-module="govuk-button">Continue</button>
+
+
+</div></div>
+</form>
+
+  {% endblock %}
