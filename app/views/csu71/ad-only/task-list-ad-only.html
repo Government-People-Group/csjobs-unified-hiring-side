@@ -84,7 +84,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
 
 
-     <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">DWP vacancy <strong>1001891</strong></p>
+     <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">DWP vacancy <strong>4001891</strong></p>
 
      <p style="font-size:24px;margin-bottom:20px" class="govuk-body-l govuk-!-margin-bottom-1">Grade <strong>Executive Officer (EO)</strong></p>
 
@@ -99,14 +99,16 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
 <p class="govuk-body-m govuk-!-margin-bottom-9">Last modified on <strong  id="lastEdit">14 May 2024</strong></p>
 
-{% if data['selection-methods-complete'] == 'true' %}
-    <p class="govuk-body govuk-!-margin-top-3" style="margin-bottom:30px"><strong>Vacancy incomplete </strong>-  you have completed 16 of 27 sections<br><progress id="file" value="59" max="100""> 59% </progress></p>
+{% if data['recruitment-channels-complete'] == 'true' %}
+    <p class="govuk-body govuk-!-margin-top-3" style="margin-bottom:30px"><strong>Vacancy incomplete </strong>-  you have completed 18 of 19 sections<br><progress id="file" value="95" max="100""> 59% </progress></p>
+{% elif data['selection-methods-complete'] == 'true' %}
+    <p class="govuk-body govuk-!-margin-top-3" style="margin-bottom:30px"><strong>Vacancy incomplete </strong>-  you have completed 16 of 19 sections<br><progress id="file" value="84" max="100""> 59% </progress></p>
 {% elif data['advert-setup-complete'] == 'true' %}
-    <p class="govuk-body govuk-!-margin-top-3" style="margin-bottom:30px"><strong>Vacancy incomplete </strong>-  you have completed 10 of 27 sections<br><progress id="file" value="37" max="100""> 37% </progress></p>
+    <p class="govuk-body govuk-!-margin-top-3" style="margin-bottom:30px"><strong>Vacancy incomplete </strong>-  you have completed 10 of 19 sections<br><progress id="file" value="53" max="100""> 37% </progress></p>
 {% elif data['contract-info-complete'] == 'true' %}
-    <p class="govuk-body govuk-!-margin-top-3" style="margin-bottom:30px"><strong>Vacancy incomplete </strong>-  you have completed 5 of 27 sections<br><progress id="file" value="19" max="100""> 19% </progress></p>
+    <p class="govuk-body govuk-!-margin-top-3" style="margin-bottom:30px"><strong>Vacancy incomplete </strong>-  you have completed 5 of 19 sections<br><progress id="file" value="26" max="100""> 19% </progress></p>
 {% else %}
-  <p class="govuk-body govuk-!-margin-top-3" style="margin-top:30px"><strong>Vacancy incomplete </strong>-  you have completed 1 of 27 sections<br><progress id="file" value="3" max="100"> 3% </progress></p>
+  <p class="govuk-body govuk-!-margin-top-3" style="margin-top:30px"><strong>Vacancy incomplete </strong>-  you have completed 1 of 19 sections<br><progress id="file" value="5" max="100"> 3% </progress></p>
 {% endif %}
 
 
@@ -423,29 +425,17 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                     <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
                         <a href="approach" aria-describedby="company-information-status">
-                          Approach
+                          Who can apply
                         </a>
                       </span>
-                      {% if data['who-can-apply']|length >= 1 %}
 
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                      {% if data['recruitment-channels-complete']=='true' %}
+                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status" style="background-color:#ffffff">Completed</strong>
                       {% else %}
                       <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="background-color:#bbd4ea">Not yet started</strong>
                       {% endif %}
                     </li>
-                    <li class="app-task-list__item">
-                      <span class="app-task-list__task-name">
-                        <a href="attraction-methods" aria-describedby="list-convictions-status">
-                          Attraction methods
-                        </a>
-                      </span>
-                      {% if data['attraction']|length >= 1 %}
 
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                      {% else %}
-                      <strong class="govuk-tag  app-task-list__tag" id="financial-evidence-status" style="background-color:#bbd4ea">Not yet started</strong>
-                      {% endif %}
-                    </li>
 
                     <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
@@ -453,9 +443,9 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                           Reserve list
                         </a>
                       </span>
-                      {% if data['reserve-list-required']|length >= 1 %}
 
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+                      {% if data['recruitment-channels-complete']=='true' %}
+                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status" style="background-color:#ffffff">Completed</strong>
                       {% else %}
                       <strong class="govuk-tag  app-task-list__tag" id="financial-evidence-status" style="background-color:#bbd4ea">Not yet started</strong>
                       {% endif %}
@@ -475,10 +465,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
                               <a href="submit" aria-hidden="list-convictions-status">
                                 Submit
                               </span>
-                              {% if data['submitted'] == "true" %}
-
-                              <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-                                {% elif data['reviewer']|length >= 1 %}
+                              {% if data['ready-to-submit'] == "true" %}
                               <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="background-color:#bbd4ea">Not yet started</strong>
                               {% else %}
                               <strong class="govuk-tag app-task-list__tag" id="submit-pay-status" style="background-color:#ffffff;color:#505a5f">Cannot start yet</strong>
