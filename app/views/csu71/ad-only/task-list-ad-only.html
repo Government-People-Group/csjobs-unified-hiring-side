@@ -297,6 +297,23 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                                       <li class="app-task-list__item">
                                         <span class="app-task-list__task-name">
+                                          <a class="govuk-link govuk-link--no-visited-state" href="provide-assessment-methods" aria-describedby="eligibility-status">
+                                            Provide assessment methods
+                                          </a>
+                                        </span>
+
+
+                                        {% if data['selection-methods-complete'] == "true" %}
+                                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status" style="background-color:#ffffff">Completed</strong>
+                                        {% else %}
+
+                                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="background-color:#bbd4ea">Not yet started</strong>
+                                        {%endif%}
+
+                                      </li>
+
+                                      <li class="app-task-list__item">
+                                        <span class="app-task-list__task-name">
                                           <a class="govuk-link govuk-link--no-visited-state" href="pick-criteria-type" aria-describedby="eligibility-status">
                                             Pick selection criteria
                                           </a>

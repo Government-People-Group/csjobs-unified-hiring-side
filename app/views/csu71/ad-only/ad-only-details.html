@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+  {% block beforeContent %}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+
+    {% endblock %}
+
+
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+
+  select {
+width:400px;
+
+
+
+  }
+</style>
+
+<form class="form" action="summary-section-1" method="post" novalidate>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="event-name">
+            URL for existing advert
+          </label>
+        </h1>
+        <div id="event-name-hint" class="govuk-hint">
+          Blah blah
+        </div>
+        <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="ad-only-url" type="text" aria-describedby="event-name-hint">
+      </div><br><br>
+
+      <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h2 class="govuk-fieldset__heading">
+          Do you want to pull the above advert's contents into this campaign?
+        </h2>
+      </legend>
+      <div id="changedName-hint" class="govuk-hint">
+        This will only pull in blah blah and must be in the correct format blah-de-blah blah.
+      </div>
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="ad-only" name="ad-only-parse" type="radio" value="yes~/csu71/ad-only/ad-only-parse-review">
+          <label class="govuk-label govuk-radios__label" for="changedName">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="ad-only-2" name="ad-only-parse" type="radio" value="no~/csu71/ad-only/summary-section-1">
+          <label class="govuk-label govuk-radios__label" for="changedName-2">
+            No
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+
+
+  <button class="govuk-button" data-module="govuk-button">Continue</button>
+  </div>
+
+
+  </form>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+    {% endblock %}
