@@ -38,19 +38,28 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
     <h2 class="govuk-heading-m">Locations</h2>
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Based in the UK</dt>
-        <dd class="govuk-summary-list__value">{{ data['ussk']}}</dd>
-        <dd class="govuk-summary-list__actions"><a href="locations?edit2=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Office-based or remote?</dt>
+        <dt class="govuk-summary-list__key">Role location</dt>
         <dd class="govuk-summary-list__value">{{ data['uk']}}</dd>
         <dd class="govuk-summary-list__actions"><a href="locations?edit2=true">Change<span class="govuk-visually-hidden"> grade</span></a></dd>
       </div>
-      {% if  data['uk'] !== "Remote" %}
-      {% include '/csu71/includes/location-reveal.html' %}
-      {% else %}
-      {% endif %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Vacancy locations</dt>
+        <dd class="govuk-summary-list__value">Newcastle, Washington, Ashington, Darlington</dd>
+        <dd class="govuk-summary-list__actions"><a href="locations?edit2=true">Change<span class="govuk-visually-hidden"> grade</span></a></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Location variations</dt>
+        <dd class="govuk-summary-list__value">Newcastle - {% if data['working-pattern'].length > 0 %}
+        {% for items in data['moreDetail'] | slice(1) %}
+
+          {% for item in items %}
+          {{ item }}
+          {% endfor %}
+
+        {% endfor %}
+        {% endif %}</dd>
+        <dd class="govuk-summary-list__actions"><a href="locations?edit2=true">Change<span class="govuk-visually-hidden"> grade</span></a></dd>
+      </div>
     </dl><br>
 
     <h2 class="govuk-heading-m">Contract</h2>
@@ -67,13 +76,12 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
           {% if data['working-pattern'].length > 0 %}
           {% for items in data['working-pattern'] | slice(1) %}
-          <ul class="govuk-list govuk-list--bullet {{ loop.index }}">
+
             {% for item in items %}
-            <li>{{ item }}</li>
+            {{ item }}
             {% endfor %}
-          </ul>
+
           {% endfor %}
-          {% else %}
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions"><a href="contract-details?edit4=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
@@ -85,7 +93,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Salary</dt>
-        <dd class="govuk-summary-list__value">£{{ data['cost']}} per annum</dd>
+        <dd class="govuk-summary-list__value">£{{ data['cost']}} to £{{data['costmax']}} per annum</dd>
         <dd class="govuk-summary-list__actions"><a href="grades?edit5=true">Change<span class="govuk-visually-hidden"> department</span></a></dd>
       </div>
       {% if  data['allowances'] == "yes" %}
@@ -120,7 +128,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Clearance required </dt>
-        <dd class="govuk-summary-list__value">{{ data['bpss-correct']}}</dd>
+        <dd class="govuk-summary-list__value">Developed Vetting (DV)</dd>
         <dd class="govuk-summary-list__actions"><a href="reserved-status">Change<span class="govuk-visually-hidden"> profession</span></a></dd>
       </div>
     </dl>
@@ -133,7 +141,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
       {{ govukButton({
         text: "Continue to next task (Advert setup)",
         classes: "govuk-button--secondary",
-        href: "campaign-dates"
+        href: "campaign-dates?contract-info-complete=true"
       }) }}
     </form>
 

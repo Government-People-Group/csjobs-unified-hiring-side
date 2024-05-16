@@ -64,12 +64,12 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
   <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Your vacancy has been created
+      Success
     </h2>
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-
+Your vacancy has been created.
     </h3>
     <p class="govuk-body">Complete the rest of this task list blah blah.</p>
   </div>
@@ -97,7 +97,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
           <div class="govuk-grid-row">
              <div class="govuk-grid-column-three-quarters">
 
-<p class="govuk-body-m govuk-!-margin-bottom-9">Last modified on <strong  id="lastEdit">14 May 2024</strong></p>
+<p class="govuk-body-m govuk-!-margin-bottom-9">Last modified on <strong  id="lastEdit">30 May 2024</strong></p>
 
 {% if data['recruitment-channels-complete'] == 'true' %}
     <p class="govuk-body govuk-!-margin-top-3" style="margin-bottom:30px"><strong>Vacancy incomplete </strong>-  you have completed 18 of 19 sections<br><progress id="file" value="95" max="100""> 59% </progress></p>
@@ -312,6 +312,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
                                       </li>
 
+{% if data['typed-assessment'] != "true" %}
                                       <li class="app-task-list__item">
                                         <span class="app-task-list__task-name">
                                           <a class="govuk-link govuk-link--no-visited-state" href="pick-criteria-type" aria-describedby="eligibility-status">
@@ -380,6 +381,7 @@ Create a job – Civil service jobs – GOV.UK Prototype Kit
 
 
                                       </li>
+                                      {% endif %}
 
                                       <li class="app-task-list__item">
 

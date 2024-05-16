@@ -38,6 +38,11 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Preferred launch date</dt>
+        <dd class="govuk-summary-list__value">{{ data['day']}}</dd>
+        <dd class="govuk-summary-list__actions"><a href="about-the-role?edit9=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+      </div>
+      <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Person specification</dt>
         <dd class="govuk-summary-list__value">{{ data['person-spec'] | truncate(150)}}</dd>
         <dd class="govuk-summary-list__actions"><a href="about-the-role?edit9=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
@@ -55,12 +60,12 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 <form action="task-list-ad-only" method="post" novalidate>
   <input type="hidden" name="advert-setup-complete" value="true">
-  
+
   <button type="submit" class="govuk-button" data-module="govuk-button">Save and return to tasklist</button>
   {{ govukButton({
     text: "Continue to next task (Sifting and selection methods)",
     classes: "govuk-button--secondary",
-    href: "pick-criteria-type"
+    href: "provide-assessment-methods?advert-setup-complete=true"
   }) }}
 </form>
 

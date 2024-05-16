@@ -42,6 +42,20 @@ width:400px;
       </div>
 </div>
 
+{{ govukInput({
+label: {
+text: "Subtitle",
+classes: "govuk-label--s",
+isPageHeading: false
+},
+hint: {
+  text: "(Optional) Use this to help a candidate see which business area the job is in. For example, 'Immigration and Borders'."
+},
+classes: "govuk-input--width-20",
+id: "subtitle",
+name: "subtitle"
+}) }}
+
 
 <div class="govuk-!-margin-bottom-6">
       {{ govukSelect({
@@ -288,12 +302,12 @@ width:400px;
                     },
                     items: [
                       {
-                        value: "yes",
+                        value: "Yes",
                         checked: checked("reserved-status","yes"),
                         text: "Yes, this vacancy is reserved"
                       },
                       {
-                        value: "no",
+                        value: "No",
                         checked: checked("reserved-status","no"),
                         text: "No, this vacancy is not reserved"
                       },

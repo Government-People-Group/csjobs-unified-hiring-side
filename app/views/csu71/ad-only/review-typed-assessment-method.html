@@ -12,7 +12,7 @@
 <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
 
 
-<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Contract information</span>
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Selection criteria and assessment methods</span>
 
     <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
 
@@ -30,32 +30,88 @@
 
 {% block content %}
 
-<form class="form" action="pre-sift-questions" method="post">
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+      <span class="govuk-caption-xl">Summary</span>
+      <h1 class="govuk-heading-xl">Selection criteria and assessment methods</h1>
 
-      <h1 class="govuk-heading-xl" >
-        Review your assessment methods
-      </h1>
-      <p class="govuk-body-l govuk-!-margin-bottom-3">Review how you will assess candidates at sift and interview.</p>
+      <h2 class="govuk-heading-m">Basic details</h2>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Job title</dt>
+          <dd class="govuk-summary-list__value">Administrative Officer</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+        </div>
+        {% if data['subtitle']%}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Subtitle</dt>
+          <dd class="govuk-summary-list__value">{{ data['subtitle'] }}</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> subtitle</span></a></dd>
+        </div>
+        {% endif %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Grade</dt>
+          <dd class="govuk-summary-list__value">{{ data['grade']}}</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> grade</span></a></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Profession</dt>
+          <dd class="govuk-summary-list__value">{{ data['proff']}}</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details">Change<span class="govuk-visually-hidden"> cabinet office role?</span></a></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Department</dt>
+          <dd class="govuk-summary-list__value">Department for Work and Pensions (DWP) </dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> department</span></a></dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Reserved status</dt>
+          <dd class="govuk-summary-list__value">{{ data['reserved-status']|default("No, this vacancy is not reserved")}}</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> number of posts availables</span></a></dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Number of posts availables</dt>
+          <dd class="govuk-summary-list__value">{{ data['num-posts']|default("1") }}</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> number of posts availables</span></a></dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Advert-only campaign</dt>
+          <dd class="govuk-summary-list__value">{{ data['ad-only']}}</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> number of posts availables</span></a></dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Existing ad URL</dt>
+          <dd class="govuk-summary-list__value">{{ data['ad-only-url']}}</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> number of posts availables</span></a></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Use existing add contents?</dt>
+          <dd class="govuk-summary-list__value">{{ data['ad-only-parse']}}</dd>
+          <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> number of posts availables</span></a></dd>
+        </div>
+      </dl><br><br>
 
 
 
 
-  
-    <!-- <p class="govuk-body-m" style="font-size:20px;line-height:1.6"><strong>77% of online jobsite users typically have a 'first look' at a job ad using their phone, and on average, spend just 11 seconds on the page.</strong></p>
-    <p class="govuk-body-s ">Source: Civil Service Jobs (2023), Cabinet Office.</p> -->
 
-    {{ govukButton({
-      text: "Continue"
-    }) }}
+      <form action="task-list-ad-only" method="post" novalidate>
+        <input type="hidden" name="selection-methods-complete" value="true">
+        <input type="hidden" name="typed-assessment" value="true">
+        <input type="hidden" name="show-banner" value="false">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Save and return to tasklist</button>
+        {{ govukButton({
+          text: "Continue to next task (Recruitment channels)",
+          classes: "govuk-button--secondary",
+          href: "approach"
+        }) }}
+      </form>
 
-
-
-  </div>
-  </div>
-
-
-
-
-      {% endblock %}
+    {% endblock %}
