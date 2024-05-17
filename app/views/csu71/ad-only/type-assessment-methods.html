@@ -42,7 +42,7 @@ width:400px;
   }
 </style>
 
-<form class="form" action="review-typed-assessment-method" method="post" novalidate>
+<form class="form" action="pre-sift-questions" method="post" novalidate>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
@@ -53,7 +53,22 @@ width:400px;
           </label>
         </h1>
         <div id="more-detail-hint" class="govuk-hint">
-          Blah blah.
+          In this section you will need to explain how you will assess applications, for example:<br>
+          <ul class="govuk-list govuk-list--bullet" style="color:#505a5f;padding-top:10px">
+            <li>online tests</li>
+            <li>candidate’s personal statement</li>
+            <li>an initial sift on a lead behaviour</li>
+            <li>asking candidates to complete a task or presentation</li>
+          </ul>
+          You could look at your previous campaigns or at similar job adverts to see what’s been used.
+        </div>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            What you write in this section to describe the assessment methods will appear in your advert on Civil Service Jobs.
+          </strong>
         </div>
         <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
       </div>

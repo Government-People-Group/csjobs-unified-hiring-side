@@ -72,9 +72,17 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
   </div>
 </nav>
 
+<br><br>
 
+<form class="form" action="basic-details" method="post">
 
-<div class="govuk-tabs" data-module="govuk-tabs" style="padding-top:70px">
+<button type="submit" class="govuk-button" data-module="govuk-button" style="margin=bottom:0px">
+  Create a new vacancy
+</button>
+
+</form>
+
+<div class="govuk-tabs" data-module="govuk-tabs" style="padding-top:10px">
 <h2 class="govuk-tabs__title">
   Contents
 </h2>
@@ -100,13 +108,7 @@ Home – {{ serviceName }} – GOV.UK Prototype Kit
 <div class="govuk-tabs__panel" id="current">
   <table class="govuk-table" data-module="moj-sortable-table" style="border-collapse:separate;border-spacing:0px 30px">
 
-    <form class="form" action="job-library" method="post">
-
-    <button type="submit" class="govuk-button" data-module="govuk-button" style="margin=bottom:0px">
-      Create new vacancy
-    </button>
-
-    </form>
+    
 
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
