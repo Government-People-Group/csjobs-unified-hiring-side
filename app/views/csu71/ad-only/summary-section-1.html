@@ -75,10 +75,10 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
           <dd class="govuk-summary-list__value">{{ data['ad-only'] | capitalize}}</dd>
           <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> number of posts availables</span></a></dd>
         </div>
-
+  {% if data['external-ad-link']%}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Existing ad URL</dt>
-          <dd class="govuk-summary-list__value">{{ data['ad-only-url']}}</dd>
+          <dd class="govuk-summary-list__value">{{ data['external-ad-link']}}</dd>
           <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> number of posts availables</span></a></dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -86,6 +86,13 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
           <dd class="govuk-summary-list__value">{{ data['ad-only-parse']| capitalize}}</dd>
           <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> number of posts availables</span></a></dd>
         </div>
+ {% else %}
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">Existing ad URL</dt>
+           <dd class="govuk-summary-list__value">Not supplied yet</dd>
+           <dd class="govuk-summary-list__actions"><a href="basic-details?edit1=true">Change<span class="govuk-visually-hidden"> number of posts availables</span></a></dd>
+         </div>
+  {% endif %}
       </dl><br><br>
 
 
