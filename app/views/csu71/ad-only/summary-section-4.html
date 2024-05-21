@@ -56,6 +56,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
     </dl>
 
+  {% if data['assessment-method']!='type' %}
     <h2 class="govuk-heading-l">At Sift</h2>
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
@@ -128,20 +129,18 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 
     </dl>
+    {% endif %}
   </div>
 </div>
 <span class="govuk-caption-l">Next section</span>
-<h2 class="govuk-heading-l">Recruitment channels</h2>
+<h2 class="govuk-heading-l">Check and submit</h2>
 <form action="task-list-ad-only" method="post" novalidate>
 
   <input type="hidden" name="selection-methods-complete" value="true">
+  <input type="hidden" name="ready-to-submit" value="true">
 
   <button type="submit" class="govuk-button" data-module="govuk-button">Save and return to tasklist</button>
-  {{ govukButton({
-    text: "Continue to next task (Recruitment channels)",
-    classes: "govuk-button--secondary",
-    href: "approach"
-  }) }}
+
 </form>
 
 
