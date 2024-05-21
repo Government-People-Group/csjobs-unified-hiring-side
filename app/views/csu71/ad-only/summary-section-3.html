@@ -38,18 +38,38 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Preferred launch date</dt>
-        <dd class="govuk-summary-list__value">{{ data['day']}}</dd>
+        <dt class="govuk-summary-list__key">Campaign dates</dt>
+        <dd class="govuk-summary-list__value">{{ data['launch-day']}}/{{ data['launch-month']}}/{{ data['launch-year']}} to {{ data['end-day']}}/{{ data['end-month']}}/{{ data['end-year']}}</dd>
         <dd class="govuk-summary-list__actions"><a href="about-the-role?edit9=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Person specification</dt>
+        <dt class="govuk-summary-list__key">Main point of contact</dt>
+        <dd class="govuk-summary-list__value">Me</dd>
+        <dd class="govuk-summary-list__actions"><a href="about-the-role?edit9=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Who can apply?</dt>
+        <dd class="govuk-summary-list__value">Everyone</dd>
+        <dd class="govuk-summary-list__actions"><a href="about-the-role?edit9=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">What are you looking for in a candidate?</dt>
         <dd class="govuk-summary-list__value">{{ data['person-spec'] | truncate(150)}}</dd>
         <dd class="govuk-summary-list__actions"><a href="about-the-role?edit9=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Responsibilities</dt>
-        <dd class="govuk-summary-list__value">{{ data['respon']  | truncate(150)}}</dd>
+        <dt class="govuk-summary-list__key">What are the responsibilities of the role?</dt>
+        <dd class="govuk-summary-list__value">{{ data['respon'] | truncate(150)}}</dd>
+        <dd class="govuk-summary-list__actions"><a href="about-the-role?edit9=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">What does the team do?</dt>
+        <dd class="govuk-summary-list__value">{{ data['team-detail']  | truncate(150)}}</dd>
+        <dd class="govuk-summary-list__actions"><a href="about-the-role?edit9=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Supporting links</dt>
+        <dd class="govuk-summary-list__value">{{ data['sinfo1']}}<br>{{ data['sinfo2']}}<br>{{ data['sinfo3']}}</dd>
         <dd class="govuk-summary-list__actions"><a href="about-the-role?edit9=true">Change<span class="govuk-visually-hidden"> job title</span></a></dd>
       </div>
     </dl>
