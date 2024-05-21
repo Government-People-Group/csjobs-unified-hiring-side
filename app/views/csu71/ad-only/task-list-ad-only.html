@@ -231,6 +231,17 @@ Your vacancy has been created.
                         <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="background-color:#bbd4ea">Not yet started</strong>
                         {% endif %}
                       </li>
+                      <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                          <a href="approach" aria-describedby="list-convictions-status">
+                            Who can apply</a>
+                          </span>
+                          {% if data['advert-setup-complete'] == 'true' %}
+                          <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status" style="background-color:#ffffff">Completed</strong>
+                          {% else %}
+                          <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="background-color:#bbd4ea">Not yet started</strong>
+                          {% endif %}
+                        </li>
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
                       <a href="about-the-role" aria-describedby="read-declaration-status">
@@ -437,43 +448,9 @@ Your vacancy has been created.
 
 
 
-                  <h2 class="app-task-list__section">
-                    <span class="app-task-list__section-number">5. </span>Recruitment channels
-                  </h2>
-                  <ul class="app-task-list__items">
-                    <li class="app-task-list__item">
-                      <span class="app-task-list__task-name">
-                        <a href="approach" aria-describedby="company-information-status">
-                          Who can apply
-                        </a>
-                      </span>
-
-                      {% if data['recruitment-channels-complete']=='true' %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status" style="background-color:#ffffff">Completed</strong>
-                      {% else %}
-                      <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="background-color:#bbd4ea">Not yet started</strong>
-                      {% endif %}
-                    </li>
-
-
-                    <li class="app-task-list__item">
-                      <span class="app-task-list__task-name">
-                        <a href="reserve-list" aria-describedby="list-convictions-status">
-                          Reserve list
-                        </a>
-                      </span>
-
-                      {% if data['recruitment-channels-complete']=='true' %}
-                      <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status" style="background-color:#ffffff">Completed</strong>
-                      {% else %}
-                      <strong class="govuk-tag  app-task-list__tag" id="financial-evidence-status" style="background-color:#bbd4ea">Not yet started</strong>
-                      {% endif %}
-                    </li>
-
-                  </ul>
 
                   <h2 class="app-task-list__section">
-                    <span class="app-task-list__section-number">6. </span>Check and submit
+                    <span class="app-task-list__section-number">5. </span>Check and submit
                   </h2>
                   <ul class="app-task-list__items">
 
