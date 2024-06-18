@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+</div> -->
+<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Advert setup</span>
+
+<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8;padding-left:8px;padding-right:8px" href="task-list-ad-only"><strong>Return to task list</strong></a></span>
+
+</div>
+
+</div>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="about-the-role" method="post">
+
+      {{ govukRadios({
+        idPrefix: "who-can-apply",
+        name: "who-can-apply",
+        fieldset: {
+          legend: {
+            text: "Who can apply?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+        {
+          value: "Everyone",
+          text: "Everyone",
+          checked: true,
+          checked: checked("who-can-apply","External"),
+          hint: {
+            text: "Everyone will be able to see and apply for this vacancy, including external candidates and existing civil servants."
+          }
+        },
+        {
+          value: "Across Government",
+          text: "Across Government",
+          checked: checked("who-can-apply","Across Government"),
+          hint: {
+            text: "Only civil servants will be able to see and apply for this vacancy."
+          }
+        },
+        {
+          value: "Internal, to your department",
+          text: "Internal, to your department",
+          checked: checked("who-can-apply","Internal, to your department"),
+          hint: {
+            text: "Only employees in your departmental group can see and apply for this vacancy."
+          }
+        },
+        {
+          value: "Managed moves",
+          text: "Managed moves",
+          checked: checked("who-can-apply","Managed moves"),
+          hint: {
+            text: "This is for managed moves, such as redeployment."
+          }
+        }
+        ]
+      }) }}
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}

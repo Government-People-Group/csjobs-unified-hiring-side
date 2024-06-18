@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Job campaign submitted for approval</h1>
+        <div style="font-size:34px"class="govuk-panel__body"><strong style="font-size:38px">{{ data['temp-copy-input-autocomplete']|default("Administrative Officer") }} </strong>(4001891)<BR>{{ data['grade']|default("Senior Executive Officer")}}
+
+          <!-- {{data['temp-copy-input-autocomplete']|default("Policy Adviser")}} (1001334)<BR>{{ data['grade']}} <br><strong> </strong> -->
+        </div>
+      </div>
+
+
+
+      <h2 class="govuk-heading-l govuk-!-margin-top-6">What happens next</h2>
+      <p class="govuk-body-m">Your job campaign has been sent to Government Recruitment Service (GRS). They will:</p>
+      <p class="govuk-body">You can buy:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>quality check your campaign to make sure it follows the <a href="">Civil Service Commission’s recruitment principles</a>.
+</li>
+        <li>contact you if they need more information or to tell you their checks are complete</li>
+      </ul>
+
+        <p class="govuk-body-m"><strong>You will be able to publish your campaign once GRS quality checks are complete.</strong></p>
+    </div>
+  </div><br>
+
+
+  <form action="dashboard-post-submit" method="post" novalidate>
+    <input type="hidden" name="advert-setup-complete" value="true">
+    <input type="hidden" name="contract-info-complete" value="true">
+    <input type="hidden" name="selection-methods-complete" value="true">
+    <input type="hidden" name="show-banner" value="false">
+    <button type="submit" class="govuk-button" data-module="govuk-button">Return to your dashboard</button>
+    {{ govukButton({
+      text: "Go back to tasklist for this campaign",
+      classes: "govuk-button--secondary",
+      href: "task-list-ad-only"
+    }) }}
+  </form>
+
+{% endblock %}

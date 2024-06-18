@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+  {% block beforeContent %}
+  <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+    <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
+      </div> -->
+  <span style="float:left;margin-top:10px;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-m">Check and submit</span>
+
+      <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+        <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="task-list-ad-only"><strong>Return to task list</strong></a></span>
+
+      </div>
+
+  </div>
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Submit your job advert
+      </h1>
+    </legend>
+    <div id="waste-hint" class="govuk-hint">
+      When you submit your job campaign, Government Recruitment Services (GRS) will carry out a final quality check, then confirm when your advert is published.
+    </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          I confirm that I have checked my job advert and want to submit it for final checks before it goes live
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+
+<form action="confirmation" method="post" novalidate>
+            <button class="govuk-button" data-module="govuk-button">Submit campaign for approval</button>
+          </form>
+
+
+        </div>
+      </div>
+      {% endblock %}

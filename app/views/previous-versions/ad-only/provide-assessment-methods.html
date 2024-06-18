@@ -1,0 +1,100 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+  {% block beforeContent %}
+  <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+    <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Selection criteria and assessment methods</span>
+
+    <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+      <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="task-list-ad-only"><strong>Return to task list</strong></a></span>
+
+    </div>
+
+  </div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+
+  select {
+width:400px;
+
+
+
+  }
+</style>
+
+<form class="form" action="pick-selection-criteria" method="post" novalidate>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          How do you want to provide assessment methods?
+        </h1>
+      </legend>
+      <div id="signIn-hint" class="govuk-hint">
+        Choose a way to include details in your job advert of the assessment methods for this campaign.
+      </div><br>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="signIn" name="assessment-method" type="radio" value="type~/csu71/ad-only/type-assessment-methods" aria-describedby="signIn-item-hint">
+          <label class="govuk-label govuk-radios__label" for="signIn">
+            I will type them into a textbox
+          </label>
+          <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+            Type or copy and paste the assessment methods you will use into a textbox.
+          </div>
+        </div><br>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="signIn-2" name="assessment-method" type="radio" value="success-profiles~/csu71/ad-only/pick-criteria-type" aria-describedby="signIn-2-item-hint">
+          <label class="govuk-label govuk-radios__label" for="signIn-2">
+            I will use the success profiles method
+          </label>
+          <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+            Select the behaviours, experience, strengths and, or skills you will assess for this campaign.
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+
+
+  <button class="govuk-button" data-module="govuk-button">Continue</button>
+  </div>
+
+
+  </form>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+    {% endblock %}

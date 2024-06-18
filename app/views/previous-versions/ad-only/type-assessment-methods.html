@@ -1,0 +1,94 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+
+  {% block beforeContent %}
+  <div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
+
+    <span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Selection criteria and assessment methods</span>
+
+    <div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
+
+
+      <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="task-list-ad-only"><strong>Return to task list</strong></a></span>
+
+    </div>
+
+  </div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
+
+
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+
+  select {
+width:400px;
+
+
+
+  }
+</style>
+
+<form class="form" action="pre-sift-questions" method="post" novalidate>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="more-detail">
+            Describe how you will assess candidates
+          </label>
+        </h1>
+        <div id="more-detail-hint" class="govuk-hint">
+          In this section you will need to explain how you will assess applications, for example:<br>
+          <ul class="govuk-list govuk-list--bullet" style="color:#505a5f;padding-top:10px">
+            <li>online tests</li>
+            <li>candidate’s personal statement</li>
+            <li>an initial sift on a lead behaviour</li>
+            <li>asking candidates to complete a task or presentation</li>
+          </ul>
+          You could look at your previous campaigns or at similar job adverts to see what’s been used.
+        </div>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            What you write in this section to describe the assessment methods will appear in your advert on Civil Service Jobs.
+          </strong>
+        </div>
+        <textarea class="govuk-textarea" id="more-detail" name="typed-assessment" rows="5" aria-describedby="more-detail-hint"></textarea>
+      </div>
+
+  <button class="govuk-button" data-module="govuk-button">Continue</button>
+  </div>
+
+
+  </form>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+    {% endblock %}
