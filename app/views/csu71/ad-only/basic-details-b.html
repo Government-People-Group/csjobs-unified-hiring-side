@@ -1,0 +1,528 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+  {% block beforeContent %}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+
+    {% endblock %}
+
+
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+
+  select {
+width:400px;
+  }
+
+.govuk-details__summary-text{
+  font-size:1.1rem;
+}
+
+.govuk-details__summary {
+  padding-left:15px;
+}
+
+.govuk-details__summary::before {
+  border-width:4px 0 7px 10px;
+}
+
+.govuk-details[open] > .govuk-details__summary::before {
+  border-width:8px 6px 5px 5px;
+}
+
+.govuk-details__text {
+  border-left:5px solid #fd0;
+}
+
+.govuk-input--width-30{
+  margin-bottom:10px;
+}
+
+.govuk-form-group{
+  margin-bottom:10px;
+}
+</style>
+
+
+
+<form class="form" action="cs-commission" method="post" novalidate>
+  <div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl">About the vacancy</h1>
+      <div class="govuk-!-margin-bottom-6">
+      <div class="govuk-form-group govuk-input--width-30">
+        <label for="autocomplete-default" class="govuk-label govuk-label--s">Job title</label>
+        <div id="jobtitle" class="autocomplete-wrapper"></div>
+      </div>
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help with this field
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">Job titles should be meaningful and tell readers what the role is.</p>
+
+<p class="govuk-body">Capitalise specific job titles. For example, Content Designer or Policy Officer. </p>
+
+<p class="govuk-body">Do not capitalise civil servant or civil servants (not job titles) or general titles like director (unless its a specific job title, for example Deputy Director).</p>
+
+<p class="govuk-body">Seniority sometimes features in job titles. This should be capitalised if it's part of the job title, like Senior User Researcher.</p>
+
+<p class="govuk-body">Job titles do not include:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+<li>department</li>
+<li>grade</li>
+<li>salary or benefits</li>
+<li>full stops</li>
+<li>special characters such as **</li>
+</ul>
+
+<p class="govuk-body">For example, HEO - Performance and improvement lead. Performance and Improvement Lead is the job title. HEO is the grade, which is a different thing.</p>
+
+        </div>
+      </details>
+</div>
+
+
+
+
+
+<div class="govuk-!-margin-bottom-6">
+        {{ govukSelect({
+          id: "dept",
+          name: "dept",
+          label: {
+            text: "Department",
+            classes: "govuk-label--s"
+          },
+          items: [
+      {
+      value: "dwp",
+      text: "DWP",
+      selected: true
+      },
+      {
+      value: "other-dept",
+      text: "Choose another department..."
+      }
+      ]
+      }) }}
+
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help with this field
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+        </div>
+      </details>
+
+      {{ govukSelect({
+                id: "grade",
+                name: "grade",
+                label: {
+                  text: "Grade",
+                  classes: "govuk-label--s"
+                },
+                items: [
+                {
+                  value: "none",
+                  selected: "true",
+                  disabled: "true",
+                  text: "Select grade"
+                },
+
+                {
+                  value: "Administrative Assistant",
+                  text: "Administrative Assistant",
+                  selected: checked("grade","Administrative Assistant")
+                },
+                {
+                  value: "Administrative Officer",
+                  text: "Administrative Officer",
+                  selected: checked("grade","Administrative Officer")
+                },
+                {
+                  value: "Executive Officer",
+                  text: "Executive Officer",
+                  selected: checked("grade","Executive Officer")
+                },
+                {
+                  value: "Higher Executive Officer",
+                  text: "Higher Executive Officer",
+                  selected: checked("grade","Higher Executive Officer")
+                },
+                {
+                  value: "Senior Executive Officer",
+                  text: "Senior Executive Officer",
+                  selected: checked("grade","Senior Executive Officer")
+                },
+                {
+                  value: "Grade 7",
+                  text: "Grade 7",
+                  selected: checked("grade","Grade 7")
+                },
+                {
+                  value: "Grade 6",
+                  text: "Grade 6",
+                  selected: checked("grade","Grade 6")
+                }
+                ]
+              }) }}
+
+              <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Help with this field
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+                </div>
+              </details>
+
+              </div>
+
+<div class="govuk-!-margin-bottom-6" style="">
+
+              {{ govukSelect({
+                id: "proff",
+                name: "proff",
+                label: {
+                  text: "Profession",
+                  classes: "govuk-label--s"
+                },
+                items: [
+                {
+                  value: "none",
+                  selected: "true",
+                  disabled: "true",
+                  text: "Select profession"
+                },
+                {
+                  value: "Analysis",
+                  text: "Analysis",
+                  selected: checked("proff","Analysis")
+                },
+                {
+                  value: "Commercial and Procurement",
+                  text: "Commercial and Procurement",
+                  selected: checked("proff","Commercial and Procurement")
+                },
+                {
+                  value: "Corporate Finance",
+                  text: "Corporate Finance",
+                  selected: checked("proff","Corporate Finance")
+                },
+                {
+                  value: "Communications",
+                  text: "Communications",
+                  selected: checked("proff","Communications")
+                },
+                {
+                  value: "Counter Fraud",
+                  text: "Counter Fraud",
+                  selected: checked("proff","Counter Fraud")
+                },
+                {
+                  value: "Digital, Data and Technology",
+                  text: "Digital, Data and Technology",
+                  selected: checked("proff","Digital, Data and Technology")
+                },
+                {
+                  value: "Government Economic Service",
+                  text: "Government Economic Service",
+                  selected: checked("proff","Government Economic Service")
+                },
+                {
+                  value: "Government Social Research",
+                  text: "Government Social Research",
+                  selected: checked("proff","Government Social Research")
+                },
+                {
+                  value: "Finance",
+                  text: "Finance",
+                  selected: checked("proff","Finance")
+                },
+                {
+                  value: "Human Resources",
+                  text: "Human Resources",
+                  selected: checked("proff","Human Resources")
+                },
+                {
+                  value: "Intelligence Analysis",
+                  text: "Intelligence Analysis",
+                  selected: checked("proff","Intelligence Analysis")
+                },
+                {
+                  value: "Internal Audit",
+                  text: "Internal Audit",
+                  selected: checked("proff","Internal Audit")
+                },
+                {
+                  value: "International Trade and Negotiation",
+                  text: "International Trade and Negotiation",
+                  selected: checked("proff","International Trade and Negotiation")
+                },
+                {
+                  value: "Knowledge and Information Management",
+                  text: "Knowledge and Information Management",
+                  selected: checked("proff","Knowledge and Information Management")
+                },
+                {
+                  value: "Legal",
+                  text: "Legal",
+                  selected: checked("proff","Legal")
+                },
+                {
+                  value: "Medical",
+                  text: "Medical",
+                  selected: checked("proff","Medical")
+                },
+                {
+                  value: "Occupational Psychology",
+                  text: "Occupational Psychology",
+                  selected: checked("proff","Occupational Psychology")
+                },
+                {
+                  value: "Operational Delivery",
+                  text: "Operational Delivery",
+                  selected: checked("proff","Operational Delivery")
+                },
+                {
+                  value: "Operational Research",
+                  text: "Operational Research",
+                  selected: checked("proff","Operational Research")
+                },
+                {
+                  value: "Policy",
+                  text: "Policy",
+                  selected: checked("proff","Policy")
+                },
+                {
+                  value: "Project Management and Delivery",
+                  text: "Project Management and Delivery",
+                  selected: checked("proff","Project Management and Delivery")
+                },
+                {
+                  value: "Property",
+                  text: "Property",
+                  selected: checked("proff","Property")
+                },
+                {
+                  value: "Science and Engineering",
+                  text: "Science and Engineering",
+                  selected: checked("proff","Science and Engineering")
+                },
+                {
+                  value: "Security",
+                  text: "Security",
+                  selected: checked("proff","Security")
+                },
+                {
+                  value: "Tax",
+                  text: "Tax",
+                  selected: checked("proff","Tax")
+                },
+                {
+                  value: "Veterinary",
+                  text: "Veterinary",
+                  selected: checked("proff","Veterinary")
+                },
+                {
+                  value: "Other",
+                  text: "Other",
+                  selected: checked("proff","Other")
+                }
+                ]
+              }) }}
+
+              <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Help with this field
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+                </div>
+              </details>
+
+
+              <a class="govuk-link govuk-link--no-visited-state govuk-!-margin-bottom-3" href="#">Add a second profession</a>
+
+
+              </div>
+
+              <div><br>
+
+
+                {{ govukSelect({
+                  id: "uk-nat",
+                  name: "uk-nat",
+                  label: {
+                    text: "Reserved for UK nationals only",
+                    classes: "govuk-label--s"
+                  },
+                  items: [
+                  {
+                    value: "none",
+                    selected: "true",
+                    disabled: "true",
+                    text: "Select whether reserved or not"
+                  },
+                    {
+                    value: "no",
+                    text: "No"
+                    },
+                    {
+                    value: "yes",
+                    text: "Yes"
+                    }
+                    ]
+                    }) }}
+
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with this field
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+                      </div>
+                    </details>
+
+
+
+
+
+
+
+                    <label class="govuk-label govuk-label--s" for="event-name" >
+                      Number of posts for this vacancy
+                    </label>
+
+                    <div class="govuk-form-group govuk-input--width-5">
+
+                  <input class="govuk-input" id="event-name" name="eventName" type="text">
+                  </div>
+
+                  <p class="govuk-body" style="margin-bottom:0px">or</p>
+
+                  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+
+      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation">
+            There is no set number of posts
+          </label>
+
+        </div>
+
+      </div><br><br>
+
+    </fieldset>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Help with this field
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        For example, if you are running a rolling campaign which has a closing date rather than a number of posts. You can enter the closing date on the next screen.
+      </div>
+    </details>
+  </div>
+
+{{ govukSelect({
+  id: "location",
+  name: "location",
+  label: {
+    classes: "govuk-label--s",
+    text: "Hide number of vacancies on job ad"
+  },
+  items: [
+    {
+      value: "choose",
+      text: "Select whether to hide number of posts",
+      disabled: true,
+      selected: true
+    },
+    {
+      value: "no",
+      text: "No"
+    },
+    {
+      value: "yes",
+      text: "Yes"
+    }
+  ]
+}) }}
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Help with this field
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    For example, if you are running a rolling campaign which has a closing date rather than a number of posts. You can enter the closing date on the next screen.
+  </div>
+</details>
+
+</div><br><br><br>
+
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </div></div>
+      <script src="/public/javascripts/accessible-autocomplete.js"></script>
+      <script src="/public/javascripts/jobtitle.js"></script>
+
+      <script src="/public/javascripts/dept.js"></script>
+
+      <input type="hidden" name="createVacancy" value="true">
+
+
+    </form>
+
+    <script>
+    function myFunction(currentID) {
+      var currentID = document.getElementById(currentID);
+      if (currentID.style.display === "none") {
+        currentID.style.display = "block";
+      } else {
+        currentID.style.display = "none";
+      }
+    }
+
+    function closeHelp(currentID) {
+      var currentID = document.getElementById(currentID);
+
+        currentID.style.display = "none";
+        event.preventDefault();
+    }
+    </script>
+
+    {% endblock %}
