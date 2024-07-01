@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+  {% endblock %}
+  {% block beforeContent %}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+
+    {% endblock %}
+
+
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+
+  select {
+width:400px;
+
+
+
+  }
+</style>
+
+<form class="form" action="summary-section-1" method="post" novalidate>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Do you want to optimise your job advert?
+        </h1>
+      </legend>
+      <div>
+      <p class="govuk-body">If you select 'yes', we will run your job advert through the Job Advert Optimiser.</p>
+      <p class="govuk-body">This is an AI tool which will check your advert for issues such as:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>gender-biased language</li>
+          <li>blah blah</li>
+        </ul>
+        <div class="govuk-inset-text">
+        It can take up to a 30 seconds for your results to appear.</div>
+      </div><br>
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="ad-only" name="ad-only" type="radio" value="yes~/csu71/ad-only/jao-spinner">
+          <label class="govuk-label govuk-radios__label" for="changedName">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="ad-only-2" name="ad-only" type="radio" value="no~/csu71/ad-only/">
+          <label class="govuk-label govuk-radios__label" for="changedName-2">
+            No
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+
+
+  <button class="govuk-button" data-module="govuk-button">Continue</button>
+  </div>
+
+
+  </form>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+    {% endblock %}
