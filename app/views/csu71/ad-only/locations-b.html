@@ -11,25 +11,12 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 {% block beforeContent %}
 
 <style>
-  #business{
+  #location-picker{
     display:none;
 }
 </style>
 
-<div  style="width:100%;background:#1d70b8;height:45px;border-bottom:0.5px solid #1d70b8;float:left">
 
-  <!-- <div class="govuk-!-margin-top-3" style="float:left;width:40%;margin-left:30px;"><span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="job-library"><strong>Create a new vacancy</strong></a></span>
-</div> -->
-<span style="float:left;padding-left:10px;color:white;font-weight:bold" class="govuk-caption-l">Contract information</span>
-
-<div class="" style="position:relative;float:right;margin-right:20px;margin-top:5px;">
-
-
-  <span class="govuk-body-m" style="background:white;border:1px solid #1d70b8;border-radius:5px;padding:7px"><a class="govuk-link  govuk-link--no-underline govuk-link--no-visited-state" style="color:#1d70b8" href="task-list-ad-only"><strong>Return to task list</strong></a></span>
-
-</div>
-
-</div>
 {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -38,7 +25,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block content %}
 
-<form class="form" action="locations-test" method="post">
+<form class="form" action="contract-details-b" method="post">
 
 <div class="govuk-grid-row">
 
@@ -86,10 +73,12 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
           </div>
         </details><br><br>
 
+</div>
 
+<div class="govuk-grid-row" id="location-picker">
 
         <h1 style="border-bottom:1px solid #1d70b8;padding-bottom:20px" class="govuk-heading-l">Add locations for this role</h1>
-        <form class="form" action="location-specific" method="post">
+
 
 
 
@@ -358,34 +347,10 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
               </div>
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-        <div id='business'>Business Name<br/>&nbsp;
-        <br/>&nbsp;
-            <input type='text' class='text' name='business' value size='20' />
-            <br/>
-        </div>
-
-
 </div>
 
 
-
-
-
-
-
-
-
+</div>
 
 
 
@@ -405,11 +370,11 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
   var elem = document.getElementById("location-type");
   elem.onchange = function(){
     if (this.value == "onsite" || this.value == "hybrid"){
-      var hiddenDiv = document.getElementById("business");
+      var hiddenDiv = document.getElementById("location-picker");
       hiddenDiv.style.display = "block";
     }
     else {
-      var hiddenDiv = document.getElementById("business");
+      var hiddenDiv = document.getElementById("location-picker");
       hiddenDiv.style.display = "none";
     }
   };

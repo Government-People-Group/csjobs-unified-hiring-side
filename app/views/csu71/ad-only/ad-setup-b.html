@@ -1,0 +1,200 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include '/csu71/includes/header.html' %}
+{% endblock %}
+{% block pageTitle %}
+Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+<style>
+  #another, #team-mailbox, {
+    display:none;
+}
+</style>
+
+
+{% block content %}
+<form class="form" action="contact-details" method="post">
+
+<div class="govuk-grid-row  govuk-!-margin-top-3">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl">Advert setup</h1>
+
+
+
+
+<h2 class="govuk-heading-m">Preferred launch date</h2>
+
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+      {{ govukDateInput({
+      id: "launch",
+      namePrefix: "",
+      items: [
+      {
+        classes: "govuk-input--width-2",
+        name: "launch-day",
+        label: "Day",
+        value: data['launch-day']
+      },
+      {
+        classes: "govuk-input--width-2",
+        name: "launch-month",
+        label: "Month",
+        value: data['launch-month']
+      },
+      {
+        classes: "govuk-input--width-4",
+        name: "launch-year",
+        label:"Year",
+        value: data['launch-year']
+      }
+    ]
+  }) }}
+
+      <br>
+
+      <h2 class="govuk-heading-m">Campaign end date</h2>
+
+            {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+            {{ govukDateInput({
+            id: "launch",
+            namePrefix: "",
+            items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "end-day",
+              label: "Day",
+              value: data['end-day']
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "end-month",
+              label: "Month",
+              value: data['end-month']
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "end-year",
+              label:"Year",
+              value: data['end-year']
+            }
+          ]
+        }) }}<br><br>
+
+
+
+
+        <h1 class="govuk-heading-m">Main contact for this vacancy</h1>
+
+
+
+                  {{ govukSelect({
+                    id: "contact",
+                    name: "contact",
+                    hint: {
+                      text: "For those responsible, this will mean receiving and responding to queries from candidates and others involved in the campaign."
+                    },
+                    items: [
+                      {
+                        value: "choose",
+                        text: "Select the main contact for this vacancy",
+                        disabled: true,
+                        selected: true
+                      },
+                      {
+                        value: "me",
+                        text: "Me"
+                      },
+                      {
+                        value: "someone-else",
+                        text: "Someone else"
+                      },
+                      {
+                        value: "me-and-someone-else",
+                        text: "Me and another person share this responsibility"
+                      },
+                      {
+                        value: "team-mailbox",
+                        text: "We use a team mailbox"
+                      }
+                    ]
+                  }) }}
+
+
+                  <div id="another">
+
+                    {{ govukInput({
+                      label: {
+                        text: "What is the other person's name?",
+                        classes: "govuk-label--s",
+                        isPageHeading: false
+                      },
+                      classes: "govuk-input--width-20",
+                      id: "another-name",
+                      name: "another-name",
+                      value: data['another-name']
+                    }) }}
+
+                    {{ govukInput({
+                      label: {
+                        text: "What is the other person's email address?",
+                        classes: "govuk-label--s",
+                        isPageHeading: false
+                      },
+                      classes: "govuk-input--width-20",
+                      id: "another-email",
+                      name: "another-email",
+                      value: data['another-email']
+                    }) }}
+                </div>
+
+                <div id="team-mailbox">
+
+
+
+                {{ govukInput({
+                  label: {
+                    text: "What is the team mailbox's email address?",
+                    classes: "govuk-label--s",
+                    isPageHeading: false
+                  },
+                  classes: "govuk-input--width-20",
+                  id: "team-email",
+                  name: "team-email",
+                  value: data['team-email']
+                }) }}
+                </div>
+
+
+      <button class="govuk-button govuk-!-margin-top-9" data-module="govuk-button">Continue</button>
+
+
+    </form>
+
+
+  </div>
+</div>
+{% endblock %}
+
+<script>
+  var elem = document.getElementById("contact");
+  elem.onchange = function(){
+    if (this.value == "yes"){
+      var hiddenDiv = document.getElementById("allowances-description");
+      hiddenDiv.style.display = "block";
+    }
+    else {
+      var hiddenDiv = document.getElementById("allowances-description");
+      hiddenDiv.style.display = "none";
+    }
+  };
+</script>

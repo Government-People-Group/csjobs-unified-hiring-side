@@ -57,7 +57,7 @@ width:400px;
 
 
 
-<form class="form" action="locations-b" method="post" novalidate>
+<form class="form" action="task-list-ad-only-b" method="post" novalidate>
   <div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds">
 
@@ -495,14 +495,18 @@ width:400px;
 </div><br><br><br>
 
 
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      <button class="govuk-button" data-module="govuk-button">Create this vacancy</button>
+        <input type="hidden" name="show-banner" value="true">
+        <input type="hidden" name="basic-details-complete" value="true">
       </div></div>
+
+
       <script src="/public/javascripts/accessible-autocomplete.js"></script>
       <script src="/public/javascripts/jobtitle.js"></script>
 
       <script src="/public/javascripts/dept.js"></script>
 
-      <input type="hidden" name="createVacancy" value="true">
+
 
 
     </form>

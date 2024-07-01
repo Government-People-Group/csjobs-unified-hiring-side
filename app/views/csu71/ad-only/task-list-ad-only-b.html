@@ -106,7 +106,7 @@ Your vacancy has been created.
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">1.
-              <a href="how-many-posts" aria-describedby="eligibility-status">
+              <a href="basic-details-b" aria-describedby="eligibility-status">
               About the vacancy
               </a>
             </span>
@@ -114,11 +114,11 @@ Your vacancy has been created.
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">2.
-              <a href="locations" aria-describedby="list-convictions-status">
-                Contract information</a>
+              <a href="locations-b" aria-describedby="list-convictions-status">
+                Location and contract details</a>
               </span>
 
-              {% if data['contract-info-complete'] == 'true' %}
+              {% if data['contract-details-complete'] == 'true' %}
               <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status" style="background-color:#ffffff">Completed</strong>
               {% else %}
               <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="background-color:#bbd4ea">Not yet started</strong>
@@ -126,7 +126,7 @@ Your vacancy has been created.
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">3.
-                <a href="campaign-dates" aria-hidden="list-convictions-status">
+                <a href="ad-setup-b" aria-hidden="list-convictions-status">
                   Advert setup
                 </span>
                 {% if data['advert-setup-complete'] == 'true' %}
@@ -137,7 +137,7 @@ Your vacancy has been created.
               </li>
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">4.
-                  <a href="preview-job-ad" aria-hidden="list-convictions-status" target="_blank">
+                  <a href="preview-job-ad-b" aria-hidden="list-convictions-status" target="_blank">
                     Check and submit
                   </span>
 
