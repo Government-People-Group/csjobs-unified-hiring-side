@@ -129,7 +129,7 @@ Your vacancy has been created.
                 <a href="ad-setup-b" aria-hidden="list-convictions-status">
                   Advert setup
                 </span>
-                {% if data['advert-setup-complete'] == 'true' %}
+                {% if data['ad-setup-complete'] == 'true' %}
                 <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status" style="background-color:#ffffff">Completed</strong>
                 {% else %}
                 <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="background-color:#bbd4ea">Not yet started</strong>
@@ -137,11 +137,16 @@ Your vacancy has been created.
               </li>
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">4.
-                  <a href="preview-job-ad-b" aria-hidden="list-convictions-status" target="_blank">
+                  <a href="summary-b" aria-hidden="list-convictions-status" target="_blank">
                     Check and submit
                   </span>
 
-                  <strong class="govuk-tag app-task-list__tag" id="submit-pay-status" style="background-color:#ffffff;color:#505a5f">Cannot start yet</strong>
+                  {% if data['ad-setup-complete'] == 'true' %}
+                  <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="background-color:#bbd4ea">Not yet started</strong>
+                  {% else %}
+                  <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="background-color:#ffffff">Cannot start yet</strong>
+                  {% endif %}
+
 
                 </li>
         </ul>

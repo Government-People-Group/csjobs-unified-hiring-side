@@ -14,6 +14,10 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
   #location-picker{
     display:none;
 }
+
+.govuk-details__text {
+  border-left:5px solid #fd0;
+}
 </style>
 
 
@@ -65,7 +69,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
         <details class="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              Help with this field
+              Help with these options
             </span>
           </summary>
           <div class="govuk-details__text">
@@ -252,7 +256,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
                   <div id="head" style="display:none"><h3  class="govuk-heading-m"><span style="border-bottom:1px solid #1d70b8">Vacancy locations</span></h3>
                   </div>
-                  <dl class="govuk-summary-list govuk-summary-list--no-border" style="">
+                  <dl class="govuk-summary-list govuk-summary-list--no-border" id="location-table" style="display:none">
 
                     <div class="govuk-summary-list__row"  style=";">
                       <dt class="govuk-summary-list__key" style="height:90px;">
@@ -308,6 +312,17 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
 
               </div>
+
+              <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Help with these choices
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  For example, if you are running a rolling campaign which has a closing date rather than a number of posts. You can enter the closing date on the next screen.
+                </div>
+              </details>
               <div id="bulk" style="display:none;">
 
 
@@ -350,6 +365,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 </div>
 
 
+
 </div>
 
 
@@ -385,6 +401,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
     var loadListArray = JSON.parse(window.sessionStorage.getItem("locations"));
     console.log(loadListArray)
     showDiv('head');
+    showDiv('location-table');
     hideDiv('stored');
     hideDiv('or')
     hideDiv('upload');
@@ -455,6 +472,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
       dlinkconten3.innerHTML = "<a class='govuk-link govuk-link--no-underline govuk-link govuk-link--no-visited-state' id='3' onclick='kill(this.id)' href='#'> Delete</a>";
 
       showDiv('head');
+      showDiv('location-table');
       hideDiv('stored');
       hideDiv('or')
       hideDiv('upload');
@@ -476,6 +494,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 
   function focusSearch(place){
     showDiv('head');
+    showDiv('location-table');
     hideDiv('stored');
     hideDiv('or')
     hideDiv('upload');
@@ -555,6 +574,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
       for (var j=0;j<locArray.length;j++){
         count = count+1;
         showDiv('head');
+        showDiv('location-table');
         hideDiv('stored');
         hideDiv('or')
         hideDiv('upload');
@@ -624,6 +644,7 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
     loc.appendChild(loccontent);
     link.appendChild(linkcontent);
     showDiv('head');
+    showDiv('location-table');
     hideDiv('stored');
     hideDiv('or')
     hideDiv('upload');

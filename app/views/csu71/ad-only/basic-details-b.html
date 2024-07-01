@@ -99,7 +99,25 @@ width:400px;
       </details>
 </div>
 
-
+{{ govukInput({
+label: {
+text: "Subtitle (optional)",
+classes: "govuk-label--s",
+isPageHeading: false
+},
+classes: "govuk-input--width-20",
+id: "subtitle",
+name: "subtitle"
+}) }}<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Help with this option
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    Use this to help a candidate see which business area the job is in. For example, 'Immigration and Borders'.
+  </div>
+</details><br><br>
 
 
 
@@ -128,11 +146,12 @@ width:400px;
       <details class="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            Help with this field
+            Help with this option
           </span>
         </summary>
         <div class="govuk-details__text">
-          We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+          The department should be pre-populated with the department you work for. If correct, you do not need to change anything.<br><br>
+          If you need to choose another department, select the 'Choose another department' option.
         </div>
       </details>
 
@@ -192,7 +211,7 @@ width:400px;
               <details class="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
-                    Help with this field
+                    Choosing the right grade
                   </span>
                 </summary>
                 <div class="govuk-details__text">
@@ -359,7 +378,7 @@ width:400px;
               <details class="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
-                    Help with this field
+                    Choosing a profession
                   </span>
                 </summary>
                 <div class="govuk-details__text">
@@ -404,7 +423,7 @@ width:400px;
                     <details class="govuk-details">
                       <summary class="govuk-details__summary">
                         <span class="govuk-details__summary-text">
-                          Help with this field
+                          About reserved posts
                         </span>
                       </summary>
                       <div class="govuk-details__text">
@@ -447,7 +466,7 @@ width:400px;
     <details class="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
-          Help with this field
+          Help with these options
         </span>
       </summary>
       <div class="govuk-details__text">
@@ -461,7 +480,7 @@ width:400px;
   name: "location",
   label: {
     classes: "govuk-label--s",
-    text: "Hide number of vacancies on job ad"
+    text: "Hide number of posts on job ad"
   },
   items: [
     {
@@ -484,7 +503,7 @@ width:400px;
 <details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Help with this field
+      Why would I hide the number of posts?
     </span>
   </summary>
   <div class="govuk-details__text">

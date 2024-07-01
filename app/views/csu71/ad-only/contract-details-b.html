@@ -22,6 +22,10 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
   background-color:#034f91;
 }
 
+.govuk-details__text {
+  border-left:5px solid #fd0;
+}
+
 .govuk-panel__title {
     font-size: 2rem;
     line-height: 1.0416666667;
@@ -104,7 +108,20 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
         checked: checked("contract", "Internship")
       }
     ]
-  }) }}<br><br>
+  }) }}
+
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help with these options
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      For example, if you are running a rolling campaign which has a closing date rather than a number of posts. You can enter the closing date on the next screen.
+    </div>
+  </details>
+
+  <br><br>
   {{ govukCheckboxes({
   id: "working-pattern",
   name: "working-pattern",
@@ -141,6 +158,17 @@ Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
     }
   ]
   }) }}
+
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help with these options
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      For example, if you are running a rolling campaign which has a closing date rather than a number of posts. You can enter the closing date on the next screen.
+    </div>
+  </details>
 
 </div>
 <div class="govuk-grid-column-one-half">
@@ -303,6 +331,17 @@ items: [
     ]
   }) }}
 
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help with this option
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      For example, if you are running a rolling campaign which has a closing date rather than a number of posts. You can enter the closing date on the next screen.
+    </div>
+  </details>
+
 
   <div class="govuk-grid-row" id="allowances-description">
 
@@ -317,8 +356,6 @@ items: [
   </div>
   <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
 </div>
-
-
   </div>
 
 <h2 class="govuk-heading-m govuk-!-padding-top-6">Benefits</h2>
@@ -399,13 +436,23 @@ items: [
                   ]
                 }) }}
 
-
+                <details class="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Choosing the right security clearance for your vacancy
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    For example, if you are running a rolling campaign which has a closing date rather than a number of posts. You can enter the closing date on the next screen.
+                  </div>
+                </details>
   </div></div><br><br>
 
 
 
       <button class="govuk-button" data-module="govuk-button">Save and return to tasklist</button>
         <input type="hidden" name="contract-details-complete" value="true">
+        <input type="hidden" name="show-banner" value="false">
 
 
 
