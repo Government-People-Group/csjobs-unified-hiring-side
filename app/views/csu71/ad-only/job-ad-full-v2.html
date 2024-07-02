@@ -22,7 +22,7 @@
 {% block beforeContent %}
 
 {{ govukBackLink({
-  text: "Back",
+  text: "X Close preview",
   href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
@@ -36,6 +36,10 @@
 
 .nav-right{
   float:right;
+}
+
+.govuk-back-link::before {
+  border:none;
 }
 </style>
 

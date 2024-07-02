@@ -84,7 +84,7 @@ Your vacancy has been created.
 
 
 
-     <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">DWP vacancy <strong>4001891</strong></p>
+     <p style="font-size:24px" class="govuk-body-l govuk-!-margin-bottom-1">DfE vacancy <strong>4001891</strong></p>
 
      <p style="font-size:24px;margin-bottom:20px" class="govuk-body-l govuk-!-margin-bottom-1">Grade <strong>Executive Officer (EO)</strong></p>
 
@@ -93,7 +93,7 @@ Your vacancy has been created.
 </div></div>
 
 
-          <h1 style="border-bottom:1px solid #1d70b8;padding-bottom:10px;margin-bottom:30px" class="govuk-heading-xl">Administrative Officer</h1>
+          <h1 style="border-bottom:1px solid #1d70b8;padding-bottom:10px;margin-bottom:30px" class="govuk-heading-xl">Strategy Administrator</h1>
           <div class="govuk-grid-row">
              <div class="govuk-grid-column-three-quarters">
 
@@ -136,11 +136,17 @@ Your vacancy has been created.
                 {% endif %}
               </li>
               <li class="app-task-list__item">
-                <span class="app-task-list__task-name">4.
-                  <a href="summary-b" aria-hidden="list-convictions-status" target="_blank">
-                    Check and submit
+                {% if data['ad-setup-complete'] !='true' %}
+                <span class="app-task-list__task-name" style="color:#000000;padding-right:2px">4.
+                  <a href="summary-b" aria-hidden="list-convictions-status" style="text-decoration:none; color:#000000;" >
+                     Check and submit
                   </span>
-
+                  {% else %}
+                  <span class="app-task-list__task-name">4.
+                    <a href="summary-b" aria-hidden="list-convictions-status">
+                       Check and submit
+                    </span>
+                  {% endif %}
                   {% if data['ad-setup-complete'] == 'true' %}
                   <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="background-color:#bbd4ea">Not yet started</strong>
                   {% else %}

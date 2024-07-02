@@ -36,9 +36,23 @@ width:400px;
 }
 </style>
 
-<form class="form" action="summary-section-1" method="post" novalidate>
+<form class="form" action="submit" method="post" novalidate>
   <div class="govuk-grid-row">
     <h1 class="govuk-heading-xl">Optimiser results</h1>
+
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Your update has been saved.
+    </h3>
+    <p class="govuk-body">Make further fixes or select 'I've finished' if you want to ignore the remaining results.</p>
+  </div>
+</div>
 
     <article class="moj-ticket-panel" aria-label="Sub navigation 1">
 
@@ -47,18 +61,22 @@ width:400px;
         <p class="govuk-body">On average, a Civil Service job advert has 43% of it's applications from female candidates. <strong>Your draft advert is predicted to attract only 19%.</strong></p>
         <p class="govuk-body">What you can do:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li class="left-border-green"><strong>Replace gendered pronouns with gender-neutral language</strong> throughout the job description. For example, instead of using "provide mentoring or coaching to team members," use "provide mentorship and guidance to team members."<br><a href="ad-setup-jao-b" class="govuk-link" style="padding-top:10px">Fix this</a></li><br>
           <li class="left-border-green"><strong>Highlight the company's policies and initiatives aimed at promoting gender balance in the workplace</strong>. This can include details about parental leave flexible working arrangements, and career development opportunities for all employees regardless of gender.<br><a href="#" class="govuk-link" style="padding-top:10px">Fix this</a></li><br>
-          <li class="left-border-green"><strong>Include specific actions or initiatives that demonstrate the company's commitment to creating a diverse and inclusive work environment</strong>. For example, mention any programs aimed at attracting women to tech roles, sponsorship opportunities, or employee resource groups focused on diversity and inclusion.<br><a href="#" class="govuk-link" style="padding-top:10px">Fix this</a></li>
+          <li class="left-border-green"><strong>Include specific actions or initiatives that demonstrate the company's commitment to creating a diverse and inclusive work environment</strong>. For example, mention any programs aimed at attracting women to tech roles, sponsorship opportunities, or employee resource groups focused on diversity and inclusion.<br><a href="#" class="govuk-link" style="padding-top:10px">Fix this</a></li><br>
+
         </ul>
 
-      </section>
 
+      </section>
+      <p class="govuk-body" style="padding-left:40px">Already done:<br><br>
+
+
+      <strong>Replace gendered pronouns with gender-neutral language</strong> throughout the job description. For example, instead of using "provide mentoring or coaching to team members," use "provide mentorship and guidance to team members."<br><a href="ad-setup-jao-b" class="govuk-link" style="padding-top:10px">Undo</a></p>
     </article>
 
-  </div>
+  </div><br>
 
-
+<button class="govuk-button" data-module="govuk-button">I've finished</button>
   </form>
 
 
