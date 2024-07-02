@@ -1,0 +1,256 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Civil Service Jobs",
+    serviceUrl: "#",
+    navigationClasses:"nav-right",
+    navigation: [
+      {
+        href: "portal-gds-2",
+        text: "My dashboard"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<style>
+
+.nav-right{
+  float:right;
+}
+</style>
+
+
+
+<br><br>
+
+
+
+  <img src="/public/images/dfe-logo.png" style="min-width:70px;max-width:165px;float:right" alt="Department for Education logo">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <input class="govuk-input govuk-caption-xl" id="event-name" name="eventName" type="text" placeholder="Job title">
+      <input class="govuk-input govuk-caption-xl" id="event-name" name="eventName" type="text" placeholder="Department">
+    </div>
+
+
+
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full" style="padding:20px;background:#F7F7F7;">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+
+
+            {{ govukSummaryList({
+              classes: 'govuk-summary-list--no-border',
+              rows: [
+              {
+                key: {
+                  text: "Salary"
+                },
+                value: {
+                  html: "<input class='govuk-input govuk-input--width-5' id='event-name' name='eventName' type='text' placeholder='Min salary' style='float:left;margin-right:10px'><p style='padding:10px 10px 0px 0px;float:left;'>to</p><input class='govuk-input govuk-input--width-5' id='event-name' name='eventName' type='text' placeholder='Max salary'>"
+                }
+              },
+              {
+                key: {
+                  text: "Location"
+                },
+                value: {
+                  html: "<input class='govuk-input' id='event-name' name='eventName' type='text' placeholder='Location(s)'>"
+                }
+              },
+              {
+                key: {
+                  text: "Job type"
+                },
+                value: {
+                html: "<input class='govuk-input' id='event-name' name='eventName' type='text' placeholder='Contract type and working pattern'>"
+                }
+              },
+              {
+                key: {
+                  text: "Grade"
+                },
+                value: {
+                html: "<input class='govuk-input' id='event-name' name='eventName' type='text'>"
+                }
+              },
+              {
+                key: {
+                  text: "Number of roles"
+                },
+                value: {
+                html: "<input class='govuk-input govuk-input--width-3' id='event-name' name='eventName' type='text'>"
+                }
+              }
+              ]
+            }) }}
+          </div>
+          <div class="govuk-grid-column-one-half">
+
+            <div style="float:left;">
+                <p class="govuk-body-m" style="margin-top:10px; margin-bottom:10px;font-size:1.3rem"><strong style="padding-right:15px">Apply before </strong><input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text" placeholder="Closing time and date"></p>
+                <form class="form" action="sign-in?apply=true" method="post">
+                  <button class="govuk-button govuk-!-margin-top-3 govuk-!-margin-left-0 govuk-!-margin-bottom-3" style="float:left;max-width:100%;min-width:60%; margin-right:8px" data-module="govuk-button">Apply</button>
+                </form>
+                  <button id="but1" style="background:lightgrey;min-width:10%;max-width:100%;" onclick="" class="govuk-button govuk-button--secondary govuk-!-margin-top-3 govuk-!-margin-left-0 govuk-!-margin-bottom-3" data-module="govuk-button">Save this job</button><br><br><br><br><br><br>
+                  <p class="govuk-notification-banner__heading" style="max-width:none;font-size:1.2rem">
+                    We can provide adjustments and support for your application - <a href="#ra-info" class="govuk-link--no-visited-state">find out more</a></p>
+
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+
+    </div><br>
+
+
+
+    <div class="govuk-grid-row govuk-!-margin-top-6">
+      <div class="govuk-grid-column-full">
+        <p class="govuk-body-m">Jump to a section</p>
+        <ul class="govuk-list govuk-list--bullet-" style="font-size:20px">
+
+          <li style="text-align: right;display: inline;"><a href="#key" class="govuk-link--no-visited-state">About the role</a></li>
+          <li style="text-align: right;display: inline;padding:20px;"><a href="#location" class="govuk-link--no-visited-state">Location</a></li>
+          <li style="text-align: right;display: inline;padding:20px;"><a href="#person" class="govuk-link--no-visited-state">What we're looking for</a></li>
+          <li style="text-align: right;display: inline;padding:20px;"><a href="#offer" class="govuk-link--no-visited-state">What we offer</a></li>
+          <li style="text-align: right;display: inline;padding:20px;"><a href="#process" class="govuk-link--no-visited-state">The application process</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <div class="govuk-grid-row govuk-!-margin-top-6">
+      <div class="govuk-grid-column-full">
+
+        <h2 id="key" class="govuk-heading-l">About the role</h2>
+        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="20" aria-describedby="more-detail-hint"></textarea>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+        <h2 id="location" class="govuk-heading-l">Location</h2>
+        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="10" aria-describedby="more-detail-hint"></textarea>
+
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+          <h2 id="person" class="govuk-heading-l">What we're looking for</h2><br>
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="20" aria-describedby="more-detail-hint"></textarea>
+
+        <br>
+
+        <div class="govuk-inset-text">
+          <p class="govuk-body-m">We welcome applications from the following schemes:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="https://www.gov.uk/government/news/making-the-civil-service-a-great-place-to-work-for-veterans" target="_blank" class="govuk-link--no-visited-state">Great Place to work for Veterans</a></li>
+            <li><a href="https://www.civil-service-careers.gov.uk/prison-leaver-recruitment/" target="_blank" class="govuk-link--no-visited-state">Prison leaver recruitment</a></li>
+          </ul>
+
+          <p class="govuk-body-m"><strong>We also welcome applications from anyone who may want reasonable adjustments or support</strong>, whether during the application process itself or if they are offered the job. <a href="#ra-info" class="govuk-link--no-visited-state">There is more information at the bottom of this page</a>.</p>
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+        <h2 id="offer" class="govuk-heading-l">What we offer</h2>
+        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="10" aria-describedby="more-detail-hint"></textarea>
+
+
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+        <h2 id="process" class="govuk-heading-l">The application process</h2>
+
+        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="20" aria-describedby="more-detail-hint"></textarea>
+
+        </div></div>
+
+        <div class="govuk-notification-banner" role="region"
+          aria-labelledby="govuk-notification-banner-title"
+          data-module="govuk-notification-banner" id="ra-info">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Important
+            </h2>
+          </div>
+
+
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">
+              Adjustments and support for your application
+              <p class="govuk-body" style="max-width:100%">We want to make sure that our application process is fair to everyone. If you feel there are reasonable adjustments to the application process that we could make or support we could give you, you will be able to tell us once you start the application process.</p>
+              <p class="govuk-body" style="max-width:100%"><strong>If you have any questions about the adjustments or support we could make for you, please contact the Emergency Education Strategy team below.</strong></p>
+          </div>
+
+        </div>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full" style="background:#F6F6F6;padding:30px">
+
+            <p class="govuk-body"><strong>If you have any questions about this role, you can contact the Emergency Education Strategy team on <a href="#" class="govuk-link--no-visited-state">(0191) 2862862</a> or <a href="#" class="govuk-link--no-visited-state">emergency.educ.strategy@dofe.gov.uk</a></strong></p>
+
+
+            <form class="form" action="sign-in?apply=true" method="post">
+            <button class="govuk-button govuk-!-margin-top-3 govuk-!-margin-left-0 govuk-!-margin-bottom-3" style="float:left;max-width:100%;min-width:25%; margin-right:8px;" data-module="govuk-button">Apply</button></form><button id="but1" style="background:lightgrey;min-width:10%;max-width:100%" onclick="" class="govuk-button govuk-button--secondary govuk-!-margin-top-3 govuk-!-margin-left-0 govuk-!-margin-bottom-3" data-module="govuk-button">Save this job</button>
+            <p class="govuk-body-m" style="margin-top:20px; margin-bottom:10px;float:right"><strong>Apply before 11:55pm on 22nd February 2024</strong></p>
+          </div>
+          </div><br>
+
+          <p class="govuk-body">⌃<a href="#job-title" aria-describedby="list-convictions-status" class="govuk-link--no-visited-state">
+              Back to top
+            </a>
+          </p>
+
+        <script>
+          var c = 0;
+          const element = document.getElementById("but1");
+          element.addEventListener("click", function() {
+            if (c == 0){
+              document.getElementById("but1").innerHTML = "Saved"
+              c = c+1;
+              document.getElementById("display").innerHTML = "♥";
+            } else {
+              document.getElementById("but1").innerHTML = "Save this job"
+
+              if (c == 1) {
+                c = c-1;
+                document.getElementById("display").innerHTML = "";
+              }
+            }
+          });
+        </script>
+        {% endblock %}
